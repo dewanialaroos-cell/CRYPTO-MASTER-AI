@@ -1,15 +1,18 @@
 # ============================================================
-# CRYPTO MASTER AI v1
-# Multi-Exchange Crypto Scanner
+# CRYPTO MASTER AI v2
+# CoinMarketCap Full Market Universe
+# Multi-Exchange Scanner
 # LONG / SHORT / NO TRADE
+# Spot + Futures + Funding + Open Interest
+# Multi-Timeframe Technical Analysis
 # ============================================================
 
 import os
 import time
-import math
 import traceback
 from datetime import datetime, timezone
 
+import requests
 import ccxt
 import pandas as pd
 import numpy as np
@@ -19,6 +22,8 @@ import numpy as np
 # SETTINGS
 # ============================================================
 
+EXCHANGES = ["okx", "bybit", "binance", "kucoin"]
+
 TIMEFRAMES = {
     "15m": 120,
     "1h": 150,
@@ -26,44 +31,134 @@ TIMEFRAMES = {
     "1d": 150,
 }
 
-TOP_COINS_PER_EXCHANGE = 30
-MIN_QUOTE_VOLUME = 500_000
+# CoinMarketCap market universe
+CMC_LIMIT = 5000
+
+# Deep technical scan
+MAX_COINS_PER_EXCHANGE = 20
+
+MIN_24H_VOLUME = 500_000
+
 MIN_SCORE = 65
 
-# Telegram is optional.
-# Later put these in GitHub Secrets:
-# TELEGRAM_BOT_TOKEN
-# TELEGRAM_CHAT_ID
+OUTPUT_FILE = "crypto_scan_results.csv"
+CMC_FILE = "cmc_full_market.csv"
 
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
+REQUEST_TIMEOUT = 20
 
 
 # ============================================================
-# EXCHANGES
+# COINMARKETCAP
 # ============================================================
 
-EXCHANGE_NAMES = [
-    "okx",
-    "kucoin",
-    "bybit",
-    "binance",
-]
+def get_cmc_market():
 
+    print("\n==============================")
+    print("COINMARKETCAP MARKET SCAN")
+    print("==============================")
+
+    url = (
+        "https://pro-api.coinmarketcap.com"
+        "/public-api/v3/cryptocurrency/listings/latest"
+    )
+
+    params = {
+        "start": 1,
+        "limit": CMC_LIMIT,
+        "convert": "USD",
+        "sort": "market_cap",
+    }
+
+    try:
+
+        response = requests.get(
+            url,
+            params=params,
+            timeout=REQUEST_TIMEOUT
+        )
+
+        response.raise_for_status()
+
+        data = response.json()
+
+        coins = data.get("data", [])
+
+        rows = []
+
+        for coin in coins:
+
+            quote = coin.get("quote", {}).get("USD", {})
+
+            rows.append({
+                "cmc_rank": coin.get("cmc_rank"),
+                "name": coin.get("name"),
+                "symbol": coin.get("symbol"),
+                "slug": coin.get("slug"),
+                "price_usd": quote.get("price"),
+                "market_cap": quote.get("market_cap"),
+                "volume_24h": quote.get("volume_24h"),
+                "change_1h": quote.get("percent_change_1h"),
+                "change_24h": quote.get("percent_change_24h"),
+                "change_7d": quote.get("percent_change_7d"),
+                "market_cap_dominance": quote.get(
+                    "market_cap_dominance"
+                ),
+                "num_market_pairs": coin.get(
+                    "num_market_pairs"
+                ),
+            })
+
+        df = pd.DataFrame(rows)
+
+        if not df.empty:
+
+            df.to_csv(
+                CMC_FILE,
+                index=False
+            )
+
+        print(
+            f"CMC coins loaded: {len(df)}"
+        )
+
+        return df
+
+    except Exception as e:
+
+        print(
+            "CMC error:",
+            str(e)
+        )
+
+        return pd.DataFrame()
+
+
+# ============================================================
+# EXCHANGE
+# ============================================================
 
 def create_exchange(name):
-    try:
-        exchange_class = getattr(ccxt, name)
 
-        exchange = exchange_class({
+    try:
+
+        cls = getattr(ccxt, name)
+
+        exchange = cls({
             "enableRateLimit": True,
             "timeout": 20000,
         })
 
+        exchange.load_markets()
+
         return exchange
 
     except Exception as e:
-        print(f"[ERROR] Cannot create {name}: {e}")
+
+        print(
+            f"{name}: exchange load failed:",
+            str(e)
+        )
+
         return None
 
 
@@ -72,6 +167,7 @@ def create_exchange(name):
 # ============================================================
 
 def ema(series, period):
+
     return series.ewm(
         span=period,
         adjust=False
@@ -79,6 +175,7 @@ def ema(series, period):
 
 
 def rsi(series, period=14):
+
     delta = series.diff()
 
     gain = delta.clip(lower=0)
@@ -86,65 +183,88 @@ def rsi(series, period=14):
 
     avg_gain = gain.ewm(
         alpha=1 / period,
-        min_periods=period,
         adjust=False
     ).mean()
 
     avg_loss = loss.ewm(
         alpha=1 / period,
-        min_periods=period,
         adjust=False
     ).mean()
 
-    rs = avg_gain / avg_loss.replace(0, np.nan)
+    rs = avg_gain / avg_loss.replace(
+        0,
+        np.nan
+    )
 
-    result = 100 - (100 / (1 + rs))
+    value = 100 - (
+        100 / (1 + rs)
+    )
 
-    return result.fillna(50)
+    return value.fillna(50)
+
+
+def atr(df, period=14):
+
+    high = df["high"]
+    low = df["low"]
+    close = df["close"]
+
+    previous_close = close.shift(1)
+
+    tr1 = high - low
+
+    tr2 = (
+        high - previous_close
+    ).abs()
+
+    tr3 = (
+        low - previous_close
+    ).abs()
+
+    tr = pd.concat(
+        [tr1, tr2, tr3],
+        axis=1
+    ).max(axis=1)
+
+    return tr.ewm(
+        alpha=1 / period,
+        adjust=False
+    ).mean()
 
 
 def macd(series):
+
     fast = ema(series, 12)
     slow = ema(series, 26)
 
     macd_line = fast - slow
-    signal = ema(macd_line, 9)
 
-    histogram = macd_line - signal
+    signal = ema(
+        macd_line,
+        9
+    )
 
-    return macd_line, signal, histogram
-
-
-def atr(df, period=14):
-    high_low = df["high"] - df["low"]
-    high_close = (df["high"] - df["close"].shift()).abs()
-    low_close = (df["low"] - df["close"].shift()).abs()
-
-    tr = pd.concat(
-        [
-            high_low,
-            high_close,
-            low_close
-        ],
-        axis=1
-    ).max(axis=1)
-
-    return tr.rolling(period).mean()
-
-
-def volume_ratio(df, period=20):
-    avg = df["volume"].rolling(period).mean()
+    histogram = (
+        macd_line - signal
+    )
 
     return (
-        df["volume"] / avg.replace(0, np.nan)
-    ).fillna(1)
+        macd_line,
+        signal,
+        histogram
+    )
 
 
 # ============================================================
 # OHLCV
 # ============================================================
 
-def get_ohlcv(exchange, symbol, timeframe, limit=150):
+def get_ohlcv(
+    exchange,
+    symbol,
+    timeframe,
+    limit=150
+):
 
     try:
 
@@ -154,7 +274,7 @@ def get_ohlcv(exchange, symbol, timeframe, limit=150):
             limit=limit
         )
 
-        if not data or len(data) < 60:
+        if not data:
             return None
 
         df = pd.DataFrame(
@@ -165,177 +285,176 @@ def get_ohlcv(exchange, symbol, timeframe, limit=150):
                 "high",
                 "low",
                 "close",
-                "volume"
+                "volume",
             ]
         )
-
-        for col in [
-            "open",
-            "high",
-            "low",
-            "close",
-            "volume"
-        ]:
-            df[col] = pd.to_numeric(
-                df[col],
-                errors="coerce"
-            )
-
-        df.dropna(inplace=True)
-
-        if len(df) < 60:
-            return None
 
         return df
 
     except Exception:
+
         return None
 
 
 # ============================================================
-# TECHNICAL ANALYSIS
+# TIMEFRAME ANALYSIS
 # ============================================================
 
 def analyze_timeframe(df):
 
-    if df is None or len(df) < 60:
+    if df is None:
+        return None
+
+    if len(df) < 60:
         return None
 
     close = df["close"]
 
-    ema20 = ema(close, 20)
-    ema50 = ema(close, 50)
+    e20 = ema(
+        close,
+        20
+    )
 
-    macd_line, macd_signal, macd_hist = macd(close)
+    e50 = ema(
+        close,
+        50
+    )
 
-    rsi_value = float(rsi(close).iloc[-1])
+    e200 = ema(
+        close,
+        min(200, len(df))
+    )
 
-    vol_ratio = float(
-        volume_ratio(df).iloc[-1]
+    rsi_values = rsi(
+        close
+    )
+
+    macd_line, signal, histogram = macd(
+        close
+    )
+
+    atr_values = atr(
+        df
+    )
+
+    volume_avg = (
+        df["volume"]
+        .rolling(20)
+        .mean()
+    )
+
+    volume_ratio = (
+        df["volume"].iloc[-1]
+        /
+        max(
+            volume_avg.iloc[-1],
+            1e-12
+        )
+    )
+
+    price = float(
+        close.iloc[-1]
+    )
+
+    rsi_value = float(
+        rsi_values.iloc[-1]
+    )
+
+    macd_value = float(
+        histogram.iloc[-1]
     )
 
     atr_value = float(
-        atr(df).iloc[-1]
+        atr_values.iloc[-1]
     )
-
-    price = float(close.iloc[-1])
-
-    long_points = 0
-    short_points = 0
-
-    # --------------------------------------------------------
-    # EMA
-    # --------------------------------------------------------
-
-    if price > ema20.iloc[-1]:
-        long_points += 8
-    else:
-        short_points += 8
-
-    if price > ema50.iloc[-1]:
-        long_points += 8
-    else:
-        short_points += 8
-
-    if ema20.iloc[-1] > ema50.iloc[-1]:
-        long_points += 8
-    else:
-        short_points += 8
-
-    # --------------------------------------------------------
-    # RSI
-    # --------------------------------------------------------
-
-    if 50 <= rsi_value <= 68:
-        long_points += 10
-
-    elif 32 <= rsi_value < 50:
-        short_points += 8
-
-    elif rsi_value > 75:
-        short_points += 5
-
-    elif rsi_value < 25:
-        long_points += 5
-
-    # --------------------------------------------------------
-    # MACD
-    # --------------------------------------------------------
-
-    if macd_hist.iloc[-1] > 0:
-        long_points += 8
-    else:
-        short_points += 8
-
-    # --------------------------------------------------------
-    # VOLUME
-    # --------------------------------------------------------
-
-    if vol_ratio > 1.5:
-
-        if long_points > short_points:
-            long_points += 5
-        else:
-            short_points += 5
-
-    # --------------------------------------------------------
-    # Candle momentum
-    # --------------------------------------------------------
-
-    recent_return = (
-        close.iloc[-1] / close.iloc[-5] - 1
-    )
-
-    if recent_return > 0.01:
-        long_points += 5
-
-    elif recent_return < -0.01:
-        short_points += 5
-
-    return {
-        "price": price,
-        "rsi": rsi_value,
-        "ema20": float(ema20.iloc[-1]),
-        "ema50": float(ema50.iloc[-1]),
-        "macd_hist": float(macd_hist.iloc[-1]),
-        "volume_ratio": vol_ratio,
-        "atr": atr_value,
-        "long": long_points,
-        "short": short_points,
-    }
-
-
-# ============================================================
-# MULTI TIMEFRAME ANALYSIS
-# ============================================================
-
-def multi_timeframe_analysis(exchange, symbol):
-
-    results = {}
-
-    for tf, limit in TIMEFRAMES.items():
-
-        df = get_ohlcv(
-            exchange,
-            symbol,
-            tf,
-            limit
-        )
-
-        analysis = analyze_timeframe(df)
-
-        if analysis:
-            results[tf] = analysis
-
-        time.sleep(0.05)
-
-    if not results:
-        return None
 
     long_score = 0
     short_score = 0
 
-    # More weight on higher timeframes
+    # -------------------------
+    # TREND
+    # -------------------------
+
+    if price > e20.iloc[-1]:
+        long_score += 8
+    else:
+        short_score += 8
+
+    if e20.iloc[-1] > e50.iloc[-1]:
+        long_score += 8
+    else:
+        short_score += 8
+
+    if price > e200.iloc[-1]:
+        long_score += 8
+    else:
+        short_score += 8
+
+    # -------------------------
+    # RSI
+    # -------------------------
+
+    if 52 <= rsi_value <= 70:
+        long_score += 7
+
+    if 30 <= rsi_value <= 48:
+        short_score += 7
+
+    # -------------------------
+    # MACD
+    # -------------------------
+
+    if macd_value > 0:
+        long_score += 7
+    else:
+        short_score += 7
+
+    # -------------------------
+    # VOLUME
+    # -------------------------
+
+    if volume_ratio >= 1.2:
+
+        if long_score > short_score:
+            long_score += 4
+        else:
+            short_score += 4
+
+    # -------------------------
+    # MOMENTUM
+    # -------------------------
+
+    recent_return = (
+        close.iloc[-1]
+        /
+        close.iloc[-6]
+        - 1
+    ) * 100
+
+    if recent_return > 0:
+        long_score += 4
+    else:
+        short_score += 4
+
+    return {
+        "price": price,
+        "long": long_score,
+        "short": short_score,
+        "rsi": rsi_value,
+        "atr": atr_value,
+        "volume_ratio": volume_ratio,
+    }
+
+
+# ============================================================
+# MULTI TIMEFRAME
+# ============================================================
+
+def multi_timeframe_analysis(
+    exchange,
+    symbol
+):
+
     weights = {
         "15m": 1.0,
         "1h": 1.5,
@@ -343,17 +462,76 @@ def multi_timeframe_analysis(exchange, symbol):
         "1d": 2.5,
     }
 
-    for tf, data in results.items():
+    results = {}
 
-        w = weights.get(tf, 1)
+    total_long = 0
+    total_short = 0
 
-        long_score += data["long"] * w
-        short_score += data["short"] * w
+    total_weight = sum(
+        weights.values()
+    )
+
+    for timeframe, limit in TIMEFRAMES.items():
+
+        df = get_ohlcv(
+            exchange,
+            symbol,
+            timeframe,
+            limit
+        )
+
+        analysis = analyze_timeframe(
+            df
+        )
+
+        if analysis is None:
+            continue
+
+        results[timeframe] = analysis
+
+        total_long += (
+            analysis["long"]
+            * weights[timeframe]
+        )
+
+        total_short += (
+            analysis["short"]
+            * weights[timeframe]
+        )
+
+        time.sleep(
+            exchange.rateLimit / 1000
+        )
+
+    if not results:
+        return None
+
+    max_points = (
+        46 * total_weight
+    )
+
+    long_score = (
+        total_long
+        / max_points
+        * 100
+    )
+
+    short_score = (
+        total_short
+        / max_points
+        * 100
+    )
 
     return {
-        "timeframes": results,
-        "long_score": long_score,
-        "short_score": short_score,
+        "long_score": round(
+            long_score,
+            2
+        ),
+        "short_score": round(
+            short_score,
+            2
+        ),
+        "details": results,
     }
 
 
@@ -365,13 +543,11 @@ def btc_regime(exchange):
 
     try:
 
-        symbol = "BTC/USDT"
-
         df = get_ohlcv(
             exchange,
-            symbol,
+            "BTC/USDT",
             "1h",
-            200
+            220
         )
 
         if df is None:
@@ -382,9 +558,20 @@ def btc_regime(exchange):
 
         close = df["close"]
 
-        e20 = ema(close, 20).iloc[-1]
-        e50 = ema(close, 50).iloc[-1]
-        e200 = ema(close, 200).iloc[-1]
+        e20 = ema(
+            close,
+            20
+        )
+
+        e50 = ema(
+            close,
+            50
+        )
+
+        e200 = ema(
+            close,
+            200
+        )
 
         rsi_value = float(
             rsi(close).iloc[-1]
@@ -394,25 +581,950 @@ def btc_regime(exchange):
             close.iloc[-1]
         )
 
-        if price > e20 and e20 > e50 and e50 > e200 and rsi_value >= 55:
-            regime = "BULLISH"
-            score = 80
+        if (
+            price > e20.iloc[-1]
+            and e20.iloc[-1] > e50.iloc[-1]
+            and e50.iloc[-1] > e200.iloc[-1]
+            and rsi_value >= 55
+        ):
 
-        elif price < e20 and e20 < e50 and e50 < e200 and rsi_value <= 45:
-            regime = "BEARISH"
-            score = 80
+            return {
+                "regime": "BULLISH",
+                "score": 80
+            }
+
+        elif (
+            price < e20.iloc[-1]
+            and e20.iloc[-1] < e50.iloc[-1]
+            and e50.iloc[-1] < e200.iloc[-1]
+            and rsi_value <= 45
+        ):
+
+            return {
+                "regime": "BEARISH",
+                "score": 80
+            }
 
         else:
-            regime = "NEUTRAL"
-            score = 50
 
-        return {
-            "regime": regime,
-            "score": score
-        }
+            return {
+                "regime": "NEUTRAL",
+                "score": 50
+            }
 
     except Exception:
+
         return {
             "regime": "UNKNOWN",
             "score": 0
         }
+
+
+# ============================================================
+# FUTURES DATA
+# ============================================================
+
+def get_futures_data(
+    exchange,
+    base
+):
+
+    funding = None
+    open_interest = None
+
+    try:
+
+        futures_symbol = (
+            f"{base}/USDT:USDT"
+        )
+
+        if futures_symbol not in exchange.markets:
+            return funding, open_interest
+
+        market = exchange.markets[
+            futures_symbol
+        ]
+
+        if not market.get("swap"):
+            return funding, open_interest
+
+        # Funding
+        try:
+
+            funding_data = (
+                exchange.fetch_funding_rate(
+                    futures_symbol
+                )
+            )
+
+            funding = funding_data.get(
+                "fundingRate"
+            )
+
+        except Exception:
+            pass
+
+        # Open interest
+        try:
+
+            oi_data = (
+                exchange.fetch_open_interest(
+                    futures_symbol
+                )
+            )
+
+            open_interest = oi_data.get(
+                "openInterestAmount"
+            )
+
+        except Exception:
+            pass
+
+    except Exception:
+        pass
+
+    return funding, open_interest
+
+
+# ============================================================
+# MARKET DISCOVERY
+# ============================================================
+
+def get_liquid_usdt_symbols(
+    exchange,
+    cmc_df
+):
+
+    try:
+
+        tickers = (
+            exchange.fetch_tickers()
+        )
+
+    except Exception as e:
+
+        print(
+            "Ticker error:",
+            str(e)
+        )
+
+        return []
+
+    # CMC symbols
+    cmc_symbols = set()
+
+    if not cmc_df.empty:
+
+        cmc_symbols = set(
+            cmc_df[
+                "symbol"
+            ]
+            .astype(str)
+            .str.upper()
+            .tolist()
+        )
+
+    candidates = []
+
+    for symbol, ticker in tickers.items():
+
+        try:
+
+            market = exchange.markets.get(
+                symbol
+            )
+
+            if not market:
+                continue
+
+            if market.get("spot") is not True:
+                continue
+
+            if market.get("quote") != "USDT":
+                continue
+
+            base = market.get(
+                "base",
+                ""
+            ).upper()
+
+            if base not in cmc_symbols:
+                continue
+
+            quote_volume = (
+                ticker.get(
+                    "quoteVolume"
+                )
+            )
+
+            if quote_volume is None:
+
+                last = ticker.get(
+                    "last"
+                )
+
+                volume = ticker.get(
+                    "baseVolume"
+                )
+
+                if (
+                    last is not None
+                    and volume is not None
+                ):
+
+                    quote_volume = (
+                        last * volume
+                    )
+
+            if quote_volume is None:
+                continue
+
+            quote_volume = float(
+                quote_volume
+            )
+
+            if quote_volume < MIN_24H_VOLUME:
+                continue
+
+            candidates.append({
+                "symbol": symbol,
+                "base": base,
+                "volume": quote_volume,
+            })
+
+        except Exception:
+            continue
+
+    candidates.sort(
+        key=lambda x: x["volume"],
+        reverse=True
+    )
+
+    return candidates[
+        :MAX_COINS_PER_EXCHANGE
+    ]
+
+
+# ============================================================
+# MASTER DECISION
+# ============================================================
+
+def master_decision(
+    long_score,
+    short_score,
+    btc_regime_value,
+    funding
+):
+
+    long_final = float(
+        long_score
+    )
+
+    short_final = float(
+        short_score
+    )
+
+    # BTC regime
+    if btc_regime_value == "BULLISH":
+
+        long_final += 8
+        short_final -= 8
+
+    elif btc_regime_value == "BEARISH":
+
+        short_final += 8
+        long_final -= 8
+
+    # Funding
+    if funding is not None:
+
+        try:
+
+            funding = float(
+                funding
+            )
+
+            # Positive funding =
+            # crowded longs
+            if funding > 0.0005:
+
+                long_final -= 4
+                short_final += 2
+
+            # Negative funding =
+            # crowded shorts
+            elif funding < -0.0005:
+
+                short_final += 4
+                long_final += 2
+
+        except Exception:
+            pass
+
+    long_final = max(
+        0,
+        min(100, long_final)
+    )
+
+    short_final = max(
+        0,
+        min(100, short_final)
+    )
+
+    if (
+        long_final >= MIN_SCORE
+        and
+        long_final - short_final >= 10
+    ):
+
+        decision = "LONG"
+
+    elif (
+        short_final >= MIN_SCORE
+        and
+        short_final - long_final >= 10
+    ):
+
+        decision = "SHORT"
+
+    else:
+
+        decision = "NO TRADE"
+
+    confidence = max(
+        long_final,
+        short_final
+    )
+
+    return (
+        decision,
+        round(long_final, 2),
+        round(short_final, 2),
+        round(confidence, 2)
+    )
+
+
+# ============================================================
+# RISK LEVELS
+# ============================================================
+
+def risk_levels(
+    price,
+    atr_value,
+    decision
+):
+
+    if atr_value is None:
+        return None, None, None
+
+    atr_value = max(
+        float(atr_value),
+        price * 0.001
+    )
+
+    if decision == "LONG":
+
+        stop_loss = (
+            price - 1.5 * atr_value
+        )
+
+        tp1 = (
+            price + 2 * atr_value
+        )
+
+        tp2 = (
+            price + 3 * atr_value
+        )
+
+    elif decision == "SHORT":
+
+        stop_loss = (
+            price + 1.5 * atr_value
+        )
+
+        tp1 = (
+            price - 2 * atr_value
+        )
+
+        tp2 = (
+            price - 3 * atr_value
+        )
+
+    else:
+
+        return None, None, None
+
+    return (
+        round(stop_loss, 8),
+        round(tp1, 8),
+        round(tp2, 8)
+    )
+
+
+# ============================================================
+# TELEGRAM
+# ============================================================
+
+def send_telegram(message):
+
+    token = os.getenv(
+        "TELEGRAM_BOT_TOKEN"
+    )
+
+    chat_id = os.getenv(
+        "TELEGRAM_CHAT_ID"
+    )
+
+    if not token or not chat_id:
+        return
+
+    try:
+
+        url = (
+            f"https://api.telegram.org/bot"
+            f"{token}/sendMessage"
+        )
+
+        requests.post(
+            url,
+            data={
+                "chat_id": chat_id,
+                "text": message,
+            },
+            timeout=15
+        )
+
+    except Exception as e:
+
+        print(
+            "Telegram error:",
+            str(e)
+        )
+
+
+# ============================================================
+# MAIN SCANNER
+# ============================================================
+
+def main():
+
+    start_time = time.time()
+
+    timestamp = datetime.now(
+        timezone.utc
+    ).strftime(
+        "%Y-%m-%d %H:%M:%S UTC"
+    )
+
+    print("\n")
+    print("=" * 70)
+    print("CRYPTO MASTER AI v2")
+    print("FULL CMC MARKET + MULTI EXCHANGE")
+    print(timestamp)
+    print("=" * 70)
+
+    # --------------------------------------------------------
+    # FULL CMC MARKET
+    # --------------------------------------------------------
+
+    cmc_df = get_cmc_market()
+
+    # --------------------------------------------------------
+    # RESULT COLUMNS
+    # --------------------------------------------------------
+
+    columns = [
+        "timestamp",
+        "cmc_rank",
+        "coin",
+        "exchange",
+        "symbol",
+        "price",
+        "volume_24h",
+        "btc_regime",
+        "long_score",
+        "short_score",
+        "confidence",
+        "decision",
+        "funding",
+        "open_interest",
+        "rsi_15m",
+        "rsi_1h",
+        "rsi_4h",
+        "rsi_1d",
+        "stop_loss",
+        "take_profit_1",
+        "take_profit_2",
+    ]
+
+    all_results = []
+
+    # --------------------------------------------------------
+    # EXCHANGES
+    # --------------------------------------------------------
+
+    for exchange_name in EXCHANGES:
+
+        print("\n")
+        print("=" * 70)
+        print(
+            f"EXCHANGE: {exchange_name.upper()}"
+        )
+        print("=" * 70)
+
+        exchange = create_exchange(
+            exchange_name
+        )
+
+        if exchange is None:
+            continue
+
+        try:
+
+            regime_data = btc_regime(
+                exchange
+            )
+
+            regime = regime_data[
+                "regime"
+            ]
+
+            print(
+                "BTC REGIME:",
+                regime
+            )
+
+            candidates = (
+                get_liquid_usdt_symbols(
+                    exchange,
+                    cmc_df
+                )
+            )
+
+            print(
+                "Tradable liquid coins:",
+                len(candidates)
+            )
+
+            for index, item in enumerate(
+                candidates,
+                start=1
+            ):
+
+                symbol = item[
+                    "symbol"
+                ]
+
+                base = item[
+                    "base"
+                ]
+
+                print(
+                    f"[{index}/{len(candidates)}]"
+                    f" {symbol}"
+                )
+
+                try:
+
+                    analysis = (
+                        multi_timeframe_analysis(
+                            exchange,
+                            symbol
+                        )
+                    )
+
+                    if analysis is None:
+                        continue
+
+                    funding, oi = (
+                        get_futures_data(
+                            exchange,
+                            base
+                        )
+                    )
+
+                    decision, long_final, short_final, confidence = (
+                        master_decision(
+                            analysis[
+                                "long_score"
+                            ],
+                            analysis[
+                                "short_score"
+                            ],
+                            regime,
+                            funding
+                        )
+                    )
+
+                    details = analysis[
+                        "details"
+                    ]
+
+                    price = None
+
+                    if "1h" in details:
+                        price = details[
+                            "1h"
+                        ]["price"]
+
+                    else:
+
+                        first_tf = next(
+                            iter(details)
+                        )
+
+                        price = details[
+                            first_tf
+                        ]["price"]
+
+                    atr_value = None
+
+                    if "1h" in details:
+
+                        atr_value = details[
+                            "1h"
+                        ]["atr"]
+
+                    stop_loss, tp1, tp2 = (
+                        risk_levels(
+                            price,
+                            atr_value,
+                            decision
+                        )
+                    )
+
+                    cmc_rank = None
+                    coin_name = base
+                    volume_24h = item[
+                        "volume"
+                    ]
+
+                    if not cmc_df.empty:
+
+                        match = cmc_df[
+                            cmc_df[
+                                "symbol"
+                            ].str.upper()
+                            == base.upper()
+                        ]
+
+                        if not match.empty:
+
+                            # If duplicate symbols exist,
+                            # use first matching record.
+                            row = match.iloc[0]
+
+                            cmc_rank = row[
+                                "cmc_rank"
+                            ]
+
+                            coin_name = row[
+                                "name"
+                            ]
+
+                    result = {
+
+                        "timestamp":
+                            timestamp,
+
+                        "cmc_rank":
+                            cmc_rank,
+
+                        "coin":
+                            coin_name,
+
+                        "exchange":
+                            exchange_name,
+
+                        "symbol":
+                            symbol,
+
+                        "price":
+                            price,
+
+                        "volume_24h":
+                            volume_24h,
+
+                        "btc_regime":
+                            regime,
+
+                        "long_score":
+                            long_final,
+
+                        "short_score":
+                            short_final,
+
+                        "confidence":
+                            confidence,
+
+                        "decision":
+                            decision,
+
+                        "funding":
+                            funding,
+
+                        "open_interest":
+                            oi,
+
+                        "rsi_15m":
+                            details.get(
+                                "15m",
+                                {}
+                            ).get(
+                                "rsi"
+                            ),
+
+                        "rsi_1h":
+                            details.get(
+                                "1h",
+                                {}
+                            ).get(
+                                "rsi"
+                            ),
+
+                        "rsi_4h":
+                            details.get(
+                                "4h",
+                                {}
+                            ).get(
+                                "rsi"
+                            ),
+
+                        "rsi_1d":
+                            details.get(
+                                "1d",
+                                {}
+                            ).get(
+                                "rsi"
+                            ),
+
+                        "stop_loss":
+                            stop_loss,
+
+                        "take_profit_1":
+                            tp1,
+
+                        "take_profit_2":
+                            tp2,
+                    }
+
+                    all_results.append(
+                        result
+                    )
+
+                    if decision != "NO TRADE":
+
+                        print(
+                            "   >>>",
+                            decision,
+                            "|",
+                            "Confidence:",
+                            confidence
+                        )
+
+                except Exception as e:
+
+                    print(
+                        "   Coin error:",
+                        str(e)
+                    )
+
+        except Exception as e:
+
+            print(
+                f"{exchange_name} error:",
+                str(e)
+            )
+
+        finally:
+
+            try:
+                exchange.close()
+            except Exception:
+                pass
+
+    # --------------------------------------------------------
+    # SAVE RESULTS
+    # --------------------------------------------------------
+
+    results_df = pd.DataFrame(
+        all_results,
+        columns=columns
+    )
+
+    if not results_df.empty:
+
+        results_df = results_df.sort_values(
+            by="confidence",
+            ascending=False
+        )
+
+    results_df.to_csv(
+        OUTPUT_FILE,
+        index=False
+    )
+
+    # --------------------------------------------------------
+    # DISPLAY TOP SIGNALS
+    # --------------------------------------------------------
+
+    print("\n")
+    print("=" * 70)
+    print("TOP AI SIGNALS")
+    print("=" * 70)
+
+    if results_df.empty:
+
+        print(
+            "No results generated."
+        )
+
+    else:
+
+        signals = results_df[
+            results_df[
+                "decision"
+            ] != "NO TRADE"
+        ]
+
+        if signals.empty:
+
+            print(
+                "NO TRADE signals currently."
+            )
+
+        else:
+
+            top_signals = signals.head(
+                15
+            )
+
+            for _, row in top_signals.iterrows():
+
+                print(
+                    f"{row['decision']:8} "
+                    f"{row['exchange']:8} "
+                    f"{row['symbol']:18} "
+                    f"Confidence={row['confidence']}"
+                )
+
+    # --------------------------------------------------------
+    # TELEGRAM SUMMARY
+    # --------------------------------------------------------
+
+    if not results_df.empty:
+
+        signals = results_df[
+            results_df[
+                "decision"
+            ] != "NO TRADE"
+        ]
+
+        if not signals.empty:
+
+            message = (
+                "🤖 CRYPTO MASTER AI\n\n"
+                f"Time: {timestamp}\n\n"
+            )
+
+            for _, row in signals.head(
+                5
+            ).iterrows():
+
+                message += (
+                    f"{row['decision']} "
+                    f"{row['symbol']} "
+                    f"({row['exchange']})\n"
+                    f"Confidence: "
+                    f"{row['confidence']}\n"
+                    f"Price: "
+                    f"{row['price']}\n"
+                    f"SL: "
+                    f"{row['stop_loss']}\n"
+                    f"TP1: "
+                    f"{row['take_profit_1']}\n"
+                    f"TP2: "
+                    f"{row['take_profit_2']}\n\n"
+                )
+
+            send_telegram(
+                message
+            )
+
+    # --------------------------------------------------------
+    # FINISH
+    # --------------------------------------------------------
+
+    elapsed = round(
+        time.time() - start_time,
+        2
+    )
+
+    print("\n")
+    print("=" * 70)
+    print(
+        "SCAN COMPLETE"
+    )
+    print(
+        f"Coins analyzed: {len(results_df)}"
+    )
+    print(
+        f"Saved: {OUTPUT_FILE}"
+    )
+    print(
+        f"Runtime: {elapsed} seconds"
+    )
+    print("=" * 70)
+
+
+# ============================================================
+# START
+# ============================================================
+
+if __name__ == "__main__":
+
+    try:
+
+        main()
+
+    except Exception as e:
+
+        print(
+            "\nFATAL ERROR:",
+            str(e)
+        )
+
+        traceback.print_exc()
+
+        # Still create CSV so GitHub
+        # Actions does not fail because
+        # of a missing output file.
+
+        pd.DataFrame(
+            columns=[
+                "timestamp",
+                "cmc_rank",
+                "coin",
+                "exchange",
+                "symbol",
+                "price",
+                "volume_24h",
+                "btc_regime",
+                "long_score",
+                "short_score",
+                "confidence",
+                "decision",
+                "funding",
+                "open_interest",
+                "rsi_15m",
+                "rsi_1h",
+                "rsi_4h",
+                "rsi_1d",
+                "stop_loss",
+                "take_profit_1",
+                "take_profit_2",
+            ]
+        ).to_csv(
+            OUTPUT_FILE,
+            index=False
+        )
