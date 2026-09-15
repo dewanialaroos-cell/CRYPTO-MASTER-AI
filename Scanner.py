@@ -394,6 +394,25 @@ def btc_regime(exchange):
             close.iloc[-1]
         )
 
-        if (
-            price > e20
-            and e20
+            if price > e20 and e20 > e50 and e50 > e200 and rsi_value >= 55:
+        regime = "BULLISH"
+        score = 80
+
+    elif price < e20 and e20 < e50 and e50 < e200 and rsi_value <= 45:
+        regime = "BEARISH"
+        score = 80
+
+    else:
+        regime = "NEUTRAL"
+        score = 50
+
+    return {
+        "regime": regime,
+        "score": score
+    }
+
+except Exception:
+    return {
+        "regime": "UNKNOWN",
+        "score": 0
+    }
