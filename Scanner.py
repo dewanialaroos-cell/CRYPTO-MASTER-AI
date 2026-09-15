@@ -8,13 +8,28 @@ from datetime import datetime, timezone
 
 
 # ============================================================
-# CRYPTO MASTER AI — FOUNDATION v3
+# CRYPTO MASTER AI — FUTURES INTELLIGENCE v4
 # ============================================================
 
 EXCHANGES = {
     "OKX": ccxt.okx({"enableRateLimit": True}),
     "BYBIT": ccxt.bybit({"enableRateLimit": True}),
     "KUCOIN": ccxt.kucoin({"enableRateLimit": True}),
+}
+
+FUTURES_EXCHANGES = {
+    "OKX": ccxt.okx({
+        "enableRateLimit": True,
+        "options": {"defaultType": "swap"}
+    }),
+    "BYBIT": ccxt.bybit({
+        "enableRateLimit": True,
+        "options": {"defaultType": "swap"}
+    }),
+    "KUCOIN": ccxt.kucoin({
+        "enableRateLimit": True,
+        "options": {"defaultType": "swap"}
+    }),
 }
 
 TIMEFRAMES = {
@@ -141,7 +156,7 @@ def analyze_timeframe(df):
 
 
 # ============================================================
-# BTC MARKET REGIME
+# BTC REGIME
 # ============================================================
 
 def btc_regime(exchange):
@@ -165,7 +180,6 @@ def btc_regime(exchange):
         e200 = ema(close, 200).iloc[-1]
 
         rsi_value = rsi(close).iloc[-1]
-
         price = close.iloc[-1]
 
         if (
@@ -174,7 +188,6 @@ def btc_regime(exchange):
             and e50 > e200
             and rsi_value >= 55
         ):
-
             return "BULLISH", 80
 
         elif (
@@ -183,15 +196,12 @@ def btc_regime(exchange):
             and e50 < e200
             and rsi_value <= 45
         ):
-
             return "BEARISH", 80
 
         else:
-
             return "NEUTRAL", 50
 
     except Exception:
-
         return "UNKNOWN", 0
 
 
@@ -210,7 +220,6 @@ def discover_markets():
             print(f"\nLoading {name} markets...")
 
             exchange.load_markets()
-
             tickers = exchange.fetch_tickers()
 
             count = 0
@@ -262,7 +271,6 @@ def discover_markets():
                         }
 
                     candidates[key]["exchanges"].append(name)
-
                     candidates[key]["volume"] += quote_volume
 
                     count += 1
@@ -297,17 +305,142 @@ def discover_markets():
 
 
 # ============================================================
+# FUTURES INTELLIGENCE
+# ============================================================
+
+def get_futures_data(symbol):
+
+    best = None
+
+    for name, exchange in FUTURES_EXCHANGES.items():
+
+        try:
+
+            exchange.load_markets()
+
+            futures_symbol = symbol + ":USDT"
+
+            if futures_symbol not in exchange.markets:
+
+                continue
+
+            funding_rate = np.nan
+            open_interest = np.nan
+
+            # Funding
+            try:
+
+                funding = exchange.fetch_funding_rate(
+                    futures_symbol
+                )
+
+                funding_rate = funding.get(
+                    "fundingRate"
+                )
+
+                if funding_rate is not None:
+                    funding_rate = float(
+                        funding_rate
+                    )
+
+            except Exception:
+                pass
+
+            # Open Interest
+            try:
+
+                oi = exchange.fetch_open_interest(
+                    futures_symbol
+                )
+
+                open_interest = oi.get(
+                    "openInterestValue"
+                )
+
+                if open_interest is None:
+                    open_interest = oi.get(
+                        "openInterestAmount"
+                    )
+
+                if open_interest is not None:
+                    open_interest = float(
+                        open_interest
+                    )
+
+            except Exception:
+                pass
+
+            if (
+                not pd.isna(funding_rate)
+                or not pd.isna(open_interest)
+            ):
+
+                best = {
+                    "futures_exchange": name,
+                    "funding_rate": funding_rate,
+                    "open_interest": open_interest
+                }
+
+                break
+
+        except Exception:
+            continue
+
+    if best is None:
+
+        return {
+            "futures_exchange": "N/A",
+            "funding_rate": np.nan,
+            "open_interest": np.nan
+        }
+
+    return best
+
+
+# ============================================================
+# FUTURES SCORE
+# ============================================================
+
+def futures_score(funding_rate):
+
+    if pd.isna(funding_rate):
+
+        return 0, 0
+
+    # Funding is usually expressed as decimal.
+    # Example: 0.0001 = 0.01%
+
+    long_score = 0
+    short_score = 0
+
+    # Strong negative funding
+    if funding_rate <= -0.0005:
+
+        long_score += 8
+
+    # Mild negative funding
+    elif funding_rate < 0:
+
+        long_score += 3
+
+    # Strong positive funding
+    elif funding_rate >= 0.0005:
+
+        short_score += 8
+
+    # Mild positive funding
+    elif funding_rate > 0:
+
+        short_score += 3
+
+    return long_score, short_score
+
+
+# ============================================================
 # ANALYZE COIN
 # ============================================================
 
 def analyze_coin(exchange, symbol, btc_regime_name):
-
-    result = {
-        "symbol": symbol,
-        "exchange": exchange.id,
-        "signal": "NO TRADE",
-        "score": 0
-    }
 
     try:
 
@@ -337,56 +470,81 @@ def analyze_coin(exchange, symbol, btc_regime_name):
         long_score = 0
         short_score = 0
 
-        # 15m
+        # ----------------------------------------------------
+        # TIMEFRAME TREND
+        # ----------------------------------------------------
+
         if a15["trend"] > 0:
             long_score += 8
 
-        if a15["trend"] < 0:
+        elif a15["trend"] < 0:
             short_score += 8
 
-        # 1H
         if a1h["trend"] > 0:
             long_score += 15
 
-        if a1h["trend"] < 0:
+        elif a1h["trend"] < 0:
             short_score += 15
 
-        # 4H
         if a4h["trend"] > 0:
             long_score += 20
 
-        if a4h["trend"] < 0:
+        elif a4h["trend"] < 0:
             short_score += 20
 
-        # 1D
         if a1d["trend"] > 0:
             long_score += 20
 
-        if a1d["trend"] < 0:
+        elif a1d["trend"] < 0:
             short_score += 20
 
+        # ----------------------------------------------------
         # RSI
+        # ----------------------------------------------------
+
         if 55 <= a1h["rsi"] <= 70:
             long_score += 10
 
         if 30 <= a1h["rsi"] <= 45:
             short_score += 10
 
-        # Momentum
+        # ----------------------------------------------------
+        # MOMENTUM
+        # ----------------------------------------------------
+
         if a1h["momentum"] > 0:
             long_score += 7
 
-        if a1h["momentum"] < 0:
+        elif a1h["momentum"] < 0:
             short_score += 7
 
-        # BTC regime
+        # ----------------------------------------------------
+        # BTC REGIME
+        # ----------------------------------------------------
+
         if btc_regime_name == "BULLISH":
             long_score += 10
 
         elif btc_regime_name == "BEARISH":
             short_score += 10
 
-        # Decide
+        # ----------------------------------------------------
+        # FUTURES
+        # ----------------------------------------------------
+
+        futures = get_futures_data(symbol)
+
+        f_long, f_short = futures_score(
+            futures["funding_rate"]
+        )
+
+        long_score += f_long
+        short_score += f_short
+
+        # ----------------------------------------------------
+        # FINAL SIGNAL
+        # ----------------------------------------------------
+
         if long_score >= 60 and long_score > short_score:
 
             signal = "LONG"
@@ -410,57 +568,83 @@ def analyze_coin(exchange, symbol, btc_regime_name):
 
         if signal == "LONG":
 
-            stop_loss = price - (1.5 * atr_value)
-            take_profit = price + (3 * atr_value)
+            stop_loss = price - (
+                1.5 * atr_value
+            )
+
+            take_profit = price + (
+                3 * atr_value
+            )
 
         elif signal == "SHORT":
 
-            stop_loss = price + (1.5 * atr_value)
-            take_profit = price - (3 * atr_value)
+            stop_loss = price + (
+                1.5 * atr_value
+            )
+
+            take_profit = price - (
+                3 * atr_value
+            )
 
         else:
 
             stop_loss = np.nan
             take_profit = np.nan
 
-        result.update({
+        return {
+
+            "symbol": symbol,
+            "signal": signal,
+            "score": round(score, 2),
 
             "price": price,
 
             "btc_regime": btc_regime_name,
 
-            "signal": signal,
+            "rsi_15m": round(
+                a15["rsi"], 2
+            ),
 
-            "score": round(score, 2),
+            "rsi_1h": round(
+                a1h["rsi"], 2
+            ),
 
-            "rsi_15m": round(a15["rsi"], 2),
-            "rsi_1h": round(a1h["rsi"], 2),
-            "rsi_4h": round(a4h["rsi"], 2),
-            "rsi_1d": round(a1d["rsi"], 2),
+            "rsi_4h": round(
+                a4h["rsi"], 2
+            ),
+
+            "rsi_1d": round(
+                a1d["rsi"], 2
+            ),
 
             "momentum_1h": round(
                 a1h["momentum"], 2
             ),
 
-            "stop_loss": (
+            "futures_exchange":
+                futures["futures_exchange"],
+
+            "funding_rate":
+                futures["funding_rate"],
+
+            "open_interest":
+                futures["open_interest"],
+
+            "stop_loss":
                 round(stop_loss, 8)
                 if not pd.isna(stop_loss)
-                else np.nan
-            ),
+                else np.nan,
 
-            "take_profit": (
+            "take_profit":
                 round(take_profit, 8)
                 if not pd.isna(take_profit)
-                else np.nan
-            ),
+                else np.nan,
 
-            "timestamp": datetime.now(
-                timezone.utc
-            ).isoformat()
-
-        })
-
-        return result
+            "timestamp":
+                datetime.now(
+                    timezone.utc
+                ).isoformat()
+        }
 
     except Exception as e:
 
@@ -477,11 +661,9 @@ def analyze_coin(exchange, symbol, btc_regime_name):
 
 def main():
 
-    print("=" * 60)
-
-    print("CRYPTO MASTER AI — MARKET ENGINE")
-
-    print("=" * 60)
+    print("=" * 70)
+    print("CRYPTO MASTER AI — FUTURES INTELLIGENCE")
+    print("=" * 70)
 
     markets = discover_markets()
 
@@ -559,85 +741,28 @@ def main():
         index=False
     )
 
-    print("\n" + "=" * 60)
-
+    print("\n" + "=" * 70)
     print("TOP CRYPTO MASTER AI SETUPS")
+    print("=" * 70)
 
-    print("=" * 60)
+    columns = [
+        "symbol",
+        "signal",
+        "score",
+        "btc_regime",
+        "funding_rate",
+        "open_interest",
+        "rsi_1h",
+        "market_volume"
+    ]
 
     print(
-        df[
-            [
-                "symbol",
-                "signal",
-                "score",
-                "btc_regime",
-                "price",
-                "rsi_1h",
-                "market_volume"
-            ]
-        ].head(20).to_string(
+        df[columns].head(20).to_string(
             index=False
         )
     )
 
     print("\nCSV saved successfully.")
-
-    # ========================================================
-    # TELEGRAM ALERT
-    # ========================================================
-
-    token = os.getenv(
-        "TELEGRAM_BOT_TOKEN"
-    )
-
-    chat_id = os.getenv(
-        "TELEGRAM_CHAT_ID"
-    )
-
-    if token and chat_id:
-
-        top = df[
-            df["signal"].isin(
-                ["LONG", "SHORT"]
-            )
-        ].head(3)
-
-        if not top.empty:
-
-            message = (
-                "🤖 CRYPTO MASTER AI\n\n"
-                f"BTC Regime: {btc_name}\n\n"
-            )
-
-            for _, row in top.iterrows():
-
-                message += (
-                    f"{row['symbol']} "
-                    f"{row['signal']} "
-                    f"Score {row['score']}\n"
-                )
-
-            try:
-
-                requests.post(
-                    f"https://api.telegram.org/bot{token}/sendMessage",
-                    data={
-                        "chat_id": chat_id,
-                        "text": message
-                    },
-                    timeout=10
-                )
-
-                print(
-                    "Telegram alert sent."
-                )
-
-            except Exception as e:
-
-                print(
-                    f"Telegram error: {e}"
-                )
 
 
 # ============================================================
