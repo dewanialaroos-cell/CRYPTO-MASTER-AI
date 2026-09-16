@@ -2,49 +2,63 @@ import ccxt
 import pandas as pd
 import numpy as np
 import time
+import os
+import requests
 from datetime import datetime, timezone
 
+# =========================================================
+# CRYPTO MASTER AI V6
+# Advanced Market Intelligence Scanner
+# =========================================================
 
-# ============================================================
-# CRYPTO MASTER AI — V5
-# FUTURES + LIQUIDITY + VOLUME + S/R + PRICE ACTION
-# ============================================================
-
-EXCHANGES = {
-    "OKX": ccxt.okx({"enableRateLimit": True}),
-    "BYBIT": ccxt.bybit({"enableRateLimit": True}),
-    "KUCOIN": ccxt.kucoin({"enableRateLimit": True}),
-}
-
-FUTURES_EXCHANGES = {
-    "OKX": ccxt.okx({
-        "enableRateLimit": True,
-        "options": {"defaultType": "swap"}
-    }),
-    "BYBIT": ccxt.bybit({
-        "enableRateLimit": True,
-        "options": {"defaultType": "swap"}
-    }),
-    "KUCOIN": ccxt.kucoin({
-        "enableRateLimit": True,
-        "options": {"defaultType": "swap"}
-    }),
-}
-
-TIMEFRAMES = {
-    "15m": 120,
-    "1h": 120,
-    "4h": 120,
-    "1d": 120,
-}
-
-MIN_VOLUME_USDT = 250000
 MAX_COINS = 80
+MIN_VOLUME_USDT = 250000
+LONG_THRESHOLD = 68
+SHORT_THRESHOLD = 68
+
+TIMEFRAMES = ["15m", "1h", "4h", "1d"]
+
+EXCHANGE_NAMES = ["okx", "bybit", "kucoin"]
+
+# ---------------------------------------------------------
+# EXCHANGE SETUP
+# ---------------------------------------------------------
+
+def create_exchange(name, futures=False):
+    try:
+        config = {
+            "enableRateLimit": True,
+            "timeout": 20000,
+        }
+
+        if futures:
+            config["options"] = {
+                "defaultType": "swap"
+            }
+
+        exchange_class = getattr(ccxt, name)
+        return exchange_class(config)
+
+    except Exception:
+        return None
 
 
-# ============================================================
+spot_exchanges = {}
+futures_exchanges = {}
+
+for name in EXCHANGE_NAMES:
+    ex = create_exchange(name, futures=False)
+    if ex:
+        spot_exchanges[name] = ex
+
+    fx = create_exchange(name, futures=True)
+    if fx:
+        futures_exchanges[name] = fx
+
+
+# ---------------------------------------------------------
 # INDICATORS
-# ============================================================
+# ---------------------------------------------------------
 
 def ema(series, period):
     return series.ewm(span=period, adjust=False).mean()
@@ -77,21 +91,19 @@ def atr(df, period=14):
     return tr.rolling(period).mean()
 
 
-# ============================================================
+# ---------------------------------------------------------
 # OHLCV
-# ============================================================
+# ---------------------------------------------------------
 
-def get_ohlcv(exchange, symbol, timeframe, limit=120):
-
+def get_ohlcv(exchange, symbol, timeframe, limit=150):
     try:
-
         data = exchange.fetch_ohlcv(
             symbol,
             timeframe=timeframe,
             limit=limit
         )
 
-        if not data:
+        if not data or len(data) < 50:
             return None
 
         df = pd.DataFrame(
@@ -109,961 +121,1208 @@ def get_ohlcv(exchange, symbol, timeframe, limit=120):
         return df
 
     except Exception:
-
         return None
 
 
-# ============================================================
-# TECHNICAL ANALYSIS
-# ============================================================
+# ---------------------------------------------------------
+# CANDIDATE DISCOVERY
+# ---------------------------------------------------------
 
-def analyze_timeframe(df):
-
-    if df is None or len(df) < 60:
-        return None
-
-    close = df["close"]
-
-    e20 = ema(close, 20)
-    e50 = ema(close, 50)
-    e200 = ema(close, 200)
-
-    rsi_value = rsi(close).iloc[-1]
-    atr_value = atr(df).iloc[-1]
-
-    price = close.iloc[-1]
-
-    momentum = (
-        (price / close.iloc[-20]) - 1
-    ) * 100
-
-    if price > e20.iloc[-1] > e50.iloc[-1]:
-        trend = 1
-
-    elif price < e20.iloc[-1] < e50.iloc[-1]:
-        trend = -1
-
-    else:
-        trend = 0
-
-    return {
-        "price": float(price),
-        "ema20": float(e20.iloc[-1]),
-        "ema50": float(e50.iloc[-1]),
-        "ema200": float(e200.iloc[-1]),
-        "rsi": float(rsi_value),
-        "atr": float(atr_value),
-        "momentum": float(momentum),
-        "trend": trend
-    }
-
-
-# ============================================================
-# BTC REGIME
-# ============================================================
-
-def btc_regime(exchange):
-
-    try:
-
-        df = get_ohlcv(
-            exchange,
-            "BTC/USDT",
-            "4h",
-            250
-        )
-
-        if df is None:
-            return "UNKNOWN", 0
-
-        close = df["close"]
-
-        e20 = ema(close, 20).iloc[-1]
-        e50 = ema(close, 50).iloc[-1]
-        e200 = ema(close, 200).iloc[-1]
-
-        rsi_value = rsi(close).iloc[-1]
-        price = close.iloc[-1]
-
-        if (
-            price > e20
-            and e20 > e50
-            and e50 > e200
-            and rsi_value >= 55
-        ):
-
-            return "BULLISH", 80
-
-        elif (
-            price < e20
-            and e20 < e50
-            and e50 < e200
-            and rsi_value <= 45
-        ):
-
-            return "BEARISH", 80
-
-        else:
-
-            return "NEUTRAL", 50
-
-    except Exception:
-
-        return "UNKNOWN", 0
-
-
-# ============================================================
-# MARKET DISCOVERY
-# ============================================================
-
-def discover_markets():
+def discover_coins():
 
     candidates = {}
 
-    for name, exchange in EXCHANGES.items():
+    for name, exchange in spot_exchanges.items():
 
         try:
-
-            print(f"\nLoading {name} markets...")
-
-            exchange.load_markets()
-
+            markets = exchange.load_markets()
             tickers = exchange.fetch_tickers()
 
-            count = 0
-
-            for symbol, ticker in tickers.items():
+            for symbol, market in markets.items():
 
                 try:
-
-                    market = exchange.markets.get(symbol)
-
-                    if not market:
+                    if not market.get("spot"):
                         continue
 
-                    if not market.get("spot"):
+                    if not market.get("active", True):
                         continue
 
                     if not symbol.endswith("/USDT"):
                         continue
 
-                    base = symbol.split("/")[0]
+                    ticker = tickers.get(symbol)
 
-                    if base in [
-                        "USDT",
-                        "USDC",
-                        "USD",
-                        "EUR",
-                        "DAI"
-                    ]:
+                    if not ticker:
                         continue
 
-                    quote_volume = ticker.get(
-                        "quoteVolume"
-                    )
+                    quote_volume = ticker.get("quoteVolume")
 
                     if quote_volume is None:
                         continue
 
-                    quote_volume = float(
-                        quote_volume
-                    )
+                    quote_volume = float(quote_volume)
 
                     if quote_volume < MIN_VOLUME_USDT:
                         continue
 
-                    key = base + "/USDT"
-
-                    if key not in candidates:
-
-                        candidates[key] = {
-                            "symbol": key,
-                            "exchanges": [],
-                            "volume": 0
+                    if symbol not in candidates:
+                        candidates[symbol] = {
+                            "symbol": symbol,
+                            "volume": 0,
+                            "exchanges": set()
                         }
 
-                    candidates[key][
-                        "exchanges"
-                    ].append(name)
-
-                    candidates[key][
-                        "volume"
-                    ] += quote_volume
-
-                    count += 1
+                    candidates[symbol]["volume"] += quote_volume
+                    candidates[symbol]["exchanges"].add(name)
 
                 except Exception:
-
                     continue
 
-            print(
-                f"{name}: {count} liquid markets"
-            )
+        except Exception:
+            continue
 
-        except Exception as e:
+    result = []
 
-            print(
-                f"{name} error: {str(e)[:120]}"
-            )
+    for symbol, item in candidates.items():
 
-    markets = list(
-        candidates.values()
-    )
+        item["exchange_count"] = len(item["exchanges"])
+        result.append(item)
 
-    markets.sort(
+    result.sort(
         key=lambda x: x["volume"],
         reverse=True
     )
 
-    markets = markets[:MAX_COINS]
+    return result[:MAX_COINS]
 
-    print(
-        f"\nMASTER MARKET UNIVERSE: "
-        f"{len(markets)} coins"
+
+# ---------------------------------------------------------
+# BTC MARKET REGIME
+# ---------------------------------------------------------
+
+def btc_regime():
+
+    exchange = spot_exchanges.get("okx")
+
+    if not exchange:
+        return "UNKNOWN", 0
+
+    df = get_ohlcv(
+        exchange,
+        "BTC/USDT",
+        "4h",
+        200
     )
 
-    return markets
+    if df is None:
+        return "UNKNOWN", 0
+
+    df["ema20"] = ema(df["close"], 20)
+    df["ema50"] = ema(df["close"], 50)
+    df["ema100"] = ema(df["close"], 100)
+    df["rsi"] = rsi(df["close"], 14)
+    df["atr"] = atr(df)
+
+    last = df.iloc[-1]
+
+    score = 0
+
+    if last["close"] > last["ema20"]:
+        score += 1
+    else:
+        score -= 1
+
+    if last["ema20"] > last["ema50"]:
+        score += 1
+    else:
+        score -= 1
+
+    if last["ema50"] > last["ema100"]:
+        score += 1
+    else:
+        score -= 1
+
+    if last["rsi"] > 55:
+        score += 1
+    elif last["rsi"] < 45:
+        score -= 1
+
+    if score >= 3:
+        regime = "BULL"
+    elif score <= -3:
+        regime = "BEAR"
+    else:
+        regime = "NEUTRAL"
+
+    return regime, score
 
 
-# ============================================================
+# ---------------------------------------------------------
+# MARKET REGIME FOR COIN
+# ---------------------------------------------------------
+
+def market_regime(df):
+
+    if df is None or len(df) < 100:
+        return "UNKNOWN", 0
+
+    df = df.copy()
+
+    df["ema20"] = ema(df["close"], 20)
+    df["ema50"] = ema(df["close"], 50)
+    df["ema100"] = ema(df["close"], 100)
+    df["rsi"] = rsi(df["close"], 14)
+
+    last = df.iloc[-1]
+
+    score = 0
+
+    if last["close"] > last["ema20"]:
+        score += 1
+    else:
+        score -= 1
+
+    if last["ema20"] > last["ema50"]:
+        score += 1
+    else:
+        score -= 1
+
+    if last["ema50"] > last["ema100"]:
+        score += 1
+    else:
+        score -= 1
+
+    if last["rsi"] > 55:
+        score += 1
+    elif last["rsi"] < 45:
+        score -= 1
+
+    if score >= 3:
+        return "BULL", score
+
+    if score <= -3:
+        return "BEAR", score
+
+    return "NEUTRAL", score
+
+
+# ---------------------------------------------------------
+# ORDER BOOK IMBALANCE
+# ---------------------------------------------------------
+
+def orderbook_analysis(exchange, symbol):
+
+    try:
+        book = exchange.fetch_order_book(
+            symbol,
+            limit=20
+        )
+
+        bids = book.get("bids", [])
+        asks = book.get("asks", [])
+
+        if not bids or not asks:
+            return 0, 0, "UNKNOWN"
+
+        bid_value = sum(
+            float(price) * float(amount)
+            for price, amount in bids
+        )
+
+        ask_value = sum(
+            float(price) * float(amount)
+            for price, amount in asks
+        )
+
+        total = bid_value + ask_value
+
+        if total == 0:
+            return 0, 0, "UNKNOWN"
+
+        imbalance = (
+            (bid_value - ask_value) / total
+        )
+
+        score = 0
+
+        if imbalance > 0.15:
+            score = 6
+            direction = "BUY"
+        elif imbalance < -0.15:
+            score = -6
+            direction = "SELL"
+        else:
+            direction = "NEUTRAL"
+
+        return imbalance, score, direction
+
+    except Exception:
+        return 0, 0, "UNKNOWN"
+
+
+# ---------------------------------------------------------
+# FUTURES DATA
+# ---------------------------------------------------------
+
+def futures_analysis(symbol):
+
+    funding_values = []
+    oi_values = []
+    exchanges = []
+
+    for name, exchange in futures_exchanges.items():
+
+        futures_symbol = symbol
+
+        try:
+
+            markets = exchange.load_markets()
+
+            if futures_symbol not in markets:
+
+                possible = futures_symbol.replace(
+                    "/USDT",
+                    "/USDT:USDT"
+                )
+
+                if possible in markets:
+                    futures_symbol = possible
+                else:
+                    continue
+
+            funding = None
+            oi = None
+
+            try:
+                fr = exchange.fetch_funding_rate(
+                    futures_symbol
+                )
+
+                funding = fr.get("fundingRate")
+
+            except Exception:
+                pass
+
+            try:
+                oi_data = exchange.fetch_open_interest(
+                    futures_symbol
+                )
+
+                oi = (
+                    oi_data.get("openInterestAmount")
+                    or oi_data.get("openInterestValue")
+                    or oi_data.get("openInterest")
+                )
+
+            except Exception:
+                pass
+
+            if funding is not None:
+                funding_values.append(
+                    float(funding)
+                )
+
+            if oi is not None:
+                try:
+                    oi_values.append(
+                        float(oi)
+                    )
+                except Exception:
+                    pass
+
+            if funding is not None or oi is not None:
+                exchanges.append(name)
+
+        except Exception:
+            continue
+
+    funding_avg = (
+        np.mean(funding_values)
+        if funding_values
+        else 0
+    )
+
+    oi_avg = (
+        np.mean(oi_values)
+        if oi_values
+        else 0
+    )
+
+    futures_score = 0
+
+    # Extreme positive funding can mean crowded longs
+    if funding_avg > 0.0008:
+        futures_score -= 5
+
+    elif funding_avg < -0.0008:
+        futures_score += 5
+
+    return (
+        funding_avg,
+        oi_avg,
+        futures_score,
+        ",".join(exchanges)
+    )
+
+
+# ---------------------------------------------------------
+# TECHNICAL ANALYSIS
+# ---------------------------------------------------------
+
+def timeframe_analysis(df):
+
+    if df is None or len(df) < 60:
+        return {
+            "trend": "UNKNOWN",
+            "score": 0,
+            "momentum": 0,
+            "rsi": 50,
+            "atr": 0
+        }
+
+    df = df.copy()
+
+    df["ema20"] = ema(df["close"], 20)
+    df["ema50"] = ema(df["close"], 50)
+    df["rsi"] = rsi(df["close"])
+    df["atr"] = atr(df)
+
+    last = df.iloc[-1]
+
+    score = 0
+
+    if last["close"] > last["ema20"]:
+        score += 1
+    else:
+        score -= 1
+
+    if last["ema20"] > last["ema50"]:
+        score += 1
+    else:
+        score -= 1
+
+    rsi_value = float(last["rsi"])
+
+    if rsi_value > 55:
+        score += 1
+    elif rsi_value < 45:
+        score -= 1
+
+    momentum = (
+        (last["close"] / df["close"].iloc[-10]) - 1
+    ) * 100
+
+    if momentum > 0.5:
+        score += 1
+    elif momentum < -0.5:
+        score -= 1
+
+    if score >= 2:
+        trend = "BULL"
+
+    elif score <= -2:
+        trend = "BEAR"
+
+    else:
+        trend = "NEUTRAL"
+
+    return {
+        "trend": trend,
+        "score": score,
+        "momentum": momentum,
+        "rsi": rsi_value,
+        "atr": float(last["atr"])
+    }
+
+
+# ---------------------------------------------------------
 # VOLUME INTELLIGENCE
-# ============================================================
+# ---------------------------------------------------------
 
 def volume_analysis(df):
 
     if df is None or len(df) < 30:
-        return {
-            "volume_ratio": 1,
-            "volume_signal": 0
-        }
+        return 1, 0, "UNKNOWN"
 
-    current_volume = df["volume"].iloc[-1]
+    recent_volume = df["volume"].iloc[-1]
 
-    average_volume = (
+    avg_volume = (
         df["volume"]
         .rolling(20)
         .mean()
         .iloc[-1]
     )
 
-    if average_volume <= 0:
+    if avg_volume == 0:
+        return 1, 0, "UNKNOWN"
 
-        return {
-            "volume_ratio": 1,
-            "volume_signal": 0
-        }
-
-    ratio = (
-        current_volume /
-        average_volume
-    )
+    ratio = recent_volume / avg_volume
 
     price_change = (
         df["close"].iloc[-1] /
         df["close"].iloc[-2] - 1
-    )
+    ) * 100
 
-    signal = 0
+    score = 0
 
-    if ratio >= 2 and price_change > 0:
-        signal = 1
+    if ratio >= 2:
+        if price_change > 0:
+            score = 8
+            direction = "BUY_VOLUME"
 
-    elif ratio >= 2 and price_change < 0:
-        signal = -1
+        elif price_change < 0:
+            score = -8
+            direction = "SELL_VOLUME"
 
-    return {
-        "volume_ratio": float(ratio),
-        "volume_signal": signal
-    }
+        else:
+            direction = "NEUTRAL"
+
+    elif ratio >= 1.5:
+
+        if price_change > 0:
+            score = 4
+            direction = "BUY_VOLUME"
+
+        elif price_change < 0:
+            score = -4
+            direction = "SELL_VOLUME"
+
+        else:
+            direction = "NEUTRAL"
+
+    else:
+        direction = "LOW_VOLUME"
+
+    return ratio, score, direction
 
 
-# ============================================================
+# ---------------------------------------------------------
 # SUPPORT / RESISTANCE
-# ============================================================
+# ---------------------------------------------------------
 
 def support_resistance(df):
 
-    if df is None or len(df) < 50:
-        return None
+    if df is None or len(df) < 60:
+        return 0, 0, 0
 
     recent = df.tail(50)
 
-    support = recent["low"].min()
+    support = float(recent["low"].min())
+    resistance = float(recent["high"].max())
 
-    resistance = recent["high"].max()
+    price = float(df["close"].iloc[-1])
 
-    price = df["close"].iloc[-1]
-
-    range_size = resistance - support
-
-    if range_size <= 0:
-
-        return {
-            "support": support,
-            "resistance": resistance,
-            "position": 0.5
-        }
+    if resistance == support:
+        return support, resistance, 0.5
 
     position = (
         price - support
-    ) / range_size
+    ) / (
+        resistance - support
+    )
 
-    return {
-        "support": float(support),
-        "resistance": float(resistance),
-        "position": float(position)
-    }
+    return support, resistance, position
 
 
-# ============================================================
+# ---------------------------------------------------------
+# BREAKOUT / FAKE BREAKOUT
+# ---------------------------------------------------------
+
+def breakout_analysis(df):
+
+    if df is None or len(df) < 30:
+        return "NONE", 0
+
+    previous_high = (
+        df["high"]
+        .iloc[-11:-1]
+        .max()
+    )
+
+    previous_low = (
+        df["low"]
+        .iloc[-11:-1]
+        .min()
+    )
+
+    last_close = df["close"].iloc[-1]
+    last_high = df["high"].iloc[-1]
+    last_low = df["low"].iloc[-1]
+
+    avg_volume = (
+        df["volume"]
+        .rolling(20)
+        .mean()
+        .iloc[-1]
+    )
+
+    current_volume = df["volume"].iloc[-1]
+
+    # Bull breakout
+    if last_close > previous_high:
+
+        if current_volume >= avg_volume * 1.3:
+            return "BULL_BREAKOUT", 7
+
+        return "WEAK_BULL_BREAKOUT", 2
+
+    # Bear breakout
+    if last_close < previous_low:
+
+        if current_volume >= avg_volume * 1.3:
+            return "BEAR_BREAKOUT", -7
+
+        return "WEAK_BEAR_BREAKOUT", -2
+
+    # Fake upside breakout
+    if last_high > previous_high and last_close < previous_high:
+        return "FAKE_BULL_BREAKOUT", -5
+
+    # Fake downside breakout
+    if last_low < previous_low and last_close > previous_low:
+        return "FAKE_BEAR_BREAKOUT", 5
+
+    return "NONE", 0
+
+
+# ---------------------------------------------------------
 # PRICE ACTION
-# ============================================================
+# ---------------------------------------------------------
 
 def price_action(df):
 
-    if df is None or len(df) < 10:
-        return {
-            "structure": "NEUTRAL",
-            "signal": 0,
-            "breakout": False
-        }
+    if df is None or len(df) < 20:
+        return "UNKNOWN", 0
 
-    highs = df["high"].tail(10)
-    lows = df["low"].tail(10)
+    highs = df["high"].tail(10).values
+    lows = df["low"].tail(10).values
 
-    last_close = df["close"].iloc[-1]
+    higher_high = highs[-1] > highs[-3]
+    higher_low = lows[-1] > lows[-3]
 
-    previous_high = highs.iloc[:-1].max()
-    previous_low = lows.iloc[:-1].min()
+    lower_high = highs[-1] < highs[-3]
+    lower_low = lows[-1] < lows[-3]
 
-    signal = 0
-    structure = "NEUTRAL"
-    breakout = False
+    if higher_high and higher_low:
+        return "HH_HL", 7
 
-    if last_close > previous_high:
+    if lower_high and lower_low:
+        return "LH_LL", -7
 
-        structure = "BULLISH"
-        signal = 1
-        breakout = True
-
-    elif last_close < previous_low:
-
-        structure = "BEARISH"
-        signal = -1
-        breakout = True
-
-    else:
-
-        if (
-            highs.iloc[-1] >
-            highs.iloc[-5]
-            and lows.iloc[-1] >
-            lows.iloc[-5]
-        ):
-
-            structure = "HIGHER_HIGH"
-            signal = 1
-
-        elif (
-            highs.iloc[-1] <
-            highs.iloc[-5]
-            and lows.iloc[-1] <
-            lows.iloc[-5]
-        ):
-
-            structure = "LOWER_LOW"
-            signal = -1
-
-    return {
-        "structure": structure,
-        "signal": signal,
-        "breakout": breakout
-    }
+    return "MIXED", 0
 
 
-# ============================================================
-# FUTURES INTELLIGENCE
-# ============================================================
+# ---------------------------------------------------------
+# SIGNAL REASON
+# ---------------------------------------------------------
 
-def get_futures_data(symbol):
-
-    for name, exchange in FUTURES_EXCHANGES.items():
-
-        try:
-
-            exchange.load_markets()
-
-            futures_symbol = symbol + ":USDT"
-
-            if futures_symbol not in exchange.markets:
-                continue
-
-            funding_rate = np.nan
-            open_interest = np.nan
-
-            try:
-
-                funding = exchange.fetch_funding_rate(
-                    futures_symbol
-                )
-
-                funding_rate = funding.get(
-                    "fundingRate"
-                )
-
-                if funding_rate is not None:
-                    funding_rate = float(
-                        funding_rate
-                    )
-
-            except Exception:
-                pass
-
-            try:
-
-                oi = exchange.fetch_open_interest(
-                    futures_symbol
-                )
-
-                open_interest = oi.get(
-                    "openInterestValue"
-                )
-
-                if open_interest is None:
-                    open_interest = oi.get(
-                        "openInterestAmount"
-                    )
-
-                if open_interest is not None:
-                    open_interest = float(
-                        open_interest
-                    )
-
-            except Exception:
-                pass
-
-            return {
-                "futures_exchange": name,
-                "funding_rate": funding_rate,
-                "open_interest": open_interest
-            }
-
-        except Exception:
-            continue
-
-    return {
-        "futures_exchange": "N/A",
-        "funding_rate": np.nan,
-        "open_interest": np.nan
-    }
-
-
-# ============================================================
-# FUTURES SCORE
-# ============================================================
-
-def futures_score(funding_rate):
-
-    long_score = 0
-    short_score = 0
-
-    if pd.isna(funding_rate):
-
-        return 0, 0
-
-    if funding_rate <= -0.0005:
-
-        long_score += 8
-
-    elif funding_rate < 0:
-
-        long_score += 3
-
-    elif funding_rate >= 0.0005:
-
-        short_score += 8
-
-    elif funding_rate > 0:
-
-        short_score += 3
-
-    return long_score, short_score
-
-
-# ============================================================
-# ANALYZE COIN
-# ============================================================
-
-def analyze_coin(
-    exchange,
-    symbol,
-    btc_regime_name
+def build_reason(
+    direction,
+    tf_scores,
+    volume_score,
+    breakout_score,
+    pa_score,
+    sr_score,
+    futures_score,
+    orderbook_score,
+    btc_regime
 ):
 
-    try:
+    reasons = []
 
-        analyses = {}
+    total_tf = sum(tf_scores)
 
-        for tf in TIMEFRAMES:
+    if total_tf >= 5:
+        reasons.append("MTF_BULL_CONFIRM")
 
-            df = get_ohlcv(
-                exchange,
-                symbol,
-                tf,
-                TIMEFRAMES[tf]
-            )
+    elif total_tf <= -5:
+        reasons.append("MTF_BEAR_CONFIRM")
 
-            analysis = analyze_timeframe(df)
+    if volume_score >= 4:
+        reasons.append("STRONG_BUY_VOLUME")
 
-            if analysis is None:
-                return None
+    elif volume_score <= -4:
+        reasons.append("STRONG_SELL_VOLUME")
 
-            analyses[tf] = analysis
+    if breakout_score >= 5:
+        reasons.append("BULL_BREAKOUT")
 
-        # ----------------------------------------------------
-        # MAIN 1H DATA
-        # ----------------------------------------------------
+    elif breakout_score <= -5:
+        reasons.append("BEAR_BREAKOUT")
 
-        df_1h = get_ohlcv(
+    if pa_score > 0:
+        reasons.append("HH_HL")
+
+    elif pa_score < 0:
+        reasons.append("LH_LL")
+
+    if sr_score > 0:
+        reasons.append("SUPPORT_ZONE")
+
+    elif sr_score < 0:
+        reasons.append("RESISTANCE_ZONE")
+
+    if futures_score > 0:
+        reasons.append("FUNDING_SUPPORT")
+
+    elif futures_score < 0:
+        reasons.append("FUNDING_WARNING")
+
+    if orderbook_score > 0:
+        reasons.append("ORDERBOOK_BUY")
+
+    elif orderbook_score < 0:
+        reasons.append("ORDERBOOK_SELL")
+
+    if btc_regime == "BULL":
+        reasons.append("BTC_BULL_REGIME")
+
+    elif btc_regime == "BEAR":
+        reasons.append("BTC_BEAR_REGIME")
+
+    if not reasons:
+        reasons.append("WEAK_SETUP")
+
+    return "|".join(reasons)
+
+
+# ---------------------------------------------------------
+# MAIN COIN ANALYSIS
+# ---------------------------------------------------------
+
+def analyze_coin(item, btc_market_regime):
+
+    symbol = item["symbol"]
+
+    exchange = spot_exchanges.get("okx")
+
+    if not exchange:
+        return None
+
+    data = {}
+
+    # -------------------------
+    # Multi timeframe
+    # -------------------------
+
+    for tf in TIMEFRAMES:
+
+        df = get_ohlcv(
             exchange,
             symbol,
-            "1h",
-            150
+            tf,
+            180
         )
 
-        if df_1h is None:
+        if df is None:
             return None
 
-        a15 = analyses["15m"]
-        a1h = analyses["1h"]
-        a4h = analyses["4h"]
-        a1d = analyses["1d"]
+        data[tf] = df
 
-        # ----------------------------------------------------
-        # VOLUME
-        # ----------------------------------------------------
+    a15 = timeframe_analysis(data["15m"])
+    a1h = timeframe_analysis(data["1h"])
+    a4h = timeframe_analysis(data["4h"])
+    a1d = timeframe_analysis(data["1d"])
 
-        volume = volume_analysis(
-            df_1h
-        )
+    # -------------------------
+    # Price
+    # -------------------------
 
-        # ----------------------------------------------------
-        # SUPPORT / RESISTANCE
-        # ----------------------------------------------------
+    price = float(
+        data["1h"]["close"].iloc[-1]
+    )
 
-        sr = support_resistance(
-            df_1h
-        )
+    # -------------------------
+    # Momentum
+    # -------------------------
 
-        if sr is None:
-            return None
+    momentum = (
+        a15["momentum"] +
+        a1h["momentum"] +
+        a4h["momentum"] +
+        a1d["momentum"]
+    ) / 4
 
-        # ----------------------------------------------------
-        # PRICE ACTION
-        # ----------------------------------------------------
+    # -------------------------
+    # Volume
+    # -------------------------
 
-        pa = price_action(
-            df_1h
-        )
+    volume_ratio, volume_score, volume_direction = \
+        volume_analysis(data["1h"])
 
-        # ----------------------------------------------------
-        # FUTURES
-        # ----------------------------------------------------
+    # -------------------------
+    # S/R
+    # -------------------------
 
-        futures = get_futures_data(
+    support, resistance, position = \
+        support_resistance(data["1h"])
+
+    sr_score = 0
+
+    if position <= 0.25:
+        sr_score = 5
+
+    elif position >= 0.75:
+        sr_score = -5
+
+    # -------------------------
+    # Breakout
+    # -------------------------
+
+    breakout, breakout_score = \
+        breakout_analysis(data["1h"])
+
+    # -------------------------
+    # Price Action
+    # -------------------------
+
+    pa_signal, pa_score = \
+        price_action(data["1h"])
+
+    # -------------------------
+    # Futures
+    # -------------------------
+
+    funding, oi, futures_score, futures_exchanges_used = \
+        futures_analysis(symbol)
+
+    # -------------------------
+    # Order Book
+    # -------------------------
+
+    imbalance, orderbook_score, orderbook_direction = \
+        orderbook_analysis(
+            exchange,
             symbol
         )
 
-        f_long, f_short = futures_score(
-            futures["funding_rate"]
+    # -------------------------
+    # BTC Regime score
+    # -------------------------
+
+    btc_score = 0
+
+    if btc_market_regime == "BULL":
+        btc_score = 8
+
+    elif btc_market_regime == "BEAR":
+        btc_score = -8
+
+    # -------------------------
+    # TIMEFRAME SCORE
+    # -------------------------
+
+    tf_score = (
+        a15["score"] * 4 +
+        a1h["score"] * 7 +
+        a4h["score"] * 9 +
+        a1d["score"] * 9
+    )
+
+    # Normalize
+    tf_score = max(
+        -29,
+        min(29, tf_score)
+    )
+
+    # -------------------------
+    # REGIME
+    # -------------------------
+
+    coin_regime, coin_regime_score = \
+        market_regime(data["4h"])
+
+    regime_score = coin_regime_score * 2
+
+    # -------------------------
+    # MASTER RAW SCORE
+    # -------------------------
+
+    raw_score = (
+        tf_score +
+        volume_score +
+        breakout_score +
+        pa_score +
+        sr_score +
+        futures_score +
+        orderbook_score +
+        btc_score +
+        regime_score
+    )
+
+    # -------------------------
+    # Convert to 0-100
+    # -------------------------
+
+    long_score = 50 + raw_score
+    short_score = 50 - raw_score
+
+    long_score = max(
+        0,
+        min(100, long_score)
+    )
+
+    short_score = max(
+        0,
+        min(100, short_score)
+    )
+
+    # -------------------------
+    # Direction
+    # -------------------------
+
+    if long_score >= LONG_THRESHOLD and \
+       long_score > short_score:
+
+        signal = "LONG"
+        final_score = long_score
+
+    elif short_score >= SHORT_THRESHOLD and \
+         short_score > long_score:
+
+        signal = "SHORT"
+        final_score = short_score
+
+    else:
+
+        signal = "NO TRADE"
+        final_score = max(
+            long_score,
+            short_score
         )
 
-        # ----------------------------------------------------
-        # SCORES
-        # ----------------------------------------------------
+    # -------------------------
+    # Fake breakout protection
+    # -------------------------
 
-        long_score = 0
-        short_score = 0
+    if breakout in [
+        "FAKE_BULL_BREAKOUT",
+        "FAKE_BEAR_BREAKOUT"
+    ]:
 
-        # 15m
-        if a15["trend"] > 0:
-            long_score += 8
+        signal = "NO TRADE"
 
-        elif a15["trend"] < 0:
-            short_score += 8
+    # -------------------------
+    # Low volume protection
+    # -------------------------
 
-        # 1H
-        if a1h["trend"] > 0:
-            long_score += 15
+    if volume_ratio < 0.8:
+        signal = "NO TRADE"
 
-        elif a1h["trend"] < 0:
-            short_score += 15
+    # -------------------------
+    # ATR
+    # -------------------------
 
-        # 4H
-        if a4h["trend"] > 0:
-            long_score += 20
+    atr_value = a1h["atr"]
 
-        elif a4h["trend"] < 0:
-            short_score += 20
+    if atr_value <= 0:
+        atr_value = price * 0.01
 
-        # 1D
-        if a1d["trend"] > 0:
-            long_score += 20
+    # -------------------------
+    # Stop Loss / Take Profit
+    # -------------------------
 
-        elif a1d["trend"] < 0:
-            short_score += 20
+    if signal == "LONG":
 
-        # RSI
-        if 55 <= a1h["rsi"] <= 70:
-            long_score += 10
-
-        if 30 <= a1h["rsi"] <= 45:
-            short_score += 10
-
-        # Momentum
-        if a1h["momentum"] > 0:
-            long_score += 7
-
-        elif a1h["momentum"] < 0:
-            short_score += 7
-
-        # BTC regime
-        if btc_regime_name == "BULLISH":
-            long_score += 10
-
-        elif btc_regime_name == "BEARISH":
-            short_score += 10
-
-        # Futures
-        long_score += f_long
-        short_score += f_short
-
-        # ----------------------------------------------------
-        # VOLUME
-        # ----------------------------------------------------
-
-        if volume["volume_ratio"] >= 1.5:
-
-            if volume["volume_signal"] > 0:
-                long_score += 8
-
-            elif volume["volume_signal"] < 0:
-                short_score += 8
-
-        # ----------------------------------------------------
-        # PRICE ACTION
-        # ----------------------------------------------------
-
-        if pa["signal"] > 0:
-            long_score += 8
-
-        elif pa["signal"] < 0:
-            short_score += 8
-
-        # Breakout bonus
-        if pa["breakout"]:
-
-            if pa["signal"] > 0:
-                long_score += 5
-
-            elif pa["signal"] < 0:
-                short_score += 5
-
-        # ----------------------------------------------------
-        # SUPPORT / RESISTANCE
-        # ----------------------------------------------------
-
-        # Near support
-        if sr["position"] <= 0.25:
-            long_score += 5
-
-        # Near resistance
-        elif sr["position"] >= 0.75:
-            short_score += 5
-
-        # ----------------------------------------------------
-        # FINAL SIGNAL
-        # ----------------------------------------------------
-
-        if (
-            long_score >= 65
-            and long_score > short_score
-        ):
-
-            signal = "LONG"
-            score = long_score
-
-        elif (
-            short_score >= 65
-            and short_score > long_score
-        ):
-
-            signal = "SHORT"
-            score = short_score
-
-        else:
-
-            signal = "NO TRADE"
-            score = max(
-                long_score,
-                short_score
-            )
-
-        # ----------------------------------------------------
-        # RISK LEVELS
-        # ----------------------------------------------------
-
-        price = a1h["price"]
-        atr_value = a1h["atr"]
-
-        if signal == "LONG":
-
-            stop_loss = price - (
-                1.5 * atr_value
-            )
-
-            take_profit = price + (
-                3 * atr_value
-            )
-
-        elif signal == "SHORT":
-
-            stop_loss = price + (
-                1.5 * atr_value
-            )
-
-            take_profit = price - (
-                3 * atr_value
-            )
-
-        else:
-
-            stop_loss = np.nan
-            take_profit = np.nan
-
-        return {
-
-            "symbol": symbol,
-
-            "signal": signal,
-
-            "score": round(
-                score,
-                2
-            ),
-
-            "price": price,
-
-            "btc_regime":
-                btc_regime_name,
-
-            "rsi_15m":
-                round(a15["rsi"], 2),
-
-            "rsi_1h":
-                round(a1h["rsi"], 2),
-
-            "rsi_4h":
-                round(a4h["rsi"], 2),
-
-            "rsi_1d":
-                round(a1d["rsi"], 2),
-
-            "momentum_1h":
-                round(
-                    a1h["momentum"],
-                    2
-                ),
-
-            "volume_ratio":
-                round(
-                    volume["volume_ratio"],
-                    2
-                ),
-
-            "price_action":
-                pa["structure"],
-
-            "breakout":
-                pa["breakout"],
-
-            "support":
-                round(
-                    sr["support"],
-                    8
-                ),
-
-            "resistance":
-                round(
-                    sr["resistance"],
-                    8
-                ),
-
-            "futures_exchange":
-                futures[
-                    "futures_exchange"
-                ],
-
-            "funding_rate":
-                futures[
-                    "funding_rate"
-                ],
-
-            "open_interest":
-                futures[
-                    "open_interest"
-                ],
-
-            "stop_loss":
-                round(
-                    stop_loss,
-                    8
-                )
-                if not pd.isna(stop_loss)
-                else np.nan,
-
-            "take_profit":
-                round(
-                    take_profit,
-                    8
-                )
-                if not pd.isna(take_profit)
-                else np.nan,
-
-            "timestamp":
-                datetime.now(
-                    timezone.utc
-                ).isoformat()
-        }
-
-    except Exception as e:
-
-        print(
-            f"{symbol} error: "
-            f"{str(e)[:120]}"
+        stop_loss = price - (
+            atr_value * 1.5
         )
 
-        return None
+        take_profit = price + (
+            atr_value * 3
+        )
+
+    elif signal == "SHORT":
+
+        stop_loss = price + (
+            atr_value * 1.5
+        )
+
+        take_profit = price - (
+            atr_value * 3
+        )
+
+    else:
+
+        stop_loss = 0
+        take_profit = 0
+
+    # -------------------------
+    # Reason
+    # -------------------------
+
+    reason = build_reason(
+        signal,
+        [
+            a15["score"],
+            a1h["score"],
+            a4h["score"],
+            a1d["score"]
+        ],
+        volume_score,
+        breakout_score,
+        pa_score,
+        sr_score,
+        futures_score,
+        orderbook_score,
+        btc_market_regime
+    )
+
+    timestamp = datetime.now(
+        timezone.utc
+    ).isoformat()
+
+    return {
+
+        "symbol": symbol,
+
+        "signal": signal,
+
+        "score": round(
+            final_score,
+            2
+        ),
+
+        "long_score": round(
+            long_score,
+            2
+        ),
+
+        "short_score": round(
+            short_score,
+            2
+        ),
+
+        "price": round(
+            price,
+            8
+        ),
+
+        "btc_regime": btc_market_regime,
+
+        "coin_regime": coin_regime,
+
+        "15m_trend": a15["trend"],
+        "1h_trend": a1h["trend"],
+        "4h_trend": a4h["trend"],
+        "1d_trend": a1d["trend"],
+
+        "momentum": round(
+            momentum,
+            3
+        ),
+
+        "volume_ratio": round(
+            volume_ratio,
+            3
+        ),
+
+        "volume_signal": volume_direction,
+
+        "price_action": pa_signal,
+
+        "breakout": breakout,
+
+        "support": round(
+            support,
+            8
+        ),
+
+        "resistance": round(
+            resistance,
+            8
+        ),
+
+        "funding_rate": round(
+            funding,
+            8
+        ),
+
+        "open_interest": round(
+            oi,
+            4
+        ),
+
+        "future_exchange": futures_exchanges_used,
+
+        "orderbook_imbalance": round(
+            imbalance,
+            4
+        ),
+
+        "orderbook_signal": orderbook_direction,
+
+        "market_volume": round(
+            item["volume"],
+            2
+        ),
+
+        "exchange_count": item[
+            "exchange_count"
+        ],
+
+        "stop_loss": round(
+            stop_loss,
+            8
+        ),
+
+        "take_profit": round(
+            take_profit,
+            8
+        ),
+
+        "reason": reason,
+
+        "timestamp": timestamp
+    }
 
 
-# ============================================================
-# MAIN ENGINE
-# ============================================================
+# ---------------------------------------------------------
+# MAIN
+# ---------------------------------------------------------
 
 def main():
 
-    print("=" * 75)
-    print("CRYPTO MASTER AI — V5")
-    print("=" * 75)
+    print("=" * 70)
+    print("CRYPTO MASTER AI V6")
+    print("ADVANCED MARKET INTELLIGENCE SCANNER")
+    print("=" * 70)
 
-    markets = discover_markets()
+    print("\nLoading market data...")
 
-    if not markets:
-
-        print(
-            "ERROR: No markets discovered."
-        )
-
-        return
-
-    exchange = EXCHANGES["OKX"]
-
-    btc_name, btc_score = btc_regime(
-        exchange
-    )
+    btc_regime_value, btc_regime_score = btc_regime()
 
     print(
-        f"\nBTC REGIME: {btc_name}"
+        f"BTC REGIME: {btc_regime_value} "
+        f"| Score: {btc_regime_score}"
     )
 
+    candidates = discover_coins()
+
     print(
-        f"BTC REGIME SCORE: {btc_score}"
+        f"Candidate coins found: {len(candidates)}"
     )
 
     results = []
 
-    for i, market in enumerate(markets):
+    for index, item in enumerate(
+        candidates,
+        start=1
+    ):
 
-        symbol = market["symbol"]
+        symbol = item["symbol"]
 
         print(
-            f"[{i + 1}/{len(markets)}] "
+            f"[{index}/{len(candidates)}] "
             f"Analyzing {symbol}"
         )
 
-        result = analyze_coin(
-            exchange,
-            symbol,
-            btc_name
-        )
+        try:
 
-        if result:
-
-            result["market_volume"] = round(
-                market["volume"],
-                2
+            result = analyze_coin(
+                item,
+                btc_regime_value
             )
 
-            result["exchange_count"] = len(
-                market["exchanges"]
+            if result:
+                results.append(result)
+
+        except Exception as e:
+
+            print(
+                f"Error {symbol}: {e}"
             )
 
-            results.append(result)
-
-        time.sleep(0.15)
+        time.sleep(0.05)
 
     if not results:
 
         print(
-            "\nNo analysis results."
+            "\nNo results generated."
         )
 
         return
 
     df = pd.DataFrame(results)
 
+    # Highest score first
     df = df.sort_values(
         by="score",
         ascending=False
     )
 
+    # Save complete CSV
+    output_file = (
+        "crypto_scan_results.csv"
+    )
+
     df.to_csv(
-        "crypto_scan_results.csv",
+        output_file,
         index=False
     )
 
-    print("\n" + "=" * 75)
-    print("TOP CRYPTO MASTER AI SETUPS")
-    print("=" * 75)
+    print("\n" + "=" * 70)
+    print("TOP CRYPTO MASTER AI V6 RESULTS")
+    print("=" * 70)
 
-    columns = [
+    display_columns = [
         "symbol",
         "signal",
         "score",
+        "price",
         "btc_regime",
+        "15m_trend",
+        "1h_trend",
+        "4h_trend",
+        "1d_trend",
+        "momentum",
         "volume_ratio",
         "price_action",
         "breakout",
         "funding_rate",
         "open_interest",
-        "rsi_1h"
+        "stop_loss",
+        "take_profit"
     ]
 
     print(
-        df[columns]
-        .head(20)
-        .to_string(index=False)
+        df[
+            display_columns
+        ].head(20).to_string(
+            index=False
+        )
     )
 
     print(
-        "\nCSV saved successfully."
+        "\nCSV saved:",
+        output_file
+    )
+
+    print(
+        f"Total analyzed: {len(df)}"
+    )
+
+    print(
+        "LONG:",
+        len(
+            df[df["signal"] == "LONG"]
+        )
+    )
+
+    print(
+        "SHORT:",
+        len(
+            df[df["signal"] == "SHORT"]
+        )
+    )
+
+    print(
+        "NO TRADE:",
+        len(
+            df[df["signal"] == "NO TRADE"]
+        )
     )
 
 
-# ============================================================
-# START
-# ============================================================
-
 if __name__ == "__main__":
-
     main()
