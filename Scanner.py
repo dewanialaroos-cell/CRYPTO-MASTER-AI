@@ -5,26 +5,25 @@ import time
 from datetime import datetime, timezone
 
 # ============================================================
-# CRYPTO MASTER AI V7
-# ADVANCED SIGNAL + CONFIDENCE ENGINE
+# CRYPTO MASTER AI V8
+# BALANCED MULTI-FACTOR SIGNAL ENGINE
 # ============================================================
 
 MAX_COINS = 60
 MIN_VOLUME_USDT = 250000
 
-LONG_THRESHOLD = 68
-SHORT_THRESHOLD = 68
+LONG_THRESHOLD = 65
+SHORT_THRESHOLD = 65
 
 TIMEFRAMES = ["15m", "1h", "4h", "1d"]
-
-EXCHANGE_NAMES = ["okx", "bybit", "kucoin"]
+EXCHANGES = ["okx", "bybit", "kucoin"]
 
 
 # ============================================================
-# EXCHANGE
+# EXCHANGE SETUP
 # ============================================================
 
-def create_exchange(name, futures=False):
+def make_exchange(name, futures=False):
     try:
         config = {
             "enableRateLimit": True,
@@ -36,9 +35,7 @@ def create_exchange(name, futures=False):
                 "defaultType": "swap"
             }
 
-        exchange_class = getattr(ccxt, name)
-
-        return exchange_class(config)
+        return getattr(ccxt, name)(config)
 
     except Exception:
         return None
@@ -47,15 +44,13 @@ def create_exchange(name, futures=False):
 spot_exchanges = {}
 futures_exchanges = {}
 
-for name in EXCHANGE_NAMES:
+for name in EXCHANGES:
 
-    spot = create_exchange(name, False)
-
+    spot = make_exchange(name, False)
     if spot:
         spot_exchanges[name] = spot
 
-    futures = create_exchange(name, True)
-
+    futures = make_exchange(name, True)
     if futures:
         futures_exchanges[name] = futures
 
@@ -64,14 +59,14 @@ for name in EXCHANGE_NAMES:
 # INDICATORS
 # ============================================================
 
-def ema(series, period):
+def EMA(series, period):
     return series.ewm(
         span=period,
         adjust=False
     ).mean()
 
 
-def rsi(series, period=14):
+def RSI(series, period=14):
 
     delta = series.diff()
 
@@ -86,7 +81,7 @@ def rsi(series, period=14):
     return 100 - (100 / (1 + rs))
 
 
-def atr(df, period=14):
+def ATR(df, period=14):
 
     hl = df["high"] - df["low"]
 
@@ -112,20 +107,20 @@ def atr(df, period=14):
 # OHLCV
 # ============================================================
 
-def get_ohlcv(exchange, symbol, timeframe, limit=180):
+def get_data(exchange, symbol, timeframe, limit=180):
 
     try:
 
         data = exchange.fetch_ohlcv(
             symbol,
-            timeframe=timeframe,
+            timeframe,
             limit=limit
         )
 
         if not data or len(data) < 60:
             return None
 
-        df = pd.DataFrame(
+        return pd.DataFrame(
             data,
             columns=[
                 "timestamp",
@@ -137,19 +132,17 @@ def get_ohlcv(exchange, symbol, timeframe, limit=180):
             ]
         )
 
-        return df
-
     except Exception:
         return None
 
 
 # ============================================================
-# DISCOVER COINS
+# MARKET DISCOVERY
 # ============================================================
 
-def discover_coins():
+def discover():
 
-    candidates = {}
+    coins = {}
 
     for name, exchange in spot_exchanges.items():
 
@@ -191,58 +184,59 @@ def discover_coins():
                     if volume < MIN_VOLUME_USDT:
                         continue
 
-                    if symbol not in candidates:
+                    if symbol not in coins:
 
-                        candidates[symbol] = {
+                        coins[symbol] = {
                             "symbol": symbol,
                             "volume": 0,
                             "exchanges": set()
                         }
 
-                    candidates[symbol][
-                        "volume"
-                    ] += volume
+                    coins[symbol]["volume"] += volume
 
-                    candidates[symbol][
+                    coins[symbol][
                         "exchanges"
                     ].add(name)
 
                 except Exception:
                     continue
 
-        except Exception:
-            continue
+        except Exception as e:
 
-    results = []
+            print(
+                f"Discovery error {name}: {e}"
+            )
 
-    for symbol, item in candidates.items():
+    result = []
+
+    for item in coins.values():
 
         item["exchange_count"] = len(
             item["exchanges"]
         )
 
-        results.append(item)
+        result.append(item)
 
-    results.sort(
+    result.sort(
         key=lambda x: x["volume"],
         reverse=True
     )
 
-    return results[:MAX_COINS]
+    return result[:MAX_COINS]
 
 
 # ============================================================
 # BTC REGIME
 # ============================================================
 
-def btc_regime():
+def get_btc_regime():
 
     exchange = spot_exchanges.get("okx")
 
     if not exchange:
         return "UNKNOWN", 0
 
-    df = get_ohlcv(
+    df = get_data(
         exchange,
         "BTC/USDT",
         "4h",
@@ -252,22 +246,19 @@ def btc_regime():
     if df is None:
         return "UNKNOWN", 0
 
-    df["ema20"] = ema(
-        df["close"],
-        20
+    df["ema20"] = EMA(
+        df["close"], 20
     )
 
-    df["ema50"] = ema(
-        df["close"],
-        50
+    df["ema50"] = EMA(
+        df["close"], 50
     )
 
-    df["ema100"] = ema(
-        df["close"],
-        100
+    df["ema100"] = EMA(
+        df["close"], 100
     )
 
-    df["rsi"] = rsi(
+    df["rsi"] = RSI(
         df["close"]
     )
 
@@ -306,16 +297,16 @@ def btc_regime():
 
 
 # ============================================================
-# TIMEFRAME ENGINE
+# TIMEFRAME ANALYSIS
 # ============================================================
 
-def timeframe_analysis(df):
+def analyze_tf(df):
 
     if df is None or len(df) < 60:
 
         return {
             "trend": "UNKNOWN",
-            "score": 0,
+            "direction": 0,
             "momentum": 0,
             "rsi": 50,
             "atr": 0
@@ -323,45 +314,39 @@ def timeframe_analysis(df):
 
     df = df.copy()
 
-    df["ema20"] = ema(
-        df["close"],
-        20
+    df["ema20"] = EMA(
+        df["close"], 20
     )
 
-    df["ema50"] = ema(
-        df["close"],
-        50
+    df["ema50"] = EMA(
+        df["close"], 50
     )
 
-    df["rsi"] = rsi(
+    df["rsi"] = RSI(
         df["close"]
     )
 
-    df["atr"] = atr(df)
+    df["atr"] = ATR(df)
 
     last = df.iloc[-1]
 
-    score = 0
+    direction = 0
 
     if last["close"] > last["ema20"]:
-        score += 1
+        direction += 1
     else:
-        score -= 1
+        direction -= 1
 
     if last["ema20"] > last["ema50"]:
-        score += 1
+        direction += 1
     else:
-        score -= 1
+        direction -= 1
 
-    rsi_value = float(
-        last["rsi"]
-    )
+    if last["rsi"] > 55:
+        direction += 1
 
-    if rsi_value > 55:
-        score += 1
-
-    elif rsi_value < 45:
-        score -= 1
+    elif last["rsi"] < 45:
+        direction -= 1
 
     momentum = (
         (
@@ -371,15 +356,15 @@ def timeframe_analysis(df):
     ) * 100
 
     if momentum > 0.5:
-        score += 1
+        direction += 1
 
     elif momentum < -0.5:
-        score -= 1
+        direction -= 1
 
-    if score >= 2:
+    if direction >= 2:
         trend = "BULL"
 
-    elif score <= -2:
+    elif direction <= -2:
         trend = "BEAR"
 
     else:
@@ -387,9 +372,9 @@ def timeframe_analysis(df):
 
     return {
         "trend": trend,
-        "score": score,
+        "direction": direction,
         "momentum": momentum,
-        "rsi": rsi_value,
+        "rsi": float(last["rsi"]),
         "atr": float(last["atr"])
     }
 
@@ -403,24 +388,21 @@ def volume_analysis(df):
     if df is None or len(df) < 30:
         return 1, 0, "UNKNOWN"
 
-    current_volume = float(
+    current = float(
         df["volume"].iloc[-1]
     )
 
-    average_volume = float(
+    average = float(
         df["volume"]
         .rolling(20)
         .mean()
         .iloc[-1]
     )
 
-    if average_volume <= 0:
+    if average <= 0:
         return 1, 0, "UNKNOWN"
 
-    ratio = (
-        current_volume /
-        average_volume
-    )
+    ratio = current / average
 
     price_change = (
         (
@@ -429,38 +411,131 @@ def volume_analysis(df):
         ) - 1
     ) * 100
 
-    score = 0
-
     if ratio >= 2:
 
         if price_change > 0:
-            score = 8
-            direction = "BUY_VOLUME"
+            return ratio, 8, "STRONG_BUY_VOLUME"
 
-        elif price_change < 0:
-            score = -8
-            direction = "SELL_VOLUME"
+        if price_change < 0:
+            return ratio, -8, "STRONG_SELL_VOLUME"
 
-        else:
-            direction = "NEUTRAL"
-
-    elif ratio >= 1.5:
+    if ratio >= 1.5:
 
         if price_change > 0:
-            score = 4
-            direction = "BUY_VOLUME"
+            return ratio, 5, "BUY_VOLUME"
 
-        elif price_change < 0:
-            score = -4
-            direction = "SELL_VOLUME"
+        if price_change < 0:
+            return ratio, -5, "SELL_VOLUME"
 
-        else:
-            direction = "NEUTRAL"
+    if ratio >= 1.1:
 
-    else:
-        direction = "LOW_VOLUME"
+        if price_change > 0:
+            return ratio, 2, "MILD_BUY_VOLUME"
 
-    return ratio, score, direction
+        if price_change < 0:
+            return ratio, -2, "MILD_SELL_VOLUME"
+
+    return ratio, 0, "NORMAL_VOLUME"
+
+
+# ============================================================
+# PRICE ACTION
+# ============================================================
+
+def price_action(df):
+
+    if df is None or len(df) < 20:
+        return "UNKNOWN", 0
+
+    highs = df["high"].tail(10).values
+    lows = df["low"].tail(10).values
+
+    hh = highs[-1] > highs[-3]
+    hl = lows[-1] > lows[-3]
+
+    lh = highs[-1] < highs[-3]
+    ll = lows[-1] < lows[-3]
+
+    if hh and hl:
+        return "HH_HL", 6
+
+    if lh and ll:
+        return "LH_LL", -6
+
+    return "MIXED", 0
+
+
+# ============================================================
+# BREAKOUT
+# ============================================================
+
+def breakout(df):
+
+    if df is None or len(df) < 30:
+        return "NONE", 0
+
+    previous_high = float(
+        df["high"]
+        .iloc[-11:-1]
+        .max()
+    )
+
+    previous_low = float(
+        df["low"]
+        .iloc[-11:-1]
+        .min()
+    )
+
+    close = float(
+        df["close"].iloc[-1]
+    )
+
+    high = float(
+        df["high"].iloc[-1]
+    )
+
+    low = float(
+        df["low"].iloc[-1]
+    )
+
+    avg_volume = float(
+        df["volume"]
+        .rolling(20)
+        .mean()
+        .iloc[-1]
+    )
+
+    current_volume = float(
+        df["volume"].iloc[-1]
+    )
+
+    if close > previous_high:
+
+        if current_volume >= avg_volume * 1.3:
+            return "BULL_BREAKOUT", 8
+
+        return "WEAK_BULL_BREAKOUT", 3
+
+    if close < previous_low:
+
+        if current_volume >= avg_volume * 1.3:
+            return "BEAR_BREAKOUT", -8
+
+        return "WEAK_BEAR_BREAKOUT", -3
+
+    if (
+        high > previous_high
+        and close < previous_high
+    ):
+        return "FAKE_BULL_BREAKOUT", -6
+
+    if (
+        low < previous_low
+        and close > previous_low
+    ):
+        return "FAKE_BEAR_BREAKOUT", 6
+
+    return "NONE", 0
 
 
 # ============================================================
@@ -499,127 +574,10 @@ def support_resistance(df):
 
 
 # ============================================================
-# BREAKOUT
-# ============================================================
-
-def breakout_analysis(df):
-
-    if df is None or len(df) < 30:
-        return "NONE", 0
-
-    previous_high = float(
-        df["high"]
-        .iloc[-11:-1]
-        .max()
-    )
-
-    previous_low = float(
-        df["low"]
-        .iloc[-11:-1]
-        .min()
-    )
-
-    last_close = float(
-        df["close"].iloc[-1]
-    )
-
-    last_high = float(
-        df["high"].iloc[-1]
-    )
-
-    last_low = float(
-        df["low"].iloc[-1]
-    )
-
-    average_volume = float(
-        df["volume"]
-        .rolling(20)
-        .mean()
-        .iloc[-1]
-    )
-
-    current_volume = float(
-        df["volume"].iloc[-1]
-    )
-
-    # Strong bullish breakout
-    if last_close > previous_high:
-
-        if current_volume >= average_volume * 1.3:
-            return "BULL_BREAKOUT", 7
-
-        return "WEAK_BULL_BREAKOUT", 2
-
-    # Strong bearish breakout
-    if last_close < previous_low:
-
-        if current_volume >= average_volume * 1.3:
-            return "BEAR_BREAKOUT", -7
-
-        return "WEAK_BEAR_BREAKOUT", -2
-
-    # Fake bullish breakout
-    if (
-        last_high > previous_high
-        and last_close < previous_high
-    ):
-        return "FAKE_BULL_BREAKOUT", -6
-
-    # Fake bearish breakout
-    if (
-        last_low < previous_low
-        and last_close > previous_low
-    ):
-        return "FAKE_BEAR_BREAKOUT", 6
-
-    return "NONE", 0
-
-
-# ============================================================
-# PRICE ACTION
-# ============================================================
-
-def price_action(df):
-
-    if df is None or len(df) < 20:
-        return "UNKNOWN", 0
-
-    highs = df["high"].tail(10).values
-    lows = df["low"].tail(10).values
-
-    higher_high = (
-        highs[-1] > highs[-3]
-    )
-
-    higher_low = (
-        lows[-1] > lows[-3]
-    )
-
-    lower_high = (
-        highs[-1] < highs[-3]
-    )
-
-    lower_low = (
-        lows[-1] < lows[-3]
-    )
-
-    if higher_high and higher_low:
-        return "HH_HL", 7
-
-    if lower_high and lower_low:
-        return "LH_LL", -7
-
-    return "MIXED", 0
-
-
-# ============================================================
 # ORDER BOOK
 # ============================================================
 
-def orderbook_analysis(
-    exchange,
-    symbol
-):
+def orderbook(exchange, symbol):
 
     try:
 
@@ -642,54 +600,33 @@ def orderbook_analysis(
             return 0, 0, "UNKNOWN"
 
         bid_value = sum(
-            float(price) *
-            float(amount)
-            for price, amount in bids
+            float(p) * float(a)
+            for p, a in bids
         )
 
         ask_value = sum(
-            float(price) *
-            float(amount)
-            for price, amount in asks
+            float(p) * float(a)
+            for p, a in asks
         )
 
-        total = (
-            bid_value +
-            ask_value
-        )
+        total = bid_value + ask_value
 
         if total <= 0:
             return 0, 0, "UNKNOWN"
 
         imbalance = (
-            bid_value -
-            ask_value
+            bid_value - ask_value
         ) / total
 
         if imbalance > 0.15:
-
-            return (
-                imbalance,
-                6,
-                "BUY"
-            )
+            return imbalance, 5, "BUY"
 
         if imbalance < -0.15:
+            return imbalance, -5, "SELL"
 
-            return (
-                imbalance,
-                -6,
-                "SELL"
-            )
-
-        return (
-            imbalance,
-            0,
-            "NEUTRAL"
-        )
+        return imbalance, 0, "NEUTRAL"
 
     except Exception:
-
         return 0, 0, "UNKNOWN"
 
 
@@ -697,11 +634,11 @@ def orderbook_analysis(
 # FUTURES
 # ============================================================
 
-def futures_analysis(symbol):
+def futures_data(symbol):
 
-    funding_values = []
-    oi_values = []
-    exchanges = []
+    funding_list = []
+    oi_list = []
+    used = []
 
     for name, exchange in futures_exchanges.items():
 
@@ -729,16 +666,12 @@ def futures_analysis(symbol):
 
             try:
 
-                funding_data = (
-                    exchange
-                    .fetch_funding_rate(
-                        futures_symbol
-                    )
+                data = exchange.fetch_funding_rate(
+                    futures_symbol
                 )
 
-                funding = (
-                    funding_data
-                    .get("fundingRate")
+                funding = data.get(
+                    "fundingRate"
                 )
 
             except Exception:
@@ -746,23 +679,20 @@ def futures_analysis(symbol):
 
             try:
 
-                oi_data = (
-                    exchange
-                    .fetch_open_interest(
-                        futures_symbol
-                    )
+                data = exchange.fetch_open_interest(
+                    futures_symbol
                 )
 
                 oi = (
-                    oi_data.get(
+                    data.get(
                         "openInterestAmount"
                     )
                     or
-                    oi_data.get(
+                    data.get(
                         "openInterestValue"
                     )
                     or
-                    oi_data.get(
+                    data.get(
                         "openInterest"
                     )
                 )
@@ -771,15 +701,14 @@ def futures_analysis(symbol):
                 pass
 
             if funding is not None:
-
-                funding_values.append(
+                funding_list.append(
                     float(funding)
                 )
 
             if oi is not None:
 
                 try:
-                    oi_values.append(
+                    oi_list.append(
                         float(oi)
                     )
                 except Exception:
@@ -789,168 +718,63 @@ def futures_analysis(symbol):
                 funding is not None
                 or oi is not None
             ):
-                exchanges.append(name)
+                used.append(name)
 
         except Exception:
             continue
 
-    funding_avg = (
-        float(np.mean(funding_values))
-        if funding_values
+    funding = (
+        float(np.mean(funding_list))
+        if funding_list
         else 0
     )
 
-    oi_avg = (
-        float(np.mean(oi_values))
-        if oi_values
+    oi = (
+        float(np.mean(oi_list))
+        if oi_list
         else 0
     )
 
-    futures_score = 0
+    # Funding interpretation
+    if funding < -0.0008:
+        funding_score = 5
+        funding_signal = "LONG_SUPPORT"
 
-    # Negative funding can support long bias
-    if funding_avg < -0.0008:
-        futures_score += 5
+    elif funding > 0.0008:
+        funding_score = -5
+        funding_signal = "LONG_CROWDED"
 
-    # Very positive funding can warn of crowded longs
-    elif funding_avg > 0.0008:
-        futures_score -= 5
+    else:
+        funding_score = 0
+        funding_signal = "NORMAL"
 
     return (
-        funding_avg,
-        oi_avg,
-        futures_score,
-        ",".join(exchanges)
+        funding,
+        oi,
+        funding_score,
+        funding_signal,
+        ",".join(used)
     )
 
 
 # ============================================================
-# REASON
+# MASTER ANALYSIS
 # ============================================================
 
-def build_reason(
-    direction,
-    tf_scores,
-    volume_score,
-    breakout_score,
-    pa_score,
-    sr_score,
-    futures_score,
-    orderbook_score,
-    btc_regime
-):
+def analyze_coin(item, btc_regime):
 
-    reasons = []
-
-    total_tf = sum(tf_scores)
-
-    if total_tf >= 5:
-        reasons.append(
-            "MTF_BULL_CONFIRM"
-        )
-
-    elif total_tf <= -5:
-        reasons.append(
-            "MTF_BEAR_CONFIRM"
-        )
-
-    if volume_score >= 4:
-        reasons.append(
-            "STRONG_BUY_VOLUME"
-        )
-
-    elif volume_score <= -4:
-        reasons.append(
-            "STRONG_SELL_VOLUME"
-        )
-
-    if breakout_score >= 5:
-        reasons.append(
-            "BULL_BREAKOUT"
-        )
-
-    elif breakout_score <= -5:
-        reasons.append(
-            "BEAR_BREAKOUT"
-        )
-
-    if pa_score > 0:
-        reasons.append("HH_HL")
-
-    elif pa_score < 0:
-        reasons.append("LH_LL")
-
-    if sr_score > 0:
-        reasons.append("SUPPORT_ZONE")
-
-    elif sr_score < 0:
-        reasons.append("RESISTANCE_ZONE")
-
-    if futures_score > 0:
-        reasons.append(
-            "FUNDING_LONG_SUPPORT"
-        )
-
-    elif futures_score < 0:
-        reasons.append(
-            "FUNDING_LONG_WARNING"
-        )
-
-    if orderbook_score > 0:
-        reasons.append(
-            "ORDERBOOK_BUY"
-        )
-
-    elif orderbook_score < 0:
-        reasons.append(
-            "ORDERBOOK_SELL"
-        )
-
-    if btc_regime == "BULL":
-        reasons.append(
-            "BTC_BULL_REGIME"
-        )
-
-    elif btc_regime == "BEAR":
-        reasons.append(
-            "BTC_BEAR_REGIME"
-        )
-
-    if not reasons:
-        reasons.append(
-            "WEAK_OR_MIXED_SETUP"
-        )
-
-    return "|".join(reasons)
-
-
-# ============================================================
-# COIN ANALYSIS
-# ============================================================
-
-def analyze_coin(
-    item,
-    btc_regime_value
-):
-
-    symbol = item["symbol"]
-
-    exchange = spot_exchanges.get(
-        "okx"
-    )
+    exchange = spot_exchanges.get("okx")
 
     if not exchange:
         return None
 
-    data = {}
+    symbol = item["symbol"]
 
-    # --------------------------------------------------------
-    # 4 TIMEFRAMES
-    # --------------------------------------------------------
+    frames = {}
 
     for tf in TIMEFRAMES:
 
-        df = get_ohlcv(
+        df = get_data(
             exchange,
             symbol,
             tf,
@@ -960,22 +784,26 @@ def analyze_coin(
         if df is None:
             return None
 
-        data[tf] = df
+        frames[tf] = df
 
-    a15 = timeframe_analysis(
-        data["15m"]
+    # --------------------------------------------------------
+    # TIMEFRAMES
+    # --------------------------------------------------------
+
+    a15 = analyze_tf(
+        frames["15m"]
     )
 
-    a1h = timeframe_analysis(
-        data["1h"]
+    a1h = analyze_tf(
+        frames["1h"]
     )
 
-    a4h = timeframe_analysis(
-        data["4h"]
+    a4h = analyze_tf(
+        frames["4h"]
     )
 
-    a1d = timeframe_analysis(
-        data["1d"]
+    a1d = analyze_tf(
+        frames["1d"]
     )
 
     # --------------------------------------------------------
@@ -983,7 +811,7 @@ def analyze_coin(
     # --------------------------------------------------------
 
     price = float(
-        data["1h"]["close"].iloc[-1]
+        frames["1h"]["close"].iloc[-1]
     )
 
     # --------------------------------------------------------
@@ -1006,7 +834,29 @@ def analyze_coin(
         volume_score,
         volume_signal
     ) = volume_analysis(
-        data["1h"]
+        frames["1h"]
+    )
+
+    # --------------------------------------------------------
+    # PRICE ACTION
+    # --------------------------------------------------------
+
+    (
+        pa_signal,
+        pa_score
+    ) = price_action(
+        frames["1h"]
+    )
+
+    # --------------------------------------------------------
+    # BREAKOUT
+    # --------------------------------------------------------
+
+    (
+        breakout_signal,
+        breakout_score
+    ) = breakout(
+        frames["1h"]
     )
 
     # --------------------------------------------------------
@@ -1018,7 +868,7 @@ def analyze_coin(
         resistance,
         position
     ) = support_resistance(
-        data["1h"]
+        frames["1h"]
     )
 
     sr_score = 0
@@ -1030,25 +880,16 @@ def analyze_coin(
         sr_score = -5
 
     # --------------------------------------------------------
-    # BREAKOUT
+    # ORDER BOOK
     # --------------------------------------------------------
 
     (
-        breakout,
-        breakout_score
-    ) = breakout_analysis(
-        data["1h"]
-    )
-
-    # --------------------------------------------------------
-    # PRICE ACTION
-    # --------------------------------------------------------
-
-    (
-        pa_signal,
-        pa_score
-    ) = price_action(
-        data["1h"]
+        imbalance,
+        orderbook_score,
+        orderbook_signal
+    ) = orderbook(
+        exchange,
+        symbol
     )
 
     # --------------------------------------------------------
@@ -1058,52 +899,40 @@ def analyze_coin(
     (
         funding,
         oi,
-        futures_score,
+        funding_score,
+        funding_signal,
         futures_exchange
-    ) = futures_analysis(
+    ) = futures_data(
         symbol
     )
 
     # --------------------------------------------------------
-    # ORDER BOOK
+    # TIMEFRAME BALANCE
     # --------------------------------------------------------
 
-    (
-        orderbook_imbalance,
-        orderbook_score,
-        orderbook_signal
-    ) = orderbook_analysis(
-        exchange,
-        symbol
+    tf_score = (
+        a15["direction"] * 2 +
+        a1h["direction"] * 5 +
+        a4h["direction"] * 7 +
+        a1d["direction"] * 6
+    )
+
+    tf_score = max(
+        -40,
+        min(40, tf_score)
     )
 
     # --------------------------------------------------------
-    # BTC
+    # BTC REGIME
     # --------------------------------------------------------
 
     btc_score = 0
 
-    if btc_regime_value == "BULL":
-        btc_score = 8
+    if btc_regime == "BULL":
+        btc_score = 5
 
-    elif btc_regime_value == "BEAR":
-        btc_score = -8
-
-    # --------------------------------------------------------
-    # MULTI TIMEFRAME
-    # --------------------------------------------------------
-
-    tf_raw = (
-        a15["score"] * 4 +
-        a1h["score"] * 7 +
-        a4h["score"] * 9 +
-        a1d["score"] * 9
-    )
-
-    tf_raw = max(
-        -29,
-        min(29, tf_raw)
-    )
+    elif btc_regime == "BEAR":
+        btc_score = -5
 
     # --------------------------------------------------------
     # COIN REGIME
@@ -1115,7 +944,7 @@ def analyze_coin(
     ):
 
         coin_regime = "BULL"
-        coin_regime_score = 8
+        coin_regime_score = 5
 
     elif (
         a4h["trend"] == "BEAR"
@@ -1123,42 +952,41 @@ def analyze_coin(
     ):
 
         coin_regime = "BEAR"
-        coin_regime_score = -8
+        coin_regime_score = -5
 
     else:
 
         coin_regime = "NEUTRAL"
         coin_regime_score = 0
 
-    # --------------------------------------------------------
-    # RAW DIRECTION SCORE
-    # --------------------------------------------------------
+    # ========================================================
+    # RAW DIRECTION
+    # ========================================================
 
-    raw_direction_score = (
-        tf_raw +
+    raw = (
+        tf_score +
         volume_score +
-        breakout_score +
         pa_score +
+        breakout_score +
         sr_score +
-        futures_score +
         orderbook_score +
+        funding_score +
         btc_score +
         coin_regime_score
     )
 
-    # --------------------------------------------------------
-    # LONG / SHORT SCORES
-    # --------------------------------------------------------
-
-    long_score = (
-        50 +
-        raw_direction_score
+    # Keep within useful range
+    raw = max(
+        -50,
+        min(50, raw)
     )
 
-    short_score = (
-        50 -
-        raw_direction_score
-    )
+    # ========================================================
+    # LONG / SHORT SCORE
+    # ========================================================
+
+    long_score = 50 + raw
+    short_score = 50 - raw
 
     long_score = max(
         0,
@@ -1170,90 +998,96 @@ def analyze_coin(
         min(100, short_score)
     )
 
-    # --------------------------------------------------------
+    # ========================================================
     # CONFIRMATION
-    # --------------------------------------------------------
+    # ========================================================
 
-    bull_tf_count = sum([
+    bull_count = sum([
         a15["trend"] == "BULL",
         a1h["trend"] == "BULL",
         a4h["trend"] == "BULL",
         a1d["trend"] == "BULL"
     ])
 
-    bear_tf_count = sum([
+    bear_count = sum([
         a15["trend"] == "BEAR",
         a1h["trend"] == "BEAR",
         a4h["trend"] == "BEAR",
         a1d["trend"] == "BEAR"
     ])
 
-    # --------------------------------------------------------
+    # ========================================================
     # SIGNAL
-    # --------------------------------------------------------
+    # ========================================================
 
     signal = "NO TRADE"
 
+    # LONG: 2+ bullish TFs + score
     if (
         long_score >= LONG_THRESHOLD
+        and bull_count >= 2
         and long_score > short_score
-        and bull_tf_count >= 3
-        and breakout != "FAKE_BULL_BREAKOUT"
-        and volume_ratio >= 0.8
+        and breakout_signal != "FAKE_BULL_BREAKOUT"
     ):
 
         signal = "LONG"
 
+    # SHORT: 2+ bearish TFs + score
     elif (
         short_score >= SHORT_THRESHOLD
+        and bear_count >= 2
         and short_score > long_score
-        and bear_tf_count >= 3
-        and breakout != "FAKE_BEAR_BREAKOUT"
-        and volume_ratio >= 0.8
+        and breakout_signal != "FAKE_BEAR_BREAKOUT"
     ):
 
         signal = "SHORT"
 
-    # --------------------------------------------------------
+    # ========================================================
+    # EXTRA MARKET FILTER
+    # ========================================================
+
+    if volume_ratio < 0.65:
+
+        signal = "NO TRADE"
+
+    # ========================================================
     # SIGNAL STRENGTH
-    # --------------------------------------------------------
+    # ========================================================
 
     if signal == "LONG":
-
-        signal_strength = long_score
+        strength = long_score
 
     elif signal == "SHORT":
-
-        signal_strength = short_score
+        strength = short_score
 
     else:
+        strength = max(
+            long_score,
+            short_score
+        )
 
-        # IMPORTANT:
-        # NO TRADE is NOT given a fake 90/100 score.
-        signal_strength = 0
-
-    # --------------------------------------------------------
+    # ========================================================
     # CONFIDENCE
-    # --------------------------------------------------------
+    # ========================================================
 
     if signal == "LONG":
 
         confidence = (
-            long_score * 0.60 +
-            bull_tf_count * 7 +
-            max(0, volume_score) * 0.8 +
-            max(0, pa_score) * 0.5 +
-            max(0, orderbook_score) * 0.5
+            long_score * 0.55
+            + bull_count * 8
+            + max(0, volume_score) * 0.7
+            + max(0, pa_score) * 0.6
+            + max(0, orderbook_score) * 0.5
         )
 
     elif signal == "SHORT":
 
         confidence = (
-            short_score * 0.60 +
-            bear_tf_count * 7 +
-            max(0, -volume_score) * 0.8 +
-            max(0, -pa_score) * 0.5 +
-            max(0, -orderbook_score) * 0.5
+            short_score * 0.55
+            + bear_count * 8
+            + max(0, -volume_score) * 0.7
+            + max(0, -pa_score) * 0.6
+            + max(0, -orderbook_score) * 0.5
         )
 
     else:
@@ -1265,18 +1099,14 @@ def analyze_coin(
         min(100, confidence)
     )
 
-    # --------------------------------------------------------
-    # ATR
-    # --------------------------------------------------------
+    # ========================================================
+    # SL / TP
+    # ========================================================
 
     atr_value = a1h["atr"]
 
     if atr_value <= 0:
         atr_value = price * 0.01
-
-    # --------------------------------------------------------
-    # STOP LOSS / TAKE PROFIT
-    # --------------------------------------------------------
 
     if signal == "LONG":
 
@@ -1307,38 +1137,76 @@ def analyze_coin(
         stop_loss = 0
         take_profit = 0
 
-    # --------------------------------------------------------
-    # REASON
-    # --------------------------------------------------------
+    # ========================================================
+    # REASONS
+    # ========================================================
 
-    reason = build_reason(
-        signal,
-        [
-            a15["score"],
-            a1h["score"],
-            a4h["score"],
-            a1d["score"]
-        ],
-        volume_score,
-        breakout_score,
-        pa_score,
-        sr_score,
-        futures_score,
-        orderbook_score,
-        btc_regime_value
-    )
+    reasons = []
 
-    # --------------------------------------------------------
+    if tf_score >= 10:
+        reasons.append("MTF_BULL")
+
+    elif tf_score <= -10:
+        reasons.append("MTF_BEAR")
+
+    if volume_score >= 4:
+        reasons.append("BUY_VOLUME")
+
+    elif volume_score <= -4:
+        reasons.append("SELL_VOLUME")
+
+    if pa_score > 0:
+        reasons.append("HH_HL")
+
+    elif pa_score < 0:
+        reasons.append("LH_LL")
+
+    if breakout_score >= 5:
+        reasons.append("BULL_BREAKOUT")
+
+    elif breakout_score <= -5:
+        reasons.append("BEAR_BREAKOUT")
+
+    if sr_score > 0:
+        reasons.append("NEAR_SUPPORT")
+
+    elif sr_score < 0:
+        reasons.append("NEAR_RESISTANCE")
+
+    if orderbook_score > 0:
+        reasons.append("BUY_ORDERBOOK")
+
+    elif orderbook_score < 0:
+        reasons.append("SELL_ORDERBOOK")
+
+    if funding_score > 0:
+        reasons.append("NEGATIVE_FUNDING")
+
+    elif funding_score < 0:
+        reasons.append("POSITIVE_FUNDING")
+
+    if btc_regime == "BULL":
+        reasons.append("BTC_BULL")
+
+    elif btc_regime == "BEAR":
+        reasons.append("BTC_BEAR")
+
+    if not reasons:
+        reasons.append("MIXED_SETUP")
+
+    reason = "|".join(reasons)
+
+    # ========================================================
     # TIMESTAMP
-    # --------------------------------------------------------
+    # ========================================================
 
     timestamp = datetime.now(
         timezone.utc
     ).isoformat()
 
-    # --------------------------------------------------------
-    # RESULT
-    # --------------------------------------------------------
+    # ========================================================
+    # RETURN
+    # ========================================================
 
     return {
 
@@ -1347,7 +1215,7 @@ def analyze_coin(
         "signal": signal,
 
         "signal_strength": round(
-            signal_strength,
+            strength,
             2
         ),
 
@@ -1371,7 +1239,7 @@ def analyze_coin(
             8
         ),
 
-        "btc_regime": btc_regime_value,
+        "btc_regime": btc_regime,
 
         "coin_regime": coin_regime,
 
@@ -1397,7 +1265,7 @@ def analyze_coin(
 
         "price_action": pa_signal,
 
-        "breakout": breakout,
+        "breakout": breakout_signal,
 
         "support": round(
             support,
@@ -1409,20 +1277,22 @@ def analyze_coin(
             8
         ),
 
+        "future_exchange": futures_exchange,
+
         "funding_rate": round(
             funding,
             8
         ),
+
+        "funding_signal": funding_signal,
 
         "open_interest": round(
             oi,
             4
         ),
 
-        "future_exchange": futures_exchange,
-
         "orderbook_imbalance": round(
-            orderbook_imbalance,
+            imbalance,
             4
         ),
 
@@ -1459,34 +1329,36 @@ def analyze_coin(
 
 def main():
 
-    print("=" * 75)
-    print("CRYPTO MASTER AI V7")
-    print("ADVANCED SIGNAL + CONFIDENCE ENGINE")
-    print("=" * 75)
+    print("=" * 80)
+    print("CRYPTO MASTER AI V8")
+    print("BALANCED MULTI-FACTOR SIGNAL ENGINE")
+    print("=" * 80)
 
-    print("\nLoading BTC market regime...")
+    # BTC
+    print("\nChecking BTC regime...")
 
-    btc_regime_value, btc_score = btc_regime()
+    btc_regime, btc_score = get_btc_regime()
 
     print(
-        f"BTC REGIME: {btc_regime_value}"
+        f"BTC REGIME: {btc_regime}"
     )
 
     print(
         f"BTC SCORE: {btc_score}"
     )
 
-    print("\nDiscovering coins...")
+    # Discover
+    print("\nDiscovering market...")
 
-    candidates = discover_coins()
+    candidates = discover()
 
     print(
-        f"Candidate coins: {len(candidates)}"
+        f"Coins found: {len(candidates)}"
     )
 
     results = []
 
-    for index, item in enumerate(
+    for i, item in enumerate(
         candidates,
         start=1
     ):
@@ -1494,15 +1366,15 @@ def main():
         symbol = item["symbol"]
 
         print(
-            f"[{index}/{len(candidates)}] "
-            f"{symbol}"
+            f"[{i}/{len(candidates)}] "
+            f"Analyzing {symbol}"
         )
 
         try:
 
             result = analyze_coin(
                 item,
-                btc_regime_value
+                btc_regime
             )
 
             if result:
@@ -1521,7 +1393,7 @@ def main():
     if not results:
 
         print(
-            "\nNo results generated."
+            "\nNO RESULTS GENERATED"
         )
 
         return
@@ -1534,22 +1406,19 @@ def main():
     # SORT
     # ========================================================
 
-    # LONG/SHORT first,
-    # NO TRADE after them.
-    signal_order = {
+    order = {
         "LONG": 0,
         "SHORT": 1,
         "NO TRADE": 2
     }
 
-    df["signal_order"] = (
-        df["signal"]
-        .map(signal_order)
+    df["sort_order"] = (
+        df["signal"].map(order)
     )
 
     df = df.sort_values(
         by=[
-            "signal_order",
+            "sort_order",
             "signal_strength",
             "confidence"
         ],
@@ -1561,19 +1430,15 @@ def main():
     )
 
     df = df.drop(
-        columns=["signal_order"]
+        columns=["sort_order"]
     )
 
     # ========================================================
-    # SAVE CSV
+    # SAVE
     # ========================================================
-
-    output_file = (
-        "crypto_scan_results.csv"
-    )
 
     df.to_csv(
-        output_file,
+        "crypto_scan_results.csv",
         index=False
     )
 
@@ -1581,9 +1446,9 @@ def main():
     # DISPLAY
     # ========================================================
 
-    print("\n" + "=" * 75)
-    print("TOP V7 SIGNALS")
-    print("=" * 75)
+    print("\n" + "=" * 80)
+    print("CRYPTO MASTER AI V8 RESULTS")
+    print("=" * 80)
 
     columns = [
         "symbol",
@@ -1620,9 +1485,9 @@ def main():
     # SUMMARY
     # ========================================================
 
-    print("\n" + "=" * 75)
-    print("SCAN SUMMARY")
-    print("=" * 75)
+    print("\n" + "=" * 80)
+    print("SUMMARY")
+    print("=" * 80)
 
     print(
         "Total analyzed:",
@@ -1657,12 +1522,11 @@ def main():
     )
 
     print(
-        "\nCSV saved:",
-        output_file
+        "\nCSV: crypto_scan_results.csv"
     )
 
     print(
-        "\nCrypto Master AI V7 scan completed."
+        "\nCRYPTO MASTER AI V8 COMPLETE"
     )
 
 
