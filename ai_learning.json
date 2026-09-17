@@ -90,6 +90,18 @@
       "signal": "LONG",
       "entry": 0.377,
       "created": 1789667879.1169393
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 3.627e-06,
+      "created": 1789669309.73857
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.2996,
+      "created": 1789669309.7385726
     }
   ],
   "total": 0,
