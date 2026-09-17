@@ -48,6 +48,18 @@
       "signal": "LONG",
       "entry": 0.24071,
       "created": 1789660602.048797
+    },
+    {
+      "symbol": "DASH/USDT",
+      "signal": "LONG",
+      "entry": 62.04,
+      "created": 1789663422.7400312
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.1558,
+      "created": 1789663422.740034
     }
   ],
   "total": 0,
