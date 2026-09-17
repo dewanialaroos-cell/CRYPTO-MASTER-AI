@@ -84,6 +84,18 @@
       "signal": "LONG",
       "entry": 3.622e-06,
       "created": 1789687545.5030754
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 739.0,
+      "created": 1789689214.5735707
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 76426.3,
+      "created": 1789689214.5735745
     }
   ],
   "total": 14,
