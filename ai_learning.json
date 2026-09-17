@@ -8,12 +8,6 @@
       "created": 1789660005.920267
     },
     {
-      "symbol": "LONGXIA/USDT",
-      "signal": "LONG",
-      "entry": 0.24071,
-      "created": 1789660602.048797
-    },
-    {
       "symbol": "DASH/USDT",
       "signal": "LONG",
       "entry": 62.04,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.17591,
       "created": 1789674842.8565001
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.072,
+      "created": 1789676174.4005327
     }
   ],
-  "total": 6,
+  "total": 7,
   "hits": 6
 }
