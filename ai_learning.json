@@ -20,12 +20,6 @@
       "created": 1789664206.2575262
     },
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.377,
-      "created": 1789667879.1169393
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
       "entry": 3.627e-06,
@@ -86,6 +80,6 @@
       "created": 1789679730.688377
     }
   ],
-  "total": 11,
+  "total": 12,
   "hits": 7
 }
