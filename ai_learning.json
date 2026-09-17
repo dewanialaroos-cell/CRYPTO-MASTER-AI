@@ -20,12 +20,6 @@
       "created": 1789664206.2575262
     },
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 730.3,
-      "created": 1789666206.2060246
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.377,
@@ -92,6 +86,6 @@
       "created": 1789679730.688377
     }
   ],
-  "total": 10,
-  "hits": 6
+  "total": 11,
+  "hits": 7
 }
