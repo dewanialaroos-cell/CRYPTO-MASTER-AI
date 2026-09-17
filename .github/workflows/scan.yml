@@ -1,20 +1,31 @@
-name: Crypto Master AI Scanner
+name: Crypto Master AI Scanner V9.1
 
 on:
   workflow_dispatch:
+
   schedule:
     - cron: "*/15 * * * *"
 
 permissions:
   contents: write
 
+concurrency:
+  group: crypto-master-ai-scan
+  cancel-in-progress: false
+
 jobs:
   scan:
+
     runs-on: ubuntu-latest
 
+    timeout-minutes: 14
+
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -25,19 +36,36 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install requests
 
-      - name: Run Crypto Master AI
+      - name: Check Scanner syntax
+        run: |
+          python -m py_compile Scanner.py
+
+      - name: Run Crypto Master AI V9.1
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python Scanner.py
 
-      - name: Save scan results
+      - name: Show scan files
+        run: |
+          echo "===== Scan Results ====="
+          ls -lh crypto_scan_results.csv || true
+          echo "===== Learning File ====="
+          ls -lh ai_learning.json || true
+
+      - name: Save scan results and learning
         run: |
           git config user.name "Crypto Master AI"
           git config user.email "actions@github.com"
-          git add crypto_scan_results.csv || true
-          git diff --cached --quiet || git commit -m "Update crypto scan results"
-          git push || true
+
+          git add crypto_scan_results.csv ai_learning.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update Crypto Master AI scan"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
