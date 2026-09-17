@@ -60,6 +60,12 @@
       "signal": "LONG",
       "entry": 0.1558,
       "created": 1789663422.740034
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "LONG",
+      "entry": 5.225e-06,
+      "created": 1789664206.2575262
     }
   ],
   "total": 0,
