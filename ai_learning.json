@@ -72,6 +72,18 @@
       "signal": "SHORT",
       "entry": 1.289,
       "created": 1789684181.3836467
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "LONG",
+      "entry": 4.7467,
+      "created": 1789687545.5030732
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 3.622e-06,
+      "created": 1789687545.5030754
     }
   ],
   "total": 14,
