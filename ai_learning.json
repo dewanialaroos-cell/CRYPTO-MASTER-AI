@@ -14,12 +14,6 @@
       "created": 1789663422.7400312
     },
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.1558,
-      "created": 1789663422.740034
-    },
-    {
       "symbol": "SHIB/USDT",
       "signal": "LONG",
       "entry": 5.225e-06,
@@ -104,6 +98,6 @@
       "created": 1789676174.4005327
     }
   ],
-  "total": 7,
+  "total": 8,
   "hits": 6
 }
