@@ -20,18 +20,6 @@
       "created": 1789664206.2575262
     },
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 3.627e-06,
-      "created": 1789669309.73857
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.2996,
-      "created": 1789669309.7385726
-    },
-    {
       "symbol": "UNI/USDT",
       "signal": "LONG",
       "entry": 7.673,
@@ -78,8 +66,14 @@
       "signal": "LONG",
       "entry": 0.24422,
       "created": 1789679730.688377
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.289,
+      "created": 1789684181.3836467
     }
   ],
-  "total": 12,
-  "hits": 7
+  "total": 14,
+  "hits": 8
 }
