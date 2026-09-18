@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LIT/USDT",
-      "signal": "LONG",
-      "entry": 4.9652,
-      "created": 1789702336.4473329
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.4246,
@@ -90,8 +84,26 @@
       "signal": "LONG",
       "entry": 3.476,
       "created": 1789714040.852549
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "LONG",
+      "entry": 5.1157,
+      "created": 1789716755.117214
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 245.4,
+      "created": 1789716755.117216
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 3.679e-06,
+      "created": 1789716755.1172187
     }
   ],
-  "total": 46,
-  "hits": 33
+  "total": 47,
+  "hits": 34
 }
