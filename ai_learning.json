@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LIT/USDT",
-      "signal": "LONG",
-      "entry": 5.1157,
-      "created": 1789716755.117214
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 245.4,
-      "created": 1789716755.117216
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 3.679e-06,
-      "created": 1789716755.1172187
-    },
-    {
       "symbol": "PIEVERSE/USDT",
       "signal": "LONG",
       "entry": 1.2283,
@@ -128,6 +110,6 @@
       "created": 1789730076.4996037
     }
   ],
-  "total": 61,
-  "hits": 45
+  "total": 64,
+  "hits": 47
 }
