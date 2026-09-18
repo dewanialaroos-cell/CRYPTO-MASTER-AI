@@ -102,6 +102,18 @@
       "signal": "LONG",
       "entry": 1513.41,
       "created": 1789711034.530166
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 7.882,
+      "created": 1789712432.1732712
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.16322,
+      "created": 1789712432.173274
     }
   ],
   "total": 41,
