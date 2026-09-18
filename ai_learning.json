@@ -8,24 +8,6 @@
       "created": 1789719360.3620846
     },
     {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 5.441e-06,
-      "created": 1789726542.3851123
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 8.01,
-      "created": 1789727572.0381503
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.16825,
-      "created": 1789727572.038154
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 11.947,
@@ -126,8 +108,32 @@
       "signal": "LONG",
       "entry": 8.746,
       "created": 1789740932.2836168
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2006,
+      "created": 1789741978.476501
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.16424,
+      "created": 1789741978.4765031
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "LONG",
+      "entry": 5.466e-06,
+      "created": 1789741978.4765048
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 55.59,
+      "created": 1789741978.476506
     }
   ],
-  "total": 76,
-  "hits": 52
+  "total": 79,
+  "hits": 54
 }
