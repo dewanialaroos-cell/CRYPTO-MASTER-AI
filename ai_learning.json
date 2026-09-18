@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.21456,
-      "created": 1789708446.6064003
-    },
-    {
       "symbol": "UNI/USDT",
       "signal": "LONG",
       "entry": 8.55,
@@ -114,8 +108,14 @@
       "signal": "LONG",
       "entry": 78071.0,
       "created": 1789721733.8936949
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.20929,
+      "created": 1789722916.457436
     }
   ],
-  "total": 53,
+  "total": 54,
   "hits": 39
 }
