@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 525.28,
-      "created": 1789710333.975454
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
       "entry": 1513.41,
@@ -114,8 +108,20 @@
       "signal": "LONG",
       "entry": 134.87,
       "created": 1789723961.7835643
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 88.959,
+      "created": 1789725269.9906614
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 0.7954,
+      "created": 1789725269.9906628
     }
   ],
-  "total": 56,
-  "hits": 41
+  "total": 57,
+  "hits": 42
 }
