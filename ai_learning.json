@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.097,
-      "created": 1789695933.9429042
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 7.705,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 134.06,
       "created": 1789709412.4390538
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 525.28,
+      "created": 1789710333.975454
     }
   ],
-  "total": 39,
+  "total": 40,
   "hits": 27
 }
