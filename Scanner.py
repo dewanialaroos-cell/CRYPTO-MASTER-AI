@@ -1756,7 +1756,7 @@ def fundamentals(symbols):
                     )
                 )
 
-        age_days = (datetime.now(timezone.utc) - added).days        
+                 age_days = (datetime.now(timezone.utc) - added).days
 
 
 # ============================================================
