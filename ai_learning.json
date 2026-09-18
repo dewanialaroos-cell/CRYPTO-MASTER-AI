@@ -8,18 +8,6 @@
       "created": 1789719360.3620846
     },
     {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 8.954,
-      "created": 1789723961.7835588
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 134.87,
-      "created": 1789723961.7835643
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
       "entry": 88.959,
@@ -108,8 +96,32 @@
       "signal": "LONG",
       "entry": 0.397,
       "created": 1789738256.2068214
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 107.75,
+      "created": 1789739227.2764158
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2538.81,
+      "created": 1789739227.2764173
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 79417.3,
+      "created": 1789739227.2764184
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 140.49,
+      "created": 1789739227.2764196
     }
   ],
-  "total": 72,
-  "hits": 49
+  "total": 74,
+  "hits": 50
 }
