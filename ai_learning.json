@@ -96,6 +96,12 @@
       "signal": "LONG",
       "entry": 3.215,
       "created": 1789694969.1988556
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.097,
+      "created": 1789695933.9429042
     }
   ],
   "total": 24,
