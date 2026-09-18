@@ -8,12 +8,6 @@
       "created": 1789663422.7400312
     },
     {
-      "symbol": "LONGXIA/USDT",
-      "signal": "LONG",
-      "entry": 0.24422,
-      "created": 1789679730.688377
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "SHORT",
       "entry": 1.289,
@@ -96,8 +90,14 @@
       "signal": "LONG",
       "entry": 1464.61,
       "created": 1789694074.8922276
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 3.215,
+      "created": 1789694969.1988556
     }
   ],
-  "total": 23,
+  "total": 24,
   "hits": 14
 }
