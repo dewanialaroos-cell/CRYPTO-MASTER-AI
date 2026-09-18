@@ -1258,21 +1258,11 @@ def orderbook(
 # CMC HTTP
 # ============================================================
 
-def cmc_get(
-    endpoint,
-    params=None,
-    tries=3
-):
-
-    url = (
-        CMC_BASE
-        + endpoint
-    )
+def cmc_get(endpoint, params=None, tries=3):
+    url = CMC_BASE + endpoint
 
     for attempt in range(tries):
-
         try:
-
             response = session.get(
                 url,
                 params=params or {},
@@ -1280,35 +1270,85 @@ def cmc_get(
             )
 
             if response.status_code == 429:
+                retry_after = response.headers.get("Retry-After")
+                wait = float(retry_after) if retry_after else (2 ** attempt)
+
+                log(
+                    f"CMC 429 RATE LIMIT | "
+                    f"{endpoint} | "
+                    f"wait={wait}s"
+                )
 
                 if attempt < tries - 1:
-
-                    time.sleep(
-                        2 ** attempt
-                    )
-
+                    time.sleep(min(wait, 15))
                     continue
 
-            response.raise_for_status()
+                return None
+
+            if not response.ok:
+                body = response.text[:1000]
+
+                log(
+                    f"CMC HTTP ERROR | "
+                    f"status={response.status_code} | "
+                    f"{endpoint} | "
+                    f"{body}"
+                )
+
+                if response.status_code in {400, 401, 403, 404}:
+                    return None
+
+                if attempt < tries - 1:
+                    time.sleep(2 ** attempt)
+                    continue
+
+                return None
 
             data = response.json()
 
+            status = data.get("status", {})
+
+            error_code = status.get("error_code")
+            error_message = status.get("error_message")
+
+            if error_code not in (None, 0, "0"):
+                log(
+                    f"CMC API ERROR | "
+                    f"{endpoint} | "
+                    f"code={error_code} | "
+                    f"message={error_message}"
+                )
+                return None
+
             return data
 
+        except requests.RequestException as e:
+            log(
+                f"CMC REQUEST ERROR | "
+                f"{endpoint} | "
+                f"{type(e).__name__}: {e}"
+            )
+
+            if attempt < tries - 1:
+                time.sleep(2 ** attempt)
+
+        except ValueError as e:
+            log(
+                f"CMC JSON ERROR | "
+                f"{endpoint} | "
+                f"{type(e).__name__}: {e}"
+            )
+            return None
+
         except Exception as e:
+            log(
+                f"CMC UNKNOWN ERROR | "
+                f"{endpoint} | "
+                f"{type(e).__name__}: {e}"
+            )
 
-            if attempt == tries - 1:
-
-                log(
-                    f"CMC ERROR "
-                    f"{endpoint}: "
-                    f"{type(e).__name__}: "
-                    f"{e}"
-                )
-
-            else:
-
-                time.sleep(1)
+            if attempt < tries - 1:
+                time.sleep(2 ** attempt)
 
     return None
 
@@ -1717,75 +1757,7 @@ def fundamentals(symbols):
                 )
 
                 age_days = (
-                    now() - added
-                ).total_seconds() / 86400
 
-            except Exception:
-                pass
-
-        row = {
-
-            "name":
-                metadata.get(
-                    "name",
-                    base
-                ),
-
-            "cmc_rank":
-                quote.get(
-                    "cmc_rank"
-                ),
-
-            "market_cap":
-                usd.get(
-                    "market_cap"
-                ),
-
-            "circulating_supply":
-                quote.get(
-                    "circulating_supply"
-                ),
-
-            "total_supply":
-                quote.get(
-                    "total_supply"
-                ),
-
-            "max_supply":
-                quote.get(
-                    "max_supply"
-                ),
-
-            "fdv":
-                usd.get(
-                    "fully_diluted_market_cap"
-                ),
-
-            "market_pairs":
-                quote.get(
-                    "num_market_pairs"
-                ),
-
-            "asset_age_days":
-                age_days,
-
-            "mc_fdv_ratio":
-                np.nan,
-
-            "supply_ratio":
-                np.nan,
-
-            "fundamental_status":
-                "OK"
-        }
-
-        output[symbol] = (
-            calculate_fundamental_score(
-                row
-            )
-        )
-
-    return output
 
 
 # ============================================================
