@@ -2,28 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "LONG",
-      "entry": 1.2283,
-      "created": 1789718102.8379786
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.104,
       "created": 1789719360.3620846
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 754.5,
-      "created": 1789720456.72224
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 105.99,
-      "created": 1789720456.7222443
     },
     {
       "symbol": "LTC/USDT",
@@ -114,8 +96,26 @@
       "signal": "LONG",
       "entry": 3.705e-06,
       "created": 1789732642.9776218
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 3.607,
+      "created": 1789735636.2322865
+    },
+    {
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "entry": 1.212,
+      "created": 1789735636.2322893
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "LONG",
+      "entry": 4.93,
+      "created": 1789735636.23229
     }
   ],
-  "total": 64,
+  "total": 67,
   "hits": 47
 }
