@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 237.6,
-      "created": 1789698849.3100936
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.014,
-      "created": 1789698849.3100955
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 11.606,
@@ -114,8 +102,14 @@
       "signal": "LONG",
       "entry": 0.16322,
       "created": 1789712432.173274
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 3.476,
+      "created": 1789714040.852549
     }
   ],
-  "total": 41,
-  "hits": 28
+  "total": 43,
+  "hits": 30
 }
