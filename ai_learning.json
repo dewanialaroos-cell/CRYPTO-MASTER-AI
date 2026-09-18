@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 86.418,
-      "created": 1789705959.0478983
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 750.7,
-      "created": 1789705959.0479004
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.1372,
@@ -108,8 +96,20 @@
       "signal": "LONG",
       "entry": 7.104,
       "created": 1789719360.3620846
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 754.5,
+      "created": 1789720456.72224
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 105.99,
+      "created": 1789720456.7222443
     }
   ],
-  "total": 48,
-  "hits": 35
+  "total": 50,
+  "hits": 37
 }
