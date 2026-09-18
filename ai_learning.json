@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 8.55,
-      "created": 1789709412.4390523
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 134.06,
-      "created": 1789709412.4390538
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
       "entry": 525.28,
@@ -114,8 +102,20 @@
       "signal": "LONG",
       "entry": 0.20929,
       "created": 1789722916.457436
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 8.954,
+      "created": 1789723961.7835588
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 134.87,
+      "created": 1789723961.7835643
     }
   ],
-  "total": 54,
-  "hits": 39
+  "total": 56,
+  "hits": 41
 }
