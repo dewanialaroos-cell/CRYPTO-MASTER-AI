@@ -72,6 +72,30 @@
       "signal": "LONG",
       "entry": 1.0862,
       "created": 1789692404.1962585
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 7.817,
+      "created": 1789694074.8922236
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.1568,
+      "created": 1789694074.8922246
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 129.17,
+      "created": 1789694074.8922265
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1464.61,
+      "created": 1789694074.8922276
     }
   ],
   "total": 23,
