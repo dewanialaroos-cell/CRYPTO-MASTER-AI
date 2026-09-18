@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 11.606,
-      "created": 1789700128.5842433
-    },
-    {
-      "symbol": "LONGXIA/USDT",
-      "signal": "LONG",
-      "entry": 0.24044,
-      "created": 1789700128.5842462
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 103.56,
-      "created": 1789701320.091639
-    },
-    {
       "symbol": "LIT/USDT",
       "signal": "LONG",
       "entry": 4.9652,
@@ -110,6 +92,6 @@
       "created": 1789714040.852549
     }
   ],
-  "total": 43,
-  "hits": 30
+  "total": 46,
+  "hits": 33
 }
