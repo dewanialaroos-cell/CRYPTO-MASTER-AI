@@ -1746,7 +1746,7 @@ def fundamentals(symbols):
         )
 
         if date_added:
-    try:
+        try:
         added = datetime.fromisoformat(
             date_added.replace(
                 "Z",
@@ -1754,7 +1754,7 @@ def fundamentals(symbols):
             )
         )
         age_days = (datetime.now(timezone.utc) - added).days
-    except Exception:
+        except Exception:
         age_days = np.nan
 
 
