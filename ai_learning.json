@@ -8,30 +8,6 @@
       "created": 1789719360.3620846
     },
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 55.8,
-      "created": 1789721733.8936903
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.1598,
-      "created": 1789721733.893692
-    },
-    {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.3869,
-      "created": 1789721733.8936927
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 78071.0,
-      "created": 1789721733.8936949
-    },
-    {
       "symbol": "ARB/USDT",
       "signal": "LONG",
       "entry": 0.20929,
@@ -114,8 +90,20 @@
       "signal": "LONG",
       "entry": 4.93,
       "created": 1789735636.23229
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.1456,
+      "created": 1789737247.0808296
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 747.8,
+      "created": 1789737247.0808322
     }
   ],
-  "total": 67,
-  "hits": 47
+  "total": 71,
+  "hits": 48
 }
