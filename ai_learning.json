@@ -2,36 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 7.817,
-      "created": 1789694074.8922236
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.1568,
-      "created": 1789694074.8922246
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 129.17,
-      "created": 1789694074.8922265
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1464.61,
-      "created": 1789694074.8922276
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 3.215,
-      "created": 1789694969.1988556
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.097,
@@ -120,8 +90,20 @@
       "signal": "LONG",
       "entry": 0.21456,
       "created": 1789708446.6064003
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 8.55,
+      "created": 1789709412.4390523
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 134.06,
+      "created": 1789709412.4390538
     }
   ],
-  "total": 34,
-  "hits": 22
+  "total": 39,
+  "hits": 27
 }
