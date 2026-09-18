@@ -8,18 +8,6 @@
       "created": 1789663422.7400312
     },
     {
-      "symbol": "LIT/USDT",
-      "signal": "LONG",
-      "entry": 4.7467,
-      "created": 1789687545.5030732
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 3.622e-06,
-      "created": 1789687545.5030754
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "LONG",
       "entry": 739.0,
@@ -132,8 +120,14 @@
       "signal": "LONG",
       "entry": 103.56,
       "created": 1789701320.091639
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "LONG",
+      "entry": 4.9652,
+      "created": 1789702336.4473329
     }
   ],
-  "total": 25,
-  "hits": 14
+  "total": 27,
+  "hits": 16
 }
