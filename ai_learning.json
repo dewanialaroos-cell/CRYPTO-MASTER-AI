@@ -14,54 +14,6 @@
       "created": 1789663422.7400312
     },
     {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 5.225e-06,
-      "created": 1789664206.2575262
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 7.673,
-      "created": 1789674842.8564944
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1497.2,
-      "created": 1789674842.8564956
-    },
-    {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "LONG",
-      "entry": 1.2497,
-      "created": 1789674842.8564966
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 83.34,
-      "created": 1789674842.8564975
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 3.043,
-      "created": 1789674842.8564994
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.17591,
-      "created": 1789674842.8565001
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.072,
-      "created": 1789676174.4005327
-    },
-    {
       "symbol": "LONGXIA/USDT",
       "signal": "LONG",
       "entry": 0.24422,
@@ -96,8 +48,14 @@
       "signal": "SHORT",
       "entry": 76426.3,
       "created": 1789689214.5735745
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 85.77,
+      "created": 1789690845.02998
     }
   ],
-  "total": 14,
-  "hits": 8
+  "total": 22,
+  "hits": 13
 }
