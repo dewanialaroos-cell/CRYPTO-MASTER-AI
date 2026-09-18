@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 7.705,
-      "created": 1789696628.7819955
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 237.6,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 525.28,
       "created": 1789710333.975454
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1513.41,
+      "created": 1789711034.530166
     }
   ],
-  "total": 40,
-  "hits": 27
+  "total": 41,
+  "hits": 28
 }
