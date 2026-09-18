@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 3.476,
-      "created": 1789714040.852549
-    },
-    {
       "symbol": "LIT/USDT",
       "signal": "LONG",
       "entry": 5.1157,
@@ -120,8 +114,14 @@
       "signal": "LONG",
       "entry": 0.16825,
       "created": 1789727572.038154
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 11.947,
+      "created": 1789728538.8681686
     }
   ],
-  "total": 60,
-  "hits": 44
+  "total": 61,
+  "hits": 45
 }
