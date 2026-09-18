@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1513.41,
-      "created": 1789711034.530166
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 7.882,
@@ -120,8 +114,14 @@
       "signal": "LONG",
       "entry": 0.7954,
       "created": 1789725269.9906628
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "LONG",
+      "entry": 5.441e-06,
+      "created": 1789726542.3851123
     }
   ],
-  "total": 57,
+  "total": 58,
   "hits": 42
 }
