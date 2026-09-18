@@ -8,18 +8,6 @@
       "created": 1789663422.7400312
     },
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 739.0,
-      "created": 1789689214.5735707
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 76426.3,
-      "created": 1789689214.5735745
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
       "entry": 85.77,
@@ -128,6 +116,6 @@
       "created": 1789702336.4473329
     }
   ],
-  "total": 27,
-  "hits": 16
+  "total": 29,
+  "hits": 17
 }
