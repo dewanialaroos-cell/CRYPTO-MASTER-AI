@@ -102,6 +102,18 @@
       "signal": "LONG",
       "entry": 2632.23,
       "created": 1789859587.5600176
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 762.1,
+      "created": 1789860414.2847874
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 91.694,
+      "created": 1789860414.2847888
     }
   ],
   "total": 121,
