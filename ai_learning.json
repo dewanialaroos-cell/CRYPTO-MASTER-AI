@@ -8,18 +8,6 @@
       "created": 1789837994.9664145
     },
     {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 118.44,
-      "created": 1789844011.889353
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 92.341,
-      "created": 1789844011.8893545
-    },
-    {
       "symbol": "SEI/USDT",
       "signal": "LONG",
       "entry": 0.04943,
@@ -96,8 +84,14 @@
       "signal": "LONG",
       "entry": 264.8,
       "created": 1789857737.837454
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 57.81,
+      "created": 1789858541.082577
     }
   ],
-  "total": 119,
+  "total": 121,
   "hits": 77
 }
