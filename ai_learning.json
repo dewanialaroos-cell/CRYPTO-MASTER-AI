@@ -114,6 +114,12 @@
       "signal": "LONG",
       "entry": 91.694,
       "created": 1789860414.2847888
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 111.02,
+      "created": 1789861239.0715
     }
   ],
   "total": 121,
