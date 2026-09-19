@@ -8,12 +8,6 @@
       "created": 1789837994.9664145
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 262.5,
-      "created": 1789842831.3985946
-    },
-    {
       "symbol": "OKB/USDT",
       "signal": "LONG",
       "entry": 118.44,
@@ -96,8 +90,14 @@
       "signal": "LONG",
       "entry": 4.275,
       "created": 1789856926.9016623
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 264.8,
+      "created": 1789857737.837454
     }
   ],
-  "total": 118,
-  "hits": 76
+  "total": 119,
+  "hits": 77
 }
