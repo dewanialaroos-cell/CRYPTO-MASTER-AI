@@ -2,144 +2,66 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.104,
-      "created": 1789719360.3620846
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
-      "entry": 3.705e-06,
-      "created": 1789732642.9776218
+      "entry": 4.174e-06,
+      "created": 1789837994.9664116
     },
     {
-      "symbol": "NEAR/USDT",
+      "symbol": "DOGE/USDT",
       "signal": "LONG",
-      "entry": 3.607,
-      "created": 1789735636.2322865
+      "entry": 0.09087,
+      "created": 1789837994.966413
     },
     {
-      "symbol": "PIEVERSE/USDT",
+      "symbol": "TRUMP/USDT",
       "signal": "LONG",
-      "entry": 1.212,
-      "created": 1789735636.2322893
-    },
-    {
-      "symbol": "LIT/USDT",
-      "signal": "LONG",
-      "entry": 4.93,
-      "created": 1789735636.23229
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.1456,
-      "created": 1789737247.0808296
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 747.8,
-      "created": 1789737247.0808322
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.21216,
-      "created": 1789738256.2068195
-    },
-    {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.397,
-      "created": 1789738256.2068214
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 107.75,
-      "created": 1789739227.2764158
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2538.81,
-      "created": 1789739227.2764173
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 79417.3,
-      "created": 1789739227.2764184
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 140.49,
-      "created": 1789739227.2764196
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 91.244,
-      "created": 1789740932.2836103
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1478.77,
-      "created": 1789740932.2836137
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 8.746,
-      "created": 1789740932.2836168
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2006,
-      "created": 1789741978.476501
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.16424,
-      "created": 1789741978.4765031
-    },
-    {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 5.466e-06,
-      "created": 1789741978.4765048
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 55.59,
-      "created": 1789741978.476506
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 12.157,
-      "created": 1789743331.2334116
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 544.12,
-      "created": 1789744488.7799773
+      "entry": 2.155,
+      "created": 1789837994.9664135
     },
     {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
-      "entry": 8.108,
-      "created": 1789744488.7799814
+      "entry": 9.762,
+      "created": 1789837994.966414
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2167,
+      "created": 1789837994.9664145
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 12.635,
+      "created": 1789837994.9664152
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.4409,
+      "created": 1789837994.9664156
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 58.03,
+      "created": 1789837994.9664173
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 0.8631,
+      "created": 1789837994.9664185
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2652.13,
+      "created": 1789837994.966419
     }
   ],
-  "total": 81,
-  "hits": 56
+  "total": 100,
+  "hits": 73
 }
