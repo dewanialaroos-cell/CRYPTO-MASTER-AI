@@ -120,6 +120,18 @@
       "signal": "LONG",
       "entry": 262.5,
       "created": 1789842831.3985946
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 118.44,
+      "created": 1789844011.889353
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 92.341,
+      "created": 1789844011.8893545
     }
   ],
   "total": 100,
