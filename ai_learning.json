@@ -8,18 +8,6 @@
       "created": 1789837994.9664145
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 3.653,
-      "created": 1789839627.9829824
-    },
-    {
-      "symbol": "ZAMA/USDT",
-      "signal": "LONG",
-      "entry": 0.08287,
-      "created": 1789839627.982986
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.4391,
@@ -108,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.04282,
       "created": 1789853384.3847861
+    },
+    {
+      "symbol": "ZAMA/USDT",
+      "signal": "LONG",
+      "entry": 0.08435,
+      "created": 1789854160.2833216
     }
   ],
-  "total": 112,
-  "hits": 74
+  "total": 114,
+  "hits": 75
 }
