@@ -1155,10 +1155,16 @@ def orderbook(
 
                     continue
 
-                book = exchange.fetch_order_book(
-                    symbol,
-                    limit=20
+            book = exchange.fetch_order_book(
+                symbol,
+                limit=20
+            )
+
+            if not isinstance(book, dict):
+                log(
+                    f"ORDERBOOK EMPTY {exchange_id} {symbol}"
                 )
+                continue
 
                 bids = book.get(
                     "bids",
