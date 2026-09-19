@@ -1758,7 +1758,7 @@ def fundamentals(symbols):
                 )
                 age_days = (datetime.now(timezone.utc) - added).days
             except Exception:
-                age_days = np.nanp
+                age_days = np.nan
 
 # ============================================================
 # GLOBAL MARKET DATA
