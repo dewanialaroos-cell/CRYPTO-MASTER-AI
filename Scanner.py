@@ -1137,7 +1137,13 @@ def orderbook(
 
     for preferred_id in preferred:
 
-        for exchange_id, exchange in spot:
+        for exchange in spot:
+
+            exchange_id = getattr(
+                exchange,
+                "id",
+                ""
+            ).lower()
 
             if exchange_id != preferred_id:
                 continue
@@ -1257,8 +1263,8 @@ def orderbook(
         "orderbook_imbalance": average,
         "orderbook_signal": signal,
         "orderbook_exchanges": len(names),
-        "orderbook_names": ",".join(names)
-                    }
+        "orderbook_names": ",".join(names) 
+    }
 
 # ============================================================
 # CMC HTTP
