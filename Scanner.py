@@ -1137,7 +1137,7 @@ def orderbook(
 
     for preferred_id in preferred:
 
-        for exchange_id, exchange in spot.items():
+for exchange_id, exchange in spot:
 
             if exchange_id != preferred_id:
                 continue
