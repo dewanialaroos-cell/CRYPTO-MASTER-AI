@@ -2,64 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.174e-06,
-      "created": 1789837994.9664116
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09087,
-      "created": 1789837994.966413
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.155,
-      "created": 1789837994.9664135
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 9.762,
-      "created": 1789837994.966414
-    },
-    {
       "symbol": "WIF/USDT",
       "signal": "LONG",
       "entry": 0.2167,
       "created": 1789837994.9664145
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 12.635,
-      "created": 1789837994.9664152
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.4409,
-      "created": 1789837994.9664156
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 58.03,
-      "created": 1789837994.9664173
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 0.8631,
-      "created": 1789837994.9664185
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2652.13,
-      "created": 1789837994.966419
     },
     {
       "symbol": "DOT/USDT",
@@ -144,8 +90,32 @@
       "signal": "LONG",
       "entry": 81412.6,
       "created": 1789848869.591619
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "entry": 0.7658,
+      "created": 1789852425.0084352
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.188e-06,
+      "created": 1789852425.008437
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 9.7,
+      "created": 1789852425.0084379
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 0.8636,
+      "created": 1789852425.008441
     }
   ],
-  "total": 100,
-  "hits": 73
+  "total": 109,
+  "hits": 74
 }
