@@ -1125,11 +1125,9 @@ def orderbook(
     spot,
     symbol
 ):
-
     imbalances = []
     names = []
 
-    # Try Binance, OKX, Bybit
     preferred = [
         "binance",
         "okx",
@@ -1139,20 +1137,31 @@ def orderbook(
 
     for preferred_id in preferred:
 
-        for exchange_id, exchange in spot:
+        for exchange_id, exchange in spot.items():
 
             if exchange_id != preferred_id:
                 continue
 
-            if symbol not in exchange.markets:
-                continue
-
             try:
+                markets = getattr(
+                    exchange,
+                    "markets",
+                    {}
+                ) or {}
 
-                if not exchange.has.get(
-                    "fetchOrderBook"
-                ):
+                if symbol not in markets:
+                    continue
 
+                has = getattr(
+                    exchange,
+                    "has",
+                    {}
+                ) or {}
+
+                if not isinstance(has, dict):
+                    has = {}
+
+                if has.get("fetchOrderBook") is False:
                     continue
 
                 book = exchange.fetch_order_book(
@@ -1162,31 +1171,37 @@ def orderbook(
 
                 if not isinstance(book, dict):
                     log(
-                        f"ORDERBOOK EMPTY {exchange_id} {symbol}"
+                        f"ORDERBOOK EMPTY "
+                        f"{exchange_id} {symbol}"
                     )
                     continue
+
                 bids = book.get(
                     "bids",
                     []
-                )[:20]
+                ) or []
 
                 asks = book.get(
                     "asks",
                     []
-                )[:20]
+                ) or []
+
+                bids = bids[:20]
+                asks = asks[:20]
+
+                if not bids or not asks:
+                    continue
 
                 bid_value = sum(
                     number(price, 0)
                     * number(amount, 0)
-                    for price, amount
-                    in bids
+                    for price, amount in bids
                 )
 
                 ask_value = sum(
                     number(price, 0)
                     * number(amount, 0)
-                    for price, amount
-                    in asks
+                    for price, amount in asks
                 )
 
                 total = (
@@ -1211,15 +1226,13 @@ def orderbook(
                 )
 
             except Exception as e:
-
                 log(
                     f"ORDERBOOK FAILED "
                     f"{exchange_id} {symbol}: "
-                    f"{type(e).__name__}"
+                    f"{type(e).__name__}: {e}"
                 )
 
     if not imbalances:
-
         return {
             "orderbook_imbalance": 0.0,
             "orderbook_signal": "UNKNOWN",
@@ -1232,32 +1245,20 @@ def orderbook(
     )
 
     if average > 0.10:
-
         signal = "BULLISH"
 
     elif average < -0.10:
-
         signal = "BEARISH"
 
     else:
-
         signal = "NEUTRAL"
 
     return {
-
-        "orderbook_imbalance":
-            average,
-
-        "orderbook_signal":
-            signal,
-
-        "orderbook_exchanges":
-            len(names),
-
-        "orderbook_names":
-            ",".join(names)
-    }
-
+        "orderbook_imbalance": average,
+        "orderbook_signal": signal,
+        "orderbook_exchanges": len(names),
+        "orderbook_names": ",".join(names)
+                    }
 
 # ============================================================
 # CMC HTTP
@@ -1275,89 +1276,80 @@ def cmc_get(endpoint, params=None, tries=3):
             )
 
             if response.status_code == 429:
-                retry_after = response.headers.get("Retry-After")
-                wait = float(retry_after) if retry_after else (2 ** attempt)
-
-                log(
-                    f"CMC 429 RATE LIMIT | "
-                    f"{endpoint} | "
-                    f"wait={wait}s"
-                )
-
                 if attempt < tries - 1:
-                    time.sleep(min(wait, 15))
+                    time.sleep(
+                        min(2 ** attempt, 15)
+                    )
                     continue
 
                 return None
 
             if not response.ok:
-                body = response.text[:1000]
-
                 log(
-                    f"CMC HTTP ERROR | "
-                    f"status={response.status_code} | "
-                    f"{endpoint} | "
-                    f"{body}"
+                    f"CMC HTTP {response.status_code} "
+                    f"{endpoint}: "
+                    f"{response.text[:500]}"
                 )
 
-                if response.status_code in {400, 401, 403, 404}:
+                if response.status_code in {
+                    400,
+                    401,
+                    403,
+                    404
+                }:
                     return None
 
                 if attempt < tries - 1:
-                    time.sleep(2 ** attempt)
+                    time.sleep(
+                        2 ** attempt
+                    )
                     continue
 
                 return None
 
             data = response.json()
 
-            status = data.get("status", {})
+            status = data.get(
+                "status",
+                {}
+            )
 
-            error_code = status.get("error_code")
-            error_message = status.get("error_message")
+            error_code = status.get(
+                "error_code"
+            )
 
-            if error_code not in (None, 0, "0"):
+            error_message = status.get(
+                "error_message"
+            )
+
+            if error_code not in (
+                None,
+                0,
+                "0"
+            ):
                 log(
-                    f"CMC API ERROR | "
-                    f"{endpoint} | "
-                    f"code={error_code} | "
+                    f"CMC API ERROR "
+                    f"{endpoint}: "
+                    f"code={error_code} "
                     f"message={error_message}"
                 )
                 return None
 
             return data
 
-        except requests.RequestException as e:
-            log(
-                f"CMC REQUEST ERROR | "
-                f"{endpoint} | "
-                f"{type(e).__name__}: {e}"
-            )
-
-            if attempt < tries - 1:
-                time.sleep(2 ** attempt)
-
-        except ValueError as e:
-            log(
-                f"CMC JSON ERROR | "
-                f"{endpoint} | "
-                f"{type(e).__name__}: {e}"
-            )
-            return None
-
         except Exception as e:
             log(
-                f"CMC UNKNOWN ERROR | "
-                f"{endpoint} | "
+                f"CMC ERROR "
+                f"{endpoint}: "
                 f"{type(e).__name__}: {e}"
             )
 
             if attempt < tries - 1:
-                time.sleep(2 ** attempt)
+                time.sleep(
+                    2 ** attempt
+                )
 
     return None
-
-
 # ============================================================
 # FUNDAMENTALS
 # ============================================================
