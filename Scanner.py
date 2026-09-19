@@ -3228,7 +3228,7 @@ def main():
 
             # Fundamental
             fundamental = (
-                fundamentals_data.get(
+                (fundamentals_data or {}).get(
                     symbol,
                     {
                         "name": base,
