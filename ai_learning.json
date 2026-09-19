@@ -8,12 +8,6 @@
       "created": 1789837994.9664145
     },
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.4391,
-      "created": 1789840410.6442196
-    },
-    {
       "symbol": "AR/USDT",
       "signal": "LONG",
       "entry": 4.429,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.08435,
       "created": 1789854160.2833216
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.4154,
+      "created": 1789854892.510567
     }
   ],
-  "total": 114,
+  "total": 115,
   "hits": 75
 }
