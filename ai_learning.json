@@ -8,12 +8,6 @@
       "created": 1789837994.9664145
     },
     {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.04943,
-      "created": 1789847603.3306508
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 81412.6,
@@ -120,8 +114,14 @@
       "signal": "LONG",
       "entry": 111.02,
       "created": 1789861239.0715
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 12.446,
+      "created": 1789862052.3621569
     }
   ],
-  "total": 121,
-  "hits": 77
+  "total": 122,
+  "hits": 78
 }
