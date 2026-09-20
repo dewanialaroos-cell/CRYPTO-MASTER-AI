@@ -126,6 +126,12 @@
       "signal": "LONG",
       "entry": 2577.41,
       "created": 1789890780.5824754
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 57.01,
+      "created": 1789892086.976502
     }
   ],
   "total": 156,
