@@ -8,12 +8,6 @@
       "created": 1789866819.0150177
     },
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 57.01,
-      "created": 1789892086.976502
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.4079,
@@ -110,6 +104,6 @@
       "created": 1789904577.857756
     }
   ],
-  "total": 175,
-  "hits": 94
+  "total": 176,
+  "hits": 95
 }
