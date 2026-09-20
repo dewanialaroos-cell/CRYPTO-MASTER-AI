@@ -8,30 +8,6 @@
       "created": 1789913666.3325253
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 3.788,
-      "created": 1789919045.5650558
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 91.644,
-      "created": 1789919045.5650592
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.3893,
-      "created": 1789919045.565062
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.20062,
-      "created": 1789919045.5650637
-    },
-    {
       "symbol": "SHIB/USDT",
       "signal": "LONG",
       "entry": 5.409e-06,
@@ -120,8 +96,20 @@
       "signal": "LONG",
       "entry": 0.4364,
       "created": 1789933177.8569882
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.4122,
+      "created": 1789934004.3578153
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.013e-06,
+      "created": 1789934004.357818
     }
   ],
-  "total": 207,
-  "hits": 118
+  "total": 211,
+  "hits": 122
 }
