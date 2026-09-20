@@ -8,24 +8,6 @@
       "created": 1789852425.0084352
     },
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.188e-06,
-      "created": 1789852425.008437
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 9.7,
-      "created": 1789852425.0084379
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 0.8636,
-      "created": 1789852425.008441
-    },
-    {
       "symbol": "FIL/USDT",
       "signal": "LONG",
       "entry": 1.0221,
@@ -138,8 +120,26 @@
       "signal": "LONG",
       "entry": 140.53,
       "created": 1789866819.0150208
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.2052,
+      "created": 1789867740.8279397
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.05e-06,
+      "created": 1789867740.8279428
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 0.8556,
+      "created": 1789867740.827944
     }
   ],
-  "total": 124,
-  "hits": 78
+  "total": 127,
+  "hits": 79
 }
