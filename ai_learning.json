@@ -126,6 +126,12 @@
       "signal": "LONG",
       "entry": 0.08114,
       "created": 1789868618.9976695
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.04948,
+      "created": 1789870503.8535793
     }
   ],
   "total": 131,
