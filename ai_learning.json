@@ -2,22 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "G/USDT",
-      "signal": "LONG",
-      "entry": 0.01113,
-      "created": 1789866819.015014
-    },
-    {
       "symbol": "INJ/USDT",
       "signal": "LONG",
       "entry": 8.08,
       "created": 1789866819.0150177
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1451.13,
-      "created": 1789888695.5700862
     },
     {
       "symbol": "HYPE/USDT",
@@ -114,8 +102,20 @@
       "signal": "LONG",
       "entry": 9.792,
       "created": 1789901776.0200288
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 12.022,
+      "created": 1789903727.078908
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 3.934e-06,
+      "created": 1789903727.0789108
     }
   ],
-  "total": 169,
+  "total": 171,
   "hits": 92
 }
