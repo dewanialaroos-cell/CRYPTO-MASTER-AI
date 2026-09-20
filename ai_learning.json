@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 9.792,
-      "created": 1789901776.0200288
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 12.022,
@@ -96,8 +90,26 @@
       "signal": "LONG",
       "entry": 8.61,
       "created": 1789914610.4752452
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.146,
+      "created": 1789917242.1975703
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 0.8337,
+      "created": 1789917242.1975749
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 755.7,
+      "created": 1789917242.197576
     }
   ],
-  "total": 186,
-  "hits": 100
+  "total": 187,
+  "hits": 101
 }
