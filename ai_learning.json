@@ -8,24 +8,6 @@
       "created": 1789913666.3325253
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1492.94,
-      "created": 1789932381.4368303
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 767.6,
-      "created": 1789932381.4368322
-    },
-    {
-      "symbol": "ZAMA/USDT",
-      "signal": "LONG",
-      "entry": 0.09013,
-      "created": 1789932381.4368327
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 12.533,
@@ -144,8 +126,20 @@
       "signal": "LONG",
       "entry": 58.84,
       "created": 1789946010.2084813
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1507.97,
+      "created": 1789946890.2610555
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.05335,
+      "created": 1789946890.2610564
     }
   ],
-  "total": 221,
-  "hits": 128
+  "total": 224,
+  "hits": 130
 }
