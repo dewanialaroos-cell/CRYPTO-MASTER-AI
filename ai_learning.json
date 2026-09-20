@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2167,
-      "created": 1789837994.9664145
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 81412.6,
-      "created": 1789848869.591619
-    },
-    {
       "symbol": "ASTER/USDT",
       "signal": "LONG",
       "entry": 0.7658,
@@ -122,6 +110,6 @@
       "created": 1789862052.3621569
     }
   ],
-  "total": 122,
+  "total": 124,
   "hits": 78
 }
