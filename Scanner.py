@@ -1759,7 +1759,112 @@ def fundamentals(symbols):
                 age_days = (datetime.now(timezone.utc) - added).days
             except Exception:
                 age_days = np.nan
+        market_cap = number(
+            usd.get("market_cap")
+        )
 
+        circulating_supply = number(
+            usd.get("circulating_supply")
+        )
+
+        total_supply = number(
+            usd.get("total_supply")
+        )
+
+        max_supply = number(
+            usd.get("max_supply")
+        )
+
+        fdv = number(
+            usd.get("fully_diluted_market_cap")
+        )
+
+        market_pairs = number(
+            quote.get("num_market_pairs")
+        )
+
+        mc_fdv_ratio = np.nan
+
+        if (
+            math.isfinite(market_cap)
+            and math.isfinite(fdv)
+            and fdv > 0
+        ):
+            mc_fdv_ratio = (
+                market_cap / fdv
+            )
+
+        supply_ratio = np.nan
+
+        if (
+            math.isfinite(circulating_supply)
+            and math.isfinite(total_supply)
+            and total_supply > 0
+        ):
+            supply_ratio = (
+                circulating_supply
+                / total_supply
+            )
+
+        output[symbol] = {
+
+            "name":
+                text(
+                    metadata.get(
+                        "name"
+                    ),
+                    base
+                ),
+
+            "cmc_rank":
+                number(
+                    metadata.get(
+                        "rank"
+                    ),
+                    np.nan
+                ),
+
+            "market_cap":
+                market_cap,
+
+            "circulating_supply":
+                circulating_supply,
+
+            "total_supply":
+                total_supply,
+
+            "max_supply":
+                max_supply,
+
+            "fdv":
+                fdv,
+
+            "mc_fdv_ratio":
+                mc_fdv_ratio,
+
+            "supply_ratio":
+                supply_ratio,
+
+            "market_pairs":
+                market_pairs,
+
+            "asset_age_days":
+                age_days,
+
+            "fundamental_score":
+                50,
+
+            "fundamental_rating":
+                "NEUTRAL",
+
+            "fundamental_status":
+                "AVAILABLE",
+
+            "fundamental_reason":
+                "CMC_DATA_AVAILABLE"
+        }
+
+    return output
 # ============================================================
 # GLOBAL MARKET DATA
 # ============================================================
