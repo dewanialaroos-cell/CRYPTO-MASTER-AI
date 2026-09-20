@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 751.0,
-      "created": 1789900237.1259892
-    },
-    {
       "symbol": "AKE/USDT",
       "signal": "LONG",
       "entry": 0.1008576,
@@ -110,6 +104,6 @@
       "created": 1789914610.4752452
     }
   ],
-  "total": 184,
-  "hits": 99
+  "total": 185,
+  "hits": 100
 }
