@@ -108,6 +108,12 @@
       "signal": "LONG",
       "entry": 751.0,
       "created": 1789900237.1259892
+    },
+    {
+      "symbol": "AKE/USDT",
+      "signal": "LONG",
+      "entry": 0.1008576,
+      "created": 1789901071.3921077
     }
   ],
   "total": 168,
