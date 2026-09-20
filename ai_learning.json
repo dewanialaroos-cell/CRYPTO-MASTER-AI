@@ -8,12 +8,6 @@
       "created": 1789866819.0150177
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2577.41,
-      "created": 1789890780.5824754
-    },
-    {
       "symbol": "LTC/USDT",
       "signal": "LONG",
       "entry": 57.01,
@@ -116,6 +110,6 @@
       "created": 1789904577.857756
     }
   ],
-  "total": 174,
+  "total": 175,
   "hits": 94
 }
