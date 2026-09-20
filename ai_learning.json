@@ -156,6 +156,12 @@
       "signal": "LONG",
       "entry": 0.0617922,
       "created": 1789940622.3101647
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.2287,
+      "created": 1789942493.1439836
     }
   ],
   "total": 215,
