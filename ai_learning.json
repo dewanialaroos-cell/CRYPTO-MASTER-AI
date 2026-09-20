@@ -8,12 +8,6 @@
       "created": 1789913666.3325253
     },
     {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 5.409e-06,
-      "created": 1789919789.2455802
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 262.5,
@@ -108,8 +102,32 @@
       "signal": "LONG",
       "entry": 4.013e-06,
       "created": 1789934004.357818
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.21279,
+      "created": 1789935245.238349
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "LONG",
+      "entry": 5.496e-06,
+      "created": 1789935245.2383504
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 0.8819,
+      "created": 1789935245.2383537
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.352,
+      "created": 1789935245.238355
     }
   ],
-  "total": 211,
-  "hits": 122
+  "total": 212,
+  "hits": 123
 }
