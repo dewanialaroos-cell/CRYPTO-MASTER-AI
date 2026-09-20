@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ZAMA/USDT",
-      "signal": "LONG",
-      "entry": 0.09318,
-      "created": 1789913666.3325186
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 80600.1,
-      "created": 1789913666.3325205
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 57.06,
-      "created": 1789913666.3325212
-    },
-    {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.04702,
-      "created": 1789913666.3325248
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.4089,
@@ -126,8 +102,26 @@
       "signal": "LONG",
       "entry": 0.0592845,
       "created": 1789925298.3384893
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 81112.3,
+      "created": 1789928187.540422
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 58.83,
+      "created": 1789928187.5404232
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.04903,
+      "created": 1789928187.540426
     }
   ],
-  "total": 195,
-  "hits": 108
+  "total": 199,
+  "hits": 111
 }
