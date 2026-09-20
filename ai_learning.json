@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ASTER/USDT",
-      "signal": "LONG",
-      "entry": 0.7658,
-      "created": 1789852425.0084352
-    },
-    {
       "symbol": "G/USDT",
       "signal": "LONG",
       "entry": 0.01113,
@@ -18,24 +12,6 @@
       "signal": "LONG",
       "entry": 8.08,
       "created": 1789866819.0150177
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 0.957,
-      "created": 1789880064.4253986
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 8.79,
-      "created": 1789881247.9987998
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 80606.1,
-      "created": 1789881247.9988027
     },
     {
       "symbol": "ARB/USDT",
@@ -114,8 +90,20 @@
       "signal": "LONG",
       "entry": 57.01,
       "created": 1789892086.976502
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.4079,
+      "created": 1789895657.9055922
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 136.2,
+      "created": 1789895657.9055939
     }
   ],
-  "total": 159,
+  "total": 162,
   "hits": 88
 }
