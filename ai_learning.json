@@ -8,12 +8,6 @@
       "created": 1789913666.3325253
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2636.86,
-      "created": 1789929248.9375954
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
       "entry": 554.48,
@@ -150,8 +144,14 @@
       "signal": "LONG",
       "entry": 81139.1,
       "created": 1789943343.2715192
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2641.06,
+      "created": 1789944210.3569713
     }
   ],
-  "total": 218,
-  "hits": 126
+  "total": 219,
+  "hits": 127
 }
