@@ -114,6 +114,30 @@
       "signal": "LONG",
       "entry": 81305.8,
       "created": 1789865216.5301337
+    },
+    {
+      "symbol": "G/USDT",
+      "signal": "LONG",
+      "entry": 0.01113,
+      "created": 1789866819.015014
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 8.75,
+      "created": 1789866819.0150168
+    },
+    {
+      "symbol": "INJ/USDT",
+      "signal": "LONG",
+      "entry": 8.08,
+      "created": 1789866819.0150177
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 140.53,
+      "created": 1789866819.0150208
     }
   ],
   "total": 124,
