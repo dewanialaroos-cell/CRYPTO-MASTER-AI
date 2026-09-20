@@ -13,7 +13,7 @@ import numpy as np
 
 
 # ============================================================
-# CRYPTO MASTER AI V9.1
+# CRYPTO MASTER AI V9.2
 # Binance + OKX + Bybit + KuCoin
 # Spot + Futures + CMC + News + Order Book + Learning
 # ============================================================
@@ -1137,12 +1137,10 @@ def orderbook(
 
     for preferred_id in preferred:
 
-        for exchange in spot:
+        for exchange_id, exchange in spot:
 
-            exchange_id = getattr(
-                exchange,
-                "id",
-                ""
+            exchange_id = text(
+                exchange_id
             ).lower()
 
             if exchange_id != preferred_id:
@@ -1578,7 +1576,7 @@ def fundamentals(symbols):
                 np.nan,
 
             "fundamental_score":
-                50,
+                50.0,
 
             "fundamental_rating":
                 "UNKNOWN",
@@ -1595,8 +1593,13 @@ def fundamentals(symbols):
         for s in symbols
     ]
 
+    base_symbols = list(dict.fromkeys(base_symbols))
+
+    if not base_symbols:
+        return output
+
     # --------------------------------------------------------
-    # CMC MAP
+    # CMC MAP -> stable ID resolution
     # --------------------------------------------------------
 
     map_response = cmc_get(
@@ -1617,20 +1620,32 @@ def fundamentals(symbols):
         dict
     ):
 
-        map_data = map_response.get(
+        candidate_data = map_response.get(
             "data",
             []
         )
+
+        if isinstance(
+            candidate_data,
+            list
+        ):
+            map_data = candidate_data
 
     selected = {}
 
     for item in map_data:
 
-        symbol = text(
+        if not isinstance(
+            item,
+            dict
+        ):
+            continue
+
+        item_symbol = text(
             item.get("symbol")
         ).upper()
 
-        if symbol not in base_symbols:
+        if item_symbol not in base_symbols:
             continue
 
         if not item.get(
@@ -1640,25 +1655,28 @@ def fundamentals(symbols):
             continue
 
         rank = number(
-            item.get(
-                "rank"
-            ),
+            item.get("rank"),
             999999
         )
 
         if (
-            symbol not in selected
-            or rank < selected[symbol][0]
+            item_symbol not in selected
+            or rank < selected[item_symbol][0]
         ):
 
-            selected[symbol] = (
+            selected[item_symbol] = (
                 rank,
                 item
             )
 
-    # --------------------------------------------------------
-    # CMC QUOTES
-    # --------------------------------------------------------
+    if not selected:
+
+        log(
+            "CMC FUNDAMENTALS: "
+            "MAP RETURNED NO MATCHES"
+        )
+
+        return output
 
     ids = []
 
@@ -1666,40 +1684,91 @@ def fundamentals(symbols):
 
         item = value[1]
 
-        if item.get("id"):
+        coin_id = item.get("id")
 
+        if coin_id is not None:
             ids.append(
-                str(item["id"])
+                str(coin_id)
             )
+
+    ids = list(
+        dict.fromkeys(ids)
+    )
+
+    if not ids:
+        return output
+
+    # --------------------------------------------------------
+    # CMC QUOTES
+    # --------------------------------------------------------
+
+    quote_response = cmc_get(
+        "/v3/cryptocurrency/quotes/latest",
+        {
+            "id":
+                ",".join(ids),
+
+            "convert":
+                "USD"
+        }
+    )
 
     quotes = {}
 
-    if ids:
+    if isinstance(
+        quote_response,
+        dict
+    ):
 
-        quote_response = cmc_get(
-            "/v3/cryptocurrency/quotes/latest",
-            {
-                "id":
-                    ",".join(ids),
-
-                "convert":
-                    "USD"
-            }
+        quote_data = quote_response.get(
+            "data",
+            {}
         )
 
         if isinstance(
-            quote_response,
+            quote_data,
             dict
         ):
+            quotes = quote_data
 
-            quotes = quote_response.get(
-                "data",
-                {}
-            )
+    # --------------------------------------------------------
+    # CMC METADATA -> date_added
+    # --------------------------------------------------------
+
+    info_response = cmc_get(
+        "/v2/cryptocurrency/info",
+        {
+            "id":
+                ",".join(ids),
+
+            "aux":
+                "date_added"
+        }
+    )
+
+    info_data = {}
+
+    if isinstance(
+        info_response,
+        dict
+    ):
+
+        candidate_info = info_response.get(
+            "data",
+            {}
+        )
+
+        if isinstance(
+            candidate_info,
+            dict
+        ):
+            info_data = candidate_info
 
     # --------------------------------------------------------
     # BUILD FUNDAMENTALS
     # --------------------------------------------------------
+
+    available_count = 0
 
     for symbol in symbols:
 
@@ -1718,61 +1787,84 @@ def fundamentals(symbols):
             metadata.get("id")
         )
 
-        quote = {}
+        quote = quotes.get(
+            coin_id,
+            {}
+        )
+
+        if not isinstance(
+            quote,
+            dict
+        ):
+            continue
+
+        # CMC V3 returns quote as a LIST.
+        quote_container = quote.get(
+            "quote",
+            {}
+        )
+
+        usd = {}
 
         if isinstance(
-            quotes,
+            quote_container,
+            list
+        ):
+
+            for quote_item in quote_container:
+
+                if not isinstance(
+                    quote_item,
+                    dict
+                ):
+                    continue
+
+                if text(
+                    quote_item.get("symbol")
+                ).upper() == "USD":
+
+                    usd = quote_item
+                    break
+
+            if not usd and quote_container:
+                first = quote_container[0]
+                if isinstance(
+                    first,
+                    dict
+                ):
+                    usd = first
+
+        elif isinstance(
+            quote_container,
             dict
         ):
 
-            quote = quotes.get(
-                coin_id,
+            usd = quote_container.get(
+                "USD",
                 {}
             )
 
-        usd = quote.get(
-            "quote",
-            {}
-        ).get(
-            "USD",
-            {}
-        )
-
-        if not usd:
+        if not isinstance(
+            usd,
+            dict
+        ) or not usd:
 
             continue
 
-        age_days = np.nan
-
-        date_added = metadata.get(
-            "date_added"
-        )
-
-        if date_added:
-            try:
-                added = datetime.fromisoformat(
-                    date_added.replace(
-                        "Z",
-                        "+00:00"
-                    )
-                )
-                age_days = (datetime.now(timezone.utc) - added).days
-            except Exception:
-                age_days = np.nan
         market_cap = number(
             usd.get("market_cap")
         )
 
         circulating_supply = number(
-            usd.get("circulating_supply")
+            quote.get("circulating_supply")
         )
 
         total_supply = number(
-            usd.get("total_supply")
+            quote.get("total_supply")
         )
 
         max_supply = number(
-            usd.get("max_supply")
+            quote.get("max_supply")
         )
 
         fdv = number(
@@ -1782,6 +1874,59 @@ def fundamentals(symbols):
         market_pairs = number(
             quote.get("num_market_pairs")
         )
+
+        age_days = np.nan
+
+        info = info_data.get(
+            coin_id,
+            {}
+        )
+
+        if isinstance(
+            info,
+            dict
+        ):
+
+            date_added = info.get(
+                "date_added"
+            )
+
+            if date_added:
+                try:
+                    added = datetime.fromisoformat(
+                        date_added.replace(
+                            "Z",
+                            "+00:00"
+                        )
+                    )
+                    age_days = (
+                        datetime.now(UTC)
+                        - added
+                    ).days
+                except Exception:
+                    age_days = np.nan
+
+        # Fallback if metadata call did not return date_added.
+        if not math.isfinite(age_days):
+
+            date_added = metadata.get(
+                "date_added"
+            )
+
+            if date_added:
+                try:
+                    added = datetime.fromisoformat(
+                        date_added.replace(
+                            "Z",
+                            "+00:00"
+                        )
+                    )
+                    age_days = (
+                        datetime.now(UTC)
+                        - added
+                    ).days
+                except Exception:
+                    age_days = np.nan
 
         mc_fdv_ratio = np.nan
 
@@ -1798,30 +1943,38 @@ def fundamentals(symbols):
 
         if (
             math.isfinite(circulating_supply)
-            and math.isfinite(total_supply)
-            and total_supply > 0
+            and math.isfinite(max_supply)
+            and max_supply > 0
         ):
             supply_ratio = (
                 circulating_supply
-                / total_supply
+                / max_supply
             )
 
         output[symbol] = {
 
             "name":
                 text(
-                    metadata.get(
+                    quote.get(
                         "name"
                     ),
-                    base
+                    text(
+                        metadata.get(
+                            "name"
+                        ),
+                        base
+                    )
                 ),
 
             "cmc_rank":
                 number(
-                    metadata.get(
-                        "rank"
+                    quote.get(
+                        "cmc_rank"
                     ),
-                    np.nan
+                    number(
+                        metadata.get("rank"),
+                        np.nan
+                    )
                 ),
 
             "market_cap":
@@ -1852,19 +2005,32 @@ def fundamentals(symbols):
                 age_days,
 
             "fundamental_score":
-                50,
+                50.0,
 
             "fundamental_rating":
                 "NEUTRAL",
 
             "fundamental_status":
-                "AVAILABLE",
+                "OK",
 
             "fundamental_reason":
                 "CMC_DATA_AVAILABLE"
         }
 
+        output[symbol] = calculate_fundamental_score(
+            output[symbol]
+        )
+
+        available_count += 1
+
+    log(
+        f"CMC FUNDAMENTALS: "
+        f"{available_count}/"
+        f"{len(symbols)} AVAILABLE"
+    )
+
     return output
+
 # ============================================================
 # GLOBAL MARKET DATA
 # ============================================================
@@ -1879,7 +2045,7 @@ def global_market_data():
         "btc_dominance":
             np.nan,
 
-        "market_volume":
+        "global_market_volume":
             np.nan,
 
         "fear_greed":
@@ -1919,7 +2085,7 @@ def global_market_data():
         )
 
         result[
-            "market_volume"
+            "global_market_volume"
         ] = number(
             usd.get(
                 "total_volume_24h"
@@ -2680,6 +2846,267 @@ def add_predictions(
 # FINAL AI SCORE
 # ============================================================
 
+def recalculate_result(
+    result,
+    learning_adjustment
+):
+
+    technical_score = number(
+        result.get("technical_score"),
+        50
+    )
+
+    fundamental_score = number(
+        result.get("fundamental_score"),
+        50
+    )
+
+    news_score = number(
+        result.get("news_score"),
+        0
+    )
+
+    orderbook_imbalance = number(
+        result.get("orderbook_imbalance"),
+        0
+    )
+
+    funding_signal = text(
+        result.get("funding_signal")
+    ).upper()
+
+    if funding_signal == "BEARISH":
+        funding_direction = -1
+    elif funding_signal == "BULLISH":
+        funding_direction = 1
+    else:
+        funding_direction = 0
+
+    btc_score = number(
+        result.get("btc_score"),
+        0
+    )
+
+    fear_greed = number(
+        result.get("fear_greed")
+    )
+
+    fear_greed_direction = 0
+
+    if (
+        math.isfinite(fear_greed)
+        and fear_greed >= 80
+    ):
+        fear_greed_direction = -0.5
+
+    elif (
+        math.isfinite(fear_greed)
+        and 0 < fear_greed <= 20
+    ):
+        fear_greed_direction = 0.5
+
+    raw_score = (
+        (
+            (technical_score - 50)
+            / 50
+        )
+        * 32
+        * (1 + learning_adjustment)
+
+        +
+
+        (
+            (fundamental_score - 50)
+            / 50
+        )
+        * 7
+
+        +
+
+        news_score * 6
+
+        +
+
+        orderbook_imbalance * 5
+
+        +
+
+        funding_direction * 3
+
+        +
+
+        btc_score * 4
+
+        +
+
+        fear_greed_direction * 2
+    )
+
+    raw_score = clip(
+        raw_score,
+        -45,
+        45
+    )
+
+    long_score = clip(
+        50 + raw_score,
+        0,
+        95
+    )
+
+    short_score = clip(
+        50 - raw_score,
+        0,
+        95
+    )
+
+    trends = [
+        text(result.get("15m_trend")),
+        text(result.get("1h_trend")),
+        text(result.get("4h_trend")),
+        text(result.get("1d_trend"))
+    ]
+
+    bullish_count = sum(
+        trend in (
+            "BULLISH",
+            "STRONG_BULLISH"
+        )
+        for trend in trends
+    )
+
+    bearish_count = sum(
+        trend in (
+            "BEARISH",
+            "STRONG_BEARISH"
+        )
+        for trend in trends
+    )
+
+    if (
+        long_score >= 63
+        and long_score > short_score + 5
+        and bullish_count >= 2
+    ):
+        signal = "LONG"
+
+    elif (
+        short_score >= 63
+        and short_score > long_score + 5
+        and bearish_count >= 2
+    ):
+        signal = "SHORT"
+
+    else:
+        signal = "NO TRADE"
+
+    agreement = abs(
+        bullish_count - bearish_count
+    ) / 4
+
+    confidence = (
+        50
+        + abs(raw_score) * 0.75
+        + agreement * 6
+    )
+
+    if text(
+        result.get("news_impact")
+    ).upper() == "HIGH":
+        confidence += 2
+
+    if text(
+        result.get("fundamental_status")
+    ).upper() != "OK":
+        confidence -= 3
+
+    confidence = clip(
+        confidence,
+        50,
+        95
+    )
+
+    price = number(
+        result.get("price")
+    )
+
+    atr_value = number(
+        result.get("atr")
+    )
+
+    if (
+        not math.isfinite(price)
+        or price <= 0
+    ):
+        return result
+
+    if (
+        not math.isfinite(atr_value)
+        or atr_value <= 0
+    ):
+        atr_value = price * 0.02
+
+    if signal == "LONG":
+        stop_loss = price - 1.5 * atr_value
+        take_profit = price + 3 * atr_value
+
+    elif signal == "SHORT":
+        stop_loss = price + 1.5 * atr_value
+        take_profit = price - 3 * atr_value
+
+        if take_profit <= 0:
+            take_profit = price * 0.95
+
+    else:
+        stop_loss = np.nan
+        take_profit = np.nan
+
+    result["long_score"] = round(
+        long_score,
+        2
+    )
+
+    result["short_score"] = round(
+        short_score,
+        2
+    )
+
+    result["signal_strength"] = round(
+        max(
+            long_score,
+            short_score
+        ),
+        2
+    )
+
+    result["signal"] = signal
+
+    result["confidence"] = round(
+        confidence,
+        2
+    )
+
+    result["stop_loss"] = stop_loss
+    result["take_profit"] = take_profit
+    result["learning_adjustment"] = round(
+        learning_adjustment,
+        4
+    )
+
+    result["reason"] = (
+        f"TF:{number(result.get('tf_score'), 0):.2f} | "
+        f"TECH:{number(result.get('technical_score'), 50):.1f} | "
+        f"FUND:{number(result.get('fundamental_score'), 50):.1f} | "
+        f"NEWS:{text(result.get('news_sentiment'), 'NO_NEWS')} | "
+        f"OB:{text(result.get('orderbook_signal'), 'UNKNOWN')} | "
+        f"FUNDING:{text(result.get('funding_signal'), 'NEUTRAL')} | "
+        f"BTC:{text(result.get('btc_regime'), 'UNKNOWN')} | "
+        f"LEARN:{learning_adjustment:+.3f}"
+    )
+
+    return result
+
+
 def create_result(
     base_row,
     technical,
@@ -3072,7 +3499,7 @@ def send_telegram(results):
         return
 
     lines = [
-        "Crypto Master AI V9.1",
+        "Crypto Master AI V9.2",
         ""
     ]
 
@@ -3141,7 +3568,7 @@ def main():
     )
 
     log(
-        "CRYPTO MASTER AI V9.1 START"
+        "CRYPTO MASTER AI V9.2 START"
     )
 
     log(
@@ -3425,124 +3852,9 @@ def main():
 
     for result in results:
 
-        technical_score = number(
-            result.get(
-                "technical_score"
-            ),
-            50
-        )
-
-        fundamental_score = number(
-            result.get(
-                "fundamental_score"
-            ),
-            50
-        )
-
-        news_score = number(
-            result.get(
-                "news_score"
-            ),
-            0
-        )
-
-        orderbook_imbalance = number(
-            result.get(
-                "orderbook_imbalance"
-            ),
-            0
-        )
-
-        funding_signal = result.get(
-            "funding_signal"
-        )
-
-        if funding_signal == "BEARISH":
-
-            funding_direction = -1
-
-        elif funding_signal == "BULLISH":
-
-            funding_direction = 1
-
-        else:
-
-            funding_direction = 0
-
-        btc_score = number(
-            result.get(
-                "btc_score"
-            ),
-            0
-        )
-
-        raw = (
-
-            (
-                (technical_score - 50)
-                / 50
-            )
-            * 32
-            * (
-                1
-                + learning_adjustment
-            )
-
-            +
-
-            (
-                (fundamental_score - 50)
-                / 50
-            )
-            * 7
-
-            +
-
-            news_score * 6
-
-            +
-
-            orderbook_imbalance * 5
-
-            +
-
-            funding_direction * 3
-
-            +
-
-            btc_score * 4
-        )
-
-        raw = clip(
-            raw,
-            -45,
-            45
-        )
-
-        result["long_score"] = round(
-            clip(
-                50 + raw,
-                0,
-                95
-            ),
-            2
-        )
-
-        result["short_score"] = round(
-            clip(
-                50 - raw,
-                0,
-                95
-            ),
-            2
-        )
-
-        result["signal_strength"] = round(
-            max(
-                result["long_score"],
-                result["short_score"]
-            ),
-            2
+        recalculate_result(
+            result,
+            learning_adjustment
         )
 
         result[
@@ -3553,13 +3865,6 @@ def main():
             "learning_hit_rate"
         ] = round(
             hit_rate,
-            4
-        )
-
-        result[
-            "learning_adjustment"
-        ] = round(
-            learning_adjustment,
             4
         )
 
