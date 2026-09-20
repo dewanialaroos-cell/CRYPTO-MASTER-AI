@@ -8,18 +8,6 @@
       "created": 1789913666.3325253
     },
     {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 542.51,
-      "created": 1789914610.4752421
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 8.61,
-      "created": 1789914610.4752452
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.146,
@@ -120,8 +108,14 @@
       "signal": "LONG",
       "entry": 0.04903,
       "created": 1789928187.540426
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2636.86,
+      "created": 1789929248.9375954
     }
   ],
-  "total": 199,
-  "hits": 111
+  "total": 201,
+  "hits": 113
 }
