@@ -8,24 +8,6 @@
       "created": 1789852425.0084352
     },
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.0221,
-      "created": 1789853384.3847826
-    },
-    {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.04282,
-      "created": 1789853384.3847861
-    },
-    {
-      "symbol": "ZAMA/USDT",
-      "signal": "LONG",
-      "entry": 0.08435,
-      "created": 1789854160.2833216
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.4154,
@@ -138,8 +120,20 @@
       "signal": "LONG",
       "entry": 0.8556,
       "created": 1789867740.827944
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.04535,
+      "created": 1789868618.997668
+    },
+    {
+      "symbol": "ZAMA/USDT",
+      "signal": "LONG",
+      "entry": 0.08114,
+      "created": 1789868618.9976695
     }
   ],
-  "total": 127,
-  "hits": 79
+  "total": 130,
+  "hits": 80
 }
