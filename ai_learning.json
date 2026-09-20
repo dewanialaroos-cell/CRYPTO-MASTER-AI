@@ -8,24 +8,6 @@
       "created": 1789852425.0084352
     },
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 57.81,
-      "created": 1789858541.082577
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.113,
-      "created": 1789859587.5600162
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2632.23,
-      "created": 1789859587.5600176
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "LONG",
       "entry": 762.1,
@@ -132,8 +114,20 @@
       "signal": "LONG",
       "entry": 9.627,
       "created": 1789871504.9797635
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2577.75,
+      "created": 1789874096.4817166
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 56.83,
+      "created": 1789874096.481718
     }
   ],
-  "total": 134,
+  "total": 137,
   "hits": 82
 }
