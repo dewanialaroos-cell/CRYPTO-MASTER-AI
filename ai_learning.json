@@ -114,6 +114,12 @@
       "signal": "LONG",
       "entry": 2636.86,
       "created": 1789929248.9375954
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 554.48,
+      "created": 1789930445.6695385
     }
   ],
   "total": 201,
