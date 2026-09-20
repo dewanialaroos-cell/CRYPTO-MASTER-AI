@@ -8,24 +8,6 @@
       "created": 1789913666.3325253
     },
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.146,
-      "created": 1789917242.1975703
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 0.8337,
-      "created": 1789917242.1975749
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 755.7,
-      "created": 1789917242.197576
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 12.227,
@@ -126,8 +108,26 @@
       "signal": "LONG",
       "entry": 8.748,
       "created": 1789931565.810692
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1492.94,
+      "created": 1789932381.4368303
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 767.6,
+      "created": 1789932381.4368322
+    },
+    {
+      "symbol": "ZAMA/USDT",
+      "signal": "LONG",
+      "entry": 0.09013,
+      "created": 1789932381.4368327
     }
   ],
-  "total": 201,
-  "hits": 113
+  "total": 204,
+  "hits": 115
 }
