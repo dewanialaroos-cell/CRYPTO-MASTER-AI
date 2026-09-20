@@ -20,12 +20,6 @@
       "created": 1789866819.0150177
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 90.705,
-      "created": 1789875150.3554938
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.4067,
@@ -108,8 +102,26 @@
       "signal": "LONG",
       "entry": 1451.13,
       "created": 1789888695.5700862
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 91.422,
+      "created": 1789890084.0681014
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.19622,
+      "created": 1789890084.068103
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 3.478,
+      "created": 1789890084.0681064
     }
   ],
-  "total": 155,
-  "hits": 86
+  "total": 156,
+  "hits": 87
 }
