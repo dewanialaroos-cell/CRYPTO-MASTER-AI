@@ -8,18 +8,6 @@
       "created": 1789852425.0084352
     },
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 762.1,
-      "created": 1789860414.2847874
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 91.694,
-      "created": 1789860414.2847888
-    },
-    {
       "symbol": "SOL/USDT",
       "signal": "LONG",
       "entry": 111.02,
@@ -126,8 +114,14 @@
       "signal": "LONG",
       "entry": 56.83,
       "created": 1789874096.481718
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 90.705,
+      "created": 1789875150.3554938
     }
   ],
-  "total": 137,
+  "total": 139,
   "hits": 82
 }
