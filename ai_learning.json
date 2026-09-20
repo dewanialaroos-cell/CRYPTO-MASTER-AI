@@ -20,18 +20,6 @@
       "created": 1789866819.0150177
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2577.75,
-      "created": 1789874096.4817166
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 56.83,
-      "created": 1789874096.481718
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
       "entry": 90.705,
@@ -114,8 +102,14 @@
       "signal": "LONG",
       "entry": 9.681,
       "created": 1789886735.9729779
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1451.13,
+      "created": 1789888695.5700862
     }
   ],
-  "total": 153,
+  "total": 155,
   "hits": 86
 }
