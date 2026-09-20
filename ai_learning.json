@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 252.5,
-      "created": 1789909152.6337152
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "LONG",
       "entry": 2581.39,
@@ -126,8 +120,20 @@
       "signal": "LONG",
       "entry": 5.409e-06,
       "created": 1789919789.2455802
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 262.5,
+      "created": 1789924394.7376523
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 109.84,
+      "created": 1789924394.7376547
     }
   ],
-  "total": 192,
-  "hits": 105
+  "total": 193,
+  "hits": 106
 }
