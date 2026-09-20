@@ -14,22 +14,10 @@
       "created": 1789866819.015014
     },
     {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 8.75,
-      "created": 1789866819.0150168
-    },
-    {
       "symbol": "INJ/USDT",
       "signal": "LONG",
       "entry": 8.08,
       "created": 1789866819.0150177
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 140.53,
-      "created": 1789866819.0150208
     },
     {
       "symbol": "ARB/USDT",
@@ -126,8 +114,20 @@
       "signal": "LONG",
       "entry": 0.957,
       "created": 1789880064.4253986
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 8.79,
+      "created": 1789881247.9987998
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 80606.1,
+      "created": 1789881247.9988027
     }
   ],
-  "total": 142,
-  "hits": 82
+  "total": 144,
+  "hits": 83
 }
