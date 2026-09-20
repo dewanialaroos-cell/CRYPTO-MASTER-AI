@@ -108,6 +108,24 @@
       "signal": "LONG",
       "entry": 90.705,
       "created": 1789875150.3554938
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.4067,
+      "created": 1789878742.7913105
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 253.5,
+      "created": 1789878742.7913134
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 109.04,
+      "created": 1789878742.7913144
     }
   ],
   "total": 141,
