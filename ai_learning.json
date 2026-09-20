@@ -8,18 +8,6 @@
       "created": 1789852425.0084352
     },
     {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 111.02,
-      "created": 1789861239.0715
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 12.446,
-      "created": 1789862052.3621569
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 81305.8,
@@ -122,6 +110,6 @@
       "created": 1789875150.3554938
     }
   ],
-  "total": 139,
+  "total": 141,
   "hits": 82
 }
