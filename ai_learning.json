@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "INJ/USDT",
-      "signal": "LONG",
-      "entry": 8.08,
-      "created": 1789866819.0150177
-    },
-    {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.4079,
-      "created": 1789895657.9055922
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 136.2,
-      "created": 1789895657.9055939
-    },
-    {
       "symbol": "ARB/USDT",
       "signal": "LONG",
       "entry": 0.2143,
@@ -108,8 +90,14 @@
       "signal": "LONG",
       "entry": 252.5,
       "created": 1789909152.6337152
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2581.39,
+      "created": 1789910259.5300918
     }
   ],
-  "total": 176,
-  "hits": 95
+  "total": 178,
+  "hits": 96
 }
