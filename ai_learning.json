@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 12.022,
-      "created": 1789903727.078908
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 3.934e-06,
-      "created": 1789903727.0789108
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.2055,
@@ -108,8 +96,20 @@
       "signal": "LONG",
       "entry": 755.7,
       "created": 1789917242.197576
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 12.227,
+      "created": 1789918191.7807884
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.1074,
+      "created": 1789918191.780794
     }
   ],
-  "total": 187,
-  "hits": 101
+  "total": 189,
+  "hits": 103
 }
