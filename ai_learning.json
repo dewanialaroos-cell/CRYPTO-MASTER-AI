@@ -14,24 +14,6 @@
       "created": 1789866819.0150177
     },
     {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.04531,
-      "created": 1789883063.132045
-    },
-    {
-      "symbol": "ZAMA/USDT",
-      "signal": "LONG",
-      "entry": 0.08257,
-      "created": 1789883063.1320462
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.013e-06,
-      "created": 1789883063.1320481
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 12.015,
@@ -108,8 +90,32 @@
       "signal": "LONG",
       "entry": 8.794,
       "created": 1789896615.962905
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.04608,
+      "created": 1789898192.211666
+    },
+    {
+      "symbol": "ZAMA/USDT",
+      "signal": "LONG",
+      "entry": 0.08438,
+      "created": 1789898192.2116673
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 0.956,
+      "created": 1789898192.2116706
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 80478.0,
+      "created": 1789898192.2116714
     }
   ],
-  "total": 163,
-  "hits": 89
+  "total": 166,
+  "hits": 91
 }
