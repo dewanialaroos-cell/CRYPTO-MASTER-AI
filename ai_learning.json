@@ -14,18 +14,6 @@
       "created": 1789866819.0150177
     },
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 12.015,
-      "created": 1789885104.9003427
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 752.2,
-      "created": 1789885104.9003444
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 9.681,
@@ -114,8 +102,14 @@
       "signal": "LONG",
       "entry": 80478.0,
       "created": 1789898192.2116714
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 751.0,
+      "created": 1789900237.1259892
     }
   ],
-  "total": 166,
+  "total": 168,
   "hits": 91
 }
