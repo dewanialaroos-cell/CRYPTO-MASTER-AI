@@ -8,18 +8,6 @@
       "created": 1789913666.3325253
     },
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 12.533,
-      "created": 1789933177.8569868
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.4364,
-      "created": 1789933177.8569882
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "LONG",
       "entry": 1.4122,
@@ -138,8 +126,14 @@
       "signal": "LONG",
       "entry": 0.05335,
       "created": 1789946890.2610564
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 12.523,
+      "created": 1789947774.931457
     }
   ],
-  "total": 224,
-  "hits": 130
+  "total": 226,
+  "hits": 131
 }
