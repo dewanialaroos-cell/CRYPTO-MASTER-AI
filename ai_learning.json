@@ -144,6 +144,18 @@
       "signal": "LONG",
       "entry": 258.9,
       "created": 1789939783.5747855
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.1457,
+      "created": 1789940622.310164
+    },
+    {
+      "symbol": "AKE/USDT",
+      "signal": "LONG",
+      "entry": 0.0617922,
+      "created": 1789940622.3101647
     }
   ],
   "total": 215,
