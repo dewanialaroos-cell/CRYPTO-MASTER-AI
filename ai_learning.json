@@ -20,24 +20,6 @@
       "created": 1789866819.0150177
     },
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.21006,
-      "created": 1789871504.9797602
-    },
-    {
-      "symbol": "AR/USDT",
-      "signal": "LONG",
-      "entry": 4.326,
-      "created": 1789871504.9797616
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 9.627,
-      "created": 1789871504.9797635
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "LONG",
       "entry": 2577.75,
@@ -126,8 +108,14 @@
       "signal": "LONG",
       "entry": 752.2,
       "created": 1789885104.9003444
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 9.681,
+      "created": 1789886735.9729779
     }
   ],
-  "total": 150,
-  "hits": 85
+  "total": 153,
+  "hits": 86
 }
