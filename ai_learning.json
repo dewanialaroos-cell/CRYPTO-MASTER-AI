@@ -20,18 +20,6 @@
       "created": 1789866819.0150177
     },
     {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.04535,
-      "created": 1789868618.997668
-    },
-    {
-      "symbol": "ZAMA/USDT",
-      "signal": "LONG",
-      "entry": 0.08114,
-      "created": 1789868618.9976695
-    },
-    {
       "symbol": "SEI/USDT",
       "signal": "LONG",
       "entry": 0.04948,
@@ -114,8 +102,26 @@
       "signal": "LONG",
       "entry": 0.21072,
       "created": 1789882180.9026184
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.04531,
+      "created": 1789883063.132045
+    },
+    {
+      "symbol": "ZAMA/USDT",
+      "signal": "LONG",
+      "entry": 0.08257,
+      "created": 1789883063.1320462
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.013e-06,
+      "created": 1789883063.1320481
     }
   ],
-  "total": 147,
-  "hits": 84
+  "total": 149,
+  "hits": 85
 }
