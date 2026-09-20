@@ -8,12 +8,6 @@
       "created": 1789852425.0084352
     },
     {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 81305.8,
-      "created": 1789865216.5301337
-    },
-    {
       "symbol": "G/USDT",
       "signal": "LONG",
       "entry": 0.01113,
@@ -126,8 +120,14 @@
       "signal": "LONG",
       "entry": 109.04,
       "created": 1789878742.7913144
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 0.957,
+      "created": 1789880064.4253986
     }
   ],
-  "total": 141,
+  "total": 142,
   "hits": 82
 }
