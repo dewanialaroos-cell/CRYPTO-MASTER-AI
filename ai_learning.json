@@ -14,12 +14,6 @@
       "created": 1789866819.0150177
     },
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 9.681,
-      "created": 1789886735.9729779
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
       "entry": 1451.13,
@@ -114,8 +108,14 @@
       "signal": "LONG",
       "entry": 0.1008576,
       "created": 1789901071.3921077
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 9.792,
+      "created": 1789901776.0200288
     }
   ],
-  "total": 168,
-  "hits": 91
+  "total": 169,
+  "hits": 92
 }
