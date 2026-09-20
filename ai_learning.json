@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.20996,
-      "created": 1789911660.7101188
-    },
-    {
       "symbol": "ZAMA/USDT",
       "signal": "LONG",
       "entry": 0.09318,
@@ -134,6 +128,6 @@
       "created": 1789925298.3384893
     }
   ],
-  "total": 194,
-  "hits": 107
+  "total": 195,
+  "hits": 108
 }
