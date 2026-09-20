@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2581.39,
-      "created": 1789910259.5300918
-    },
-    {
       "symbol": "ARB/USDT",
       "signal": "LONG",
       "entry": 0.20996,
@@ -132,8 +126,14 @@
       "signal": "LONG",
       "entry": 109.84,
       "created": 1789924394.7376547
+    },
+    {
+      "symbol": "AKE/USDT",
+      "signal": "LONG",
+      "entry": 0.0592845,
+      "created": 1789925298.3384893
     }
   ],
-  "total": 193,
-  "hits": 106
+  "total": 194,
+  "hits": 107
 }
