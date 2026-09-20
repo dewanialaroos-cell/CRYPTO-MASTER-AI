@@ -8,12 +8,6 @@
       "created": 1789913666.3325253
     },
     {
-      "symbol": "AKE/USDT",
-      "signal": "LONG",
-      "entry": 0.0592845,
-      "created": 1789925298.3384893
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 81112.3,
@@ -138,8 +132,20 @@
       "signal": "LONG",
       "entry": 0.214,
       "created": 1789938834.8161874
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 109.91,
+      "created": 1789939783.5747845
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 258.9,
+      "created": 1789939783.5747855
     }
   ],
-  "total": 214,
-  "hits": 123
+  "total": 215,
+  "hits": 124
 }
