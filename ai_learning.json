@@ -26,18 +26,6 @@
       "created": 1789955775.1830118
     },
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 0.9328,
-      "created": 1789967697.743994
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 3.997e-06,
-      "created": 1789967697.743998
-    },
-    {
       "symbol": "SOL/USDT",
       "signal": "LONG",
       "entry": 112.09,
@@ -132,8 +120,38 @@
       "signal": "LONG",
       "entry": 0.2084,
       "created": 1789981033.7662556
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.025,
+      "created": 1789982280.8066967
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.22137,
+      "created": 1789982280.8066988
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.0056,
+      "created": 1789982280.8066995
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.20742,
+      "created": 1789982280.806702
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.16e-06,
+      "created": 1789982280.806703
     }
   ],
-  "total": 275,
-  "hits": 157
+  "total": 277,
+  "hits": 159
 }
