@@ -1900,7 +1900,7 @@ def fundamentals(symbols):
                         )
                     )
                     age_days = (
-                        datetime.now(UTC)
+                        datetime.now(timezone.utc)
                         - added
                     ).days
                 except Exception:
@@ -1922,7 +1922,7 @@ def fundamentals(symbols):
                         )
                     )
                     age_days = (
-                        datetime.now(UTC)
+                        datetime.now(timezone.utc)
                         - added
                     ).days
                 except Exception:
