@@ -20,18 +20,6 @@
       "created": 1789942493.1439836
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1507.97,
-      "created": 1789946890.2610555
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.05335,
-      "created": 1789946890.2610564
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 12.523,
@@ -180,8 +168,14 @@
       "signal": "LONG",
       "entry": 11.148,
       "created": 1789960538.4984317
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 138.97,
+      "created": 1789961662.2282543
     }
   ],
-  "total": 242,
-  "hits": 143
+  "total": 244,
+  "hits": 145
 }
