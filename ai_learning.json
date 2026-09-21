@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "LONG",
-      "entry": 1.642,
-      "created": 1789948511.3957863
-    },
-    {
       "symbol": "PROVE/USDT",
       "signal": "LONG",
       "entry": 0.234,
@@ -198,6 +192,12 @@
       "signal": "LONG",
       "entry": 122.63,
       "created": 1789991691.5440252
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.1898,
+      "created": 1789993088.3347738
     }
   ],
   "total": 285,
