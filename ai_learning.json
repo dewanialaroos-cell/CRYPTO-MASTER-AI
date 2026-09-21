@@ -14,18 +14,6 @@
       "created": 1789937751.711456
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.1457,
-      "created": 1789940622.310164
-    },
-    {
-      "symbol": "AKE/USDT",
-      "signal": "LONG",
-      "entry": 0.0617922,
-      "created": 1789940622.3101647
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "LONG",
       "entry": 0.2287,
@@ -162,8 +150,14 @@
       "signal": "LONG",
       "entry": 0.08527,
       "created": 1789955775.1830118
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 8.679,
+      "created": 1789956916.727763
     }
   ],
-  "total": 237,
+  "total": 239,
   "hits": 140
 }
