@@ -26,24 +26,6 @@
       "created": 1789948511.3957863
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 94.384,
-      "created": 1789951636.0830283
-    },
-    {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.4422,
-      "created": 1789951636.083031
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 0.9371,
-      "created": 1789951636.0830333
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "LONG",
       "entry": 782.26,
@@ -174,8 +156,20 @@
       "signal": "LONG",
       "entry": 1521.16,
       "created": 1789965273.4575105
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 94.027,
+      "created": 1789966585.8216164
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.419,
+      "created": 1789966585.8216197
     }
   ],
-  "total": 250,
-  "hits": 148
+  "total": 253,
+  "hits": 149
 }
