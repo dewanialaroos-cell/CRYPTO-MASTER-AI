@@ -26,18 +26,6 @@
       "created": 1789948511.3957863
     },
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 782.26,
-      "created": 1789953295.9870543
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.2227,
-      "created": 1789953295.9870572
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 268.9,
@@ -168,8 +156,20 @@
       "signal": "LONG",
       "entry": 1.419,
       "created": 1789966585.8216197
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 0.9328,
+      "created": 1789967697.743994
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 3.997e-06,
+      "created": 1789967697.743998
     }
   ],
-  "total": 253,
+  "total": 255,
   "hits": 149
 }
