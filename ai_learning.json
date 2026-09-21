@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2287,
-      "created": 1789942493.1439836
-    },
-    {
       "symbol": "PIEVERSE/USDT",
       "signal": "LONG",
       "entry": 1.642,
@@ -138,6 +132,18 @@
       "signal": "LONG",
       "entry": 59.36,
       "created": 1789984587.5096152
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1524.32,
+      "created": 1789985742.7326787
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.4776,
+      "created": 1789985742.7326818
     }
   ],
   "total": 281,
