@@ -26,12 +26,6 @@
       "created": 1789971670.1441643
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.1533,
-      "created": 1789976687.149863
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 12.6,
@@ -198,8 +192,14 @@
       "signal": "LONG",
       "entry": 84798.9,
       "created": 1789990378.7667637
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 122.63,
+      "created": 1789991691.5440252
     }
   ],
-  "total": 284,
-  "hits": 166
+  "total": 285,
+  "hits": 167
 }
