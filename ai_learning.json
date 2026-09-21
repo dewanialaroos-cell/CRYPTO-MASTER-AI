@@ -168,6 +168,30 @@
       "signal": "LONG",
       "entry": 0.9853,
       "created": 1789988071.1653166
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.2433,
+      "created": 1789989300.1658783
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 787.7,
+      "created": 1789989300.1658795
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 116.42,
+      "created": 1789989300.165881
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.477,
+      "created": 1789989300.1658828
     }
   ],
   "total": 283,
