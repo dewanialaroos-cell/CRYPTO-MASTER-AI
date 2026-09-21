@@ -32,12 +32,6 @@
       "created": 1789955775.1830118
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1521.16,
-      "created": 1789965273.4575105
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
       "entry": 94.027,
@@ -126,8 +120,14 @@
       "signal": "LONG",
       "entry": 139.14,
       "created": 1789978910.0364053
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.292,
+      "created": 1789980226.477243
     }
   ],
-  "total": 272,
+  "total": 273,
   "hits": 155
 }
