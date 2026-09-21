@@ -26,30 +26,6 @@
       "created": 1789988071.1653166
     },
     {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2433,
-      "created": 1789989300.1658783
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 787.7,
-      "created": 1789989300.1658795
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 116.42,
-      "created": 1789989300.165881
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.477,
-      "created": 1789989300.1658828
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 286.8,
@@ -156,8 +132,26 @@
       "signal": "LONG",
       "entry": 577.17,
       "created": 1790002671.2186964
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 806.0,
+      "created": 1790003783.7135835
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 118.39,
+      "created": 1790003783.713587
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "LONG",
+      "entry": 2.174,
+      "created": 1790003783.7135875
     }
   ],
-  "total": 304,
-  "hits": 178
+  "total": 308,
+  "hits": 181
 }
