@@ -26,12 +26,6 @@
       "created": 1789955775.1830118
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 269.1,
-      "created": 1789970147.6305296
-    },
-    {
       "symbol": "ZAMA/USDT",
       "signal": "LONG",
       "entry": 0.09702,
@@ -138,8 +132,14 @@
       "signal": "LONG",
       "entry": 2.153,
       "created": 1789983810.545773
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 59.36,
+      "created": 1789984587.5096152
     }
   ],
-  "total": 280,
-  "hits": 162
+  "total": 281,
+  "hits": 163
 }
