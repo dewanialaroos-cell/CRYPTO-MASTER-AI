@@ -26,24 +26,6 @@
       "created": 1789948511.3957863
     },
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.064e-06,
-      "created": 1789950045.268962
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.119,
-      "created": 1789950045.2689648
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.08872,
-      "created": 1789950045.268966
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
       "entry": 94.384,
@@ -186,8 +168,14 @@
       "signal": "LONG",
       "entry": 0.04921,
       "created": 1789964133.8193839
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1521.16,
+      "created": 1789965273.4575105
     }
   ],
-  "total": 247,
+  "total": 250,
   "hits": 148
 }
