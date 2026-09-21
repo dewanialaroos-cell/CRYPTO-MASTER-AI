@@ -168,6 +168,24 @@
       "signal": "LONG",
       "entry": 12.663,
       "created": 1789962981.9683964
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.215,
+      "created": 1789964133.8193817
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.05556,
+      "created": 1789964133.8193824
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.04921,
+      "created": 1789964133.8193839
     }
   ],
   "total": 247,
