@@ -14,18 +14,6 @@
       "created": 1789937751.711456
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.125,
-      "created": 1789938834.8161848
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.214,
-      "created": 1789938834.8161874
-    },
-    {
       "symbol": "SOL/USDT",
       "signal": "LONG",
       "entry": 109.91,
@@ -144,8 +132,20 @@
       "signal": "LONG",
       "entry": 0.9371,
       "created": 1789951636.0830333
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 782.26,
+      "created": 1789953295.9870543
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.2227,
+      "created": 1789953295.9870572
     }
   ],
-  "total": 233,
-  "hits": 136
+  "total": 235,
+  "hits": 138
 }
