@@ -14,18 +14,6 @@
       "created": 1789981033.7662556
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1524.32,
-      "created": 1789985742.7326787
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.4776,
-      "created": 1789985742.7326818
-    },
-    {
       "symbol": "SEI/USDT",
       "signal": "LONG",
       "entry": 0.05984,
@@ -168,8 +156,20 @@
       "signal": "LONG",
       "entry": 0.21015,
       "created": 1789999062.7875595
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.23754,
+      "created": 1790000279.4531739
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 62.14,
+      "created": 1790000279.4531765
     }
   ],
-  "total": 298,
-  "hits": 177
+  "total": 300,
+  "hits": 178
 }
