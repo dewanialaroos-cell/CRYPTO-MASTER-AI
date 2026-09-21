@@ -20,12 +20,6 @@
       "created": 1789942493.1439836
     },
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 58.84,
-      "created": 1789946010.2084813
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
       "entry": 1507.97,
@@ -168,8 +162,26 @@
       "signal": "LONG",
       "entry": 2662.21,
       "created": 1789959373.3741999
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.308,
+      "created": 1789960538.4984272
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 58.98,
+      "created": 1789960538.4984295
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.148,
+      "created": 1789960538.4984317
     }
   ],
-  "total": 241,
-  "hits": 142
+  "total": 242,
+  "hits": 143
 }
