@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 5.496e-06,
-      "created": 1789935245.2383504
-    },
-    {
       "symbol": "FIL/USDT",
       "signal": "LONG",
       "entry": 0.9526,
@@ -36,24 +30,6 @@
       "signal": "LONG",
       "entry": 0.08527,
       "created": 1789955775.1830118
-    },
-    {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.215,
-      "created": 1789964133.8193817
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.05556,
-      "created": 1789964133.8193824
-    },
-    {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.04921,
-      "created": 1789964133.8193839
     },
     {
       "symbol": "ZEC/USDT",
@@ -138,8 +114,20 @@
       "signal": "LONG",
       "entry": 1.1533,
       "created": 1789976687.149863
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 12.6,
+      "created": 1789978910.036404
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 139.14,
+      "created": 1789978910.0364053
     }
   ],
-  "total": 269,
-  "hits": 153
+  "total": 272,
+  "hits": 155
 }
