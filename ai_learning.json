@@ -38,30 +38,6 @@
       "created": 1789955775.1830118
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2662.21,
-      "created": 1789959373.3741999
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.308,
-      "created": 1789960538.4984272
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 58.98,
-      "created": 1789960538.4984295
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.148,
-      "created": 1789960538.4984317
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 138.97,
@@ -168,8 +144,14 @@
       "signal": "LONG",
       "entry": 0.21793,
       "created": 1789973367.7407053
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 81557.6,
+      "created": 1789974976.864704
     }
   ],
-  "total": 262,
+  "total": 266,
   "hits": 152
 }
