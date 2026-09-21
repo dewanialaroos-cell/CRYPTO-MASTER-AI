@@ -38,12 +38,6 @@
       "created": 1789955775.1830118
     },
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 138.97,
-      "created": 1789961662.2282543
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
       "entry": 580.35,
@@ -150,8 +144,14 @@
       "signal": "LONG",
       "entry": 81557.6,
       "created": 1789974976.864704
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.1533,
+      "created": 1789976687.149863
     }
   ],
-  "total": 266,
+  "total": 267,
   "hits": 152
 }
