@@ -144,6 +144,24 @@
       "signal": "LONG",
       "entry": 112.68,
       "created": 1789954314.4349308
+    },
+    {
+      "symbol": "ZAMA/USDT",
+      "signal": "LONG",
+      "entry": 0.08796,
+      "created": 1789955775.183009
+    },
+    {
+      "symbol": "PROVE/USDT",
+      "signal": "LONG",
+      "entry": 0.234,
+      "created": 1789955775.1830103
+    },
+    {
+      "symbol": "HBAR/USDT",
+      "signal": "LONG",
+      "entry": 0.08527,
+      "created": 1789955775.1830118
     }
   ],
   "total": 237,
