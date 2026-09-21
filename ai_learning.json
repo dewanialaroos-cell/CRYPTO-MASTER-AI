@@ -38,24 +38,6 @@
       "created": 1789955775.1830118
     },
     {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 81268.4,
-      "created": 1789957999.9104939
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.21503,
-      "created": 1789957999.9104981
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.1449,
-      "created": 1789957999.9104989
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "LONG",
       "entry": 2662.21,
@@ -180,8 +162,14 @@
       "signal": "LONG",
       "entry": 0.4349,
       "created": 1789971670.1441665
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.21793,
+      "created": 1789973367.7407053
     }
   ],
-  "total": 259,
-  "hits": 150
+  "total": 262,
+  "hits": 152
 }
