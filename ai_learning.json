@@ -26,24 +26,6 @@
       "created": 1789988071.1653166
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 286.8,
-      "created": 1789990378.7667603
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 84798.9,
-      "created": 1789990378.7667637
-    },
-    {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 122.63,
-      "created": 1789991691.5440252
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.1898,
@@ -156,8 +138,26 @@
       "signal": "LONG",
       "entry": 0.2424,
       "created": 1790004041.2520127
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 289.6,
+      "created": 1790006127.4480755
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.264,
+      "created": 1790006127.448078
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 123.27,
+      "created": 1790006127.4480805
     }
   ],
-  "total": 308,
-  "hits": 181
+  "total": 311,
+  "hits": 184
 }
