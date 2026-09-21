@@ -20,24 +20,6 @@
       "created": 1789971670.1441643
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 95.276,
-      "created": 1789981033.76625
-    },
-    {
-      "symbol": "ASTER/USDT",
-      "signal": "LONG",
-      "entry": 0.7539,
-      "created": 1789981033.766252
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2699.92,
-      "created": 1789981033.7662532
-    },
-    {
       "symbol": "WIF/USDT",
       "signal": "LONG",
       "entry": 0.2084,
@@ -186,8 +168,20 @@
       "signal": "LONG",
       "entry": 146.9,
       "created": 1789994685.0032737
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "entry": 0.7635,
+      "created": 1789995532.403528
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 13.124,
+      "created": 1789995532.40353
     }
   ],
-  "total": 288,
-  "hits": 169
+  "total": 291,
+  "hits": 172
 }
