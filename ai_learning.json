@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 0.9526,
-      "created": 1789937751.711456
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "LONG",
       "entry": 0.2287,
@@ -30,18 +24,6 @@
       "signal": "LONG",
       "entry": 0.08527,
       "created": 1789955775.1830118
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 94.027,
-      "created": 1789966585.8216164
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.419,
-      "created": 1789966585.8216197
     },
     {
       "symbol": "SUI/USDT",
@@ -126,8 +108,32 @@
       "signal": "LONG",
       "entry": 7.292,
       "created": 1789980226.477243
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 95.276,
+      "created": 1789981033.76625
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "entry": 0.7539,
+      "created": 1789981033.766252
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2699.92,
+      "created": 1789981033.7662532
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2084,
+      "created": 1789981033.7662556
     }
   ],
-  "total": 273,
-  "hits": 155
+  "total": 275,
+  "hits": 157
 }
