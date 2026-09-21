@@ -38,18 +38,6 @@
       "created": 1789955775.1830118
     },
     {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 580.35,
-      "created": 1789962981.968392
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 12.663,
-      "created": 1789962981.9683964
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.215,
@@ -152,6 +140,6 @@
       "created": 1789976687.149863
     }
   ],
-  "total": 267,
-  "hits": 152
+  "total": 269,
+  "hits": 153
 }
