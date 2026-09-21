@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PROVE/USDT",
-      "signal": "LONG",
-      "entry": 0.234,
-      "created": 1789955775.1830103
-    },
-    {
-      "symbol": "HBAR/USDT",
-      "signal": "LONG",
-      "entry": 0.08527,
-      "created": 1789955775.1830118
-    },
-    {
       "symbol": "ZAMA/USDT",
       "signal": "LONG",
       "entry": 0.09702,
@@ -24,18 +12,6 @@
       "signal": "LONG",
       "entry": 0.2084,
       "created": 1789981033.7662556
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.153,
-      "created": 1789983810.545773
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 59.36,
-      "created": 1789984587.5096152
     },
     {
       "symbol": "ZEC/USDT",
@@ -180,8 +156,20 @@
       "signal": "LONG",
       "entry": 8.898,
       "created": 1789998198.2944207
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2735.79,
+      "created": 1789999062.787558
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.21015,
+      "created": 1789999062.7875595
     }
   ],
-  "total": 296,
-  "hits": 176
+  "total": 298,
+  "hits": 177
 }
