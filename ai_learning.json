@@ -114,6 +114,12 @@
       "signal": "LONG",
       "entry": 0.20697,
       "created": 1790106855.0016732
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.4622,
+      "created": 1790108114.0740318
     }
   ],
   "total": 342,
