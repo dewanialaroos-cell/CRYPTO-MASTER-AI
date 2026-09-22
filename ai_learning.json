@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 13.052,
-      "created": 1790101143.1665897
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "LONG",
       "entry": 0.2511,
@@ -120,8 +114,20 @@
       "signal": "LONG",
       "entry": 7.382,
       "created": 1790115274.6033561
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2056,
+      "created": 1790116222.5602617
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.2198,
+      "created": 1790116222.5602658
     }
   ],
-  "total": 352,
+  "total": 353,
   "hits": 204
 }
