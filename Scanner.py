@@ -1715,48 +1715,46 @@ def fundamentals(symbols):
 
     quotes = {}
 
-if isinstance(
-    quote_response,
-    dict
-):
-
-    quote_data = quote_response.get(
-        "data",
-        []
-    )
-
     if isinstance(
-        quote_data,
-        list
-    ):
-
-        for item in quote_data:
-
-            if not isinstance(
-                item,
-                dict
-            ):
-                continue
-
-            coin_id = item.get("id")
-
-            if coin_id is not None:
-
-                quotes[
-                    str(coin_id)
-                ] = item
-
-    elif isinstance(
-        quote_data,
+        quote_response,
         dict
     ):
 
-        quotes = {
-            str(k): v
-            for k, v in quote_data.items()
-            if isinstance(v, dict)
-                          }
+        quote_data = quote_response.get(
+            "data",
+            []
+        )
 
+        if isinstance(
+            quote_data,
+            list
+        ):
+
+            for item in quote_data:
+
+                if not isinstance(
+                    item,
+                    dict
+                ):
+                    continue
+
+                coin_id = item.get("id")
+
+                if coin_id is not None:
+                    quotes[
+                        str(coin_id)
+                    ] = item
+
+        elif isinstance(
+            quote_data,
+            dict
+        ):
+
+            quotes = {
+                str(k): v
+                for k, v in quote_data.items()
+                if isinstance(v, dict)
+            }
     # --------------------------------------------------------
     # CMC METADATA -> date_added
     # --------------------------------------------------------
