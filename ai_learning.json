@@ -2,66 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.21395,
-      "created": 1790092393.9062238
-    },
-    {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 6.046e-06,
-      "created": 1790092393.9062254
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 95.078,
-      "created": 1790092393.906226
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1546.49,
-      "created": 1790092393.9062266
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.123,
-      "created": 1790092393.9062269
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.236,
-      "created": 1790092393.9062278
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 117.38,
-      "created": 1790092393.906228
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.19,
-      "created": 1790092393.9062297
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.10008,
-      "created": 1790092393.906231
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2638,
-      "created": 1790092393.9062319
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 4.434,
@@ -132,8 +72,50 @@
       "signal": "LONG",
       "entry": 0.2511,
       "created": 1790102765.2965744
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "LONG",
+      "entry": 6.052e-06,
+      "created": 1790106855.0016668
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.219,
+      "created": 1790106855.0016682
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.21501,
+      "created": 1790106855.0016692
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 96.168,
+      "created": 1790106855.00167
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 117.92,
+      "created": 1790106855.0016704
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1515.77,
+      "created": 1790106855.0016723
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.20697,
+      "created": 1790106855.0016732
     }
   ],
-  "total": 332,
-  "hits": 195
+  "total": 342,
+  "hits": 198
 }
