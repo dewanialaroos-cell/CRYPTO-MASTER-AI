@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.388,
-      "created": 1790094861.5897713
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 143.55,
@@ -122,6 +116,6 @@
       "created": 1790109114.8536372
     }
   ],
-  "total": 345,
+  "total": 346,
   "hits": 200
 }
