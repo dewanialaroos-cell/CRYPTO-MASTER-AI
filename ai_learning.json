@@ -2,48 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 6.052e-06,
-      "created": 1790106855.0016668
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.219,
-      "created": 1790106855.0016682
-    },
-    {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.21501,
-      "created": 1790106855.0016692
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 96.168,
-      "created": 1790106855.00167
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 117.92,
-      "created": 1790106855.0016704
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1515.77,
-      "created": 1790106855.0016723
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.20697,
-      "created": 1790106855.0016732
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.4622,
@@ -132,8 +90,26 @@
       "signal": "LONG",
       "entry": 0.2547,
       "created": 1790120546.4170494
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1630.05,
+      "created": 1790121266.383604
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "LONG",
+      "entry": 6.107e-06,
+      "created": 1790121266.3836055
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 13.035,
+      "created": 1790121266.3836079
     }
   ],
-  "total": 354,
-  "hits": 205
+  "total": 361,
+  "hits": 212
 }
