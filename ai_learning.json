@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BCH/USDT",
-      "signal": "LONG",
-      "entry": 335.0,
-      "created": 1790099803.2882962
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 13.052,
@@ -122,6 +116,6 @@
       "created": 1790113474.3396342
     }
   ],
-  "total": 351,
-  "hits": 203
+  "total": 352,
+  "hits": 204
 }
