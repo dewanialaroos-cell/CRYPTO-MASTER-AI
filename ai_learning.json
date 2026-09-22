@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2753.0,
-      "created": 1790098232.9425707
-    },
-    {
       "symbol": "BCH/USDT",
       "signal": "LONG",
       "entry": 335.0,
@@ -120,8 +114,14 @@
       "signal": "LONG",
       "entry": 4.919e-06,
       "created": 1790112581.3403225
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5731,
+      "created": 1790113474.3396342
     }
   ],
-  "total": 350,
+  "total": 351,
   "hits": 203
 }
