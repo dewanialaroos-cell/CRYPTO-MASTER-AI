@@ -60,6 +60,24 @@
       "signal": "LONG",
       "entry": 0.2638,
       "created": 1790092393.9062319
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.434,
+      "created": 1790093737.9523313
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 86167.9,
+      "created": 1790093737.9523332
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 61.1,
+      "created": 1790093737.9523354
     }
   ],
   "total": 332,
