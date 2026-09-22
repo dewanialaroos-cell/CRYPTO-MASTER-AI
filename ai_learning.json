@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2511,
-      "created": 1790102765.2965744
-    },
-    {
       "symbol": "SHIB/USDT",
       "signal": "LONG",
       "entry": 6.052e-06,
@@ -128,6 +122,6 @@
       "created": 1790116222.5602658
     }
   ],
-  "total": 353,
-  "hits": 204
+  "total": 354,
+  "hits": 205
 }
