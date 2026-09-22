@@ -84,6 +84,18 @@
       "signal": "LONG",
       "entry": 7.388,
       "created": 1790094861.5897713
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 143.55,
+      "created": 1790096128.666834
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 790.5,
+      "created": 1790096128.6668365
     }
   ],
   "total": 332,
