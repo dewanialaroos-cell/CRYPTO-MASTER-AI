@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 143.55,
-      "created": 1790096128.666834
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 790.5,
-      "created": 1790096128.6668365
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "LONG",
       "entry": 1.5695,
@@ -114,8 +102,26 @@
       "signal": "LONG",
       "entry": 62.7,
       "created": 1790109114.8536372
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 86245.1,
+      "created": 1790111650.9236996
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.4351,
+      "created": 1790111650.9237006
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.015,
+      "created": 1790111650.923702
     }
   ],
-  "total": 346,
-  "hits": 200
+  "total": 348,
+  "hits": 201
 }
