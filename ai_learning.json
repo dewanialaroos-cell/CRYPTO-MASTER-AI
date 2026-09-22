@@ -2,162 +2,66 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ZAMA/USDT",
+      "symbol": "XLM/USDT",
       "signal": "LONG",
-      "entry": 0.09702,
-      "created": 1789971670.1441643
+      "entry": 0.21395,
+      "created": 1790092393.9062238
     },
     {
-      "symbol": "WIF/USDT",
+      "symbol": "SHIB/USDT",
       "signal": "LONG",
-      "entry": 0.2084,
-      "created": 1789981033.7662556
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.4487,
-      "created": 1789988071.1653156
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 0.9853,
-      "created": 1789988071.1653166
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.1898,
-      "created": 1789993088.3347738
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 146.9,
-      "created": 1789994685.0032737
-    },
-    {
-      "symbol": "ASTER/USDT",
-      "signal": "LONG",
-      "entry": 0.7635,
-      "created": 1789995532.403528
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 13.124,
-      "created": 1789995532.40353
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.0545,
-      "created": 1789996731.2574136
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.287e-06,
-      "created": 1789996731.2574158
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09413,
-      "created": 1789996731.2574182
+      "entry": 6.046e-06,
+      "created": 1790092393.9062254
     },
     {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
-      "entry": 94.544,
-      "created": 1789998198.2944162
+      "entry": 95.078,
+      "created": 1790092393.906226
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1546.49,
+      "created": 1790092393.9062266
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.123,
+      "created": 1790092393.9062269
     },
     {
       "symbol": "UNI/USDT",
       "signal": "LONG",
-      "entry": 8.898,
-      "created": 1789998198.2944207
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2735.79,
-      "created": 1789999062.787558
-    },
-    {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.21015,
-      "created": 1789999062.7875595
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.23754,
-      "created": 1790000279.4531739
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 62.14,
-      "created": 1790000279.4531765
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.493,
-      "created": 1790001864.7749805
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 577.17,
-      "created": 1790002671.2186964
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 806.0,
-      "created": 1790003783.7135835
+      "entry": 9.236,
+      "created": 1790092393.9062278
     },
     {
       "symbol": "SOL/USDT",
       "signal": "LONG",
-      "entry": 118.39,
-      "created": 1790003783.713587
+      "entry": 117.38,
+      "created": 1790092393.906228
     },
     {
       "symbol": "TRUMP/USDT",
       "signal": "LONG",
-      "entry": 2.174,
-      "created": 1790003783.7135875
+      "entry": 2.19,
+      "created": 1790092393.9062297
     },
     {
-      "symbol": "ADA/USDT",
+      "symbol": "DOGE/USDT",
       "signal": "LONG",
-      "entry": 0.2424,
-      "created": 1790004041.2520127
+      "entry": 0.10008,
+      "created": 1790092393.906231
     },
     {
-      "symbol": "TAO/USDT",
+      "symbol": "WIF/USDT",
       "signal": "LONG",
-      "entry": 289.6,
-      "created": 1790006127.4480755
-    },
-    {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.264,
-      "created": 1790006127.448078
-    },
-    {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 123.27,
-      "created": 1790006127.4480805
+      "entry": 0.2638,
+      "created": 1790092393.9062319
     }
   ],
-  "total": 311,
-  "hits": 184
+  "total": 332,
+  "hits": 195
 }
