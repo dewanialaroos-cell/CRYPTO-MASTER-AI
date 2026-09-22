@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5695,
-      "created": 1790097262.0702372
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.1806,
-      "created": 1790097262.0702422
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "LONG",
       "entry": 2753.0,
@@ -120,8 +108,20 @@
       "signal": "LONG",
       "entry": 11.015,
       "created": 1790111650.923702
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 144.79,
+      "created": 1790112581.3403196
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.919e-06,
+      "created": 1790112581.3403225
     }
   ],
-  "total": 348,
-  "hits": 201
+  "total": 350,
+  "hits": 203
 }
