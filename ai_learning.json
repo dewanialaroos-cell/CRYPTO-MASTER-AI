@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.434,
-      "created": 1790093737.9523313
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 86167.9,
-      "created": 1790093737.9523332
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 61.1,
-      "created": 1790093737.9523354
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.388,
@@ -120,8 +102,26 @@
       "signal": "LONG",
       "entry": 0.4622,
       "created": 1790108114.0740318
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.10029,
+      "created": 1790109114.8536344
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "LONG",
+      "entry": 2.213,
+      "created": 1790109114.8536363
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 62.7,
+      "created": 1790109114.8536372
     }
   ],
-  "total": 342,
-  "hits": 198
+  "total": 345,
+  "hits": 200
 }
