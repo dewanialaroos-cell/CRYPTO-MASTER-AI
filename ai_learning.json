@@ -114,6 +114,12 @@
       "signal": "LONG",
       "entry": 2753.0,
       "created": 1790098232.9425707
+    },
+    {
+      "symbol": "BCH/USDT",
+      "signal": "LONG",
+      "entry": 335.0,
+      "created": 1790099803.2882962
     }
   ],
   "total": 332,
