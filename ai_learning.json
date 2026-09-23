@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.745,
-      "created": 1790165947.5852633
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 85403.8,
-      "created": 1790165947.5852659
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 95.213,
-      "created": 1790165947.5852687
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 304.8,
-      "created": 1790165947.5852695
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
       "entry": 1625.48,
@@ -84,8 +60,20 @@
       "signal": "LONG",
       "entry": 9.426,
       "created": 1790176795.3010237
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.247,
+      "created": 1790181867.3170679
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84110.9,
+      "created": 1790181867.3170693
     }
   ],
-  "total": 438,
+  "total": 442,
   "hits": 240
 }
