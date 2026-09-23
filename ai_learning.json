@@ -108,6 +108,18 @@
       "signal": "LONG",
       "entry": 62.85,
       "created": 1790154897.369524
+    },
+    {
+      "symbol": "BCH/USDT",
+      "signal": "LONG",
+      "entry": 357.8,
+      "created": 1790155971.0529978
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.21699,
+      "created": 1790155971.052999
     }
   ],
   "total": 410,
