@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.10267,
-      "created": 1790146067.6042993
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.41,
@@ -126,8 +120,20 @@
       "signal": "LONG",
       "entry": 572.03,
       "created": 1790158511.4881833
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 117.43,
+      "created": 1790160962.7124557
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5913,
+      "created": 1790160962.7124565
     }
   ],
-  "total": 412,
+  "total": 413,
   "hits": 238
 }
