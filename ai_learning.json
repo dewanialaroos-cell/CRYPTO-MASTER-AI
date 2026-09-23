@@ -8,24 +8,6 @@
       "created": 1790108114.0740318
     },
     {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.10029,
-      "created": 1790109114.8536344
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.213,
-      "created": 1790109114.8536363
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 62.7,
-      "created": 1790109114.8536372
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 86245.1,
@@ -126,8 +108,38 @@
       "signal": "LONG",
       "entry": 1.0341,
       "created": 1790122757.300455
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.1007,
+      "created": 1790124369.2906406
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 63.09,
+      "created": 1790124369.290642
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.21646,
+      "created": 1790124369.290643
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 118.83,
+      "created": 1790124369.2906435
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2761.51,
+      "created": 1790124369.2906456
     }
   ],
-  "total": 361,
-  "hits": 212
+  "total": 364,
+  "hits": 215
 }
