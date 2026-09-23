@@ -14,24 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5808,
-      "created": 1790128453.6096702
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.117,
-      "created": 1790129703.167905
-    },
-    {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.416,
-      "created": 1790129703.1679072
-    },
-    {
       "symbol": "ARB/USDT",
       "signal": "LONG",
       "entry": 0.24654,
@@ -144,8 +126,14 @@
       "signal": "LONG",
       "entry": 150.95,
       "created": 1790142405.4909112
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.6184,
+      "created": 1790144373.739344
     }
   ],
-  "total": 389,
-  "hits": 234
+  "total": 392,
+  "hits": 236
 }
