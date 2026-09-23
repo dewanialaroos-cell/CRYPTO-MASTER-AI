@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 115.64,
-      "created": 1790176795.3010197
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5297,
-      "created": 1790176795.3010213
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.426,
-      "created": 1790176795.3010237
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 4.247,
@@ -68,6 +50,6 @@
       "created": 1790189932.7779026
     }
   ],
-  "total": 449,
+  "total": 452,
   "hits": 240
 }
