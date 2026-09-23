@@ -14,12 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5731,
-      "created": 1790113474.3396342
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.382,
@@ -138,8 +132,14 @@
       "signal": "LONG",
       "entry": 147.84,
       "created": 1790127722.8643684
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5808,
+      "created": 1790128453.6096702
     }
   ],
-  "total": 368,
-  "hits": 218
+  "total": 369,
+  "hits": 219
 }
