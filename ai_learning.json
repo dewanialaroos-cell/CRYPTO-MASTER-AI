@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 150.95,
-      "created": 1790142405.4909112
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "LONG",
       "entry": 1.6184,
@@ -120,8 +114,14 @@
       "signal": "LONG",
       "entry": 0.21699,
       "created": 1790155971.052999
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 149.64,
+      "created": 1790157376.6368597
     }
   ],
-  "total": 410,
+  "total": 411,
   "hits": 238
 }
