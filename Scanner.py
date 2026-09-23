@@ -1540,292 +1540,110 @@ def fundamentals(symbols):
 
     for symbol in symbols:
 
+        base = symbol.split("/")[0].upper()
+
         output[symbol] = {
-
-            "name":
-                symbol.split("/")[0],
-
-            "cmc_rank":
-                np.nan,
-
-            "market_cap":
-                np.nan,
-
-            "circulating_supply":
-                np.nan,
-
-            "total_supply":
-                np.nan,
-
-            "max_supply":
-                np.nan,
-
-            "fdv":
-                np.nan,
-
-            "mc_fdv_ratio":
-                np.nan,
-
-            "supply_ratio":
-                np.nan,
-
-            "market_pairs":
-                np.nan,
-
-            "asset_age_days":
-                np.nan,
-
-            "fundamental_score":
-                50.0,
-
-            "fundamental_rating":
-                "UNKNOWN",
-
-            "fundamental_status":
-                "UNAVAILABLE",
-
-            "fundamental_reason":
-                "CMC_UNAVAILABLE"
+            "name": base,
+            "cmc_rank": np.nan,
+            "market_cap": np.nan,
+            "circulating_supply": np.nan,
+            "total_supply": np.nan,
+            "max_supply": np.nan,
+            "fdv": np.nan,
+            "mc_fdv_ratio": np.nan,
+            "supply_ratio": np.nan,
+            "market_pairs": np.nan,
+            "asset_age_days": np.nan,
+            "fundamental_score": 50.0,
+            "fundamental_rating": "UNKNOWN",
+            "fundamental_status": "UNAVAILABLE",
+            "fundamental_reason": "CMC_UNAVAILABLE"
         }
 
-    base_symbols = [
-        s.split("/")[0].upper()
-        for s in symbols
-    ]
-
-    base_symbols = list(dict.fromkeys(base_symbols))
-
-    if not base_symbols:
+    if not symbols:
         return output
 
-    # --------------------------------------------------------
-    # CMC MAP -> stable ID resolution
-    # --------------------------------------------------------
+    base_symbols = list(
+        dict.fromkeys(
+            s.split("/")[0].upper()
+            for s in symbols
+        )
+    )
 
-    map_response = cmc_get(
-        "/v1/cryptocurrency/map",
+    # ========================================================
+    # DIRECT CMC QUOTES
+    # ========================================================
+
+    response = cmc_get(
+        "/v3/cryptocurrency/quotes/latest",
         {
-            "symbol":
-                ",".join(base_symbols),
-
-            "listing_status":
-                "active"
+            "symbol": ",".join(base_symbols),
+            "convert": "USD",
+            "skip_invalid": "true"
         }
     )
 
-    map_data = []
-
-    if isinstance(
-        map_response,
-        dict
-    ):
-
-        candidate_data = map_response.get(
-            "data",
-            []
-        )
-
-        if isinstance(
-            candidate_data,
-            list
-        ):
-            map_data = candidate_data
-
-    selected = {}
-
-    for item in map_data:
-
-        if not isinstance(
-            item,
-            dict
-        ):
-            continue
-
-        item_symbol = text(
-            item.get("symbol")
-        ).upper()
-
-        if item_symbol not in base_symbols:
-            continue
-
-        if not item.get(
-            "is_active",
-            1
-        ):
-            continue
-
-        rank = number(
-            item.get("rank"),
-            999999
-        )
-
-        if (
-            item_symbol not in selected
-            or rank < selected[item_symbol][0]
-        ):
-
-            selected[item_symbol] = (
-                rank,
-                item
-            )
-
-    if not selected:
+    if not isinstance(response, dict):
 
         log(
             "CMC FUNDAMENTALS: "
-            "MAP RETURNED NO MATCHES"
+            "DIRECT QUOTES FAILED"
         )
 
         return output
 
-    ids = []
-
-    for value in selected.values():
-
-        item = value[1]
-
-        coin_id = item.get("id")
-
-        if coin_id is not None:
-            ids.append(
-                str(coin_id)
-            )
-
-    ids = list(
-        dict.fromkeys(ids)
+    data = response.get(
+        "data",
+        []
     )
 
-    if not ids:
-        return output
+    if isinstance(data, dict):
 
-    # --------------------------------------------------------
-    # CMC QUOTES
-    # --------------------------------------------------------
-
-    quote_response = cmc_get(
-        "/v3/cryptocurrency/quotes/latest",
-        {
-            "id":
-                ",".join(ids),
-
-            "convert":
-                "USD"
-        }
-    )
-
-    quotes = {}
-
-    if isinstance(
-        quote_response,
-        dict
-    ):
-
-        quote_data = quote_response.get(
-            "data",
-            []
+        coins = list(
+            data.values()
         )
 
-        if isinstance(
-            quote_data,
-            list
-        ):
+    elif isinstance(data, list):
 
-            for item in quote_data:
+        coins = data
 
-                if not isinstance(
-                    item,
-                    dict
-                ):
-                    continue
+    else:
 
-                coin_id = item.get("id")
+        coins = []
 
-                if coin_id is not None:
-                    quotes[
-                        str(coin_id)
-                    ] = item
+    matched = 0
 
-        elif isinstance(
-            quote_data,
-            dict
-        ):
+    # ========================================================
+    # PROCESS CMC DATA
+    # ========================================================
 
-            quotes = {
-                str(k): v
-                for k, v in quote_data.items()
-                if isinstance(v, dict)
-            }
-    # --------------------------------------------------------
-    # CMC METADATA -> date_added
-    # --------------------------------------------------------
-
-    info_response = cmc_get(
-        "/v2/cryptocurrency/info",
-        {
-            "id":
-                ",".join(ids),
-
-            "aux":
-                "date_added"
-        }
-    )
-
-    info_data = {}
-
-    if isinstance(
-        info_response,
-        dict
-    ):
-
-        candidate_info = info_response.get(
-            "data",
-            {}
-        )
-
-        if isinstance(
-            candidate_info,
-            dict
-        ):
-            info_data = candidate_info
-
-    # --------------------------------------------------------
-    # BUILD FUNDAMENTALS
-    # --------------------------------------------------------
-
-    available_count = 0
-
-    for symbol in symbols:
-
-        base = symbol.split(
-            "/"
-        )[0].upper()
-
-        if base not in selected:
-            continue
-
-        metadata = selected[
-            base
-        ][1]
-
-        coin_id = str(
-            metadata.get("id")
-        )
-
-        quote = quotes.get(
-            coin_id,
-            {}
-        )
+    for coin in coins:
 
         if not isinstance(
-            quote,
+            coin,
             dict
         ):
             continue
 
-        # CMC V3 returns quote as a LIST.
-        quote_container = quote.get(
+        base = text(
+            coin.get("symbol")
+        ).upper()
+
+        if not base:
+            continue
+
+        target_symbol = f"{base}/USDT"
+
+        if target_symbol not in output:
+            continue
+
+        # ----------------------------------------------------
+        # USD QUOTE
+        # ----------------------------------------------------
+
+        quote_container = coin.get(
             "quote",
-            {}
+            []
         )
 
         usd = {}
@@ -1835,28 +1653,20 @@ def fundamentals(symbols):
             list
         ):
 
-            for quote_item in quote_container:
+            for q in quote_container:
 
                 if not isinstance(
-                    quote_item,
+                    q,
                     dict
                 ):
                     continue
 
                 if text(
-                    quote_item.get("symbol")
+                    q.get("symbol")
                 ).upper() == "USD":
 
-                    usd = quote_item
+                    usd = q
                     break
-
-            if not usd and quote_container:
-                first = quote_container[0]
-                if isinstance(
-                    first,
-                    dict
-                ):
-                    usd = first
 
         elif isinstance(
             quote_container,
@@ -1871,86 +1681,86 @@ def fundamentals(symbols):
         if not isinstance(
             usd,
             dict
-        ) or not usd:
-
+        ):
             continue
+
+        # ----------------------------------------------------
+        # MARKET DATA
+        # ----------------------------------------------------
 
         market_cap = number(
             usd.get("market_cap")
         )
 
-        circulating_supply = number(
-            quote.get("circulating_supply")
+        fdv = number(
+            usd.get(
+                "fully_diluted_market_cap"
+            )
+        )
+
+        circulating = number(
+            coin.get(
+                "circulating_supply"
+            )
         )
 
         total_supply = number(
-            quote.get("total_supply")
+            coin.get(
+                "total_supply"
+            )
         )
 
         max_supply = number(
-            quote.get("max_supply")
-        )
-
-        fdv = number(
-            usd.get("fully_diluted_market_cap")
+            coin.get(
+                "max_supply"
+            )
         )
 
         market_pairs = number(
-            quote.get("num_market_pairs")
+            coin.get(
+                "num_market_pairs"
+            )
         )
+
+        cmc_rank = number(
+            coin.get(
+                "cmc_rank"
+            )
+        )
+
+        # ----------------------------------------------------
+        # AGE
+        # ----------------------------------------------------
 
         age_days = np.nan
 
-        info = info_data.get(
-            coin_id,
-            {}
+        date_added = coin.get(
+            "date_added"
         )
 
-        if isinstance(
-            info,
-            dict
-        ):
+        if date_added:
 
-            date_added = info.get(
-                "date_added"
-            )
+            try:
 
-            if date_added:
-                try:
-                    added = datetime.fromisoformat(
-                        date_added.replace(
-                            "Z",
-                            "+00:00"
-                        )
+                added = datetime.fromisoformat(
+                    date_added.replace(
+                        "Z",
+                        "+00:00"
                     )
-                    age_days = (
-                        datetime.now(timezone.utc)
-                        - added
-                    ).days
-                except Exception:
-                    age_days = np.nan
+                )
 
-        # Fallback if metadata call did not return date_added.
-        if not math.isfinite(age_days):
+                age_days = (
+                    datetime.now(timezone.utc)
+                    - added
+                ).days
 
-            date_added = metadata.get(
-                "date_added"
-            )
+            except Exception:
 
-            if date_added:
-                try:
-                    added = datetime.fromisoformat(
-                        date_added.replace(
-                            "Z",
-                            "+00:00"
-                        )
-                    )
-                    age_days = (
-                        datetime.now(timezone.utc)
-                        - added
-                    ).days
-                except Exception:
-                    age_days = np.nan
+                age_days = np.nan
+
+        # ----------------------------------------------------
+        # RATIOS
+        # ----------------------------------------------------
 
         mc_fdv_ratio = np.nan
 
@@ -1959,6 +1769,7 @@ def fundamentals(symbols):
             and math.isfinite(fdv)
             and fdv > 0
         ):
+
             mc_fdv_ratio = (
                 market_cap / fdv
             )
@@ -1966,46 +1777,33 @@ def fundamentals(symbols):
         supply_ratio = np.nan
 
         if (
-            math.isfinite(circulating_supply)
+            math.isfinite(circulating)
             and math.isfinite(max_supply)
             and max_supply > 0
         ):
+
             supply_ratio = (
-                circulating_supply
-                / max_supply
+                circulating / max_supply
             )
 
-        output[symbol] = {
+        # ----------------------------------------------------
+        # BUILD ROW
+        # ----------------------------------------------------
 
-            "name":
-                text(
-                    quote.get(
-                        "name"
-                    ),
-                    text(
-                        metadata.get(
-                            "name"
-                        ),
-                        base
-                    )
-                ),
+        row = {
+            "name": text(
+                coin.get("name"),
+                base
+            ),
 
             "cmc_rank":
-                number(
-                    quote.get(
-                        "cmc_rank"
-                    ),
-                    number(
-                        metadata.get("rank"),
-                        np.nan
-                    )
-                ),
+                cmc_rank,
 
             "market_cap":
                 market_cap,
 
             "circulating_supply":
-                circulating_supply,
+                circulating,
 
             "total_supply":
                 total_supply,
@@ -2041,20 +1839,27 @@ def fundamentals(symbols):
                 "CMC_DATA_AVAILABLE"
         }
 
-        output[symbol] = calculate_fundamental_score(
-            output[symbol]
+        # ----------------------------------------------------
+        # CALCULATE FUNDAMENTAL SCORE
+        # ----------------------------------------------------
+
+        row = calculate_fundamental_score(
+            row
         )
 
-        available_count += 1
+        output[
+            target_symbol
+        ] = row
+
+        matched += 1
 
     log(
         f"CMC FUNDAMENTALS: "
-        f"{available_count}/"
+        f"{matched}/"
         f"{len(symbols)} AVAILABLE"
     )
 
-    return output
-
+    return output                
 # ============================================================
 # GLOBAL MARKET DATA
 # ============================================================
