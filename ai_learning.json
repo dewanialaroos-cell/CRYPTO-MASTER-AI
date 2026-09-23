@@ -14,12 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 86697.4,
-      "created": 1790126328.7371893
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 147.84,
@@ -152,6 +146,6 @@
       "created": 1790140440.8893638
     }
   ],
-  "total": 387,
+  "total": 388,
   "hits": 233
 }
