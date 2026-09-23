@@ -14,12 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.438,
-      "created": 1790118837.7421627
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "LONG",
       "entry": 0.2547,
@@ -144,8 +138,14 @@
       "signal": "LONG",
       "entry": 1.2009,
       "created": 1790130752.971107
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 315.6,
+      "created": 1790133304.520322
     }
   ],
-  "total": 372,
+  "total": 373,
   "hits": 221
 }
