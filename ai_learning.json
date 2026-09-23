@@ -2,48 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 6.112e-06,
-      "created": 1790150160.8199263
-    },
-    {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2538,
-      "created": 1790154275.497411
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1613.11,
-      "created": 1790154275.4974127
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.21549,
-      "created": 1790154897.3695197
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.06131,
-      "created": 1790154897.3695214
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.0194,
-      "created": 1790154897.3695219
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 62.85,
-      "created": 1790154897.369524
-    },
-    {
       "symbol": "BCH/USDT",
       "signal": "LONG",
       "entry": 357.8,
@@ -126,8 +84,26 @@
       "signal": "LONG",
       "entry": 304.8,
       "created": 1790165947.5852695
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1625.48,
+      "created": 1790169422.63005
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.06093,
+      "created": 1790169422.6300533
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "LONG",
+      "entry": 5.975e-06,
+      "created": 1790169422.630054
     }
   ],
-  "total": 421,
-  "hits": 239
+  "total": 428,
+  "hits": 240
 }
