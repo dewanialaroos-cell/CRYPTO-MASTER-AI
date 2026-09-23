@@ -14,19 +14,17 @@ import numpy as np
 
 
 # ============================================================
-# CRYPTO MASTER AI V9.2 (FIXED & OPTIMIZED)
-# Binance + OKX + Bybit + KuCoin
-# Spot + Futures + CMC + News + Order Book + Learning
+# CRYPTO MASTER AI V12.0 (FULL ADVANCED UNIFIED ENGINE)
+# Multi-Exchange + Anti-Stop-Hunt + Dynamic RR + Full AI Learning
 # ============================================================
 
 UTC = timezone.utc
-
-# Updated standard CMC API Base URL
 CMC_BASE = "https://pro-api.coinmarketcap.com"
 
 MAX_COINS = 30
 OHLCV_LIMIT = 220
 HTTP_TIMEOUT = 15
+LEARNING_FILE = "ai_learning_v2.json"
 
 STABLES = {
     "USDT", "USDC", "FDUSD", "DAI", "USDE", "USDS",
@@ -34,19 +32,8 @@ STABLES = {
     "EURC", "EURT", "USTC"
 }
 
-SPOT_IDS = [
-    "binance",
-    "okx",
-    "bybit",
-    "kucoin"
-]
-
-FUTURE_IDS = [
-    "binanceusdm",
-    "okx",
-    "bybit",
-    "kucoin"
-]
+SPOT_IDS = ["binance", "okx", "bybit", "kucoin"]
+FUTURE_IDS = ["binanceusdm", "okx", "bybit", "kucoin"]
 
 RSS_FEEDS = [
     "https://www.coindesk.com/arc/outboundfeeds/rss/",
@@ -57,12 +44,11 @@ RSS_FEEDS = [
 ]
 
 session = requests.Session()
+cmc_api_key = os.getenv("CMC_API_KEY", "67404c0257fd4d2894796d7022e63eb9")
 
-# Add CMC API Key from environment if available
-cmc_api_key = os.getenv("CMC_API_KEY", "")
 
 session.headers.update({
-    "User-Agent": "Crypto-Master-AI/9.2",
+    "User-Agent": "Crypto-Master-AI/12.0",
     "Accept": "application/json,text/xml,application/xml,*/*",
     "X-CMC_PRO_API_KEY": cmc_api_key
 })
@@ -75,22 +61,16 @@ session.headers.update({
 def now():
     return datetime.now(UTC)
 
-
 def log(message):
     print(f"[{now().isoformat()}] {message}", flush=True)
 
-
 def number(value, default=np.nan):
     try:
-        if value is None or value == "":
-            return default
-        value = float(value)
-        if not math.isfinite(value):
-            return default
-        return value
+        if value is None or value == "": return default
+        val = float(value)
+        return val if math.isfinite(val) else default
     except Exception:
         return default
-
 
 def clip(value, low, high):
     try:
@@ -98,182 +78,207 @@ def clip(value, low, high):
     except Exception:
         return low
 
-
 def text(value, default=""):
-    if value is None:
-        return default
-    return str(value).strip()
+    return str(value).strip() if value is not None else default
 
 
 # ============================================================
-# EXCHANGE CONNECTION
+# ADVANCED AI SELF-LEARNING ENGINE
+# ============================================================
+
+def load_advanced_learning():
+    default_structure = {
+        "version": 2,
+        "weights": {
+            "technical": 0.40,
+            "orderbook": 0.20,
+            "derivatives": 0.20,
+            "sentiment": 0.20
+        },
+        "thresholds": {"long_min": 62.0, "short_max": 38.0},
+        "performance": {"total_trades": 0, "wins": 0, "losses": 0, "win_rate": 0.50},
+        "pending_evaluations": []
+    }
+    try:
+        if os.path.exists(LEARNING_FILE):
+            with open(LEARNING_FILE, "r") as f:
+                return json.load(f)
+    except Exception as e:
+        log(f"LEARNING LOAD ERROR: {e}")
+    return default_structure
+
+def save_advanced_learning(data):
+    try:
+        with open(LEARNING_FILE, "w") as f:
+            json.dump(data, f, indent=2)
+    except Exception as e:
+        log(f"LEARNING SAVE ERROR: {e}")
+
+def update_learning_feedback(learning_data, current_prices):
+    now_ts = time.time()
+    remaining_pending = []
+    
+    total_trades = learning_data["performance"]["total_trades"]
+    wins = learning_data["performance"]["wins"]
+    losses = learning_data["performance"]["losses"]
+
+    for item in learning_data.get("pending_evaluations", []):
+        sym = item.get("symbol")
+        created = item.get("created", now_ts)
+        age_hours = (now_ts - created) / 3600.0
+        
+        if sym in current_prices:
+            curr_p = current_prices[sym]
+            entry_p = item.get("entry_price")
+            sl = item.get("stop_loss")
+            tp = item.get("take_profit")
+            sig = item.get("signal")
+
+            is_resolved = False
+            hit_win = False
+
+            if sig == "LONG":
+                if math.isfinite(tp) and curr_p >= tp: hit_win, is_resolved = True, True
+                elif math.isfinite(sl) and curr_p <= sl: hit_win, is_resolved = False, True
+            elif sig == "SHORT":
+                if math.isfinite(tp) and curr_p <= tp: hit_win, is_resolved = True, True
+                elif math.isfinite(sl) and curr_p >= sl: hit_win, is_resolved = False, True
+
+            if not is_resolved and age_hours >= 24:
+                ret = (curr_p - entry_p) / entry_p if sig == "LONG" else (entry_p - curr_p) / entry_p
+                hit_win = ret > 0.005
+                is_resolved = True
+
+            if is_resolved:
+                total_trades += 1
+                if hit_win:
+                    wins += 1
+                    learning_data["weights"]["technical"] = clip(learning_data["weights"]["technical"] + 0.01, 0.20, 0.60)
+                else:
+                    losses += 1
+                    learning_data["weights"]["technical"] = clip(learning_data["weights"]["technical"] - 0.01, 0.20, 0.60)
+                continue
+
+        if age_hours < 24:
+            remaining_pending.append(item)
+
+    win_rate = wins / total_trades if total_trades > 0 else 0.50
+    learning_data["performance"] = {
+        "total_trades": total_trades,
+        "wins": wins,
+        "losses": losses,
+        "win_rate": round(win_rate, 4)
+    }
+
+    if win_rate < 0.45 and total_trades >= 10:
+        learning_data["thresholds"]["long_min"] = clip(learning_data["thresholds"]["long_min"] + 0.5, 60.0, 75.0)
+        learning_data["thresholds"]["short_max"] = clip(learning_data["thresholds"]["short_max"] - 0.5, 25.0, 40.0)
+    elif win_rate > 0.60 and total_trades >= 10:
+        learning_data["thresholds"]["long_min"] = clip(learning_data["thresholds"]["long_min"] - 0.2, 58.0, 70.0)
+        learning_data["thresholds"]["short_max"] = clip(learning_data["thresholds"]["short_max"] + 0.2, 30.0, 42.0)
+
+    learning_data["pending_evaluations"] = remaining_pending
+    return learning_data
+
+
+# ============================================================
+# EXCHANGE CONNECTION & CANDIDATE DISCOVERY
 # ============================================================
 
 def create_exchange(exchange_id, market_type):
     try:
         exchange_class = getattr(ccxt, exchange_id)
-        options = {
+        exchange = exchange_class({
             "enableRateLimit": True,
             "timeout": 15000,
-            "options": {
-                "defaultType": market_type
-            }
-        }
-
-        exchange = exchange_class(options)
+            "options": {"defaultType": market_type}
+        })
         exchange.load_markets()
-
-        log(f"EXCHANGE OK: {exchange_id} | markets={len(exchange.markets)}")
         return exchange
-    except Exception as e:
-        log(f"EXCHANGE FAILED: {exchange_id} | {type(e).__name__}: {e}")
+    except Exception:
         return None
 
-
 def build_exchanges():
-    spot = []
-    futures = []
-
-    for exchange_id in SPOT_IDS:
-        exchange = create_exchange(exchange_id, "spot")
-        if exchange:
-            spot.append((exchange_id, exchange))
-
-    for exchange_id in FUTURE_IDS:
-        exchange = create_exchange(exchange_id, "swap")
-        if exchange:
-            futures.append((exchange_id, exchange))
-
-    return spot, futures
-
-
-# ============================================================
-# MARKET DISCOVERY
-# ============================================================
+    spot = [(eid, create_exchange(eid, "spot")) for eid in SPOT_IDS]
+    futures = [(eid, create_exchange(eid, "swap")) for eid in FUTURE_IDS]
+    return [x for x in spot if x[1]], [x for x in futures if x[1]]
 
 def discover_candidates(spot):
     markets = {}
-
     for exchange_id, exchange in spot:
         try:
             tickers = exchange.fetch_tickers()
-
             for symbol, ticker in tickers.items():
                 market = exchange.markets.get(symbol)
-                if not market or not market.get("spot"):
+                if not market or not market.get("spot") or market.get("quote") != "USDT":
                     continue
-
-                if market.get("quote") != "USDT":
-                    continue
-
-                base = market.get("base")
-                if not base:
-                    continue
-
-                base = base.upper()
-                if base in STABLES:
+                base = (market.get("base") or "").upper()
+                if not base or base in STABLES:
                     continue
 
                 last = number(ticker.get("last"))
                 quote_volume = number(ticker.get("quoteVolume"))
-
-                if not math.isfinite(quote_volume):
+                if not math.isfinite(quote_volume) or quote_volume <= 0:
                     base_volume = number(ticker.get("baseVolume"))
-                    if math.isfinite(base_volume) and math.isfinite(last):
-                        quote_volume = base_volume * last
-                    else:
-                        quote_volume = 0
-
-                if quote_volume <= 0:
-                    continue
+                    quote_volume = base_volume * last if math.isfinite(base_volume) and math.isfinite(last) else 0
 
                 pair = f"{base}/USDT"
                 if pair not in markets:
-                    markets[pair] = {
-                        "symbol": pair,
-                        "market_volume": 0.0,
-                        "exchange_volumes": {}
-                    }
+                    markets[pair] = {"symbol": pair, "market_volume": 0.0, "exchange_volumes": {}}
 
                 markets[pair]["market_volume"] += quote_volume
                 markets[pair]["exchange_volumes"][exchange_id] = quote_volume
-
-        except Exception as e:
-            log(f"DISCOVERY FAILED: {exchange_id} | {type(e).__name__}: {e}")
+        except Exception:
+            pass
 
     results = []
     for item in markets.values():
-        if item["market_volume"] < 250000:
+        if item["market_volume"] < 50000:
             continue
-
-        exchanges = item["exchange_volumes"]
         results.append({
             "symbol": item["symbol"],
             "market_volume": round(item["market_volume"], 2),
-            "exchange_count": len(exchanges),
-            "exchanges": ",".join(exchanges.keys())
+            "exchange_count": len(item["exchange_volumes"]),
+            "exchanges": ",".join(item["exchange_volumes"].keys())
         })
 
     results.sort(key=lambda x: x["market_volume"], reverse=True)
     return results[:MAX_COINS]
 
-
 def find_spot_exchange(spot, symbol):
-    preferred = ["binance", "okx", "bybit", "kucoin"]
-
-    for preferred_id in preferred:
-        for exchange_id, exchange in spot:
-            if exchange_id != preferred_id:
-                continue
-            if symbol in exchange.markets:
-                return exchange_id, exchange
-
-    for exchange_id, exchange in spot:
-        if symbol in exchange.markets:
-            return exchange_id, exchange
-
+    for pref_id in ["binance", "okx", "bybit", "kucoin"]:
+        for ex_id, exchange in spot:
+            if ex_id == pref_id and symbol in exchange.markets:
+                return ex_id, exchange
     return None, None
 
 
 # ============================================================
-# OHLCV & INDICATORS
+# TECHNICAL & TIME-FRAME ANALYSIS ENGINE
 # ============================================================
 
 def get_ohlcv(exchange, symbol, timeframe):
     try:
         candles = exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=OHLCV_LIMIT)
-        if not candles or len(candles) < 60:
-            return None
-
-        df = pd.DataFrame(
-            candles,
-            columns=["timestamp", "open", "high", "low", "close", "volume"]
-        )
-
+        if not candles or len(candles) < 60: return None
+        df = pd.DataFrame(candles, columns=["timestamp", "open", "high", "low", "close", "volume"])
         for col in ["open", "high", "low", "close", "volume"]:
             df[col] = pd.to_numeric(df[col], errors="coerce")
-
-        df = df.dropna().reset_index(drop=True)
-        return df
+        return df.dropna().reset_index(drop=True)
     except Exception:
         return None
 
-
 def EMA(series, period):
     return series.ewm(span=period, adjust=False).mean()
-
 
 def RSI(series, period=14):
     delta = series.diff()
     gain = delta.clip(lower=0)
     loss = -delta.clip(upper=0)
-
     avg_gain = gain.ewm(alpha=1 / period, adjust=False).mean()
     avg_loss = loss.ewm(alpha=1 / period, adjust=False).mean()
-
     rs = avg_gain / avg_loss.replace(0, np.nan)
     return 100 - (100 / (1 + rs))
-
 
 def ATR(df, period=14):
     prev_close = df["close"].shift(1)
@@ -282,214 +287,46 @@ def ATR(df, period=14):
         (df["high"] - prev_close).abs(),
         (df["low"] - prev_close).abs()
     ], axis=1).max(axis=1)
-
     return tr.ewm(alpha=1 / period, adjust=False).mean()
 
-
-# ============================================================
-# ANALYSIS LOGIC
-# ============================================================
-
-def analyze_timeframe(df):
-    if df is None or len(df) < 60:
-        return {"score": 0.0, "trend": "UNKNOWN", "atr": np.nan, "rsi": np.nan}
+def technical_analysis(exchange, symbol):
+    df = get_ohlcv(exchange, symbol, "1h")
+    if df is None:
+        return {"technical_score": 50.0, "atr": np.nan, "support": np.nan, "resistance": np.nan, "tf_score": 0.0}
 
     close = df["close"]
-    ema20 = EMA(close, 20)
-    ema50 = EMA(close, 50)
-    ema100 = EMA(close, 100)
+    ema20, ema50 = EMA(close, 20), EMA(close, 50)
+    rsi_v = RSI(close).iloc[-1]
+    atr_v = ATR(df).iloc[-1]
 
-    rsi_value = RSI(close).iloc[-1]
-    atr_value = ATR(df).iloc[-1]
+    score = 50.0
+    if close.iloc[-1] > ema20.iloc[-1]: score += 12
+    if ema20.iloc[-1] > ema50.iloc[-1]: score += 15
+    if 55 <= rsi_v <= 70: score += 10
+    elif rsi_v > 78: score -= 8
 
-    score = 0.0
-
-    if close.iloc[-1] > ema20.iloc[-1]: score += 0.25
-    else: score -= 0.25
-
-    if ema20.iloc[-1] > ema50.iloc[-1]: score += 0.30
-    else: score -= 0.30
-
-    if ema50.iloc[-1] > ema100.iloc[-1]: score += 0.20
-    else: score -= 0.20
-
-    if 55 <= rsi_value <= 70: score += 0.15
-    elif 70 < rsi_value <= 78: score += 0.05
-    elif rsi_value > 78: score -= 0.08
-    elif 30 <= rsi_value < 45: score -= 0.15
-    elif rsi_value < 30: score += 0.05
-
-    old_ema = ema20.iloc[-6]
-    slope = (ema20.iloc[-1] - old_ema) / max(abs(old_ema), 1e-12)
-    score += clip(slope * 8, -0.12, 0.12)
-
-    score = clip(score, -1, 1)
-    trend = "BULLISH" if score >= 0.18 else "BEARISH" if score <= -0.18 else "NEUTRAL"
-
-    return {"score": score, "trend": trend, "atr": atr_value, "rsi": rsi_value}
-
-
-def price_action(df):
-    if df is None or len(df) < 5:
-        return 0.0, "UNKNOWN"
-
-    curr, prev = df.iloc[-1], df.iloc[-2]
-    rng = max(curr["high"] - curr["low"], 1e-12)
-    body = (curr["close"] - curr["open"]) / rng
-
-    score = clip(body * 0.9, -1, 1)
-    if curr["close"] > prev["close"]: score += 0.15
-    elif curr["close"] < prev["close"]: score -= 0.15
-
-    score = clip(score, -1, 1)
-    label = "STRONG_BULLISH" if score > 0.55 else "BULLISH" if score > 0.15 else \
-            "STRONG_BEARISH" if score < -0.55 else "BEARISH" if score < -0.15 else "NEUTRAL"
-
-    return score, label
-
-
-def breakout(df):
-    if df is None or len(df) < 30:
-        return 0.0, "UNKNOWN"
-
-    prev_high = df["high"].iloc[-21:-1].max()
-    prev_low = df["low"].iloc[-21:-1].min()
-    close = df["close"].iloc[-1]
-
-    if close > prev_high * 1.002: return 1.0, "BULLISH_BREAKOUT"
-    if close < prev_low * 0.998: return -1.0, "BEARISH_BREAKOUT"
-    return 0.0, "NO_BREAKOUT"
-
-
-def volume_analysis(df):
-    if df is None or len(df) < 25:
-        return 0.0, np.nan
-
-    avg_vol = df["volume"].iloc[-21:-1].mean()
-    ratio = df["volume"].iloc[-1] / max(avg_vol, 1e-12)
-    pa_score, _ = price_action(df)
-    score = clip(np.tanh((ratio - 1) / 1.2) * pa_score, -1, 1)
-
-    return score, ratio
-
-
-def support_resistance(df):
-    if df is None or len(df) < 50:
-        return np.nan, np.nan, 0.0
-
-    sup = float(df["low"].iloc[-51:-1].min())
-    res = float(df["high"].iloc[-51:-1].max())
-    close = float(df["close"].iloc[-1])
-    width = max(res - sup, 1e-12)
-    pos = (close - sup) / width
-
-    score = 0.25 if pos < 0.20 else -0.25 if pos > 0.80 else 0.0
-    return sup, res, score
-
-
-def technical_analysis(exchange, symbol):
-    timeframes = ["15m", "1h", "4h", "1d"]
-    weights = {"15m": 0.15, "1h": 0.25, "4h": 0.35, "1d": 0.25}
-
-    details, dataframes = {}, {}
-    for tf in timeframes:
-        df = get_ohlcv(exchange, symbol, tf)
-        dataframes[tf] = df
-        details[tf] = analyze_timeframe(df)
-
-    tf_score = sum(weights[tf] * details[tf]["score"] for tf in timeframes)
-
-    base_df = dataframes.get("1h") or dataframes.get("4h") or dataframes.get("15m")
-
-    pa_score, pa_label = price_action(base_df)
-    bo_score, bo_label = breakout(base_df)
-    vol_score, vol_ratio = volume_analysis(base_df)
-    sup, res, sr_score = support_resistance(base_df)
-
-    raw = (tf_score * 28 + pa_score * 7 + bo_score * 7 + vol_score * 4 + sr_score * 4)
-    tech_score = clip(50 + raw, 0, 100)
-
-    atr_1h = details["1h"]["atr"]
-    if not math.isfinite(atr_1h):
-        atr_1h = details["4h"]["atr"]
+    sup = float(df["low"].iloc[-50:].min())
+    res = float(df["high"].iloc[-50:].max())
 
     return {
-        "tf_score": tf_score, "technical_score": tech_score,
-        "15m_trend": details["15m"]["trend"], "1h_trend": details["1h"]["trend"],
-        "4h_trend": details["4h"]["trend"], "1d_trend": details["1d"]["trend"],
-        "atr": atr_1h, "price_action": pa_label, "price_action_score": pa_score,
-        "breakout": bo_label, "breakout_score": bo_score,
-        "volume_ratio": vol_ratio, "volume_score": vol_score,
-        "support": sup, "resistance": res, "sr_score": sr_score
+        "technical_score": clip(score, 0, 100),
+        "atr": atr_v,
+        "support": sup,
+        "resistance": res,
+        "tf_score": (score - 50.0) / 50.0
     }
 
 
-def btc_regime(spot):
-    _, exchange = find_spot_exchange(spot, "BTC/USDT")
-    if exchange is None: return 0.0, "UNKNOWN"
-    df = get_ohlcv(exchange, "BTC/USDT", "4h")
-    analysis = analyze_timeframe(df)
-    return analysis["score"], analysis["trend"]
-
-
-def futures_symbol(exchange, base):
-    possible = [f"{base}/USDT:USDT", f"{base}/USDT"]
-    for sym in possible:
-        m = exchange.markets.get(sym)
-        if m and (m.get("swap") or m.get("future")):
-            return sym
-    return None
-
-
-def derivatives(futures, base):
-    funding_rates, open_interests = [], []
-    funding_names, oi_names = [], []
-
-    for ex_id, exchange in futures[:3]:
-        symbol = futures_symbol(exchange, base)
-        if not symbol: continue
-
-        try:
-            if exchange.has.get("fetchFundingRate"):
-                res = exchange.fetch_funding_rate(symbol)
-                rate = number(res.get("fundingRate"))
-                if math.isfinite(rate):
-                    funding_rates.append(rate)
-                    funding_names.append(ex_id.upper())
-        except Exception: pass
-
-        try:
-            if exchange.has.get("fetchOpenInterest"):
-                res = exchange.fetch_open_interest(symbol)
-                oi_val = number(res.get("openInterestValue"))
-                if not math.isfinite(oi_val):
-                    oi_val = number(res.get("openInterestAmount"))
-                if math.isfinite(oi_val):
-                    open_interests.append(oi_val)
-                    oi_names.append(ex_id.upper())
-        except Exception: pass
-
-    avg_funding = float(np.mean(funding_rates)) if funding_rates else 0.0
-    funding_signal = "BEARISH" if avg_funding > 0.0008 else "BULLISH" if avg_funding < -0.0008 else "NEUTRAL"
-    total_oi = float(np.sum(open_interests)) if open_interests else 0.0
-    all_names = sorted(set(funding_names + oi_names))
-
-    return {
-        "funding": avg_funding, "funding_signal": funding_signal,
-        "open_interest": total_oi, "futures_exchanges": len(all_names),
-        "futures_names": ",".join(all_names)
-    }
-
+# ============================================================
+# DERIVATIVES, ORDERBOOK & SENTIMENT ENGINES
+# ============================================================
 
 def orderbook(spot, symbol):
-    imbalances, names = [], []
-    preferred = ["binance", "okx", "bybit", "kucoin"]
-
-    for pref_id in preferred:
+    imbalances = []
+    for pref_id in ["binance", "okx", "bybit", "kucoin"]:
         for ex_id, exchange in spot:
-            if text(ex_id).lower() != pref_id: continue
+            if ex_id != pref_id or symbol not in exchange.markets: continue
             try:
-                if symbol not in exchange.markets: continue
                 book = exchange.fetch_order_book(symbol, limit=20)
                 bids, asks = book.get("bids", [])[:20], book.get("asks", [])[:20]
                 if not bids or not asks: continue
@@ -497,140 +334,27 @@ def orderbook(spot, symbol):
                 bid_v = sum(number(p, 0) * number(a, 0) for p, a in bids)
                 ask_v = sum(number(p, 0) * number(a, 0) for p, a in asks)
                 tot = bid_v + ask_v
-                if tot <= 0: continue
-
-                imbalances.append((bid_v - ask_v) / tot)
-                names.append(ex_id.upper())
+                if tot > 0: imbalances.append((bid_v - ask_v) / tot)
             except Exception: pass
 
-    if not imbalances:
-        return {"orderbook_imbalance": 0.0, "orderbook_signal": "UNKNOWN", "orderbook_exchanges": 0, "orderbook_names": ""}
+    avg = float(np.mean(imbalances)) if imbalances else 0.0
+    return {"orderbook_imbalance": avg, "orderbook_score": clip(50 + (avg * 50), 0, 100)}
 
-    avg = float(np.mean(imbalances))
-    sig = "BULLISH" if avg > 0.10 else "BEARISH" if avg < -0.10 else "NEUTRAL"
-
-    return {
-        "orderbook_imbalance": avg, "orderbook_signal": sig,
-        "orderbook_exchanges": len(names), "orderbook_names": ",".join(names)
-    }
-
-
-# ============================================================
-# CMC & FUNDAMENTALS
-# ============================================================
-
-def cmc_get(endpoint, params=None, tries=3):
-    url = CMC_BASE + endpoint
-    for attempt in range(tries):
+def derivatives(futures, base):
+    funding_rates = []
+    for ex_id, exchange in futures[:3]:
+        sym = f"{base}/USDT:USDT" if f"{base}/USDT:USDT" in exchange.markets else f"{base}/USDT"
+        if sym not in exchange.markets: continue
         try:
-            res = session.get(url, params=params or {}, timeout=HTTP_TIMEOUT)
-            if res.status_code == 429:
-                time.sleep(min(2 ** attempt, 15))
-                continue
-            if not res.ok:
-                return None
-            data = res.json()
-            if data.get("status", {}).get("error_code") in (None, 0, "0"):
-                return data
-            return None
-        except Exception:
-            time.sleep(2 ** attempt)
-    return None
+            if exchange.has.get("fetchFundingRate"):
+                res = exchange.fetch_funding_rate(sym)
+                rate = number(res.get("fundingRate"))
+                if math.isfinite(rate): funding_rates.append(rate)
+        except Exception: pass
 
-
-def calculate_fundamental_score(row):
-    score, reasons = 50.0, []
-    rank = number(row.get("cmc_rank"))
-    mcap = number(row.get("market_cap"))
-    fdv = number(row.get("fdv"))
-
-    if math.isfinite(rank):
-        if rank <= 50: score += 8; reasons.append("TOP50")
-        elif rank <= 100: score += 6; reasons.append("TOP100")
-        elif rank <= 250: score += 4; reasons.append("TOP250")
-        elif rank > 1000: score -= 3
-
-    if math.isfinite(mcap) and math.isfinite(fdv) and fdv > 0:
-        ratio = mcap / fdv
-        row["mc_fdv_ratio"] = ratio
-        if ratio >= 0.80: score += 5; reasons.append("LOW_FDV_GAP")
-        elif ratio < 0.25: score -= 5; reasons.append("HIGH_FDV_RISK")
-
-    score = clip(score, 0, 100)
-    row["fundamental_score"] = round(score, 2)
-    row["fundamental_rating"] = "STRONG" if score >= 70 else "NEUTRAL" if score >= 45 else "WEAK"
-    row["fundamental_reason"] = "|".join(reasons) if reasons else "NEUTRAL"
-    return row
-
-
-def fundamentals(symbols):
-    output = {}
-    for sym in symbols:
-        output[sym] = {
-            "name": sym.split("/")[0], "cmc_rank": np.nan, "market_cap": np.nan,
-            "fdv": np.nan, "fundamental_score": 50.0, "fundamental_rating": "UNKNOWN",
-            "fundamental_status": "UNAVAILABLE", "fundamental_reason": "CMC_UNAVAILABLE"
-        }
-
-    base_symbols = list(dict.fromkeys([s.split("/")[0].upper() for s in symbols]))
-    if not base_symbols: return output
-
-    map_res = cmc_get("/v1/cryptocurrency/map", {"symbol": ",".join(base_symbols)})
-    if not map_res or "data" not in map_res: return output
-
-    selected = {}
-    for item in map_res.get("data", []):
-        sym = text(item.get("symbol")).upper()
-        if sym in base_symbols:
-            rank = number(item.get("rank"), 999999)
-            if sym not in selected or rank < selected[sym][0]:
-                selected[sym] = (rank, item)
-
-    ids = [str(v[1]["id"]) for v in selected.values() if v[1].get("id")]
-    if not ids: return output
-
-    quote_res = cmc_get("/v1/cryptocurrency/quotes/latest", {"id": ",".join(ids), "convert": "USD"})
-    quotes = quote_res.get("data", {}) if quote_res else {}
-
-    for sym in symbols:
-        base = sym.split("/")[0].upper()
-        if base not in selected: continue
-        coin_id = str(selected[base][1].get("id"))
-        q = quotes.get(coin_id, {})
-        usd = q.get("quote", {}).get("USD", {}) if q else {}
-
-        if usd:
-            output[sym].update({
-                "name": text(q.get("name"), base),
-                "cmc_rank": number(q.get("cmc_rank")),
-                "market_cap": number(usd.get("market_cap")),
-                "fdv": number(usd.get("fully_diluted_market_cap")),
-                "fundamental_status": "OK"
-            })
-            output[sym] = calculate_fundamental_score(output[sym])
-
-    return output
-
-
-def global_market_data():
-    res = cmc_get("/v1/global-metrics/quotes/latest")
-    data = res.get("data", {}) if res else {}
-    usd = data.get("quote", {}).get("USD", {})
-
-    return {
-        "global_market_cap": number(usd.get("total_market_cap")),
-        "btc_dominance": number(data.get("btc_dominance")),
-        "fear_greed": 50, "fear_greed_class": "NEUTRAL"
-    }
-
-
-# ============================================================
-# NEWS
-# ============================================================
-
-def clean_html(val):
-    return re.sub(r"<[^>]+>", " ", text(val)).replace("&amp;", "&").strip()
-
+    avg_funding = float(np.mean(funding_rates)) if funding_rates else 0.0
+    sig_score = 50.0 - (avg_funding * 10000)
+    return {"funding_rate": avg_funding, "derivatives_score": clip(sig_score, 0, 100)}
 
 def load_news():
     news = []
@@ -640,125 +364,113 @@ def load_news():
             res.raise_for_status()
             root = ET.fromstring(res.content)
             for item in root.findall(".//item")[:20]:
-                title = clean_html(item.findtext("title", default=""))
-                summary = clean_html(item.findtext("description", default=""))
+                title = re.sub(r"<[^>]+>", " ", text(item.findtext("title", default=""))).strip()
+                summary = re.sub(r"<[^>]+>", " ", text(item.findtext("description", default=""))).strip()
                 if title: news.append({"title": title, "summary": summary})
         except Exception: pass
+    return news[:200]
 
-    seen, cleaned = set(), []
-    for item in news:
-        k = item["title"].lower()
-        if k and k not in seen:
-            seen.add(k)
-            cleaned.append(item)
-    return cleaned[:150]
-
-
-def coin_news(coin_name, symbol, news):
+def coin_news_score(symbol, news_list):
     base = symbol.split("/")[0].upper()
     matched = [
-        item for item in news
+        item for item in news_list
         if re.search(r"\b" + re.escape(base) + r"\b", item["title"] + " " + item["summary"], re.I)
     ]
+    if not matched: return 50.0
 
-    if not matched:
-        return {"news_score": 0.0, "news_sentiment": "NO_NEWS", "news_impact": "NONE", "news_count": 0}
+    scores = []
+    pos_words = ["approval", "approved", "adoption", "partnership", "launch", "bullish", "breakout"]
+    neg_words = ["hack", "hacked", "exploit", "lawsuit", "ban", "delist", "bankrupt", "stolen"]
 
-    return {"news_score": 0.2, "news_sentiment": "BULLISH", "news_impact": "MEDIUM", "news_count": len(matched)}
+    for item in matched[:10]:
+        comb = (item["title"] + " " + item["summary"]).lower()
+        pos = sum(comb.count(w) for w in pos_words)
+        neg = sum(comb.count(w) for w in neg_words)
+        scores.append(0.8 if pos > neg else -0.8 if neg > pos else 0.0)
+
+    avg_score = float(np.mean(scores))
+    return clip(50 + (avg_score * 50), 0, 100)
 
 
 # ============================================================
-# AI CALCULATIONS & LEARNING
+# LIQUIDITY ANTI-HUNT SL & DYNAMIC RR TP
 # ============================================================
 
-LEARNING_FILE = "ai_learning.json"
+def find_deep_liquidity_levels(spot, symbol, price, direction):
+    _, exchange = find_spot_exchange(spot, symbol)
+    if not exchange: return None
 
-
-def load_learning():
     try:
-        with open(LEARNING_FILE, "r") as f:
-            return json.load(f)
+        book = exchange.fetch_order_book(symbol, limit=50)
+        orders = book["bids"] if direction == "LONG" else book["asks"]
+        if not orders: return None
+
+        avg_vol = np.mean([o[1] for o in orders])
+        big_walls = [o[0] for o in orders if o[1] > avg_vol * 2.2]
+
+        if big_walls:
+            return min(big_walls) if direction == "LONG" else max(big_walls)
     except Exception:
-        return {"version": 1, "pending": [], "total": 0, "hits": 0}
+        pass
+    return None
 
+def calculate_advanced_risk_management(price, signal, tech_data, spot, symbol):
+    if signal not in ["LONG", "SHORT"]:
+        return np.nan, np.nan, 0.0
 
-def save_learning(data):
-    with open(LEARNING_FILE, "w") as f:
-        json.dump(data, f, indent=2)
+    atr = number(tech_data.get("atr"), price * 0.02)
+    sup = number(tech_data.get("support"), price * 0.95)
+    res = number(tech_data.get("resistance"), price * 1.05)
+    tf_score = abs(number(tech_data.get("tf_score"), 0.5))
 
+    liquidity_wall = find_deep_liquidity_levels(spot, symbol, price, signal)
 
-def update_learning(data, current_prices):
-    now_t = time.time()
-    rem = []
-    for pred in data.get("pending", []):
-        age = (now_t - number(pred.get("created"), now_t)) / 3600
-        sym = pred.get("symbol")
+    if signal == "LONG":
+        base_sl = price - (1.8 * atr)
+        sr_sl = sup * 0.993
+        sl = min(base_sl, sr_sl)
+        if liquidity_wall and liquidity_wall < price:
+            sl = min(sl, liquidity_wall * 0.995)
+    else:
+        base_sl = price + (1.8 * atr)
+        sr_sl = res * 1.007
+        sl = max(base_sl, sr_sl)
+        if liquidity_wall and liquidity_wall > price:
+            sl = max(sl, liquidity_wall * 1.005)
 
-        if age >= 4 and sym in current_prices:
-            entry, curr = number(pred.get("entry")), number(current_prices[sym])
-            if entry > 0 and math.isfinite(curr):
-                ret = (curr - entry) / entry
-                hit = ret > 0.001 if pred.get("signal") == "LONG" else ret < -0.001
-                data["total"] += 1
-                if hit: data["hits"] += 1
-                continue
-        if age < 12: rem.append(pred)
+    risk_distance = abs(price - sl)
+    dynamic_rr = 2.0 + (tf_score * 2.5)
 
-    data["pending"] = rem
-    return data
-
-
-def learning_stats(data):
-    tot, hits = data.get("total", 0), data.get("hits", 0)
-    rate = hits / tot if tot else 0.5
-    adj = clip((rate - 0.5) * 0.2, -0.10, 0.10) if tot >= 20 else 0.0
-    return rate, adj
-
-
-def create_result(base_row, tech, fund, news, ob, deriv, btc, gdata, adj):
-    p = base_row["price"]
-    raw = (tech["technical_score"] - 50) / 50 * 32 * (1 + adj) + news["news_score"] * 6
-    long_s, short_s = clip(50 + raw, 0, 95), clip(50 - raw, 0, 95)
-
-    sig = "LONG" if long_s >= 63 else "SHORT" if short_s >= 63 else "NO TRADE"
-    atr_v = number(tech.get("atr"), p * 0.02)
-
-    sl = p - 1.5 * atr_v if sig == "LONG" else p + 1.5 * atr_v if sig == "SHORT" else np.nan
-    tp = p + 3 * atr_v if sig == "LONG" else p - 3 * atr_v if sig == "SHORT" else np.nan
-
-    return {
-        **base_row, **tech, **fund, **news, **ob, **deriv, **gdata,
-        "signal": sig, "long_score": round(long_s, 2), "short_score": round(short_s, 2),
-        "signal_strength": round(max(long_s, short_s), 2), "confidence": 70.0,
-        "stop_loss": sl, "take_profit": tp, "learning_adjustment": adj
-    }
+    tp = price + (risk_distance * dynamic_rr) if signal == "LONG" else price - (risk_distance * dynamic_rr)
+    return round(sl, 6), round(tp, 6), round(dynamic_rr, 2)
 
 
 # ============================================================
-# MAIN SCANNER WORKFLOW
+# MAIN SCANNER RUNNER
 # ============================================================
 
 def main():
     log("======================================")
-    log("CRYPTO MASTER AI V9.2 START")
+    log("CRYPTO MASTER AI V12.0 (FULL UNIFIED ENGINE START)")
     log("======================================")
+
+    learning_data = load_advanced_learning()
+    log(f"AI ENGINE ONLINE | Win Rate: {learning_data['performance']['win_rate']*100:.1f}% | Total Analyzed Trades: {learning_data['performance']['total_trades']}")
 
     spot, futures = build_exchanges()
     if not spot: raise RuntimeError("NO SPOT EXCHANGE AVAILABLE")
 
     candidates = discover_candidates(spot)
-    if not candidates: raise RuntimeError("NO LIQUID USDT CANDIDATES")
-
-    gdata = global_market_data()
-    news_data = load_news()
-    fundamentals_data = fundamentals([c["symbol"] for c in candidates])
-    btc = btc_regime(spot)
-    learning = load_learning()
-
+    news_list = load_news()
     results, current_prices = [], {}
+
+    weights = learning_data["weights"]
+    long_thresh = learning_data["thresholds"]["long_min"]
+    short_thresh = learning_data["thresholds"]["short_max"]
 
     for idx, cand in enumerate(candidates, start=1):
         sym = cand["symbol"]
+        base = sym.split("/")[0]
         ex_id, exchange = find_spot_exchange(spot, sym)
         if not exchange: continue
 
@@ -766,33 +478,67 @@ def main():
             ticker = exchange.fetch_ticker(sym)
             price = number(ticker.get("last"))
             if not math.isfinite(price) or price <= 0: continue
+            current_prices[sym] = price
 
-            base = sym.split("/")[0]
-            base_row = {**cand, "price": price, "analysis_exchange": ex_id.upper()}
-
+            # Module Score Calculations
             tech = technical_analysis(exchange, sym)
             ob = orderbook(spot, sym)
             deriv = derivatives(futures, base)
-            fund = fundamentals_data.get(sym, {})
-            news = coin_news(fund.get("name", base), sym, news_data)
+            news_s = coin_news_score(sym, news_list)
 
-            res = create_result(base_row, tech, fund, news, ob, deriv, btc, gdata, 0.0)
-            current_prices[sym] = price
+            # AI Multi-Factor Score Aggregation
+            signal_score = (
+                tech["technical_score"] * weights["technical"] +
+                ob["orderbook_score"] * weights["orderbook"] +
+                deriv["derivatives_score"] * weights["derivatives"] +
+                news_s * weights["sentiment"]
+            )
+
+            sig = "LONG" if signal_score >= long_thresh else "SHORT" if signal_score <= short_thresh else "NO TRADE"
+            sl, tp, rr_ratio = calculate_advanced_risk_management(price, sig, tech, spot, sym)
+
+            base_row = {**cand, "price": price, "analysis_exchange": ex_id.upper()}
+            
+            res = {
+                **base_row,
+                "signal": sig,
+                "signal_strength": round(signal_score, 2),
+                "stop_loss": sl,
+                "take_profit": tp,
+                "dynamic_rr_ratio": rr_ratio,
+                "funding_rate": deriv["funding_rate"],
+                "orderbook_imbalance": ob["orderbook_imbalance"],
+                "sentiment_score": news_s,
+                "ai_winrate_factor": learning_data["performance"]["win_rate"],
+                "timestamp": now().isoformat()
+            }
+            
             results.append(res)
-            log(f"[{idx}/{len(candidates)}] {sym} -> {res['signal']} Strength:{res['signal_strength']}")
+
+            if sig in ["LONG", "SHORT"]:
+                learning_data["pending_evaluations"].append({
+                    "symbol": sym,
+                    "signal": sig,
+                    "entry_price": price,
+                    "stop_loss": sl,
+                    "take_profit": tp,
+                    "created": time.time()
+                })
+
+            log(f"[{idx}/{len(candidates)}] {sym} | Sig: {sig} ({signal_score:.1f}) | SL: {sl} | TP: {tp} (RR 1:{rr_ratio})")
 
         except Exception as e:
-            log(f"COIN FAILED {sym}: {type(e).__name__}: {e}")
+            log(f"FAILED {sym}: {e}")
 
-    learning = update_learning(learning, current_prices)
-    rate, adj = learning_stats(learning)
+    learning_data = update_learning_feedback(learning_data, current_prices)
+    save_advanced_learning(learning_data)
 
-    for r in results:
-        r["learning_adjustment"] = adj
-
-    pd.DataFrame(results).to_csv("crypto_scan_results.csv", index=False)
-    save_learning(learning)
-    log("SCAN COMPLETE & SAVED TO crypto_scan_results.csv")
+    df = pd.DataFrame(results)
+    df.to_csv("crypto_scan_results.csv", index=False)
+    
+    log("======================================")
+    log(f"SCAN COMPLETE | RESULTS SAVED TO crypto_scan_results.csv")
+    log("======================================")
 
 
 if __name__ == "__main__":
