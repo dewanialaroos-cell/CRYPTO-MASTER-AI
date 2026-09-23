@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.247,
-      "created": 1790181867.3170679
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 84110.9,
-      "created": 1790181867.3170693
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.20885,
@@ -48,8 +36,14 @@
       "signal": "LONG",
       "entry": 5.4163,
       "created": 1790189932.7779026
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.371,
+      "created": 1790196820.8668017
     }
   ],
-  "total": 452,
-  "hits": 240
+  "total": 454,
+  "hits": 242
 }
