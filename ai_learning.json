@@ -14,12 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.382,
-      "created": 1790115274.6033561
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.2056,
@@ -138,8 +132,20 @@
       "signal": "LONG",
       "entry": 1.5808,
       "created": 1790128453.6096702
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.117,
+      "created": 1790129703.167905
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.416,
+      "created": 1790129703.1679072
     }
   ],
-  "total": 369,
-  "hits": 219
+  "total": 370,
+  "hits": 220
 }
