@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.6184,
-      "created": 1790144373.739344
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "LONG",
       "entry": 0.10267,
@@ -134,6 +128,6 @@
       "created": 1790158511.4881833
     }
   ],
-  "total": 411,
+  "total": 412,
   "hits": 238
 }
