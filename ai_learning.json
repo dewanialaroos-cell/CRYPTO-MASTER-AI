@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1625.48,
-      "created": 1790169422.63005
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.06093,
-      "created": 1790169422.6300533
-    },
-    {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 5.975e-06,
-      "created": 1790169422.630054
-    },
-    {
       "symbol": "PENGU/USDT",
       "signal": "LONG",
       "entry": 0.010339,
@@ -86,6 +68,6 @@
       "created": 1790183044.738053
     }
   ],
-  "total": 442,
+  "total": 445,
   "hits": 240
 }
