@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PENGU/USDT",
-      "signal": "LONG",
-      "entry": 0.010339,
-      "created": 1790171064.7896712
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 62.51,
-      "created": 1790171064.7896726
-    },
-    {
-      "symbol": "BCH/USDT",
-      "signal": "LONG",
-      "entry": 356.6,
-      "created": 1790171064.7896738
-    },
-    {
       "symbol": "LONGXIA/USDT",
       "signal": "SHORT",
       "entry": 0.15997,
@@ -66,8 +48,26 @@
       "signal": "LONG",
       "entry": 92.646,
       "created": 1790183044.738053
+    },
+    {
+      "symbol": "BCH/USDT",
+      "signal": "LONG",
+      "entry": 349.4,
+      "created": 1790186059.6555395
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 60.71,
+      "created": 1790186059.655541
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.05935,
+      "created": 1790186059.655542
     }
   ],
-  "total": 445,
+  "total": 448,
   "hits": 240
 }
