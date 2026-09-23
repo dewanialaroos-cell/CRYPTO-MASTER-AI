@@ -14,12 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 315.6,
-      "created": 1790133304.520322
-    },
-    {
       "symbol": "SHIB/USDT",
       "signal": "LONG",
       "entry": 6.211e-06,
@@ -126,8 +120,26 @@
       "signal": "LONG",
       "entry": 0.10267,
       "created": 1790146067.6042993
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.41,
+      "created": 1790147762.6220677
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 86390.3,
+      "created": 1790147762.622069
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 313.2,
+      "created": 1790147762.6220698
     }
   ],
-  "total": 394,
+  "total": 395,
   "hits": 237
 }
