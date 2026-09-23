@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.4351,
-      "created": 1790111650.9237006
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 97.958,
-      "created": 1790140440.889361
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 10.469,
-      "created": 1790140440.889363
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.21715,
-      "created": 1790140440.8893638
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 150.95,
@@ -108,8 +84,32 @@
       "signal": "LONG",
       "entry": 1613.11,
       "created": 1790154275.4974127
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.21549,
+      "created": 1790154897.3695197
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.06131,
+      "created": 1790154897.3695214
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.0194,
+      "created": 1790154897.3695219
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 62.85,
+      "created": 1790154897.369524
     }
   ],
-  "total": 407,
+  "total": 410,
   "hits": 238
 }
