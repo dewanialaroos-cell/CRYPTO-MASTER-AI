@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2733.76,
-      "created": 1790162086.4868088
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "LONG",
       "entry": 0.0993,
@@ -84,8 +78,26 @@
       "signal": "SHORT",
       "entry": 0.15997,
       "created": 1790174692.7052474
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 115.64,
+      "created": 1790176795.3010197
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5297,
+      "created": 1790176795.3010213
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.426,
+      "created": 1790176795.3010237
     }
   ],
-  "total": 435,
+  "total": 436,
   "hits": 240
 }
