@@ -14,24 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 10.414,
-      "created": 1790122757.3004506
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 791.7,
-      "created": 1790122757.3004525
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.0341,
-      "created": 1790122757.300455
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "LONG",
       "entry": 0.1007,
@@ -168,8 +150,14 @@
       "signal": "LONG",
       "entry": 1603.93,
       "created": 1790136940.4004772
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.0315,
+      "created": 1790138016.8791006
     }
   ],
-  "total": 377,
-  "hits": 224
+  "total": 380,
+  "hits": 226
 }
