@@ -14,18 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 144.79,
-      "created": 1790112581.3403196
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.919e-06,
-      "created": 1790112581.3403225
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "LONG",
       "entry": 1.5731,
@@ -144,8 +132,14 @@
       "signal": "LONG",
       "entry": 86697.4,
       "created": 1790126328.7371893
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 147.84,
+      "created": 1790127722.8643684
     }
   ],
-  "total": 366,
-  "hits": 217
+  "total": 368,
+  "hits": 218
 }
