@@ -138,6 +138,12 @@
       "signal": "LONG",
       "entry": 313.2,
       "created": 1790147762.6220698
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.24716,
+      "created": 1790148839.6376386
     }
   ],
   "total": 395,
