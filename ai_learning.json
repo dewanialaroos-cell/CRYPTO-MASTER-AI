@@ -14,18 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2056,
-      "created": 1790116222.5602617
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.2198,
-      "created": 1790116222.5602658
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 4.438,
@@ -144,8 +132,20 @@
       "signal": "LONG",
       "entry": 7.416,
       "created": 1790129703.1679072
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.24654,
+      "created": 1790130752.9711058
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2009,
+      "created": 1790130752.971107
     }
   ],
-  "total": 370,
-  "hits": 220
+  "total": 372,
+  "hits": 221
 }
