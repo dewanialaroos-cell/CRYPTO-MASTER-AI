@@ -14,30 +14,6 @@
       "created": 1790111650.9237006
     },
     {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2547,
-      "created": 1790120546.4170494
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1630.05,
-      "created": 1790121266.383604
-    },
-    {
-      "symbol": "SHIB/USDT",
-      "signal": "LONG",
-      "entry": 6.107e-06,
-      "created": 1790121266.3836055
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 13.035,
-      "created": 1790121266.3836079
-    },
-    {
       "symbol": "UNI/USDT",
       "signal": "LONG",
       "entry": 10.414,
@@ -144,8 +120,38 @@
       "signal": "LONG",
       "entry": 315.6,
       "created": 1790133304.520322
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "LONG",
+      "entry": 6.211e-06,
+      "created": 1790135725.5282233
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.2599,
+      "created": 1790135725.5282252
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.06257,
+      "created": 1790135725.5282264
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.422,
+      "created": 1790135725.5282283
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.968e-06,
+      "created": 1790135725.5282297
     }
   ],
-  "total": 373,
-  "hits": 221
+  "total": 377,
+  "hits": 224
 }
