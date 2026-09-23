@@ -2,34 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.396,
-      "created": 1790150160.8199224
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.12,
-      "created": 1790150160.8199236
-    },
-    {
       "symbol": "SHIB/USDT",
       "signal": "LONG",
       "entry": 6.112e-06,
       "created": 1790150160.8199263
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 791.0,
-      "created": 1790151375.6357136
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.223,
-      "created": 1790151375.6357176
     },
     {
       "symbol": "ADA/USDT",
@@ -126,8 +102,32 @@
       "signal": "LONG",
       "entry": 0.23635,
       "created": 1790164525.129204
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.745,
+      "created": 1790165947.5852633
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 85403.8,
+      "created": 1790165947.5852659
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 95.213,
+      "created": 1790165947.5852687
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 304.8,
+      "created": 1790165947.5852695
     }
   ],
-  "total": 417,
-  "hits": 238
+  "total": 421,
+  "hits": 239
 }
