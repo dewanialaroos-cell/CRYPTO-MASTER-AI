@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.0993,
-      "created": 1790163118.5429027
-    },
-    {
       "symbol": "ARB/USDT",
       "signal": "LONG",
       "entry": 0.23635,
@@ -98,6 +92,6 @@
       "created": 1790176795.3010237
     }
   ],
-  "total": 436,
+  "total": 437,
   "hits": 240
 }
