@@ -8,12 +8,6 @@
       "created": 1790259673.2006018
     },
     {
-      "symbol": "LIT/USDT",
-      "signal": "LONG",
-      "entry": 5.2582,
-      "created": 1790272473.241628
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 144.73,
@@ -96,8 +90,14 @@
       "signal": "LONG",
       "entry": 1.0231,
       "created": 1790286327.1174016
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.546,
+      "created": 1790287002.1481323
     }
   ],
-  "total": 521,
+  "total": 522,
   "hits": 274
 }
