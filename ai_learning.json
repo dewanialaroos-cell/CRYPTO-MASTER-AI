@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.13962,
-      "created": 1790224392.4842322
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 4.505,
@@ -104,6 +98,6 @@
       "created": 1790236541.9273534
     }
   ],
-  "total": 474,
-  "hits": 252
+  "total": 475,
+  "hits": 253
 }
