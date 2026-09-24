@@ -102,6 +102,12 @@
       "signal": "LONG",
       "entry": 340.9,
       "created": 1790261157.4746773
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2374,
+      "created": 1790262048.9369335
     }
   ],
   "total": 493,
