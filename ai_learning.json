@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.371,
-      "created": 1790196820.8668017
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
       "entry": 93.573,
@@ -54,8 +48,14 @@
       "signal": "LONG",
       "entry": 5.3321,
       "created": 1790205197.1056983
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.265,
+      "created": 1790212460.4380348
     }
   ],
-  "total": 460,
+  "total": 461,
   "hits": 244
 }
