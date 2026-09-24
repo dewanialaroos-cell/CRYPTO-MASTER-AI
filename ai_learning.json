@@ -8,18 +8,6 @@
       "created": 1790235246.7570026
     },
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 66.91,
-      "created": 1790246616.821595
-    },
-    {
-      "symbol": "BCH/USDT",
-      "signal": "LONG",
-      "entry": 329.6,
-      "created": 1790246616.821596
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 4.273,
@@ -96,8 +84,26 @@
       "signal": "LONG",
       "entry": 12.594,
       "created": 1790259673.200607
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 73.12,
+      "created": 1790261157.4746733
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.09555,
+      "created": 1790261157.4746752
+    },
+    {
+      "symbol": "BCH/USDT",
+      "signal": "LONG",
+      "entry": 340.9,
+      "created": 1790261157.4746773
     }
   ],
-  "total": 491,
-  "hits": 253
+  "total": 493,
+  "hits": 255
 }
