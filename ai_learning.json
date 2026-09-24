@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 92.905,
-      "created": 1790228821.124023
-    },
-    {
       "symbol": "LTC/USDT",
       "signal": "LONG",
       "entry": 67.58,
@@ -80,6 +74,6 @@
       "created": 1790241647.2243645
     }
   ],
-  "total": 479,
+  "total": 480,
   "hits": 253
 }
