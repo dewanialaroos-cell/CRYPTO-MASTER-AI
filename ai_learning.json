@@ -8,12 +8,6 @@
       "created": 1790259673.2006018
     },
     {
-      "symbol": "ETC/USDT",
-      "signal": "LONG",
-      "entry": 10.16,
-      "created": 1790266673.1956596
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.5186,
@@ -108,8 +102,14 @@
       "signal": "LONG",
       "entry": 117.46,
       "created": 1790279701.5197105
+    },
+    {
+      "symbol": "ETC/USDT",
+      "signal": "LONG",
+      "entry": 9.785,
+      "created": 1790282105.2116382
     }
   ],
-  "total": 512,
+  "total": 513,
   "hits": 270
 }
