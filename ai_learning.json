@@ -8,24 +8,6 @@
       "created": 1790259673.2006018
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1543.59,
-      "created": 1790269078.0374134
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.2197,
-      "created": 1790269078.0374172
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5324,
-      "created": 1790269078.0374188
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.0108,
@@ -110,6 +92,6 @@
       "created": 1790283385.7559774
     }
   ],
-  "total": 516,
-  "hits": 271
+  "total": 519,
+  "hits": 272
 }
