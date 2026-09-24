@@ -8,18 +8,6 @@
       "created": 1790235246.7570026
     },
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 0.9681,
-      "created": 1790255805.76733
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 774.5,
-      "created": 1790255805.767331
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.4223,
@@ -146,6 +134,6 @@
       "created": 1790269078.0374188
     }
   ],
-  "total": 497,
-  "hits": 259
+  "total": 499,
+  "hits": 261
 }
