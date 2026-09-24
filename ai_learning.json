@@ -78,6 +78,24 @@
       "signal": "LONG",
       "entry": 1.1503,
       "created": 1790258395.8332283
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.0608,
+      "created": 1790259673.2006018
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.20618,
+      "created": 1790259673.2006056
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 12.594,
+      "created": 1790259673.200607
     }
   ],
   "total": 491,
