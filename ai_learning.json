@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 62.18,
-      "created": 1790216091.9266605
-    },
-    {
-      "symbol": "BCH/USDT",
-      "signal": "LONG",
-      "entry": 337.8,
-      "created": 1790216091.9266615
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.0589,
-      "created": 1790216091.9266617
-    },
-    {
       "symbol": "LIT/USDT",
       "signal": "LONG",
       "entry": 5.408,
@@ -60,8 +42,26 @@
       "signal": "LONG",
       "entry": 92.905,
       "created": 1790228821.124023
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 67.58,
+      "created": 1790230755.173163
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.0596,
+      "created": 1790230755.1731646
+    },
+    {
+      "symbol": "BCH/USDT",
+      "signal": "LONG",
+      "entry": 338.8,
+      "created": 1790230755.1731653
     }
   ],
-  "total": 470,
-  "hits": 249
+  "total": 473,
+  "hits": 252
 }
