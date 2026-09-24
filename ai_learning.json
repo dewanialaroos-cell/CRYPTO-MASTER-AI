@@ -8,12 +8,6 @@
       "created": 1790259673.2006018
     },
     {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 117.46,
-      "created": 1790279701.5197105
-    },
-    {
       "symbol": "ETC/USDT",
       "signal": "LONG",
       "entry": 9.785,
@@ -108,8 +102,14 @@
       "signal": "LONG",
       "entry": 0.09582,
       "created": 1790293466.0703642
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 117.07,
+      "created": 1790294174.5426831
     }
   ],
-  "total": 528,
+  "total": 529,
   "hits": 276
 }
