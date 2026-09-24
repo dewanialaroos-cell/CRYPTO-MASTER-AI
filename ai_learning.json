@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.505,
-      "created": 1790226872.944797
-    },
-    {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 120.47,
-      "created": 1790226872.9447994
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.21194,
-      "created": 1790226872.9448016
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1530.83,
-      "created": 1790226872.944802
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
       "entry": 92.905,
@@ -96,8 +72,14 @@
       "signal": "LONG",
       "entry": 12.491,
       "created": 1790236541.9273534
+    },
+    {
+      "symbol": "LONGXIA/USDT",
+      "signal": "SHORT",
+      "entry": 0.11935,
+      "created": 1790241647.2243645
     }
   ],
-  "total": 475,
+  "total": 479,
   "hits": 253
 }
