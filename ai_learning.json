@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.258,
-      "created": 1790204238.6996093
-    },
-    {
-      "symbol": "LIT/USDT",
-      "signal": "LONG",
-      "entry": 5.3321,
-      "created": 1790205197.1056983
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 4.265,
@@ -36,8 +24,14 @@
       "signal": "LONG",
       "entry": 0.0589,
       "created": 1790216091.9266617
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "LONG",
+      "entry": 5.408,
+      "created": 1790219697.6591566
     }
   ],
-  "total": 467,
-  "hits": 246
+  "total": 469,
+  "hits": 248
 }
