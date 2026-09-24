@@ -120,6 +120,12 @@
       "signal": "LONG",
       "entry": 84464.5,
       "created": 1790265591.3887923
+    },
+    {
+      "symbol": "ETC/USDT",
+      "signal": "LONG",
+      "entry": 10.16,
+      "created": 1790266673.1956596
     }
   ],
   "total": 494,
