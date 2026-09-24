@@ -8,12 +8,6 @@
       "created": 1790259673.2006018
     },
     {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 84464.5,
-      "created": 1790265591.3887923
-    },
-    {
       "symbol": "ETC/USDT",
       "signal": "LONG",
       "entry": 10.16,
@@ -116,6 +110,6 @@
       "created": 1790279701.5197105
     }
   ],
-  "total": 511,
+  "total": 512,
   "hits": 270
 }
