@@ -8,18 +8,6 @@
       "created": 1790259673.2006018
     },
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.0108,
-      "created": 1790271729.4132962
-    },
-    {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.1308,
-      "created": 1790271729.4132988
-    },
-    {
       "symbol": "LIT/USDT",
       "signal": "LONG",
       "entry": 5.2582,
@@ -96,8 +84,20 @@
       "signal": "LONG",
       "entry": 0.22184,
       "created": 1790285473.8882816
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 10.626,
+      "created": 1790286327.1173968
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.0231,
+      "created": 1790286327.1174016
     }
   ],
-  "total": 519,
-  "hits": 272
+  "total": 521,
+  "hits": 274
 }
