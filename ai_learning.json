@@ -84,6 +84,24 @@
       "signal": "LONG",
       "entry": 777.4,
       "created": 1790235246.7570033
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 293.3,
+      "created": 1790236541.92735
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84605.1,
+      "created": 1790236541.9273512
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 12.491,
+      "created": 1790236541.9273534
     }
   ],
   "total": 474,
