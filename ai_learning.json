@@ -8,24 +8,6 @@
       "created": 1790259673.2006018
     },
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5186,
-      "created": 1790268240.5433564
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 296.7,
-      "created": 1790268240.5433578
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 94.02,
-      "created": 1790268240.5433605
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
       "entry": 1543.59,
@@ -108,8 +90,26 @@
       "signal": "LONG",
       "entry": 9.785,
       "created": 1790282105.2116382
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5106,
+      "created": 1790283385.7559726
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 297.8,
+      "created": 1790283385.7559748
+    },
+    {
+      "symbol": "BCH/USDT",
+      "signal": "LONG",
+      "entry": 337.8,
+      "created": 1790283385.7559774
     }
   ],
-  "total": 513,
-  "hits": 270
+  "total": 516,
+  "hits": 271
 }
