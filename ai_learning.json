@@ -48,6 +48,18 @@
       "signal": "LONG",
       "entry": 0.20729,
       "created": 1790254105.0282626
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 0.9681,
+      "created": 1790255805.76733
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 774.5,
+      "created": 1790255805.767331
     }
   ],
   "total": 490,
