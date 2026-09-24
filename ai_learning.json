@@ -8,12 +8,6 @@
       "created": 1790235246.7570026
     },
     {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.11935,
-      "created": 1790241647.2243645
-    },
-    {
       "symbol": "LTC/USDT",
       "signal": "LONG",
       "entry": 66.91,
@@ -60,8 +54,20 @@
       "signal": "LONG",
       "entry": 774.5,
       "created": 1790255805.767331
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.4223,
+      "created": 1790257550.5154514
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "LONG",
+      "entry": 5.2142,
+      "created": 1790257550.515454
     }
   ],
-  "total": 490,
+  "total": 491,
   "hits": 253
 }
