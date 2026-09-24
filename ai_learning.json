@@ -2,42 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 93.573,
-      "created": 1790200427.2565107
-    },
-    {
-      "symbol": "BCH/USDT",
-      "signal": "LONG",
-      "entry": 337.4,
-      "created": 1790201687.435911
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 61.47,
-      "created": 1790201687.4359124
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.05916,
-      "created": 1790201687.4359133
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.20759,
-      "created": 1790201687.4359138
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1523.45,
-      "created": 1790201687.4359155
-    },
-    {
       "symbol": "UNI/USDT",
       "signal": "LONG",
       "entry": 9.258,
@@ -54,8 +18,26 @@
       "signal": "LONG",
       "entry": 4.265,
       "created": 1790212460.4380348
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 62.18,
+      "created": 1790216091.9266605
+    },
+    {
+      "symbol": "BCH/USDT",
+      "signal": "LONG",
+      "entry": 337.8,
+      "created": 1790216091.9266615
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.0589,
+      "created": 1790216091.9266617
     }
   ],
-  "total": 461,
-  "hits": 244
+  "total": 467,
+  "hits": 246
 }
