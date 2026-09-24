@@ -132,6 +132,18 @@
       "signal": "LONG",
       "entry": 1.5324,
       "created": 1790269078.0374188
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.0108,
+      "created": 1790271729.4132962
+    },
+    {
+      "symbol": "LONGXIA/USDT",
+      "signal": "SHORT",
+      "entry": 0.1308,
+      "created": 1790271729.4132988
     }
   ],
   "total": 499,
