@@ -1196,17 +1196,71 @@ def orderbook(
                 if not bids or not asks:
                     continue
 
-                bid_value = sum(
-                    number(price, 0)
-                    * number(amount, 0)
-                    for price, amount in bids
-                )
+                bid_value = 0.0
 
-                ask_value = sum(
-                    number(price, 0)
-                    * number(amount, 0)
-                    for price, amount in asks
-                )
+                for level in bids:
+
+                    if not isinstance(
+                        level,
+                        (list, tuple)
+                    ):
+                        continue
+
+                    if len(level) < 2:
+                        continue
+
+                    price = number(
+                        level[0],
+                        0
+                    )
+
+                    amount = number(
+                        level[1],
+                        0
+                    )
+
+                    if (
+                        math.isfinite(price)
+                        and math.isfinite(amount)
+                        and price > 0
+                        and amount > 0
+                    ):
+                        bid_value += (
+                            price * amount
+                        )
+
+                ask_value = 0.0
+
+                for level in asks:
+
+                    if not isinstance(
+                        level,
+                        (list, tuple)
+                    ):
+                        continue
+
+                    if len(level) < 2:
+                        continue
+
+                    price = number(
+                        level[0],
+                        0
+                    )
+
+                    amount = number(
+                        level[1],
+                        0
+                    )
+
+                    if (
+                        math.isfinite(price)
+                        and math.isfinite(amount)
+                        and price > 0
+                        and amount > 0
+                    ):
+                        ask_value += (
+                            price * amount
+                        )
 
                 total = (
                     bid_value
@@ -1226,7 +1280,7 @@ def orderbook(
                 )
 
                 names.append(
-                    exchange_id.upper()
+exchange_id.upper()
                 )
 
             except Exception as e:
