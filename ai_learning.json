@@ -8,18 +8,6 @@
       "created": 1790343898.8723736
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1560.91,
-      "created": 1790363843.4957817
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.066,
-      "created": 1790363843.495783
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.25941,
@@ -122,6 +110,6 @@
       "created": 1790378035.5598807
     }
   ],
-  "total": 619,
+  "total": 621,
   "hits": 330
 }
