@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5333,
-      "created": 1790321651.4635553
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
       "entry": 1560.35,
@@ -102,8 +96,32 @@
       "signal": "LONG",
       "entry": 0.22287,
       "created": 1790335981.6464818
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5957,
+      "created": 1790337351.3780725
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.575e-06,
+      "created": 1790337351.3780751
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.09,
+      "created": 1790337351.3780758
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.753,
+      "created": 1790337351.3780763
     }
   ],
-  "total": 572,
-  "hits": 298
+  "total": 573,
+  "hits": 299
 }
