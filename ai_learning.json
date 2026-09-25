@@ -8,18 +8,6 @@
       "created": 1790324184.5264437
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.62,
-      "created": 1790325324.3655534
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 93.556,
-      "created": 1790325324.3655553
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 305.2,
@@ -120,8 +108,14 @@
       "signal": "LONG",
       "entry": 0.4498,
       "created": 1790338775.549428
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.02,
+      "created": 1790340513.3733258
     }
   ],
-  "total": 576,
-  "hits": 302
+  "total": 578,
+  "hits": 303
 }
