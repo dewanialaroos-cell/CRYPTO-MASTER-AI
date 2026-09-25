@@ -90,6 +90,12 @@
       "signal": "SHORT",
       "entry": 0.11101,
       "created": 1790308536.4638572
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.487,
+      "created": 1790310846.9538307
     }
   ],
   "total": 545,
