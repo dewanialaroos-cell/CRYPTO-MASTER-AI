@@ -8,18 +8,6 @@
       "created": 1790324184.5264437
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 305.2,
-      "created": 1790327775.3664615
-    },
-    {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2526,
-      "created": 1790327775.3664653
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.22387,
@@ -114,8 +102,20 @@
       "signal": "LONG",
       "entry": 5.02,
       "created": 1790340513.3733258
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 93.65,
+      "created": 1790342207.7542775
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1616.73,
+      "created": 1790342207.7542806
     }
   ],
-  "total": 578,
-  "hits": 303
+  "total": 580,
+  "hits": 305
 }
