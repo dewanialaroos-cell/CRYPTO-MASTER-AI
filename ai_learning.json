@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 13.395,
-      "created": 1790320576.1916232
-    },
-    {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.21812,
-      "created": 1790320576.1916246
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 71.04,
-      "created": 1790320576.191625
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 143.74,
-      "created": 1790320576.191626
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "LONG",
       "entry": 1.5333,
@@ -114,8 +90,20 @@
       "signal": "LONG",
       "entry": 1.1861,
       "created": 1790334920.181792
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 148.63,
+      "created": 1790335981.646477
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.22287,
+      "created": 1790335981.6464818
     }
   ],
-  "total": 568,
-  "hits": 295
+  "total": 572,
+  "hits": 298
 }
