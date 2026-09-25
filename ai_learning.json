@@ -14,12 +14,6 @@
       "created": 1790343898.8723736
     },
     {
-      "symbol": "XPL/USDT",
-      "signal": "LONG",
-      "entry": 0.11179,
-      "created": 1790343898.8723752
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.24648,
@@ -116,6 +110,6 @@
       "created": 1790355508.1242442
     }
   ],
-  "total": 598,
+  "total": 599,
   "hits": 312
 }
