@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2549,
-      "created": 1790343898.8723736
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 71.12,
-      "created": 1790366070.889612
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 153.93,
-      "created": 1790366070.889616
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 13.889,
@@ -102,8 +84,20 @@
       "signal": "LONG",
       "entry": 0.11663,
       "created": 1790378035.5598807
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 153.72,
+      "created": 1790380564.1467323
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.26877,
+      "created": 1790380564.1467357
     }
   ],
-  "total": 622,
-  "hits": 331
+  "total": 625,
+  "hits": 333
 }
