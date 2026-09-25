@@ -8,18 +8,6 @@
       "created": 1790324184.5264437
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2741.7,
-      "created": 1790334920.1817896
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.1861,
-      "created": 1790334920.181792
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 148.63,
@@ -126,8 +114,14 @@
       "signal": "LONG",
       "entry": 119.75,
       "created": 1790347485.4381673
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.1807,
+      "created": 1790349702.0902457
     }
   ],
-  "total": 584,
+  "total": 586,
   "hits": 308
 }
