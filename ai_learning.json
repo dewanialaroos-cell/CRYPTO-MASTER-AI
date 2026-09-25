@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.22242,
-      "created": 1790315724.0477962
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.1547,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.2526,
       "created": 1790327775.3664653
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.22387,
+      "created": 1790330169.764153
     }
   ],
-  "total": 564,
-  "hits": 292
+  "total": 565,
+  "hits": 293
 }
