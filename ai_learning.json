@@ -90,6 +90,18 @@
       "signal": "LONG",
       "entry": 13.273,
       "created": 1790304923.2365692
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.06269,
+      "created": 1790306090.93595
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1538.76,
+      "created": 1790306090.9359527
     }
   ],
   "total": 541,
