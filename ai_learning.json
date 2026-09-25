@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1560.35,
-      "created": 1790322972.2290738
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.0638,
-      "created": 1790322972.2290754
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.0123,
-      "created": 1790322972.229078
-    },
-    {
       "symbol": "ETC/USDT",
       "signal": "LONG",
       "entry": 9.495,
@@ -120,8 +102,26 @@
       "signal": "LONG",
       "entry": 9.753,
       "created": 1790337351.3780763
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.06651,
+      "created": 1790338775.5494235
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1145,
+      "created": 1790338775.5494273
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.4498,
+      "created": 1790338775.549428
     }
   ],
-  "total": 573,
-  "hits": 299
+  "total": 576,
+  "hits": 302
 }
