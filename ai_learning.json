@@ -8,12 +8,6 @@
       "created": 1790283385.7559774
     },
     {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 117.07,
-      "created": 1790294174.5426831
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.5349,
@@ -98,6 +92,6 @@
       "created": 1790308536.4638572
     }
   ],
-  "total": 544,
+  "total": 545,
   "hits": 283
 }
