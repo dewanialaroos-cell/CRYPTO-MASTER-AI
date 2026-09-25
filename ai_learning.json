@@ -8,18 +8,6 @@
       "created": 1790283385.7559774
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.648,
-      "created": 1790293466.070309
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09582,
-      "created": 1790293466.0703642
-    },
-    {
       "symbol": "SOL/USDT",
       "signal": "LONG",
       "entry": 117.07,
@@ -96,8 +84,20 @@
       "signal": "LONG",
       "entry": 1538.76,
       "created": 1790306090.9359527
+    },
+    {
+      "symbol": "ETC/USDT",
+      "signal": "LONG",
+      "entry": 9.402,
+      "created": 1790308536.4638548
+    },
+    {
+      "symbol": "LONGXIA/USDT",
+      "signal": "SHORT",
+      "entry": 0.11101,
+      "created": 1790308536.4638572
     }
   ],
-  "total": 542,
+  "total": 544,
   "hits": 283
 }
