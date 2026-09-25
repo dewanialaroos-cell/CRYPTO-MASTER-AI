@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.1547,
-      "created": 1790317140.9012854
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 567.86,
-      "created": 1790317140.9012866
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.4361,
@@ -108,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.5582,
       "created": 1790331335.8630352
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 118.78,
+      "created": 1790332427.2289305
     }
   ],
-  "total": 565,
-  "hits": 293
+  "total": 567,
+  "hits": 294
 }
