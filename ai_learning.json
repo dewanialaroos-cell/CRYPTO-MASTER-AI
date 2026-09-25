@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.0608,
-      "created": 1790259673.2006018
-    },
-    {
       "symbol": "BCH/USDT",
       "signal": "LONG",
       "entry": 337.8,
@@ -96,6 +90,12 @@
       "signal": "LONG",
       "entry": 1.5511,
       "created": 1790302457.9143493
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84692.8,
+      "created": 1790303523.421854
     }
   ],
   "total": 536,
