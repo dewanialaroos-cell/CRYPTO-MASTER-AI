@@ -102,6 +102,24 @@
       "signal": "LONG",
       "entry": 1.5717,
       "created": 1790376401.9192622
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5532,
+      "created": 1790378035.5598774
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 10.616,
+      "created": 1790378035.5598803
+    },
+    {
+      "symbol": "XPL/USDT",
+      "signal": "LONG",
+      "entry": 0.11663,
+      "created": 1790378035.5598807
     }
   ],
   "total": 619,
