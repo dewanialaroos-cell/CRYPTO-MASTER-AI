@@ -8,18 +8,6 @@
       "created": 1790283385.7559774
     },
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5349,
-      "created": 1790298839.8248796
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 299.4,
-      "created": 1790298839.8248825
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.22924,
@@ -102,8 +90,26 @@
       "signal": "LONG",
       "entry": 116.94,
       "created": 1790312180.9050937
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5353,
+      "created": 1790313279.7088592
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 298.8,
+      "created": 1790313279.708861
+    },
+    {
+      "symbol": "XPL/USDT",
+      "signal": "LONG",
+      "entry": 0.11494,
+      "created": 1790313279.7088647
     }
   ],
-  "total": 545,
+  "total": 547,
   "hits": 283
 }
