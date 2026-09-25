@@ -8,12 +8,6 @@
       "created": 1790324184.5264437
     },
     {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09701,
-      "created": 1790333767.5032716
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "LONG",
       "entry": 2741.7,
@@ -134,6 +128,6 @@
       "created": 1790347485.4381673
     }
   ],
-  "total": 583,
-  "hits": 307
+  "total": 584,
+  "hits": 308
 }
