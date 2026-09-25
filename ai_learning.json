@@ -8,12 +8,6 @@
       "created": 1790343898.8723736
     },
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.25941,
-      "created": 1790365306.2482302
-    },
-    {
       "symbol": "LTC/USDT",
       "signal": "LONG",
       "entry": 71.12,
@@ -110,6 +104,6 @@
       "created": 1790378035.5598807
     }
   ],
-  "total": 621,
-  "hits": 330
+  "total": 622,
+  "hits": 331
 }
