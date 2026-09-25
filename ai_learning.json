@@ -8,18 +8,6 @@
       "created": 1790283385.7559774
     },
     {
-      "symbol": "ETC/USDT",
-      "signal": "LONG",
-      "entry": 9.402,
-      "created": 1790308536.4638548
-    },
-    {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.11101,
-      "created": 1790308536.4638572
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 4.487,
@@ -102,8 +90,26 @@
       "signal": "LONG",
       "entry": 1.5333,
       "created": 1790321651.4635553
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1560.35,
+      "created": 1790322972.2290738
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.0638,
+      "created": 1790322972.2290754
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.0123,
+      "created": 1790322972.229078
     }
   ],
-  "total": 557,
-  "hits": 286
+  "total": 559,
+  "hits": 287
 }
