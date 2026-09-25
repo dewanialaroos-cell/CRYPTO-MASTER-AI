@@ -8,24 +8,6 @@
       "created": 1790259673.2006018
     },
     {
-      "symbol": "ETC/USDT",
-      "signal": "LONG",
-      "entry": 9.785,
-      "created": 1790282105.2116382
-    },
-    {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5106,
-      "created": 1790283385.7559726
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 297.8,
-      "created": 1790283385.7559748
-    },
-    {
       "symbol": "BCH/USDT",
       "signal": "LONG",
       "entry": 337.8,
@@ -108,8 +90,20 @@
       "signal": "LONG",
       "entry": 117.07,
       "created": 1790294174.5426831
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5349,
+      "created": 1790298839.8248796
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 299.4,
+      "created": 1790298839.8248825
     }
   ],
-  "total": 529,
-  "hits": 276
+  "total": 532,
+  "hits": 278
 }
