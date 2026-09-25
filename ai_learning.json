@@ -8,12 +8,6 @@
       "created": 1790343898.8723736
     },
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1088,
-      "created": 1790355508.1242442
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 304.6,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.22511,
       "created": 1790369255.2506564
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1605,
+      "created": 1790370898.8581076
     }
   ],
-  "total": 614,
-  "hits": 325
+  "total": 615,
+  "hits": 326
 }
