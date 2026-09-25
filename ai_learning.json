@@ -120,6 +120,18 @@
       "signal": "LONG",
       "entry": 0.0969,
       "created": 1790351779.3645089
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5837,
+      "created": 1790352997.5447774
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.22349,
+      "created": 1790352997.544781
     }
   ],
   "total": 592,
