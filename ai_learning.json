@@ -102,6 +102,18 @@
       "signal": "LONG",
       "entry": 0.09701,
       "created": 1790333767.5032716
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2741.7,
+      "created": 1790334920.1817896
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.1861,
+      "created": 1790334920.181792
     }
   ],
   "total": 568,
