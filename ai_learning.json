@@ -108,6 +108,12 @@
       "signal": "LONG",
       "entry": 0.09778,
       "created": 1790371942.4611347
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.21937,
+      "created": 1790374462.4903705
     }
   ],
   "total": 615,
