@@ -14,18 +14,6 @@
       "created": 1790343898.8723736
     },
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5363,
-      "created": 1790346018.9981613
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 119.75,
-      "created": 1790347485.4381673
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.1807,
@@ -102,8 +90,26 @@
       "signal": "LONG",
       "entry": 304.6,
       "created": 1790360303.7411666
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 10.492,
+      "created": 1790361899.6926413
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 122.1,
+      "created": 1790361899.692644
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.54,
+      "created": 1790361899.692645
     }
   ],
-  "total": 601,
-  "hits": 313
+  "total": 603,
+  "hits": 315
 }
