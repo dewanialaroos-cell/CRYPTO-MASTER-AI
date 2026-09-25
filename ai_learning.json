@@ -14,24 +14,6 @@
       "created": 1790343898.8723736
     },
     {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.543,
-      "created": 1790351779.364506
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 13.756,
-      "created": 1790351779.364507
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.0969,
-      "created": 1790351779.3645089
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "LONG",
       "entry": 1.5837,
@@ -114,8 +96,26 @@
       "signal": "LONG",
       "entry": 153.93,
       "created": 1790366070.889616
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 13.889,
+      "created": 1790367239.4487708
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.1921,
+      "created": 1790367239.4487727
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.618,
+      "created": 1790367239.4487743
     }
   ],
-  "total": 607,
-  "hits": 319
+  "total": 610,
+  "hits": 322
 }
