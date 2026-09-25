@@ -8,12 +8,6 @@
       "created": 1790343898.8723736
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 304.6,
-      "created": 1790360303.7411666
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 10.492,
@@ -114,8 +108,14 @@
       "signal": "LONG",
       "entry": 0.21937,
       "created": 1790374462.4903705
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 314.6,
+      "created": 1790375488.8778117
     }
   ],
-  "total": 615,
-  "hits": 326
+  "total": 616,
+  "hits": 327
 }
