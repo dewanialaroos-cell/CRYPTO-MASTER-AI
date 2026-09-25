@@ -114,6 +114,18 @@
       "signal": "LONG",
       "entry": 1616.73,
       "created": 1790342207.7542806
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.2549,
+      "created": 1790343898.8723736
+    },
+    {
+      "symbol": "XPL/USDT",
+      "signal": "LONG",
+      "entry": 0.11179,
+      "created": 1790343898.8723752
     }
   ],
   "total": 580,
