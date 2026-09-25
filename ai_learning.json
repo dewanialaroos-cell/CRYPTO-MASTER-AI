@@ -8,18 +8,6 @@
       "created": 1790324184.5264437
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 93.65,
-      "created": 1790342207.7542775
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1616.73,
-      "created": 1790342207.7542806
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "LONG",
       "entry": 0.2549,
@@ -128,6 +116,6 @@
       "created": 1790355508.1242442
     }
   ],
-  "total": 596,
+  "total": 598,
   "hits": 312
 }
