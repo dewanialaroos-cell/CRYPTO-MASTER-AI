@@ -8,12 +8,6 @@
       "created": 1790343898.8723736
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.4613,
-      "created": 1790354722.996536
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.1088,
@@ -96,8 +90,20 @@
       "signal": "LONG",
       "entry": 0.0743,
       "created": 1790368285.9338574
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.4796,
+      "created": 1790369255.250652
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.22511,
+      "created": 1790369255.2506564
     }
   ],
-  "total": 613,
-  "hits": 324
+  "total": 614,
+  "hits": 325
 }
