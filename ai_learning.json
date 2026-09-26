@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 314.6,
-      "created": 1790375488.8778117
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "LONG",
       "entry": 1.5717,
@@ -114,8 +108,26 @@
       "signal": "LONG",
       "entry": 0.4897,
       "created": 1790389102.143066
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 316.3,
+      "created": 1790390565.990862
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "LONG",
+      "entry": 2.135,
+      "created": 1790390565.9908655
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.22045,
+      "created": 1790390565.9908664
     }
   ],
-  "total": 634,
-  "hits": 341
+  "total": 635,
+  "hits": 342
 }
