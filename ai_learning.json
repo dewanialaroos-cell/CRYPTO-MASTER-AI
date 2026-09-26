@@ -14,12 +14,6 @@
       "created": 1790389102.1430647
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2262,
-      "created": 1790412978.6143048
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.004477,
@@ -108,8 +102,14 @@
       "signal": "LONG",
       "entry": 0.27945,
       "created": 1790426764.6694934
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2299,
+      "created": 1790427576.853469
     }
   ],
-  "total": 679,
-  "hits": 362
+  "total": 680,
+  "hits": 363
 }
