@@ -14,12 +14,6 @@
       "created": 1790389102.1430647
     },
     {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.22313,
-      "created": 1790402235.2888222
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.4788,
@@ -116,6 +110,6 @@
       "created": 1790416622.6985939
     }
   ],
-  "total": 667,
+  "total": 668,
   "hits": 354
 }
