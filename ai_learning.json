@@ -14,30 +14,6 @@
       "created": 1790389102.1430647
     },
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.134,
-      "created": 1790397174.9844515
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 71.91,
-      "created": 1790397174.9844537
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.6,
-      "created": 1790397174.9844568
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 154.07,
-      "created": 1790397174.9844577
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.004459,
@@ -114,8 +90,26 @@
       "signal": "LONG",
       "entry": 0.27779,
       "created": 1790410648.1426997
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 154.93,
+      "created": 1790412183.5929122
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.103,
+      "created": 1790412183.5929134
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 73.9,
+      "created": 1790412183.5929139
     }
   ],
-  "total": 659,
-  "hits": 349
+  "total": 663,
+  "hits": 352
 }
