@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.21937,
-      "created": 1790374462.4903705
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 314.6,
@@ -102,8 +96,26 @@
       "signal": "LONG",
       "entry": 0.09931,
       "created": 1790387101.0216265
+    },
+    {
+      "symbol": "VTHO/USDT",
+      "signal": "LONG",
+      "entry": 0.000839,
+      "created": 1790389102.1430604
+    },
+    {
+      "symbol": "BABY/USDT",
+      "signal": "LONG",
+      "entry": 0.01336,
+      "created": 1790389102.1430647
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.4897,
+      "created": 1790389102.143066
     }
   ],
-  "total": 633,
-  "hits": 340
+  "total": 634,
+  "hits": 341
 }
