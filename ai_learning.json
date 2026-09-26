@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.176,
-      "created": 1790421226.4356618
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2493,
-      "created": 1790421226.435664
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.4867,
@@ -126,8 +114,14 @@
       "signal": "LONG",
       "entry": 329.9,
       "created": 1790434680.5176682
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.255,
+      "created": 1790435810.642198
     }
   ],
-  "total": 686,
-  "hits": 367
+  "total": 688,
+  "hits": 368
 }
