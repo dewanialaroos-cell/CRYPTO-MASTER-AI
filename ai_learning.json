@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "VTHO/USDT",
-      "signal": "LONG",
-      "entry": 0.000839,
-      "created": 1790389102.1430604
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 318.2,
@@ -126,6 +120,12 @@
       "signal": "LONG",
       "entry": 0.09746,
       "created": 1790432208.8922486
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.1004,
+      "created": 1790433071.4405367
     }
   ],
   "total": 685,
