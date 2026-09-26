@@ -14,18 +14,6 @@
       "created": 1790389102.1430647
     },
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1705,
-      "created": 1790391356.929609
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 92.243,
-      "created": 1790391356.9296103
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 10.697,
@@ -114,8 +102,14 @@
       "signal": "LONG",
       "entry": 309.9,
       "created": 1790405187.6693375
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1594,
+      "created": 1790406843.440208
     }
   ],
-  "total": 654,
+  "total": 656,
   "hits": 347
 }
