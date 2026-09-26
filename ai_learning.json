@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.0743,
-      "created": 1790368285.9338574
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.4796,
@@ -96,8 +90,26 @@
       "signal": "LONG",
       "entry": 9.658,
       "created": 1790381973.2010858
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.959,
+      "created": 1790383643.363123
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07501,
+      "created": 1790383643.363124
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2106,
+      "created": 1790383643.3631244
     }
   ],
-  "total": 628,
-  "hits": 336
+  "total": 629,
+  "hits": 337
 }
