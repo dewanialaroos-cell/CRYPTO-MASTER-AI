@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1605,
-      "created": 1790370898.8581076
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "LONG",
       "entry": 0.09778,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 121.81,
       "created": 1790385184.052161
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.2588,
+      "created": 1790386163.69353
     }
   ],
-  "total": 631,
-  "hits": 338
+  "total": 632,
+  "hits": 339
 }
