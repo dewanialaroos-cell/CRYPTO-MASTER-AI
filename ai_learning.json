@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 121.81,
-      "created": 1790385184.052161
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "LONG",
       "entry": 0.2588,
@@ -120,8 +114,14 @@
       "signal": "LONG",
       "entry": 1.2247,
       "created": 1790398497.4538822
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07412,
+      "created": 1790399645.9882329
     }
   ],
-  "total": 647,
+  "total": 648,
   "hits": 347
 }
