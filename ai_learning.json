@@ -14,24 +14,6 @@
       "created": 1790389102.1430647
     },
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 10.7,
-      "created": 1790407825.5709987
-    },
-    {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5481,
-      "created": 1790407825.5710013
-    },
-    {
-      "symbol": "XPL/USDT",
-      "signal": "LONG",
-      "entry": 0.11428,
-      "created": 1790407825.571004
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.27779,
@@ -108,8 +90,26 @@
       "signal": "LONG",
       "entry": 0.4867,
       "created": 1790422189.4411025
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5578,
+      "created": 1790423038.534968
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 10.929,
+      "created": 1790423038.534969
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.258,
+      "created": 1790423038.5349698
     }
   ],
-  "total": 672,
-  "hits": 357
+  "total": 675,
+  "hits": 360
 }
