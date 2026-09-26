@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5717,
-      "created": 1790376401.9192622
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.5532,
@@ -126,8 +120,20 @@
       "signal": "LONG",
       "entry": 0.22045,
       "created": 1790390565.9908664
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1705,
+      "created": 1790391356.929609
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 92.243,
+      "created": 1790391356.9296103
     }
   ],
-  "total": 635,
+  "total": 636,
   "hits": 342
 }
