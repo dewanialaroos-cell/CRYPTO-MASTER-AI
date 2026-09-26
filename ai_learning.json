@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09778,
-      "created": 1790371942.4611347
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.21937,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.2588,
       "created": 1790386163.69353
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.09931,
+      "created": 1790387101.0216265
     }
   ],
-  "total": 632,
-  "hits": 339
+  "total": 633,
+  "hits": 340
 }
