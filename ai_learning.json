@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2588,
-      "created": 1790386163.69353
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "LONG",
       "entry": 0.09931,
@@ -122,6 +116,6 @@
       "created": 1790399645.9882329
     }
   ],
-  "total": 648,
+  "total": 649,
   "hits": 347
 }
