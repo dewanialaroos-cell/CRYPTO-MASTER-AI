@@ -1905,12 +1905,14 @@ def fundamentals(symbols):
             target_symbol
         ] = row
 
-        matched += 1
+        matched_symbols.add(
+    target_symbol
+        )
 
     log(
-        f"CMC FUNDAMENTALS: "
-        f"{matched}/"
-        f"{len(symbols)} AVAILABLE"
+    f"CMC FUNDAMENTALS: "
+    f"{len(matched_symbols)}/"
+    f"{len(base_symbols)} AVAILABLE"
     )
 
     return output                
