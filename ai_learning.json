@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.4796,
-      "created": 1790369255.250652
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.22511,
-      "created": 1790369255.2506564
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.1605,
@@ -108,8 +96,14 @@
       "signal": "LONG",
       "entry": 1.2106,
       "created": 1790383643.3631244
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 121.81,
+      "created": 1790385184.052161
     }
   ],
-  "total": 629,
-  "hits": 337
+  "total": 631,
+  "hits": 338
 }
