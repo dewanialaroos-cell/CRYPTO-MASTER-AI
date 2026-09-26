@@ -1906,7 +1906,7 @@ def fundamentals(symbols):
         ] = row
 
         matched_symbols.add(
-    target_symbol
+            target_symbol
         )
 
     log(
