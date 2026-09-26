@@ -14,18 +14,6 @@
       "created": 1790389102.1430647
     },
     {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.103,
-      "created": 1790405187.6693356
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 309.9,
-      "created": 1790405187.6693375
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.1594,
@@ -102,8 +90,14 @@
       "signal": "LONG",
       "entry": 4.867,
       "created": 1790416622.6985939
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 318.2,
+      "created": 1790420007.5382571
     }
   ],
-  "total": 669,
-  "hits": 355
+  "total": 671,
+  "hits": 356
 }
