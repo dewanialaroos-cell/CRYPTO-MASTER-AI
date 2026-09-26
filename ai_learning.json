@@ -96,6 +96,18 @@
       "signal": "LONG",
       "entry": 318.2,
       "created": 1790420007.5382571
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "LONG",
+      "entry": 2.176,
+      "created": 1790421226.4356618
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2493,
+      "created": 1790421226.435664
     }
   ],
   "total": 671,
