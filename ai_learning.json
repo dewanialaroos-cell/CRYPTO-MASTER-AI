@@ -14,12 +14,6 @@
       "created": 1790389102.1430647
     },
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.27779,
-      "created": 1790410648.1426997
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 154.93,
@@ -110,6 +104,6 @@
       "created": 1790423038.5349698
     }
   ],
-  "total": 675,
-  "hits": 360
+  "total": 676,
+  "hits": 361
 }
