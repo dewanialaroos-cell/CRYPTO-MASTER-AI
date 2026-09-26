@@ -14,12 +14,6 @@
       "created": 1790389102.1430647
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.4788,
-      "created": 1790403607.6418033
-    },
-    {
       "symbol": "LONGXIA/USDT",
       "signal": "SHORT",
       "entry": 0.103,
@@ -110,6 +104,6 @@
       "created": 1790416622.6985939
     }
   ],
-  "total": 668,
-  "hits": 354
+  "total": 669,
+  "hits": 355
 }
