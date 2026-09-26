@@ -14,12 +14,6 @@
       "created": 1790389102.1430647
     },
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1594,
-      "created": 1790406843.440208
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 10.7,
@@ -108,8 +102,14 @@
       "signal": "LONG",
       "entry": 0.2493,
       "created": 1790421226.435664
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.4867,
+      "created": 1790422189.4411025
     }
   ],
-  "total": 671,
-  "hits": 356
+  "total": 672,
+  "hits": 357
 }
