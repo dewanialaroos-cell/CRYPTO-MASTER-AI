@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09931,
-      "created": 1790387101.0216265
-    },
-    {
       "symbol": "VTHO/USDT",
       "signal": "LONG",
       "entry": 0.000839,
@@ -114,8 +108,14 @@
       "signal": "LONG",
       "entry": 0.07412,
       "created": 1790399645.9882329
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.926,
+      "created": 1790401530.6369352
     }
   ],
-  "total": 649,
+  "total": 650,
   "hits": 347
 }
