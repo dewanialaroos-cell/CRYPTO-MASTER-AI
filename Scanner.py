@@ -1665,8 +1665,7 @@ def fundamentals(symbols):
 
         coins = []
 
-    matched = 0
-
+    matched_symbols = set()
     # ========================================================
     # PROCESS CMC DATA
     # ========================================================
