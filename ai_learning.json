@@ -2,66 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 172.0,
-      "created": 1790521978.7388778
-    },
-    {
-      "symbol": "GRAM/USDT",
-      "signal": "LONG",
-      "entry": 1.606,
-      "created": 1790521978.7388787
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 10.933,
-      "created": 1790521978.7388792
-    },
-    {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5385,
-      "created": 1790521978.7388794
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 320.5,
-      "created": 1790521978.73888
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5593,
-      "created": 1790521978.7388804
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.2279,
-      "created": 1790521978.738881
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.17,
-      "created": 1790521978.7388825
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.02,
-      "created": 1790521978.738883
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07303,
-      "created": 1790521978.7388837
-    },
-    {
       "symbol": "FIL/USDT",
       "signal": "LONG",
       "entry": 1.1352,
@@ -108,8 +48,44 @@
       "signal": "LONG",
       "entry": 84787.1,
       "created": 1790535537.8567388
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5558,
+      "created": 1790536580.938473
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.0754,
+      "created": 1790536580.938474
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.465,
+      "created": 1790536580.9384747
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 328.8,
+      "created": 1790536580.938475
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 187.071,
+      "created": 1790536580.938476
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.22874,
+      "created": 1790536580.9384782
     }
   ],
-  "total": 714,
-  "hits": 378
+  "total": 724,
+  "hits": 388
 }
