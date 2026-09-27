@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1352,
-      "created": 1790523078.2458436
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 71.19,
-      "created": 1790523078.245845
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 121.71,
-      "created": 1790523078.2458477
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.27207,
@@ -84,8 +66,26 @@
       "signal": "LONG",
       "entry": 0.22874,
       "created": 1790536580.9384782
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.05,
+      "created": 1790538080.4505432
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 123.21,
+      "created": 1790538080.450546
+    },
+    {
+      "symbol": "GRAM/USDT",
+      "signal": "LONG",
+      "entry": 1.652,
+      "created": 1790538080.450547
     }
   ],
-  "total": 724,
-  "hits": 388
+  "total": 727,
+  "hits": 390
 }
