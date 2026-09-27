@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.09148,
-      "created": 1790538807.2617009
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 155.47,
@@ -84,8 +78,14 @@
       "signal": "LONG",
       "entry": 777.5,
       "created": 1790552622.3748598
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 10.919,
+      "created": 1790553346.5633242
     }
   ],
-  "total": 741,
-  "hits": 397
+  "total": 742,
+  "hits": 398
 }
