@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2457,
-      "created": 1790529229.5602157
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 84787.1,
@@ -90,8 +84,20 @@
       "signal": "LONG",
       "entry": 0.005061,
       "created": 1790541997.0336158
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.141,
+      "created": 1790543677.7899215
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2721,
+      "created": 1790543677.7899232
     }
   ],
-  "total": 730,
-  "hits": 393
+  "total": 731,
+  "hits": 394
 }
