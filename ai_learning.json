@@ -84,6 +84,12 @@
       "signal": "LONG",
       "entry": 155.47,
       "created": 1790540077.9062142
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.2709,
+      "created": 1790541065.1991184
     }
   ],
   "total": 729,
