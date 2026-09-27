@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.27207,
-      "created": 1790523991.6779287
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 153.09,
-      "created": 1790523991.6779323
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.004929,
@@ -84,8 +72,14 @@
       "signal": "LONG",
       "entry": 1.652,
       "created": 1790538080.450547
+    },
+    {
+      "symbol": "LONGXIA/USDT",
+      "signal": "SHORT",
+      "entry": 0.09148,
+      "created": 1790538807.2617009
     }
   ],
-  "total": 727,
-  "hits": 390
+  "total": 729,
+  "hits": 392
 }
