@@ -90,6 +90,12 @@
       "signal": "LONG",
       "entry": 153.09,
       "created": 1790523991.6779323
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.004929,
+      "created": 1790527405.2996979
     }
   ],
   "total": 714,
