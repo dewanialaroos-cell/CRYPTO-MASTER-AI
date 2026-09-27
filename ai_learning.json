@@ -2,42 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5558,
-      "created": 1790536580.938473
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.0754,
-      "created": 1790536580.938474
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.465,
-      "created": 1790536580.9384747
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 328.8,
-      "created": 1790536580.938475
-    },
-    {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 187.071,
-      "created": 1790536580.938476
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.22874,
-      "created": 1790536580.9384782
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.05,
@@ -96,8 +60,32 @@
       "signal": "LONG",
       "entry": 0.5507,
       "created": 1790545529.8386583
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07791,
+      "created": 1790551765.001829
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5632,
+      "created": 1790551765.00183
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.22598,
+      "created": 1790551765.0018315
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 71.22,
+      "created": 1790551765.001832
     }
   ],
-  "total": 732,
-  "hits": 394
+  "total": 738,
+  "hits": 397
 }
