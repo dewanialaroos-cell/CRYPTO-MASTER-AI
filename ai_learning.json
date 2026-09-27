@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 84787.1,
-      "created": 1790535537.8567388
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.5558,
@@ -104,6 +98,6 @@
       "created": 1790545529.8386583
     }
   ],
-  "total": 731,
+  "total": 732,
   "hits": 394
 }
