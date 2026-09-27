@@ -2,72 +2,66 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XPL/USDT",
+      "symbol": "QNT/USDT",
       "signal": "LONG",
-      "entry": 0.11832,
-      "created": 1790428685.3476107
+      "entry": 172.0,
+      "created": 1790521978.7388778
     },
     {
-      "symbol": "WLD/USDT",
+      "symbol": "GRAM/USDT",
       "signal": "LONG",
-      "entry": 0.5244,
-      "created": 1790468515.3179824
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.025,
-      "created": 1790468515.3179834
+      "entry": 1.606,
+      "created": 1790521978.7388787
     },
     {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
-      "entry": 10.847,
-      "created": 1790468515.3179836
+      "entry": 10.933,
+      "created": 1790521978.7388792
     },
     {
-      "symbol": "ZEC/USDT",
+      "symbol": "ONDO/USDT",
       "signal": "LONG",
-      "entry": 1643.36,
-      "created": 1790468515.3179848
+      "entry": 0.5385,
+      "created": 1790521978.7388794
     },
     {
-      "symbol": "UNI/USDT",
+      "symbol": "TAO/USDT",
       "signal": "LONG",
-      "entry": 9.66,
-      "created": 1790468515.317985
+      "entry": 320.5,
+      "created": 1790521978.73888
     },
     {
-      "symbol": "FIL/USDT",
+      "symbol": "WLD/USDT",
       "signal": "LONG",
-      "entry": 1.1296,
-      "created": 1790468515.3179855
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.004384,
-      "created": 1790468515.3179862
+      "entry": 0.5593,
+      "created": 1790521978.7388804
     },
     {
       "symbol": "SUI/USDT",
       "signal": "LONG",
-      "entry": 1.1646,
-      "created": 1790468515.3179882
+      "entry": 1.2279,
+      "created": 1790521978.738881
     },
     {
-      "symbol": "BTC/USDT",
+      "symbol": "NEAR/USDT",
       "signal": "LONG",
-      "entry": 84276.0,
-      "created": 1790468515.317989
+      "entry": 5.17,
+      "created": 1790521978.7388825
     },
     {
-      "symbol": "AAVE/USDT",
+      "symbol": "LINK/USDT",
       "signal": "LONG",
-      "entry": 154.61,
-      "created": 1790468515.3179896
+      "entry": 14.02,
+      "created": 1790521978.738883
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07303,
+      "created": 1790521978.7388837
     }
   ],
-  "total": 705,
-  "hits": 373
+  "total": 714,
+  "hits": 378
 }
