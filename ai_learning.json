@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.05,
-      "created": 1790538080.4505432
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 123.21,
-      "created": 1790538080.450546
-    },
-    {
-      "symbol": "GRAM/USDT",
-      "signal": "LONG",
-      "entry": 1.652,
-      "created": 1790538080.450547
-    },
-    {
       "symbol": "LONGXIA/USDT",
       "signal": "SHORT",
       "entry": 0.09148,
@@ -84,8 +66,26 @@
       "signal": "LONG",
       "entry": 71.22,
       "created": 1790551765.001832
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.383,
+      "created": 1790552622.3748567
+    },
+    {
+      "symbol": "GRAM/USDT",
+      "signal": "LONG",
+      "entry": 1.627,
+      "created": 1790552622.3748577
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 777.5,
+      "created": 1790552622.3748598
     }
   ],
-  "total": 738,
+  "total": 741,
   "hits": 397
 }
