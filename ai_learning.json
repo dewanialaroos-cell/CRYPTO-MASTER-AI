@@ -8,12 +8,6 @@
       "created": 1790590589.085401
     },
     {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005124,
-      "created": 1790610425.290471
-    },
-    {
       "symbol": "MON/USDT",
       "signal": "LONG",
       "entry": 0.02974,
@@ -66,8 +60,14 @@
       "signal": "LONG",
       "entry": 15.081,
       "created": 1790624031.0998883
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005096,
+      "created": 1790625413.4417977
     }
   ],
-  "total": 799,
+  "total": 800,
   "hits": 419
 }
