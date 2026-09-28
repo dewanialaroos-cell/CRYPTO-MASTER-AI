@@ -2,48 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07791,
-      "created": 1790551765.001829
-    },
-    {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5632,
-      "created": 1790551765.00183
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.22598,
-      "created": 1790551765.0018315
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 71.22,
-      "created": 1790551765.001832
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.383,
-      "created": 1790552622.3748567
-    },
-    {
-      "symbol": "GRAM/USDT",
-      "signal": "LONG",
-      "entry": 1.627,
-      "created": 1790552622.3748577
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 777.5,
-      "created": 1790552622.3748598
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 10.919,
@@ -102,8 +60,32 @@
       "signal": "SHORT",
       "entry": 538.96,
       "created": 1790562871.6521707
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5713,
+      "created": 1790567226.3523297
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.08269,
+      "created": 1790567226.3523316
+    },
+    {
+      "symbol": "GRAM/USDT",
+      "signal": "LONG",
+      "entry": 1.62,
+      "created": 1790567226.352332
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "entry": 2.04,
+      "created": 1790567226.3523328
     }
   ],
-  "total": 748,
-  "hits": 401
+  "total": 755,
+  "hits": 403
 }
