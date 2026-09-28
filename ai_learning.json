@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XMR/USDT",
-      "signal": "SHORT",
-      "entry": 538.96,
-      "created": 1790562871.6521707
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.5713,
@@ -68,6 +62,6 @@
       "created": 1790574314.3891535
     }
   ],
-  "total": 764,
-  "hits": 405
+  "total": 765,
+  "hits": 406
 }
