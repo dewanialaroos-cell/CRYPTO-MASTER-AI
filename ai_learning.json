@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TRUMP/USDT",
-      "signal": "SHORT",
-      "entry": 1.984,
-      "created": 1790588802.7878444
-    },
-    {
       "symbol": "LONGXIA/USDT",
       "signal": "SHORT",
       "entry": 0.06922,
@@ -90,8 +84,14 @@
       "signal": "LONG",
       "entry": 0.005124,
       "created": 1790610425.290471
+    },
+    {
+      "symbol": "MON/USDT",
+      "signal": "LONG",
+      "entry": 0.02974,
+      "created": 1790612282.1541562
     }
   ],
-  "total": 786,
+  "total": 787,
   "hits": 415
 }
