@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.141,
-      "created": 1790543677.7899215
-    },
-    {
       "symbol": "SEI/USDT",
       "signal": "LONG",
       "entry": 0.07791,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.2761,
       "created": 1790561712.678944
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 538.96,
+      "created": 1790562871.6521707
     }
   ],
-  "total": 747,
+  "total": 748,
   "hits": 401
 }
