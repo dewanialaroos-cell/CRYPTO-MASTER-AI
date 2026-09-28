@@ -54,6 +54,18 @@
       "signal": "SHORT",
       "entry": 0.06922,
       "created": 1790590589.085401
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 71.99,
+      "created": 1790592345.2060666
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 13.887,
+      "created": 1790592345.2060695
     }
   ],
   "total": 775,
