@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XMR/USDT",
-      "signal": "SHORT",
-      "entry": 533.55,
-      "created": 1790579863.9301882
-    },
-    {
       "symbol": "SEI/USDT",
       "signal": "LONG",
       "entry": 0.07977,
@@ -66,8 +60,14 @@
       "signal": "LONG",
       "entry": 13.887,
       "created": 1790592345.2060695
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.004883,
+      "created": 1790594488.993046
     }
   ],
-  "total": 775,
-  "hits": 408
+  "total": 776,
+  "hits": 409
 }
