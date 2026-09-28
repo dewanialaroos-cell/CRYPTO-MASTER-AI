@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 259.128,
-      "created": 1790570214.8571067
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.005253,
@@ -66,8 +60,20 @@
       "signal": "LONG",
       "entry": 0.5258,
       "created": 1790584453.6406329
+    },
+    {
+      "symbol": "HBAR/USDT",
+      "signal": "LONG",
+      "entry": 0.10727,
+      "created": 1790585866.424631
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 241.052,
+      "created": 1790585866.424633
     }
   ],
-  "total": 769,
+  "total": 770,
   "hits": 407
 }
