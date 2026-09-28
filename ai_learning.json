@@ -14,18 +14,6 @@
       "created": 1790590589.085401
     },
     {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.004883,
-      "created": 1790594488.993046
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.2635,
-      "created": 1790596016.2207856
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.222,
@@ -96,8 +84,14 @@
       "signal": "LONG",
       "entry": 14.097,
       "created": 1790608704.9946935
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005124,
+      "created": 1790610425.290471
     }
   ],
-  "total": 784,
-  "hits": 414
+  "total": 786,
+  "hits": 415
 }
