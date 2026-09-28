@@ -60,6 +60,12 @@
       "signal": "SHORT",
       "entry": 0.07171,
       "created": 1790574314.3891535
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 533.55,
+      "created": 1790579863.9301882
     }
   ],
   "total": 765,
