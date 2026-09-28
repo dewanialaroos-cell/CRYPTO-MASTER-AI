@@ -96,6 +96,12 @@
       "signal": "LONG",
       "entry": 1.2554,
       "created": 1790558159.7178319
+    },
+    {
+      "symbol": "LONGXIA/USDT",
+      "signal": "SHORT",
+      "entry": 0.08442,
+      "created": 1790559172.9517496
     }
   ],
   "total": 746,
