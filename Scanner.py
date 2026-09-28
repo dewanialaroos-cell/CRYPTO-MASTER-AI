@@ -3216,9 +3216,9 @@ def create_result(
         50,
         95
     )
-
+    
     # --------------------------------------------------------
-    # DYNAMIC STOP LOSS / TAKE PROFIT
+    # SMART DYNAMIC STOP LOSS / TAKE PROFIT V2
     # --------------------------------------------------------
 
     atr_value = number(
@@ -3232,29 +3232,34 @@ def create_result(
 
         atr_value = price * 0.02
 
-    # ATR percentage = current volatility
+    # Current volatility
     atr_pct = (
         atr_value / price
         if price > 0
         else 0.02
     )
 
-    # Signal strength
+    # --------------------------------------------------------
+    # DIRECTION STRENGTH
+    # --------------------------------------------------------
+
     if signal == "LONG":
 
-        direction_strength = (
-            long_score
+        direction_strength = number(
+            long_score,
+            0
         )
 
     elif signal == "SHORT":
 
-        direction_strength = (
-            short_score
+        direction_strength = number(
+            short_score,
+            0
         )
 
     else:
 
-        direction_strength = 0
+        direction_strength = 0.0
 
     direction_strength = clip(
         direction_strength,
@@ -3263,10 +3268,43 @@ def create_result(
     )
 
     # --------------------------------------------------------
-    # DYNAMIC TARGET MULTIPLIER
+    # SUPPORT / RESISTANCE
     # --------------------------------------------------------
 
-    if direction_strength >= 80:
+    support = number(
+        technical.get("support")
+    )
+
+    resistance = number(
+        technical.get("resistance")
+    )
+
+    # --------------------------------------------------------
+    # BREAKOUT
+    # --------------------------------------------------------
+
+    breakout_score = number(
+        technical.get(
+            "breakout_score"
+        ),
+        0
+    )
+
+    breakout_score = clip(
+        breakout_score,
+        -1,
+        1
+    )
+
+    # --------------------------------------------------------
+    # BASE TARGET FROM AI STRENGTH
+    # --------------------------------------------------------
+
+    if direction_strength >= 85:
+
+        target_atr = 5.5
+
+    elif direction_strength >= 80:
 
         target_atr = 5.0
 
@@ -3302,12 +3340,35 @@ def create_result(
 
         target_atr *= 1.15
 
-    # Safety limits
+    # --------------------------------------------------------
+    # BREAKOUT ADJUSTMENT
+    # --------------------------------------------------------
+
+    if signal == "LONG":
+
+        if breakout_score > 0:
+
+            target_atr *= 1.15
+
+    elif signal == "SHORT":
+
+        if breakout_score < 0:
+
+            target_atr *= 1.15
+
+    # --------------------------------------------------------
+    # SAFETY LIMIT
+    # --------------------------------------------------------
+
     target_atr = clip(
         target_atr,
         2.0,
-        5.5
+        6.0
     )
+
+    # --------------------------------------------------------
+    # STOP LOSS
+    # --------------------------------------------------------
 
     stop_atr = 1.5
 
@@ -3318,11 +3379,6 @@ def create_result(
             - stop_atr * atr_value
         )
 
-        take_profit = (
-            price
-            + target_atr * atr_value
-        )
-
     elif signal == "SHORT":
 
         stop_loss = (
@@ -3330,22 +3386,159 @@ def create_result(
             + stop_atr * atr_value
         )
 
+    else:
+
+        stop_loss = np.nan
+
+    # --------------------------------------------------------
+    # INITIAL AI TARGET
+    # --------------------------------------------------------
+
+    if signal == "LONG":
+
+        take_profit = (
+            price
+            + target_atr * atr_value
+        )
+
+    elif signal == "SHORT":
+
         take_profit = (
             price
             - target_atr * atr_value
         )
+
+    else:
+
+        take_profit = np.nan
+
+    # --------------------------------------------------------
+    # MARKET STRUCTURE TARGET
+    # --------------------------------------------------------
+
+    if signal == "LONG":
+
+        if (
+            math.isfinite(resistance)
+            and resistance > price
+        ):
+
+            distance_to_resistance = (
+                resistance - price
+            )
+
+            # If resistance is reasonably close,
+            # use it as a market-structure reference.
+            if distance_to_resistance <= (
+                target_atr * atr_value * 1.20
+            ):
+
+                if breakout_score <= 0:
+
+                    take_profit = (
+                        price
+                        + distance_to_resistance * 0.90
+                    )
+
+                else:
+
+                    take_profit = max(
+                        take_profit,
+                        price
+                        + distance_to_resistance * 0.25
+                    )
+
+    elif signal == "SHORT":
+
+        if (
+            math.isfinite(support)
+            and support < price
+        ):
+
+            distance_to_support = (
+                price - support
+            )
+
+            # If support is reasonably close,
+            # use it as a market-structure reference.
+            if distance_to_support <= (
+                target_atr * atr_value * 1.20
+            ):
+
+                if breakout_score >= 0:
+
+                    take_profit = (
+                        price
+                        - distance_to_support * 0.90
+                    )
+
+                else:
+
+                    take_profit = min(
+                        take_profit,
+                        price
+                        - distance_to_support * 0.25
+                    )
+
+    # --------------------------------------------------------
+    # FINAL SAFETY CHECKS
+    # --------------------------------------------------------
+
+    if signal == "LONG":
+
+        minimum_tp = (
+            price
+            + 1.5 * atr_value
+        )
+
+        maximum_tp = (
+            price
+            + 6.0 * atr_value
+        )
+
+        take_profit = clip(
+            take_profit,
+            minimum_tp,
+            maximum_tp
+        )
+
+        if take_profit <= price:
+
+            take_profit = (
+                price
+                + 2.0 * atr_value
+            )
+
+    elif signal == "SHORT":
+
+        minimum_tp = (
+            price
+            - 6.0 * atr_value
+        )
+
+        maximum_tp = (
+            price
+            - 1.5 * atr_value
+        )
+
+        take_profit = clip(
+            take_profit,
+            minimum_tp,
+            maximum_tp
+        )
+
+        if take_profit >= price:
+
+            take_profit = (
+                price
+                - 2.0 * atr_value
+            )
 
         if take_profit <= 0:
 
             take_profit = (
                 price * 0.95
             )
-
-    else:
-
-        stop_loss = np.nan
-
-        take_profit = np.nan
 
     result = {
 
