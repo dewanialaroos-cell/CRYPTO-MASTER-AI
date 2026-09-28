@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 10.919,
-      "created": 1790553346.5633242
-    },
-    {
       "symbol": "QNT/USDT",
       "signal": "LONG",
       "entry": 294.829,
@@ -86,6 +80,6 @@
       "created": 1790567226.3523328
     }
   ],
-  "total": 755,
+  "total": 756,
   "hits": 403
 }
