@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 294.829,
-      "created": 1790554990.3737864
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 156.1,
-      "created": 1790554990.3737898
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.2858,
@@ -78,8 +66,14 @@
       "signal": "SHORT",
       "entry": 2.04,
       "created": 1790567226.3523328
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 259.128,
+      "created": 1790570214.8571067
     }
   ],
-  "total": 756,
+  "total": 758,
   "hits": 403
 }
