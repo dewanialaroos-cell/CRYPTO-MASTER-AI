@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.06922,
-      "created": 1790590589.085401
-    },
-    {
       "symbol": "MON/USDT",
       "signal": "LONG",
       "entry": 0.02974,
