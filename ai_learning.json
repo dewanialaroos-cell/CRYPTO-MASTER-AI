@@ -20,12 +20,6 @@
       "created": 1790617545.5938718
     },
     {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4138.3,
-      "created": 1790622896.816953
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 15.081,
@@ -66,8 +60,14 @@
       "signal": "SHORT",
       "entry": 534.27,
       "created": 1790632638.3391314
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2690.86,
+      "created": 1790638300.3914201
     }
   ],
-  "total": 804,
+  "total": 805,
   "hits": 420
 }
