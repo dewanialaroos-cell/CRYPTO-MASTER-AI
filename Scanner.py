@@ -3218,7 +3218,7 @@ def create_result(
     )
 
     # --------------------------------------------------------
-    # STOP LOSS / TAKE PROFIT
+    # DYNAMIC STOP LOSS / TAKE PROFIT
     # --------------------------------------------------------
 
     atr_value = number(
@@ -3232,37 +3232,119 @@ def create_result(
 
         atr_value = price * 0.02
 
+    # ATR percentage = current volatility
+    atr_pct = (
+        atr_value / price
+        if price > 0
+        else 0.02
+    )
+
+    # Signal strength
+    if signal == "LONG":
+
+        direction_strength = (
+            long_score
+        )
+
+    elif signal == "SHORT":
+
+        direction_strength = (
+            short_score
+        )
+
+    else:
+
+        direction_strength = 0
+
+    direction_strength = clip(
+        direction_strength,
+        0,
+        100
+    )
+
+    # --------------------------------------------------------
+    # DYNAMIC TARGET MULTIPLIER
+    # --------------------------------------------------------
+
+    if direction_strength >= 80:
+
+        target_atr = 5.0
+
+    elif direction_strength >= 75:
+
+        target_atr = 4.5
+
+    elif direction_strength >= 70:
+
+        target_atr = 4.0
+
+    elif direction_strength >= 65:
+
+        target_atr = 3.5
+
+    elif direction_strength >= 60:
+
+        target_atr = 3.0
+
+    else:
+
+        target_atr = 2.5
+
+    # --------------------------------------------------------
+    # VOLATILITY ADJUSTMENT
+    # --------------------------------------------------------
+
+    if atr_pct >= 0.08:
+
+        target_atr *= 0.85
+
+    elif atr_pct <= 0.015:
+
+        target_atr *= 1.15
+
+    # Safety limits
+    target_atr = clip(
+        target_atr,
+        2.0,
+        5.5
+    )
+
+    stop_atr = 1.5
+
     if signal == "LONG":
 
         stop_loss = (
             price
-            - 1.5 * atr_value
+            - stop_atr * atr_value
         )
 
         take_profit = (
             price
-            + 3 * atr_value
+            + target_atr * atr_value
         )
 
     elif signal == "SHORT":
 
         stop_loss = (
             price
-            + 1.5 * atr_value
+            + stop_atr * atr_value
         )
 
         take_profit = (
             price
-            - 3 * atr_value
+            - target_atr * atr_value
         )
 
         if take_profit <= 0:
 
-            take_profit = price * 0.95
+            take_profit = (
+                price * 0.95
+            )
 
     else:
 
         stop_loss = np.nan
+
         take_profit = np.nan
 
     result = {
