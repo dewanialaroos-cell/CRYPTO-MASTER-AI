@@ -8,18 +8,6 @@
       "created": 1790584453.6406312
     },
     {
-      "symbol": "HBAR/USDT",
-      "signal": "LONG",
-      "entry": 0.10727,
-      "created": 1790585866.424631
-    },
-    {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 241.052,
-      "created": 1790585866.424633
-    },
-    {
       "symbol": "TRUMP/USDT",
       "signal": "SHORT",
       "entry": 1.984,
@@ -84,8 +72,26 @@
       "signal": "LONG",
       "entry": 1586.99,
       "created": 1790599842.0373678
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.215,
+      "created": 1790601410.828015
+    },
+    {
+      "symbol": "HBAR/USDT",
+      "signal": "LONG",
+      "entry": 0.11872,
+      "created": 1790601410.8280163
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 237.742,
+      "created": 1790601410.8280177
     }
   ],
-  "total": 779,
-  "hits": 412
+  "total": 781,
+  "hits": 413
 }
