@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4153.2,
-      "created": 1790584453.6406312
-    },
-    {
       "symbol": "TRUMP/USDT",
       "signal": "SHORT",
       "entry": 1.984,
@@ -90,8 +84,14 @@
       "signal": "LONG",
       "entry": 237.742,
       "created": 1790601410.8280177
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2698.45,
+      "created": 1790603277.6816957
     }
   ],
-  "total": 781,
+  "total": 782,
   "hits": 413
 }
