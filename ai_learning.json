@@ -90,6 +90,12 @@
       "signal": "SHORT",
       "entry": 4147.1,
       "created": 1790605053.5524142
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.097,
+      "created": 1790608704.9946935
     }
   ],
   "total": 784,
