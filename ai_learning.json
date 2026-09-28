@@ -8,12 +8,6 @@
       "created": 1790543677.7899215
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5507,
-      "created": 1790545529.8386583
-    },
-    {
       "symbol": "SEI/USDT",
       "signal": "LONG",
       "entry": 0.07791,
@@ -104,6 +98,6 @@
       "created": 1790559172.9517496
     }
   ],
-  "total": 746,
+  "total": 747,
   "hits": 401
 }
