@@ -8,12 +8,6 @@
       "created": 1790590589.085401
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1586.99,
-      "created": 1790599842.0373678
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.215,
@@ -86,6 +80,6 @@
       "created": 1790613893.5986357
     }
   ],
-  "total": 791,
+  "total": 792,
   "hits": 416
 }
