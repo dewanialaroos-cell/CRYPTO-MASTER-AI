@@ -90,6 +90,18 @@
       "signal": "LONG",
       "entry": 2698.45,
       "created": 1790603277.6816957
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 528.49,
+      "created": 1790605053.5524127
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 4147.1,
+      "created": 1790605053.5524142
     }
   ],
   "total": 782,
