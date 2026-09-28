@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5713,
-      "created": 1790567226.3523297
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.08269,
-      "created": 1790567226.3523316
-    },
-    {
-      "symbol": "GRAM/USDT",
-      "signal": "LONG",
-      "entry": 1.62,
-      "created": 1790567226.352332
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "SHORT",
-      "entry": 2.04,
-      "created": 1790567226.3523328
-    },
-    {
       "symbol": "QNT/USDT",
       "signal": "LONG",
       "entry": 259.128,
@@ -66,8 +42,20 @@
       "signal": "SHORT",
       "entry": 533.55,
       "created": 1790579863.9301882
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07977,
+      "created": 1790582502.4885828
+    },
+    {
+      "symbol": "GRAM/USDT",
+      "signal": "LONG",
+      "entry": 1.617,
+      "created": 1790582502.4885845
     }
   ],
-  "total": 765,
-  "hits": 406
+  "total": 769,
+  "hits": 407
 }
