@@ -14,18 +14,6 @@
       "created": 1790612282.1541562
     },
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.22403,
-      "created": 1790613893.5986342
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07883,
-      "created": 1790613893.5986352
-    },
-    {
       "symbol": "GRAM/USDT",
       "signal": "LONG",
       "entry": 1.634,
@@ -66,8 +54,20 @@
       "signal": "LONG",
       "entry": 0.005096,
       "created": 1790625413.4417977
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.22936,
+      "created": 1790629108.9461288
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07771,
+      "created": 1790629108.946131
     }
   ],
-  "total": 800,
-  "hits": 419
+  "total": 802,
+  "hits": 420
 }
