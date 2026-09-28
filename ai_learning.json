@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 71.29,
-      "created": 1790574314.389152
-    },
-    {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.07171,
-      "created": 1790574314.3891535
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "SHORT",
       "entry": 533.55,
@@ -54,8 +42,14 @@
       "signal": "LONG",
       "entry": 241.052,
       "created": 1790585866.424633
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "entry": 1.984,
+      "created": 1790588802.7878444
     }
   ],
-  "total": 773,
-  "hits": 407
+  "total": 775,
+  "hits": 408
 }
