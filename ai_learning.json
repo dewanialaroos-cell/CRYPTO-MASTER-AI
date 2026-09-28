@@ -8,12 +8,6 @@
       "created": 1790584453.6406312
     },
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5258,
-      "created": 1790584453.6406329
-    },
-    {
       "symbol": "HBAR/USDT",
       "signal": "LONG",
       "entry": 0.10727,
@@ -84,8 +78,14 @@
       "signal": "LONG",
       "entry": 1.2024,
       "created": 1790598029.416429
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1586.99,
+      "created": 1790599842.0373678
     }
   ],
-  "total": 778,
-  "hits": 411
+  "total": 779,
+  "hits": 412
 }
