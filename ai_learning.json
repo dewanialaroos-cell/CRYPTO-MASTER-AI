@@ -72,6 +72,12 @@
       "signal": "LONG",
       "entry": 0.12638,
       "created": 1790616094.8762114
+    },
+    {
+      "symbol": "MARSCOIN/USDT",
+      "signal": "LONG",
+      "entry": 0.155,
+      "created": 1790617545.5938718
     }
   ],
   "total": 795,
