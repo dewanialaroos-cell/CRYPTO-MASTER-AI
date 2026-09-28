@@ -8,30 +8,6 @@
       "created": 1790590589.085401
     },
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.222,
-      "created": 1790598029.416423
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.08278,
-      "created": 1790598029.4164248
-    },
-    {
-      "symbol": "GRAM/USDT",
-      "signal": "LONG",
-      "entry": 1.654,
-      "created": 1790598029.416428
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.2024,
-      "created": 1790598029.416429
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
       "entry": 1586.99,
@@ -90,8 +66,26 @@
       "signal": "LONG",
       "entry": 0.02974,
       "created": 1790612282.1541562
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.22403,
+      "created": 1790613893.5986342
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07883,
+      "created": 1790613893.5986352
+    },
+    {
+      "symbol": "GRAM/USDT",
+      "signal": "LONG",
+      "entry": 1.634,
+      "created": 1790613893.5986357
     }
   ],
-  "total": 787,
-  "hits": 415
+  "total": 791,
+  "hits": 416
 }
