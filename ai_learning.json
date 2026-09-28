@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.2761,
-      "created": 1790561712.678944
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "SHORT",
       "entry": 538.96,
@@ -74,6 +68,6 @@
       "created": 1790574314.3891535
     }
   ],
-  "total": 763,
+  "total": 764,
   "hits": 405
 }
