@@ -66,6 +66,12 @@
       "signal": "LONG",
       "entry": 10.705,
       "created": 1790641273.8062549
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 4123.2,
+      "created": 1790642999.1046636
     }
   ],
   "total": 807,
