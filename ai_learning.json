@@ -8,36 +8,6 @@
       "created": 1790680531.2875836
     },
     {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005732,
-      "created": 1790686272.2493532
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 172.59,
-      "created": 1790686272.2493546
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5496,
-      "created": 1790686272.2493556
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 120.52,
-      "created": 1790686272.2493587
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.323e-06,
-      "created": 1790686272.2493596
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.23178,
@@ -84,8 +54,38 @@
       "signal": "LONG",
       "entry": 5.046,
       "created": 1790695082.608193
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005699,
+      "created": 1790702073.5703943
+    },
+    {
+      "symbol": "CRV/USDT",
+      "signal": "LONG",
+      "entry": 0.395,
+      "created": 1790702073.5703955
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 167.34,
+      "created": 1790702073.5703962
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 119.89,
+      "created": 1790702073.5703967
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.727,
+      "created": 1790702073.5703974
     }
   ],
-  "total": 848,
+  "total": 853,
   "hits": 439
 }
