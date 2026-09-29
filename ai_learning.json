@@ -60,6 +60,18 @@
       "signal": "LONG",
       "entry": 83844.4,
       "created": 1790663197.564631
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2698.21,
+      "created": 1790664634.7161918
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2359,
+      "created": 1790664634.716195
     }
   ],
   "total": 821,
