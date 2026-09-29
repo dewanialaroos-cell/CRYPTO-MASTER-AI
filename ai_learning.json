@@ -14,18 +14,6 @@
       "created": 1790702073.5703967
     },
     {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 269.907,
-      "created": 1790710518.5420313
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.076,
-      "created": 1790710518.5420327
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 165.95,
@@ -66,8 +54,20 @@
       "signal": "LONG",
       "entry": 1.1586,
       "created": 1790723724.385946
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 267.685,
+      "created": 1790726088.6989324
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.8235,
+      "created": 1790726088.6989336
     }
   ],
-  "total": 867,
+  "total": 869,
   "hits": 444
 }
