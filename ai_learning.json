@@ -8,18 +8,6 @@
       "created": 1790642999.1046636
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2698.21,
-      "created": 1790664634.7161918
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2359,
-      "created": 1790664634.716195
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 311.3,
@@ -84,8 +72,20 @@
       "signal": "LONG",
       "entry": 258.261,
       "created": 1790678824.956081
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2716.77,
+      "created": 1790680531.2875822
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2384,
+      "created": 1790680531.2875836
     }
   ],
-  "total": 830,
-  "hits": 431
+  "total": 832,
+  "hits": 433
 }
