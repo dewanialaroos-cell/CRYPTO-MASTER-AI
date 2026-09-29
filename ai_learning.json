@@ -8,18 +8,6 @@
       "created": 1790680531.2875836
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 315.9,
-      "created": 1790681638.7306325
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 84232.2,
-      "created": 1790681638.7306337
-    },
-    {
       "symbol": "ARB/USDT",
       "signal": "LONG",
       "entry": 0.21385,
@@ -110,6 +98,6 @@
       "created": 1790695082.608193
     }
   ],
-  "total": 844,
+  "total": 846,
   "hits": 439
 }
