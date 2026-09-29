@@ -8,18 +8,6 @@
       "created": 1790680531.2875836
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5206,
-      "created": 1790693271.0667956
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2261,
-      "created": 1790693271.0667994
-    },
-    {
       "symbol": "QNT/USDT",
       "signal": "LONG",
       "entry": 245.015,
@@ -72,8 +60,14 @@
       "signal": "LONG",
       "entry": 0.22238,
       "created": 1790706227.7594697
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2693.95,
+      "created": 1790707738.9438
     }
   ],
-  "total": 857,
+  "total": 859,
   "hits": 439
 }
