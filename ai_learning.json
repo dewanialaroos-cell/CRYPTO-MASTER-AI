@@ -66,6 +66,24 @@
       "signal": "LONG",
       "entry": 0.22612,
       "created": 1790644531.7084095
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1390.72,
+      "created": 1790645568.082676
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 4.078e-06,
+      "created": 1790645568.0826774
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 85.855,
+      "created": 1790645568.0826783
     }
   ],
   "total": 809,
