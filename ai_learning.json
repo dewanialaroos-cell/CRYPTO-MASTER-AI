@@ -8,12 +8,6 @@
       "created": 1790680531.2875836
     },
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 15.352,
-      "created": 1790684671.9525135
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.005732,
@@ -92,6 +86,6 @@
       "created": 1790695082.608193
     }
   ],
-  "total": 847,
+  "total": 848,
   "hits": 439
 }
