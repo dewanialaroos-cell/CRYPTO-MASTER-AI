@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.23106,
-      "created": 1790675242.66251
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2159,
-      "created": 1790675242.6625113
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.602,
@@ -96,8 +84,20 @@
       "signal": "LONG",
       "entry": 4.323e-06,
       "created": 1790686272.2493596
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.23178,
+      "created": 1790689692.5739043
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.25711,
+      "created": 1790689692.5739076
     }
   ],
-  "total": 838,
-  "hits": 438
+  "total": 840,
+  "hits": 439
 }
