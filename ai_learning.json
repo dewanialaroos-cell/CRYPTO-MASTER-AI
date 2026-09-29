@@ -8,12 +8,6 @@
       "created": 1790642999.1046636
     },
     {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 210.183,
-      "created": 1790648116.7447362
-    },
-    {
       "symbol": "SEI/USDT",
       "signal": "LONG",
       "entry": 0.07508,
@@ -54,8 +48,20 @@
       "signal": "LONG",
       "entry": 10.623,
       "created": 1790661592.7906141
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 247.847,
+      "created": 1790663197.5646284
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 83844.4,
+      "created": 1790663197.564631
     }
   ],
-  "total": 820,
-  "hits": 422
+  "total": 821,
+  "hits": 423
 }
