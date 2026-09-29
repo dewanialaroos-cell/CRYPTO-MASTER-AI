@@ -8,12 +8,6 @@
       "created": 1790642999.1046636
     },
     {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07518,
-      "created": 1790667940.1513474
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 15.223,
@@ -90,8 +84,14 @@
       "signal": "LONG",
       "entry": 84232.2,
       "created": 1790681638.7306337
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.21385,
+      "created": 1790683074.5588045
     }
   ],
-  "total": 833,
-  "hits": 434
+  "total": 834,
+  "hits": 435
 }
