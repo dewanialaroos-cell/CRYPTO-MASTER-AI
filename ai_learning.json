@@ -20,18 +20,6 @@
       "created": 1790702073.5703967
     },
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.238,
-      "created": 1790706227.7594666
-    },
-    {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.22238,
-      "created": 1790706227.7594697
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "LONG",
       "entry": 2693.95,
@@ -60,8 +48,26 @@
       "signal": "LONG",
       "entry": 0.005849,
       "created": 1790716838.4719615
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.44,
+      "created": 1790721818.7795434
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.713,
+      "created": 1790721818.7795458
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.22362,
+      "created": 1790721818.7795467
     }
   ],
-  "total": 864,
-  "hits": 442
+  "total": 866,
+  "hits": 444
 }
