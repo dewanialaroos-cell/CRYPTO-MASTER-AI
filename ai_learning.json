@@ -2,22 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "GRAM/USDT",
-      "signal": "LONG",
-      "entry": 1.634,
-      "created": 1790613893.5986357
-    },
-    {
       "symbol": "MARSCOIN/USDT",
       "signal": "LONG",
       "entry": 0.155,
       "created": 1790617545.5938718
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 10.705,
-      "created": 1790641273.8062549
     },
     {
       "symbol": "XAUT/USDT",
@@ -78,8 +66,14 @@
       "signal": "LONG",
       "entry": 0.004875,
       "created": 1790655559.672229
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 148.9,
+      "created": 1790657149.9121208
     }
   ],
-  "total": 814,
+  "total": 815,
   "hits": 421
 }
