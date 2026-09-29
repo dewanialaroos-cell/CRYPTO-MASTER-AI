@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 258.261,
-      "created": 1790678824.956081
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "LONG",
       "entry": 2716.77,
@@ -96,8 +90,20 @@
       "signal": "LONG",
       "entry": 0.1133,
       "created": 1790691426.5780556
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5206,
+      "created": 1790693271.0667956
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2261,
+      "created": 1790693271.0667994
     }
   ],
-  "total": 842,
+  "total": 843,
   "hits": 439
 }
