@@ -20,18 +20,6 @@
       "created": 1790617545.5938718
     },
     {
-      "symbol": "HBAR/USDT",
-      "signal": "LONG",
-      "entry": 0.12335,
-      "created": 1790631804.267262
-    },
-    {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 241.395,
-      "created": 1790631804.2672632
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "SHORT",
       "entry": 534.27,
@@ -84,8 +72,14 @@
       "signal": "SHORT",
       "entry": 85.855,
       "created": 1790645568.0826783
+    },
+    {
+      "symbol": "HBAR/USDT",
+      "signal": "LONG",
+      "entry": 0.11985,
+      "created": 1790646990.2717948
     }
   ],
-  "total": 809,
+  "total": 811,
   "hits": 421
 }
