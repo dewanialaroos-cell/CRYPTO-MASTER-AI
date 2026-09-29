@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2384,
-      "created": 1790680531.2875836
-    },
-    {
       "symbol": "CRV/USDT",
       "signal": "LONG",
       "entry": 0.395,
