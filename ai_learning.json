@@ -8,12 +8,6 @@
       "created": 1790642999.1046636
     },
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 148.9,
-      "created": 1790657149.9121208
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.22519,
@@ -78,8 +72,20 @@
       "signal": "LONG",
       "entry": 9.161,
       "created": 1790670329.9683287
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 165.6,
+      "created": 1790671602.5834947
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005054,
+      "created": 1790671602.5834963
     }
   ],
-  "total": 824,
-  "hits": 426
+  "total": 825,
+  "hits": 427
 }
