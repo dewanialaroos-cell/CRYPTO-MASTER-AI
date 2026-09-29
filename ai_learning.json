@@ -2,22 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "MARSCOIN/USDT",
-      "signal": "LONG",
-      "entry": 0.155,
-      "created": 1790617545.5938718
-    },
-    {
       "symbol": "XAUT/USDT",
       "signal": "SHORT",
       "entry": 4123.2,
       "created": 1790642999.1046636
-    },
-    {
-      "symbol": "HBAR/USDT",
-      "signal": "LONG",
-      "entry": 0.11985,
-      "created": 1790646990.2717948
     },
     {
       "symbol": "QNT/USDT",
@@ -54,8 +42,20 @@
       "signal": "LONG",
       "entry": 0.22519,
       "created": 1790659299.0242312
+    },
+    {
+      "symbol": "HBAR/USDT",
+      "signal": "LONG",
+      "entry": 0.11946,
+      "created": 1790661592.7906125
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 10.623,
+      "created": 1790661592.7906141
     }
   ],
-  "total": 819,
+  "total": 820,
   "hits": 422
 }
