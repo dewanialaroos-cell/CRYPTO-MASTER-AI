@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "MON/USDT",
-      "signal": "LONG",
-      "entry": 0.02974,
-      "created": 1790612282.1541562
-    },
-    {
       "symbol": "GRAM/USDT",
       "signal": "LONG",
       "entry": 1.634,
@@ -78,6 +72,12 @@
       "signal": "LONG",
       "entry": 14.874,
       "created": 1790654253.35955
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.004875,
+      "created": 1790655559.672229
     }
   ],
   "total": 814,
