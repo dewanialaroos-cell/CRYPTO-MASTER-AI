@@ -8,18 +8,6 @@
       "created": 1790642999.1046636
     },
     {
-      "symbol": "HBAR/USDT",
-      "signal": "LONG",
-      "entry": 0.11946,
-      "created": 1790661592.7906125
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 10.623,
-      "created": 1790661592.7906141
-    },
-    {
       "symbol": "QNT/USDT",
       "signal": "LONG",
       "entry": 247.847,
@@ -90,8 +78,20 @@
       "signal": "LONG",
       "entry": 1.2159,
       "created": 1790675242.6625113
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.602,
+      "created": 1790676996.9942427
+    },
+    {
+      "symbol": "HBAR/USDT",
+      "signal": "LONG",
+      "entry": 0.11826,
+      "created": 1790676996.9942443
     }
   ],
-  "total": 826,
-  "hits": 428
+  "total": 828,
+  "hits": 429
 }
