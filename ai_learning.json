@@ -20,12 +20,6 @@
       "created": 1790617545.5938718
     },
     {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005096,
-      "created": 1790625413.4417977
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.22936,
@@ -66,8 +60,14 @@
       "signal": "LONG",
       "entry": 15.485,
       "created": 1790639745.597897
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 10.705,
+      "created": 1790641273.8062549
     }
   ],
-  "total": 806,
+  "total": 807,
   "hits": 421
 }
