@@ -8,12 +8,6 @@
       "created": 1790642999.1046636
     },
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.22519,
-      "created": 1790659299.0242312
-    },
-    {
       "symbol": "HBAR/USDT",
       "signal": "LONG",
       "entry": 0.11946,
@@ -84,8 +78,20 @@
       "signal": "LONG",
       "entry": 0.005054,
       "created": 1790671602.5834963
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.23106,
+      "created": 1790675242.66251
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2159,
+      "created": 1790675242.6625113
     }
   ],
-  "total": 825,
-  "hits": 427
+  "total": 826,
+  "hits": 428
 }
