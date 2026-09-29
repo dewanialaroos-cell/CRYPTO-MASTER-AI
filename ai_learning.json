@@ -20,12 +20,6 @@
       "created": 1790702073.5703967
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2693.95,
-      "created": 1790707738.9438
-    },
-    {
       "symbol": "QNT/USDT",
       "signal": "LONG",
       "entry": 269.907,
@@ -68,6 +62,6 @@
       "created": 1790721818.7795467
     }
   ],
-  "total": 866,
+  "total": 867,
   "hits": 444
 }
