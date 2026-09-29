@@ -14,12 +14,6 @@
       "created": 1790642999.1046636
     },
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.22612,
-      "created": 1790644531.7084095
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "SHORT",
       "entry": 1390.72,
@@ -72,8 +66,14 @@
       "signal": "LONG",
       "entry": 148.9,
       "created": 1790657149.9121208
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.22519,
+      "created": 1790659299.0242312
     }
   ],
-  "total": 815,
+  "total": 816,
   "hits": 421
 }
