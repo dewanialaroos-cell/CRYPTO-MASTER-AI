@@ -8,18 +8,6 @@
       "created": 1790680531.2875836
     },
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.23178,
-      "created": 1790689692.5739043
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.25711,
-      "created": 1790689692.5739076
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.561,
@@ -86,6 +74,6 @@
       "created": 1790702073.5703974
     }
   ],
-  "total": 853,
+  "total": 855,
   "hits": 439
 }
