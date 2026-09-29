@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4123.2,
-      "created": 1790642999.1046636
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.161,
-      "created": 1790670329.9683287
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 165.6,
-      "created": 1790671602.5834947
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005054,
-      "created": 1790671602.5834963
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.23106,
@@ -90,8 +66,38 @@
       "signal": "LONG",
       "entry": 15.352,
       "created": 1790684671.9525135
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005732,
+      "created": 1790686272.2493532
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 172.59,
+      "created": 1790686272.2493546
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5496,
+      "created": 1790686272.2493556
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 120.52,
+      "created": 1790686272.2493587
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.323e-06,
+      "created": 1790686272.2493596
     }
   ],
-  "total": 835,
-  "hits": 436
+  "total": 838,
+  "hits": 438
 }
