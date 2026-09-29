@@ -14,24 +14,6 @@
       "created": 1790642999.1046636
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1390.72,
-      "created": 1790645568.082676
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "SHORT",
-      "entry": 4.078e-06,
-      "created": 1790645568.0826774
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 85.855,
-      "created": 1790645568.0826783
-    },
-    {
       "symbol": "HBAR/USDT",
       "signal": "LONG",
       "entry": 0.11985,
@@ -74,6 +56,6 @@
       "created": 1790659299.0242312
     }
   ],
-  "total": 816,
-  "hits": 421
+  "total": 819,
+  "hits": 422
 }
