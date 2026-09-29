@@ -20,12 +20,6 @@
       "created": 1790617545.5938718
     },
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 15.485,
-      "created": 1790639745.597897
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 10.705,
@@ -78,8 +72,14 @@
       "signal": "LONG",
       "entry": 0.07508,
       "created": 1790652999.2316916
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.874,
+      "created": 1790654253.35955
     }
   ],
-  "total": 813,
+  "total": 814,
   "hits": 421
 }
