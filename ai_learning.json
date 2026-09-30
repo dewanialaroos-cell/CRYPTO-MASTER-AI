@@ -8,36 +8,6 @@
       "created": 1790771318.8266382
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.348,
-      "created": 1790772903.5118036
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 313.1,
-      "created": 1790772903.5118048
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.446e-06,
-      "created": 1790772903.5118058
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2736.96,
-      "created": 1790772903.511806
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 85423.2,
-      "created": 1790772903.5118093
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.2576,
@@ -102,8 +72,26 @@
       "signal": "LONG",
       "entry": 0.2552,
       "created": 1790786819.986395
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 300.892,
+      "created": 1790788545.6333861
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.363,
+      "created": 1790788545.6333876
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 161.28,
+      "created": 1790788545.6333911
     }
   ],
-  "total": 914,
-  "hits": 469
+  "total": 919,
+  "hits": 470
 }
