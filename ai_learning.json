@@ -14,24 +14,6 @@
       "created": 1790702073.5703967
     },
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.44,
-      "created": 1790721818.7795434
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.713,
-      "created": 1790721818.7795458
-    },
-    {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.22362,
-      "created": 1790721818.7795467
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.2016,
@@ -78,8 +60,14 @@
       "signal": "LONG",
       "entry": 161.14,
       "created": 1790733449.4525027
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.386,
+      "created": 1790736317.2782633
     }
   ],
-  "total": 871,
+  "total": 874,
   "hits": 445
 }
