@@ -72,6 +72,12 @@
       "signal": "LONG",
       "entry": 0.5009,
       "created": 1790746540.4523778
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.309e-06,
+      "created": 1790747835.0392296
     }
   ],
   "total": 881,
