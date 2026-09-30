@@ -8,12 +8,6 @@
       "created": 1790782548.1069665
     },
     {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07422,
-      "created": 1790785547.5841022
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.005839,
@@ -98,6 +92,6 @@
       "created": 1790808322.8807452
     }
   ],
-  "total": 936,
+  "total": 937,
   "hits": 474
 }
