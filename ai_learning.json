@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.309e-06,
-      "created": 1790747835.0392296
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
       "entry": 2658.44,
@@ -78,8 +72,14 @@
       "signal": "LONG",
       "entry": 0.005791,
       "created": 1790761023.62841
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1605,
+      "created": 1790762339.114537
     }
   ],
-  "total": 893,
-  "hits": 457
+  "total": 894,
+  "hits": 458
 }
