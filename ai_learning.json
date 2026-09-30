@@ -102,6 +102,18 @@
       "signal": "LONG",
       "entry": 1.1845,
       "created": 1790784072.3268034
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 88.895,
+      "created": 1790785547.5841012
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07422,
+      "created": 1790785547.5841022
     }
   ],
   "total": 911,
