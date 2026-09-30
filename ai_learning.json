@@ -72,6 +72,12 @@
       "signal": "LONG",
       "entry": 0.005912,
       "created": 1790732068.7611496
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 161.14,
+      "created": 1790733449.4525027
     }
   ],
   "total": 871,
