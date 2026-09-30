@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2491,
-      "created": 1790756283.4546654
-    },
-    {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 291.812,
-      "created": 1790756283.454667
-    },
-    {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.22382,
-      "created": 1790756283.4546678
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.089,
@@ -84,8 +66,32 @@
       "signal": "LONG",
       "entry": 0.09576,
       "created": 1790769478.0014126
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.2274,
+      "created": 1790771318.8266382
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 312.78,
+      "created": 1790771318.8266401
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2535,
+      "created": 1790771318.8266406
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.125,
+      "created": 1790771318.8266437
     }
   ],
-  "total": 897,
-  "hits": 459
+  "total": 900,
+  "hits": 462
 }
