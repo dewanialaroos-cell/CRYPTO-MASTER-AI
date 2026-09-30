@@ -8,24 +8,6 @@
       "created": 1790771318.8266382
     },
     {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 312.78,
-      "created": 1790771318.8266401
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2535,
-      "created": 1790771318.8266406
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.125,
-      "created": 1790771318.8266437
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.348,
@@ -114,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.07422,
       "created": 1790785547.5841022
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2552,
+      "created": 1790786819.986395
     }
   ],
-  "total": 911,
-  "hits": 468
+  "total": 914,
+  "hits": 469
 }
