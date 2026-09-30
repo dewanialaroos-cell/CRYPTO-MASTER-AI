@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 768.0,
-      "created": 1790763723.9783173
-    },
-    {
       "symbol": "HBAR/USDT",
       "signal": "LONG",
       "entry": 0.10661,
@@ -110,6 +104,6 @@
       "created": 1790775951.6810758
     }
   ],
-  "total": 907,
+  "total": 908,
   "hits": 467
 }
