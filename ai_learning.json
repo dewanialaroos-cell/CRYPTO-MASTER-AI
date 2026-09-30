@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 161.94,
-      "created": 1790769478.0014098
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09576,
-      "created": 1790769478.0014126
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.2274,
@@ -108,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.10794,
       "created": 1790782548.1069665
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1845,
+      "created": 1790784072.3268034
     }
   ],
-  "total": 909,
+  "total": 911,
   "hits": 468
 }
