@@ -8,24 +8,6 @@
       "created": 1790771318.8266382
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5584,
-      "created": 1790775951.681071
-    },
-    {
-      "symbol": "ASTER/USDT",
-      "signal": "LONG",
-      "entry": 0.7684,
-      "created": 1790775951.681073
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 121.13,
-      "created": 1790775951.6810758
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.005667,
@@ -90,8 +72,14 @@
       "signal": "LONG",
       "entry": 0.26742,
       "created": 1790789726.3207972
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5317,
+      "created": 1790791068.3735626
     }
   ],
-  "total": 921,
+  "total": 924,
   "hits": 470
 }
