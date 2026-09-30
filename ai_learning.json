@@ -14,12 +14,6 @@
       "created": 1790702073.5703967
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.925,
-      "created": 1790727735.3181517
-    },
-    {
       "symbol": "SEI/USDT",
       "signal": "LONG",
       "entry": 0.0744,
@@ -72,8 +66,14 @@
       "signal": "LONG",
       "entry": 1.2116,
       "created": 1790741827.1597881
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.984,
+      "created": 1790743605.513774
     }
   ],
-  "total": 878,
-  "hits": 448
+  "total": 879,
+  "hits": 449
 }
