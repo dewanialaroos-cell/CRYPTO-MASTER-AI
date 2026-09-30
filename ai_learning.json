@@ -14,12 +14,6 @@
       "created": 1790785547.5841022
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5317,
-      "created": 1790791068.3735626
-    },
-    {
       "symbol": "ASTER/USDT",
       "signal": "LONG",
       "entry": 0.7578,
@@ -78,8 +72,20 @@
       "signal": "LONG",
       "entry": 1.2277,
       "created": 1790804778.8004487
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5341,
+      "created": 1790805650.005241
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.2594,
+      "created": 1790805650.0052423
     }
   ],
-  "total": 934,
-  "hits": 472
+  "total": 935,
+  "hits": 473
 }
