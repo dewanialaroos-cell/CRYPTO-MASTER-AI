@@ -8,18 +8,6 @@
       "created": 1790782548.1069665
     },
     {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005839,
-      "created": 1790795810.4483278
-    },
-    {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 3.8772,
-      "created": 1790797464.984278
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.22722,
@@ -90,8 +78,20 @@
       "signal": "LONG",
       "entry": 159.83,
       "created": 1790808322.8807452
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.0059,
+      "created": 1790812652.2534173
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 544.94,
+      "created": 1790812652.2534184
     }
   ],
-  "total": 937,
-  "hits": 474
+  "total": 939,
+  "hits": 475
 }
