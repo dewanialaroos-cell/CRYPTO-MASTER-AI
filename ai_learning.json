@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.386,
-      "created": 1790736317.2782633
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.22224,
@@ -72,8 +66,14 @@
       "signal": "LONG",
       "entry": 4.309e-06,
       "created": 1790747835.0392296
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2658.44,
+      "created": 1790751032.8019228
     }
   ],
-  "total": 882,
+  "total": 883,
   "hits": 450
 }
