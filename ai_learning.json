@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 161.14,
-      "created": 1790733449.4525027
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.386,
@@ -80,6 +74,6 @@
       "created": 1790747835.0392296
     }
   ],
-  "total": 881,
-  "hits": 449
+  "total": 882,
+  "hits": 450
 }
