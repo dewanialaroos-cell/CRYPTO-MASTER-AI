@@ -14,18 +14,6 @@
       "created": 1790702073.5703967
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2016,
-      "created": 1790723724.3859434
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1586,
-      "created": 1790723724.385946
-    },
-    {
       "symbol": "QNT/USDT",
       "signal": "LONG",
       "entry": 267.685,
@@ -68,6 +56,6 @@
       "created": 1790736317.2782633
     }
   ],
-  "total": 874,
-  "hits": 445
+  "total": 876,
+  "hits": 446
 }
