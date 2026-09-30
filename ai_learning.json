@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "CRV/USDT",
-      "signal": "LONG",
-      "entry": 0.395,
-      "created": 1790702073.5703955
-    },
-    {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 119.89,
-      "created": 1790702073.5703967
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.0744,
-      "created": 1790730975.1687918
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.005912,
@@ -74,6 +56,6 @@
       "created": 1790743605.513774
     }
   ],
-  "total": 879,
+  "total": 880,
   "hits": 449
 }
