@@ -84,6 +84,12 @@
       "signal": "LONG",
       "entry": 768.0,
       "created": 1790763723.9783173
+    },
+    {
+      "symbol": "HBAR/USDT",
+      "signal": "LONG",
+      "entry": 0.10661,
+      "created": 1790765223.2797205
     }
   ],
   "total": 894,
