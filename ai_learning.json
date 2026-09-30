@@ -78,6 +78,12 @@
       "signal": "LONG",
       "entry": 0.5317,
       "created": 1790791068.3735626
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "entry": 0.7578,
+      "created": 1790792417.2273693
     }
   ],
   "total": 924,
