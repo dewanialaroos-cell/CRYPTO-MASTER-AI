@@ -2,36 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.22224,
-      "created": 1790741827.1597824
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2433,
-      "created": 1790741827.1597836
-    },
-    {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 286.59,
-      "created": 1790741827.1597848
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 119.58,
-      "created": 1790741827.1597874
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2116,
-      "created": 1790741827.1597881
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 4.984,
@@ -84,8 +54,26 @@
       "signal": "LONG",
       "entry": 159.89,
       "created": 1790754426.513339
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2491,
+      "created": 1790756283.4546654
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 291.812,
+      "created": 1790756283.454667
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.22382,
+      "created": 1790756283.4546678
     }
   ],
-  "total": 883,
-  "hits": 450
+  "total": 888,
+  "hits": 453
 }
