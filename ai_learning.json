@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1605,
-      "created": 1790762339.114537
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "LONG",
       "entry": 768.0,
@@ -116,6 +110,6 @@
       "created": 1790775951.6810758
     }
   ],
-  "total": 906,
-  "hits": 466
+  "total": 907,
+  "hits": 467
 }
