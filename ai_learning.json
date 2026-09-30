@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "HBAR/USDT",
-      "signal": "LONG",
-      "entry": 0.10661,
-      "created": 1790765223.2797205
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 161.94,
@@ -102,8 +96,14 @@
       "signal": "LONG",
       "entry": 121.13,
       "created": 1790775951.6810758
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005667,
+      "created": 1790780556.097808
     }
   ],
-  "total": 908,
-  "hits": 467
+  "total": 909,
+  "hits": 468
 }
