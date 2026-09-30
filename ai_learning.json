@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.089,
-      "created": 1790758083.1754105
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.25567,
-      "created": 1790758083.1754122
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2154,
-      "created": 1790758083.1754131
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.5213,
@@ -90,8 +72,38 @@
       "signal": "LONG",
       "entry": 11.125,
       "created": 1790771318.8266437
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.348,
+      "created": 1790772903.5118036
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 313.1,
+      "created": 1790772903.5118048
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.446e-06,
+      "created": 1790772903.5118058
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2736.96,
+      "created": 1790772903.511806
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 85423.2,
+      "created": 1790772903.5118093
     }
   ],
-  "total": 900,
-  "hits": 462
+  "total": 903,
+  "hits": 465
 }
