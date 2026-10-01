@@ -8,12 +8,6 @@
       "created": 1790812652.2534173
     },
     {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 544.94,
-      "created": 1790812652.2534184
-    },
-    {
       "symbol": "XLM/USDT",
       "signal": "LONG",
       "entry": 0.22714,
@@ -96,8 +90,20 @@
       "signal": "LONG",
       "entry": 10.99,
       "created": 1790822795.1073585
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "entry": 0.7562,
+      "created": 1790828237.102002
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2699.24,
+      "created": 1790828237.1020038
     }
   ],
-  "total": 951,
-  "hits": 482
+  "total": 952,
+  "hits": 483
 }
