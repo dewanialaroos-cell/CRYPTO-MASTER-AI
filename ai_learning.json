@@ -78,6 +78,18 @@
       "signal": "LONG",
       "entry": 549.63,
       "created": 1790875222.1051283
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.09515,
+      "created": 1790876813.0669205
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5039,
+      "created": 1790876813.0669217
     }
   ],
   "total": 997,
