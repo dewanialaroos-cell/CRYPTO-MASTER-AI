@@ -8,12 +8,6 @@
       "created": 1790782548.1069665
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2277,
-      "created": 1790804778.8004487
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.5341,
@@ -96,8 +90,14 @@
       "signal": "LONG",
       "entry": 0.2488,
       "created": 1790819119.018782
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.505,
+      "created": 1790820022.3767898
     }
   ],
-  "total": 945,
+  "total": 946,
   "hits": 478
 }
