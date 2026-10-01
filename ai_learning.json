@@ -8,24 +8,6 @@
       "created": 1790782548.1069665
     },
     {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 289.702,
-      "created": 1790803192.8722794
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.345,
-      "created": 1790803192.8722806
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.247,
-      "created": 1790803192.872284
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.2277,
@@ -96,8 +78,26 @@
       "signal": "SHORT",
       "entry": 3.8993,
       "created": 1790816029.5509133
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 300.211,
+      "created": 1790819119.0187778
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.251,
+      "created": 1790819119.0187802
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2488,
+      "created": 1790819119.018782
     }
   ],
-  "total": 942,
-  "hits": 476
+  "total": 945,
+  "hits": 478
 }
