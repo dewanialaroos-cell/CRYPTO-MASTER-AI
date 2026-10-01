@@ -102,6 +102,18 @@
       "signal": "LONG",
       "entry": 2699.24,
       "created": 1790828237.1020038
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.385e-06,
+      "created": 1790830065.032871
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 308.8,
+      "created": 1790830065.0328722
     }
   ],
   "total": 952,
