@@ -20,12 +20,6 @@
       "created": 1790819119.0187778
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.485,
-      "created": 1790834346.426325
-    },
-    {
       "symbol": "WIF/USDT",
       "signal": "LONG",
       "entry": 0.2504,
@@ -116,6 +110,6 @@
       "created": 1790848043.6045115
     }
   ],
-  "total": 972,
+  "total": 973,
   "hits": 491
 }
