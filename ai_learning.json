@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2488,
-      "created": 1790855948.5862696
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.055,
-      "created": 1790855948.5862713
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09501,
-      "created": 1790855948.586274
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.264,
@@ -72,8 +54,14 @@
       "signal": "LONG",
       "entry": 166.67,
       "created": 1790867804.5884774
+    },
+    {
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "entry": 0.041096,
+      "created": 1790871369.0664802
     }
   ],
-  "total": 991,
+  "total": 994,
   "hits": 494
 }
