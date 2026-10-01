@@ -72,6 +72,12 @@
       "signal": "LONG",
       "entry": 2699.26,
       "created": 1790862477.666048
+    },
+    {
+      "symbol": "MON/USDT",
+      "signal": "LONG",
+      "entry": 0.03237,
+      "created": 1790864340.9134886
     }
   ],
   "total": 988,
