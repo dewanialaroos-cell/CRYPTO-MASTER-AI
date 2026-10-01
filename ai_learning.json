@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 164.81,
-      "created": 1790853363.9569106
-    },
-    {
       "symbol": "WIF/USDT",
       "signal": "LONG",
       "entry": 0.2488,
@@ -72,8 +66,14 @@
       "signal": "LONG",
       "entry": 306.5,
       "created": 1790866110.264553
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 166.67,
+      "created": 1790867804.5884774
     }
   ],
-  "total": 990,
-  "hits": 493
+  "total": 991,
+  "hits": 494
 }
