@@ -20,18 +20,6 @@
       "created": 1790819119.0187778
     },
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.385e-06,
-      "created": 1790830065.032871
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 308.8,
-      "created": 1790830065.0328722
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
       "entry": 551.1,
@@ -114,8 +102,20 @@
       "signal": "LONG",
       "entry": 11.08,
       "created": 1790839237.8211434
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 308.6,
+      "created": 1790844492.6771064
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.328e-06,
+      "created": 1790844492.6771078
     }
   ],
-  "total": 966,
+  "total": 968,
   "hits": 491
 }
