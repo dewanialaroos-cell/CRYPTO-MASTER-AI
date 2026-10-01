@@ -2,36 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "QNT/USDT",
-      "signal": "LONG",
-      "entry": 300.211,
-      "created": 1790819119.0187778
-    },
-    {
-      "symbol": "NIGHT/USDT",
-      "signal": "LONG",
-      "entry": 0.043834,
-      "created": 1790848043.6045082
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2695.71,
-      "created": 1790848043.6045094
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 83864.6,
-      "created": 1790848043.6045108
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1629,
-      "created": 1790848043.6045115
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "LONG",
       "entry": 771.0,
@@ -84,8 +54,26 @@
       "signal": "LONG",
       "entry": 4.395e-06,
       "created": 1790859171.4512355
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 83931.2,
+      "created": 1790862477.6660464
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.083,
+      "created": 1790862477.6660473
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2699.26,
+      "created": 1790862477.666048
     }
   ],
-  "total": 984,
-  "hits": 492
+  "total": 988,
+  "hits": 493
 }
