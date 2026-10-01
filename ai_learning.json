@@ -66,6 +66,18 @@
       "signal": "SHORT",
       "entry": 1343.23,
       "created": 1790873912.4965568
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.467e-06,
+      "created": 1790875222.1051252
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 549.63,
+      "created": 1790875222.1051283
     }
   ],
   "total": 997,
