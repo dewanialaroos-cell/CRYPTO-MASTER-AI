@@ -114,6 +114,12 @@
       "signal": "LONG",
       "entry": 0.07406,
       "created": 1790831785.8033853
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84315.4,
+      "created": 1790832959.2011905
     }
   ],
   "total": 955,
