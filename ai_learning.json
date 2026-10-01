@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 166.67,
-      "created": 1790867804.5884774
-    },
-    {
       "symbol": "NIGHT/USDT",
       "signal": "LONG",
       "entry": 0.041096,
@@ -84,8 +78,26 @@
       "signal": "LONG",
       "entry": 0.10752,
       "created": 1790880553.1942255
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 167.62,
+      "created": 1790882223.121391
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.057,
+      "created": 1790882223.1213937
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.096,
+      "created": 1790882223.1213963
     }
   ],
-  "total": 1002,
-  "hits": 496
+  "total": 1003,
+  "hits": 497
 }
