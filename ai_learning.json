@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1343.23,
-      "created": 1790873912.4965568
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
       "entry": 4.467e-06,
@@ -90,8 +84,14 @@
       "signal": "LONG",
       "entry": 0.039034,
       "created": 1790887595.5581532
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.392,
+      "created": 1790888424.4950542
     }
   ],
-  "total": 1007,
-  "hits": 498
+  "total": 1008,
+  "hits": 499
 }
