@@ -8,24 +8,6 @@
       "created": 1790782548.1069665
     },
     {
-      "symbol": "XLM/USDT",
-      "signal": "LONG",
-      "entry": 0.22722,
-      "created": 1790801090.80403
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 90.304,
-      "created": 1790801090.804034
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.161,
-      "created": 1790801090.8040347
-    },
-    {
       "symbol": "QNT/USDT",
       "signal": "LONG",
       "entry": 289.702,
@@ -90,8 +72,32 @@
       "signal": "LONG",
       "entry": 544.94,
       "created": 1790812652.2534184
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "LONG",
+      "entry": 0.22714,
+      "created": 1790816029.5509079
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1761,
+      "created": 1790816029.5509105
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07394,
+      "created": 1790816029.5509126
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.8993,
+      "created": 1790816029.5509133
     }
   ],
-  "total": 939,
-  "hits": 475
+  "total": 942,
+  "hits": 476
 }
