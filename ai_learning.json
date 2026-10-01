@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "HBAR/USDT",
-      "signal": "LONG",
-      "entry": 0.10794,
-      "created": 1790782548.1069665
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.0059,
