@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NIGHT/USDT",
-      "signal": "LONG",
-      "entry": 0.041096,
-      "created": 1790871369.0664802
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.1675,
@@ -104,6 +98,6 @@
       "created": 1790884683.2581067
     }
   ],
-  "total": 1003,
+  "total": 1004,
   "hits": 497
 }
