@@ -20,30 +20,6 @@
       "created": 1790819119.0187778
     },
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 162.9,
-      "created": 1790822795.107353
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09494,
-      "created": 1790822795.1073549
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2276,
-      "created": 1790822795.1073558
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 10.99,
-      "created": 1790822795.1073585
-    },
-    {
       "symbol": "ASTER/USDT",
       "signal": "LONG",
       "entry": 0.7562,
@@ -126,8 +102,26 @@
       "signal": "LONG",
       "entry": 0.5109,
       "created": 1790836079.2252638
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2507,
+      "created": 1790837608.6588304
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 167.63,
+      "created": 1790837608.658832
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.09587,
+      "created": 1790837608.658835
     }
   ],
-  "total": 960,
-  "hits": 487
+  "total": 964,
+  "hits": 491
 }
