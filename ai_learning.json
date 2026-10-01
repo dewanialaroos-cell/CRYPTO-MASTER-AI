@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1675,
-      "created": 1790872531.8169591
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.378,
-      "created": 1790872531.8169622
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 768.9,
-      "created": 1790872531.8169634
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "SHORT",
       "entry": 1343.23,
@@ -96,8 +78,20 @@
       "signal": "LONG",
       "entry": 0.005887,
       "created": 1790884683.2581067
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1794,
+      "created": 1790887595.558152
+    },
+    {
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "entry": 0.039034,
+      "created": 1790887595.5581532
     }
   ],
-  "total": 1004,
-  "hits": 497
+  "total": 1007,
+  "hits": 498
 }
