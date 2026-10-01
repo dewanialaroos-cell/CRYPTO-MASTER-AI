@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09515,
-      "created": 1790876813.0669205
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5039,
-      "created": 1790876813.0669217
-    },
-    {
       "symbol": "MON/USDT",
       "signal": "LONG",
       "entry": 0.0347,
@@ -84,8 +72,14 @@
       "signal": "LONG",
       "entry": 4.432e-06,
       "created": 1790889669.1169782
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 771.6,
+      "created": 1790892872.1455584
     }
   ],
-  "total": 1010,
+  "total": 1012,
   "hits": 499
 }
