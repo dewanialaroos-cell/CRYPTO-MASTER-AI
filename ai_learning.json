@@ -20,18 +20,6 @@
       "created": 1790819119.0187778
     },
     {
-      "symbol": "ASTER/USDT",
-      "signal": "LONG",
-      "entry": 0.7562,
-      "created": 1790828237.102002
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2699.24,
-      "created": 1790828237.1020038
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
       "entry": 4.385e-06,
@@ -128,6 +116,6 @@
       "created": 1790839237.8211434
     }
   ],
-  "total": 964,
+  "total": 966,
   "hits": 491
 }
