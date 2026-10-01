@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "MON/USDT",
-      "signal": "LONG",
-      "entry": 0.0347,
-      "created": 1790878818.046398
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 84832.7,
-      "created": 1790878818.0463996
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2700.73,
-      "created": 1790878818.0463998
-    },
-    {
       "symbol": "LONGXIA/USDT",
       "signal": "LONG",
       "entry": 0.10752,
@@ -78,8 +60,26 @@
       "signal": "LONG",
       "entry": 771.6,
       "created": 1790892872.1455584
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84706.2,
+      "created": 1790893949.907627
+    },
+    {
+      "symbol": "MON/USDT",
+      "signal": "LONG",
+      "entry": 0.03339,
+      "created": 1790893949.9076288
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2699.72,
+      "created": 1790893949.9076293
     }
   ],
-  "total": 1012,
+  "total": 1015,
   "hits": 499
 }
