@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 771.0,
-      "created": 1790851590.5032723
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 89.736,
-      "created": 1790851590.5032737
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 164.81,
@@ -78,8 +66,14 @@
       "signal": "LONG",
       "entry": 0.03237,
       "created": 1790864340.9134886
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 306.5,
+      "created": 1790866110.264553
     }
   ],
-  "total": 988,
+  "total": 990,
   "hits": 493
 }
