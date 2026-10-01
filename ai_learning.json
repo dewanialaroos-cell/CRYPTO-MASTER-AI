@@ -20,30 +20,6 @@
       "created": 1790819119.0187778
     },
     {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2504,
-      "created": 1790836079.225259
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.167,
-      "created": 1790836079.225261
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.27706,
-      "created": 1790836079.2252614
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5355,
-      "created": 1790836079.2252634
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.5109,
@@ -108,8 +84,20 @@
       "signal": "LONG",
       "entry": 1.1629,
       "created": 1790848043.6045115
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 771.0,
+      "created": 1790851590.5032723
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 89.736,
+      "created": 1790851590.5032737
     }
   ],
-  "total": 973,
+  "total": 977,
   "hits": 491
 }
