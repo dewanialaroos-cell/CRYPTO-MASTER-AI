@@ -2,22 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 84706.2,
-      "created": 1790893949.907627
-    },
-    {
       "symbol": "MON/USDT",
       "signal": "LONG",
       "entry": 0.03339,
       "created": 1790893949.9076288
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2699.72,
-      "created": 1790893949.9076293
     },
     {
       "symbol": "AAVE/USDT",
@@ -90,8 +78,26 @@
       "signal": "LONG",
       "entry": 772.3,
       "created": 1790907539.2054064
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84981.7,
+      "created": 1790909101.1811237
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5112,
+      "created": 1790909101.1811287
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2711.99,
+      "created": 1790909101.1811297
     }
   ],
-  "total": 1025,
-  "hits": 502
+  "total": 1027,
+  "hits": 504
 }
