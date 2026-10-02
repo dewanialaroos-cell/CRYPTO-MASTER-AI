@@ -8,12 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "XMR/USDT",
-      "signal": "SHORT",
-      "entry": 537.97,
-      "created": 1790963093.4838095
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "SHORT",
       "entry": 1282.12,
@@ -68,6 +62,6 @@
       "created": 1790976133.8491697
     }
   ],
-  "total": 1096,
+  "total": 1097,
   "hits": 538
 }
