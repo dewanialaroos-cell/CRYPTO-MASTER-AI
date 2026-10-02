@@ -14,24 +14,6 @@
       "created": 1790900512.7749197
     },
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.431e-06,
-      "created": 1790906324.7202122
-    },
-    {
-      "symbol": "US/USDT",
-      "signal": "LONG",
-      "entry": 0.031276,
-      "created": 1790906324.7202141
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.301,
-      "created": 1790906324.720217
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "LONG",
       "entry": 772.3,
@@ -102,8 +84,26 @@
       "signal": "LONG",
       "entry": 11.104,
       "created": 1790918540.4921694
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.462,
+      "created": 1790920839.3049078
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.575e-06,
+      "created": 1790920839.3049092
+    },
+    {
+      "symbol": "US/USDT",
+      "signal": "LONG",
+      "entry": 0.032662,
+      "created": 1790920839.3049111
     }
   ],
-  "total": 1034,
-  "hits": 511
+  "total": 1037,
+  "hits": 514
 }
