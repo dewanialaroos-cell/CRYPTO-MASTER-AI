@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 771.6,
-      "created": 1790892872.1455584
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 84706.2,
@@ -90,8 +84,14 @@
       "signal": "LONG",
       "entry": 14.301,
       "created": 1790906324.720217
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 772.3,
+      "created": 1790907539.2054064
     }
   ],
-  "total": 1024,
+  "total": 1025,
   "hits": 502
 }
