@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005887,
-      "created": 1790884683.2581067
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.1794,
@@ -60,8 +54,26 @@
       "signal": "LONG",
       "entry": 171.57,
       "created": 1790898427.3955426
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.006,
+      "created": 1790900512.7749188
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005808,
+      "created": 1790900512.7749197
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 546.13,
+      "created": 1790900512.7749226
     }
   ],
-  "total": 1019,
+  "total": 1020,
   "hits": 501
 }
