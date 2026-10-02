@@ -48,6 +48,12 @@
       "signal": "LONG",
       "entry": 0.2493,
       "created": 1790984566.7234545
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "LONG",
+      "entry": 2.119,
+      "created": 1790985379.4822814
     }
   ],
   "total": 1102,
