@@ -8,18 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.256,
-      "created": 1790950624.840788
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.083,
-      "created": 1790950624.8407896
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.006118,
@@ -86,6 +74,6 @@
       "created": 1790963093.4838095
     }
   ],
-  "total": 1084,
+  "total": 1086,
   "hits": 538
 }
