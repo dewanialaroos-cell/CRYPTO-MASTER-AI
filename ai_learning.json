@@ -8,18 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 180.61,
-      "created": 1790969775.4742484
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5415,
-      "created": 1790969775.4742498
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "SHORT",
       "entry": 86.617,
@@ -42,8 +30,26 @@
       "signal": "LONG",
       "entry": 0.046725,
       "created": 1790976133.8491697
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5519,
+      "created": 1790984566.7234538
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 179.81,
+      "created": 1790984566.7234542
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2493,
+      "created": 1790984566.7234545
     }
   ],
-  "total": 1100,
-  "hits": 538
+  "total": 1102,
+  "hits": 539
 }
