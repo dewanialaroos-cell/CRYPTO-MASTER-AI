@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "MON/USDT",
-      "signal": "LONG",
-      "entry": 0.03339,
-      "created": 1790893949.9076288
-    },
-    {
-      "symbol": "NIGHT/USDT",
-      "signal": "LONG",
-      "entry": 0.039803,
-      "created": 1790917264.4375498
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005903,
-      "created": 1790922463.9601743
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.537,
@@ -108,8 +90,26 @@
       "signal": "LONG",
       "entry": 4.553e-06,
       "created": 1790936129.8254135
+    },
+    {
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "entry": 0.044398,
+      "created": 1790937318.8634658
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.397,
+      "created": 1790937318.863467
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005819,
+      "created": 1790937318.8634691
     }
   ],
-  "total": 1052,
-  "hits": 524
+  "total": 1054,
+  "hits": 525
 }
