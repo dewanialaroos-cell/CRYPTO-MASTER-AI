@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.101,
-      "created": 1790933059.2457263
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09737,
-      "created": 1790933059.245729
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1806,
-      "created": 1790934417.2193832
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
       "entry": 4.553e-06,
@@ -96,8 +78,32 @@
       "signal": "LONG",
       "entry": 69.97,
       "created": 1790947077.810129
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.2088,
+      "created": 1790948877.9321
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.09735,
+      "created": 1790948877.9321017
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 122.95,
+      "created": 1790948877.9321022
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.229,
+      "created": 1790948877.9321039
     }
   ],
-  "total": 1065,
-  "hits": 532
+  "total": 1068,
+  "hits": 534
 }
