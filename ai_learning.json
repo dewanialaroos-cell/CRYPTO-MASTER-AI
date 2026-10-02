@@ -96,6 +96,18 @@
       "signal": "SHORT",
       "entry": 4138.1,
       "created": 1790956046.5264053
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 310.1,
+      "created": 1790957748.1515572
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 774.2,
+      "created": 1790957748.151561
     }
   ],
   "total": 1076,
