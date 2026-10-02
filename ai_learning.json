@@ -8,18 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 310.1,
-      "created": 1790957748.1515572
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 774.2,
-      "created": 1790957748.151561
-    },
-    {
       "symbol": "TRUMP/USDT",
       "signal": "LONG",
       "entry": 2.129,
@@ -86,6 +74,6 @@
       "created": 1790971077.1866734
     }
   ],
-  "total": 1091,
+  "total": 1093,
   "hits": 538
 }
