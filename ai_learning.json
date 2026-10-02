@@ -8,18 +8,6 @@
       "created": 1790937318.8634658
     },
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.397,
-      "created": 1790937318.863467
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005819,
-      "created": 1790937318.8634691
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
       "entry": 90.955,
@@ -108,8 +96,20 @@
       "signal": "LONG",
       "entry": 11.083,
       "created": 1790950624.8407896
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.006118,
+      "created": 1790952524.7789736
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 183.84,
+      "created": 1790952524.7789762
     }
   ],
-  "total": 1069,
-  "hits": 534
+  "total": 1071,
+  "hits": 535
 }
