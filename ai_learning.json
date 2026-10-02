@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.553e-06,
-      "created": 1790936129.8254135
-    },
-    {
       "symbol": "NIGHT/USDT",
       "signal": "LONG",
       "entry": 0.044398,
@@ -102,8 +96,20 @@
       "signal": "LONG",
       "entry": 1.229,
       "created": 1790948877.9321039
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.256,
+      "created": 1790950624.840788
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.083,
+      "created": 1790950624.8407896
     }
   ],
-  "total": 1068,
+  "total": 1069,
   "hits": 534
 }
