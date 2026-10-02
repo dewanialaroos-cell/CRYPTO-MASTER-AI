@@ -8,18 +8,6 @@
       "created": 1790937318.8634658
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 90.955,
-      "created": 1790938667.1973898
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5381,
-      "created": 1790938667.1973908
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 311.5,
@@ -108,8 +96,20 @@
       "signal": "LONG",
       "entry": 183.84,
       "created": 1790952524.7789762
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5678,
+      "created": 1790954272.7917535
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.399e-06,
+      "created": 1790954272.7917573
     }
   ],
-  "total": 1071,
-  "hits": 535
+  "total": 1073,
+  "hits": 536
 }
