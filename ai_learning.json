@@ -8,18 +8,6 @@
       "created": 1790893949.9076288
     },
     {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005808,
-      "created": 1790900512.7749197
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 772.3,
-      "created": 1790907539.2054064
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 84981.7,
@@ -102,8 +90,14 @@
       "signal": "LONG",
       "entry": 0.032662,
       "created": 1790920839.3049111
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005903,
+      "created": 1790922463.9601743
     }
   ],
-  "total": 1037,
-  "hits": 514
+  "total": 1039,
+  "hits": 516
 }
