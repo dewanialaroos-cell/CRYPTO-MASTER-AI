@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NIGHT/USDT",
-      "signal": "LONG",
-      "entry": 0.044398,
-      "created": 1790937318.8634658
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 69.97,
-      "created": 1790947077.810129
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.2088,
@@ -96,8 +84,20 @@
       "signal": "LONG",
       "entry": 2.129,
       "created": 1790960310.867379
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 70.44,
+      "created": 1790961641.9930477
+    },
+    {
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "entry": 0.047999,
+      "created": 1790961641.9930499
     }
   ],
-  "total": 1079,
-  "hits": 536
+  "total": 1081,
+  "hits": 538
 }
