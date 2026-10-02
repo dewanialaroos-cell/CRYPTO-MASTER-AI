@@ -8,12 +8,6 @@
       "created": 1790893949.9076288
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 307.5,
-      "created": 1790910023.537967
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 176.43,
@@ -96,8 +90,20 @@
       "signal": "LONG",
       "entry": 2730.59,
       "created": 1790923988.4771342
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 309.3,
+      "created": 1790925436.6866565
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5222,
+      "created": 1790925436.6866603
     }
   ],
-  "total": 1042,
-  "hits": 519
+  "total": 1043,
+  "hits": 520
 }
