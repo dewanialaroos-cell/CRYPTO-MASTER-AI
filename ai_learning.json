@@ -8,24 +8,6 @@
       "created": 1790937318.8634658
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 311.5,
-      "created": 1790939881.0101607
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2746.83,
-      "created": 1790939881.0101616
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 777.6,
-      "created": 1790939881.0101638
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 86638.3,
@@ -108,8 +90,14 @@
       "signal": "LONG",
       "entry": 4.399e-06,
       "created": 1790954272.7917573
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 4138.1,
+      "created": 1790956046.5264053
     }
   ],
-  "total": 1073,
+  "total": 1076,
   "hits": 536
 }
