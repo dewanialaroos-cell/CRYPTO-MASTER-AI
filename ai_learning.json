@@ -96,6 +96,12 @@
       "signal": "LONG",
       "entry": 69.7,
       "created": 1790917264.4375508
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.104,
+      "created": 1790918540.4921694
     }
   ],
   "total": 1034,
