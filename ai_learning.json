@@ -8,12 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4138.1,
-      "created": 1790956046.5264053
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 310.1,
@@ -78,8 +72,20 @@
       "signal": "LONG",
       "entry": 0.5415,
       "created": 1790969775.4742498
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 86.617,
+      "created": 1790971077.1866722
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 4145.6,
+      "created": 1790971077.1866734
     }
   ],
-  "total": 1090,
+  "total": 1091,
   "hits": 538
 }
