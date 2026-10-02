@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.432e-06,
-      "created": 1790889669.1169782
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "LONG",
       "entry": 771.6,
@@ -80,6 +74,6 @@
       "created": 1790902224.628795
     }
   ],
-  "total": 1023,
+  "total": 1024,
   "hits": 502
 }
