@@ -8,22 +8,10 @@
       "created": 1790893949.9076288
     },
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.006,
-      "created": 1790900512.7749188
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.005808,
       "created": 1790900512.7749197
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 546.13,
-      "created": 1790900512.7749226
     },
     {
       "symbol": "LTC/USDT",
@@ -108,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.257,
       "created": 1790914596.2942164
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.0963,
+      "created": 1790916393.491955
     }
   ],
-  "total": 1028,
-  "hits": 505
+  "total": 1030,
+  "hits": 507
 }
