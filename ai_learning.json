@@ -8,12 +8,6 @@
       "created": 1790937318.8634658
     },
     {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.186,
-      "created": 1790945583.6889226
-    },
-    {
       "symbol": "LTC/USDT",
       "signal": "LONG",
       "entry": 69.97,
@@ -96,8 +90,14 @@
       "signal": "LONG",
       "entry": 774.2,
       "created": 1790957748.151561
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "LONG",
+      "entry": 2.129,
+      "created": 1790960310.867379
     }
   ],
-  "total": 1078,
+  "total": 1079,
   "hits": 536
 }
