@@ -8,18 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5678,
-      "created": 1790954272.7917535
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.399e-06,
-      "created": 1790954272.7917573
-    },
-    {
       "symbol": "XAUT/USDT",
       "signal": "SHORT",
       "entry": 4138.1,
@@ -78,8 +66,20 @@
       "signal": "SHORT",
       "entry": 0.0367,
       "created": 1790968575.3989155
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 180.61,
+      "created": 1790969775.4742484
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5415,
+      "created": 1790969775.4742498
     }
   ],
-  "total": 1088,
+  "total": 1090,
   "hits": 538
 }
