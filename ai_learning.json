@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.392,
-      "created": 1790888424.4950542
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
       "entry": 4.432e-06,
@@ -86,6 +80,6 @@
       "created": 1790902224.628795
     }
   ],
-  "total": 1022,
+  "total": 1023,
   "hits": 502
 }
