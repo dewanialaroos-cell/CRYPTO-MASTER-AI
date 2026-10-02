@@ -8,18 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1282.12,
-      "created": 1790966926.4044852
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 8.62,
-      "created": 1790966926.4044864
-    },
-    {
       "symbol": "LONGXIA/USDT",
       "signal": "SHORT",
       "entry": 0.0367,
@@ -62,6 +50,6 @@
       "created": 1790976133.8491697
     }
   ],
-  "total": 1097,
+  "total": 1099,
   "hits": 538
 }
