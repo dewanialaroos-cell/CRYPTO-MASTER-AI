@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 70.24,
-      "created": 1790931680.526241
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2275,
-      "created": 1790931680.5262425
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 122.01,
-      "created": 1790931680.5262446
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.101,
@@ -108,8 +90,14 @@
       "signal": "LONG",
       "entry": 2.186,
       "created": 1790945583.6889226
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 69.97,
+      "created": 1790947077.810129
     }
   ],
-  "total": 1062,
-  "hits": 531
+  "total": 1065,
+  "hits": 532
 }
