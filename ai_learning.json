@@ -8,18 +8,6 @@
       "created": 1790937318.8634658
     },
     {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 86638.3,
-      "created": 1790944077.742973
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5383,
-      "created": 1790944077.7429748
-    },
-    {
       "symbol": "TRUMP/USDT",
       "signal": "LONG",
       "entry": 2.186,
@@ -110,6 +98,6 @@
       "created": 1790957748.151561
     }
   ],
-  "total": 1076,
+  "total": 1078,
   "hits": 536
 }
