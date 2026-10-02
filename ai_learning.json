@@ -8,18 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 70.44,
-      "created": 1790961641.9930477
-    },
-    {
-      "symbol": "NIGHT/USDT",
-      "signal": "LONG",
-      "entry": 0.047999,
-      "created": 1790961641.9930499
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "SHORT",
       "entry": 537.97,
@@ -66,8 +54,20 @@
       "signal": "SHORT",
       "entry": 4145.6,
       "created": 1790971077.1866734
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 69.48,
+      "created": 1790976133.8491683
+    },
+    {
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "entry": 0.046725,
+      "created": 1790976133.8491697
     }
   ],
-  "total": 1094,
+  "total": 1096,
   "hits": 538
 }
