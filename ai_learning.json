@@ -8,18 +8,6 @@
       "created": 1790893949.9076288
     },
     {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 176.43,
-      "created": 1790912833.5053635
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.257,
-      "created": 1790914596.2942164
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "LONG",
       "entry": 0.0963,
@@ -102,8 +90,26 @@
       "signal": "LONG",
       "entry": 1.5222,
       "created": 1790925436.6866603
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 86444.3,
+      "created": 1790929032.2060614
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 183.28,
+      "created": 1790929032.2060635
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2592,
+      "created": 1790929032.2060661
     }
   ],
-  "total": 1043,
-  "hits": 520
+  "total": 1045,
+  "hits": 522
 }
