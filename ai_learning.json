@@ -8,28 +8,10 @@
       "created": 1790893949.9076288
     },
     {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.0963,
-      "created": 1790916393.491955
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.206,
-      "created": 1790917264.4375486
-    },
-    {
       "symbol": "NIGHT/USDT",
       "signal": "LONG",
       "entry": 0.039803,
       "created": 1790917264.4375498
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 69.7,
-      "created": 1790917264.4375508
     },
     {
       "symbol": "AVAX/USDT",
@@ -108,8 +90,26 @@
       "signal": "LONG",
       "entry": 0.2592,
       "created": 1790929032.2060661
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 70.24,
+      "created": 1790931680.526241
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2275,
+      "created": 1790931680.5262425
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 122.01,
+      "created": 1790931680.5262446
     }
   ],
-  "total": 1045,
-  "hits": 522
+  "total": 1048,
+  "hits": 524
 }
