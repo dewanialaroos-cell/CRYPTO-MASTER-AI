@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.537,
-      "created": 1790923988.4771297
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 777.4,
-      "created": 1790923988.477132
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2730.59,
-      "created": 1790923988.4771342
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 309.3,
@@ -108,8 +90,20 @@
       "signal": "LONG",
       "entry": 0.005819,
       "created": 1790937318.8634691
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 90.955,
+      "created": 1790938667.1973898
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5381,
+      "created": 1790938667.1973908
     }
   ],
-  "total": 1054,
-  "hits": 525
+  "total": 1057,
+  "hits": 527
 }
