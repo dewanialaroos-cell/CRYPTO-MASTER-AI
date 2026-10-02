@@ -8,12 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.0367,
-      "created": 1790968575.3989155
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 180.61,
@@ -50,6 +44,6 @@
       "created": 1790976133.8491697
     }
   ],
-  "total": 1099,
+  "total": 1100,
   "hits": 538
 }
