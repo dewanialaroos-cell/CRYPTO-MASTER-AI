@@ -14,30 +14,6 @@
       "created": 1790900512.7749197
     },
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 68.89,
-      "created": 1790902224.6287894
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1832,
-      "created": 1790902224.6287913
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 119.05,
-      "created": 1790902224.6287942
-    },
-    {
-      "symbol": "NIGHT/USDT",
-      "signal": "LONG",
-      "entry": 0.03858,
-      "created": 1790902224.628795
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
       "entry": 4.431e-06,
@@ -102,8 +78,26 @@
       "signal": "LONG",
       "entry": 0.0963,
       "created": 1790916393.491955
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.206,
+      "created": 1790917264.4375486
+    },
+    {
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "entry": 0.039803,
+      "created": 1790917264.4375498
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 69.7,
+      "created": 1790917264.4375508
     }
   ],
-  "total": 1030,
-  "hits": 507
+  "total": 1034,
+  "hits": 511
 }
