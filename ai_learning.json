@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.033,
-      "created": 1791007507.5821962
-    },
-    {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4141.3,
-      "created": 1791007507.5821972
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 84615.7,
@@ -78,8 +66,26 @@
       "signal": "LONG",
       "entry": 0.05024,
       "created": 1791020682.2077334
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 68.93,
+      "created": 1791022660.7114792
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2477,
+      "created": 1791022660.7114801
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 4139.1,
+      "created": 1791022660.7114818
     }
   ],
-  "total": 1127,
+  "total": 1129,
   "hits": 545
 }
