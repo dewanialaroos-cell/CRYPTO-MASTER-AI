@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5623,
-      "created": 1791000366.2826138
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 10.933,
@@ -66,8 +60,32 @@
       "signal": "LONG",
       "entry": 84615.7,
       "created": 1791014281.0173142
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.236,
+      "created": 1791015654.8009503
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5601,
+      "created": 1791015654.8009512
+    },
+    {
+      "symbol": "QNT/USDT",
+      "signal": "LONG",
+      "entry": 265.35,
+      "created": 1791015654.8009524
+    },
+    {
+      "symbol": "ZRO/USDT",
+      "signal": "LONG",
+      "entry": 1.773,
+      "created": 1791015654.8009543
     }
   ],
-  "total": 1119,
+  "total": 1120,
   "hits": 544
 }
