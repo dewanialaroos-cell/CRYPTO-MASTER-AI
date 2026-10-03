@@ -8,18 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 69.48,
-      "created": 1790976133.8491683
-    },
-    {
-      "symbol": "NIGHT/USDT",
-      "signal": "LONG",
-      "entry": 0.046725,
-      "created": 1790976133.8491697
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.5519,
@@ -72,8 +60,26 @@
       "signal": "SHORT",
       "entry": 0.03599,
       "created": 1790988609.541352
+    },
+    {
+      "symbol": "SAND/USDT",
+      "signal": "LONG",
+      "entry": 0.0694,
+      "created": 1790991249.0919218
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 70.53,
+      "created": 1790991249.091924
+    },
+    {
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "entry": 0.050534,
+      "created": 1790991249.0919244
     }
   ],
-  "total": 1104,
-  "hits": 539
+  "total": 1106,
+  "hits": 541
 }
