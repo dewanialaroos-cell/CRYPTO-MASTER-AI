@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 84615.7,
-      "created": 1791014281.0173142
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.236,
-      "created": 1791015654.8009503
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5601,
-      "created": 1791015654.8009512
-    },
-    {
       "symbol": "QNT/USDT",
       "signal": "LONG",
       "entry": 265.35,
@@ -30,30 +12,6 @@
       "signal": "LONG",
       "entry": 1.773,
       "created": 1791015654.8009543
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 548.38,
-      "created": 1791017330.7180715
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 181.25,
-      "created": 1791018986.950073
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1618,
-      "created": 1791018986.9500747
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 10.924,
-      "created": 1791018986.9500766
     },
     {
       "symbol": "SAND/USDT",
@@ -84,8 +42,50 @@
       "signal": "SHORT",
       "entry": 4139.1,
       "created": 1791022660.7114818
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.09,
+      "created": 1791034809.935166
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 181.45,
+      "created": 1791034809.9351668
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.6041,
+      "created": 1791034809.9351678
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2075,
+      "created": 1791034809.935168
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07156,
+      "created": 1791034809.9351695
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.14,
+      "created": 1791034809.93517
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84914.6,
+      "created": 1791034809.9351707
     }
   ],
-  "total": 1129,
-  "hits": 545
+  "total": 1136,
+  "hits": 550
 }
