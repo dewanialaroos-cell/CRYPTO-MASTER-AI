@@ -48,6 +48,30 @@
       "signal": "LONG",
       "entry": 1.165,
       "created": 1790986870.6199212
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84650.0,
+      "created": 1790988609.541347
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 10.907,
+      "created": 1790988609.541349
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.005623,
+      "created": 1790988609.541351
+    },
+    {
+      "symbol": "LONGXIA/USDT",
+      "signal": "SHORT",
+      "entry": 0.03599,
+      "created": 1790988609.541352
     }
   ],
   "total": 1104,
