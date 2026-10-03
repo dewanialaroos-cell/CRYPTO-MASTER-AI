@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.229,
-      "created": 1790948877.9321039
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.5519,
