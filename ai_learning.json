@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 84650.0,
-      "created": 1790988609.541347
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 10.907,
-      "created": 1790988609.541349
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.005623,
-      "created": 1790988609.541351
-    },
-    {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.03599,
-      "created": 1790988609.541352
-    },
-    {
       "symbol": "SAND/USDT",
       "signal": "LONG",
       "entry": 0.0694,
@@ -56,6 +32,6 @@
       "created": 1791000366.2826138
     }
   ],
-  "total": 1111,
+  "total": 1115,
   "hits": 542
 }
