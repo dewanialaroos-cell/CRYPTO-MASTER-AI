@@ -8,18 +8,6 @@
       "created": 1790948877.9321039
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 86.617,
-      "created": 1790971077.1866722
-    },
-    {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4145.6,
-      "created": 1790971077.1866734
-    },
-    {
       "symbol": "LTC/USDT",
       "signal": "LONG",
       "entry": 69.48,
@@ -54,8 +42,14 @@
       "signal": "LONG",
       "entry": 2.119,
       "created": 1790985379.4822814
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.165,
+      "created": 1790986870.6199212
     }
   ],
-  "total": 1102,
+  "total": 1104,
   "hits": 539
 }
