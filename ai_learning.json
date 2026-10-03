@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5519,
-      "created": 1790984566.7234538
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 179.81,
-      "created": 1790984566.7234542
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2493,
-      "created": 1790984566.7234545
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "LONG",
-      "entry": 2.119,
-      "created": 1790985379.4822814
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.165,
@@ -78,8 +54,14 @@
       "signal": "LONG",
       "entry": 9.121,
       "created": 1790998720.755783
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5623,
+      "created": 1791000366.2826138
     }
   ],
-  "total": 1106,
-  "hits": 541
+  "total": 1110,
+  "hits": 542
 }
