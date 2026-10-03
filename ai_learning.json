@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.165,
-      "created": 1790986870.6199212
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "LONG",
       "entry": 84650.0,
@@ -62,6 +56,6 @@
       "created": 1791000366.2826138
     }
   ],
-  "total": 1110,
+  "total": 1111,
   "hits": 542
 }
