@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.121,
-      "created": 1790998720.755783
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.5623,
@@ -66,8 +60,14 @@
       "signal": "SHORT",
       "entry": 4141.3,
       "created": 1791007507.5821972
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84615.7,
+      "created": 1791014281.0173142
     }
   ],
-  "total": 1118,
-  "hits": 543
+  "total": 1119,
+  "hits": 544
 }
