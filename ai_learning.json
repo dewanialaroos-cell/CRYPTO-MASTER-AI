@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ZRO/USDT",
-      "signal": "LONG",
-      "entry": 2.0671,
-      "created": 1791052141.4346483
-    },
-    {
       "symbol": "LTC/USDT",
       "signal": "LONG",
       "entry": 70.56,
@@ -66,8 +60,32 @@
       "signal": "LONG",
       "entry": 0.597,
       "created": 1791074568.8935742
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 784.8,
+      "created": 1791086305.6426048
+    },
+    {
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "entry": 0.049072,
+      "created": 1791086305.6426058
+    },
+    {
+      "symbol": "ZRO/USDT",
+      "signal": "LONG",
+      "entry": 2.0184,
+      "created": 1791086305.6426084
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 305.6,
+      "created": 1791086305.642609
     }
   ],
-  "total": 1155,
+  "total": 1156,
   "hits": 559
 }
