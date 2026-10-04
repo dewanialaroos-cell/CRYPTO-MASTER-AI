@@ -96,6 +96,18 @@
       "signal": "LONG",
       "entry": 4.415e-06,
       "created": 1791154582.8633876
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 70.87,
+      "created": 1791155592.360027
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.2155,
+      "created": 1791155592.3600304
     }
   ],
   "total": 1197,
