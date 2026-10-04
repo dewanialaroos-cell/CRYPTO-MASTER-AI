@@ -2,52 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 784.8,
-      "created": 1791086305.6426048
-    },
-    {
       "symbol": "NIGHT/USDT",
       "signal": "LONG",
       "entry": 0.049072,
       "created": 1791086305.6426058
-    },
-    {
-      "symbol": "ZRO/USDT",
-      "signal": "LONG",
-      "entry": 2.0184,
-      "created": 1791086305.6426084
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 305.6,
-      "created": 1791086305.642609
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.006454,
-      "created": 1791093400.5437407
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 70.68,
-      "created": 1791093400.5437424
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 120.87,
-      "created": 1791093400.543743
-    },
-    {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.05376,
-      "created": 1791093400.5437431
     },
     {
       "symbol": "SAND/USDT",
@@ -56,24 +14,66 @@
       "created": 1791093400.5437438
     },
     {
-      "symbol": "XMR/USDT",
+      "symbol": "STRK/USDT",
       "signal": "LONG",
-      "entry": 553.63,
-      "created": 1791093400.5437458
+      "entry": 0.05499,
+      "created": 1791113060.404053
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 70.88,
+      "created": 1791113060.4040542
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.135,
+      "created": 1791113060.404055
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1833,
+      "created": 1791113060.4040556
     },
     {
       "symbol": "SEI/USDT",
       "signal": "LONG",
-      "entry": 0.07237,
-      "created": 1791093400.5437462
+      "entry": 0.07262,
+      "created": 1791113060.4040563
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 121.37,
+      "created": 1791113060.4040568
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 789.1,
+      "created": 1791113060.4040573
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2703.16,
+      "created": 1791113060.4040596
     },
     {
       "symbol": "BTC/USDT",
       "signal": "LONG",
-      "entry": 84914.9,
-      "created": 1791093400.5437467
+      "entry": 85289.7,
+      "created": 1791113060.4040606
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 302.8,
+      "created": 1791113060.4040616
     }
   ],
-  "total": 1166,
-  "hits": 564
+  "total": 1176,
+  "hits": 570
 }
