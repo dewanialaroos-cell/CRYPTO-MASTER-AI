@@ -2,66 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 70.56,
-      "created": 1791074568.8935654
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.0722,
-      "created": 1791074568.893567
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 120.09,
-      "created": 1791074568.8935678
-    },
-    {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.05531,
-      "created": 1791074568.8935683
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.006281,
-      "created": 1791074568.893569
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 182.59,
-      "created": 1791074568.8935695
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.136,
-      "created": 1791074568.89357
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.108,
-      "created": 1791074568.893572
-    },
-    {
-      "symbol": "SAND/USDT",
-      "signal": "LONG",
-      "entry": 0.07374,
-      "created": 1791074568.8935733
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.597,
-      "created": 1791074568.8935742
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "LONG",
       "entry": 784.8,
@@ -84,8 +24,56 @@
       "signal": "LONG",
       "entry": 305.6,
       "created": 1791086305.642609
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.006454,
+      "created": 1791093400.5437407
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 70.68,
+      "created": 1791093400.5437424
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 120.87,
+      "created": 1791093400.543743
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.05376,
+      "created": 1791093400.5437431
+    },
+    {
+      "symbol": "SAND/USDT",
+      "signal": "LONG",
+      "entry": 0.07813,
+      "created": 1791093400.5437438
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 553.63,
+      "created": 1791093400.5437458
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07237,
+      "created": 1791093400.5437462
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84914.9,
+      "created": 1791093400.5437467
     }
   ],
-  "total": 1156,
-  "hits": 559
+  "total": 1166,
+  "hits": 564
 }
