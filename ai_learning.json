@@ -60,6 +60,36 @@
       "signal": "LONG",
       "entry": 2702.01,
       "created": 1791137133.2959962
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2543,
+      "created": 1791148620.7265756
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "LONG",
+      "entry": 121.51,
+      "created": 1791148620.7265768
+    },
+    {
+      "symbol": "FET/USDT",
+      "signal": "LONG",
+      "entry": 0.2531,
+      "created": 1791148620.7265775
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.09675,
+      "created": 1791148620.7265794
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 90.964,
+      "created": 1791148620.7265801
     }
   ],
   "total": 1187,
