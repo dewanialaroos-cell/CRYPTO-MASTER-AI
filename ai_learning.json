@@ -8,18 +8,6 @@
       "created": 1791179991.628175
     },
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.503e-06,
-      "created": 1791187193.3766418
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 92.859,
-      "created": 1791187193.3766432
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.05837,
@@ -120,8 +108,26 @@
       "signal": "LONG",
       "entry": 179.66,
       "created": 1791198967.0595937
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2199,
+      "created": 1791201657.7550278
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.505e-06,
+      "created": 1791201657.755031
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.017,
+      "created": 1791201657.755032
     }
   ],
-  "total": 1244,
-  "hits": 603
+  "total": 1246,
+  "hits": 604
 }
