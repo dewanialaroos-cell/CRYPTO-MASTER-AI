@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2591,
-      "created": 1791198967.0595896
-    },
-    {
       "symbol": "FET/USDT",
       "signal": "LONG",
       "entry": 0.2507,
