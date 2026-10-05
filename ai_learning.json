@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.45e-06,
-      "created": 1791170296.275358
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 86474.7,
-      "created": 1791170296.2753608
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.238,
-      "created": 1791170296.2753615
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.2242,
@@ -108,8 +90,14 @@
       "signal": "LONG",
       "entry": 303.4,
       "created": 1791183998.053505
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.241,
+      "created": 1791185768.6586764
     }
   ],
-  "total": 1226,
-  "hits": 591
+  "total": 1229,
+  "hits": 593
 }
