@@ -96,6 +96,30 @@
       "signal": "LONG",
       "entry": 0.006512,
       "created": 1791236217.7033741
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 129.0,
+      "created": 1791237516.9321897
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2718.36,
+      "created": 1791237516.9321907
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 306.9,
+      "created": 1791237516.9321928
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5803,
+      "created": 1791237516.9321935
     }
   ],
   "total": 1283,
