@@ -8,18 +8,6 @@
       "created": 1791179991.628175
     },
     {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.215,
-      "created": 1791183998.053501
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 303.4,
-      "created": 1791183998.053505
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "LONG",
       "entry": 1.241,
@@ -108,8 +96,38 @@
       "signal": "LONG",
       "entry": 7.552,
       "created": 1791197293.5022385
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.2611,
+      "created": 1791198967.0595882
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2591,
+      "created": 1791198967.0595896
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.168,
+      "created": 1791198967.0595906
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 304.7,
+      "created": 1791198967.0595915
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 179.66,
+      "created": 1791198967.0595937
     }
   ],
-  "total": 1241,
-  "hits": 602
+  "total": 1243,
+  "hits": 603
 }
