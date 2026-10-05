@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.415e-06,
-      "created": 1791154582.8633876
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 70.87,
-      "created": 1791155592.360027
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.2155,
-      "created": 1791155592.3600304
-    },
-    {
       "symbol": "UNI/USDT",
       "signal": "LONG",
       "entry": 9.121,
@@ -84,8 +66,26 @@
       "signal": "LONG",
       "entry": 0.2702,
       "created": 1791168444.0017292
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.45e-06,
+      "created": 1791170296.275358
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 86474.7,
+      "created": 1791170296.2753608
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.238,
+      "created": 1791170296.2753615
     }
   ],
-  "total": 1212,
-  "hits": 586
+  "total": 1215,
+  "hits": 588
 }
