@@ -2,42 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09616,
-      "created": 1791165682.4949267
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07383,
-      "created": 1791167017.3268723
-    },
-    {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.49,
-      "created": 1791167017.3268738
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.195,
-      "created": 1791167017.3268754
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 304.9,
-      "created": 1791167017.326877
-    },
-    {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.05892,
-      "created": 1791167017.326878
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "LONG",
       "entry": 0.2702,
@@ -108,8 +72,38 @@
       "signal": "LONG",
       "entry": 792.1,
       "created": 1791179991.628175
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.52,
+      "created": 1791181921.547412
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07428,
+      "created": 1791181921.5474133
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.09573,
+      "created": 1791181921.547414
+    },
+    {
+      "symbol": "WIF/USDT",
+      "signal": "LONG",
+      "entry": 0.2522,
+      "created": 1791181921.5474162
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "LONG",
+      "entry": 1.5123,
+      "created": 1791181921.5474174
     }
   ],
-  "total": 1219,
-  "hits": 588
+  "total": 1225,
+  "hits": 590
 }
