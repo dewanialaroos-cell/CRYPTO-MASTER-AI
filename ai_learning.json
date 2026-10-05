@@ -8,12 +8,6 @@
       "created": 1791198967.0595896
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 93.238,
-      "created": 1791210030.0737357
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.552,
@@ -78,8 +72,20 @@
       "signal": "LONG",
       "entry": 0.20596,
       "created": 1791223174.8350353
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 93.488,
+      "created": 1791224755.8040047
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2048,
+      "created": 1791224755.804007
     }
   ],
-  "total": 1274,
-  "hits": 609
+  "total": 1275,
+  "hits": 610
 }
