@@ -8,12 +8,6 @@
       "created": 1791198967.0595896
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2716.78,
-      "created": 1791203303.7391355
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "LONG",
       "entry": 0.2719,
@@ -96,8 +90,14 @@
       "signal": "SHORT",
       "entry": 1302.09,
       "created": 1791215351.8671875
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.02,
+      "created": 1791218939.5770996
     }
   ],
-  "total": 1266,
+  "total": 1267,
   "hits": 608
 }
