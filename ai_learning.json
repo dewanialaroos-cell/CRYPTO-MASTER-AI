@@ -8,12 +8,6 @@
       "created": 1791198967.0595896
     },
     {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2719,
-      "created": 1791204993.1481247
-    },
-    {
       "symbol": "OKB/USDT",
       "signal": "LONG",
       "entry": 127.36,
@@ -98,6 +92,6 @@
       "created": 1791218939.5770996
     }
   ],
-  "total": 1267,
+  "total": 1268,
   "hits": 608
 }
