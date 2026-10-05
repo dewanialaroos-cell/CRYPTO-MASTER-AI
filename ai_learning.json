@@ -102,6 +102,12 @@
       "signal": "LONG",
       "entry": 0.2561,
       "created": 1791178592.605687
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 792.1,
+      "created": 1791179991.628175
     }
   ],
   "total": 1219,
