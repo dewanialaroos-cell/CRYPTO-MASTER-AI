@@ -8,12 +8,6 @@
       "created": 1791190148.776926
     },
     {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 126.02,
-      "created": 1791191936.4355133
-    },
-    {
       "symbol": "FET/USDT",
       "signal": "LONG",
       "entry": 0.2662,
@@ -114,8 +108,20 @@
       "signal": "LONG",
       "entry": 0.2719,
       "created": 1791204993.1481247
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 127.36,
+      "created": 1791206493.2144601
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.2242,
+      "created": 1791206493.214464
     }
   ],
-  "total": 1250,
-  "hits": 605
+  "total": 1251,
+  "hits": 606
 }
