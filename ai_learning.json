@@ -2,42 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5792,
-      "created": 1791190148.776926
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.006469,
-      "created": 1791197293.5022357
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07428,
-      "created": 1791197293.5022364
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5191,
-      "created": 1791197293.5022366
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09633,
-      "created": 1791197293.502237
-    },
-    {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.552,
-      "created": 1791197293.5022385
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.2611,
@@ -138,8 +102,26 @@
       "signal": "LONG",
       "entry": 93.238,
       "created": 1791210030.0737357
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.552,
+      "created": 1791211802.6979656
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 554.65,
+      "created": 1791211802.6979666
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.006422,
+      "created": 1791211802.697967
     }
   ],
-  "total": 1253,
+  "total": 1259,
   "hits": 607
 }
