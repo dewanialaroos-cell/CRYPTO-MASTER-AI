@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FET/USDT",
-      "signal": "LONG",
-      "entry": 0.2561,
-      "created": 1791178592.605687
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "LONG",
       "entry": 792.1,
@@ -102,8 +96,20 @@
       "signal": "LONG",
       "entry": 126.02,
       "created": 1791191936.4355133
+    },
+    {
+      "symbol": "FET/USDT",
+      "signal": "LONG",
+      "entry": 0.2662,
+      "created": 1791193745.3891034
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 70.37,
+      "created": 1791193745.3891068
     }
   ],
-  "total": 1235,
-  "hits": 597
+  "total": 1236,
+  "hits": 598
 }
