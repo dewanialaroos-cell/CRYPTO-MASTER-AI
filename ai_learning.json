@@ -108,6 +108,12 @@
       "signal": "LONG",
       "entry": 0.24837,
       "created": 1791213554.3273742
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1302.09,
+      "created": 1791215351.8671875
     }
   ],
   "total": 1263,
