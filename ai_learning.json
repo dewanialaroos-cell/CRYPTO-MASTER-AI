@@ -8,18 +8,6 @@
       "created": 1791190148.776926
     },
     {
-      "symbol": "FET/USDT",
-      "signal": "LONG",
-      "entry": 0.2662,
-      "created": 1791193745.3891034
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 70.37,
-      "created": 1791193745.3891068
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.006469,
@@ -120,8 +108,32 @@
       "signal": "LONG",
       "entry": 1.2242,
       "created": 1791206493.214464
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 71.06,
+      "created": 1791208185.9222202
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 86309.7,
+      "created": 1791208185.922222
+    },
+    {
+      "symbol": "FET/USDT",
+      "signal": "LONG",
+      "entry": 0.2575,
+      "created": 1791208185.922226
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 791.1,
+      "created": 1791208185.922227
     }
   ],
-  "total": 1251,
-  "hits": 606
+  "total": 1253,
+  "hits": 607
 }
