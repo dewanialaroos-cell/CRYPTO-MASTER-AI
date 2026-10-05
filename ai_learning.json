@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2702,
-      "created": 1791168444.0017292
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
       "entry": 4.45e-06,
@@ -102,8 +96,20 @@
       "signal": "LONG",
       "entry": 1.5123,
       "created": 1791181921.5474174
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.215,
+      "created": 1791183998.053501
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 303.4,
+      "created": 1791183998.053505
     }
   ],
-  "total": 1225,
-  "hits": 590
+  "total": 1226,
+  "hits": 591
 }
