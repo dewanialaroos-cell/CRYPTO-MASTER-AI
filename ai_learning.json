@@ -8,12 +8,6 @@
       "created": 1791179991.628175
     },
     {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.241,
-      "created": 1791185768.6586764
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
       "entry": 4.503e-06,
@@ -128,6 +122,6 @@
       "created": 1791198967.0595937
     }
   ],
-  "total": 1243,
+  "total": 1244,
   "hits": 603
 }
