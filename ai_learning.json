@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WIF/USDT",
-      "signal": "LONG",
-      "entry": 0.2538,
-      "created": 1791163024.1318092
-    },
-    {
-      "symbol": "FET/USDT",
-      "signal": "LONG",
-      "entry": 0.2587,
-      "created": 1791163024.1318111
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "LONG",
       "entry": 0.09616,
@@ -108,8 +96,14 @@
       "signal": "LONG",
       "entry": 4.988,
       "created": 1791176855.8436217
+    },
+    {
+      "symbol": "FET/USDT",
+      "signal": "LONG",
+      "entry": 0.2561,
+      "created": 1791178592.605687
     }
   ],
-  "total": 1217,
+  "total": 1219,
   "hits": 588
 }
