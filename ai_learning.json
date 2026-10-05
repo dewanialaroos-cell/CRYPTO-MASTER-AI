@@ -108,6 +108,18 @@
       "signal": "LONG",
       "entry": 1.2155,
       "created": 1791155592.3600304
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 9.121,
+      "created": 1791161678.4659138
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 796.05,
+      "created": 1791161678.4659162
     }
   ],
   "total": 1197,
