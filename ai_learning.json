@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2593,
-      "created": 1791153211.536683
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.006508,
-      "created": 1791153211.5366871
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
       "entry": 4.415e-06,
@@ -90,8 +78,14 @@
       "signal": "LONG",
       "entry": 0.05892,
       "created": 1791167017.326878
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.2702,
+      "created": 1791168444.0017292
     }
   ],
-  "total": 1210,
-  "hits": 585
+  "total": 1212,
+  "hits": 586
 }
