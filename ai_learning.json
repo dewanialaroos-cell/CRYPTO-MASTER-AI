@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "UNI/USDT",
-      "signal": "LONG",
-      "entry": 9.121,
-      "created": 1791161678.4659138
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 796.05,
-      "created": 1791161678.4659162
-    },
-    {
       "symbol": "WIF/USDT",
       "signal": "LONG",
       "entry": 0.2538,
@@ -102,8 +90,26 @@
       "signal": "LONG",
       "entry": 70.23,
       "created": 1791173890.2163572
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 124.65,
+      "created": 1791176855.8436172
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.006463,
+      "created": 1791176855.8436189
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 4.988,
+      "created": 1791176855.8436217
     }
   ],
-  "total": 1215,
+  "total": 1217,
   "hits": 588
 }
