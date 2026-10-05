@@ -8,24 +8,6 @@
       "created": 1791198967.0595896
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2199,
-      "created": 1791201657.7550278
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.505e-06,
-      "created": 1791201657.755031
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.017,
-      "created": 1791201657.755032
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "LONG",
       "entry": 2716.78,
@@ -116,6 +98,6 @@
       "created": 1791215351.8671875
     }
   ],
-  "total": 1263,
+  "total": 1266,
   "hits": 608
 }
