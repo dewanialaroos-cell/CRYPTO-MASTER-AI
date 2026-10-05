@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 124.65,
-      "created": 1791176855.8436172
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.006463,
-      "created": 1791176855.8436189
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 4.988,
-      "created": 1791176855.8436217
-    },
-    {
       "symbol": "FET/USDT",
       "signal": "LONG",
       "entry": 0.2561,
@@ -114,8 +96,14 @@
       "signal": "LONG",
       "entry": 0.5792,
       "created": 1791190148.776926
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 126.02,
+      "created": 1791191936.4355133
     }
   ],
-  "total": 1232,
-  "hits": 595
+  "total": 1235,
+  "hits": 597
 }
