@@ -102,6 +102,12 @@
       "signal": "LONG",
       "entry": 0.2587,
       "created": 1791163024.1318111
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.09616,
+      "created": 1791165682.4949267
     }
   ],
   "total": 1202,
