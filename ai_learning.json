@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 792.1,
-      "created": 1791179991.628175
-    },
-    {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.05837,
-      "created": 1791188687.2593882
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 86389.8,
-      "created": 1791188687.2593896
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "LONG",
       "entry": 0.2711,
@@ -126,8 +108,14 @@
       "signal": "LONG",
       "entry": 5.017,
       "created": 1791201657.755032
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "LONG",
+      "entry": 2716.78,
+      "created": 1791203303.7391355
     }
   ],
-  "total": 1246,
+  "total": 1249,
   "hits": 604
 }
