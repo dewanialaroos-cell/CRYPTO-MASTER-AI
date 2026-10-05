@@ -132,6 +132,12 @@
       "signal": "LONG",
       "entry": 791.1,
       "created": 1791208185.922227
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 93.238,
+      "created": 1791210030.0737357
     }
   ],
   "total": 1253,
