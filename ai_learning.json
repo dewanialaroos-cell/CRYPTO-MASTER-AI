@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 70.23,
-      "created": 1791173890.2163572
-    },
-    {
       "symbol": "OKB/USDT",
       "signal": "LONG",
       "entry": 124.65,
@@ -96,8 +90,20 @@
       "signal": "LONG",
       "entry": 92.859,
       "created": 1791187193.3766432
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.05837,
+      "created": 1791188687.2593882
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 86389.8,
+      "created": 1791188687.2593896
     }
   ],
-  "total": 1231,
+  "total": 1232,
   "hits": 595
 }
