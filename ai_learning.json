@@ -2,42 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.598,
-      "created": 1791271032.508921
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 306.4,
-      "created": 1791299849.2198455
-    },
-    {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 135.48,
-      "created": 1791299849.2198467
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 93.094,
-      "created": 1791299849.2198474
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07371,
-      "created": 1791299849.2198482
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "LONG",
-      "entry": 14.106,
-      "created": 1791299849.21985
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.568,
@@ -120,8 +84,20 @@
       "signal": "LONG",
       "entry": 1.5058,
       "created": 1791312636.4976902
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 136.59,
+      "created": 1791315295.2062433
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 303.0,
+      "created": 1791315295.2062454
     }
   ],
-  "total": 1360,
-  "hits": 643
+  "total": 1365,
+  "hits": 644
 }
