@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1872,
-      "created": 1791266291.3462362
-    },
-    {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.269,
-      "created": 1791266291.3462393
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.205,
-      "created": 1791266291.3462412
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.0734,
-      "created": 1791266291.346242
-    },
-    {
       "symbol": "OKB/USDT",
       "signal": "LONG",
       "entry": 130.33,
@@ -96,8 +72,38 @@
       "signal": "LONG",
       "entry": 180.27,
       "created": 1791280110.67629
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07399,
+      "created": 1791281754.0388103
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.1769,
+      "created": 1791281754.038812
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 305.3,
+      "created": 1791281754.0388124
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.269,
+      "created": 1791281754.038815
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.2787,
+      "created": 1791281754.0388157
     }
   ],
-  "total": 1325,
-  "hits": 630
+  "total": 1329,
+  "hits": 633
 }
