@@ -8,42 +8,6 @@
       "created": 1791223174.8350346
     },
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1913,
-      "created": 1791236217.7033703
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 184.44,
-      "created": 1791236217.703371
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.287,
-      "created": 1791236217.7033715
-    },
-    {
-      "symbol": "ADA/USDT",
-      "signal": "LONG",
-      "entry": 0.2699,
-      "created": 1791236217.7033722
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07444,
-      "created": 1791236217.7033732
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.006512,
-      "created": 1791236217.7033741
-    },
-    {
       "symbol": "OKB/USDT",
       "signal": "LONG",
       "entry": 129.0,
@@ -126,8 +90,44 @@
       "signal": "LONG",
       "entry": 0.25128,
       "created": 1791246261.8566039
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07456,
+      "created": 1791251806.3519688
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.006405,
+      "created": 1791251806.35197
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.328,
+      "created": 1791251806.351971
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 182.97,
+      "created": 1791251806.3519714
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.1554,
+      "created": 1791251806.3519733
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.2679,
+      "created": 1791251806.3519742
     }
   ],
-  "total": 1291,
-  "hits": 621
+  "total": 1297,
+  "hits": 623
 }
