@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FET/USDT",
-      "signal": "LONG",
-      "entry": 0.2507,
-      "created": 1791223174.8350346
-    },
-    {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 133.37,
-      "created": 1791253003.837465
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "LONG",
       "entry": 93.887,
@@ -78,8 +66,14 @@
       "signal": "LONG",
       "entry": 0.0734,
       "created": 1791266291.346242
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 130.33,
+      "created": 1791267904.0543826
     }
   ],
-  "total": 1317,
+  "total": 1318,
   "hits": 627
 }
