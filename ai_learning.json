@@ -120,6 +120,12 @@
       "signal": "LONG",
       "entry": 1.5101,
       "created": 1791241140.9475007
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.25128,
+      "created": 1791246261.8566039
     }
   ],
   "total": 1291,
