@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 3.7207,
-      "created": 1791306873.5510266
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
       "entry": 559.42,
@@ -122,6 +116,6 @@
       "created": 1791319621.6824265
     }
   ],
-  "total": 1367,
+  "total": 1368,
   "hits": 644
 }
