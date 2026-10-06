@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.598,
-      "created": 1791256547.6372116
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.141,
-      "created": 1791256547.6372132
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2203,
-      "created": 1791256547.637214
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 563.04,
-      "created": 1791256547.6372144
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "LONG",
       "entry": 2704.3,
@@ -72,8 +48,26 @@
       "signal": "LONG",
       "entry": 93.169,
       "created": 1791269546.838958
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.598,
+      "created": 1791271032.508921
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 560.73,
+      "created": 1791271032.508922
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.247,
+      "created": 1791271032.508924
     }
   ],
-  "total": 1319,
-  "hits": 627
+  "total": 1323,
+  "hits": 628
 }
