@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 93.887,
-      "created": 1791254823.2004695
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.598,
@@ -72,8 +66,14 @@
       "signal": "LONG",
       "entry": 130.33,
       "created": 1791267904.0543826
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 93.169,
+      "created": 1791269546.838958
     }
   ],
-  "total": 1318,
+  "total": 1319,
   "hits": 627
 }
