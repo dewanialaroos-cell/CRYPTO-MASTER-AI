@@ -8,30 +8,6 @@
       "created": 1791223174.8350346
     },
     {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.595,
-      "created": 1791241140.9474957
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 560.92,
-      "created": 1791241140.9474974
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 85936.2,
-      "created": 1791241140.9474988
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5101,
-      "created": 1791241140.9475007
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.25128,
@@ -84,8 +60,32 @@
       "signal": "LONG",
       "entry": 93.887,
       "created": 1791254823.2004695
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.598,
+      "created": 1791256547.6372116
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.141,
+      "created": 1791256547.6372132
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2203,
+      "created": 1791256547.637214
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 563.04,
+      "created": 1791256547.6372144
     }
   ],
-  "total": 1306,
-  "hits": 624
+  "total": 1310,
+  "hits": 625
 }
