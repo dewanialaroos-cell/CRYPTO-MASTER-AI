@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 559.42,
-      "created": 1791308047.924736
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 85601.0,
-      "created": 1791308047.9247372
-    },
-    {
       "symbol": "SOL/USDT",
       "signal": "LONG",
       "entry": 120.8,
@@ -116,6 +104,6 @@
       "created": 1791319621.6824265
     }
   ],
-  "total": 1368,
+  "total": 1370,
   "hits": 644
 }
