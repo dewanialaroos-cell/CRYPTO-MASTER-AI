@@ -78,6 +78,18 @@
       "signal": "LONG",
       "entry": 86006.7,
       "created": 1791276485.912711
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 70.01,
+      "created": 1791278231.8992002
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.09519,
+      "created": 1791278231.8992019
     }
   ],
   "total": 1325,
