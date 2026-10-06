@@ -8,18 +8,6 @@
       "created": 1791271032.508921
     },
     {
-      "symbol": "LTC/USDT",
-      "signal": "LONG",
-      "entry": 70.01,
-      "created": 1791278231.8992002
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "LONG",
-      "entry": 0.09519,
-      "created": 1791278231.8992019
-    },
-    {
       "symbol": "AAVE/USDT",
       "signal": "LONG",
       "entry": 180.27,
@@ -102,8 +90,14 @@
       "signal": "LONG",
       "entry": 86180.6,
       "created": 1791291051.919998
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "LONG",
+      "entry": 0.0954,
+      "created": 1791292686.7284834
     }
   ],
-  "total": 1337,
-  "hits": 638
+  "total": 1339,
+  "hits": 639
 }
