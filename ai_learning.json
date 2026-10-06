@@ -8,30 +8,6 @@
       "created": 1791223174.8350346
     },
     {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 129.0,
-      "created": 1791237516.9321897
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "LONG",
-      "entry": 2718.36,
-      "created": 1791237516.9321907
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 306.9,
-      "created": 1791237516.9321928
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5803,
-      "created": 1791237516.9321935
-    },
-    {
       "symbol": "SOL/USDT",
       "signal": "LONG",
       "entry": 121.52,
@@ -126,8 +102,14 @@
       "signal": "LONG",
       "entry": 0.2679,
       "created": 1791251806.3519742
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 133.37,
+      "created": 1791253003.837465
     }
   ],
-  "total": 1297,
-  "hits": 623
+  "total": 1301,
+  "hits": 624
 }
