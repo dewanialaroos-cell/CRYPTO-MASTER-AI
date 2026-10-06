@@ -20,18 +20,6 @@
       "created": 1791312636.4976895
     },
     {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 136.59,
-      "created": 1791315295.2062433
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 303.0,
-      "created": 1791315295.2062454
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.476,
@@ -90,8 +78,20 @@
       "signal": "LONG",
       "entry": 180.52,
       "created": 1791328515.3738034
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 308.8,
+      "created": 1791331006.0495522
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 136.21,
+      "created": 1791331006.0495536
     }
   ],
-  "total": 1376,
-  "hits": 645
+  "total": 1378,
+  "hits": 646
 }
