@@ -8,18 +8,6 @@
       "created": 1791271032.508921
     },
     {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 561.36,
-      "created": 1791291051.9199967
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 86180.6,
-      "created": 1791291051.919998
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "LONG",
       "entry": 0.0954,
@@ -102,8 +90,14 @@
       "signal": "LONG",
       "entry": 5.135,
       "created": 1791301625.738008
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.7207,
+      "created": 1791306873.5510266
     }
   ],
-  "total": 1351,
+  "total": 1353,
   "hits": 643
 }
