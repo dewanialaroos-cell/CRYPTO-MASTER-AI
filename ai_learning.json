@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2151,
-      "created": 1791309474.5646245
-    },
-    {
       "symbol": "RLC/USDT",
       "signal": "LONG",
       "entry": 0.7797,
@@ -20,22 +14,10 @@
       "created": 1791310888.1308825
     },
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1611,
-      "created": 1791312636.4976885
-    },
-    {
       "symbol": "ARB/USDT",
       "signal": "LONG",
       "entry": 0.20534,
       "created": 1791312636.4976895
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "LONG",
-      "entry": 1.5058,
-      "created": 1791312636.4976902
     },
     {
       "symbol": "OKB/USDT",
@@ -98,6 +80,6 @@
       "created": 1791326113.3202102
     }
   ],
-  "total": 1373,
+  "total": 1376,
   "hits": 645
 }
