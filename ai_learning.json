@@ -108,6 +108,12 @@
       "signal": "LONG",
       "entry": 5.088,
       "created": 1791316632.450971
+    },
+    {
+      "symbol": "LYN/USDT",
+      "signal": "SHORT",
+      "entry": 0.0196,
+      "created": 1791317827.3760848
     }
   ],
   "total": 1367,
