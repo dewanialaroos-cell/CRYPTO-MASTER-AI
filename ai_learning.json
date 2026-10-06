@@ -8,12 +8,6 @@
       "created": 1791271032.508921
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 93.34,
-      "created": 1791284360.66754
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.373,
@@ -90,8 +84,38 @@
       "signal": "LONG",
       "entry": 1.1605,
       "created": 1791298065.7419443
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 306.4,
+      "created": 1791299849.2198455
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 135.48,
+      "created": 1791299849.2198467
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 93.094,
+      "created": 1791299849.2198474
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07371,
+      "created": 1791299849.2198482
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 14.106,
+      "created": 1791299849.21985
     }
   ],
-  "total": 1346,
+  "total": 1347,
   "hits": 641
 }
