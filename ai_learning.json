@@ -32,24 +32,6 @@
       "created": 1791341943.1804774
     },
     {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.766,
-      "created": 1791353956.0148132
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.121,
-      "created": 1791353956.0148144
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1316.17,
-      "created": 1791353956.0148158
-    },
-    {
       "symbol": "LIT/USDT",
       "signal": "SHORT",
       "entry": 3.659,
@@ -84,8 +66,26 @@
       "signal": "LONG",
       "entry": 0.006449,
       "created": 1791366518.8971775
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.595,
+      "created": 1791370044.1165447
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1308.46,
+      "created": 1791370044.1165457
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2576.59,
+      "created": 1791370044.1165462
     }
   ],
-  "total": 1410,
-  "hits": 652
+  "total": 1413,
+  "hits": 653
 }
