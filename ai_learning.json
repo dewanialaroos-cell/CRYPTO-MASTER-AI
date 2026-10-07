@@ -32,12 +32,6 @@
       "created": 1791341943.1804774
     },
     {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 3.659,
-      "created": 1791355954.8058786
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "SHORT",
       "entry": 1.4676,
@@ -78,8 +72,14 @@
       "signal": "SHORT",
       "entry": 2576.59,
       "created": 1791370044.1165462
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.582,
+      "created": 1791374343.6963205
     }
   ],
-  "total": 1414,
-  "hits": 653
+  "total": 1415,
+  "hits": 654
 }
