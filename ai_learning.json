@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.4428,
-      "created": 1791376115.013587
-    },
-    {
       "symbol": "XAUT/USDT",
       "signal": "SHORT",
       "entry": 4090.2,
@@ -80,6 +74,6 @@
       "created": 1791388374.237783
     }
   ],
-  "total": 1424,
-  "hits": 660
+  "total": 1425,
+  "hits": 661
 }
