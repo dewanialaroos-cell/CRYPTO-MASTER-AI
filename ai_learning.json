@@ -20,12 +20,6 @@
       "created": 1791339443.03448
     },
     {
-      "symbol": "ARB/USDT",
-      "signal": "SHORT",
-      "entry": 0.18525,
-      "created": 1791341943.1804774
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.006449,
@@ -72,8 +66,38 @@
       "signal": "LONG",
       "entry": 5.128,
       "created": 1791377807.4684777
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 82890.0,
+      "created": 1791380902.722621
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.0958,
+      "created": 1791380902.7226222
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "SHORT",
+      "entry": 287.2,
+      "created": 1791380902.7226233
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 4.019e-06,
+      "created": 1791380902.7226253
+    },
+    {
+      "symbol": "LONGXIA/USDT",
+      "signal": "SHORT",
+      "entry": 0.04159,
+      "created": 1791380902.722626
     }
   ],
-  "total": 1418,
-  "hits": 656
+  "total": 1419,
+  "hits": 657
 }
