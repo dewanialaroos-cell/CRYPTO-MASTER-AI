@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 308.8,
-      "created": 1791331006.0495522
-    },
-    {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 136.21,
-      "created": 1791331006.0495536
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.571,
@@ -128,6 +116,6 @@
       "created": 1791341943.1804774
     }
   ],
-  "total": 1391,
+  "total": 1393,
   "hits": 649
 }
