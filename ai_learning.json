@@ -26,30 +26,6 @@
       "created": 1791339443.03448
     },
     {
-      "symbol": "LINK/USDT",
-      "signal": "SHORT",
-      "entry": 13.553,
-      "created": 1791340677.5608923
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2617.91,
-      "created": 1791340677.5608933
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "SHORT",
-      "entry": 1.889,
-      "created": 1791340677.560894
-    },
-    {
-      "symbol": "LONGXIA/USDT",
-      "signal": "LONG",
-      "entry": 0.07323,
-      "created": 1791340677.5608945
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
       "entry": 561.14,
@@ -96,8 +72,14 @@
       "signal": "SHORT",
       "entry": 1316.17,
       "created": 1791353956.0148158
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.659,
+      "created": 1791355954.8058786
     }
   ],
-  "total": 1402,
+  "total": 1406,
   "hits": 650
 }
