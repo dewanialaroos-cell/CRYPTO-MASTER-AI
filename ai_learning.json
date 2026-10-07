@@ -8,12 +8,6 @@
       "created": 1791332731.2256641
     },
     {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 8.327,
-      "created": 1791337611.151303
-    },
-    {
       "symbol": "NMR/USDT",
       "signal": "LONG",
       "entry": 17.56,
@@ -102,8 +96,20 @@
       "signal": "LONG",
       "entry": 134.15,
       "created": 1791350211.6559532
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.006432,
+      "created": 1791352025.9658916
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.193,
+      "created": 1791352025.9658937
     }
   ],
-  "total": 1396,
-  "hits": 649
+  "total": 1397,
+  "hits": 650
 }
