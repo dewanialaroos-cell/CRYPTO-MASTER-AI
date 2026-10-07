@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4090.2,
-      "created": 1791377807.4684765
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.128,
-      "created": 1791377807.4684777
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "SHORT",
       "entry": 82890.0,
@@ -72,8 +60,20 @@
       "signal": "LONG",
       "entry": 11.227,
       "created": 1791388374.237783
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.134,
+      "created": 1791393734.1190321
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.527,
+      "created": 1791393734.119033
     }
   ],
-  "total": 1425,
-  "hits": 661
+  "total": 1427,
+  "hits": 662
 }
