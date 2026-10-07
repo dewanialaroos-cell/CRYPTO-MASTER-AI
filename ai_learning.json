@@ -14,40 +14,10 @@
       "created": 1791339443.0344748
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1309.31,
-      "created": 1791339443.0344756
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.09003,
-      "created": 1791339443.0344763
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.4589,
-      "created": 1791339443.0344768
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "SHORT",
-      "entry": 4.11e-06,
-      "created": 1791339443.0344772
-    },
-    {
       "symbol": "ORCA/USDT",
       "signal": "LONG",
       "entry": 3.003,
       "created": 1791339443.0344775
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "SHORT",
-      "entry": 0.2265,
-      "created": 1791339443.0344782
     },
     {
       "symbol": "USD1/USDT",
@@ -108,8 +78,26 @@
       "signal": "LONG",
       "entry": 11.193,
       "created": 1791352025.9658937
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.766,
+      "created": 1791353956.0148132
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.121,
+      "created": 1791353956.0148144
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1316.17,
+      "created": 1791353956.0148158
     }
   ],
-  "total": 1397,
+  "total": 1402,
   "hits": 650
 }
