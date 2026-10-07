@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 130.25,
-      "created": 1791386880.3182917
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1316.77,
-      "created": 1791386880.3182936
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.227,
@@ -60,8 +48,32 @@
       "signal": "SHORT",
       "entry": 4109.2,
       "created": 1791400618.1879883
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.00644,
+      "created": 1791402335.3435256
+    },
+    {
+      "symbol": "SAND/USDT",
+      "signal": "LONG",
+      "entry": 0.07853,
+      "created": 1791402335.343527
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.628,
+      "created": 1791402335.3435283
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 132.01,
+      "created": 1791402335.34353
     }
   ],
-  "total": 1434,
-  "hits": 663
+  "total": 1436,
+  "hits": 664
 }
