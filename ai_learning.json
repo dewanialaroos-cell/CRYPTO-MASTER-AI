@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NMR/USDT",
-      "signal": "LONG",
-      "entry": 17.56,
-      "created": 1791339443.0344748
-    },
-    {
-      "symbol": "ORCA/USDT",
-      "signal": "LONG",
-      "entry": 3.003,
-      "created": 1791339443.0344775
-    },
-    {
-      "symbol": "USD1/USDT",
-      "signal": "SHORT",
-      "entry": 0.99968,
-      "created": 1791339443.03448
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.006449,
-      "created": 1791366518.8971775
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.595,
@@ -98,6 +74,6 @@
       "created": 1791380902.722626
     }
   ],
-  "total": 1419,
+  "total": 1420,
   "hits": 657
 }
