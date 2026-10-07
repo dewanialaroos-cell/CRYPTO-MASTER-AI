@@ -38,12 +38,6 @@
       "created": 1791355954.8058786
     },
     {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 571.05,
-      "created": 1791357467.443473
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "SHORT",
       "entry": 1.4676,
@@ -86,6 +80,6 @@
       "created": 1791370044.1165462
     }
   ],
-  "total": 1413,
+  "total": 1414,
   "hits": 653
 }
