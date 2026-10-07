@@ -84,6 +84,12 @@
       "signal": "SHORT",
       "entry": 1.4676,
       "created": 1791361069.6904185
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "entry": 1.885,
+      "created": 1791362903.8959014
     }
   ],
   "total": 1407,
