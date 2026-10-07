@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.4163,
-      "created": 1791395233.0164914
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2546.06,
-      "created": 1791395233.016494
-    },
-    {
       "symbol": "UNI/USDT",
       "signal": "SHORT",
       "entry": 7.75,
@@ -72,8 +60,56 @@
       "signal": "LONG",
       "entry": 5.282,
       "created": 1791409031.4904623
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1312.67,
+      "created": 1791410329.403659
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.5799,
+      "created": 1791410329.4036605
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.2242,
+      "created": 1791410329.4036613
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 83146.2,
+      "created": 1791410329.403662
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08845,
+      "created": 1791410329.403663
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 115.43,
+      "created": 1791410329.4036648
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.4131,
+      "created": 1791410329.4036658
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 4.061e-06,
+      "created": 1791410329.4036667
     }
   ],
-  "total": 1439,
-  "hits": 665
+  "total": 1441,
+  "hits": 666
 }
