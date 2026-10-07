@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "RAY/USDT",
-      "signal": "LONG",
-      "entry": 2.4157,
-      "created": 1791400618.1879866
-    },
-    {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4109.2,
-      "created": 1791400618.1879883
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.00644,
@@ -114,8 +102,14 @@
       "signal": "SHORT",
       "entry": 118.7,
       "created": 1791414074.432352
+    },
+    {
+      "symbol": "RAY/USDT",
+      "signal": "LONG",
+      "entry": 2.4795,
+      "created": 1791415146.8307579
     }
   ],
-  "total": 1442,
-  "hits": 666
+  "total": 1444,
+  "hits": 667
 }
