@@ -2,36 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 82890.0,
-      "created": 1791380902.722621
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "SHORT",
-      "entry": 1.0958,
-      "created": 1791380902.7226222
-    },
-    {
-      "symbol": "TAO/USDT",
-      "signal": "SHORT",
-      "entry": 287.2,
-      "created": 1791380902.7226233
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "SHORT",
-      "entry": 4.019e-06,
-      "created": 1791380902.7226253
-    },
-    {
-      "symbol": "LONGXIA/USDT",
-      "signal": "SHORT",
-      "entry": 0.04159,
-      "created": 1791380902.722626
-    },
-    {
       "symbol": "UNI/USDT",
       "signal": "SHORT",
       "entry": 7.848,
@@ -86,6 +56,6 @@
       "created": 1791395233.016494
     }
   ],
-  "total": 1427,
+  "total": 1432,
   "hits": 662
 }
