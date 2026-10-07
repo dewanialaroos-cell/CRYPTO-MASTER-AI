@@ -20,34 +20,10 @@
       "created": 1791312636.4976895
     },
     {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.476,
-      "created": 1791316632.4509661
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.006339,
       "created": 1791316632.4509685
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 91.975,
-      "created": 1791316632.4509702
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.088,
-      "created": 1791316632.450971
-    },
-    {
-      "symbol": "LYN/USDT",
-      "signal": "SHORT",
-      "entry": 0.0196,
-      "created": 1791317827.3760848
     },
     {
       "symbol": "ADA/USDT",
@@ -90,8 +66,20 @@
       "signal": "LONG",
       "entry": 136.21,
       "created": 1791331006.0495536
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.571,
+      "created": 1791332731.225663
+    },
+    {
+      "symbol": "LYN/USDT",
+      "signal": "SHORT",
+      "entry": 0.0207,
+      "created": 1791332731.2256641
     }
   ],
-  "total": 1378,
-  "hits": 646
+  "total": 1382,
+  "hits": 647
 }
