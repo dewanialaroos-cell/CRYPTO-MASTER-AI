@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.134,
-      "created": 1791393734.1190321
-    },
-    {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 3.527,
-      "created": 1791393734.119033
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "SHORT",
       "entry": 1.4163,
@@ -78,8 +66,14 @@
       "signal": "LONG",
       "entry": 11.246,
       "created": 1791407759.3293881
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.282,
+      "created": 1791409031.4904623
     }
   ],
-  "total": 1437,
-  "hits": 664
+  "total": 1439,
+  "hits": 665
 }
