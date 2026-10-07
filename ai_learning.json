@@ -26,12 +26,6 @@
       "created": 1791339443.03448
     },
     {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 561.14,
-      "created": 1791341943.180476
-    },
-    {
       "symbol": "ARB/USDT",
       "signal": "SHORT",
       "entry": 0.18525,
@@ -78,8 +72,14 @@
       "signal": "SHORT",
       "entry": 3.659,
       "created": 1791355954.8058786
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 571.05,
+      "created": 1791357467.443473
     }
   ],
-  "total": 1406,
-  "hits": 650
+  "total": 1407,
+  "hits": 651
 }
