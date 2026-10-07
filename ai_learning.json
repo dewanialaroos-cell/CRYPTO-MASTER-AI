@@ -26,12 +26,6 @@
       "created": 1791341943.1804774
     },
     {
-      "symbol": "TRUMP/USDT",
-      "signal": "SHORT",
-      "entry": 1.885,
-      "created": 1791362903.8959014
-    },
-    {
       "symbol": "OKB/USDT",
       "signal": "LONG",
       "entry": 133.65,
@@ -72,8 +66,20 @@
       "signal": "SHORT",
       "entry": 1.4428,
       "created": 1791376115.013587
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 4090.2,
+      "created": 1791377807.4684765
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.128,
+      "created": 1791377807.4684777
     }
   ],
-  "total": 1416,
-  "hits": 655
+  "total": 1417,
+  "hits": 656
 }
