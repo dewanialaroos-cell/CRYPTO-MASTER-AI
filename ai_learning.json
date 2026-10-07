@@ -32,18 +32,6 @@
       "created": 1791341943.1804774
     },
     {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.006432,
-      "created": 1791352025.9658916
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 11.193,
-      "created": 1791352025.9658937
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.766,
@@ -90,8 +78,14 @@
       "signal": "LONG",
       "entry": 133.65,
       "created": 1791364628.1125913
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.006449,
+      "created": 1791366518.8971775
     }
   ],
-  "total": 1408,
-  "hits": 651
+  "total": 1410,
+  "hits": 652
 }
