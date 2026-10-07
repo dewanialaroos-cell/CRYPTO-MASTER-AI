@@ -48,6 +48,18 @@
       "signal": "SHORT",
       "entry": 7.75,
       "created": 1791399106.753113
+    },
+    {
+      "symbol": "RAY/USDT",
+      "signal": "LONG",
+      "entry": 2.4157,
+      "created": 1791400618.1879866
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 4109.2,
+      "created": 1791400618.1879883
     }
   ],
   "total": 1434,
