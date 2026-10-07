@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 7.848,
-      "created": 1791384491.299847
-    },
-    {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.646,
-      "created": 1791384491.2998476
-    },
-    {
       "symbol": "OKB/USDT",
       "signal": "LONG",
       "entry": 130.25,
@@ -54,8 +42,14 @@
       "signal": "SHORT",
       "entry": 2546.06,
       "created": 1791395233.016494
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 7.75,
+      "created": 1791399106.753113
     }
   ],
-  "total": 1432,
-  "hits": 662
+  "total": 1434,
+  "hits": 663
 }
