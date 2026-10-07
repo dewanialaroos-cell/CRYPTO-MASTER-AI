@@ -26,12 +26,6 @@
       "created": 1791341943.1804774
     },
     {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 133.65,
-      "created": 1791364628.1125913
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "LONG",
       "entry": 0.006449,
@@ -80,6 +74,6 @@
       "created": 1791377807.4684777
     }
   ],
-  "total": 1417,
+  "total": 1418,
   "hits": 656
 }
