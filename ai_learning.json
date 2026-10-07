@@ -78,6 +78,12 @@
       "signal": "LONG",
       "entry": 92.1,
       "created": 1791334530.0125144
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 8.327,
+      "created": 1791337611.151303
     }
   ],
   "total": 1384,
