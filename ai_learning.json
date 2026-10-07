@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 7.75,
-      "created": 1791399106.753113
-    },
-    {
       "symbol": "RAY/USDT",
       "signal": "LONG",
       "entry": 2.4157,
@@ -108,8 +102,20 @@
       "signal": "SHORT",
       "entry": 4.061e-06,
       "created": 1791410329.4036667
+    },
+    {
+      "symbol": "MET/USDT",
+      "signal": "LONG",
+      "entry": 0.457,
+      "created": 1791414074.4323504
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 118.7,
+      "created": 1791414074.432352
     }
   ],
-  "total": 1441,
+  "total": 1442,
   "hits": 666
 }
