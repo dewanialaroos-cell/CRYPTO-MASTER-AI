@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LYN/USDT",
-      "signal": "SHORT",
-      "entry": 0.0207,
-      "created": 1791332731.2256641
-    },
-    {
       "symbol": "NMR/USDT",
       "signal": "LONG",
       "entry": 17.56,
@@ -30,12 +24,6 @@
       "signal": "SHORT",
       "entry": 0.18525,
       "created": 1791341943.1804774
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.4676,
-      "created": 1791361069.6904185
     },
     {
       "symbol": "TRUMP/USDT",
@@ -78,8 +66,14 @@
       "signal": "SHORT",
       "entry": 3.582,
       "created": 1791374343.6963205
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.4428,
+      "created": 1791376115.013587
     }
   ],
-  "total": 1415,
-  "hits": 654
+  "total": 1416,
+  "hits": 655
 }
