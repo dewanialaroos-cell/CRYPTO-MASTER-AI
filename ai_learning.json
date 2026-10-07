@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.20534,
-      "created": 1791312636.4976895
-    },
-    {
       "symbol": "FIL/USDT",
       "signal": "LONG",
       "entry": 1.1581,
@@ -132,8 +126,20 @@
       "signal": "LONG",
       "entry": 0.07323,
       "created": 1791340677.5608945
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 561.14,
+      "created": 1791341943.180476
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "SHORT",
+      "entry": 0.18525,
+      "created": 1791341943.1804774
     }
   ],
-  "total": 1388,
+  "total": 1389,
   "hits": 649
 }
