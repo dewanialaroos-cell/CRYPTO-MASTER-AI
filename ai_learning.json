@@ -2,28 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "RLC/USDT",
-      "signal": "LONG",
-      "entry": 0.7797,
-      "created": 1791310888.1308806
-    },
-    {
-      "symbol": "ORCA/USDT",
-      "signal": "LONG",
-      "entry": 2.98,
-      "created": 1791310888.1308825
-    },
-    {
       "symbol": "ARB/USDT",
       "signal": "LONG",
       "entry": 0.20534,
       "created": 1791312636.4976895
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "LONG",
-      "entry": 121.31,
-      "created": 1791324941.4064684
     },
     {
       "symbol": "XMR/USDT",
@@ -84,8 +66,56 @@
       "signal": "SHORT",
       "entry": 8.327,
       "created": 1791337611.151303
+    },
+    {
+      "symbol": "NMR/USDT",
+      "signal": "LONG",
+      "entry": 17.56,
+      "created": 1791339443.0344748
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1309.31,
+      "created": 1791339443.0344756
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.09003,
+      "created": 1791339443.0344763
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.4589,
+      "created": 1791339443.0344768
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 4.11e-06,
+      "created": 1791339443.0344772
+    },
+    {
+      "symbol": "ORCA/USDT",
+      "signal": "LONG",
+      "entry": 3.003,
+      "created": 1791339443.0344775
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.2265,
+      "created": 1791339443.0344782
+    },
+    {
+      "symbol": "USD1/USDT",
+      "signal": "SHORT",
+      "entry": 0.99968,
+      "created": 1791339443.03448
     }
   ],
-  "total": 1384,
-  "hits": 647
+  "total": 1387,
+  "hits": 648
 }
