@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1581,
-      "created": 1791328515.373802
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "LONG",
-      "entry": 180.52,
-      "created": 1791328515.3738034
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 308.8,
@@ -140,6 +128,6 @@
       "created": 1791341943.1804774
     }
   ],
-  "total": 1389,
+  "total": 1391,
   "hits": 649
 }
