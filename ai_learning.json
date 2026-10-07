@@ -8,18 +8,6 @@
       "created": 1791332731.2256641
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.134,
-      "created": 1791334530.012513
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 92.1,
-      "created": 1791334530.0125144
-    },
-    {
       "symbol": "UNI/USDT",
       "signal": "SHORT",
       "entry": 8.327,
@@ -108,8 +96,14 @@
       "signal": "SHORT",
       "entry": 0.18525,
       "created": 1791341943.1804774
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "LONG",
+      "entry": 134.15,
+      "created": 1791350211.6559532
     }
   ],
-  "total": 1394,
+  "total": 1396,
   "hits": 649
 }
