@@ -72,6 +72,18 @@
       "signal": "SHORT",
       "entry": 3.527,
       "created": 1791393734.119033
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.4163,
+      "created": 1791395233.0164914
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2546.06,
+      "created": 1791395233.016494
     }
   ],
   "total": 1427,
