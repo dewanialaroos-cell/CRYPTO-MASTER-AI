@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.629,
-      "created": 1791428295.9885025
-    },
-    {
       "symbol": "CT/USDT",
       "signal": "SHORT",
       "entry": 0.3526,
@@ -18,36 +12,6 @@
       "signal": "SHORT",
       "entry": 4124.1,
       "created": 1791452924.6439085
-    },
-    {
-      "symbol": "XCRCL/USDT",
-      "signal": "SHORT",
-      "entry": 80.25,
-      "created": 1791456638.0000007
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 86.515,
-      "created": 1791456638.0000021
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08737,
-      "created": 1791456638.0000038
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "SHORT",
-      "entry": 4.035e-06,
-      "created": 1791456638.0000045
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.165,
-      "created": 1791458156.2678192
     },
     {
       "symbol": "ENA/USDT",
@@ -126,8 +90,20 @@
       "signal": "SHORT",
       "entry": 7.601,
       "created": 1791471006.351813
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 3.941e-06,
+      "created": 1791472646.0212553
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.0761,
+      "created": 1791472646.0212572
     }
   ],
-  "total": 1492,
-  "hits": 683
+  "total": 1497,
+  "hits": 686
 }
