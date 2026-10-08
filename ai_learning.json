@@ -14,12 +14,6 @@
       "created": 1791428295.9885025
     },
     {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4126.7,
-      "created": 1791438437.4503875
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.434,
@@ -72,8 +66,26 @@
       "signal": "SHORT",
       "entry": 1.4094,
       "created": 1791451066.2812896
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.4846,
+      "created": 1791452924.6439064
+    },
+    {
+      "symbol": "CT/USDT",
+      "signal": "SHORT",
+      "entry": 0.3526,
+      "created": 1791452924.6439078
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 4124.1,
+      "created": 1791452924.6439085
     }
   ],
-  "total": 1480,
+  "total": 1481,
   "hits": 676
 }
