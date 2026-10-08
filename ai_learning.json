@@ -14,18 +14,6 @@
       "created": 1791443938.788877
     },
     {
-      "symbol": "RAY/USDT",
-      "signal": "LONG",
-      "entry": 2.4926,
-      "created": 1791445729.4776146
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1240.76,
-      "created": 1791445729.4776158
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
       "entry": 559.9,
@@ -114,8 +102,20 @@
       "signal": "SHORT",
       "entry": 0.21737,
       "created": 1791459487.1559076
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.05969,
+      "created": 1791460796.775919
+    },
+    {
+      "symbol": "RAY/USDT",
+      "signal": "LONG",
+      "entry": 2.4665,
+      "created": 1791460796.775921
     }
   ],
-  "total": 1482,
-  "hits": 676
+  "total": 1484,
+  "hits": 677
 }
