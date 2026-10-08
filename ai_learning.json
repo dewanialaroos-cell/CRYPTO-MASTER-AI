@@ -14,18 +14,6 @@
       "created": 1791414074.4323504
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.351,
-      "created": 1791424075.3515801
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.4227,
-      "created": 1791425717.3476825
-    },
-    {
       "symbol": "CT/USDT",
       "signal": "SHORT",
       "entry": 0.36516,
@@ -126,8 +114,14 @@
       "signal": "SHORT",
       "entry": 4126.7,
       "created": 1791438437.4503875
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.434,
+      "created": 1791440502.4369385
     }
   ],
-  "total": 1463,
-  "hits": 668
+  "total": 1465,
+  "hits": 670
 }
