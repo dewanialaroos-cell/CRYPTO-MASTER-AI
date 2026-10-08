@@ -60,6 +60,18 @@
       "signal": "SHORT",
       "entry": 82887.5,
       "created": 1791449351.37072
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 7.76,
+      "created": 1791451066.281288
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.4094,
+      "created": 1791451066.2812896
     }
   ],
   "total": 1480,
