@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "CT/USDT",
-      "signal": "SHORT",
-      "entry": 0.3526,
-      "created": 1791452924.6439078
-    },
-    {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4124.1,
-      "created": 1791452924.6439085
-    },
-    {
       "symbol": "RAY/USDT",
       "signal": "LONG",
       "entry": 2.4665,
@@ -84,6 +72,12 @@
       "signal": "SHORT",
       "entry": 0.4804,
       "created": 1791496056.5342925
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 537.57,
+      "created": 1791497735.1149044
     }
   ],
   "total": 1522,
