@@ -14,12 +14,6 @@
       "created": 1791428295.9885025
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.434,
-      "created": 1791440502.4369385
-    },
-    {
       "symbol": "LIT/USDT",
       "signal": "SHORT",
       "entry": 3.546,
@@ -90,8 +84,32 @@
       "signal": "SHORT",
       "entry": 115.02,
       "created": 1791454704.0365968
+    },
+    {
+      "symbol": "XCRCL/USDT",
+      "signal": "SHORT",
+      "entry": 80.25,
+      "created": 1791456638.0000007
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 86.515,
+      "created": 1791456638.0000021
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08737,
+      "created": 1791456638.0000038
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 4.035e-06,
+      "created": 1791456638.0000045
     }
   ],
-  "total": 1481,
+  "total": 1482,
   "hits": 676
 }
