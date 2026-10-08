@@ -26,18 +26,6 @@
       "created": 1791464267.9023526
     },
     {
-      "symbol": "ADA/USDT",
-      "signal": "SHORT",
-      "entry": 0.2259,
-      "created": 1791481630.4144948
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "SHORT",
-      "entry": 1.0109,
-      "created": 1791481630.4144974
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.05569,
@@ -60,8 +48,44 @@
       "signal": "SHORT",
       "entry": 7.338,
       "created": 1791494217.3575523
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 81640.7,
+      "created": 1791496056.5342875
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2472.41,
+      "created": 1791496056.534289
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.5876,
+      "created": 1791496056.5342896
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.3755,
+      "created": 1791496056.5342903
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "SHORT",
+      "entry": 10.065,
+      "created": 1791496056.534292
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "entry": 0.4804,
+      "created": 1791496056.5342925
     }
   ],
-  "total": 1520,
+  "total": 1522,
   "hits": 697
 }
