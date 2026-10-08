@@ -20,30 +20,6 @@
       "created": 1791428295.9885025
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2568.39,
-      "created": 1791431340.9849396
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 7.881,
-      "created": 1791431340.9849408
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "SHORT",
-      "entry": 0.22094,
-      "created": 1791433002.9313548
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 560.99,
-      "created": 1791433002.9313562
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "SHORT",
       "entry": 86.75,
@@ -102,8 +78,14 @@
       "signal": "SHORT",
       "entry": 1240.76,
       "created": 1791445729.4776158
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 559.9,
+      "created": 1791447480.8405502
     }
   ],
-  "total": 1471,
-  "hits": 674
+  "total": 1475,
+  "hits": 676
 }
