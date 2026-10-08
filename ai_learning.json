@@ -26,24 +26,6 @@
       "created": 1791464267.9023526
     },
     {
-      "symbol": "BNB/USDT",
-      "signal": "SHORT",
-      "entry": 754.7,
-      "created": 1791467347.1088352
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3929,
-      "created": 1791467347.1088371
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2511.79,
-      "created": 1791467347.1088395
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.4983,
@@ -140,6 +122,6 @@
       "created": 1791481630.4144974
     }
   ],
-  "total": 1503,
-  "hits": 690
+  "total": 1506,
+  "hits": 693
 }
