@@ -126,6 +126,18 @@
       "signal": "SHORT",
       "entry": 80925.1,
       "created": 1791479815.9874341
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "SHORT",
+      "entry": 0.2259,
+      "created": 1791481630.4144948
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 1.0109,
+      "created": 1791481630.4144974
     }
   ],
   "total": 1503,
