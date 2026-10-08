@@ -14,18 +14,6 @@
       "created": 1791414074.4323504
     },
     {
-      "symbol": "XMR/USDT",
-      "signal": "SHORT",
-      "entry": 118.7,
-      "created": 1791414074.432352
-    },
-    {
-      "symbol": "RAY/USDT",
-      "signal": "LONG",
-      "entry": 2.4795,
-      "created": 1791415146.8307579
-    },
-    {
       "symbol": "SAND/USDT",
       "signal": "LONG",
       "entry": 0.0779,
@@ -78,8 +66,26 @@
       "signal": "LONG",
       "entry": 7.629,
       "created": 1791428295.9885025
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 82875.4,
+      "created": 1791429640.5541744
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 13.163,
+      "created": 1791429640.5541763
+    },
+    {
+      "symbol": "RAY/USDT",
+      "signal": "LONG",
+      "entry": 2.4477,
+      "created": 1791429640.554177
     }
   ],
-  "total": 1458,
+  "total": 1460,
   "hits": 668
 }
