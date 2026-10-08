@@ -20,12 +20,6 @@
       "created": 1791460796.775921
     },
     {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 3.5336,
-      "created": 1791462549.4385195
-    },
-    {
       "symbol": "SUI/USDT",
       "signal": "SHORT",
       "entry": 1.099,
@@ -120,8 +114,14 @@
       "signal": "LONG",
       "entry": 0.05916,
       "created": 1791476357.957057
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "SHORT",
+      "entry": 0.06533,
+      "created": 1791478240.0932822
     }
   ],
-  "total": 1499,
+  "total": 1500,
   "hits": 687
 }
