@@ -20,12 +20,6 @@
       "created": 1791452924.6439085
     },
     {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 115.02,
-      "created": 1791454704.0365968
-    },
-    {
       "symbol": "XCRCL/USDT",
       "signal": "SHORT",
       "entry": 80.25,
@@ -120,8 +114,14 @@
       "signal": "SHORT",
       "entry": 2511.79,
       "created": 1791467347.1088395
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.4983,
+      "created": 1791469184.1649263
     }
   ],
-  "total": 1491,
-  "hits": 682
+  "total": 1492,
+  "hits": 683
 }
