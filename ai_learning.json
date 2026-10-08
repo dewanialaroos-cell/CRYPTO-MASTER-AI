@@ -26,18 +26,6 @@
       "created": 1791464267.9023526
     },
     {
-      "symbol": "PEPE/USDT",
-      "signal": "SHORT",
-      "entry": 3.941e-06,
-      "created": 1791472646.0212553
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "SHORT",
-      "entry": 1.0761,
-      "created": 1791472646.0212572
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "SHORT",
       "entry": 0.4829,
@@ -110,6 +98,6 @@
       "created": 1791481630.4144974
     }
   ],
-  "total": 1508,
-  "hits": 694
+  "total": 1510,
+  "hits": 696
 }
