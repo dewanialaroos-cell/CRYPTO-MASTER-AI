@@ -78,6 +78,24 @@
       "signal": "SHORT",
       "entry": 537.57,
       "created": 1791497735.1149044
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "SHORT",
+      "entry": 0.2337,
+      "created": 1791503153.8236713
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08446,
+      "created": 1791503153.8236725
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 3.851e-06,
+      "created": 1791503153.8236732
     }
   ],
   "total": 1522,
