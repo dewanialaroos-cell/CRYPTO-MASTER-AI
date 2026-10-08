@@ -26,30 +26,6 @@
       "created": 1791464267.9023526
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "SHORT",
-      "entry": 0.4829,
-      "created": 1791474607.8359132
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08317,
-      "created": 1791474607.8359146
-    },
-    {
-      "symbol": "PONS/USDT",
-      "signal": "SHORT",
-      "entry": 0.3639,
-      "created": 1791474607.8359153
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 109.2,
-      "created": 1791474607.8359175
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.05916,
@@ -98,6 +74,6 @@
       "created": 1791481630.4144974
     }
   ],
-  "total": 1510,
-  "hits": 696
+  "total": 1514,
+  "hits": 697
 }
