@@ -14,12 +14,6 @@
       "created": 1791414074.4323504
     },
     {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 4109.6,
-      "created": 1791419352.1303334
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.351,
@@ -96,8 +90,38 @@
       "signal": "LONG",
       "entry": 560.99,
       "created": 1791433002.9313562
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 86.75,
+      "created": 1791434887.0730877
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 114.59,
+      "created": 1791434887.0730906
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.0873,
+      "created": 1791434887.0730925
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "SHORT",
+      "entry": 282.0,
+      "created": 1791434887.073093
+    },
+    {
+      "symbol": "XDP/USDT",
+      "signal": "SHORT",
+      "entry": 0.018929,
+      "created": 1791434887.0730934
     }
   ],
-  "total": 1462,
+  "total": 1463,
   "hits": 668
 }
