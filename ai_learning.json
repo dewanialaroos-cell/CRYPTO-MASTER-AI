@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "MET/USDT",
-      "signal": "LONG",
-      "entry": 0.457,
-      "created": 1791414074.4323504
-    },
-    {
       "symbol": "KCS/USDT",
       "signal": "LONG",
       "entry": 7.629,
@@ -108,6 +102,12 @@
       "signal": "SHORT",
       "entry": 4.035e-06,
       "created": 1791456638.0000045
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.165,
+      "created": 1791458156.2678192
     }
   ],
   "total": 1482,
