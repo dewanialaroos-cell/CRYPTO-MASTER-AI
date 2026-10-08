@@ -20,28 +20,10 @@
       "created": 1791460796.775921
     },
     {
-      "symbol": "SUI/USDT",
-      "signal": "SHORT",
-      "entry": 1.099,
-      "created": 1791464267.9023516
-    },
-    {
       "symbol": "XDP/USDT",
       "signal": "SHORT",
       "entry": 0.019099,
       "created": 1791464267.9023526
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 82278.5,
-      "created": 1791464267.9023538
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1207.36,
-      "created": 1791464267.9023566
     },
     {
       "symbol": "BNB/USDT",
@@ -120,8 +102,32 @@
       "signal": "SHORT",
       "entry": 0.06533,
       "created": 1791478240.0932822
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 523.82,
+      "created": 1791479815.98743
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.5397,
+      "created": 1791479815.9874318
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.2003,
+      "created": 1791479815.9874325
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 80925.1,
+      "created": 1791479815.9874341
     }
   ],
-  "total": 1500,
-  "hits": 687
+  "total": 1503,
+  "hits": 690
 }
