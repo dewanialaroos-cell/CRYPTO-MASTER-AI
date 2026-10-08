@@ -14,18 +14,6 @@
       "created": 1791414074.4323504
     },
     {
-      "symbol": "SAND/USDT",
-      "signal": "LONG",
-      "entry": 0.0779,
-      "created": 1791417520.361935
-    },
-    {
-      "symbol": "OKB/USDT",
-      "signal": "LONG",
-      "entry": 131.92,
-      "created": 1791417520.361936
-    },
-    {
       "symbol": "XAUT/USDT",
       "signal": "SHORT",
       "entry": 4109.6,
@@ -96,8 +84,20 @@
       "signal": "SHORT",
       "entry": 7.881,
       "created": 1791431340.9849408
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.22094,
+      "created": 1791433002.9313548
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 560.99,
+      "created": 1791433002.9313562
     }
   ],
-  "total": 1460,
+  "total": 1462,
   "hits": 668
 }
