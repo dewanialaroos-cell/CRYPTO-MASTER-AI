@@ -54,6 +54,24 @@
       "signal": "SHORT",
       "entry": 1.4227,
       "created": 1791425717.3476825
+    },
+    {
+      "symbol": "CT/USDT",
+      "signal": "SHORT",
+      "entry": 0.36516,
+      "created": 1791426933.2251222
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.5571,
+      "created": 1791426933.225124
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1316.6,
+      "created": 1791426933.2251246
     }
   ],
   "total": 1458,
