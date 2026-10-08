@@ -20,24 +20,6 @@
       "created": 1791428295.9885025
     },
     {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 82875.4,
-      "created": 1791429640.5541744
-    },
-    {
-      "symbol": "LINK/USDT",
-      "signal": "SHORT",
-      "entry": 13.163,
-      "created": 1791429640.5541763
-    },
-    {
-      "symbol": "RAY/USDT",
-      "signal": "LONG",
-      "entry": 2.4477,
-      "created": 1791429640.554177
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
       "entry": 2568.39,
@@ -108,8 +90,20 @@
       "signal": "SHORT",
       "entry": 3.546,
       "created": 1791443938.788877
+    },
+    {
+      "symbol": "RAY/USDT",
+      "signal": "LONG",
+      "entry": 2.4926,
+      "created": 1791445729.4776146
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1240.76,
+      "created": 1791445729.4776158
     }
   ],
-  "total": 1468,
-  "hits": 672
+  "total": 1471,
+  "hits": 674
 }
