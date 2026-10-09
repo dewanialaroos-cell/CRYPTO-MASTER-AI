@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.05838,
-      "created": 1791508054.5191617
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "SHORT",
-      "entry": 734.0,
-      "created": 1791508054.5191638
-    },
-    {
       "symbol": "FIL/USDT",
       "signal": "LONG",
       "entry": 1.0857,
@@ -60,8 +48,14 @@
       "signal": "SHORT",
       "entry": 1.0523,
       "created": 1791521289.8183556
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.06934,
+      "created": 1791522981.9183168
     }
   ],
-  "total": 1538,
-  "hits": 699
+  "total": 1540,
+  "hits": 700
 }
