@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.208,
-      "created": 1791562594.7230272
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "SHORT",
       "entry": 84.752,
@@ -92,6 +86,6 @@
       "created": 1791574565.505353
     }
   ],
-  "total": 1576,
-  "hits": 711
+  "total": 1577,
+  "hits": 712
 }
