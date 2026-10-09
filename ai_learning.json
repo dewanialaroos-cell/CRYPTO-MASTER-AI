@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.0857,
-      "created": 1791511192.5485768
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
       "entry": 2483.51,
@@ -56,6 +50,6 @@
       "created": 1791522981.9183168
     }
   ],
-  "total": 1540,
+  "total": 1541,
   "hits": 700
 }
