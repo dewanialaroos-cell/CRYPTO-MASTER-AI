@@ -8,24 +8,6 @@
       "created": 1791567314.4540439
     },
     {
-      "symbol": "BNB/USDT",
-      "signal": "SHORT",
-      "entry": 740.4,
-      "created": 1791570193.315059
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.0848,
-      "created": 1791570193.3150601
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 82575.7,
-      "created": 1791570193.315063
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "SHORT",
       "entry": 519.29,
@@ -84,8 +66,20 @@
       "signal": "SHORT",
       "entry": 7.29,
       "created": 1791583185.4581563
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2318,
+      "created": 1791585993.866986
+    },
+    {
+      "symbol": "XDP/USDT",
+      "signal": "LONG",
+      "entry": 0.023037,
+      "created": 1791585993.8669872
     }
   ],
-  "total": 1581,
+  "total": 1584,
   "hits": 715
 }
