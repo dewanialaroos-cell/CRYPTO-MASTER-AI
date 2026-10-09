@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XMR/USDT",
-      "signal": "SHORT",
-      "entry": 537.57,
-      "created": 1791497735.1149044
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "SHORT",
       "entry": 0.2337,
@@ -54,8 +48,14 @@
       "signal": "LONG",
       "entry": 1.0857,
       "created": 1791511192.5485768
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2483.51,
+      "created": 1791512458.8433142
     }
   ],
-  "total": 1532,
+  "total": 1533,
   "hits": 699
 }
