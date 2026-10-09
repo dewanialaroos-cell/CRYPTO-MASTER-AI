@@ -1,7 +1,6 @@
 name: Crypto Master AI Historical Data Downloader
 
-on: workflow_dispatch:
-
+on:  workflow_dispatch:  {}
 permissions:
 contents: write
 
