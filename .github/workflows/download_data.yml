@@ -32,12 +32,10 @@ steps:
       pip install -r requirements.txt
 
   - name: Check downloader syntax
-    run: |
-      python -m py_compile data_downloader.py
+    run: python -m py_compile data_downloader.py
 
   - name: Download historical crypto data
-    run: |
-      python data_downloader.py
+    run: python data_downloader.py
 
   - name: Show downloaded files
     if: always()
@@ -52,9 +50,7 @@ steps:
     run: |
       git config user.name "Crypto Master AI"
       git config user.email "actions@github.com"
-
       git add training_data/
-
       if git diff --cached --quiet; then
         echo "No new historical data to save."
       else
