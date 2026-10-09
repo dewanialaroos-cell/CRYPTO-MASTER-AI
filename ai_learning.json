@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08505,
-      "created": 1791518460.7325575
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "SHORT",
       "entry": 538.35,
@@ -50,6 +44,6 @@
       "created": 1791532102.913052
     }
   ],
-  "total": 1543,
+  "total": 1544,
   "hits": 700
 }
