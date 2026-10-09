@@ -42,6 +42,12 @@
       "signal": "LONG",
       "entry": 1.086,
       "created": 1791527326.046032
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.4871,
+      "created": 1791532102.913052
     }
   ],
   "total": 1543,
