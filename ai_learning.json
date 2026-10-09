@@ -8,18 +8,6 @@
       "created": 1791494217.3575504
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1180.39,
-      "created": 1791494217.3575516
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 7.338,
-      "created": 1791494217.3575523
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "SHORT",
       "entry": 81640.7,
@@ -104,6 +92,6 @@
       "created": 1791508054.5191638
     }
   ],
-  "total": 1523,
-  "hits": 698
+  "total": 1525,
+  "hits": 699
 }
