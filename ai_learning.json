@@ -84,6 +84,18 @@
       "signal": "SHORT",
       "entry": 3.6071,
       "created": 1791566104.3637896
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "SHORT",
+      "entry": 0.005394,
+      "created": 1791567314.4540422
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.0897,
+      "created": 1791567314.4540439
     }
   ],
   "total": 1565,
