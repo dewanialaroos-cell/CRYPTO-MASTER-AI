@@ -8,30 +8,6 @@
       "created": 1791567314.4540439
     },
     {
-      "symbol": "XMR/USDT",
-      "signal": "SHORT",
-      "entry": 519.29,
-      "created": 1791571844.5755715
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2484.75,
-      "created": 1791571844.5755732
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3899,
-      "created": 1791571844.5755746
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1212.8,
-      "created": 1791571844.575577
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.0713,
@@ -78,8 +54,26 @@
       "signal": "LONG",
       "entry": 0.023037,
       "created": 1791585993.8669872
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2487.72,
+      "created": 1791587685.1060169
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1210.81,
+      "created": 1791587685.1060178
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 528.44,
+      "created": 1791587685.1060185
     }
   ],
-  "total": 1584,
-  "hits": 715
+  "total": 1588,
+  "hits": 716
 }
