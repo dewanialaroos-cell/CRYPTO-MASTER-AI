@@ -1,0 +1,15 @@
+{
+  "updated_utc": "2026-10-09T19:30:49.405889+00:00",
+  "exchange": "okx",
+  "target_years": 5,
+  "symbols_requested": 10,
+  "timeframes": [
+    "15m",
+    "1h",
+    "4h",
+    "1d"
+  ],
+  "files_saved": 40,
+  "total_candles": 2085975,
+  "errors": []
+}
