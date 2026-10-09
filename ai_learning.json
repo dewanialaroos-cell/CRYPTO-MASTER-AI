@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.4871,
-      "created": 1791532102.913052
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "SHORT",
       "entry": 0.08495,
@@ -72,8 +66,14 @@
       "signal": "LONG",
       "entry": 1.0804,
       "created": 1791545746.9349084
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.4925,
+      "created": 1791547182.1737788
     }
   ],
-  "total": 1550,
-  "hits": 701
+  "total": 1551,
+  "hits": 702
 }
