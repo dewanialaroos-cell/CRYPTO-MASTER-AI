@@ -84,6 +84,24 @@
       "signal": "SHORT",
       "entry": 7.332,
       "created": 1791568735.6721401
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 740.4,
+      "created": 1791570193.315059
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.0848,
+      "created": 1791570193.3150601
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 82575.7,
+      "created": 1791570193.315063
     }
   ],
   "total": 1568,
