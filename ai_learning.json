@@ -36,6 +36,30 @@
       "signal": "SHORT",
       "entry": 0.08505,
       "created": 1791518460.7325575
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 538.35,
+      "created": 1791521289.8183522
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 109.95,
+      "created": 1791521289.818353
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "SHORT",
+      "entry": 0.2348,
+      "created": 1791521289.8183537
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 1.0523,
+      "created": 1791521289.8183556
     }
   ],
   "total": 1538,
