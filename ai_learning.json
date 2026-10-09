@@ -72,6 +72,24 @@
       "signal": "SHORT",
       "entry": 534.67,
       "created": 1791557430.0120494
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 12.751,
+      "created": 1791559003.4929714
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 109.6,
+      "created": 1791559003.4929757
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "SHORT",
+      "entry": 10.138,
+      "created": 1791559003.4929767
     }
   ],
   "total": 1561,
