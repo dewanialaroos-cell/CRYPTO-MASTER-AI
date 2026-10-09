@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "RAY/USDT",
-      "signal": "LONG",
-      "entry": 2.4665,
-      "created": 1791460796.775921
-    },
-    {
       "symbol": "XDP/USDT",
       "signal": "SHORT",
       "entry": 0.019099,
@@ -96,6 +90,18 @@
       "signal": "SHORT",
       "entry": 3.851e-06,
       "created": 1791503153.8236732
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 109.59,
+      "created": 1791504032.6556766
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 1.0408,
+      "created": 1791504032.65568
     }
   ],
   "total": 1522,
