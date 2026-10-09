@@ -2,36 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ADA/USDT",
-      "signal": "SHORT",
-      "entry": 0.2337,
-      "created": 1791503153.8236713
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08446,
-      "created": 1791503153.8236725
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "SHORT",
-      "entry": 3.851e-06,
-      "created": 1791503153.8236732
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 109.59,
-      "created": 1791504032.6556766
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "SHORT",
-      "entry": 1.0408,
-      "created": 1791504032.65568
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.05838,
@@ -60,8 +30,14 @@
       "signal": "SHORT",
       "entry": 7.31,
       "created": 1791515793.7854745
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08505,
+      "created": 1791518460.7325575
     }
   ],
-  "total": 1533,
+  "total": 1538,
   "hits": 699
 }
