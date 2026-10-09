@@ -66,6 +66,12 @@
       "signal": "SHORT",
       "entry": 109.79,
       "created": 1791542906.090192
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.0804,
+      "created": 1791545746.9349084
     }
   ],
   "total": 1550,
