@@ -2,48 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PONS/USDT",
-      "signal": "SHORT",
-      "entry": 0.3527,
-      "created": 1791494217.3575504
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 81640.7,
-      "created": 1791496056.5342875
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2472.41,
-      "created": 1791496056.534289
-    },
-    {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 3.5876,
-      "created": 1791496056.5342896
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3755,
-      "created": 1791496056.5342903
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "SHORT",
-      "entry": 10.065,
-      "created": 1791496056.534292
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "SHORT",
-      "entry": 0.4804,
-      "created": 1791496056.5342925
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "SHORT",
       "entry": 537.57,
@@ -90,8 +48,14 @@
       "signal": "SHORT",
       "entry": 734.0,
       "created": 1791508054.5191638
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.0857,
+      "created": 1791511192.5485768
     }
   ],
-  "total": 1525,
+  "total": 1532,
   "hits": 699
 }
