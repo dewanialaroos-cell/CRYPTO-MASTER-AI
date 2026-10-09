@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 84.752,
-      "created": 1791566104.3637867
-    },
-    {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 3.6071,
-      "created": 1791566104.3637896
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "SHORT",
       "entry": 0.005394,
@@ -86,6 +74,6 @@
       "created": 1791574565.505353
     }
   ],
-  "total": 1577,
-  "hits": 712
+  "total": 1579,
+  "hits": 713
 }
