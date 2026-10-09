@@ -1,0 +1,64 @@
+name: Crypto Master AI Historical Data Downloader
+
+on:
+workflow_dispatch:
+
+permissions:
+contents: write
+
+concurrency:
+group: crypto-master-ai-data-download
+cancel-in-progress: false
+
+jobs:
+download:
+runs-on: ubuntu-latest
+timeout-minutes: 350
+
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+
+  - name: Setup Python
+    uses: actions/setup-python@v5
+    with:
+      python-version: "3.11"
+
+  - name: Install dependencies
+    run: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+
+  - name: Check downloader syntax
+    run: |
+      python -m py_compile data_downloader.py
+
+  - name: Download historical crypto data
+    run: |
+      python data_downloader.py
+
+  - name: Show downloaded files
+    if: always()
+    run: |
+      echo "===== Training Data ====="
+      ls -lah training_data/ || true
+      echo "===== Download Report ====="
+      cat training_data/download_report.json || true
+
+  - name: Save historical data to GitHub
+    if: success()
+    run: |
+      git config user.name "Crypto Master AI"
+      git config user.email "actions@github.com"
+
+      git add training_data/
+
+      if git diff --cached --quiet; then
+        echo "No new historical data to save."
+      else
+        git commit -m "Update historical crypto training data"
+        git pull --rebase origin main
+        git push origin HEAD:main
+      fi
