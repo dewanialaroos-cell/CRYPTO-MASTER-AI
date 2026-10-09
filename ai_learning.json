@@ -8,12 +8,6 @@
       "created": 1791567314.4540439
     },
     {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 7.332,
-      "created": 1791568735.6721401
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "SHORT",
       "entry": 740.4,
@@ -72,8 +66,26 @@
       "signal": "SHORT",
       "entry": 3.6027,
       "created": 1791581807.7389364
+    },
+    {
+      "symbol": "RLC/USDT",
+      "signal": "LONG",
+      "entry": 1.116,
+      "created": 1791583185.4581542
+    },
+    {
+      "symbol": "KAIA/USDT",
+      "signal": "LONG",
+      "entry": 0.0559,
+      "created": 1791583185.4581559
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 7.29,
+      "created": 1791583185.4581563
     }
   ],
-  "total": 1580,
-  "hits": 714
+  "total": 1581,
+  "hits": 715
 }
