@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 85.41,
-      "created": 1791550389.092148
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "SHORT",
       "entry": 0.08442,
@@ -78,8 +72,20 @@
       "signal": "LONG",
       "entry": 1.208,
       "created": 1791562594.7230272
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 84.752,
+      "created": 1791566104.3637867
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.6071,
+      "created": 1791566104.3637896
     }
   ],
-  "total": 1564,
-  "hits": 707
+  "total": 1565,
+  "hits": 708
 }
