@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LINK/USDT",
-      "signal": "SHORT",
-      "entry": 12.751,
-      "created": 1791559003.4929714
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 109.6,
-      "created": 1791559003.4929757
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "SHORT",
-      "entry": 10.138,
-      "created": 1791559003.4929767
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.208,
@@ -102,8 +84,14 @@
       "signal": "LONG",
       "entry": 0.0713,
       "created": 1791573301.1262755
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 109.14,
+      "created": 1791574565.505353
     }
   ],
-  "total": 1573,
-  "hits": 710
+  "total": 1576,
+  "hits": 711
 }
