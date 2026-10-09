@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 7.31,
-      "created": 1791515793.7854745
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "SHORT",
       "entry": 0.08505,
@@ -50,6 +44,6 @@
       "created": 1791527326.046032
     }
   ],
-  "total": 1542,
+  "total": 1543,
   "hits": 700
 }
