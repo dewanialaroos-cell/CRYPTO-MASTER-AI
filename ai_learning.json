@@ -66,6 +66,24 @@
       "signal": "SHORT",
       "entry": 85.41,
       "created": 1791550389.092148
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08442,
+      "created": 1791553737.525985
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 7.315,
+      "created": 1791553737.5259867
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 738.0,
+      "created": 1791553737.5259879
     }
   ],
   "total": 1554,
