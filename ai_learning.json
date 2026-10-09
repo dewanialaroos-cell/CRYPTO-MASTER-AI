@@ -72,6 +72,12 @@
       "signal": "LONG",
       "entry": 0.4925,
       "created": 1791547182.1737788
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.5582,
+      "created": 1791548772.6974359
     }
   ],
   "total": 1551,
