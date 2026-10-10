@@ -78,6 +78,18 @@
       "signal": "LONG",
       "entry": 1.2662,
       "created": 1791605755.2031844
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.123,
+      "created": 1791608383.9757507
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 172.94,
+      "created": 1791608383.9757524
     }
   ],
   "total": 1600,
