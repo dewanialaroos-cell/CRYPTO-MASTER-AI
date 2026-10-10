@@ -8,30 +8,6 @@
       "created": 1791583185.4581542
     },
     {
-      "symbol": "KAIA/USDT",
-      "signal": "LONG",
-      "entry": 0.0559,
-      "created": 1791583185.4581559
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2487.72,
-      "created": 1791587685.1060169
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1210.81,
-      "created": 1791587685.1060178
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "SHORT",
-      "entry": 528.44,
-      "created": 1791587685.1060185
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.07289,
@@ -78,8 +54,26 @@
       "signal": "SHORT",
       "entry": 7.35,
       "created": 1791601112.2634373
+    },
+    {
+      "symbol": "KAIA/USDT",
+      "signal": "LONG",
+      "entry": 0.05811,
+      "created": 1791602402.0872269
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 519.69,
+      "created": 1791602402.087228
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1213.15,
+      "created": 1791602402.0872288
     }
   ],
-  "total": 1595,
-  "hits": 720
+  "total": 1599,
+  "hits": 722
 }
