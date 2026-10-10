@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5007,
-      "created": 1791613618.1349392
-    },
-    {
       "symbol": "LIT/USDT",
       "signal": "SHORT",
       "entry": 3.5731,
@@ -66,8 +60,20 @@
       "signal": "SHORT",
       "entry": 525.94,
       "created": 1791627662.8501787
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.07137,
+      "created": 1791629115.18449
+    },
+    {
+      "symbol": "PIEVERSE/USDT",
+      "signal": "SHORT",
+      "entry": 1.2929,
+      "created": 1791629115.1844912
     }
   ],
-  "total": 1617,
+  "total": 1618,
   "hits": 730
 }
