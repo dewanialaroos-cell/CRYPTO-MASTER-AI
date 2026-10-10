@@ -8,24 +8,6 @@
       "created": 1791617795.069397
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.251,
-      "created": 1791635068.7470157
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08578,
-      "created": 1791635068.7470167
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5535,
-      "created": 1791635068.747017
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.355,
@@ -66,8 +48,26 @@
       "signal": "SHORT",
       "entry": 525.04,
       "created": 1791647837.026406
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2625,
+      "created": 1791650148.3278463
+    },
+    {
+      "symbol": "CFX/USDT",
+      "signal": "LONG",
+      "entry": 0.06042,
+      "created": 1791650148.327848
+    },
+    {
+      "symbol": "TRX/USDT",
+      "signal": "SHORT",
+      "entry": 0.33101,
+      "created": 1791650148.3278491
     }
   ],
-  "total": 1633,
-  "hits": 733
+  "total": 1636,
+  "hits": 735
 }
