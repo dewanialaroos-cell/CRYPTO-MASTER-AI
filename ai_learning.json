@@ -72,6 +72,12 @@
       "signal": "LONG",
       "entry": 0.07404,
       "created": 1791604079.1077933
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2662,
+      "created": 1791605755.2031844
     }
   ],
   "total": 1600,
