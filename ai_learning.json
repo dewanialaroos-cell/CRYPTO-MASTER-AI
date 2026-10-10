@@ -14,12 +14,6 @@
       "created": 1791650148.3278491
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5637,
-      "created": 1791656494.1106734
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 286.7,
@@ -84,8 +78,20 @@
       "signal": "SHORT",
       "entry": 526.26,
       "created": 1791670510.2455173
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08586,
+      "created": 1791671679.0381668
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5585,
+      "created": 1791671679.0381703
     }
   ],
-  "total": 1647,
+  "total": 1648,
   "hits": 739
 }
