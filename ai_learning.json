@@ -8,24 +8,6 @@
       "created": 1791583185.4581542
     },
     {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "SHORT",
-      "entry": 1.295,
-      "created": 1791599824.357333
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1652,
-      "created": 1791601112.2634346
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 7.35,
-      "created": 1791601112.2634373
-    },
-    {
       "symbol": "KAIA/USDT",
       "signal": "LONG",
       "entry": 0.05811,
@@ -102,8 +84,14 @@
       "signal": "SHORT",
       "entry": 84.188,
       "created": 1791615146.9684668
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.1475,
+      "created": 1791616546.9804375
     }
   ],
-  "total": 1604,
-  "hits": 725
+  "total": 1607,
+  "hits": 726
 }
