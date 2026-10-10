@@ -8,12 +8,6 @@
       "created": 1791617795.069397
     },
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.4997,
-      "created": 1791632697.740633
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.251,
@@ -66,8 +60,14 @@
       "signal": "LONG",
       "entry": 1.1266,
       "created": 1791646529.8812003
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 525.04,
+      "created": 1791647837.026406
     }
   ],
-  "total": 1632,
+  "total": 1633,
   "hits": 733
 }
