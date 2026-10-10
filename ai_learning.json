@@ -8,12 +8,6 @@
       "created": 1791583185.4581542
     },
     {
-      "symbol": "LINK/USDT",
-      "signal": "SHORT",
-      "entry": 12.8,
-      "created": 1791595070.4747698
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.488,
@@ -92,6 +86,6 @@
       "created": 1791608383.9757524
     }
   ],
-  "total": 1600,
+  "total": 1601,
   "hits": 723
 }
