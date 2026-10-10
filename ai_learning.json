@@ -8,24 +8,6 @@
       "created": 1791583185.4581542
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5564,
-      "created": 1791611165.1746333
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.06805,
-      "created": 1791611165.1746347
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1101,
-      "created": 1791611165.1746364
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.5007,
@@ -80,6 +62,6 @@
       "created": 1791624106.048095
     }
   ],
-  "total": 1614,
-  "hits": 729
+  "total": 1617,
+  "hits": 730
 }
