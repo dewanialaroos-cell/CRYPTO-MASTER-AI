@@ -8,12 +8,6 @@
       "created": 1791617795.069397
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2493.79,
-      "created": 1791617795.0693989
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "LONG",
       "entry": 1.2499,
@@ -72,8 +66,14 @@
       "signal": "SHORT",
       "entry": 1.4034,
       "created": 1791631195.698349
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.4997,
+      "created": 1791632697.740633
     }
   ],
-  "total": 1621,
+  "total": 1622,
   "hits": 731
 }
