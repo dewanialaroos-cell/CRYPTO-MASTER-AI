@@ -8,18 +8,6 @@
       "created": 1791617795.069397
     },
     {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.07137,
-      "created": 1791629115.18449
-    },
-    {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "SHORT",
-      "entry": 1.2929,
-      "created": 1791629115.1844912
-    },
-    {
       "symbol": "HYPE/USDT",
       "signal": "SHORT",
       "entry": 83.936,
@@ -84,8 +72,14 @@
       "signal": "LONG",
       "entry": 0.06873,
       "created": 1791642895.311641
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.08623,
+      "created": 1791644234.473178
     }
   ],
-  "total": 1627,
-  "hits": 732
+  "total": 1629,
+  "hits": 733
 }
