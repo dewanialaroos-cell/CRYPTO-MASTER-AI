@@ -84,6 +84,24 @@
       "signal": "LONG",
       "entry": 172.94,
       "created": 1791608383.9757524
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5564,
+      "created": 1791611165.1746333
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.06805,
+      "created": 1791611165.1746347
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1101,
+      "created": 1791611165.1746364
     }
   ],
   "total": 1601,
