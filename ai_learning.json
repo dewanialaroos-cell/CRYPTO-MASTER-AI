@@ -66,6 +66,24 @@
       "signal": "LONG",
       "entry": 0.488,
       "created": 1791596819.567597
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.5748,
+      "created": 1791599824.3573315
+    },
+    {
+      "symbol": "PIEVERSE/USDT",
+      "signal": "SHORT",
+      "entry": 1.295,
+      "created": 1791599824.357333
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 84.329,
+      "created": 1791599824.3573337
     }
   ],
   "total": 1592,
