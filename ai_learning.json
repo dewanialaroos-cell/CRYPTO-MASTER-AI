@@ -8,12 +8,6 @@
       "created": 1791583185.4581542
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2662,
-      "created": 1791605755.2031844
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.123,
@@ -78,8 +72,20 @@
       "signal": "SHORT",
       "entry": 2493.79,
       "created": 1791617795.0693989
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2499,
+      "created": 1791620218.701573
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "LONG",
+      "entry": 0.257,
+      "created": 1791620218.7015736
     }
   ],
-  "total": 1611,
+  "total": 1612,
   "hits": 727
 }
