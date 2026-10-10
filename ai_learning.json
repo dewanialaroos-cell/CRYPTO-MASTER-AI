@@ -8,12 +8,6 @@
       "created": 1791617795.069397
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.279,
-      "created": 1791624106.048095
-    },
-    {
       "symbol": "SOL/USDT",
       "signal": "SHORT",
       "entry": 109.65,
@@ -78,8 +72,14 @@
       "signal": "LONG",
       "entry": 0.5535,
       "created": 1791635068.747017
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.355,
+      "created": 1791639352.224562
     }
   ],
-  "total": 1624,
-  "hits": 731
+  "total": 1625,
+  "hits": 732
 }
