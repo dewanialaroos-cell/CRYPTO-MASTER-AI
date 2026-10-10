@@ -8,12 +8,6 @@
       "created": 1791617795.069397
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 83.936,
-      "created": 1791629989.654758
-    },
-    {
       "symbol": "FIL/USDT",
       "signal": "LONG",
       "entry": 1.1317,
@@ -80,6 +74,6 @@
       "created": 1791644234.473178
     }
   ],
-  "total": 1629,
+  "total": 1630,
   "hits": 733
 }
