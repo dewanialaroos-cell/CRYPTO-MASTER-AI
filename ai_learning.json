@@ -8,12 +8,6 @@
       "created": 1791583185.4581542
     },
     {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.07289,
-      "created": 1791588864.4707053
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "SHORT",
       "entry": 12.8,
@@ -72,8 +66,14 @@
       "signal": "SHORT",
       "entry": 1213.15,
       "created": 1791602402.0872288
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.07404,
+      "created": 1791604079.1077933
     }
   ],
-  "total": 1599,
-  "hits": 722
+  "total": 1600,
+  "hits": 723
 }
