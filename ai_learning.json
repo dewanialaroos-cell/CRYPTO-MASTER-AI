@@ -14,24 +14,6 @@
       "created": 1791650148.3278491
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 286.7,
-      "created": 1791658147.9331837
-    },
-    {
-      "symbol": "XDP/USDT",
-      "signal": "LONG",
-      "entry": 0.023505,
-      "created": 1791658147.9331849
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.06876,
-      "created": 1791658147.9331872
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.10257,
@@ -90,8 +72,14 @@
       "signal": "LONG",
       "entry": 0.5585,
       "created": 1791671679.0381703
+    },
+    {
+      "symbol": "XDP/USDT",
+      "signal": "LONG",
+      "entry": 0.023533,
+      "created": 1791673032.5836263
     }
   ],
-  "total": 1648,
-  "hits": 739
+  "total": 1651,
+  "hits": 740
 }
