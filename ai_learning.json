@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1475,
-      "created": 1791616546.9804375
-    },
-    {
       "symbol": "KAIA/USDT",
       "signal": "LONG",
       "entry": 0.05818,
@@ -66,8 +60,20 @@
       "signal": "SHORT",
       "entry": 83.936,
       "created": 1791629989.654758
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.1317,
+      "created": 1791631195.6983473
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.4034,
+      "created": 1791631195.698349
     }
   ],
-  "total": 1620,
+  "total": 1621,
   "hits": 731
 }
