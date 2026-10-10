@@ -84,6 +84,12 @@
       "signal": "LONG",
       "entry": 0.06876,
       "created": 1791658147.9331872
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.10257,
+      "created": 1791660796.1869264
     }
   ],
   "total": 1640,
