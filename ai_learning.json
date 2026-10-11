@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LUMIA/USDT",
-      "signal": "LONG",
-      "entry": 0.1706,
-      "created": 1791715626.7071297
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "SHORT",
-      "entry": 747.25,
-      "created": 1791715626.707134
-    },
-    {
       "symbol": "APT/USDT",
       "signal": "LONG",
       "entry": 0.8712,
