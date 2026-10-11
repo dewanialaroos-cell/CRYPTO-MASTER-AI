@@ -14,12 +14,6 @@
       "created": 1791650148.3278491
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1223.57,
-      "created": 1791663240.0019825
-    },
-    {
       "symbol": "TIA/USDT",
       "signal": "LONG",
       "entry": 0.5806,
@@ -98,6 +92,6 @@
       "created": 1791676607.9942527
     }
   ],
-  "total": 1653,
-  "hits": 741
+  "total": 1654,
+  "hits": 742
 }
