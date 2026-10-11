@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TIA/USDT",
-      "signal": "LONG",
-      "entry": 0.5939,
-      "created": 1791711436.3325934
-    },
-    {
-      "symbol": "CFX/USDT",
-      "signal": "LONG",
-      "entry": 0.06921,
-      "created": 1791711436.3325953
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3942,
-      "created": 1791711436.3325965
-    },
-    {
       "symbol": "LUMIA/USDT",
       "signal": "LONG",
       "entry": 0.1706,
@@ -114,8 +96,32 @@
       "signal": "LONG",
       "entry": 0.015959,
       "created": 1791724595.7616374
+    },
+    {
+      "symbol": "US/USDT",
+      "signal": "SHORT",
+      "entry": 0.014305,
+      "created": 1791726355.8238792
+    },
+    {
+      "symbol": "CFX/USDT",
+      "signal": "LONG",
+      "entry": 0.06969,
+      "created": 1791726355.8238797
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.06851,
+      "created": 1791726355.8238807
+    },
+    {
+      "symbol": "TIA/USDT",
+      "signal": "LONG",
+      "entry": 0.5789,
+      "created": 1791726355.8238828
     }
   ],
-  "total": 1702,
-  "hits": 760
+  "total": 1705,
+  "hits": 761
 }
