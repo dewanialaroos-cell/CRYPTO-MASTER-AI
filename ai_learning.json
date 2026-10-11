@@ -90,6 +90,12 @@
       "signal": "SHORT",
       "entry": 1.4023,
       "created": 1791676607.9942527
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2504.5,
+      "created": 1791680111.6898563
     }
   ],
   "total": 1654,
