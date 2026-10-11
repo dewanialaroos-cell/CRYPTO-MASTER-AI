@@ -32,12 +32,6 @@
       "created": 1791731671.7708063
     },
     {
-      "symbol": "MAGIC/USDT",
-      "signal": "LONG",
-      "entry": 0.13815,
-      "created": 1791740082.93892
-    },
-    {
       "symbol": "US/USDT",
       "signal": "SHORT",
       "entry": 0.011582,
@@ -126,8 +120,14 @@
       "signal": "LONG",
       "entry": 0.11461,
       "created": 1791753588.9967492
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2549,
+      "created": 1791755203.2054744
     }
   ],
-  "total": 1731,
+  "total": 1732,
   "hits": 778
 }
