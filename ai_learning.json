@@ -8,18 +8,6 @@
       "created": 1791681453.1059072
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1225.11,
-      "created": 1791688914.7949688
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "SHORT",
-      "entry": 63.28,
-      "created": 1791688914.7949705
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.10513,
@@ -96,8 +84,20 @@
       "signal": "SHORT",
       "entry": 12.888,
       "created": 1791702992.2145753
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08528,
+      "created": 1791704793.8901849
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2501.44,
+      "created": 1791704793.8901865
     }
   ],
-  "total": 1680,
+  "total": 1682,
   "hits": 753
 }
