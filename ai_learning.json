@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "CHIP/USDT",
-      "signal": "LONG",
-      "entry": 0.06889,
-      "created": 1791681453.1059072
-    },
-    {
-      "symbol": "MAGIC/USDT",
-      "signal": "LONG",
-      "entry": 0.10277,
-      "created": 1791693521.2592087
-    },
-    {
       "symbol": "TIA/USDT",
       "signal": "LONG",
       "entry": 0.6118,
@@ -96,8 +84,20 @@
       "signal": "LONG",
       "entry": 0.1093,
       "created": 1791707036.8135421
+    },
+    {
+      "symbol": "MAGIC/USDT",
+      "signal": "LONG",
+      "entry": 0.12942,
+      "created": 1791708452.1773942
+    },
+    {
+      "symbol": "CHIP/USDT",
+      "signal": "LONG",
+      "entry": 0.06456,
+      "created": 1791708452.1773968
     }
   ],
-  "total": 1683,
-  "hits": 754
+  "total": 1685,
+  "hits": 755
 }
