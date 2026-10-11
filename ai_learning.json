@@ -8,18 +8,6 @@
       "created": 1791650148.3278491
     },
     {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 110.1,
-      "created": 1791676607.9942515
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.4023,
-      "created": 1791676607.9942527
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
       "entry": 2504.5,
@@ -114,8 +102,14 @@
       "signal": "SHORT",
       "entry": 63.28,
       "created": 1791688914.7949705
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.10513,
+      "created": 1791692152.1995711
     }
   ],
-  "total": 1665,
-  "hits": 747
+  "total": 1667,
+  "hits": 749
 }
