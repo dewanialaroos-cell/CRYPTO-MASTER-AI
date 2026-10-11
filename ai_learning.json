@@ -26,12 +26,6 @@
       "created": 1791724595.7616374
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 288.7,
-      "created": 1791730023.8776248
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.33,
@@ -128,6 +122,6 @@
       "created": 1791742719.01838
     }
   ],
-  "total": 1722,
-  "hits": 774
+  "total": 1723,
+  "hits": 775
 }
