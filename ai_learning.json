@@ -32,36 +32,6 @@
       "created": 1791731671.7708063
     },
     {
-      "symbol": "US/USDT",
-      "signal": "SHORT",
-      "entry": 0.011582,
-      "created": 1791741421.3485608
-    },
-    {
-      "symbol": "S/USDT",
-      "signal": "LONG",
-      "entry": 0.06436,
-      "created": 1791741421.3485622
-    },
-    {
-      "symbol": "CFX/USDT",
-      "signal": "LONG",
-      "entry": 0.07018,
-      "created": 1791741421.348563
-    },
-    {
-      "symbol": "TIA/USDT",
-      "signal": "LONG",
-      "entry": 0.587,
-      "created": 1791741421.3485634
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.19912,
-      "created": 1791741421.3485665
-    },
-    {
       "symbol": "CHIP/USDT",
       "signal": "LONG",
       "entry": 0.06726,
@@ -126,8 +96,26 @@
       "signal": "LONG",
       "entry": 1.2549,
       "created": 1791755203.2054744
+    },
+    {
+      "symbol": "CFX/USDT",
+      "signal": "LONG",
+      "entry": 0.06677,
+      "created": 1791756922.739286
+    },
+    {
+      "symbol": "US/USDT",
+      "signal": "SHORT",
+      "entry": 0.012405,
+      "created": 1791756922.7392871
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 10.878,
+      "created": 1791756922.7392883
     }
   ],
-  "total": 1732,
+  "total": 1737,
   "hits": 778
 }
