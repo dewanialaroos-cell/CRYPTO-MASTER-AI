@@ -8,18 +8,6 @@
       "created": 1791681453.1059072
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5652,
-      "created": 1791686168.7440712
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.22493,
-      "created": 1791686168.7440753
-    },
-    {
       "symbol": "XDP/USDT",
       "signal": "LONG",
       "entry": 0.0239,
@@ -102,8 +90,20 @@
       "signal": "LONG",
       "entry": 7.73,
       "created": 1791700088.6710308
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5536,
+      "created": 1791701698.7081075
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.107,
+      "created": 1791701698.708109
     }
   ],
-  "total": 1675,
+  "total": 1677,
   "hits": 751
 }
