@@ -102,6 +102,18 @@
       "signal": "LONG",
       "entry": 0.0609,
       "created": 1791681453.105908
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.1258,
+      "created": 1791683200.171552
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.19443,
+      "created": 1791683200.1715546
     }
   ],
   "total": 1657,
