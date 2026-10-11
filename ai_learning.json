@@ -8,12 +8,6 @@
       "created": 1791650148.3278491
     },
     {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.06867,
-      "created": 1791674133.6380458
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.10323,
@@ -120,8 +114,20 @@
       "signal": "SHORT",
       "entry": 0.08586,
       "created": 1791687569.979721
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1225.11,
+      "created": 1791688914.7949688
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "SHORT",
+      "entry": 63.28,
+      "created": 1791688914.7949705
     }
   ],
-  "total": 1662,
+  "total": 1663,
   "hits": 746
 }
