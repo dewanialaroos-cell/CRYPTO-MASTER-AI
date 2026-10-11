@@ -32,24 +32,6 @@
       "created": 1791731671.7708063
     },
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5064,
-      "created": 1791734275.2097647
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "LONG",
-      "entry": 83674.2,
-      "created": 1791734275.209766
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1323,
-      "created": 1791734275.2097664
-    },
-    {
       "symbol": "FIL/USDT",
       "signal": "LONG",
       "entry": 1.1394,
@@ -138,8 +120,14 @@
       "signal": "LONG",
       "entry": 543.46,
       "created": 1791748628.8623652
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5119,
+      "created": 1791749705.6638906
     }
   ],
-  "total": 1725,
-  "hits": 776
+  "total": 1728,
+  "hits": 777
 }
