@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TRX/USDT",
-      "signal": "SHORT",
-      "entry": 0.33101,
-      "created": 1791650148.3278491
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
       "entry": 2504.5,
@@ -108,6 +102,12 @@
       "signal": "LONG",
       "entry": 0.10513,
       "created": 1791692152.1995711
+    },
+    {
+      "symbol": "MAGIC/USDT",
+      "signal": "LONG",
+      "entry": 0.10277,
+      "created": 1791693521.2592087
     }
   ],
   "total": 1667,
