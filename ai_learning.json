@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2504.5,
-      "created": 1791680111.6898563
-    },
-    {
       "symbol": "TIA/USDT",
       "signal": "LONG",
       "entry": 0.6015,
@@ -110,6 +104,6 @@
       "created": 1791693521.2592087
     }
   ],
-  "total": 1667,
+  "total": 1668,
   "hits": 749
 }
