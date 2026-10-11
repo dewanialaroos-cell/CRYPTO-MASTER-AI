@@ -26,30 +26,6 @@
       "created": 1791724595.7616374
     },
     {
-      "symbol": "US/USDT",
-      "signal": "SHORT",
-      "entry": 0.014305,
-      "created": 1791726355.8238792
-    },
-    {
-      "symbol": "CFX/USDT",
-      "signal": "LONG",
-      "entry": 0.06969,
-      "created": 1791726355.8238797
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.06851,
-      "created": 1791726355.8238807
-    },
-    {
-      "symbol": "TIA/USDT",
-      "signal": "LONG",
-      "entry": 0.5789,
-      "created": 1791726355.8238828
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
       "entry": 2503.06,
@@ -120,8 +96,38 @@
       "signal": "LONG",
       "entry": 0.13815,
       "created": 1791740082.93892
+    },
+    {
+      "symbol": "US/USDT",
+      "signal": "SHORT",
+      "entry": 0.011582,
+      "created": 1791741421.3485608
+    },
+    {
+      "symbol": "S/USDT",
+      "signal": "LONG",
+      "entry": 0.06436,
+      "created": 1791741421.3485622
+    },
+    {
+      "symbol": "CFX/USDT",
+      "signal": "LONG",
+      "entry": 0.07018,
+      "created": 1791741421.348563
+    },
+    {
+      "symbol": "TIA/USDT",
+      "signal": "LONG",
+      "entry": 0.587,
+      "created": 1791741421.3485634
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.19912,
+      "created": 1791741421.3485665
     }
   ],
-  "total": 1717,
-  "hits": 770
+  "total": 1721,
+  "hits": 774
 }
