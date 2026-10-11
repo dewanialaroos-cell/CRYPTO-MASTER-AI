@@ -1,0 +1,107 @@
+{
+  "trained_at_utc": "2026-10-11T14:29:01.467994+00:00",
+  "model_type": "StandardScaler + LogisticRegression",
+  "scikit_learn_version": "1.9.1",
+  "training_rows": 594404,
+  "testing_rows": 148086,
+  "training_files_used": [
+    "ADA_USDT_15m.csv",
+    "ADA_USDT_1d.csv",
+    "ADA_USDT_1h.csv",
+    "ADA_USDT_4h.csv",
+    "AVAX_USDT_15m.csv",
+    "AVAX_USDT_1d.csv",
+    "AVAX_USDT_1h.csv",
+    "AVAX_USDT_4h.csv",
+    "BTC_USDT_15m.csv",
+    "BTC_USDT_1d.csv",
+    "BTC_USDT_1h.csv",
+    "BTC_USDT_4h.csv",
+    "DOGE_USDT_15m.csv",
+    "DOGE_USDT_1d.csv",
+    "DOGE_USDT_1h.csv",
+    "DOGE_USDT_4h.csv",
+    "DOT_USDT_15m.csv",
+    "DOT_USDT_1d.csv",
+    "DOT_USDT_1h.csv",
+    "DOT_USDT_4h.csv",
+    "ETH_USDT_15m.csv",
+    "ETH_USDT_1d.csv",
+    "ETH_USDT_1h.csv",
+    "ETH_USDT_4h.csv",
+    "LINK_USDT_15m.csv",
+    "LINK_USDT_1d.csv",
+    "LINK_USDT_1h.csv",
+    "LINK_USDT_4h.csv",
+    "SOL_USDT_15m.csv",
+    "SOL_USDT_1d.csv",
+    "SOL_USDT_1h.csv",
+    "SOL_USDT_4h.csv",
+    "XRP_USDT_15m.csv",
+    "XRP_USDT_1d.csv",
+    "XRP_USDT_1h.csv",
+    "XRP_USDT_4h.csv"
+  ],
+  "skipped_files": [
+    "BNB_USDT_15m.csv",
+    "BNB_USDT_1d.csv",
+    "BNB_USDT_1h.csv",
+    "BNB_USDT_4h.csv"
+  ],
+  "feature_names": [
+    "return_1",
+    "return_3",
+    "return_6",
+    "return_12",
+    "ema_distance_20",
+    "ema_distance_50",
+    "rsi_14",
+    "atr_pct",
+    "volume_ratio",
+    "range_pct",
+    "body_pct",
+    "close_position",
+    "volatility_20",
+    "timeframe_code"
+  ],
+  "prediction_horizon_candles": 3,
+  "classes": {
+    "0": "SHORT direction",
+    "1": "LONG direction"
+  },
+  "accuracy": 0.5217373688262226,
+  "balanced_accuracy": 0.5217414629892851,
+  "long_precision": 0.5114315055536037,
+  "short_precision": 0.5320329373650108,
+  "long_recall": 0.5219399856583374,
+  "short_recall": 0.5215429403202329,
+  "roc_auc": 0.5281590650023178,
+  "classification_report": {
+    "SHORT": {
+      "precision": 0.5320329373650108,
+      "recall": 0.5215429403202329,
+      "f1-score": 0.5267357166722352,
+      "support": 75570.0
+    },
+    "LONG": {
+      "precision": 0.5114315055536037,
+      "recall": 0.5219399856583374,
+      "f1-score": 0.5166323146012203,
+      "support": 72516.0
+    },
+    "accuracy": 0.5217373688262226,
+    "macro avg": {
+      "precision": 0.5217322214593072,
+      "recall": 0.5217414629892851,
+      "f1-score": 0.5216840156367277,
+      "support": 148086.0
+    },
+    "weighted avg": {
+      "precision": 0.5219446546830828,
+      "recall": 0.5217373688262226,
+      "f1-score": 0.5217881976320713,
+      "support": 148086.0
+    }
+  },
+  "warning": "Historical direction classification only. Results do not include fees, slippage, funding, liquidations, or a complete trading-strategy backtest."
+}
