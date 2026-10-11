@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.1093,
-      "created": 1791707036.8135421
-    },
-    {
       "symbol": "MAGIC/USDT",
       "signal": "LONG",
       "entry": 0.12942,
@@ -84,8 +78,20 @@
       "signal": "SHORT",
       "entry": 1.2931,
       "created": 1791719106.7226043
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.1144,
+      "created": 1791721599.963614
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08531,
+      "created": 1791721599.963615
     }
   ],
-  "total": 1698,
-  "hits": 758
+  "total": 1699,
+  "hits": 759
 }
