@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 109.45,
-      "created": 1791697571.8419466
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.257,
@@ -98,6 +92,6 @@
       "created": 1791711436.3325965
     }
   ],
-  "total": 1689,
+  "total": 1690,
   "hits": 757
 }
