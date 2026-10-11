@@ -14,36 +14,6 @@
       "created": 1791715626.707134
     },
     {
-      "symbol": "MAGIC/USDT",
-      "signal": "LONG",
-      "entry": 0.12923,
-      "created": 1791723157.5354192
-    },
-    {
-      "symbol": "CHIP/USDT",
-      "signal": "LONG",
-      "entry": 0.0677,
-      "created": 1791723157.5354214
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.2245,
-      "created": 1791723157.5354223
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1033,
-      "created": 1791723157.5354242
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2351,
-      "created": 1791723157.535425
-    },
-    {
       "symbol": "APT/USDT",
       "signal": "LONG",
       "entry": 0.8712,
@@ -126,8 +96,26 @@
       "signal": "LONG",
       "entry": 1.1323,
       "created": 1791734275.2097664
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.1394,
+      "created": 1791738883.7833
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.12132,
+      "created": 1791738883.7833014
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2522,
+      "created": 1791738883.783302
     }
   ],
-  "total": 1712,
-  "hits": 766
+  "total": 1717,
+  "hits": 770
 }
