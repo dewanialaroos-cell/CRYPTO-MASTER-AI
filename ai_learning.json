@@ -26,12 +26,6 @@
       "created": 1791724595.7616374
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2503.06,
-      "created": 1791727243.4861343
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 288.7,
@@ -126,8 +120,14 @@
       "signal": "LONG",
       "entry": 0.19912,
       "created": 1791741421.3485665
+    },
+    {
+      "symbol": "CHIP/USDT",
+      "signal": "LONG",
+      "entry": 0.06726,
+      "created": 1791742719.01838
     }
   ],
-  "total": 1721,
+  "total": 1722,
   "hits": 774
 }
