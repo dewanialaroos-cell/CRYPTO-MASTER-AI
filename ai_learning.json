@@ -8,24 +8,6 @@
       "created": 1791681453.1059072
     },
     {
-      "symbol": "XDP/USDT",
-      "signal": "LONG",
-      "entry": 0.0239,
-      "created": 1791687569.9797163
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "SHORT",
-      "entry": 523.66,
-      "created": 1791687569.9797182
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08586,
-      "created": 1791687569.979721
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "SHORT",
       "entry": 1225.11,
@@ -102,8 +84,20 @@
       "signal": "LONG",
       "entry": 1.107,
       "created": 1791701698.708109
+    },
+    {
+      "symbol": "XDP/USDT",
+      "signal": "LONG",
+      "entry": 0.026555,
+      "created": 1791702992.2145736
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 12.888,
+      "created": 1791702992.2145753
     }
   ],
-  "total": 1677,
-  "hits": 751
+  "total": 1680,
+  "hits": 753
 }
