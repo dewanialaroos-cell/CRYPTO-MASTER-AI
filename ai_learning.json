@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.19968,
-      "created": 1791710158.0359755
-    },
-    {
       "symbol": "TIA/USDT",
       "signal": "LONG",
       "entry": 0.5939,
@@ -108,8 +102,20 @@
       "signal": "LONG",
       "entry": 1.2351,
       "created": 1791723157.535425
+    },
+    {
+      "symbol": "APT/USDT",
+      "signal": "LONG",
+      "entry": 0.8712,
+      "created": 1791724595.7616346
+    },
+    {
+      "symbol": "ZK/USDT",
+      "signal": "LONG",
+      "entry": 0.015959,
+      "created": 1791724595.7616374
     }
   ],
-  "total": 1701,
+  "total": 1702,
   "hits": 760
 }
