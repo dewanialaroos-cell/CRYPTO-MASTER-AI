@@ -1,0 +1,63 @@
+
+name: Crypto Master AI Training
+
+'on':
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-master-ai-training
+  cancel-in-progress: false
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check training code
+        run: python -m py_compile train_ai.py
+
+      - name: Train and test AI model
+        run: python train_ai.py
+
+      - name: Show AI training report
+        if: always()
+        run: |
+          echo "===== AI TRAINING REPORT ====="
+          cat models/ai_training_report.json || true
+          echo "===== GENERATED MODEL ====="
+          ls -lh models/ || true
+
+      - name: Save trained model and report
+        if: success()
+        run: |
+          git config user.name "Crypto Master AI"
+          git config user.email "actions@github.com"
+
+          git add models/crypto_ai_model.joblib models/ai_training_report.json
+
+          if git diff --cached --quiet; then
+            echo "No model or report changes to save."
+          else
+            git commit -m "Train Crypto Master AI model"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
