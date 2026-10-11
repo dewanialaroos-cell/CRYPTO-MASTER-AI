@@ -14,12 +14,6 @@
       "created": 1791715626.707134
     },
     {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "SHORT",
-      "entry": 1.2931,
-      "created": 1791719106.7226043
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.1144,
@@ -126,8 +120,26 @@
       "signal": "LONG",
       "entry": 0.569,
       "created": 1791732912.2374
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5064,
+      "created": 1791734275.2097647
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 83674.2,
+      "created": 1791734275.209766
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1323,
+      "created": 1791734275.2097664
     }
   ],
-  "total": 1709,
-  "hits": 764
+  "total": 1710,
+  "hits": 765
 }
