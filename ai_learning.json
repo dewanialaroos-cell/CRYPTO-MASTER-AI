@@ -126,6 +126,12 @@
       "signal": "LONG",
       "entry": 0.5119,
       "created": 1791749705.6638906
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "LONG",
+      "entry": 292.3,
+      "created": 1791750966.4937053
     }
   ],
   "total": 1728,
