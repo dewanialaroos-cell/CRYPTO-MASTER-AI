@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08528,
-      "created": 1791704793.8901849
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2501.44,
-      "created": 1791704793.8901865
-    },
-    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
       "entry": 0.1093,
@@ -98,6 +86,6 @@
       "created": 1791719106.7226043
     }
   ],
-  "total": 1696,
+  "total": 1698,
   "hits": 758
 }
