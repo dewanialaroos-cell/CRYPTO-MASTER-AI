@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5536,
-      "created": 1791701698.7081075
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.107,
-      "created": 1791701698.708109
-    },
-    {
       "symbol": "XDP/USDT",
       "signal": "LONG",
       "entry": 0.026555,
@@ -102,8 +90,14 @@
       "signal": "SHORT",
       "entry": 747.25,
       "created": 1791715626.707134
+    },
+    {
+      "symbol": "INJ/USDT",
+      "signal": "LONG",
+      "entry": 7.58,
+      "created": 1791716425.2154815
     }
   ],
-  "total": 1692,
+  "total": 1694,
   "hits": 757
 }
