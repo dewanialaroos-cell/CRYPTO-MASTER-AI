@@ -26,12 +26,6 @@
       "created": 1791742719.01838
     },
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.23802,
-      "created": 1791747271.0543437
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.5642,
@@ -122,6 +116,6 @@
       "created": 1791760723.8722615
     }
   ],
-  "total": 1739,
+  "total": 1740,
   "hits": 779
 }
