@@ -1,0 +1,64 @@
+
+name: Crypto Master AI Backtesting
+
+'on':
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-master-ai-backtesting
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check backtest code
+        run: python -m py_compile backtest_ai.py
+
+      - name: Run historical backtest
+        run: python backtest_ai.py
+
+      - name: Display backtest report
+        if: always()
+        run: |
+          echo "===== BACKTEST REPORT ====="
+          cat models/backtest_report.json || true
+          echo "===== TRADE RESULTS ====="
+          ls -lh models/backtest_results.csv || true
+
+      - name: Save backtest report to GitHub
+        if: success()
+        run: |
+          git config user.name "Crypto Master AI"
+          git config user.email "actions@github.com"
+
+          git add models/backtest_results.csv models/backtest_report.json
+
+          if git diff --cached --quiet; then
+            echo "No backtest report changes to save."
+          else
+            git commit -m "Save Crypto Master AI backtest results"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          
