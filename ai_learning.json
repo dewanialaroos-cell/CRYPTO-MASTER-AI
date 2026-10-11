@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.257,
-      "created": 1791700088.6710298
-    },
-    {
-      "symbol": "INJ/USDT",
-      "signal": "LONG",
-      "entry": 7.73,
-      "created": 1791700088.6710308
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.5536,
@@ -90,8 +78,32 @@
       "signal": "SHORT",
       "entry": 1.3942,
       "created": 1791711436.3325965
+    },
+    {
+      "symbol": "LUMIA/USDT",
+      "signal": "LONG",
+      "entry": 0.1706,
+      "created": 1791715626.7071297
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 109.36,
+      "created": 1791715626.7071311
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.252,
+      "created": 1791715626.7071335
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 747.25,
+      "created": 1791715626.707134
     }
   ],
-  "total": 1690,
+  "total": 1692,
   "hits": 757
 }
