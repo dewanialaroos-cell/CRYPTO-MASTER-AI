@@ -2,22 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "CT/USDT",
-      "signal": "SHORT",
-      "entry": 0.3099,
-      "created": 1791640602.0773652
-    },
-    {
       "symbol": "TRX/USDT",
       "signal": "SHORT",
       "entry": 0.33101,
       "created": 1791650148.3278491
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.339,
-      "created": 1791669422.2088013
     },
     {
       "symbol": "XMR/USDT",
@@ -114,8 +102,20 @@
       "signal": "LONG",
       "entry": 0.19443,
       "created": 1791683200.1715546
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.325,
+      "created": 1791684889.5361865
+    },
+    {
+      "symbol": "INJ/USDT",
+      "signal": "LONG",
+      "entry": 7.705,
+      "created": 1791684889.5361888
     }
   ],
-  "total": 1657,
+  "total": 1658,
   "hits": 743
 }
