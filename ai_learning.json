@@ -26,12 +26,6 @@
       "created": 1791724595.7616374
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.33,
-      "created": 1791731671.7708046
-    },
-    {
       "symbol": "INJ/USDT",
       "signal": "LONG",
       "entry": 7.733,
@@ -120,8 +114,20 @@
       "signal": "LONG",
       "entry": 0.06726,
       "created": 1791742719.01838
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.717,
+      "created": 1791746087.5744693
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.07038,
+      "created": 1791746087.5744712
     }
   ],
-  "total": 1723,
-  "hits": 775
+  "total": 1724,
+  "hits": 776
 }
