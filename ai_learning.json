@@ -26,18 +26,6 @@
       "created": 1791742719.01838
     },
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.717,
-      "created": 1791746087.5744693
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07038,
-      "created": 1791746087.5744712
-    },
-    {
       "symbol": "ENA/USDT",
       "signal": "LONG",
       "entry": 0.23802,
@@ -114,8 +102,26 @@
       "signal": "LONG",
       "entry": 171.65,
       "created": 1791758176.098582
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.828,
+      "created": 1791760723.8722577
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.06984,
+      "created": 1791760723.8722599
+    },
+    {
+      "symbol": "MAGIC/USDT",
+      "signal": "LONG",
+      "entry": 0.13585,
+      "created": 1791760723.8722615
     }
   ],
-  "total": 1737,
-  "hits": 778
+  "total": 1739,
+  "hits": 779
 }
