@@ -14,24 +14,6 @@
       "created": 1791742719.01838
     },
     {
-      "symbol": "CFX/USDT",
-      "signal": "LONG",
-      "entry": 0.06677,
-      "created": 1791756922.739286
-    },
-    {
-      "symbol": "US/USDT",
-      "signal": "SHORT",
-      "entry": 0.012405,
-      "created": 1791756922.7392871
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "LONG",
-      "entry": 10.878,
-      "created": 1791756922.7392883
-    },
-    {
       "symbol": "TIA/USDT",
       "signal": "LONG",
       "entry": 0.5791,
@@ -96,8 +78,20 @@
       "signal": "LONG",
       "entry": 1.213,
       "created": 1791768961.3313663
+    },
+    {
+      "symbol": "US/USDT",
+      "signal": "SHORT",
+      "entry": 0.012409,
+      "created": 1791771868.1192484
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5558,
+      "created": 1791771868.119251
     }
   ],
-  "total": 1747,
-  "hits": 782
+  "total": 1750,
+  "hits": 783
 }
