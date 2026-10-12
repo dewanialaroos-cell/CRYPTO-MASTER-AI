@@ -14,12 +14,6 @@
       "created": 1791742719.01838
     },
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2549,
-      "created": 1791755203.2054744
-    },
-    {
       "symbol": "CFX/USDT",
       "signal": "LONG",
       "entry": 0.06677,
@@ -104,6 +98,6 @@
       "created": 1791768961.3313663
     }
   ],
-  "total": 1746,
+  "total": 1747,
   "hits": 782
 }
