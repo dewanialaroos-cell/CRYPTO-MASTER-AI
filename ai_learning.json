@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "INJ/USDT",
-      "signal": "LONG",
-      "entry": 7.733,
-      "created": 1791731671.7708063
-    },
-    {
       "symbol": "CHIP/USDT",
       "signal": "LONG",
       "entry": 0.06726,
