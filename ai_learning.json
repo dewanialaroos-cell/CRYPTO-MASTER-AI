@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XMR/USDT",
-      "signal": "SHORT",
-      "entry": 531.34,
-      "created": 1791796770.8126647
-    },
-    {
       "symbol": "AVAX/USDT",
       "signal": "LONG",
       "entry": 11.084,
@@ -66,8 +60,26 @@
       "signal": "LONG",
       "entry": 5.667,
       "created": 1791808258.681634
+    },
+    {
+      "symbol": "GRASS/USDT",
+      "signal": "LONG",
+      "entry": 0.8016,
+      "created": 1791813048.1184597
+    },
+    {
+      "symbol": "S/USDT",
+      "signal": "LONG",
+      "entry": 0.06049,
+      "created": 1791813048.118461
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08579,
+      "created": 1791813048.1184616
     }
   ],
-  "total": 1784,
+  "total": 1785,
   "hits": 794
 }
