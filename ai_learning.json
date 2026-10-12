@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "W/USDT",
-      "signal": "LONG",
-      "entry": 0.029002,
-      "created": 1791788407.8348482
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "LONG",
-      "entry": 1.1321,
-      "created": 1791788407.8348513
-    },
-    {
       "symbol": "LINK/USDT",
       "signal": "LONG",
       "entry": 13.495,
@@ -78,8 +66,14 @@
       "signal": "SHORT",
       "entry": 0.011916,
       "created": 1791802236.3397217
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 7.575,
+      "created": 1791803911.1731653
     }
   ],
-  "total": 1777,
+  "total": 1779,
   "hits": 794
 }
