@@ -2,30 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2691,
-      "created": 1791808258.6816294
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3973,
-      "created": 1791808258.6816313
-    },
-    {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "SHORT",
-      "entry": 1.2861,
-      "created": 1791808258.681632
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.667,
-      "created": 1791808258.681634
-    },
-    {
       "symbol": "GRASS/USDT",
       "signal": "LONG",
       "entry": 0.8016,
@@ -126,8 +102,20 @@
       "signal": "LONG",
       "entry": 1.1792,
       "created": 1791821889.5453124
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.372,
+      "created": 1791823767.359184
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 531.96,
+      "created": 1791823767.359186
     }
   ],
-  "total": 1791,
-  "hits": 796
+  "total": 1795,
+  "hits": 798
 }
