@@ -14,12 +14,6 @@
       "created": 1791758176.0985787
     },
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.23742,
-      "created": 1791763231.3997996
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.5244,
@@ -86,6 +80,6 @@
       "created": 1791777205.8416638
     }
   ],
-  "total": 1754,
-  "hits": 784
+  "total": 1755,
+  "hits": 785
 }
