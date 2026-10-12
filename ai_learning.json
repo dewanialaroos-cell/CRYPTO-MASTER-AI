@@ -14,12 +14,6 @@
       "created": 1791813048.118461
     },
     {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08579,
-      "created": 1791813048.1184616
-    },
-    {
       "symbol": "SOL/USDT",
       "signal": "SHORT",
       "entry": 108.72,
@@ -120,8 +114,26 @@
       "signal": "LONG",
       "entry": 0.09769,
       "created": 1791827305.5390756
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 82457.3,
+      "created": 1791829065.9182084
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08467,
+      "created": 1791829065.9182096
+    },
+    {
+      "symbol": "PIEVERSE/USDT",
+      "signal": "SHORT",
+      "entry": 1.265,
+      "created": 1791829065.9182117
     }
   ],
-  "total": 1795,
-  "hits": 798
+  "total": 1796,
+  "hits": 799
 }
