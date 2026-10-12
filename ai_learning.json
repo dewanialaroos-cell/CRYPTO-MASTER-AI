@@ -14,46 +14,10 @@
       "created": 1791813048.118461
     },
     {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 108.72,
-      "created": 1791816870.297127
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 84.37,
-      "created": 1791816870.2971287
-    },
-    {
       "symbol": "ADA/USDT",
       "signal": "SHORT",
       "entry": 0.2422,
       "created": 1791816870.2971292
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "SHORT",
-      "entry": 1.0852,
-      "created": 1791816870.2971296
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2523.2,
-      "created": 1791816870.2971315
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "SHORT",
-      "entry": 162.97,
-      "created": 1791816870.2971323
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "SHORT",
-      "entry": 0.2234,
-      "created": 1791816870.2971327
     },
     {
       "symbol": "US/USDT",
@@ -132,8 +96,32 @@
       "signal": "SHORT",
       "entry": 1.265,
       "created": 1791829065.9182117
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.21566,
+      "created": 1791832612.716047
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 83.088,
+      "created": 1791832612.716051
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2510.53,
+      "created": 1791832612.7160523
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1229.15,
+      "created": 1791832612.7160528
     }
   ],
-  "total": 1796,
-  "hits": 799
+  "total": 1802,
+  "hits": 805
 }
