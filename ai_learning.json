@@ -14,24 +14,6 @@
       "created": 1791758176.0985787
     },
     {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.12104,
-      "created": 1791768961.3313634
-    },
-    {
-      "symbol": "S/USDT",
-      "signal": "LONG",
-      "entry": 0.05945,
-      "created": 1791768961.3313656
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.213,
-      "created": 1791768961.3313663
-    },
-    {
       "symbol": "US/USDT",
       "signal": "SHORT",
       "entry": 0.012409,
@@ -102,8 +84,32 @@
       "signal": "LONG",
       "entry": 0.24498,
       "created": 1791782267.1696668
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.2473,
+      "created": 1791784222.3385637
+    },
+    {
+      "symbol": "S/USDT",
+      "signal": "LONG",
+      "entry": 0.0618,
+      "created": 1791784222.338566
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 11.061,
+      "created": 1791784222.338567
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.10753,
+      "created": 1791784222.3385694
     }
   ],
-  "total": 1757,
-  "hits": 786
+  "total": 1760,
+  "hits": 788
 }
