@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "APT/USDT",
-      "signal": "LONG",
-      "entry": 0.8712,
-      "created": 1791724595.7616346
-    },
-    {
-      "symbol": "ZK/USDT",
-      "signal": "LONG",
-      "entry": 0.015959,
-      "created": 1791724595.7616374
-    },
-    {
       "symbol": "INJ/USDT",
       "signal": "LONG",
       "entry": 7.733,
@@ -24,18 +12,6 @@
       "signal": "LONG",
       "entry": 0.06726,
       "created": 1791742719.01838
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.2322,
-      "created": 1791753588.9967468
-    },
-    {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.11461,
-      "created": 1791753588.9967492
     },
     {
       "symbol": "DOT/USDT",
@@ -108,8 +84,26 @@
       "signal": "LONG",
       "entry": 297.7,
       "created": 1791767338.8900986
+    },
+    {
+      "symbol": "STRK/USDT",
+      "signal": "LONG",
+      "entry": 0.12104,
+      "created": 1791768961.3313634
+    },
+    {
+      "symbol": "S/USDT",
+      "signal": "LONG",
+      "entry": 0.05945,
+      "created": 1791768961.3313656
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.213,
+      "created": 1791768961.3313663
     }
   ],
-  "total": 1744,
-  "hits": 781
+  "total": 1746,
+  "hits": 782
 }
