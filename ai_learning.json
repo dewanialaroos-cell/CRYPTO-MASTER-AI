@@ -2,24 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.869,
-      "created": 1791791620.501293
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "LONG",
-      "entry": 1.2709,
-      "created": 1791791620.5012946
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.07022,
-      "created": 1791791620.5012953
-    },
-    {
       "symbol": "ONDO/USDT",
       "signal": "LONG",
       "entry": 0.5134,
@@ -66,8 +48,32 @@
       "signal": "SHORT",
       "entry": 7.575,
       "created": 1791803911.1731653
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "LONG",
+      "entry": 1.2691,
+      "created": 1791808258.6816294
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.3973,
+      "created": 1791808258.6816313
+    },
+    {
+      "symbol": "PIEVERSE/USDT",
+      "signal": "SHORT",
+      "entry": 1.2861,
+      "created": 1791808258.681632
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.667,
+      "created": 1791808258.681634
     }
   ],
-  "total": 1780,
+  "total": 1783,
   "hits": 794
 }
