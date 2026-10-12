@@ -2,18 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.10649,
-      "created": 1791802236.3397183
-    },
-    {
-      "symbol": "MAGIC/USDT",
-      "signal": "LONG",
-      "entry": 0.1307,
-      "created": 1791802236.33972
-    },
-    {
       "symbol": "US/USDT",
       "signal": "SHORT",
       "entry": 0.011916,
@@ -66,8 +54,50 @@
       "signal": "SHORT",
       "entry": 0.08579,
       "created": 1791813048.1184616
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 108.72,
+      "created": 1791816870.297127
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 84.37,
+      "created": 1791816870.2971287
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "SHORT",
+      "entry": 0.2422,
+      "created": 1791816870.2971292
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 1.0852,
+      "created": 1791816870.2971296
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2523.2,
+      "created": 1791816870.2971315
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "entry": 162.97,
+      "created": 1791816870.2971323
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.2234,
+      "created": 1791816870.2971327
     }
   ],
-  "total": 1787,
+  "total": 1789,
   "hits": 794
 }
