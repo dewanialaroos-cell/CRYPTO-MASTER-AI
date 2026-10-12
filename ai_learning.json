@@ -8,12 +8,6 @@
       "created": 1791758176.0985787
     },
     {
-      "symbol": "W/USDT",
-      "signal": "LONG",
-      "entry": 0.027883,
-      "created": 1791773402.344002
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.837,
@@ -96,8 +90,20 @@
       "signal": "SHORT",
       "entry": 0.01174,
       "created": 1791786279.5205727
+    },
+    {
+      "symbol": "W/USDT",
+      "signal": "LONG",
+      "entry": 0.029002,
+      "created": 1791788407.8348482
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "LONG",
+      "entry": 1.1321,
+      "created": 1791788407.8348513
     }
   ],
-  "total": 1762,
-  "hits": 789
+  "total": 1763,
+  "hits": 790
 }
