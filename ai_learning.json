@@ -26,12 +26,6 @@
       "created": 1791742719.01838
     },
     {
-      "symbol": "ONDO/USDT",
-      "signal": "LONG",
-      "entry": 0.5119,
-      "created": 1791749705.6638906
-    },
-    {
       "symbol": "TAO/USDT",
       "signal": "LONG",
       "entry": 292.3,
@@ -108,8 +102,14 @@
       "signal": "LONG",
       "entry": 0.23742,
       "created": 1791763231.3997996
+    },
+    {
+      "symbol": "ONDO/USDT",
+      "signal": "LONG",
+      "entry": 0.5244,
+      "created": 1791765248.5002522
     }
   ],
-  "total": 1742,
-  "hits": 779
+  "total": 1743,
+  "hits": 780
 }
