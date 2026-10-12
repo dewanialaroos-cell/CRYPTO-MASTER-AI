@@ -20,12 +20,6 @@
       "created": 1791816870.2971292
     },
     {
-      "symbol": "US/USDT",
-      "signal": "SHORT",
-      "entry": 0.011328,
-      "created": 1791818384.725781
-    },
-    {
       "symbol": "PUMP/USDT",
       "signal": "SHORT",
       "entry": 0.005304,
@@ -120,8 +114,14 @@
       "signal": "SHORT",
       "entry": 1229.15,
       "created": 1791832612.7160528
+    },
+    {
+      "symbol": "US/USDT",
+      "signal": "SHORT",
+      "entry": 0.010581,
+      "created": 1791833887.4920464
     }
   ],
-  "total": 1802,
-  "hits": 805
+  "total": 1803,
+  "hits": 806
 }
