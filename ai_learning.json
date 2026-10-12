@@ -8,18 +8,6 @@
       "created": 1791758176.0985787
     },
     {
-      "symbol": "TAO/USDT",
-      "signal": "LONG",
-      "entry": 301.1,
-      "created": 1791782267.1696649
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.24498,
-      "created": 1791782267.1696668
-    },
-    {
       "symbol": "FIL/USDT",
       "signal": "LONG",
       "entry": 1.2473,
@@ -90,8 +78,14 @@
       "signal": "LONG",
       "entry": 0.5134,
       "created": 1791795158.6597536
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 531.34,
+      "created": 1791796770.8126647
     }
   ],
-  "total": 1770,
+  "total": 1772,
   "hits": 793
 }
