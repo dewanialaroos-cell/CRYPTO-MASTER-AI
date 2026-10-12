@@ -90,6 +90,36 @@
       "signal": "SHORT",
       "entry": 0.011328,
       "created": 1791818384.725781
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "SHORT",
+      "entry": 0.005304,
+      "created": 1791820330.2057552
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "SHORT",
+      "entry": 63.05,
+      "created": 1791820330.205757
+    },
+    {
+      "symbol": "USD1/USDT",
+      "signal": "LONG",
+      "entry": 1.00012,
+      "created": 1791820330.2057576
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 7.424,
+      "created": 1791820330.205758
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 745.76,
+      "created": 1791820330.2057588
     }
   ],
   "total": 1791,
