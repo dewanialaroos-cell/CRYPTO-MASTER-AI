@@ -1,6 +1,25 @@
 {
   "version": 1,
-  "pending": [],
+  "pending": [
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 106.92,
+      "created": 1791926862.9354427
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2507.3,
+      "created": 1791926862.9354436
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.367,
+      "created": 1791926862.935444
+    }
+  ],
   "total": 1822,
   "hits": 819
 }
