@@ -2,60 +2,18 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "GRASS/USDT",
-      "signal": "LONG",
-      "entry": 0.8016,
-      "created": 1791813048.1184597
-    },
-    {
-      "symbol": "S/USDT",
-      "signal": "LONG",
-      "entry": 0.06049,
-      "created": 1791813048.118461
-    },
-    {
-      "symbol": "ADA/USDT",
-      "signal": "SHORT",
-      "entry": 0.2422,
-      "created": 1791816870.2971292
-    },
-    {
-      "symbol": "USD1/USDT",
-      "signal": "LONG",
-      "entry": 1.00012,
-      "created": 1791820330.2057576
-    },
-    {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "SHORT",
-      "entry": 1.265,
-      "created": 1791829065.9182117
-    },
-    {
       "symbol": "US/USDT",
       "signal": "SHORT",
       "entry": 0.010074,
       "created": 1791855557.5809166
     },
     {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 82235.0,
-      "created": 1791855557.5809183
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2456.52,
-      "created": 1791855557.5809188
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08256,
-      "created": 1791855557.580919
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.1856,
+      "created": 1791880229.206196
     }
   ],
-  "total": 1818,
+  "total": 1821,
   "hits": 819
 }
