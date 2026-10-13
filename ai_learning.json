@@ -1,19 +1,6 @@
 {
   "version": 1,
-  "pending": [
-    {
-      "symbol": "US/USDT",
-      "signal": "SHORT",
-      "entry": 0.010074,
-      "created": 1791855557.5809166
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1856,
-      "created": 1791880229.206196
-    }
-  ],
-  "total": 1821,
+  "pending": [],
+  "total": 1822,
   "hits": 819
 }
