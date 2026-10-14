@@ -60,6 +60,36 @@
       "signal": "SHORT",
       "entry": 12.442,
       "created": 1792007033.4611511
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 81546.4,
+      "created": 1792017767.9590845
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 104.33,
+      "created": 1792017767.959086
+    },
+    {
+      "symbol": "XCRCL/USDT",
+      "signal": "SHORT",
+      "entry": 78.52,
+      "created": 1792017767.9590867
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2414.66,
+      "created": 1792017767.9590876
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 80.721,
+      "created": 1792017767.9590898
     }
   ],
   "total": 1839,
