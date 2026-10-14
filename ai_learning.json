@@ -2,12 +2,12 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "FIL/USDT",
+      "symbol": "XMR/USDT",
       "signal": "LONG",
-      "entry": 1.1827,
-      "created": 1791955678.2513003
+      "entry": 554.27,
+      "created": 1791973945.1109943
     }
   ],
-  "total": 1827,
+  "total": 1828,
   "hits": 820
 }
