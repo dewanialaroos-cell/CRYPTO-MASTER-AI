@@ -2,66 +2,66 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ENA/USDT",
-      "signal": "SHORT",
-      "entry": 0.19727,
-      "created": 1791991958.5058322
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 81931.2,
-      "created": 1791991958.5058334
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "SHORT",
-      "entry": 0.4905,
-      "created": 1791991958.505834
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "SHORT",
-      "entry": 733.8,
-      "created": 1791991958.5058346
-    },
-    {
       "symbol": "XRP/USDT",
       "signal": "SHORT",
-      "entry": 1.3388,
-      "created": 1791991958.505835
+      "entry": 1.3279,
+      "created": 1792007033.4611442
     },
     {
-      "symbol": "XAUT/USDT",
+      "symbol": "SUI/USDT",
       "signal": "SHORT",
-      "entry": 4095.8,
-      "created": 1791991958.5058355
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "SHORT",
-      "entry": 59.28,
-      "created": 1791991958.5058362
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 104.85,
-      "created": 1791991958.5058384
+      "entry": 1.0214,
+      "created": 1792007033.4611456
     },
     {
       "symbol": "DOGE/USDT",
       "signal": "SHORT",
-      "entry": 0.08261,
-      "created": 1791991958.505839
+      "entry": 0.08203,
+      "created": 1792007033.461146
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "SHORT",
+      "entry": 0.18105,
+      "created": 1792007033.4611466
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 7.101,
+      "created": 1792007033.461147
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.19565,
+      "created": 1792007033.4611475
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 730.0,
+      "created": 1792007033.4611478
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "SHORT",
+      "entry": 4.791,
+      "created": 1792007033.46115
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1151.77,
+      "created": 1792007033.4611506
     },
     {
       "symbol": "LINK/USDT",
       "signal": "SHORT",
-      "entry": 12.472,
-      "created": 1791991958.5058398
+      "entry": 12.442,
+      "created": 1792007033.4611511
     }
   ],
-  "total": 1829,
-  "hits": 820
+  "total": 1839,
+  "hits": 828
 }
