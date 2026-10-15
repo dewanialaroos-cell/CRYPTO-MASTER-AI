@@ -4,10 +4,16 @@
     {
       "symbol": "STRK/USDT",
       "signal": "LONG",
-      "entry": 0.08638,
-      "created": 1792077426.411254
+      "entry": 0.08757,
+      "created": 1792092070.879285
+    },
+    {
+      "symbol": "FIL/USDT",
+      "signal": "LONG",
+      "entry": 1.117,
+      "created": 1792092070.8792858
     }
   ],
-  "total": 1879,
-  "hits": 851
+  "total": 1880,
+  "hits": 852
 }
