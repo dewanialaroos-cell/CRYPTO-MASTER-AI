@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ARB/USDT",
-      "signal": "SHORT",
-      "entry": 0.18105,
-      "created": 1792007033.4611466
-    },
-    {
       "symbol": "BNB/USDT",
       "signal": "SHORT",
       "entry": 730.0,
@@ -16,70 +10,64 @@
     {
       "symbol": "BTC/USDT",
       "signal": "SHORT",
-      "entry": 81546.4,
-      "created": 1792017767.9590845
+      "entry": 81025.1,
+      "created": 1792043126.2927103
     },
     {
-      "symbol": "SOL/USDT",
+      "symbol": "ZEC/USDT",
       "signal": "SHORT",
-      "entry": 104.33,
-      "created": 1792017767.959086
-    },
-    {
-      "symbol": "XCRCL/USDT",
-      "signal": "SHORT",
-      "entry": 78.52,
-      "created": 1792017767.9590867
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2414.66,
-      "created": 1792017767.9590876
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 80.721,
-      "created": 1792017767.9590898
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.326,
-      "created": 1792025837.177153
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "SHORT",
-      "entry": 0.19514,
-      "created": 1792025837.1771543
-    },
-    {
-      "symbol": "PONS/USDT",
-      "signal": "SHORT",
-      "entry": 0.3146,
-      "created": 1792025837.177155
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "SHORT",
-      "entry": 9.952,
-      "created": 1792025837.1771574
+      "entry": 1098.0,
+      "created": 1792043126.2927115
     },
     {
       "symbol": "SUI/USDT",
       "signal": "SHORT",
-      "entry": 1.019,
-      "created": 1792025837.1771579
+      "entry": 0.9864,
+      "created": 1792043126.2927117
     },
     {
-      "symbol": "UNI/USDT",
+      "symbol": "XRP/USDT",
       "signal": "SHORT",
-      "entry": 7.166,
-      "created": 1792025837.1771584
+      "entry": 1.3025,
+      "created": 1792043126.292712
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.0944,
+      "created": 1792043126.2927125
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 12.092,
+      "created": 1792043126.2927127
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2361.83,
+      "created": 1792043126.2927132
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 102.24,
+      "created": 1792043126.2927148
+    },
+    {
+      "symbol": "XCRCL/USDT",
+      "signal": "SHORT",
+      "entry": 77.23,
+      "created": 1792043126.2927155
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 3.881e-06,
+      "created": 1792043126.292716
     }
   ],
-  "total": 1847,
-  "hits": 833
+  "total": 1859,
+  "hits": 845
 }
