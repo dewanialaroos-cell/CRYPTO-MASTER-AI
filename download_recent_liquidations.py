@@ -9,7 +9,8 @@ ROOT=Path("specialist_data/liquidations"); REPORT=Path("data_downloads/liquidati
 INSTS={"BTC-USDT-SWAP":"BTC","ETH-USDT-SWAP":"ETH","SOL-USDT-SWAP":"SOL","XRP-USDT-SWAP":"XRP","ADA-USDT-SWAP":"ADA","DOGE-USDT-SWAP":"DOGE"}
 BASE="https://www.okx.com"
 def get_json(url,params):
- r=requests.get(url,params=params,timeout=20,headers={"User-Agent":"CryptoMasterAI-Research/1.0"}); if not r.ok:
+ r=requests.get(url,params=params,timeout=20,headers={"User-Agent":"CryptoMasterAI-Research/1.0"})
+ if not r.ok:
   raise RuntimeError(f"HTTP {r.status_code}: {r.text[:500]}")
  body=r.json()
  if body.get("code") not in (None,"0"):
