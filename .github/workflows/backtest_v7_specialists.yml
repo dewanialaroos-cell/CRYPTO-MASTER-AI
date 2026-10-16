@@ -27,6 +27,8 @@ jobs:
           pip install -r requirements.txt
       - name: Compile V7 backtester
         run: python -m py_compile backtest_v7_specialists.py
+      - name: Train V7 specialists to recreate the model artifact
+        run: python train_ai_v7_specialists.py
       - name: Run individual V7 specialist backtests
         run: python backtest_v7_specialists.py
       - name: Upload V7 reports and trade log
