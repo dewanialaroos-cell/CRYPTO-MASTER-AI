@@ -30,9 +30,21 @@ def main():
    params={"query":f'({query}) crypto','mode':'ArtList','format':'json','maxrecords':250,'sort':'HybridRel',
     'startdatetime':ms.strftime("%Y%m%d%H%M%S"),'enddatetime':me.strftime("%Y%m%d%H%M%S")}
    try:
-    r=s.get("https://api.gdeltproject.org/api/v2/doc/doc",params=params,timeout=30)
-    if r.status_code==429: time.sleep(4); r=s.get("https://api.gdeltproject.org/api/v2/doc/doc",params=params,timeout=30)
-    r.raise_for_status(); payload=r.json()
+    payload=None
+    for attempt in range(5):
+     r=s.get("https://api.gdeltproject.org/api/v2/doc/doc",params=params,timeout=30)
+     if r.status_code==429 or r.status_code>=500:
+      wait=min(15*(attempt+1),60)
+      print(f"{coin} {month}: HTTP {r.status_code}; retry {attempt+1}/5 after {wait}s")
+      time.sleep(wait)
+      continue
+     r.raise_for_status()
+     payload=r.json()
+     break
+    if payload is None:
+     print(f"{coin} {month}: skipped after repeated rate limits/server errors")
+     time.sleep(8)
+     continue
     for a in payload.get("articles",[]):
      title=(a.get("title") or "").strip()
      raw=a.get("seendate") or ""
@@ -44,7 +56,7 @@ def main():
        "title_char_count":len(title),"source_domain":str(a.get("domain") or ""),
        "source_country":str(a.get("sourcecountry") or ""),"symbol":coin})
    except Exception as e: print(f"{coin} {month}: {type(e).__name__}: {str(e)[:160]}")
-   time.sleep(1.1)
+   time.sleep(3.5)
   d=pd.DataFrame(rows)
   if d.empty:
    report["symbols"][coin]={"status":"no_articles","rows":0}; continue
