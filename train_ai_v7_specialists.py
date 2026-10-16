@@ -27,6 +27,7 @@ DOMAINS={
  "indicator_ai":"indicators",
  "tradingview_ai":"tradingview",
 }
+# Re-run after historical news CSVs are present; only numeric, as-of-time features are eligible.
 SEED=42
 def model():
  return VotingClassifier(estimators=[
