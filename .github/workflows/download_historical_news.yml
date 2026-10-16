@@ -8,7 +8,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: crypto-master-ai-historical-news
+  group: crypto-master-ai-data-commit-queue
   cancel-in-progress: false
 jobs:
   download:
