@@ -25,7 +25,7 @@ COINGECKO_IDS = {
     "BTC": "bitcoin", "ETH": "ethereum", "SOL": "solana",
     "XRP": "ripple", "ADA": "cardano", "DOGE": "dogecoin"
 }
-DAYS = 180
+DAYS = 3650
 HORIZON_HOURS = 4
 TIMEOUT = 25
 HEADERS = {"User-Agent": "CryptoMasterAI-ResearchDataBot/1.0"}
@@ -191,7 +191,7 @@ def main():
     since=int((pd.Timestamp.now(tz="UTC")-pd.Timedelta(days=DAYS)).timestamp()*1000)
     candle_frames={}
     summary={"created_at":datetime.now(timezone.utc).isoformat(),"source":"Binance public OHLCV + CoinGecko public market chart + RSS headlines",
-      "days_requested":DAYS,"symbols":SYMBOLS,"domains":{},"warnings":[]}
+      "days_requested":DAYS,"requested_years":round(DAYS/365,2),"history_note":"OHLCV history goes back as far as each asset was listed on the exchange; not every coin has a full 10 years. Public CoinGecko endpoint may restrict long-range history on its free tier.","symbols":SYMBOLS,"domains":{},"warnings":[]}
     all_ind=[]; all_tv=[]
     for symbol in SYMBOLS:
         try:
@@ -208,7 +208,7 @@ def main():
             tv=feat[[c for c in tvcols if c in feat.columns]].dropna(subset=["label"]).copy()
             tv["symbol"]=symbol.replace("/","_"); tv["label"]=tv.label.astype(int)
             (ROOT/"tradingview").mkdir(parents=True,exist_ok=True)
-            tv.to_csv(ROOT/"tradingview"/f"{symbol.replace('/','_')}_1h.csv",index=False)
+            tv.to_csv(ROOT/"tradingview"/f"{symbol.replace('/','_')}_1h.csv.gz",index=False,compression="gzip")
             all_ind.append(n1); all_tv.append(len(tv))
             candle_frames[symbol.split("/")[0]]=df
             print(f"  saved {n1} indicator rows and {len(tv)} TradingView-style rows")
@@ -227,7 +227,7 @@ def main():
             keep=["timestamp","label","price_return_1d","market_cap_return_1d","volume_change_1d","volume_to_market_cap","price_volatility_7d"]
             out=d[keep].dropna(subset=["label"]).copy(); out["label"]=out.label.astype(int); out["symbol"]=sym+"_USDT"
             (ROOT/"fundamentals").mkdir(parents=True,exist_ok=True)
-            out.to_csv(ROOT/"fundamentals"/f"{sym}_market_history.csv",index=False)
+            out.to_csv(ROOT/"fundamentals"/f"{sym}_market_history.csv.gz",index=False,compression="gzip")
             fund_counts.append(len(out)); time.sleep(2)
         except Exception as e:
             summary["warnings"].append(f"CoinGecko {sym}: {type(e).__name__}: {e}")
@@ -253,7 +253,7 @@ def main():
                   "label":int(ret>0),"symbol":"BTC_USDT"})
         if news_rows:
             (ROOT/"news").mkdir(parents=True,exist_ok=True)
-            pd.DataFrame(news_rows).drop_duplicates("timestamp").to_csv(ROOT/"news"/"rss_headlines_labeled.csv",index=False)
+            pd.DataFrame(news_rows).drop_duplicates("timestamp").to_csv(ROOT/"news"/"rss_headlines_labeled.csv.gz",index=False,compression="gzip")
         summary["domains"]["news_ai"]={"rows":len(news_rows),"files":1 if news_rows else 0,"status":"downloaded" if news_rows else "insufficient recent labeled RSS data","note":"Recent RSS only; this is not a historical news archive and keyword features are a weak baseline."}
     except Exception as e:
         summary["warnings"].append(f"RSS news: {type(e).__name__}: {e}")
