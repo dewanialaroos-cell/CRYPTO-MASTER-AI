@@ -77,9 +77,25 @@ def main():
         model.fit(tr[cols],tr.label.astype(int))
         validation_meta[name]=proba(model,va[cols])
         test_meta[name]=proba(model,te[cols])
-        report_domains[name]={"feature_count":len(cols),"features":cols,"validation_auc":None}
-        try: report_domains[name]["validation_auc"]=round(float(roc_auc_score(va.label.astype(int),validation_meta[name])),5)
+        y_val=va.label.astype(int).to_numpy()
+        y_test=te.label.astype(int).to_numpy()
+        p_val=validation_meta[name].to_numpy()
+        p_test=test_meta[name].to_numpy()
+        pred_test=(p_test>=0.5).astype(int)
+        report_domains[name]={"feature_count":len(cols),"features":cols,"validation_auc":None,"test_metrics":{}}
+        try: report_domains[name]["validation_auc"]=round(float(roc_auc_score(y_val,p_val)),5)
         except Exception: pass
+        try: test_auc=round(float(roc_auc_score(y_test,p_test)),5)
+        except Exception: test_auc=None
+        report_domains[name]["test_metrics"]={
+          "test_rows":int(len(y_test)),
+          "accuracy":round(float(accuracy_score(y_test,pred_test)),5),
+          "balanced_accuracy":round(float(balanced_accuracy_score(y_test,pred_test)),5),
+          "precision":round(float(precision_score(y_test,pred_test,zero_division=0)),5),
+          "recall":round(float(recall_score(y_test,pred_test,zero_division=0)),5),
+          "roc_auc":test_auc,
+          "positive_prediction_rate_pct":round(float(pred_test.mean()*100),3)
+        }
         models[name]={"model":model,"features":cols}
         print(f"Specialist {name}: {len(cols)} features")
     # Train Head AI only on validation-period specialist predictions; evaluate once on later test.
