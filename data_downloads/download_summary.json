@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-16T13:00:42.517388+00:00",
+  "created_at": "2026-10-16T13:02:55.900154+00:00",
   "source": "Binance public OHLCV + CoinGecko public market chart + RSS headlines",
   "days_requested": 3650,
   "requested_years": 10.0,
