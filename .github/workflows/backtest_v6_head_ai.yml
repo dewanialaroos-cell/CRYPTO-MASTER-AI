@@ -1,0 +1,57 @@
+name: Crypto Master AI Combined Head AI Backtest
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'backtest_v6_head_ai.py'
+      - '.github/workflows/backtest_v6_head_ai.yml'
+      - 'train_ai_v6.py'
+      - 'train_ai_v3.py'
+permissions:
+  contents: write
+concurrency:
+  group: crypto-master-ai-head-ai-backtest
+  cancel-in-progress: false
+jobs:
+  head-ai-backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Compile trainer and Head AI backtester
+        run: python -m py_compile train_ai_v3.py train_ai_v6.py backtest_v6_head_ai.py
+      - name: Train fresh V6 specialists and Head AI
+        run: python train_ai_v6.py
+      - name: Backtest combined Head AI on holdout data
+        run: python backtest_v6_head_ai.py
+      - name: Upload model, report, and trade log
+        uses: actions/upload-artifact@v4
+        with:
+          name: crypto-master-ai-head-ai-backtest
+          path: |
+            models/crypto_master_ai_v6.joblib
+            models/crypto_master_ai_v6_report.json
+            models/backtest_v6_head_ai_report.json
+            models/backtest_v6_head_ai_trades.csv
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit fresh V6 model and Head AI results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add models/crypto_master_ai_v6.joblib models/crypto_master_ai_v6_report.json models/backtest_v6_head_ai_report.json models/backtest_v6_head_ai_trades.csv
+          if git diff --cached --quiet; then
+            echo "No model or Head AI backtest changes."
+          else
+            git commit -m "Train fresh V6 Head AI and add combined backtest results"
+            git pull --rebase origin main
+            git push
+          fi
