@@ -106,6 +106,11 @@ def main():
             continue
         spec = models[model_name]
         features = spec.get("features", [])
+        # Refuse to score models with future/label-derived features.
+        leaked = [c for c in features if str(c).lower().startswith(("future_", "target_", "label_")) or "future_return" in str(c).lower() or str(c).lower() in {"label", "target", "y_true", "outcome"}]
+        if leaked:
+            reports[model_name] = {"status": "INVALID MODEL — TARGET LEAKAGE", "leaked_features": leaked, "reason": "Retrain with the corrected V7 trainer before evaluating."}
+            continue
         missing = [c for c in features if c not in data.columns]
         if missing:
             reports[model_name] = {"status": "ERROR", "reason": "Missing model features", "missing_features": missing}
