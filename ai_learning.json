@@ -30,6 +30,60 @@
       "signal": "SHORT",
       "entry": 1.3347,
       "created": 1792162445.4630804
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 3.96e-06,
+      "created": 1792176226.2343006
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 722.67,
+      "created": 1792176226.234302
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 81432.76,
+      "created": 1792176226.2343025
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08006,
+      "created": 1792176226.234303
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 103.84,
+      "created": 1792176226.2343035
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2416.74,
+      "created": 1792176226.234304
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 12.282,
+      "created": 1792176226.2343056
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1151.79,
+      "created": 1792176226.2343063
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 1.0122,
+      "created": 1792176226.2343068
     }
   ],
   "total": 1894,
