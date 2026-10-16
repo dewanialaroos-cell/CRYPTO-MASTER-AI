@@ -1,0 +1,51 @@
+{
+  "created_at": "2026-10-16T14:07:07.658072+00:00",
+  "source": "GDELT DOC API",
+  "symbols": {
+    "BTC": {
+      "status": "downloaded",
+      "rows": 1464,
+      "start": "2025-10-17 03:00:00+00:00",
+      "end": "2026-10-02 10:45:00+00:00",
+      "file": "specialist_data/news/BTC_gdelt_news.csv"
+    },
+    "ETH": {
+      "status": "downloaded",
+      "rows": 1949,
+      "start": "2025-10-17 03:00:00+00:00",
+      "end": "2026-10-02 08:45:00+00:00",
+      "file": "specialist_data/news/ETH_gdelt_news.csv"
+    },
+    "SOL": {
+      "status": "downloaded",
+      "rows": 1241,
+      "start": "2025-11-01 09:00:00+00:00",
+      "end": "2026-10-02 00:15:00+00:00",
+      "file": "specialist_data/news/SOL_gdelt_news.csv"
+    },
+    "XRP": {
+      "status": "downloaded",
+      "rows": 1471,
+      "start": "2025-11-01 01:15:00+00:00",
+      "end": "2026-10-02 00:00:00+00:00",
+      "file": "specialist_data/news/XRP_gdelt_news.csv"
+    },
+    "ADA": {
+      "status": "downloaded",
+      "rows": 391,
+      "start": "2025-10-17 00:15:00+00:00",
+      "end": "2026-10-02 01:15:00+00:00",
+      "file": "specialist_data/news/ADA_gdelt_news.csv"
+    },
+    "DOGE": {
+      "status": "downloaded",
+      "rows": 873,
+      "start": "2025-12-01 05:30:00+00:00",
+      "end": "2026-10-02 00:00:00+00:00",
+      "file": "specialist_data/news/DOGE_gdelt_news.csv"
+    }
+  },
+  "note": "Coverage and API limits vary; lexical sentiment is a baseline, not a trained language model.",
+  "total_labeled_rows": 7389,
+  "files": 6
+}
