@@ -1,0 +1,52 @@
+name: Crypto Master AI V3 Specialist Training
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-master-ai-v3-training
+  cancel-in-progress: false
+
+jobs:
+  train-v3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Compile V3 trainer
+        run: python -m py_compile train_ai_v3.py
+      - name: Train specialist models and head model
+        run: python train_ai_v3.py
+      - name: Upload model and report
+        uses: actions/upload-artifact@v4
+        with:
+          name: crypto-master-ai-v3-specialist-model
+          path: |
+            models/crypto_ai_model_v3.joblib
+            models/ai_training_report_v3.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit V3 model and report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add models/crypto_ai_model_v3.joblib models/ai_training_report_v3.json
+          if git diff --cached --quiet; then
+            echo "No V3 model/report changes to commit."
+          else
+            git commit -m "Train Crypto Master AI V3 specialist ensemble"
+            git push
+          fi
