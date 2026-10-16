@@ -36,7 +36,7 @@ def model():
  ],voting="soft",n_jobs=1)
 def load_domain(folder):
  frames=[]
- for p in sorted(folder.glob("*.csv")):
+ for p in sorted(list(folder.glob("*.csv")) + list(folder.glob("*.csv.gz"))):
   try:
    d=pd.read_csv(p)
    d.columns=[str(c).strip().lower() for c in d.columns]
