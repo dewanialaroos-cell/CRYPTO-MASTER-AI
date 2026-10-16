@@ -8,7 +8,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: crypto-master-ai-cmc-data
+  group: crypto-master-ai-data-commit-queue
   cancel-in-progress: false
 jobs:
   download:
