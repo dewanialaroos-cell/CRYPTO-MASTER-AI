@@ -1,0 +1,44 @@
+name: Crypto Master AI Recent Liquidation Data
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 * * * *'
+  push:
+    paths:
+      - "download_recent_liquidations.py"
+      - ".github/workflows/download_recent_liquidations.yml"
+permissions:
+  contents: write
+concurrency:
+  group: crypto-master-ai-liquidations
+  cancel-in-progress: false
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install pandas requests
+      - name: Collect public liquidation events
+        run: python download_recent_liquidations.py
+      - name: Upload data and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crypto-master-ai-recent-liquidations
+          path: |
+            specialist_data/liquidations/okx_liquidation_events.csv
+            data_downloads/liquidation_download_summary.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit available records
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add specialist_data/liquidations/okx_liquidation_events.csv data_downloads/liquidation_download_summary.json
+          if git diff --cached --quiet; then echo "No new liquidation rows"; else git commit -m "Add observed liquidation events"; git pull --rebase origin main; git push; fi
