@@ -100,7 +100,7 @@ def make_features(df, timeframe):
         f[f"cci_{n}"] = (typical - mean) / (0.015 * mad.replace(0, np.nan))
     prev = c.shift(1)
     tr = pd.concat([(h-l), (h-prev).abs(), (l-prev).abs()], axis=1).max(axis=1)
-    for n in (7, 14, 21, 50):
+    for n in (7, 14, 20, 21, 50):
         f[f"atr_{n}"] = tr.rolling(n).mean() / c
         f[f"volatility_{n}"] = ret.rolling(n).std()
         f[f"realized_volatility_{n}"] = np.sqrt((ret.pow(2)).rolling(n).sum())
