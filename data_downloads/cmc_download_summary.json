@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-10-16T13:47:21.889958+00:00",
+  "source": "CoinMarketCap API",
+  "domains": {
+    "fundamentals": {
+      "status": "no_usable_data",
+      "rows": 0,
+      "files": 0
+    }
+  },
+  "symbols": {
+    "BTC": {
+      "status": "unavailable",
+      "rows": 0,
+      "reason": "HTTPError: 400 Client Error: Bad Request for url: https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/historical?id=1&interval=daily&count=3650&convert=USD"
+    },
+    "ETH": {
+      "status": "unavailable",
+      "rows": 0,
+      "reason": "HTTPError: 400 Client Error: Bad Request for url: https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/historical?id=1027&interval=daily&count=3650&convert=USD"
+    },
+    "SOL": {
+      "status": "unavailable",
+      "rows": 0,
+      "reason": "HTTPError: 400 Client Error: Bad Request for url: https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/historical?id=5426&interval=daily&count=3650&convert=USD"
+    },
+    "XRP": {
+      "status": "unavailable",
+      "rows": 0,
+      "reason": "HTTPError: 400 Client Error: Bad Request for url: https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/historical?id=52&interval=daily&count=3650&convert=USD"
+    },
+    "ADA": {
+      "status": "unavailable",
+      "rows": 0,
+      "reason": "HTTPError: 400 Client Error: Bad Request for url: https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/historical?id=2010&interval=daily&count=3650&convert=USD"
+    },
+    "DOGE": {
+      "status": "unavailable",
+      "rows": 0,
+      "reason": "HTTPError: 400 Client Error: Bad Request for url: https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/historical?id=74&interval=daily&count=3650&convert=USD"
+    }
+  },
+  "note": "Available history depends on CMC plan and endpoint permissions. No synthetic data generated."
+}
