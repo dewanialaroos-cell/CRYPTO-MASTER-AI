@@ -26,7 +26,7 @@ MODEL_DIR = Path("models")
 MODEL_PATH = MODEL_DIR / "crypto_ai_model_v3.joblib"
 REPORT_PATH = MODEL_DIR / "ai_training_report_v3.json"
 HORIZON = 3
-MAX_ROWS_PER_FILE = 100_000
+MAX_ROWS_PER_FILE = 20_000
 TIMEFRAME_CODES = {"15m": 0, "1h": 1, "4h": 2, "1d": 3}
 FEATURE_GROUPS = {
     "trend": ["return_", "ema_distance_", "macd_", "adx_", "trend_"],
@@ -182,11 +182,11 @@ def build_model(kind, seed=42):
     if kind == "logistic":
         estimator = Pipeline([("imputer", SimpleImputer(strategy="median")), ("scale", StandardScaler()), ("model", LogisticRegression(max_iter=500, class_weight="balanced", random_state=seed))])
     elif kind == "random_forest":
-        estimator = Pipeline([("imputer", SimpleImputer(strategy="median")), ("model", RandomForestClassifier(n_estimators=100, max_depth=12, min_samples_leaf=25, class_weight="balanced_subsample", n_jobs=-1, random_state=seed))])
+        estimator = Pipeline([("imputer", SimpleImputer(strategy="median")), ("model", RandomForestClassifier(n_estimators=50, max_depth=10, min_samples_leaf=25, class_weight="balanced_subsample", n_jobs=-1, random_state=seed))])
     elif kind == "extra_trees":
-        estimator = Pipeline([("imputer", SimpleImputer(strategy="median")), ("model", ExtraTreesClassifier(n_estimators=100, max_depth=12, min_samples_leaf=25, class_weight="balanced", n_jobs=-1, random_state=seed))])
+        estimator = Pipeline([("imputer", SimpleImputer(strategy="median")), ("model", ExtraTreesClassifier(n_estimators=50, max_depth=10, min_samples_leaf=25, class_weight="balanced", n_jobs=-1, random_state=seed))])
     else:
-        estimator = Pipeline([("imputer", SimpleImputer(strategy="median")), ("model", HistGradientBoostingClassifier(max_iter=120, learning_rate=0.06, l2_regularization=1.5, random_state=seed))])
+        estimator = Pipeline([("imputer", SimpleImputer(strategy="median")), ("model", HistGradientBoostingClassifier(max_iter=80, learning_rate=0.06, l2_regularization=1.5, random_state=seed))])
     return estimator
 
 
@@ -216,8 +216,8 @@ def main():
         def cap(frame, limit):
             return frame if len(frame) <= limit else frame.iloc[np.linspace(0, len(frame)-1, limit).astype(int)]
         train_parts.append(cap(parts[0], MAX_ROWS_PER_FILE))
-        val_parts.append(cap(parts[1], MAX_ROWS_PER_FILE//3))
-        test_parts.append(cap(parts[2], MAX_ROWS_PER_FILE//3))
+        val_parts.append(cap(parts[1], 5_000))
+        test_parts.append(cap(parts[2], 5_000))
         used.append(path.name)
         print(f"{path.name}: train={len(parts[0])} val={len(parts[1])} test={len(parts[2])}")
     if not train_parts:
