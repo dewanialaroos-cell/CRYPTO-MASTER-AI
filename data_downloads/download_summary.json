@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-16T13:02:55.900154+00:00",
+  "created_at": "2026-10-16T13:05:33.665413+00:00",
   "source": "Binance public OHLCV + CoinGecko public market chart + RSS headlines",
   "days_requested": 3650,
   "requested_years": 10.0,
@@ -14,14 +14,14 @@
   ],
   "domains": {
     "indicator_ai": {
-      "rows": 0,
-      "files": 0,
-      "status": "no data"
+      "rows": 332664,
+      "files": 6,
+      "status": "downloaded"
     },
     "tradingview_ai": {
-      "rows": 0,
-      "files": 0,
-      "status": "no data",
+      "rows": 332664,
+      "files": 6,
+      "status": "downloaded",
       "note": "TradingView-style indicators derived from exchange candles; not an official TradingView export."
     },
     "fundamentals_ai": {
@@ -48,12 +48,6 @@
     }
   },
   "warnings": [
-    "OHLCV BTC/USDT: ExchangeNotAvailable: binance GET https://api.binance.com/api/v3/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}",
-    "OHLCV ETH/USDT: ExchangeNotAvailable: binance GET https://api.binance.com/api/v3/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}",
-    "OHLCV SOL/USDT: ExchangeNotAvailable: binance GET https://api.binance.com/api/v3/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}",
-    "OHLCV XRP/USDT: ExchangeNotAvailable: binance GET https://api.binance.com/api/v3/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}",
-    "OHLCV ADA/USDT: ExchangeNotAvailable: binance GET https://api.binance.com/api/v3/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}",
-    "OHLCV DOGE/USDT: ExchangeNotAvailable: binance GET https://api.binance.com/api/v3/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}",
     "CoinGecko BTC: HTTPError: 401 Client Error: Unauthorized for url: https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=3650&interval=daily",
     "CoinGecko ETH: HTTPError: 401 Client Error: Unauthorized for url: https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=3650&interval=daily",
     "CoinGecko SOL: HTTPError: 401 Client Error: Unauthorized for url: https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=3650&interval=daily",
