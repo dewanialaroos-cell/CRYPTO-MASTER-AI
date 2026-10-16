@@ -24,7 +24,7 @@ def main():
   try:
    # OKX liquidation-orders requires instFamily or uly; instId alone returns code 50015.
    family=inst.replace("-SWAP","")
-   body=get_json(BASE+"/api/v5/public/liquidation-orders",{"instType":"SWAP","instFamily":family,"limit":"100"})
+   body=get_json(BASE+"/api/v5/public/liquidation-orders",{"instType":"SWAP","instFamily":family,"state":"filled","limit":"100"})
    for group in body.get("data",[]):
     for d in group.get("details",[]):
      ts=pd.to_datetime(d.get("ts"),unit="ms",utc=True,errors="coerce")
