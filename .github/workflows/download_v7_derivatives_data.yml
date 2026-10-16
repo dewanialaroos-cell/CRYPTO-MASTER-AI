@@ -1,0 +1,44 @@
+name: Crypto Master AI V7 Derivatives Data
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "download_v7_derivatives_data.py"
+      - ".github/workflows/download_v7_derivatives_data.yml"
+permissions:
+  contents: write
+concurrency:
+  group: crypto-master-ai-derivatives-data
+  cancel-in-progress: false
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install pandas requests
+      - name: Download public historical derivatives data
+        run: |
+          mkdir -p specialist_data/order_book specialist_data/liquidations data_downloads
+          python -m py_compile download_v7_derivatives_data.py
+          python download_v7_derivatives_data.py
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: crypto-master-ai-v7-derivatives-data
+          path: |
+            specialist_data/order_book/
+            specialist_data/liquidations/
+            data_downloads/derivatives_download_summary.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit available data and report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add specialist_data/order_book specialist_data/liquidations data_downloads/derivatives_download_summary.json
+          if git diff --cached --quiet; then echo "No data downloaded"; else git commit -m "Add available historical derivatives datasets"; git pull --rebase origin main; git push; fi
