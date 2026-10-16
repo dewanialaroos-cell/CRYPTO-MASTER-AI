@@ -9,7 +9,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: crypto-master-ai-v7-specialists
+  group: crypto-master-ai-data-commit-queue
   cancel-in-progress: false
 jobs:
   train-v7:
