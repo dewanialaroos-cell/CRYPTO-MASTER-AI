@@ -24,10 +24,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Compile specialist backtester
-        run: python -m py_compile backtest_v6_specialists.py train_ai_v3.py
-      - name: Verify V6 model exists
-        run: test -f models/crypto_master_ai_v6.joblib
+      - name: Compile V6 trainer and specialist backtester
+        run: python -m py_compile train_ai_v6.py backtest_v6_specialists.py train_ai_v3.py
+      - name: Train V6 specialists on available OHLCV data
+        run: python train_ai_v6.py
       - name: Run independent backtest for every V6 specialist
         run: python backtest_v6_specialists.py
       - name: Upload individual specialist backtest results
