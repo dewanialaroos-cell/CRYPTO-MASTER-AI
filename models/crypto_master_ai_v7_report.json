@@ -1,0 +1,47 @@
+{
+  "version": "V7",
+  "created_at": "2026-10-16T08:22:43.895693+00:00",
+  "trained_count": 0,
+  "domain_count": 6,
+  "domains": {
+    "fundamentals_ai": {
+      "status": "NOT TRAINED",
+      "reason": "No valid labeled CSV data in specialist_data/fundamentals/",
+      "required": "At least 100 rows with label=0/1, numeric as-of-time features, and timestamp/symbol columns recommended."
+    },
+    "order_book_ai": {
+      "status": "NOT TRAINED",
+      "reason": "No valid labeled CSV data in specialist_data/order_book/",
+      "required": "At least 100 rows with label=0/1, numeric as-of-time features, and timestamp/symbol columns recommended."
+    },
+    "liquidation_ai": {
+      "status": "NOT TRAINED",
+      "reason": "No valid labeled CSV data in specialist_data/liquidations/",
+      "required": "At least 100 rows with label=0/1, numeric as-of-time features, and timestamp/symbol columns recommended."
+    },
+    "news_ai": {
+      "status": "NOT TRAINED",
+      "reason": "No valid labeled CSV data in specialist_data/news/",
+      "required": "At least 100 rows with label=0/1, numeric as-of-time features, and timestamp/symbol columns recommended."
+    },
+    "indicator_ai": {
+      "status": "NOT TRAINED",
+      "reason": "No valid labeled CSV data in specialist_data/indicators/",
+      "required": "At least 100 rows with label=0/1, numeric as-of-time features, and timestamp/symbol columns recommended."
+    },
+    "tradingview_ai": {
+      "status": "NOT TRAINED",
+      "reason": "No valid labeled CSV data in specialist_data/tradingview/",
+      "required": "At least 100 rows with label=0/1, numeric as-of-time features, and timestamp/symbol columns recommended."
+    }
+  },
+  "scikit_learn": "1.9.1",
+  "warnings": [
+    "No synthetic training examples are created.",
+    "Fundamental, order-book, liquidation, news and TradingView domains need real labeled historical data.",
+    "TradingView AI uses exported/webhook-derived features; this code does not claim an official TradingView API connection.",
+    "News features must be timestamped to avoid using articles published after the signal.",
+    "Liquidation and order-book data must be historical snapshots aligned to each signal time.",
+    "Metrics are classification metrics, not net trading returns. No live trading; Scanner.py remains unchanged."
+  ]
+}
