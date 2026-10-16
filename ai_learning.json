@@ -2,36 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "SHORT",
-      "entry": 1.1441,
-      "created": 1792162445.4630775
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1786,
-      "created": 1792162445.463079
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.06701,
-      "created": 1792162445.4630795
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 80.693,
-      "created": 1792162445.46308
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3347,
-      "created": 1792162445.4630804
-    },
-    {
       "symbol": "PEPE/USDT",
       "signal": "SHORT",
       "entry": 3.96e-06,
@@ -84,8 +54,32 @@
       "signal": "SHORT",
       "entry": 1.0122,
       "created": 1792176226.2343068
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.3074,
+      "created": 1792187169.836394
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "SHORT",
+      "entry": 59.32,
+      "created": 1792187169.836395
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.19808,
+      "created": 1792187169.836396
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 561.05,
+      "created": 1792187169.8363984
     }
   ],
-  "total": 1894,
-  "hits": 854
+  "total": 1899,
+  "hits": 857
 }
