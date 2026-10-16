@@ -1,5 +1,7 @@
 name: Crypto Master AI Multi-Exchange Snapshots
 on:
+  schedule:
+    - cron: '17 * * * *'
   workflow_dispatch:
   push:
     paths:
