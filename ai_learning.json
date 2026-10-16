@@ -2,18 +2,30 @@
   "version": 1,
   "pending": [
     {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 554.26,
+      "created": 1792111733.6348774
+    },
+    {
       "symbol": "STRK/USDT",
       "signal": "LONG",
-      "entry": 0.08757,
-      "created": 1792092070.879285
+      "entry": 0.08659,
+      "created": 1792111733.6348786
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 4150.0,
+      "created": 1792111733.6348796
     },
     {
       "symbol": "FIL/USDT",
       "signal": "LONG",
-      "entry": 1.117,
-      "created": 1792092070.8792858
+      "entry": 1.1633,
+      "created": 1792111733.63488
     }
   ],
-  "total": 1880,
-  "hits": 852
+  "total": 1882,
+  "hits": 853
 }
