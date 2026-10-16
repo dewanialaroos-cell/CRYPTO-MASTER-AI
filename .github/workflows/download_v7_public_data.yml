@@ -1,6 +1,10 @@
 name: Crypto Master AI V7 Public Data Download
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "download_v7_public_data.py"
+      - ".github/workflows/download_v7_public_data.yml"
   schedule:
     - cron: "25 2 * * 0"
 permissions:
