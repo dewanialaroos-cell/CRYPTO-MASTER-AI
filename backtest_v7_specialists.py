@@ -8,6 +8,7 @@ from pathlib import Path
 import joblib
 import numpy as np
 import pandas as pd
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, roc_auc_score, precision_score, recall_score
 
 ROOT = Path("specialist_data")
 MODEL_PATH = Path("models/crypto_master_ai_v7_specialists.joblib")
@@ -121,13 +122,26 @@ def main():
         prob = model.predict_proba(X)[:, list(model.classes_).index(1)]
         # Prefer actual forward returns from the same source rows. If unavailable, do not fake PnL.
         return_col = next((c for c in ("future_return_4h", "future_return_4d", "future_return_1d") if c in test.columns), None)
+        y = test["label"].astype(int).to_numpy()
+        pred = (prob >= .5).astype(int)
+        try:
+            auc = round(float(roc_auc_score(y, prob)), 5)
+        except Exception:
+            auc = None
+        classification = {
+            "classification_test_rows": int(len(test)),
+            "accuracy": round(float(accuracy_score(y, pred)), 5),
+            "balanced_accuracy": round(float(balanced_accuracy_score(y, pred)), 5),
+            "precision": round(float(precision_score(y, pred, zero_division=0)), 5),
+            "recall": round(float(recall_score(y, pred, zero_division=0)), 5),
+            "roc_auc": auc,
+            "positive_prediction_rate_pct": round(float(pred.mean() * 100), 3),
+        }
         if return_col is None:
-            y = test["label"].astype(int).to_numpy()
-            pred = (prob >= .5).astype(int)
             reports[model_name] = {
                 "status": "CLASSIFICATION ONLY — NO PRICE-RETURN BACKTEST",
-                "test_rows": int(len(test)), "roc_auc": None,
-                "reason": "No observed forward-return column; trade PnL is not fabricated."
+                **classification,
+                "reason": "Dataset export does not include forward price returns; trading PnL is not fabricated."
             }
             continue
         actual = pd.to_numeric(test[return_col], errors="coerce").to_numpy(dtype=float)
@@ -147,6 +161,7 @@ def main():
                 "round_trip_cost_pct": round_trip_cost,
             })
         summary = summarize(raw)
+        summary.update(classification)
         summary.update({
             "test_rows": int(len(test)),
             "test_start": str(test.iloc[0].get("timestamp", test.iloc[0].get("date", ""))),
