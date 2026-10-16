@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-10-16T13:19:11.810158+00:00",
+  "days_requested": 3650,
+  "domains": {
+    "liquidations": {
+      "rows": 0,
+      "files": 0,
+      "status": "unavailable",
+      "note": "Public archive did not expose compatible liquidation snapshots; no fake data created."
+    },
+    "derivatives_metrics": {
+      "rows": 0,
+      "files": 0,
+      "status": "unavailable"
+    }
+  },
+  "warnings": []
+}
