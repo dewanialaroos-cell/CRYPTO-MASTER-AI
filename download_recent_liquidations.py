@@ -9,14 +9,19 @@ ROOT=Path("specialist_data/liquidations"); REPORT=Path("data_downloads/liquidati
 INSTS={"BTC-USDT-SWAP":"BTC","ETH-USDT-SWAP":"ETH","SOL-USDT-SWAP":"SOL","XRP-USDT-SWAP":"XRP","ADA-USDT-SWAP":"ADA","DOGE-USDT-SWAP":"DOGE"}
 BASE="https://www.okx.com"
 def get_json(url,params):
- r=requests.get(url,params=params,timeout=20,headers={"User-Agent":"CryptoMasterAI-Research/1.0"}); r.raise_for_status(); return r.json()
+ r=requests.get(url,params=params,timeout=20,headers={"User-Agent":"CryptoMasterAI-Research/1.0"}); if not r.ok:
+  raise RuntimeError(f"HTTP {r.status_code}: {r.text[:500]}")
+ body=r.json()
+ if body.get("code") not in (None,"0"):
+  raise RuntimeError(f"OKX API code={body.get('code')} msg={body.get('msg')}")
+ return body
 def main():
  ROOT.mkdir(parents=True,exist_ok=True); REPORT.parent.mkdir(parents=True,exist_ok=True)
  path=ROOT/"okx_liquidation_events.csv"; old=pd.read_csv(path) if path.exists() else pd.DataFrame()
  events=[]
  for inst,asset in INSTS.items():
   try:
-   body=get_json(BASE+"/api/v5/public/liquidation-orders",{"instType":"SWAP","instId":inst,"state":"filled","limit":"100"})
+   body=get_json(BASE+"/api/v5/public/liquidation-orders",{"instType":"SWAP","instId":inst,"limit":"100"})
    for group in body.get("data",[]):
     for d in group.get("details",[]):
      ts=pd.to_datetime(d.get("ts"),unit="ms",utc=True,errors="coerce")
