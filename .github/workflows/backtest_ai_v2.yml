@@ -1,0 +1,59 @@
+name: Crypto Master AI V2 Backtest
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-master-ai-v2-backtest
+  cancel-in-progress: false
+
+jobs:
+  backtest-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compile backtester
+        run: python -m py_compile backtest_ai_v2.py
+
+      - name: Run V2 out-of-sample backtest
+        run: python backtest_ai_v2.py
+
+      - name: Upload backtest results
+        uses: actions/upload-artifact@v4
+        with:
+          name: crypto-master-ai-v2-backtest-results
+          path: |
+            models/backtest_v2_report.json
+            models/backtest_v2_trades.csv
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit backtest report and trades
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add models/backtest_v2_report.json models/backtest_v2_trades.csv
+          if git diff --cached --quiet; then
+            echo "No backtest output changes to commit."
+          else
+            git commit -m "Add Crypto Master AI V2 backtest results"
+            git push
+          fi
