@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'backtest_v7_specialists.py'
+      - 'train_ai_v7_specialists.py'
       - '.github/workflows/backtest_v7_specialists.yml'
       - 'models/crypto_master_ai_v7_report.json'
 permissions:
