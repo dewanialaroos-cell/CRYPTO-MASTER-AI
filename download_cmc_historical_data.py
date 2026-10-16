@@ -42,15 +42,24 @@ def main():
         if not coin:
             report["symbols"][sym] = {"status":"unavailable","rows":0,"reason":"CoinMarketCap map did not return this symbol"}
             continue
-        params = {"id": coin["id"], "interval":"daily", "count":3650, "convert":"USD"}
+        end_time = datetime.now(timezone.utc)
+        start_time = end_time - pd.Timedelta(days=3650)
+        params = {"id": coin["id"], "interval":"daily",
+                  "time_start": start_time.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                  "time_end": end_time.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                  "convert":"USD"}
         try:
             r = s.get(BASE + "/cryptocurrency/quotes/historical", params=params, timeout=45)
             if r.status_code in (401,403,429):
-                report["symbols"][sym] = {"status":"unavailable","rows":0,"http_status":r.status_code,"reason":r.text[:500]}
+                report["symbols"][sym] = {"status":"unavailable","rows":0,"http_status":r.status_code,"reason":r.text[:1000]}
                 print(f"{sym}: CMC access unavailable HTTP {r.status_code}: {r.text[:180]}")
                 time.sleep(1)
                 continue
-            r.raise_for_status()
+            if not r.ok:
+                report["symbols"][sym] = {"status":"unavailable","rows":0,"http_status":r.status_code,"reason":r.text[:1000]}
+                print(f"{sym}: CMC HTTP {r.status_code}: {r.text[:300]}")
+                time.sleep(1)
+                continue
             body = r.json()
             status = body.get("status", {})
             if status.get("error_code", 0) != 0:
