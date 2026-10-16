@@ -42,10 +42,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add models/crypto_master_ai_v7_report.json
+          git add -f models/crypto_master_ai_v7_report.json || true
           if git diff --cached --quiet; then
             echo "No V7 report changes to commit."
           else
             git commit -m "Add V7 domain specialist readiness report"
-            git push
+            for attempt in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              if [ "$attempt" -eq 3 ]; then echo "Push failed after retries"; exit 1; fi
+              sleep 2
+            done
           fi
