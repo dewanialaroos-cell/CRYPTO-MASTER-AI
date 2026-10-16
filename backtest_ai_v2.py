@@ -214,9 +214,18 @@ def main():
         for (symbol, timeframe), frame in results.groupby(["symbol", "timeframe"], sort=True):
             by_stream[f"{symbol}_{timeframe}"] = stream_metrics(frame)
         returns = results["net_return_pct"].to_numpy(dtype=float)
-        long_metrics = stream_metrics(results[results.side == "LONG"])
-        short_metrics = stream_metrics(results[results.side == "SHORT"])
         all_returns = returns / 100.0
+        def direction_metrics(frame):
+            values = frame["net_return_pct"].to_numpy(dtype=float) / 100.0
+            return {
+                "trades": int(len(values)),
+                "win_rate_pct": round(float((values > 0).mean() * 100), 4) if len(values) else 0.0,
+                "average_net_return_pct": round(float(values.mean() * 100), 6) if len(values) else 0.0,
+                "median_net_return_pct": round(float(np.median(values) * 100), 6) if len(values) else 0.0,
+                "note": "Direction-only metrics; no drawdown is calculated across mixed symbol/timeframe streams.",
+            }
+        long_metrics = direction_metrics(results[results.side == "LONG"])
+        short_metrics = direction_metrics(results[results.side == "SHORT"])
         wins = all_returns[all_returns > 0]
         losses = all_returns[all_returns < 0]
         loss_sum = float(abs(losses.sum()))
