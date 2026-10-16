@@ -41,5 +41,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add specialist_data/order_book/multi_exchange_orderbook_snapshots.csv specialist_data/fundamentals/multi_exchange_market_snapshots.csv data_downloads/multi_exchange_snapshot_summary.json
-          if git diff --cached --quiet; then echo "No data changes"; else git commit -m "Add multi-exchange market and order book snapshots"; git pull --rebase origin main; git push; fi
+          git add -f specialist_data/order_book/multi_exchange_orderbook_snapshots.csv specialist_data/fundamentals/multi_exchange_market_snapshots.csv data_downloads/multi_exchange_snapshot_summary.json || true
+          if git diff --cached --quiet; then echo "No data changes to commit"; else
+            git commit -m "Add multi-exchange market and order book snapshots"
+            for attempt in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              if [ "$attempt" -eq 3 ]; then echo "Push failed after retries"; exit 1; fi
+              sleep 2
+            done
+          fi
