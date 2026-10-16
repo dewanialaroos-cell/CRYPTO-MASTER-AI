@@ -40,9 +40,9 @@ jobs:
       - name: Run backtest
         run: |
           python backtest_ai_v3.py \
-            --threshold "\${{ inputs.threshold }}" \
-            --fee-pct "\${{ inputs.fee_pct }}" \
-            --slippage-pct "\${{ inputs.slippage_pct }}"
+            --threshold "${{ inputs.threshold }}" \
+            --fee-pct "${{ inputs.fee_pct }}" \
+            --slippage-pct "${{ inputs.slippage_pct }}"
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
