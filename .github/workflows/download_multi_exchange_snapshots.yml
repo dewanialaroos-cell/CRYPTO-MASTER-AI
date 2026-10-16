@@ -1,0 +1,43 @@
+name: Crypto Master AI Multi-Exchange Snapshots
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "download_multi_exchange_snapshots.py"
+      - ".github/workflows/download_multi_exchange_snapshots.yml"
+permissions:
+  contents: write
+concurrency:
+  group: crypto-master-ai-multi-exchange-snapshots
+  cancel-in-progress: false
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install ccxt pandas
+      - name: Collect public snapshots
+        run: python download_multi_exchange_snapshots.py
+      - name: Upload snapshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crypto-master-ai-multi-exchange-snapshots
+          path: |
+            specialist_data/order_book/multi_exchange_orderbook_snapshots.csv
+            specialist_data/fundamentals/multi_exchange_market_snapshots.csv
+            data_downloads/multi_exchange_snapshot_summary.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit available data
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add specialist_data/order_book/multi_exchange_orderbook_snapshots.csv specialist_data/fundamentals/multi_exchange_market_snapshots.csv data_downloads/multi_exchange_snapshot_summary.json
+          if git diff --cached --quiet; then echo "No data changes"; else git commit -m "Add multi-exchange market and order book snapshots"; git pull --rebase origin main; git push; fi
