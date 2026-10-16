@@ -1,50 +1,56 @@
 {
-  "created_at": "2026-10-16T13:51:48.112571+00:00",
+  "created_at": "2026-10-16T13:58:22.244438+00:00",
   "source": "CoinMarketCap API",
   "domains": {
     "fundamentals": {
-      "status": "no_usable_data",
-      "rows": 0,
-      "files": 0
+      "status": "downloaded",
+      "rows": 2190,
+      "files": 7
     }
   },
   "symbols": {
     "BTC": {
-      "status": "unavailable",
-      "rows": 0,
-      "http_status": 400,
-      "reason": "{\"status\":{\"timestamp\":\"2026-10-16T13:51:48.315Z\",\"error_code\":400,\"error_message\":\"Your plan allows 12 months of historical access. Please upgrade your plan or choose a startDate that is newer than 2025-10-15T13:51:48.315132891Z.\",\"elapsed\":1,\"credit_count\":0,\"notice\":null}}"
+      "status": "downloaded",
+      "rows": 365,
+      "start": "2025-10-17 00:00:00+00:00",
+      "end": "2026-10-16 00:00:00+00:00",
+      "file": "specialist_data/fundamentals/BTC_cmc_historical.csv"
     },
     "ETH": {
-      "status": "unavailable",
-      "rows": 0,
-      "http_status": 400,
-      "reason": "{\"status\":{\"timestamp\":\"2026-10-16T13:51:49.336Z\",\"error_code\":400,\"error_message\":\"Your plan allows 12 months of historical access. Please upgrade your plan or choose a startDate that is newer than 2025-10-15T13:51:49.335552879Z.\",\"elapsed\":1,\"credit_count\":0,\"notice\":null}}"
+      "status": "downloaded",
+      "rows": 365,
+      "start": "2025-10-17 00:00:00+00:00",
+      "end": "2026-10-16 00:00:00+00:00",
+      "file": "specialist_data/fundamentals/ETH_cmc_historical.csv"
     },
     "SOL": {
-      "status": "unavailable",
-      "rows": 0,
-      "http_status": 400,
-      "reason": "{\"status\":{\"timestamp\":\"2026-10-16T13:51:50.357Z\",\"error_code\":400,\"error_message\":\"Your plan allows 12 months of historical access. Please upgrade your plan or choose a startDate that is newer than 2025-10-15T13:51:50.356765901Z.\",\"elapsed\":1,\"credit_count\":0,\"notice\":null}}"
+      "status": "downloaded",
+      "rows": 365,
+      "start": "2025-10-17 00:00:00+00:00",
+      "end": "2026-10-16 00:00:00+00:00",
+      "file": "specialist_data/fundamentals/SOL_cmc_historical.csv"
     },
     "XRP": {
-      "status": "unavailable",
-      "rows": 0,
-      "http_status": 400,
-      "reason": "{\"status\":{\"timestamp\":\"2026-10-16T13:51:51.376Z\",\"error_code\":400,\"error_message\":\"Your plan allows 12 months of historical access. Please upgrade your plan or choose a startDate that is newer than 2025-10-15T13:51:51.376106586Z.\",\"elapsed\":1,\"credit_count\":0,\"notice\":null}}"
+      "status": "downloaded",
+      "rows": 365,
+      "start": "2025-10-17 00:00:00+00:00",
+      "end": "2026-10-16 00:00:00+00:00",
+      "file": "specialist_data/fundamentals/XRP_cmc_historical.csv"
     },
     "ADA": {
-      "status": "unavailable",
-      "rows": 0,
-      "http_status": 400,
-      "reason": "{\"status\":{\"timestamp\":\"2026-10-16T13:51:52.398Z\",\"error_code\":400,\"error_message\":\"Your plan allows 12 months of historical access. Please upgrade your plan or choose a startDate that is newer than 2025-10-15T13:51:52.397491319Z.\",\"elapsed\":1,\"credit_count\":0,\"notice\":null}}"
+      "status": "downloaded",
+      "rows": 365,
+      "start": "2025-10-17 00:00:00+00:00",
+      "end": "2026-10-16 00:00:00+00:00",
+      "file": "specialist_data/fundamentals/ADA_cmc_historical.csv"
     },
     "DOGE": {
-      "status": "unavailable",
-      "rows": 0,
-      "http_status": 400,
-      "reason": "{\"status\":{\"timestamp\":\"2026-10-16T13:51:53.420Z\",\"error_code\":400,\"error_message\":\"Your plan allows 12 months of historical access. Please upgrade your plan or choose a startDate that is newer than 2025-10-15T13:51:53.419972842Z.\",\"elapsed\":1,\"credit_count\":0,\"notice\":null}}"
+      "status": "downloaded",
+      "rows": 365,
+      "start": "2025-10-17 00:00:00+00:00",
+      "end": "2026-10-16 00:00:00+00:00",
+      "file": "specialist_data/fundamentals/DOGE_cmc_historical.csv"
     }
   },
-  "note": "Available history depends on CMC plan and endpoint permissions. No synthetic data generated."
+  "note": "CMC account allows 12 months of history; downloader requests only that supported range. No synthetic data generated."
 }
