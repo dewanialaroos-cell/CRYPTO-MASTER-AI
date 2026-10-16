@@ -1,5 +1,9 @@
 name: Crypto Master AI V4 Audited Backtest
 on:
+  push:
+    paths:
+      - 'backtest_ai_v4.py'
+      - '.github/workflows/backtest_ai_v4.yml'
   workflow_dispatch:
     inputs:
       threshold:
