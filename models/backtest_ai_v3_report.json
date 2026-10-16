@@ -1,0 +1,735 @@
+{
+  "model_version": "v3-specialist-head-experimental",
+  "created_at_utc": "2026-10-16T07:39:01.132020+00:00",
+  "method": "Per-file final 20% chronological holdout; next candle open entry; fixed HORIZON close exit; non-overlapping trades.",
+  "threshold": 0.6,
+  "fees": {
+    "fee_pct_per_side": 0.04,
+    "slippage_pct_per_side": 0.02,
+    "round_trip_cost_pct": 0.12
+  },
+  "overall": {
+    "trades": 726,
+    "win_rate_pct": 59.0909,
+    "avg_net_return_pct": 0.366519,
+    "median_net_return_pct": 0.177096,
+    "profit_factor": 1.429434,
+    "mean_per_file_compounded_return_pct": 8.7657,
+    "worst_file_max_drawdown_pct": -22.4397,
+    "mean_ending_equity_per_file": 1087.66,
+    "starting_equity_per_file": 1000.0
+  },
+  "by_side": {
+    "LONG": {
+      "trades": 578,
+      "win_rate_pct": 61.7647,
+      "avg_net_return_pct": 0.444607,
+      "median_net_return_pct": 0.226001,
+      "profit_factor": 1.563194,
+      "mean_per_file_compounded_return_pct": 7.4256,
+      "worst_file_max_drawdown_pct": -15.401,
+      "mean_ending_equity_per_file": 1074.26,
+      "starting_equity_per_file": 1000.0
+    },
+    "SHORT": {
+      "trades": 148,
+      "win_rate_pct": 48.6486,
+      "avg_net_return_pct": 0.061556,
+      "median_net_return_pct": -0.272108,
+      "profit_factor": 1.055775,
+      "mean_per_file_compounded_return_pct": 0.6867,
+      "worst_file_max_drawdown_pct": -9.6128,
+      "mean_ending_equity_per_file": 1006.87,
+      "starting_equity_per_file": 1000.0
+    }
+  },
+  "by_timeframe": {
+    "15m": {
+      "trades": 439,
+      "win_rate_pct": 55.8087,
+      "avg_net_return_pct": -0.307682,
+      "median_net_return_pct": 0.073924,
+      "profit_factor": 0.515407,
+      "mean_per_file_compounded_return_pct": -13.8921,
+      "worst_file_max_drawdown_pct": -22.4397,
+      "mean_ending_equity_per_file": 861.08,
+      "starting_equity_per_file": 1000.0
+    },
+    "1d": {
+      "trades": 64,
+      "win_rate_pct": 65.625,
+      "avg_net_return_pct": 3.495212,
+      "median_net_return_pct": 4.531784,
+      "profit_factor": 2.822366,
+      "mean_per_file_compounded_return_pct": 28.2964,
+      "worst_file_max_drawdown_pct": -12.0036,
+      "mean_ending_equity_per_file": 1282.96,
+      "starting_equity_per_file": 1000.0
+    },
+    "1h": {
+      "trades": 159,
+      "win_rate_pct": 59.7484,
+      "avg_net_return_pct": 0.181842,
+      "median_net_return_pct": 0.693008,
+      "profit_factor": 1.206223,
+      "mean_per_file_compounded_return_pct": 3.1135,
+      "worst_file_max_drawdown_pct": -15.0111,
+      "mean_ending_equity_per_file": 1031.14,
+      "starting_equity_per_file": 1000.0
+    },
+    "4h": {
+      "trades": 64,
+      "win_rate_pct": 73.4375,
+      "avg_net_return_pct": 2.321235,
+      "median_net_return_pct": 3.432215,
+      "profit_factor": 2.905792,
+      "mean_per_file_compounded_return_pct": 17.5451,
+      "worst_file_max_drawdown_pct": -15.401,
+      "mean_ending_equity_per_file": 1175.45,
+      "starting_equity_per_file": 1000.0
+    }
+  },
+  "by_file": {
+    "ADA_USDT_15m.csv": {
+      "trades": 51,
+      "win_rate_pct": 58.8235,
+      "avg_net_return_pct": -0.298473,
+      "median_net_return_pct": 0.301872,
+      "profit_factor": 0.58976,
+      "mean_per_file_compounded_return_pct": -14.98,
+      "worst_file_max_drawdown_pct": -10.922,
+      "mean_ending_equity_per_file": 850.2,
+      "starting_equity_per_file": 1000.0
+    },
+    "ADA_USDT_1d.csv": {
+      "trades": 12,
+      "win_rate_pct": 75.0,
+      "avg_net_return_pct": 5.280647,
+      "median_net_return_pct": 6.349551,
+      "profit_factor": 4.403182,
+      "mean_per_file_compounded_return_pct": 79.833,
+      "worst_file_max_drawdown_pct": -11.0461,
+      "mean_ending_equity_per_file": 1798.33,
+      "starting_equity_per_file": 1000.0
+    },
+    "ADA_USDT_1h.csv": {
+      "trades": 26,
+      "win_rate_pct": 57.6923,
+      "avg_net_return_pct": 0.228664,
+      "median_net_return_pct": 0.526494,
+      "profit_factor": 1.264541,
+      "mean_per_file_compounded_return_pct": 5.2327,
+      "worst_file_max_drawdown_pct": -10.844,
+      "mean_ending_equity_per_file": 1052.33,
+      "starting_equity_per_file": 1000.0
+    },
+    "ADA_USDT_4h.csv": {
+      "trades": 10,
+      "win_rate_pct": 80.0,
+      "avg_net_return_pct": 2.823803,
+      "median_net_return_pct": 3.716379,
+      "profit_factor": 4.854693,
+      "mean_per_file_compounded_return_pct": 31.195,
+      "worst_file_max_drawdown_pct": -4.9563,
+      "mean_ending_equity_per_file": 1311.95,
+      "starting_equity_per_file": 1000.0
+    },
+    "AVAX_USDT_15m.csv": {
+      "trades": 60,
+      "win_rate_pct": 45.0,
+      "avg_net_return_pct": -0.555562,
+      "median_net_return_pct": -0.287321,
+      "profit_factor": 0.280062,
+      "mean_per_file_compounded_return_pct": -29.0828,
+      "worst_file_max_drawdown_pct": -22.4397,
+      "mean_ending_equity_per_file": 709.17,
+      "starting_equity_per_file": 1000.0
+    },
+    "AVAX_USDT_1d.csv": {
+      "trades": 6,
+      "win_rate_pct": 66.6667,
+      "avg_net_return_pct": 2.396069,
+      "median_net_return_pct": 3.055433,
+      "profit_factor": 2.006843,
+      "mean_per_file_compounded_return_pct": 13.1567,
+      "worst_file_max_drawdown_pct": -9.2368,
+      "mean_ending_equity_per_file": 1131.57,
+      "starting_equity_per_file": 1000.0
+    },
+    "AVAX_USDT_1h.csv": {
+      "trades": 16,
+      "win_rate_pct": 50.0,
+      "avg_net_return_pct": -1.085946,
+      "median_net_return_pct": -0.184014,
+      "profit_factor": 0.435406,
+      "mean_per_file_compounded_return_pct": -17.7167,
+      "worst_file_max_drawdown_pct": -9.5149,
+      "mean_ending_equity_per_file": 822.83,
+      "starting_equity_per_file": 1000.0
+    },
+    "AVAX_USDT_4h.csv": {
+      "trades": 10,
+      "win_rate_pct": 60.0,
+      "avg_net_return_pct": 1.575152,
+      "median_net_return_pct": 2.792224,
+      "profit_factor": 1.880279,
+      "mean_per_file_compounded_return_pct": 15.1844,
+      "worst_file_max_drawdown_pct": -7.9237,
+      "mean_ending_equity_per_file": 1151.84,
+      "starting_equity_per_file": 1000.0
+    },
+    "BTC_USDT_15m.csv": {
+      "trades": 53,
+      "win_rate_pct": 60.3774,
+      "avg_net_return_pct": 0.035057,
+      "median_net_return_pct": 0.052043,
+      "profit_factor": 1.120791,
+      "mean_per_file_compounded_return_pct": 1.5963,
+      "worst_file_max_drawdown_pct": -8.1545,
+      "mean_ending_equity_per_file": 1015.96,
+      "starting_equity_per_file": 1000.0
+    },
+    "BTC_USDT_1d.csv": {
+      "trades": 3,
+      "win_rate_pct": 100.0,
+      "avg_net_return_pct": 6.765163,
+      "median_net_return_pct": 4.372115,
+      "profit_factor": null,
+      "mean_per_file_compounded_return_pct": 21.5093,
+      "worst_file_max_drawdown_pct": 0.0,
+      "mean_ending_equity_per_file": 1215.09,
+      "starting_equity_per_file": 1000.0
+    },
+    "BTC_USDT_1h.csv": {
+      "trades": 8,
+      "win_rate_pct": 62.5,
+      "avg_net_return_pct": 0.235949,
+      "median_net_return_pct": 0.296924,
+      "profit_factor": 1.540113,
+      "mean_per_file_compounded_return_pct": 1.8364,
+      "worst_file_max_drawdown_pct": -1.5553,
+      "mean_ending_equity_per_file": 1018.36,
+      "starting_equity_per_file": 1000.0
+    },
+    "BTC_USDT_4h.csv": {
+      "trades": 1,
+      "win_rate_pct": 100.0,
+      "avg_net_return_pct": 2.153423,
+      "median_net_return_pct": 2.153423,
+      "profit_factor": null,
+      "mean_per_file_compounded_return_pct": 2.1534,
+      "worst_file_max_drawdown_pct": 0.0,
+      "mean_ending_equity_per_file": 1021.53,
+      "starting_equity_per_file": 1000.0
+    },
+    "DOGE_USDT_15m.csv": {
+      "trades": 39,
+      "win_rate_pct": 64.1026,
+      "avg_net_return_pct": -0.333206,
+      "median_net_return_pct": 0.135591,
+      "profit_factor": 0.441769,
+      "mean_per_file_compounded_return_pct": -12.7583,
+      "worst_file_max_drawdown_pct": -6.7503,
+      "mean_ending_equity_per_file": 872.42,
+      "starting_equity_per_file": 1000.0
+    },
+    "DOGE_USDT_1d.csv": {
+      "trades": 5,
+      "win_rate_pct": 60.0,
+      "avg_net_return_pct": 3.497607,
+      "median_net_return_pct": 5.466358,
+      "profit_factor": 2.959916,
+      "mean_per_file_compounded_return_pct": 17.4729,
+      "worst_file_max_drawdown_pct": -5.368,
+      "mean_ending_equity_per_file": 1174.73,
+      "starting_equity_per_file": 1000.0
+    },
+    "DOGE_USDT_1h.csv": {
+      "trades": 17,
+      "win_rate_pct": 52.9412,
+      "avg_net_return_pct": 0.262161,
+      "median_net_return_pct": 0.35368,
+      "profit_factor": 1.309365,
+      "mean_per_file_compounded_return_pct": 3.969,
+      "worst_file_max_drawdown_pct": -11.7696,
+      "mean_ending_equity_per_file": 1039.69,
+      "starting_equity_per_file": 1000.0
+    },
+    "DOGE_USDT_4h.csv": {
+      "trades": 6,
+      "win_rate_pct": 66.6667,
+      "avg_net_return_pct": 1.661363,
+      "median_net_return_pct": 3.229574,
+      "profit_factor": 1.957342,
+      "mean_per_file_compounded_return_pct": 9.4203,
+      "worst_file_max_drawdown_pct": -7.4253,
+      "mean_ending_equity_per_file": 1094.2,
+      "starting_equity_per_file": 1000.0
+    },
+    "DOT_USDT_15m.csv": {
+      "trades": 58,
+      "win_rate_pct": 46.5517,
+      "avg_net_return_pct": -0.657091,
+      "median_net_return_pct": -0.39009,
+      "profit_factor": 0.282025,
+      "mean_per_file_compounded_return_pct": -33.2508,
+      "worst_file_max_drawdown_pct": -18.4618,
+      "mean_ending_equity_per_file": 667.49,
+      "starting_equity_per_file": 1000.0
+    },
+    "DOT_USDT_1d.csv": {
+      "trades": 11,
+      "win_rate_pct": 72.7273,
+      "avg_net_return_pct": 6.044696,
+      "median_net_return_pct": 5.56979,
+      "profit_factor": 4.988602,
+      "mean_per_file_compounded_return_pct": 82.5672,
+      "worst_file_max_drawdown_pct": -8.8944,
+      "mean_ending_equity_per_file": 1825.67,
+      "starting_equity_per_file": 1000.0
+    },
+    "DOT_USDT_1h.csv": {
+      "trades": 22,
+      "win_rate_pct": 54.5455,
+      "avg_net_return_pct": 0.38693,
+      "median_net_return_pct": 0.764131,
+      "profit_factor": 1.628537,
+      "mean_per_file_compounded_return_pct": 8.4977,
+      "worst_file_max_drawdown_pct": -5.0909,
+      "mean_ending_equity_per_file": 1084.98,
+      "starting_equity_per_file": 1000.0
+    },
+    "DOT_USDT_4h.csv": {
+      "trades": 10,
+      "win_rate_pct": 90.0,
+      "avg_net_return_pct": 4.158409,
+      "median_net_return_pct": 3.891241,
+      "profit_factor": 14.055202,
+      "mean_per_file_compounded_return_pct": 49.5347,
+      "worst_file_max_drawdown_pct": -3.1853,
+      "mean_ending_equity_per_file": 1495.35,
+      "starting_equity_per_file": 1000.0
+    },
+    "ETH_USDT_15m.csv": {
+      "trades": 40,
+      "win_rate_pct": 45.0,
+      "avg_net_return_pct": -0.18568,
+      "median_net_return_pct": -0.324169,
+      "profit_factor": 0.620779,
+      "mean_per_file_compounded_return_pct": -7.4151,
+      "worst_file_max_drawdown_pct": -12.6633,
+      "mean_ending_equity_per_file": 925.85,
+      "starting_equity_per_file": 1000.0
+    },
+    "ETH_USDT_1d.csv": {
+      "trades": 8,
+      "win_rate_pct": 62.5,
+      "avg_net_return_pct": 2.517993,
+      "median_net_return_pct": 4.673842,
+      "profit_factor": 2.292654,
+      "mean_per_file_compounded_return_pct": 20.1683,
+      "worst_file_max_drawdown_pct": -10.2267,
+      "mean_ending_equity_per_file": 1201.68,
+      "starting_equity_per_file": 1000.0
+    },
+    "ETH_USDT_1h.csv": {
+      "trades": 11,
+      "win_rate_pct": 81.8182,
+      "avg_net_return_pct": 1.375806,
+      "median_net_return_pct": 1.404684,
+      "profit_factor": 9.369522,
+      "mean_per_file_compounded_return_pct": 16.0712,
+      "worst_file_max_drawdown_pct": -1.3475,
+      "mean_ending_equity_per_file": 1160.71,
+      "starting_equity_per_file": 1000.0
+    },
+    "ETH_USDT_4h.csv": {
+      "trades": 7,
+      "win_rate_pct": 71.4286,
+      "avg_net_return_pct": 1.66726,
+      "median_net_return_pct": 2.942814,
+      "profit_factor": 3.239406,
+      "mean_per_file_compounded_return_pct": 11.9403,
+      "worst_file_max_drawdown_pct": -3.3112,
+      "mean_ending_equity_per_file": 1119.4,
+      "starting_equity_per_file": 1000.0
+    },
+    "LINK_USDT_15m.csv": {
+      "trades": 58,
+      "win_rate_pct": 58.6207,
+      "avg_net_return_pct": -0.321281,
+      "median_net_return_pct": 0.121548,
+      "profit_factor": 0.537539,
+      "mean_per_file_compounded_return_pct": -17.9103,
+      "worst_file_max_drawdown_pct": -13.4836,
+      "mean_ending_equity_per_file": 820.9,
+      "starting_equity_per_file": 1000.0
+    },
+    "LINK_USDT_1d.csv": {
+      "trades": 5,
+      "win_rate_pct": 40.0,
+      "avg_net_return_pct": 1.954539,
+      "median_net_return_pct": -2.897055,
+      "profit_factor": 1.827251,
+      "mean_per_file_compounded_return_pct": 8.6433,
+      "worst_file_max_drawdown_pct": -7.8644,
+      "mean_ending_equity_per_file": 1086.43,
+      "starting_equity_per_file": 1000.0
+    },
+    "LINK_USDT_1h.csv": {
+      "trades": 17,
+      "win_rate_pct": 52.9412,
+      "avg_net_return_pct": 0.521642,
+      "median_net_return_pct": 0.771266,
+      "profit_factor": 1.646044,
+      "mean_per_file_compounded_return_pct": 8.5943,
+      "worst_file_max_drawdown_pct": -6.0233,
+      "mean_ending_equity_per_file": 1085.94,
+      "starting_equity_per_file": 1000.0
+    },
+    "LINK_USDT_4h.csv": {
+      "trades": 7,
+      "win_rate_pct": 71.4286,
+      "avg_net_return_pct": 1.634902,
+      "median_net_return_pct": 2.692532,
+      "profit_factor": 2.895383,
+      "mean_per_file_compounded_return_pct": 11.6255,
+      "worst_file_max_drawdown_pct": -3.2871,
+      "mean_ending_equity_per_file": 1116.25,
+      "starting_equity_per_file": 1000.0
+    },
+    "SOL_USDT_15m.csv": {
+      "trades": 44,
+      "win_rate_pct": 70.4545,
+      "avg_net_return_pct": 0.071247,
+      "median_net_return_pct": 0.164374,
+      "profit_factor": 1.2027,
+      "mean_per_file_compounded_return_pct": 2.8557,
+      "worst_file_max_drawdown_pct": -8.5625,
+      "mean_ending_equity_per_file": 1028.56,
+      "starting_equity_per_file": 1000.0
+    },
+    "SOL_USDT_1d.csv": {
+      "trades": 9,
+      "win_rate_pct": 44.4444,
+      "avg_net_return_pct": -0.940045,
+      "median_net_return_pct": -4.975416,
+      "profit_factor": 0.740524,
+      "mean_per_file_compounded_return_pct": -9.8961,
+      "worst_file_max_drawdown_pct": -12.0036,
+      "mean_ending_equity_per_file": 901.04,
+      "starting_equity_per_file": 1000.0
+    },
+    "SOL_USDT_1h.csv": {
+      "trades": 21,
+      "win_rate_pct": 71.4286,
+      "avg_net_return_pct": 0.597782,
+      "median_net_return_pct": 1.076445,
+      "profit_factor": 2.12158,
+      "mean_per_file_compounded_return_pct": 12.9198,
+      "worst_file_max_drawdown_pct": -4.1633,
+      "mean_ending_equity_per_file": 1129.2,
+      "starting_equity_per_file": 1000.0
+    },
+    "SOL_USDT_4h.csv": {
+      "trades": 5,
+      "win_rate_pct": 60.0,
+      "avg_net_return_pct": -0.076427,
+      "median_net_return_pct": 2.011148,
+      "profit_factor": 0.95924,
+      "mean_per_file_compounded_return_pct": -0.7504,
+      "worst_file_max_drawdown_pct": -4.0378,
+      "mean_ending_equity_per_file": 992.5,
+      "starting_equity_per_file": 1000.0
+    },
+    "XRP_USDT_15m.csv": {
+      "trades": 36,
+      "win_rate_pct": 58.3333,
+      "avg_net_return_pct": -0.398381,
+      "median_net_return_pct": 0.092983,
+      "profit_factor": 0.492151,
+      "mean_per_file_compounded_return_pct": -14.0835,
+      "worst_file_max_drawdown_pct": -8.7272,
+      "mean_ending_equity_per_file": 859.16,
+      "starting_equity_per_file": 1000.0
+    },
+    "XRP_USDT_1d.csv": {
+      "trades": 5,
+      "win_rate_pct": 80.0,
+      "avg_net_return_pct": 4.0436,
+      "median_net_return_pct": 3.507981,
+      "profit_factor": 5.752381,
+      "mean_per_file_compounded_return_pct": 21.2131,
+      "worst_file_max_drawdown_pct": -4.2543,
+      "mean_ending_equity_per_file": 1212.13,
+      "starting_equity_per_file": 1000.0
+    },
+    "XRP_USDT_1h.csv": {
+      "trades": 21,
+      "win_rate_pct": 61.9048,
+      "avg_net_return_pct": -0.527105,
+      "median_net_return_pct": 0.453755,
+      "profit_factor": 0.615412,
+      "mean_per_file_compounded_return_pct": -11.3829,
+      "worst_file_max_drawdown_pct": -15.0111,
+      "mean_ending_equity_per_file": 886.17,
+      "starting_equity_per_file": 1000.0
+    },
+    "XRP_USDT_4h.csv": {
+      "trades": 8,
+      "win_rate_pct": 75.0,
+      "avg_net_return_pct": 3.516352,
+      "median_net_return_pct": 4.734103,
+      "profit_factor": 2.519797,
+      "mean_per_file_compounded_return_pct": 27.6025,
+      "worst_file_max_drawdown_pct": -15.401,
+      "mean_ending_equity_per_file": 1276.03,
+      "starting_equity_per_file": 1000.0
+    }
+  },
+  "files": [
+    {
+      "file": "ADA_USDT_15m.csv",
+      "status": "tested",
+      "test_signals": 21242,
+      "trades": 51
+    },
+    {
+      "file": "ADA_USDT_1d.csv",
+      "status": "tested",
+      "test_signals": 224,
+      "trades": 12
+    },
+    {
+      "file": "ADA_USDT_1h.csv",
+      "status": "tested",
+      "test_signals": 5013,
+      "trades": 26
+    },
+    {
+      "file": "ADA_USDT_4h.csv",
+      "status": "tested",
+      "test_signals": 1252,
+      "trades": 10
+    },
+    {
+      "file": "AVAX_USDT_15m.csv",
+      "status": "tested",
+      "test_signals": 20994,
+      "trades": 60
+    },
+    {
+      "file": "AVAX_USDT_1d.csv",
+      "status": "tested",
+      "test_signals": 215,
+      "trades": 6
+    },
+    {
+      "file": "AVAX_USDT_1h.csv",
+      "status": "tested",
+      "test_signals": 4977,
+      "trades": 16
+    },
+    {
+      "file": "AVAX_USDT_4h.csv",
+      "status": "tested",
+      "test_signals": 1268,
+      "trades": 10
+    },
+    {
+      "file": "BNB_USDT_15m.csv",
+      "status": "skipped",
+      "reason": "missing/invalid OHLCV"
+    },
+    {
+      "file": "BNB_USDT_1d.csv",
+      "status": "skipped",
+      "reason": "missing/invalid OHLCV"
+    },
+    {
+      "file": "BNB_USDT_1h.csv",
+      "status": "skipped",
+      "reason": "missing/invalid OHLCV"
+    },
+    {
+      "file": "BNB_USDT_4h.csv",
+      "status": "skipped",
+      "reason": "missing/invalid OHLCV"
+    },
+    {
+      "file": "BTC_USDT_15m.csv",
+      "status": "tested",
+      "test_signals": 17392,
+      "trades": 53
+    },
+    {
+      "file": "BTC_USDT_1d.csv",
+      "status": "tested",
+      "test_signals": 232,
+      "trades": 3
+    },
+    {
+      "file": "BTC_USDT_1h.csv",
+      "status": "tested",
+      "test_signals": 4876,
+      "trades": 8
+    },
+    {
+      "file": "BTC_USDT_4h.csv",
+      "status": "tested",
+      "test_signals": 1245,
+      "trades": 1
+    },
+    {
+      "file": "DOGE_USDT_15m.csv",
+      "status": "tested",
+      "test_signals": 19980,
+      "trades": 39
+    },
+    {
+      "file": "DOGE_USDT_1d.csv",
+      "status": "tested",
+      "test_signals": 200,
+      "trades": 5
+    },
+    {
+      "file": "DOGE_USDT_1h.csv",
+      "status": "tested",
+      "test_signals": 4856,
+      "trades": 17
+    },
+    {
+      "file": "DOGE_USDT_4h.csv",
+      "status": "tested",
+      "test_signals": 1246,
+      "trades": 6
+    },
+    {
+      "file": "DOT_USDT_15m.csv",
+      "status": "tested",
+      "test_signals": 21946,
+      "trades": 58
+    },
+    {
+      "file": "DOT_USDT_1d.csv",
+      "status": "tested",
+      "test_signals": 224,
+      "trades": 11
+    },
+    {
+      "file": "DOT_USDT_1h.csv",
+      "status": "tested",
+      "test_signals": 5192,
+      "trades": 22
+    },
+    {
+      "file": "DOT_USDT_4h.csv",
+      "status": "tested",
+      "test_signals": 1291,
+      "trades": 10
+    },
+    {
+      "file": "ETH_USDT_15m.csv",
+      "status": "tested",
+      "test_signals": 18533,
+      "trades": 40
+    },
+    {
+      "file": "ETH_USDT_1d.csv",
+      "status": "tested",
+      "test_signals": 219,
+      "trades": 8
+    },
+    {
+      "file": "ETH_USDT_1h.csv",
+      "status": "tested",
+      "test_signals": 4771,
+      "trades": 11
+    },
+    {
+      "file": "ETH_USDT_4h.csv",
+      "status": "tested",
+      "test_signals": 1196,
+      "trades": 7
+    },
+    {
+      "file": "LINK_USDT_15m.csv",
+      "status": "tested",
+      "test_signals": 21187,
+      "trades": 58
+    },
+    {
+      "file": "LINK_USDT_1d.csv",
+      "status": "tested",
+      "test_signals": 207,
+      "trades": 5
+    },
+    {
+      "file": "LINK_USDT_1h.csv",
+      "status": "tested",
+      "test_signals": 5034,
+      "trades": 17
+    },
+    {
+      "file": "LINK_USDT_4h.csv",
+      "status": "tested",
+      "test_signals": 1288,
+      "trades": 7
+    },
+    {
+      "file": "SOL_USDT_15m.csv",
+      "status": "tested",
+      "test_signals": 20206,
+      "trades": 44
+    },
+    {
+      "file": "SOL_USDT_1d.csv",
+      "status": "tested",
+      "test_signals": 217,
+      "trades": 9
+    },
+    {
+      "file": "SOL_USDT_1h.csv",
+      "status": "tested",
+      "test_signals": 5033,
+      "trades": 21
+    },
+    {
+      "file": "SOL_USDT_4h.csv",
+      "status": "tested",
+      "test_signals": 1316,
+      "trades": 5
+    },
+    {
+      "file": "XRP_USDT_15m.csv",
+      "status": "tested",
+      "test_signals": 20096,
+      "trades": 36
+    },
+    {
+      "file": "XRP_USDT_1d.csv",
+      "status": "tested",
+      "test_signals": 198,
+      "trades": 5
+    },
+    {
+      "file": "XRP_USDT_1h.csv",
+      "status": "tested",
+      "test_signals": 5014,
+      "trades": 21
+    },
+    {
+      "file": "XRP_USDT_4h.csv",
+      "status": "tested",
+      "test_signals": 1282,
+      "trades": 8
+    }
+  ],
+  "warnings": [
+    "Paper backtest only; no scanner or live trading integration.",
+    "Fee and slippage are configurable assumptions, not verified exchange rates.",
+    "Fixed horizon only; stop loss, take profit, funding, liquidation, partial fills and latency are not simulated.",
+    "Equity is compounded independently per file; this is not a single combined portfolio curve.",
+    "The head was trained on validation-period specialist outputs, so stacking is temporal holdout, not cross-fitted stacking."
+  ]
+}
