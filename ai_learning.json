@@ -2,24 +2,36 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "INJ/USDT",
-      "signal": "LONG",
-      "entry": 9.234,
-      "created": 1792129067.457819
+      "symbol": "XDP/USDT",
+      "signal": "SHORT",
+      "entry": 0.018831,
+      "created": 1792145324.1738157
     },
     {
-      "symbol": "STRK/USDT",
-      "signal": "LONG",
-      "entry": 0.08473,
-      "created": 1792129067.4578204
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.3334,
+      "created": 1792145324.173817
     },
     {
-      "symbol": "FIL/USDT",
-      "signal": "LONG",
-      "entry": 1.1532,
-      "created": 1792129067.457821
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.08196,
+      "created": 1792145324.1738176
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 81864.4,
+      "created": 1792145324.173818
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 4.042e-06,
+      "created": 1792145324.1738186
     }
   ],
-  "total": 1886,
+  "total": 1889,
   "hits": 854
 }
