@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-10-16T13:59:01.922538+00:00",
+  "exchanges": {
+    "binance": {
+      "status": "unavailable",
+      "reason": "ExchangeNotAvailable: binance GET https://api.binance.com/api/v3/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. "
+    },
+    "coinbase": {
+      "status": "queried",
+      "markets_ok": 6,
+      "failures": 0
+    },
+    "kraken": {
+      "status": "queried",
+      "markets_ok": 6,
+      "failures": 0
+    },
+    "okx": {
+      "status": "queried",
+      "markets_ok": 6,
+      "failures": 0
+    },
+    "bybit": {
+      "status": "unavailable",
+      "reason": "RateLimitExceeded: bybit GET https://api.bybit.com/v5/market/instruments-info?category=spot 403 Forbidden {\n    error:The Amazon CloudFront distribution is configured to block access from your country\n}"
+    },
+    "kucoin": {
+      "status": "queried",
+      "markets_ok": 6,
+      "failures": 0
+    },
+    "gateio": {
+      "status": "unsupported"
+    },
+    "bitget": {
+      "status": "queried",
+      "markets_ok": 6,
+      "failures": 0
+    },
+    "mexc": {
+      "status": "queried",
+      "markets_ok": 6,
+      "failures": 0
+    },
+    "htx": {
+      "status": "queried",
+      "markets_ok": 6,
+      "failures": 0
+    },
+    "bitstamp": {
+      "status": "queried",
+      "markets_ok": 6,
+      "failures": 0
+    },
+    "cryptocom": {
+      "status": "queried",
+      "markets_ok": 6,
+      "failures": 0
+    }
+  },
+  "order_book_rows": 54,
+  "fundamentals_rows": 54,
+  "note": "Public snapshots are current observations, not historical order-book or liquidation records."
+}
