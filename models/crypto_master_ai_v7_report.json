@@ -1,7 +1,7 @@
 {
   "version": "V7",
-  "created_at": "2026-10-16T14:15:25.186086+00:00",
-  "trained_count": 3,
+  "created_at": "2026-10-16T18:58:43.760349+00:00",
+  "trained_count": 4,
   "domain_count": 6,
   "domains": {
     "fundamentals_ai": {
@@ -41,9 +41,28 @@
       "required": "At least 100 rows with label=0/1, numeric as-of-time features, and timestamp/symbol columns recommended."
     },
     "news_ai": {
-      "status": "NOT TRAINED",
-      "reason": "No valid labeled CSV data in specialist_data/news/",
-      "required": "At least 100 rows with label=0/1, numeric as-of-time features, and timestamp/symbol columns recommended."
+      "status": "TRAINED",
+      "metrics": {
+        "rows": 7389,
+        "train_rows": 4430,
+        "validation_rows": 1472,
+        "test_rows": 1475,
+        "feature_count": 6,
+        "accuracy": 0.46644,
+        "balanced_accuracy": 0.49786,
+        "precision": 0.39979,
+        "recall": 0.65709,
+        "roc_auc": 0.52932
+      },
+      "features": [
+        "positive_word_count",
+        "negative_word_count",
+        "headline_word_count",
+        "title_char_count",
+        "base_price",
+        "sentiment_net"
+      ],
+      "time_ordered": true
     },
     "indicator_ai": {
       "status": "TRAINED",
