@@ -1,0 +1,49 @@
+name: Crypto Master AI V7 Public Data Download
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "25 2 * * 0"
+permissions:
+  contents: write
+concurrency:
+  group: crypto-master-ai-public-data
+  cancel-in-progress: false
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Compile downloader
+        run: python -m py_compile download_v7_public_data.py
+      - name: Download public historical data
+        run: python download_v7_public_data.py
+      - name: Upload data and summary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: crypto-master-ai-v7-public-data
+          path: |
+            specialist_data/
+            data_downloads/download_summary.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit specialist datasets and summary
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add specialist_data data_downloads/download_summary.json
+          if git diff --cached --quiet; then
+            echo "No new public dataset changes."
+          else
+            git commit -m "Download public historical data for V7 specialists"
+            git pull --rebase origin main
+            git push
+          fi
