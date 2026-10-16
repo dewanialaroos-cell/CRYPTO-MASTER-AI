@@ -1,0 +1,44 @@
+name: Crypto Master AI CMC Historical Data
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "download_cmc_historical_data.py"
+      - ".github/workflows/download_cmc_historical_data.yml"
+permissions:
+  contents: write
+concurrency:
+  group: crypto-master-ai-cmc-data
+  cancel-in-progress: false
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install pandas requests
+      - name: Download available CMC history
+        env:
+          CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
+        run: python download_cmc_historical_data.py
+      - name: Upload report and data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crypto-master-ai-cmc-historical-data
+          path: |
+            specialist_data/fundamentals/
+            data_downloads/cmc_download_summary.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit downloaded data and report
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add specialist_data/fundamentals data_downloads/cmc_download_summary.json
+          if git diff --cached --quiet; then echo "No new data files to commit"; else git commit -m "Add available CMC historical fundamentals data"; git pull --rebase origin main; git push; fi
