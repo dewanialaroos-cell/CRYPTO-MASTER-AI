@@ -20,7 +20,7 @@ def main():
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     s = requests.Session()
     s.headers.update({"X-CMC_PRO_API_KEY": key, "Accept": "application/json"})
-    report = {"created_at": datetime.now(timezone.utc).isoformat(), "source":"CoinMarketCap API", "domains":{}, "symbols":{}, "note":"Available history depends on CMC plan and endpoint permissions. No synthetic data generated."}
+    report = {"created_at": datetime.now(timezone.utc).isoformat(), "source":"CoinMarketCap API", "domains":{}, "symbols":{}, "note":"CMC account allows 12 months of history; downloader requests only that supported range. No synthetic data generated."}
     all_frames = []
     # First resolve IDs and validate the key using the map endpoint.
     try:
@@ -43,7 +43,7 @@ def main():
             report["symbols"][sym] = {"status":"unavailable","rows":0,"reason":"CoinMarketCap map did not return this symbol"}
             continue
         end_time = datetime.now(timezone.utc)
-        start_time = end_time - pd.Timedelta(days=3650)
+        start_time = end_time - pd.Timedelta(days=365)
         params = {"id": coin["id"], "interval":"daily",
                   "time_start": start_time.strftime("%Y-%m-%dT%H:%M:%SZ"),
                   "time_end": end_time.strftime("%Y-%m-%dT%H:%M:%SZ"),
