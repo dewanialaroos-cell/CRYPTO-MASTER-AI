@@ -1,6 +1,6 @@
 {
   "version": "V6",
-  "created_at": "2026-10-16T08:05:39.048207+00:00",
+  "created_at": "2026-10-16T19:28:14.628033+00:00",
   "status": "trained",
   "specialist_domain_count": 7,
   "specialist_domains": {
@@ -34,7 +34,16 @@
         "trend_strength",
         "regime_trend"
       ],
-      "validation_auc": 0.52164
+      "validation_auc": 0.52164,
+      "test_metrics": {
+        "test_rows": 85281,
+        "accuracy": 0.52626,
+        "balanced_accuracy": 0.52591,
+        "precision": 0.51637,
+        "recall": 0.50933,
+        "roc_auc": 0.5352,
+        "positive_prediction_rate_pct": 48.287
+      }
     },
     "momentum": {
       "feature_count": 22,
@@ -62,7 +71,16 @@
         "williams_20",
         "cci_20"
       ],
-      "validation_auc": 0.5216
+      "validation_auc": 0.5216,
+      "test_metrics": {
+        "test_rows": 85281,
+        "accuracy": 0.5268,
+        "balanced_accuracy": 0.52644,
+        "precision": 0.51695,
+        "recall": 0.50931,
+        "roc_auc": 0.53439,
+        "positive_prediction_rate_pct": 48.231
+      }
     },
     "volatility": {
       "feature_count": 26,
@@ -94,7 +112,16 @@
         "true_range_pct",
         "regime_volatility"
       ],
-      "validation_auc": 0.52229
+      "validation_auc": 0.52229,
+      "test_metrics": {
+        "test_rows": 85281,
+        "accuracy": 0.52726,
+        "balanced_accuracy": 0.52691,
+        "precision": 0.5174,
+        "recall": 0.51036,
+        "roc_auc": 0.53367,
+        "positive_prediction_rate_pct": 48.289
+      }
     },
     "volume_flow": {
       "feature_count": 11,
@@ -111,7 +138,16 @@
         "volume_change_1",
         "volume_zscore_20"
       ],
-      "validation_auc": 0.51289
+      "validation_auc": 0.51289,
+      "test_metrics": {
+        "test_rows": 85281,
+        "accuracy": 0.52026,
+        "balanced_accuracy": 0.5197,
+        "precision": 0.51037,
+        "recall": 0.49287,
+        "roc_auc": 0.52738,
+        "positive_prediction_rate_pct": 47.277
+      }
     },
     "candlestick": {
       "feature_count": 12,
@@ -129,7 +165,16 @@
         "bullish_engulf",
         "bearish_engulf"
       ],
-      "validation_auc": 0.52132
+      "validation_auc": 0.52132,
+      "test_metrics": {
+        "test_rows": 85281,
+        "accuracy": 0.51492,
+        "balanced_accuracy": 0.51374,
+        "precision": 0.50504,
+        "recall": 0.45726,
+        "roc_auc": 0.5177,
+        "positive_prediction_rate_pct": 44.323
+      }
     },
     "support_resistance": {
       "feature_count": 28,
@@ -163,7 +208,16 @@
         "breakout_down_100",
         "drawdown_100"
       ],
-      "validation_auc": 0.51684
+      "validation_auc": 0.51684,
+      "test_metrics": {
+        "test_rows": 85281,
+        "accuracy": 0.52461,
+        "balanced_accuracy": 0.5244,
+        "precision": 0.51445,
+        "recall": 0.51472,
+        "roc_auc": 0.53244,
+        "positive_prediction_rate_pct": 48.98
+      }
     },
     "market_regime": {
       "feature_count": 9,
@@ -178,7 +232,16 @@
         "regime_trend",
         "regime_volatility"
       ],
-      "validation_auc": 0.5171
+      "validation_auc": 0.5171,
+      "test_metrics": {
+        "test_rows": 85281,
+        "accuracy": 0.51069,
+        "balanced_accuracy": 0.51139,
+        "precision": 0.50022,
+        "recall": 0.545,
+        "roc_auc": 0.51419,
+        "positive_prediction_rate_pct": 53.337
+      }
     }
   },
   "feature_count": 132,

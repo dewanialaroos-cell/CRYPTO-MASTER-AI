@@ -1,0 +1,334 @@
+{
+  "created_at": "2026-10-16T19:30:19.176307+00:00",
+  "model_version": "V6 Head AI",
+  "method": "Combined Head AI over specialist probabilities; chronological final 20% holdout per file; next-open entry; close at configured horizon; non-overlapping trades per file; fees and slippage included.",
+  "warning": "Aggregated across symbols/timeframes; not a simultaneous portfolio simulation. Backtest results are historical simulations, not guarantees. Minimum 200 trades is a target, not forced.",
+  "head_ai_backtest": {
+    "status": "BACKTESTED",
+    "trades": 520,
+    "target_minimum_trades": 200,
+    "target_met": true,
+    "long_trades": 515,
+    "short_trades": 5,
+    "win_rate_pct": 61.346,
+    "avg_net_return_pct": 0.26362,
+    "profit_factor": 1.1391,
+    "compounded_return_pct_single_trade_sequence": 58.048,
+    "max_drawdown_pct_single_trade_sequence": -68.686,
+    "fees_per_side_pct": 0.04,
+    "slippage_per_side_pct": 0.02,
+    "threshold": 0.55,
+    "horizon_candles": 3
+  },
+  "files": [
+    {
+      "file": "ADA_USDT_15m.csv",
+      "status": "TESTED",
+      "trades": 20,
+      "long_trades": 20,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "ADA_USDT_1d.csv",
+      "status": "TESTED",
+      "trades": 13,
+      "long_trades": 13,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "ADA_USDT_1h.csv",
+      "status": "TESTED",
+      "trades": 21,
+      "long_trades": 21,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "ADA_USDT_4h.csv",
+      "status": "TESTED",
+      "trades": 14,
+      "long_trades": 14,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "AVAX_USDT_15m.csv",
+      "status": "TESTED",
+      "trades": 21,
+      "long_trades": 21,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "AVAX_USDT_1d.csv",
+      "status": "TESTED",
+      "trades": 15,
+      "long_trades": 15,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "AVAX_USDT_1h.csv",
+      "status": "TESTED",
+      "trades": 23,
+      "long_trades": 23,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "AVAX_USDT_4h.csv",
+      "status": "TESTED",
+      "trades": 11,
+      "long_trades": 11,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "BNB_USDT_15m.csv",
+      "status": "SKIPPED",
+      "reason": "invalid OHLCV"
+    },
+    {
+      "file": "BNB_USDT_1d.csv",
+      "status": "SKIPPED",
+      "reason": "invalid OHLCV"
+    },
+    {
+      "file": "BNB_USDT_1h.csv",
+      "status": "SKIPPED",
+      "reason": "invalid OHLCV"
+    },
+    {
+      "file": "BNB_USDT_4h.csv",
+      "status": "SKIPPED",
+      "reason": "invalid OHLCV"
+    },
+    {
+      "file": "BTC_USDT_15m.csv",
+      "status": "TESTED",
+      "trades": 11,
+      "long_trades": 11,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "BTC_USDT_1d.csv",
+      "status": "TESTED",
+      "trades": 8,
+      "long_trades": 8,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "BTC_USDT_1h.csv",
+      "status": "TESTED",
+      "trades": 7,
+      "long_trades": 6,
+      "short_trades": 1,
+      "skipped_specialists": []
+    },
+    {
+      "file": "BTC_USDT_4h.csv",
+      "status": "TESTED",
+      "trades": 6,
+      "long_trades": 6,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "DOGE_USDT_15m.csv",
+      "status": "TESTED",
+      "trades": 18,
+      "long_trades": 18,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "DOGE_USDT_1d.csv",
+      "status": "TESTED",
+      "trades": 12,
+      "long_trades": 12,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "DOGE_USDT_1h.csv",
+      "status": "TESTED",
+      "trades": 19,
+      "long_trades": 19,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "DOGE_USDT_4h.csv",
+      "status": "TESTED",
+      "trades": 8,
+      "long_trades": 8,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "DOT_USDT_15m.csv",
+      "status": "TESTED",
+      "trades": 23,
+      "long_trades": 23,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "DOT_USDT_1d.csv",
+      "status": "TESTED",
+      "trades": 14,
+      "long_trades": 14,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "DOT_USDT_1h.csv",
+      "status": "TESTED",
+      "trades": 18,
+      "long_trades": 17,
+      "short_trades": 1,
+      "skipped_specialists": []
+    },
+    {
+      "file": "DOT_USDT_4h.csv",
+      "status": "TESTED",
+      "trades": 8,
+      "long_trades": 8,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "ETH_USDT_15m.csv",
+      "status": "TESTED",
+      "trades": 17,
+      "long_trades": 17,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "ETH_USDT_1d.csv",
+      "status": "TESTED",
+      "trades": 13,
+      "long_trades": 13,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "ETH_USDT_1h.csv",
+      "status": "TESTED",
+      "trades": 16,
+      "long_trades": 15,
+      "short_trades": 1,
+      "skipped_specialists": []
+    },
+    {
+      "file": "ETH_USDT_4h.csv",
+      "status": "TESTED",
+      "trades": 9,
+      "long_trades": 9,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "LINK_USDT_15m.csv",
+      "status": "TESTED",
+      "trades": 24,
+      "long_trades": 24,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "LINK_USDT_1d.csv",
+      "status": "TESTED",
+      "trades": 11,
+      "long_trades": 11,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "LINK_USDT_1h.csv",
+      "status": "TESTED",
+      "trades": 16,
+      "long_trades": 16,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "LINK_USDT_4h.csv",
+      "status": "TESTED",
+      "trades": 11,
+      "long_trades": 11,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "SOL_USDT_15m.csv",
+      "status": "TESTED",
+      "trades": 19,
+      "long_trades": 19,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "SOL_USDT_1d.csv",
+      "status": "TESTED",
+      "trades": 15,
+      "long_trades": 15,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "SOL_USDT_1h.csv",
+      "status": "TESTED",
+      "trades": 18,
+      "long_trades": 18,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "SOL_USDT_4h.csv",
+      "status": "TESTED",
+      "trades": 10,
+      "long_trades": 10,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "XRP_USDT_15m.csv",
+      "status": "TESTED",
+      "trades": 17,
+      "long_trades": 17,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "XRP_USDT_1d.csv",
+      "status": "TESTED",
+      "trades": 11,
+      "long_trades": 11,
+      "short_trades": 0,
+      "skipped_specialists": []
+    },
+    {
+      "file": "XRP_USDT_1h.csv",
+      "status": "TESTED",
+      "trades": 15,
+      "long_trades": 14,
+      "short_trades": 1,
+      "skipped_specialists": []
+    },
+    {
+      "file": "XRP_USDT_4h.csv",
+      "status": "TESTED",
+      "trades": 8,
+      "long_trades": 7,
+      "short_trades": 1,
+      "skipped_specialists": []
+    }
+  ],
+  "trades_csv": "models/backtest_v6_head_ai_trades.csv"
+}
