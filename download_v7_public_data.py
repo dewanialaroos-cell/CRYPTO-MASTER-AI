@@ -9,7 +9,7 @@ This script does NOT synthesize rows. Order-book and liquidation history are NOT
 those domains require real historical snapshots from a suitable provider.
 """
 from __future__ import annotations
-import time, json, re, html
+import time, json, re, html, io, zipfile
 from pathlib import Path
 from datetime import datetime, timezone
 import numpy as np
@@ -38,30 +38,48 @@ def get_session():
     return s
 
 def fetch_ohlcv(exchange, symbol, since_ms):
-    rows, cursor = [], since_ms
-    while True:
-        batch = exchange.fetch_ohlcv(symbol, timeframe="1h", since=cursor, limit=1000)
-        if not batch:
-            break
-        if rows and batch[0][0] <= rows[-1][0]:
-            batch = [r for r in batch if r[0] > rows[-1][0]]
-        if not batch:
-            break
-        rows.extend(batch)
-        cursor = batch[-1][0] + 1
-        if len(batch) < 1000 or cursor >= exchange.milliseconds() - 60*60*1000:
-            break
-        time.sleep(exchange.rateLimit / 1000)
+    """Read Binance's public monthly archive files; does not call the restricted exchange API."""
+    rows = []
+    session = get_session()
+    market_symbol = symbol.replace("/", "")
+    start = pd.Timestamp(since_ms, unit="ms", tz="UTC").to_period("M")
+    end = pd.Timestamp.now(tz="UTC").to_period("M")
+    months = pd.period_range(start=start, end=end, freq="M")
+    for month in months:
+        ym = str(month)
+        url = f"https://data.binance.vision/data/spot/monthly/klines/{market_symbol}/1h/{market_symbol}-1h-{ym}.zip"
+        try:
+            response = session.get(url, timeout=TIMEOUT)
+            if response.status_code in (403, 404):
+                print(f"  archive unavailable for {market_symbol} {ym} (HTTP {response.status_code})")
+                continue
+            response.raise_for_status()
+            with zipfile.ZipFile(io.BytesIO(response.content)) as zf:
+                names = [n for n in zf.namelist() if n.lower().endswith(".csv")]
+                if not names:
+                    continue
+                part = pd.read_csv(zf.open(names[0]), header=None)
+            if part.empty:
+                continue
+            # Binance monthly kline archive columns.
+            part = part.iloc[:, :6]
+            part.columns = ["timestamp_ms", "open", "high", "low", "close", "volume"]
+            rows.extend(part.values.tolist())
+            print(f"  archive {market_symbol} {ym}: {len(part)} candles")
+        except Exception as e:
+            print(f"  archive error {market_symbol} {ym}: {type(e).__name__}: {e}")
+        time.sleep(0.08)
     df = pd.DataFrame(rows, columns=["timestamp_ms","open","high","low","close","volume"])
     if df.empty:
         return df
-    df = df.drop_duplicates("timestamp_ms").sort_values("timestamp_ms")
+    df["timestamp_ms"] = pd.to_numeric(df["timestamp_ms"], errors="coerce")
+    df = df.dropna(subset=["timestamp_ms"]).drop_duplicates("timestamp_ms").sort_values("timestamp_ms")
     df["timestamp"] = pd.to_datetime(df.timestamp_ms, unit="ms", utc=True)
-    # Exclude the currently forming candle.
+    df = df[df.timestamp >= pd.Timestamp(since_ms, unit="ms", tz="UTC")]
     cutoff = pd.Timestamp.now(tz="UTC").floor("h")
     df = df[df.timestamp < cutoff].copy()
-    for c in ["open","high","low","close","volume"]:
-        df[c] = pd.to_numeric(df[c], errors="coerce")
+    for col in ["open","high","low","close","volume"]:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
     return df.dropna(subset=["open","high","low","close","volume"]).reset_index(drop=True)
 
 def rsi(series, period=14):
