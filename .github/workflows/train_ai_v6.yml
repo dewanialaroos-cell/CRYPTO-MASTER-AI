@@ -1,0 +1,50 @@
+name: Crypto Master AI V6 Domain Specialist Training
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'train_ai_v6.py'
+      - '.github/workflows/train_ai_v6.yml'
+permissions:
+  contents: write
+concurrency:
+  group: crypto-master-ai-v6-training
+  cancel-in-progress: false
+jobs:
+  train-v6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Compile V6 trainer
+        run: python -m py_compile train_ai_v6.py train_ai_v3.py
+      - name: Train domain specialists and Head AI
+        run: python train_ai_v6.py
+      - name: Upload V6 model and report
+        uses: actions/upload-artifact@v4
+        with:
+          name: crypto-master-ai-v6-domain-specialists
+          path: |
+            models/crypto_master_ai_v6.joblib
+            models/crypto_master_ai_v6_report.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit V6 model and report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add models/crypto_master_ai_v6.joblib models/crypto_master_ai_v6_report.json
+          if git diff --cached --quiet; then
+            echo "No V6 model/report changes to commit."
+          else
+            git commit -m "Train Crypto Master AI V6 domain specialist ensemble"
+            git push
+          fi
