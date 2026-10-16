@@ -50,7 +50,8 @@ jobs:
             echo "No V7 backtest report changes."
           else
             git commit -m "Add individual V7 specialist trading backtests"
-            # Rebase generated reports on commits pushed while the backtest ran.
+            # Stash generated model/report changes left by the training step.
+            git stash push --include-untracked -m "temporary generated model artifacts"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
