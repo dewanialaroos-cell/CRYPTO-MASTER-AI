@@ -64,7 +64,9 @@ def main():
   if tcol:
    data["_sort_time"]=pd.to_datetime(data[tcol],utc=True,errors="coerce")
    data=data.sort_values("_sort_time",kind="stable")
-  excluded={"label","_source_file","_sort_time","timestamp","time","datetime","date","symbol","asset","coin","target_time","future_return_4d","future_return_1d","future_price","label_price","label_timestamp","future_timestamp"}
+  # Exclude label/target/future-derived columns to prevent target leakage.
+  excluded={"label","_source_file","_sort_time","timestamp","time","datetime","date","symbol","asset","coin","target_time","future_price","label_price","label_timestamp","future_timestamp"}
+  excluded.update(c for c in data.columns if c.startswith(("future_", "target_", "label_")) or "future_return" in c or c in {"target","y_true","outcome"})
   cols=[c for c in data.columns if c not in excluded and pd.api.types.is_numeric_dtype(data[c]) and data[c].notna().any()]
   data=data.dropna(subset=["label"])
   if len(cols)<2 or data.label.nunique()<2:
