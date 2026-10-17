@@ -20,6 +20,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 ROOT = Path(__file__).resolve().parent
 DB_PATH = Path(os.environ.get("CRYPTO_APP_DB", ROOT / "app_users.sqlite3"))
+DATABASE_URL = os.environ.get("CRYPTO_APP_DATABASE_URL") or os.environ.get("DATABASE_URL")
 SCANNER_PATH = ROOT / "Scanner.py"
 RESULTS_PATH = ROOT / "crypto_scan_results.csv"
 app = Flask(__name__)
@@ -36,38 +37,7 @@ scan_state = {"status": "idle", "started_at": None, "finished_at": None, "error"
 MAX_HISTORY = 20
 
 
-def db():
-    conn = sqlite3.connect(DB_PATH, timeout=15)
-    conn.row_factory = sqlite3.Row
-    return conn
-
-
-def init_db():
-    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with db() as con:
-        con.execute("""CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            email TEXT NOT NULL UNIQUE,
-            password_hash TEXT NOT NULL,
-            email_verified INTEGER NOT NULL DEFAULT 0,
-            created_at TEXT NOT NULL
-        )""")
-        # Safe migration for databases created before email verification was added.
-        user_columns = {row["name"] for row in con.execute("PRAGMA table_info(users)").fetchall()}
-        if "email_verified" not in user_columns:
-            con.execute("ALTER TABLE users ADD COLUMN email_verified INTEGER NOT NULL DEFAULT 0")
-        con.execute("""CREATE TABLE IF NOT EXISTS auth_tokens (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, token_hash TEXT NOT NULL UNIQUE, purpose TEXT NOT NULL, expires_at TEXT NOT NULL, used_at TEXT, created_at TEXT NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))""")
-        con.execute("""CREATE TABLE IF NOT EXISTS scan_runs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER NOT NULL,
-            status TEXT NOT NULL,
-            started_at TEXT NOT NULL,
-            finished_at TEXT,
-            top_coins_json TEXT NOT NULL DEFAULT '[]',
-            error TEXT,
-            FOREIGN KEY(user_id) REFERENCES users(id)
-        )""")
-
+__REPLACE_DB_BLOCK__
 
 def utc_now():
     return datetime.now(timezone.utc).isoformat()
@@ -216,9 +186,9 @@ def signup():
         return jsonify({"error": "Password kam az kam 10 characters ka ho."}), 400
     try:
         with db() as con:
-            cur = con.execute("INSERT INTO users(email,password_hash,email_verified,created_at) VALUES(?,?,0,?)",
+            cur = con.execute("INSERT INTO users(email,password_hash,email_verified,created_at) VALUES(?,?,0,?) RETURNING id",
                               (email, generate_password_hash(password), utc_now()))
-            user_id = cur.lastrowid
+            user_id = cur.fetchone()["id"]
         raw = issue_token(user_id, "verify")
         base = request.host_url.rstrip("/")
         send_auth_email(email, "Verify your Crypto Master AI email",
@@ -343,9 +313,9 @@ def run_scan():
     started = utc_now()
     try:
         with db() as con:
-            cur = con.execute("INSERT INTO scan_runs(user_id,status,started_at,top_coins_json) VALUES(?,?,?,?)",
+            cur = con.execute("INSERT INTO scan_runs(user_id,status,started_at,top_coins_json) VALUES(?,?,?,?) RETURNING id",
                               (user["id"], "running", started, "[]"))
-            run_id = cur.lastrowid
+            run_id = cur.fetchone()["id"]
         threading.Thread(target=scan_worker, args=(run_id, user["id"]), daemon=True).start()
         return jsonify({"ok": True, "run_id": run_id, "status": "running"})
     except Exception as e:
