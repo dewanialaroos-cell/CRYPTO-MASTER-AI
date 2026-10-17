@@ -250,25 +250,34 @@ def signup():
         return jsonify({"error": "Valid email address enter karein."}), 400
     if len(password) < 10 or len(password) > 128:
         return jsonify({"error": "Password kam az kam 10 characters ka ho."}), 400
+    # Email verification is used when SMTP is configured. If SMTP is not configured,
+    # allow password-based signup/login instead of leaving users locked out.
+    smtp_ready = all(os.environ.get(k) for k in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM"))
     try:
         with db() as con:
-            cur = con.execute("INSERT INTO users(email,password_hash,email_verified,created_at) VALUES(?,?,0,?) RETURNING id",
-                              (email, generate_password_hash(password), utc_now()))
+            cur = con.execute("INSERT INTO users(email,password_hash,email_verified,created_at) VALUES(?,?,?,?) RETURNING id",
+                              (email, generate_password_hash(password), 0 if smtp_ready else 1, utc_now()))
             user_id = cur.fetchone()["id"]
-        raw = issue_token(user_id, "verify")
-        base = request.host_url.rstrip("/")
-        send_auth_email(email, "Verify your Crypto Master AI email",
-                        f"Open this link within 24 hours to verify your account:\n\n{base}/verify-email?token={raw}")
+        if smtp_ready:
+            raw = issue_token(user_id, "verify")
+            base = request.host_url.rstrip("/")
+            try:
+                send_auth_email(email, "Verify your Crypto Master AI email",
+                                f"Open this link within 24 hours to verify your account:\n\n{base}/verify-email?token={raw}")
+            except Exception:
+                app.logger.exception("Verification email delivery failed")
+                return jsonify({"error": "Account create ho gaya, lekin verification email send nahi hui. Hosting SMTP settings check karein; dobara signup na karein."}), 503
     except sqlite3.IntegrityError:
         return jsonify({"error": "Is email se account pehle se mojood hai. Login karein."}), 409
     except Exception as exc:
         # PostgreSQL unique-constraint violation (SQLSTATE 23505) or SQLite duplicate email.
         if getattr(exc, "sqlstate", None) == "23505":
             return jsonify({"error": "Is email se account pehle se mojood hai. Login karein."}), 409
-        with db() as con:
-            con.execute("DELETE FROM users WHERE email=? AND email_verified=0", (email,))
-        return jsonify({"error": str(exc)}), 503
-    return jsonify({"ok": True, "message": "Signup successful. Login se pehle email verify karein."}), 201
+        app.logger.exception("Signup failed")
+        return jsonify({"error": "Account create nahi ho saka. Database settings check karein."}), 503
+    message = ("Signup successful. Email verify karke login karein." if smtp_ready
+               else "Signup successful. Email service abhi configured nahi; ab aap password se login kar sakte hain.")
+    return jsonify({"ok": True, "message": message}), 201
 
 
 
@@ -338,7 +347,8 @@ def login():
         user = con.execute("SELECT id,email,password_hash,email_verified FROM users WHERE email=?", (email,)).fetchone()
     if not user or not check_password_hash(user["password_hash"], password):
         return jsonify({"error": "Email ya password ghalat hai."}), 401
-    if not user["email_verified"]:
+    smtp_ready = all(os.environ.get(k) for k in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM"))
+    if not user["email_verified"] and smtp_ready:
         return jsonify({"error": "Pehle email verify karein; inbox/spam folder check karein."}), 403
     session.clear()
     session["user_id"] = user["id"]
