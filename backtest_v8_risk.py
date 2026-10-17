@@ -100,9 +100,17 @@ def main():
         data["label"] = pd.to_numeric(data["label"], errors="coerce")
         data = data[data["label"].isin([0, 1])].copy()
         tcol = next((c for c in ("timestamp", "time", "datetime", "date") if c in data.columns), None)
+        # Combined datasets can contain multiple assets in one CSV. Keep each asset
+        # as its own time series so non-overlap purging never crosses between symbols.
+        if "symbol" in data.columns:
+            data["_series_key"] = data["_source_file"].astype(str) + "::" + data["symbol"].astype(str)
+        elif "asset" in data.columns:
+            data["_series_key"] = data["_source_file"].astype(str) + "::" + data["asset"].astype(str)
+        else:
+            data["_series_key"] = data["_source_file"].astype(str)
         if tcol:
             data["_sort_time"] = pd.to_datetime(data[tcol], utc=True, errors="coerce")
-            data = data.sort_values(["_source_file", "_sort_time"], kind="stable", na_position="last")
+            data = data.sort_values(["_series_key", "_sort_time"], kind="stable", na_position="last")
         features = spec.get("features", [])
         forbidden = [c for c in features if str(c).lower().startswith(("future_", "target_", "label_"))
                      or "future_return" in str(c).lower()
@@ -119,7 +127,7 @@ def main():
             report_models[model_name] = {"status": "CLASSIFICATION ONLY — NO FORWARD RETURNS"}
             continue
         trades = []
-        for source, group in data.groupby("_source_file", sort=False):
+        for source, group in data.groupby("_series_key", sort=False):
             group = group.reset_index(drop=True)
             split = int(len(group) * 0.8) + 3
             if len(group) - split < 30:
@@ -142,7 +150,7 @@ def main():
                 gross_pct = float(ret[i] * 100 * (1 if side == "LONG" else -1))
                 net_pct = gross_pct - round_trip_cost_pct
                 trades.append({
-                    "model": model_name, "source_file": source,
+                    "model": model_name, "source_file": str(test.iloc[i].get("_source_file", source)),
                     "timestamp": str(test.iloc[i].get(tcol, "")) if tcol else "",
                     "side": side, "probability_up": float(p[i]),
                     "forward_return_pct": float(ret[i] * 100),
@@ -154,7 +162,7 @@ def main():
                 next_available = i + HORIZON_ROWS
         summary = summarize(trades)
         summary.update({
-            "classification_test_rows": int(sum(max(0, len(g) - (int(len(g)*0.8)+3)) for _, g in data.groupby("_source_file"))),
+            "classification_test_rows": int(sum(max(0, len(g) - (int(len(g)*0.8)+3)) for _, g in data.groupby("_series_key"))),
             "forward_return_column": return_col,
             "long_threshold": LONG_THRESHOLD, "short_threshold": SHORT_THRESHOLD,
             "fee_per_side_pct": FEE_PER_SIDE_PCT, "slippage_per_side_pct": SLIPPAGE_PER_SIDE_PCT,
