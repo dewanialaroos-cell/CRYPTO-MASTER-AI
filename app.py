@@ -262,6 +262,9 @@ def signup():
     except sqlite3.IntegrityError:
         return jsonify({"error": "Is email se account pehle se mojood hai. Login karein."}), 409
     except Exception as exc:
+        # PostgreSQL unique-constraint violation (SQLSTATE 23505) or SQLite duplicate email.
+        if getattr(exc, "sqlstate", None) == "23505":
+            return jsonify({"error": "Is email se account pehle se mojood hai. Login karein."}), 409
         with db() as con:
             con.execute("DELETE FROM users WHERE email=? AND email_verified=0", (email,))
         return jsonify({"error": str(exc)}), 503
