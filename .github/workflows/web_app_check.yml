@@ -1,0 +1,51 @@
+name: Crypto Master AI Web App Check
+on:
+  push:
+    paths:
+      - 'app.py'
+      - 'templates/**'
+      - 'static/**'
+      - 'requirements.txt'
+      - 'Procfile'
+      - '.github/workflows/web_app_check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  web-app-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Compile app
+        run: python -m py_compile app.py Scanner.py
+      - name: Smoke test authentication and dashboard
+        env:
+          APP_SECRET_KEY: test-only-secret-key-not-for-production
+          COOKIE_SECURE: "0"
+          CRYPTO_APP_DB: /tmp/crypto-master-ai-test.sqlite3
+        run: |
+          python - <<'PY'
+          import os
+          from app import app
+          client = app.test_client()
+          assert client.get('/').status_code == 200
+          assert client.get('/api/status').status_code == 401
+          r = client.post('/api/signup', json={'email':'test@example.com','password':'test-password-123'})
+          assert r.status_code == 200, r.get_json()
+          assert client.get('/api/me').get_json()['authenticated'] is True
+          assert client.get('/api/status').status_code == 200
+          assert client.post('/api/logout', json={}).status_code == 200
+          assert client.get('/api/me').get_json()['authenticated'] is False
+          r = client.post('/api/login', json={'email':'test@example.com','password':'test-password-123'})
+          assert r.status_code == 200, r.get_json()
+          assert client.get('/api/status').status_code == 200
+          print('WEB APP SMOKE TEST PASSED')
+          PY
