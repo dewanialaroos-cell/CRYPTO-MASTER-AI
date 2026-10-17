@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BNB/USDT",
-      "signal": "SHORT",
-      "entry": 722.67,
-      "created": 1792176226.234302
-    },
-    {
       "symbol": "INJ/USDT",
       "signal": "LONG",
       "entry": 8.732,
@@ -20,60 +14,48 @@
       "created": 1792210282.7584147
     },
     {
-      "symbol": "BTC/USDT",
+      "symbol": "ENA/USDT",
       "signal": "SHORT",
-      "entry": 81552.2,
-      "created": 1792210282.7584162
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 560.06,
-      "created": 1792210282.758417
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1154.46,
-      "created": 1792210282.7584174
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3085,
-      "created": 1792210282.7584178
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2427.13,
-      "created": 1792210282.7584183
+      "entry": 0.19764,
+      "created": 1792226221.4804056
     },
     {
       "symbol": "DOGE/USDT",
       "signal": "SHORT",
-      "entry": 0.08057,
-      "created": 1792210282.7584188
+      "entry": 0.08062,
+      "created": 1792226221.4804068
     },
     {
-      "symbol": "TIA/USDT",
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.309,
+      "created": 1792226221.4804072
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 1.0088,
+      "created": 1792226221.4804077
+    },
+    {
+      "symbol": "XMR/USDT",
       "signal": "LONG",
-      "entry": 0.7439,
-      "created": 1792210282.7584205
+      "entry": 560.55,
+      "created": 1792226221.4804084
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 4.006e-06,
+      "created": 1792226221.480409
     },
     {
       "symbol": "XCRCL/USDT",
       "signal": "SHORT",
-      "entry": 82.4,
-      "created": 1792210282.7584212
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "SHORT",
-      "entry": 0.19884,
-      "created": 1792210282.7584217
+      "entry": 82.57,
+      "created": 1792226221.4804094
     }
   ],
-  "total": 1918,
-  "hits": 861
+  "total": 1927,
+  "hits": 862
 }
