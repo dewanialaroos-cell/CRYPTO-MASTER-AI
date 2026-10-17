@@ -8,42 +8,6 @@
       "created": 1792210282.7584147
     },
     {
-      "symbol": "ENA/USDT",
-      "signal": "SHORT",
-      "entry": 0.19764,
-      "created": 1792226221.4804056
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.08062,
-      "created": 1792226221.4804068
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.309,
-      "created": 1792226221.4804072
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "SHORT",
-      "entry": 1.0088,
-      "created": 1792226221.4804077
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 560.55,
-      "created": 1792226221.4804084
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "SHORT",
-      "entry": 4.006e-06,
-      "created": 1792226221.480409
-    },
-    {
       "symbol": "XCRCL/USDT",
       "signal": "SHORT",
       "entry": 82.57,
@@ -78,8 +42,50 @@
       "signal": "SHORT",
       "entry": 0.004522,
       "created": 1792240084.820866
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.07922,
+      "created": 1792252355.8984108
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.18953,
+      "created": 1792252355.8984115
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 81409.9,
+      "created": 1792252355.898412
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 3.896e-06,
+      "created": 1792252355.8984122
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.1193,
+      "created": 1792252355.898413
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.2942,
+      "created": 1792252355.8984134
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "SHORT",
+      "entry": 58.83,
+      "created": 1792252355.8984149
     }
   ],
-  "total": 1927,
-  "hits": 862
+  "total": 1933,
+  "hits": 867
 }
