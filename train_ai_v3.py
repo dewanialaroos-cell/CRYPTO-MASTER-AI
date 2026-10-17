@@ -175,7 +175,10 @@ def make_features(df, timeframe, include_unlabeled=False):
     threshold = np.maximum(0.0015, f["atr_14"].fillna(0) * 0.5)
     f["label"] = np.where(future_return > threshold, 1, np.where(future_return < -threshold, 0, np.nan))
     f["_position"] = np.arange(len(df))
-    f = f.replace([np.inf, -np.inf], np.nan)\n    if include_unlabeled:\n        return f.copy()\n    return f.dropna(subset=["label"]).copy()
+    f = f.replace([np.inf, -np.inf], np.nan)
+    if include_unlabeled:
+        return f.copy()
+    return f.dropna(subset=["label"]).copy()
 
 
 def build_model(kind, seed=42):
