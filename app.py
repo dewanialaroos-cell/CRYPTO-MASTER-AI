@@ -37,7 +37,73 @@ scan_state = {"status": "idle", "started_at": None, "finished_at": None, "error"
 MAX_HISTORY = 20
 
 
-__REPLACE_DB_BLOCK__
+class PostgresCompatConnection:
+    """Small adapter so the app can use PostgreSQL or local SQLite."""
+    def __init__(self, url):
+        import psycopg
+        from psycopg.rows import dict_row
+        self._conn = psycopg.connect(url, row_factory=dict_row, connect_timeout=15)
+
+    def execute(self, query, params=()):
+        return self._conn.execute(query.replace("?", "%s"), params)
+
+    def __enter__(self):
+        self._conn.__enter__()
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        return self._conn.__exit__(exc_type, exc, tb)
+
+
+def db():
+    if DATABASE_URL:
+        return PostgresCompatConnection(DATABASE_URL)
+    conn = sqlite3.connect(DB_PATH, timeout=15)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+def init_db():
+    if DATABASE_URL:
+        with db() as con:
+            con.execute("""CREATE TABLE IF NOT EXISTS users (
+                id BIGSERIAL PRIMARY KEY, email TEXT NOT NULL UNIQUE,
+                password_hash TEXT NOT NULL, email_verified INTEGER NOT NULL DEFAULT 0,
+                created_at TEXT NOT NULL
+            )""")
+            con.execute("""CREATE TABLE IF NOT EXISTS auth_tokens (
+                id BIGSERIAL PRIMARY KEY, user_id BIGINT NOT NULL REFERENCES users(id),
+                token_hash TEXT NOT NULL UNIQUE, purpose TEXT NOT NULL, expires_at TEXT NOT NULL,
+                used_at TEXT, created_at TEXT NOT NULL
+            )""")
+            con.execute("""CREATE TABLE IF NOT EXISTS scan_runs (
+                id BIGSERIAL PRIMARY KEY, user_id BIGINT NOT NULL REFERENCES users(id),
+                status TEXT NOT NULL, started_at TEXT NOT NULL, finished_at TEXT,
+                top_coins_json TEXT NOT NULL DEFAULT '[]', error TEXT
+            )""")
+        return
+
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with db() as con:
+        con.execute("""CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL UNIQUE,
+            password_hash TEXT NOT NULL, email_verified INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL
+        )""")
+        user_columns = {row["name"] for row in con.execute("PRAGMA table_info(users)").fetchall()}
+        if "email_verified" not in user_columns:
+            con.execute("ALTER TABLE users ADD COLUMN email_verified INTEGER NOT NULL DEFAULT 0")
+        con.execute("""CREATE TABLE IF NOT EXISTS auth_tokens (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL,
+            token_hash TEXT NOT NULL UNIQUE, purpose TEXT NOT NULL, expires_at TEXT NOT NULL,
+            used_at TEXT, created_at TEXT NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id)
+        )""")
+        con.execute("""CREATE TABLE IF NOT EXISTS scan_runs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, status TEXT NOT NULL,
+            started_at TEXT NOT NULL, finished_at TEXT, top_coins_json TEXT NOT NULL DEFAULT '[]',
+            error TEXT, FOREIGN KEY(user_id) REFERENCES users(id)
+        )""")
+
 
 def utc_now():
     return datetime.now(timezone.utc).isoformat()
