@@ -12,7 +12,7 @@
     <header class="topbar"><a class="brand" href="/"><span class="brandmark">CM</span><span>CRYPTO <b>MASTER AI</b><small>INTELLIGENCE TERMINAL</small></span></a><div id="header-user" class="header-user hidden"><span class="live-dot"></span><span id="user-email"></span><button id="logout" class="ghost small">Log out</button></div></header>
     <section id="auth-view" class="auth-grid">
       <div class="hero"><div class="eyebrow"><span class="live-dot"></span> MULTI-MARKET SCANNER</div><h1>Market clarity.<br><em>AI precision.</em></h1><p>Run the existing Crypto Master AI scanner and review ranked LONG/SHORT candidates, confidence, stop-loss and take-profit levels.</p><div class="hero-stats"><div><b>24/7</b><span>Market access*</span></div><div><b>Multi</b><span>Exchange scan</span></div><div><b>V9.2</b><span>Scanner engine</span></div></div><small class="muted">*Availability depends on exchange/API connectivity.</small></div>
-      <div class="auth-card"><div class="tabs"><button id="tab-login" class="tab active">Login</button><button id="tab-signup" class="tab">Create account</button></div><h2 id="auth-title">Welcome back</h2><p id="auth-subtitle" class="muted">Sign in to open your dashboard.</p><form id="auth-form"><label>Email address<input id="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></label><label>Password<input id="password" type="password" autocomplete="current-password" required minlength="10" maxlength="128" placeholder="At least 10 characters"></label><button id="auth-submit" class="primary full" type="submit">Login <span>→</span></button></form><p id="auth-message" class="message" role="status"></p><div class="secure-note">🔒 Passwords are stored as salted hashes, never as plain text.</div></div>
+      <div class="auth-card"><div class="tabs"><button id="tab-login" class="tab active">Login</button><button id="tab-signup" class="tab">Create account</button></div><h2 id="auth-title">Welcome back</h2><p id="auth-subtitle" class="muted">Sign in to open your dashboard.</p><form id="auth-form"><label>Email address<input id="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></label><label>Password<input id="password" type="password" autocomplete="current-password" required minlength="10" maxlength="128" placeholder="At least 10 characters"></label><label id="confirm-label" class="hidden">Confirm password<input id="confirm-password" type="password" autocomplete="new-password" minlength="10" maxlength="128" placeholder="Enter password again"></label><button id="auth-submit" class="primary full" type="submit">Login <span>→</span></button></form><p id="auth-message" class="message" role="status"></p><div class="secure-note">🔒 Passwords are stored as salted hashes, never as plain text.</div></div>
     </section>
     <section id="dashboard" class="hidden">
       <div class="dash-heading"><div><div class="eyebrow">PERSONAL WORKSPACE</div><h1>AI Dashboard</h1><p class="muted">Run a fresh market scan. This tool generates analysis only; it does not place trades.</p></div><button id="run-scan" class="primary run-button"><span class="play">▶</span> Run Crypto Master AI</button></div>
@@ -34,7 +34,7 @@
       $("auth-title").textContent=mode==="login"?"Welcome back":"Create your account";
       $("auth-subtitle").textContent=mode==="login"?"Sign in to open your dashboard.":"Create an account to run the AI scanner.";
       $("auth-submit").innerHTML=mode==="login"?'Login <span>→</span>':'Create account <span>→</span>';
-      $("password").autocomplete=mode==="login"?"current-password":"new-password"; $("password").minLength=mode==="signup"?10:1; message("");
+      $("password").autocomplete=mode==="login"?"current-password":"new-password"; $("password").minLength=mode==="signup"?10:1; $("confirm-label").classList.toggle("hidden",mode!=="signup"); $("confirm-password").required=mode==="signup"; message("");
     }
     async function api(url, options={}) {
       const res=await fetch(url,{credentials:"same-origin",headers:{"Content-Type":"application/json",...(options.headers||{})},...options});
@@ -49,7 +49,7 @@
     $("tab-login").onclick=()=>setMode("login"); $("tab-signup").onclick=()=>setMode("signup");
     $("auth-form").addEventListener("submit",async e=>{
       e.preventDefault(); const btn=$("auth-submit"); btn.disabled=true; message("Please wait…");
-      try { const data=await api(mode==="login"?"/api/login":"/api/signup",{method:"POST",body:JSON.stringify({email:$("email").value,password:$("password").value})}); csrf=data.csrf; message(""); showDashboard(data.email); }
+      try { if(mode==="signup" && $("password").value!==$("confirm-password").value) throw new Error("Dono passwords match nahi karte."); const data=await api(mode==="login"?"/api/login":"/api/signup",{method:"POST",body:JSON.stringify({email:$("email").value,password:$("password").value})}); csrf=data.csrf; message(""); showDashboard(data.email); }
       catch(err){message(err.message,true);} finally{btn.disabled=false;}
     });
     $("logout").onclick=async()=>{try{await api("/api/logout",{method:"POST",body:"{}"});}catch{} showAuth();};
