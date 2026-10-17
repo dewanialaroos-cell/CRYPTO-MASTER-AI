@@ -28,7 +28,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Compile V6 trainer
-        run: python -m py_compile train_ai_v6.py train_ai_v3.py
+        run: python -m py_compile train_ai_v6.py train_ai_v3.py v6_paper_adapter.py Scanner.py
       - name: Train domain specialists and Head AI
         run: python train_ai_v6.py
       - name: Upload V6 model and report
