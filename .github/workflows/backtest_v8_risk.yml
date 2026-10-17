@@ -43,13 +43,20 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Preserve only this run's output files, then rebuild the report commit
+          # on the latest main. Avoid rebase add/add conflicts when two runs
+          # create the same report files at nearly the same time.
+          mkdir -p /tmp/v8-results
+          cp models/backtest_v8_risk_report.json /tmp/v8-results/
+          cp models/backtest_v8_risk_trades.csv /tmp/v8-results/
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/v8-results/backtest_v8_risk_report.json models/
+          cp /tmp/v8-results/backtest_v8_risk_trades.csv models/
           git add models/backtest_v8_risk_report.json models/backtest_v8_risk_trades.csv
           if git diff --cached --quiet; then
-            echo "No V8 report changes."
+            echo "V8 results already match main; nothing to commit."
           else
             git commit -m "Add V8 risk-controlled specialist backtest results"
-            git stash push --include-untracked -m "temporary generated training artifacts"
-            git fetch origin main
-            git rebase origin/main
             git push origin HEAD:main
           fi
