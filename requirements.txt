@@ -6,3 +6,4 @@ scikit-learn
 joblib
 Flask>=3.0,<4.0
 gunicorn>=22.0,<24.0
+psycopg[binary]>=3.2,<4.0
