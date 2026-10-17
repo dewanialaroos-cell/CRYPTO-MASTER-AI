@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "INJ/USDT",
-      "signal": "LONG",
-      "entry": 8.732,
-      "created": 1792195136.318698
-    },
-    {
       "symbol": "XDP/USDT",
       "signal": "SHORT",
       "entry": 0.018666,
@@ -54,6 +48,36 @@
       "signal": "SHORT",
       "entry": 82.57,
       "created": 1792226221.4804094
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 12.125,
+      "created": 1792240084.8208606
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 104.41,
+      "created": 1792240084.820862
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 7.222,
+      "created": 1792240084.820863
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "entry": 154.78,
+      "created": 1792240084.8208654
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "SHORT",
+      "entry": 0.004522,
+      "created": 1792240084.820866
     }
   ],
   "total": 1927,
