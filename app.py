@@ -42,7 +42,7 @@ class PostgresCompatConnection:
     def __init__(self, url):
         import psycopg
         from psycopg.rows import dict_row
-        self._conn = psycopg.connect(url, row_factory=dict_row, connect_timeout=15)
+        self._conn = psycopg.connect(url, row_factory=dict_row, connect_timeout=15, prepare_threshold=None)
 
     def execute(self, query, params=()):
         return self._conn.execute(query.replace("?", "%s"), params)
