@@ -1,0 +1,72 @@
+{
+  "created_at": "2026-10-17T07:59:56.900543+00:00",
+  "version": "V8 risk-controlled research backtest",
+  "status": "COMPLETED",
+  "models": {
+    "fundamentals_ai": {
+      "status": "BACKTESTED",
+      "trades": 158,
+      "long_trades": 72,
+      "short_trades": 86,
+      "win_rate_pct": 51.899,
+      "avg_net_return_per_full_exposure_pct": -0.42841,
+      "profit_factor": 0.8532,
+      "equity_start": 100.0,
+      "equity_end": 99.32056,
+      "equity_return_pct_at_1pct_exposure": -0.67944,
+      "max_drawdown_pct_at_1pct_exposure": -1.22668,
+      "classification_test_rows": 1049,
+      "forward_return_column": "future_return_4d",
+      "long_threshold": 0.55,
+      "short_threshold": 0.45,
+      "fee_per_side_pct": 0.04,
+      "slippage_per_side_pct": 0.02,
+      "round_trip_cost_pct": 0.12,
+      "max_exposure_pct_of_equity_per_trade": 1.0,
+      "hold_rows": 4,
+      "stop_loss_take_profit": "NOT SIMULATED: intraperiod OHLC path unavailable/alignment not verified",
+      "method_note": "Non-overlapping trades per source file; per-model results remain separate, not a joint portfolio."
+    },
+    "news_ai": {
+      "status": "BACKTESTED",
+      "trades": 295,
+      "long_trades": 174,
+      "short_trades": 121,
+      "win_rate_pct": 47.797,
+      "avg_net_return_per_full_exposure_pct": 0.15298,
+      "profit_factor": 1.1089,
+      "equity_start": 100.0,
+      "equity_end": 100.44961,
+      "equity_return_pct_at_1pct_exposure": 0.44961,
+      "max_drawdown_pct_at_1pct_exposure": -1.48562,
+      "classification_test_rows": 1463,
+      "forward_return_column": "future_return_4d",
+      "long_threshold": 0.55,
+      "short_threshold": 0.45,
+      "fee_per_side_pct": 0.04,
+      "slippage_per_side_pct": 0.02,
+      "round_trip_cost_pct": 0.12,
+      "max_exposure_pct_of_equity_per_trade": 1.0,
+      "hold_rows": 4,
+      "stop_loss_take_profit": "NOT SIMULATED: intraperiod OHLC path unavailable/alignment not verified",
+      "method_note": "Non-overlapping trades per source file; per-model results remain separate, not a joint portfolio."
+    },
+    "indicator_ai": {
+      "status": "CLASSIFICATION ONLY \u2014 NO FORWARD RETURNS"
+    },
+    "tradingview_ai": {
+      "status": "CLASSIFICATION ONLY \u2014 NO FORWARD RETURNS"
+    }
+  },
+  "assumptions": {
+    "long_threshold": 0.55,
+    "short_threshold": 0.45,
+    "fee_per_side_pct": 0.04,
+    "slippage_per_side_pct": 0.02,
+    "max_exposure_pct_of_equity_per_trade": 1.0,
+    "initial_equity": 100.0,
+    "overlap_policy": "Skip new signals until previous HORIZON_ROWS trade horizon ends, separately per source file",
+    "warning": "Research simulation only. 1% exposure is not 1% stop-loss risk. SL/TP not simulated without aligned intraperiod OHLC. No joint portfolio or live orders."
+  },
+  "trades_csv": "models/backtest_v8_risk_trades.csv"
+}
