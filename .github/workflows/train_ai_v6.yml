@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - 'train_ai_v6.py'
+      - 'train_ai_v3.py'
+      - 'v6_paper_adapter.py'
+      - 'Scanner.py'
       - '.github/workflows/train_ai_v6.yml'
 permissions:
   contents: write
