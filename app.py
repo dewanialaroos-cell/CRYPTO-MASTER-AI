@@ -3,12 +3,15 @@ import io
 import json
 import os
 import secrets
+import hashlib
+import smtplib
 import sqlite3
 import subprocess
 import sys
 import threading
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
+from email.message import EmailMessage
 from functools import wraps
 from pathlib import Path
 
@@ -46,8 +49,10 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             email TEXT NOT NULL UNIQUE,
             password_hash TEXT NOT NULL,
+            email_verified INTEGER NOT NULL DEFAULT 0,
             created_at TEXT NOT NULL
         )""")
+        con.execute("""CREATE TABLE IF NOT EXISTS auth_tokens (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, token_hash TEXT NOT NULL UNIQUE, purpose TEXT NOT NULL, expires_at TEXT NOT NULL, used_at TEXT, created_at TEXT NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))""")
         con.execute("""CREATE TABLE IF NOT EXISTS scan_runs (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             user_id INTEGER NOT NULL,
@@ -62,6 +67,39 @@ def init_db():
 
 def utc_now():
     return datetime.now(timezone.utc).isoformat()
+
+
+
+def token_hash(raw):
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
+def send_auth_email(email, subject, body):
+    host = os.environ.get("SMTP_HOST")
+    user = os.environ.get("SMTP_USER")
+    password = os.environ.get("SMTP_PASSWORD")
+    sender = os.environ.get("SMTP_FROM", user or "")
+    port = int(os.environ.get("SMTP_PORT", "587"))
+    if not all([host, user, password, sender]):
+        raise RuntimeError("Email service configure nahi hai. Hosting mein SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD aur SMTP_FROM set karein.")
+    msg = EmailMessage()
+    msg["Subject"], msg["From"], msg["To"] = subject, sender, email
+    msg.set_content(body)
+    with smtplib.SMTP(host, port, timeout=20) as smtp:
+        smtp.starttls()
+        smtp.login(user, password)
+        smtp.send_message(msg)
+
+
+def issue_token(user_id, purpose):
+    raw = secrets.token_urlsafe(32)
+    hours = 24 if purpose == "verify" else 1
+    expiry = (datetime.now(timezone.utc) + timedelta(hours=hours)).isoformat()
+    with db() as con:
+        con.execute("UPDATE auth_tokens SET used_at=? WHERE user_id=? AND purpose=? AND used_at IS NULL", (utc_now(), user_id, purpose))
+        con.execute("INSERT INTO auth_tokens(user_id,token_hash,purpose,expires_at,created_at) VALUES(?,?,?,?,?)",
+                    (user_id, token_hash(raw), purpose, expiry, utc_now()))
+    return raw
 
 
 def current_user():
@@ -174,15 +212,69 @@ def signup():
         return jsonify({"error": "Password kam az kam 10 characters ka ho."}), 400
     try:
         with db() as con:
-            cur = con.execute("INSERT INTO users(email,password_hash,created_at) VALUES(?,?,?)",
+            cur = con.execute("INSERT INTO users(email,password_hash,email_verified,created_at) VALUES(?,?,0,?)",
                               (email, generate_password_hash(password), utc_now()))
             user_id = cur.lastrowid
+        raw = issue_token(user_id, "verify")
+        base = request.host_url.rstrip("/")
+        send_auth_email(email, "Verify your Crypto Master AI email",
+                        f"Open this link within 24 hours to verify your account:\n\n{base}/verify-email?token={raw}")
     except sqlite3.IntegrityError:
         return jsonify({"error": "Is email se account pehle se mojood hai. Login karein."}), 409
-    session.clear()
-    session["user_id"] = user_id
-    session["csrf"] = secrets.token_urlsafe(24)
-    return jsonify({"ok": True, "email": email, "csrf": session["csrf"]})
+    except Exception as exc:
+        with db() as con:
+            con.execute("DELETE FROM users WHERE email=? AND email_verified=0", (email,))
+        return jsonify({"error": str(exc)}), 503
+    return jsonify({"ok": True, "message": "Signup successful. Login se pehle email verify karein."}), 201
+
+
+
+@app.get("/verify-email")
+def verify_email():
+    raw = request.args.get("token", "")
+    if not raw:
+        return "Verification token missing.", 400
+    hashed = token_hash(raw)
+    with db() as con:
+        row = con.execute("SELECT user_id,expires_at,used_at FROM auth_tokens WHERE token_hash=? AND purpose='verify'", (hashed,)).fetchone()
+        if not row or row["used_at"] or row["expires_at"] < utc_now():
+            return "Verification link invalid or expired.", 400
+        con.execute("UPDATE users SET email_verified=1 WHERE id=?", (row["user_id"],))
+        con.execute("UPDATE auth_tokens SET used_at=? WHERE token_hash=?", (utc_now(), hashed))
+    return "Email verified. Return to Crypto Master AI and log in.", 200
+
+
+@app.post("/api/forgot-password")
+def forgot_password():
+    payload = request.get_json(silent=True) or {}
+    email = str(payload.get("email", "")).strip().lower()
+    with db() as con:
+        user = con.execute("SELECT id,email FROM users WHERE email=?", (email,)).fetchone()
+    if user:
+        try:
+            raw = issue_token(user["id"], "reset")
+            base = request.host_url.rstrip("/")
+            send_auth_email(email, "Reset your Crypto Master AI password",
+                            f"Open this link within 1 hour to reset your password:\n\n{base}/reset-password?token={raw}")
+        except Exception:
+            app.logger.exception("Password reset email delivery failed")
+    return jsonify({"ok": True, "message": "If the account exists and email is configured, a reset link will be sent."})
+
+
+@app.post("/api/reset-password")
+def reset_password():
+    payload = request.get_json(silent=True) or {}
+    raw, password = str(payload.get("token", "")), str(payload.get("password", ""))
+    if len(password) < 10 or len(password) > 128:
+        return jsonify({"error": "Password kam az kam 10 characters ka ho."}), 400
+    hashed = token_hash(raw)
+    with db() as con:
+        row = con.execute("SELECT user_id,expires_at,used_at FROM auth_tokens WHERE token_hash=? AND purpose='reset'", (hashed,)).fetchone()
+        if not row or row["used_at"] or row["expires_at"] < utc_now():
+            return jsonify({"error": "Reset link invalid ya expire ho gaya hai."}), 400
+        con.execute("UPDATE users SET password_hash=? WHERE id=?", (generate_password_hash(password), row["user_id"]))
+        con.execute("UPDATE auth_tokens SET used_at=? WHERE user_id=? AND purpose='reset' AND used_at IS NULL", (utc_now(), row["user_id"]))
+    return jsonify({"ok": True, "message": "Password reset ho gaya. Ab login karein."})
 
 
 @app.post("/api/login")
@@ -191,9 +283,11 @@ def login():
     email = str(payload.get("email", "")).strip().lower()
     password = str(payload.get("password", ""))
     with db() as con:
-        user = con.execute("SELECT id,email,password_hash FROM users WHERE email=?", (email,)).fetchone()
+        user = con.execute("SELECT id,email,password_hash,email_verified FROM users WHERE email=?", (email,)).fetchone()
     if not user or not check_password_hash(user["password_hash"], password):
         return jsonify({"error": "Email ya password ghalat hai."}), 401
+    if not user["email_verified"]:
+        return jsonify({"error": "Pehle email verify karein; inbox/spam folder check karein."}), 403
     session.clear()
     session["user_id"] = user["id"]
     session["csrf"] = secrets.token_urlsafe(24)
