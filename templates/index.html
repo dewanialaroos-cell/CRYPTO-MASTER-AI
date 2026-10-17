@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a0d">
+  <title>Crypto Master AI — Dashboard</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <div class="ambient"></div>
+  <main class="wrap">
+    <header class="topbar"><a class="brand" href="/"><span class="brandmark">CM</span><span>CRYPTO <b>MASTER AI</b><small>INTELLIGENCE TERMINAL</small></span></a><div id="header-user" class="header-user hidden"><span class="live-dot"></span><span id="user-email"></span><button id="logout" class="ghost small">Log out</button></div></header>
+    <section id="auth-view" class="auth-grid">
+      <div class="hero"><div class="eyebrow"><span class="live-dot"></span> MULTI-MARKET SCANNER</div><h1>Market clarity.<br><em>AI precision.</em></h1><p>Run the existing Crypto Master AI scanner and review ranked LONG/SHORT candidates, confidence, stop-loss and take-profit levels.</p><div class="hero-stats"><div><b>24/7</b><span>Market access*</span></div><div><b>Multi</b><span>Exchange scan</span></div><div><b>V9.2</b><span>Scanner engine</span></div></div><small class="muted">*Availability depends on exchange/API connectivity.</small></div>
+      <div class="auth-card"><div class="tabs"><button id="tab-login" class="tab active">Login</button><button id="tab-signup" class="tab">Create account</button></div><h2 id="auth-title">Welcome back</h2><p id="auth-subtitle" class="muted">Sign in to open your dashboard.</p><form id="auth-form"><label>Email address<input id="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></label><label>Password<input id="password" type="password" autocomplete="current-password" required minlength="10" maxlength="128" placeholder="At least 10 characters"></label><button id="auth-submit" class="primary full" type="submit">Login <span>→</span></button></form><p id="auth-message" class="message" role="status"></p><div class="secure-note">🔒 Passwords are stored as salted hashes, never as plain text.</div></div>
+    </section>
+    <section id="dashboard" class="hidden">
+      <div class="dash-heading"><div><div class="eyebrow">PERSONAL WORKSPACE</div><h1>AI Dashboard</h1><p class="muted">Run a fresh market scan. This tool generates analysis only; it does not place trades.</p></div><button id="run-scan" class="primary run-button"><span class="play">▶</span> Run Crypto Master AI</button></div>
+      <div class="status-strip"><div class="status-indicator"><span id="status-dot" class="status-dot"></span><div><b id="status-title">Ready to scan</b><small id="status-detail">Start a scan to find current candidates.</small></div></div><div class="last-run"><small>LAST COMPLETED</small><b id="last-run">—</b></div></div>
+      <div class="section-heading"><div><div class="eyebrow">LIVE SCAN OUTPUT</div><h2>Top coin candidates</h2></div><span id="result-count" class="count">0 results</span></div>
+      <div id="results" class="results-grid"><div class="empty-state"><div class="empty-icon">⌁</div><h3>No scan results yet</h3><p>Click “Run Crypto Master AI” to scan supported markets.</p></div></div>
+      <div class="disclaimer">Market signals are estimates, not guarantees. Crypto trading can cause substantial losses. Verify every signal independently before making any decision.</div>
+    </section>
+    <footer>CRYPTO MASTER AI <span>•</span> RESEARCH & MARKET ANALYSIS ONLY</footer>
+  </main>
+  <script>
+  (() => {
+    let mode = "login", csrf = "", polling = null;
+    const $ = id => document.getElementById(id);
+    const authView=$("auth-view"), dashboard=$("dashboard");
+    function message(text, bad=false) { $("auth-message").textContent=text||""; $("auth-message").className="message"+(bad?" error":""); }
+    function setMode(next) {
+      mode=next; $("tab-login").classList.toggle("active",mode==="login"); $("tab-signup").classList.toggle("active",mode==="signup");
+      $("auth-title").textContent=mode==="login"?"Welcome back":"Create your account";
+      $("auth-subtitle").textContent=mode==="login"?"Sign in to open your dashboard.":"Create an account to run the AI scanner.";
+      $("auth-submit").innerHTML=mode==="login"?'Login <span>→</span>':'Create account <span>→</span>';
+      $("password").autocomplete=mode==="login"?"current-password":"new-password"; $("password").minLength=mode==="signup"?10:1; message("");
+    }
+    async function api(url, options={}) {
+      const res=await fetch(url,{credentials:"same-origin",headers:{"Content-Type":"application/json",...(options.headers||{})},...options});
+      const data=await res.json().catch(()=>({error:"Unexpected server response"}));
+      if(!res.ok) throw new Error(data.error||"Request failed"); return data;
+    }
+    function showDashboard(email) {
+      authView.classList.add("hidden"); dashboard.classList.remove("hidden"); $("header-user").classList.remove("hidden"); $("user-email").textContent=email;
+      refreshStatus(); 
+    }
+    function showAuth() { dashboard.classList.add("hidden"); authView.classList.remove("hidden"); $("header-user").classList.add("hidden"); if(polling) clearInterval(polling); }
+    $("tab-login").onclick=()=>setMode("login"); $("tab-signup").onclick=()=>setMode("signup");
+    $("auth-form").addEventListener("submit",async e=>{
+      e.preventDefault(); const btn=$("auth-submit"); btn.disabled=true; message("Please wait…");
+      try { const data=await api(mode==="login"?"/api/login":"/api/signup",{method:"POST",body:JSON.stringify({email:$("email").value,password:$("password").value})}); csrf=data.csrf; message(""); showDashboard(data.email); }
+      catch(err){message(err.message,true);} finally{btn.disabled=false;}
+    });
+    $("logout").onclick=async()=>{try{await api("/api/logout",{method:"POST",body:"{}"});}catch{} showAuth();};
+    function renderResults(results) {
+      $("result-count").textContent=results.length+" candidates";
+      if(!results.length){$("results").innerHTML='<div class="empty-state"><div class="empty-icon">⌁</div><h3>No actionable signals in this scan</h3><p>The scanner completed but did not return LONG/SHORT candidates. Try again later.</p></div>';return;}
+      $("results").innerHTML=results.map((r,i)=>'<article class="coin-card"><div class="coin-top"><span class="rank">#'+(i+1)+'</span><span class="signal '+(r.signal==="LONG"?"long":"short")+'">'+r.signal+'</span></div><div class="coin-name">'+esc(r.symbol)+'</div><div class="price">'+fmt(r.price)+'</div><div class="metric-row"><span>Signal strength</span><b>'+fmt(r.strength)+'</b></div><div class="meter"><span style="width:'+Math.max(0,Math.min(100,Number(r.strength)||0))+'%"></span></div><div class="metric-row"><span>Confidence</span><b>'+fmt(r.confidence)+'%</b></div><div class="levels"><div><small>STOP LOSS</small><b>'+fmt(r.stop_loss)+'</b></div><div><small>TAKE PROFIT</small><b>'+fmt(r.take_profit)+'</b></div></div><div class="coin-foot">'+esc(r.exchange||"Exchange unavailable")+'</div></article>').join("");
+    }
+    function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+    function fmt(v){if(v===null||v===undefined||v==="")return "—";const n=Number(v);return Number.isFinite(n)?n.toLocaleString(undefined,{maximumFractionDigits:n<1?8:4}):"—";}
+    function setStatus(status, detail, bad=false){$("status-title").textContent=status;$("status-detail").textContent=detail;$("status-dot").className="status-dot"+(status==="AI scan running…"?" running":bad?" failed":"");$("run-scan").disabled=status==="AI scan running…";}
+    async function refreshStatus(){
+      try {const s=await api("/api/status"); if(s.status==="running"){setStatus("AI scan running…","Fetching exchange data and analysing market candidates.");if(!polling)polling=setInterval(refreshStatus,4000);}
+        else {if(polling){clearInterval(polling);polling=null;} if(s.status==="completed"){setStatus("Scan complete","Ranked candidates from the latest scanner output.");$("last-run").textContent=s.finished_at?new Date(s.finished_at).toLocaleString():"Just now";renderResults(s.results||[]);}
+        else if(s.status==="failed"){setStatus("Scan failed",s.error||"Scanner encountered an error.",true);renderResults([]);}
+        else setStatus("Ready to scan","Start a scan to find current candidates.");}
+      }catch(e){setStatus("Connection issue",e.message,true);}
+    }
+    $("run-scan").onclick=async()=>{try{if(!csrf){const m=await api("/api/me");csrf=m.csrf||"";}const s=await api("/api/run",{method:"POST",body:JSON.stringify({csrf})});setStatus("AI scan running…","Fetching exchange data and analysing market candidates.");if(!polling)polling=setInterval(refreshStatus,4000);}catch(e){setStatus("Could not start scan",e.message,true);}};
+    (async()=>{try{const m=await api("/api/me");if(m.authenticated){csrf=m.csrf;showDashboard(m.email);}else showAuth();}catch{showAuth();}})();
+  })();
+  </script>
+</body></html>
