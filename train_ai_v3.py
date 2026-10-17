@@ -68,7 +68,7 @@ def load_candles(path):
     return df if len(df) >= 300 else None
 
 
-def make_features(df, timeframe):
+def make_features(df, timeframe, include_unlabeled=False):
     o, h, l, c, v = (df[k].astype(float) for k in ("open", "high", "low", "close", "volume"))
     f = pd.DataFrame(index=df.index)
     ret = c.pct_change()
@@ -175,7 +175,7 @@ def make_features(df, timeframe):
     threshold = np.maximum(0.0015, f["atr_14"].fillna(0) * 0.5)
     f["label"] = np.where(future_return > threshold, 1, np.where(future_return < -threshold, 0, np.nan))
     f["_position"] = np.arange(len(df))
-    return f.replace([np.inf, -np.inf], np.nan).dropna(subset=["label"]).copy()
+    f = f.replace([np.inf, -np.inf], np.nan)\n    if include_unlabeled:\n        return f.copy()\n    return f.dropna(subset=["label"]).copy()
 
 
 def build_model(kind, seed=42):
