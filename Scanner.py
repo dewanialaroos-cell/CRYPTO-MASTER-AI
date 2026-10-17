@@ -3959,6 +3959,27 @@ def main():
                 0.0
             )
 
+            # V6 Head AI is advisory and paper-only: never changes the
+            # production signal and never places exchange orders.
+            try:
+                from v6_paper_adapter import v6_paper_signal
+                v6_result = v6_paper_signal(exchange, symbol, timeframe="1h")
+                result.update(v6_result)
+                log(
+                    f"V6 PAPER {symbol}: "
+                    f"{v6_result.get('v6_signal', 'HOLD')} "
+                    f"p={v6_result.get('v6_probability')} "
+                    f"status={v6_result.get('v6_status')}"
+                )
+            except Exception as v6_error:
+                result.update({
+                    "v6_status": "ERROR:" + type(v6_error).__name__,
+                    "v6_signal": "HOLD",
+                    "v6_probability": None,
+                    "v6_paper_only": True
+                })
+                log(f"V6 PAPER DISABLED {symbol}: {type(v6_error).__name__}")
+
             current_prices[
                 symbol
             ] = price
