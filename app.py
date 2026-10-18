@@ -402,6 +402,33 @@ def run_scan():
         return jsonify({"error": str(e)}), 500
 
 
+@app.get("/api/coin/<path:symbol>")
+@login_required
+def coin_details(symbol):
+    """Return all available fields for a selected coin from the latest scanner CSV."""
+    if not RESULTS_PATH.exists():
+        return jsonify({"error": "Abhi scan results available nahi hain. Pehle scanner run karein."}), 404
+    try:
+        with RESULTS_PATH.open("r", newline="", encoding="utf-8-sig") as f:
+            rows = csv.DictReader(f)
+            row = next((r for r in rows if (r.get("symbol") or "").strip().upper() == symbol.strip().upper()), None)
+        if row is None:
+            return jsonify({"error": "Is coin ka latest scan data nahi mila. Scanner dobara run karein."}), 404
+        details = {}
+        for key, value in row.items():
+            if value is None or value == "":
+                details[key] = None
+                continue
+            try:
+                number = float(value)
+                details[key] = number if number == number and abs(number) != float("inf") else value
+            except (ValueError, TypeError):
+                details[key] = value
+        return jsonify({"symbol": row.get("symbol", symbol), "details": details})
+    except Exception:
+        app.logger.exception("Could not read coin details")
+        return jsonify({"error": "Coin details read nahi ho sake."}), 500
+
 @app.get("/health")
 def health():
     return jsonify({"ok": True, "service": "Crypto Master AI Web App"})
