@@ -343,7 +343,7 @@ def reset_password():
     with db() as con:
         row = con.execute("SELECT user_id,expires_at,used_at FROM auth_tokens WHERE token_hash=? AND purpose='reset'", (hashed,)).fetchone()
         if not row or row["used_at"] or row["expires_at"] < utc_now():
-            return jsonify({"error": "Reset link invalid ya expire ho gaya hai."}), 400
+            return jsonify({"error": "This reset link is invalid or has expired."}), 400
         con.execute("UPDATE users SET password_hash=? WHERE id=?", (generate_password_hash(password), row["user_id"]))
         con.execute("UPDATE auth_tokens SET used_at=? WHERE user_id=? AND purpose='reset' AND used_at IS NULL", (utc_now(), row["user_id"]))
     return jsonify({"ok": True, "message": "Password reset successfully. You can now log in."})
