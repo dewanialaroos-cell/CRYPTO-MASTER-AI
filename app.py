@@ -300,17 +300,28 @@ def verify_email():
 def forgot_password():
     payload = request.get_json(silent=True) or {}
     email = str(payload.get("email", "")).strip().lower()
-    with db() as con:
-        user = con.execute("SELECT id,email FROM users WHERE email=?", (email,)).fetchone()
-    if user:
-        try:
+    if len(email) > 254 or "@" not in email or "." not in email.rsplit("@", 1)[-1]:
+        return jsonify({"error": "Valid email address enter karein."}), 400
+
+    # Never report success when the app cannot actually send a reset email.
+    smtp_ready = all(os.environ.get(k) for k in
+                     ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM"))
+    if not smtp_ready:
+        return jsonify({"error": "Password reset email service configure nahi hai. Render Environment mein SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD aur SMTP_FROM set karna zaroori hai."}), 503
+
+    try:
+        with db() as con:
+            user = con.execute("SELECT id,email FROM users WHERE email=?", (email,)).fetchone()
+        if user:
             raw = issue_token(user["id"], "reset")
             base = request.host_url.rstrip("/")
             send_auth_email(email, "Reset your Crypto Master AI password",
-                            f"Open this link within 1 hour to reset your password:\n\n{base}/reset-password?token={raw}")
-        except Exception:
-            app.logger.exception("Password reset email delivery failed")
-    return jsonify({"ok": True, "message": "If the account exists and email is configured, a reset link will be sent."})
+                            f"Open this link within 1 hour to reset your password:\\n\\n{base}/reset-password?token={raw}")
+        # Keep the response generic so it does not reveal whether an account exists.
+        return jsonify({"ok": True, "message": "Agar is email ka account mojood hai, password reset link bhej diya gaya hai."})
+    except Exception:
+        app.logger.exception("Password reset request failed")
+        return jsonify({"error": "Reset email send nahi ho saki. SMTP settings aur Render logs check karein."}), 503
 
 
 @app.get("/reset-password")
