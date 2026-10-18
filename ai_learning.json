@@ -96,6 +96,24 @@
       "signal": "SHORT",
       "entry": 11.77,
       "created": 1792333931.7089388
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 102.4,
+      "created": 1792343469.2257247
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 81197.5,
+      "created": 1792343469.2257283
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 713.3,
+      "created": 1792343469.2257295
     }
   ],
   "total": 1974,
