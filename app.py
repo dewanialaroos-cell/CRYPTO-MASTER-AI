@@ -114,7 +114,28 @@ def token_hash(raw):
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
+def email_service_ready():
+    return bool(os.environ.get("RESEND_API_KEY") and os.environ.get("RESEND_FROM")) or all(
+        os.environ.get(k) for k in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM")
+    )
+
+
 def send_auth_email(email, subject, body):
+    resend_key = os.environ.get("RESEND_API_KEY")
+    resend_sender = os.environ.get("RESEND_FROM")
+    if resend_key and resend_sender:
+        import requests
+        response = requests.post(
+            "https://api.resend.com/emails",
+            headers={"Authorization": f"Bearer {resend_key}", "Content-Type": "application/json"},
+            json={"from": resend_sender, "to": [email], "subject": subject, "text": body},
+            timeout=20,
+        )
+        if not response.ok:
+            app.logger.error("Email provider rejected message (HTTP %s)", response.status_code)
+            raise RuntimeError("Email delivery failed.")
+        return
+
     host = os.environ.get("SMTP_HOST")
     user = os.environ.get("SMTP_USER")
     password = os.environ.get("SMTP_PASSWORD")
@@ -252,7 +273,7 @@ def signup():
         return jsonify({"error": "Password must be between 10 and 128 characters."}), 400
     # Email verification is used when SMTP is configured. If SMTP is not configured,
     # allow password-based signup/login instead of leaving users locked out.
-    smtp_ready = all(os.environ.get(k) for k in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM"))
+    smtp_ready = email_service_ready()
     try:
         with db() as con:
             cur = con.execute("INSERT INTO users(email,password_hash,email_verified,created_at) VALUES(?,?,?,?) RETURNING id",
@@ -304,8 +325,7 @@ def forgot_password():
         return jsonify({"error": "Please enter a valid email address."}), 400
 
     # Never report success when the app cannot actually send a reset email.
-    smtp_ready = all(os.environ.get(k) for k in
-                     ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM"))
+    smtp_ready = email_service_ready()
     if not smtp_ready:
         return jsonify({"error": "Password reset is temporarily unavailable. Please try again later."}), 503
 
