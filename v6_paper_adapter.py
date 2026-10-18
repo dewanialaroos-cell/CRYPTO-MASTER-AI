@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import joblib
+from functools import lru_cache
 import numpy as np
 import pandas as pd
 
@@ -14,6 +15,11 @@ THRESHOLD_LONG = float(os.getenv("V6_LONG_THRESHOLD", "0.60"))
 THRESHOLD_SHORT = float(os.getenv("V6_SHORT_THRESHOLD", "0.40"))
 FEE_PER_SIDE = float(os.getenv("PAPER_FEE_PER_SIDE", "0.0004"))
 SLIPPAGE_PER_SIDE = float(os.getenv("PAPER_SLIPPAGE_PER_SIDE", "0.0002"))
+
+@lru_cache(maxsize=1)
+def _load_bundle(path_text, modified_ns):
+    """Load the trained V6 bundle once per process, not once per coin."""
+    return joblib.load(path_text)
 
 def _positive_probability(model, frame):
     classes = list(getattr(model, "classes_", []))
@@ -35,7 +41,7 @@ def v6_paper_signal(exchange, symbol, timeframe="1h"):
         return result
     try:
         import train_ai_v3
-        bundle = joblib.load(MODEL_PATH)
+        bundle = _load_bundle(str(MODEL_PATH), MODEL_PATH.stat().st_mtime_ns)
         candles = exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=220)
         if not candles or len(candles) < 200:
             result["v6_status"] = "INSUFFICIENT_OHLCV"
