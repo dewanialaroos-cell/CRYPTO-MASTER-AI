@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 585.67,
-      "created": 1792317368.483558
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "SHORT",
       "entry": 1.0853,
@@ -66,8 +60,44 @@
       "signal": "SHORT",
       "entry": 0.18496,
       "created": 1792331549.6118796
+    },
+    {
+      "symbol": "OKB/USDT",
+      "signal": "SHORT",
+      "entry": 112.2,
+      "created": 1792333931.708932
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "SHORT",
+      "entry": 261.3,
+      "created": 1792333931.708934
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "entry": 0.4766,
+      "created": 1792333931.7089353
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 77.371,
+      "created": 1792333931.7089357
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "SHORT",
+      "entry": 4.711,
+      "created": 1792333931.7089381
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 11.77,
+      "created": 1792333931.7089388
     }
   ],
-  "total": 1973,
+  "total": 1974,
   "hits": 884
 }
