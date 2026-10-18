@@ -121,7 +121,7 @@ def send_auth_email(email, subject, body):
     sender = os.environ.get("SMTP_FROM", user or "")
     port = int(os.environ.get("SMTP_PORT", "587"))
     if not all([host, user, password, sender]):
-        raise RuntimeError("Email service configure nahi hai. Hosting mein SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD aur SMTP_FROM set karein.")
+        raise RuntimeError("Email service is temporarily unavailable.")
     msg = EmailMessage()
     msg["Subject"], msg["From"], msg["To"] = subject, sender, email
     msg.set_content(body)
@@ -247,9 +247,9 @@ def signup():
     email = str(payload.get("email", "")).strip().lower()
     password = str(payload.get("password", ""))
     if len(email) > 254 or "@" not in email or "." not in email.rsplit("@", 1)[-1]:
-        return jsonify({"error": "Valid email address enter karein."}), 400
+        return jsonify({"error": "Please enter a valid email address."}), 400
     if len(password) < 10 or len(password) > 128:
-        return jsonify({"error": "Password kam az kam 10 characters ka ho."}), 400
+        return jsonify({"error": "Password must be between 10 and 128 characters."}), 400
     # Email verification is used when SMTP is configured. If SMTP is not configured,
     # allow password-based signup/login instead of leaving users locked out.
     smtp_ready = all(os.environ.get(k) for k in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM"))
@@ -266,17 +266,17 @@ def signup():
                                 f"Open this link within 24 hours to verify your account:\n\n{base}/verify-email?token={raw}")
             except Exception:
                 app.logger.exception("Verification email delivery failed")
-                return jsonify({"error": "Account create ho gaya, lekin verification email send nahi hui. Hosting SMTP settings check karein; dobara signup na karein."}), 503
+                return jsonify({"error": "Your account was created, but the verification email could not be sent. Please try again later or contact support."}), 503
     except sqlite3.IntegrityError:
-        return jsonify({"error": "Is email se account pehle se mojood hai. Login karein."}), 409
+        return jsonify({"error": "An account with this email already exists. Please log in."}), 409
     except Exception as exc:
         # PostgreSQL unique-constraint violation (SQLSTATE 23505) or SQLite duplicate email.
         if getattr(exc, "sqlstate", None) == "23505":
-            return jsonify({"error": "Is email se account pehle se mojood hai. Login karein."}), 409
+            return jsonify({"error": "An account with this email already exists. Please log in."}), 409
         app.logger.exception("Signup failed")
-        return jsonify({"error": "Account create nahi ho saka. Database settings check karein."}), 503
-    message = ("Signup successful. Email verify karke login karein." if smtp_ready
-               else "Signup successful. Email service abhi configured nahi; ab aap password se login kar sakte hain.")
+        return jsonify({"error": "We could not create your account. Please try again later."}), 503
+    message = ("Sign-up successful. Please verify your email and log in." if smtp_ready
+               else "Sign-up successful. You can now log in with your password.")
     return jsonify({"ok": True, "message": message}), 201
 
 
@@ -285,12 +285,12 @@ def signup():
 def verify_email():
     raw = request.args.get("token", "")
     if not raw:
-        return "Verification token missing.", 400
+        return "Verification token is missing.", 400
     hashed = token_hash(raw)
     with db() as con:
         row = con.execute("SELECT user_id,expires_at,used_at FROM auth_tokens WHERE token_hash=? AND purpose='verify'", (hashed,)).fetchone()
         if not row or row["used_at"] or row["expires_at"] < utc_now():
-            return "Verification link invalid or expired.", 400
+            return "This verification link is invalid or has expired.", 400
         con.execute("UPDATE users SET email_verified=1 WHERE id=?", (row["user_id"],))
         con.execute("UPDATE auth_tokens SET used_at=? WHERE token_hash=?", (utc_now(), hashed))
     return "Email verified. Return to Crypto Master AI and log in.", 200
@@ -301,13 +301,13 @@ def forgot_password():
     payload = request.get_json(silent=True) or {}
     email = str(payload.get("email", "")).strip().lower()
     if len(email) > 254 or "@" not in email or "." not in email.rsplit("@", 1)[-1]:
-        return jsonify({"error": "Valid email address enter karein."}), 400
+        return jsonify({"error": "Please enter a valid email address."}), 400
 
     # Never report success when the app cannot actually send a reset email.
     smtp_ready = all(os.environ.get(k) for k in
                      ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM"))
     if not smtp_ready:
-        return jsonify({"error": "Password reset email service configure nahi hai. Render Environment mein SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD aur SMTP_FROM set karna zaroori hai."}), 503
+        return jsonify({"error": "Password reset is temporarily unavailable. Please try again later."}), 503
 
     try:
         with db() as con:
@@ -318,19 +318,19 @@ def forgot_password():
             send_auth_email(email, "Reset your Crypto Master AI password",
                             f"Open this link within 1 hour to reset your password:\\n\\n{base}/reset-password?token={raw}")
         # Keep the response generic so it does not reveal whether an account exists.
-        return jsonify({"ok": True, "message": "Agar is email ka account mojood hai, password reset link bhej diya gaya hai."})
+        return jsonify({"ok": True, "message": "If an account exists for this email, a password reset link has been sent."})
     except Exception:
         app.logger.exception("Password reset request failed")
-        return jsonify({"error": "Reset email send nahi ho saki. SMTP settings aur Render logs check karein."}), 503
+        return jsonify({"error": "We could not send the password reset email. Please try again later."}), 503
 
 
 @app.get("/reset-password")
 def reset_password_page():
     token = request.args.get("token", "")
     if not token:
-        return "Reset token missing.", 400
+        return "Reset token is missing.", 400
     safe_token = token.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
-    return """<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reset password — Crypto Master AI</title><style>body{background:#080a0d;color:#f5f5f5;font:16px sans-serif;display:grid;place-items:center;min-height:90vh}.card{max-width:420px;padding:28px;border:1px solid #a98535;border-radius:18px}input,button{box-sizing:border-box;width:100%;padding:12px;margin:10px 0;border-radius:8px}button{background:#d5aa4c;border:0;font-weight:bold}</style></head><body><div class="card"><h1>Reset password</h1><p>New password must be at least 10 characters.</p><form id="f"><input id="p" type="password" minlength="10" maxlength="128" required placeholder="New password"><button>Save new password</button></form><p id="m"></p><a href="/">Return to login</a></div><script>document.getElementById('f').onsubmit=async e=>{e.preventDefault();let r=await fetch('/api/reset-password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:""" + JSON.stringify(safe_token) + """,password:document.getElementById('p').value})});let d=await r.json();document.getElementById('m').textContent=d.message||d.error||'Request complete';};</script></body></html>""", 200
+    return """<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reset password — Crypto Master AI</title><style>body{background:#080a0d;color:#f5f5f5;font:16px sans-serif;display:grid;place-items:center;min-height:90vh}.card{max-width:420px;padding:28px;border:1px solid #a98535;border-radius:18px}input,button{box-sizing:border-box;width:100%;padding:12px;margin:10px 0;border-radius:8px}button{background:#d5aa4c;border:0;font-weight:bold}</style></head><body><div class="card"><h1>Reset password</h1><p>Your new password must be at least 10 characters.</p><form id="f"><input id="p" type="password" minlength="10" maxlength="128" required placeholder="New password"><button>Save new password</button></form><p id="m"></p><a href="/">Return to login</a></div><script>document.getElementById('f').onsubmit=async e=>{e.preventDefault();let r=await fetch('/api/reset-password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:""" + JSON.stringify(safe_token) + """,password:document.getElementById('p').value})});let d=await r.json();document.getElementById('m').textContent=d.message||d.error||'Request complete';};</script></body></html>""", 200
 
 
 @app.post("/api/reset-password")
@@ -338,7 +338,7 @@ def reset_password():
     payload = request.get_json(silent=True) or {}
     raw, password = str(payload.get("token", "")), str(payload.get("password", ""))
     if len(password) < 10 or len(password) > 128:
-        return jsonify({"error": "Password kam az kam 10 characters ka ho."}), 400
+        return jsonify({"error": "Password must be between 10 and 128 characters."}), 400
     hashed = token_hash(raw)
     with db() as con:
         row = con.execute("SELECT user_id,expires_at,used_at FROM auth_tokens WHERE token_hash=? AND purpose='reset'", (hashed,)).fetchone()
@@ -346,7 +346,7 @@ def reset_password():
             return jsonify({"error": "Reset link invalid ya expire ho gaya hai."}), 400
         con.execute("UPDATE users SET password_hash=? WHERE id=?", (generate_password_hash(password), row["user_id"]))
         con.execute("UPDATE auth_tokens SET used_at=? WHERE user_id=? AND purpose='reset' AND used_at IS NULL", (utc_now(), row["user_id"]))
-    return jsonify({"ok": True, "message": "Password reset ho gaya. Ab login karein."})
+    return jsonify({"ok": True, "message": "Password reset successfully. You can now log in."})
 
 
 @app.post("/api/login")
@@ -357,10 +357,10 @@ def login():
     with db() as con:
         user = con.execute("SELECT id,email,password_hash,email_verified FROM users WHERE email=?", (email,)).fetchone()
     if not user or not check_password_hash(user["password_hash"], password):
-        return jsonify({"error": "Email ya password ghalat hai."}), 401
+        return jsonify({"error": "Incorrect email or password."}), 401
     smtp_ready = all(os.environ.get(k) for k in ("SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD", "SMTP_FROM"))
     if not user["email_verified"] and smtp_ready:
-        return jsonify({"error": "Pehle email verify karein; inbox/spam folder check karein."}), 403
+        return jsonify({"error": "Please verify your email before logging in. Check your inbox and spam folder."}), 403
     session.clear()
     session["user_id"] = user["id"]
     session["csrf"] = secrets.token_urlsafe(24)
@@ -394,12 +394,12 @@ def run_scan():
     user = current_user()
     payload = request.get_json(silent=True) or {}
     if not secrets.compare_digest(str(payload.get("csrf", "")), str(session.get("csrf", ""))):
-        return jsonify({"error": "Security token expired. Page refresh karein."}), 403
+        return jsonify({"error": "Your security token expired. Please refresh the page."}), 403
     if not SCAN_LOCK.acquire(blocking=False):
-        return jsonify({"error": "AI scan pehle se chal raha hai. Complete hone ka intezar karein."}), 409
+        return jsonify({"error": "An AI scan is already running. Please wait for it to finish."}), 409
     if not SCANNER_PATH.exists():
         SCAN_LOCK.release()
-        return jsonify({"error": "Scanner.py repository mein nahi mila."}), 500
+        return jsonify({"error": "Scanner.py was not found in the repository."}), 500
     started = utc_now()
     try:
         with db() as con:
@@ -418,13 +418,13 @@ def run_scan():
 def coin_details(symbol):
     """Return all available fields for a selected coin from the latest scanner CSV."""
     if not RESULTS_PATH.exists():
-        return jsonify({"error": "Abhi scan results available nahi hain. Pehle scanner run karein."}), 404
+        return jsonify({"error": "No scan results are available yet. Please run the scanner first."}), 404
     try:
         with RESULTS_PATH.open("r", newline="", encoding="utf-8-sig") as f:
             rows = csv.DictReader(f)
             row = next((r for r in rows if (r.get("symbol") or "").strip().upper() == symbol.strip().upper()), None)
         if row is None:
-            return jsonify({"error": "Is coin ka latest scan data nahi mila. Scanner dobara run karein."}), 404
+            return jsonify({"error": "No recent scan data was found for this coin. Please run the scanner again."}), 404
         details = {}
         for key, value in row.items():
             if value is None or value == "":
@@ -438,7 +438,7 @@ def coin_details(symbol):
         return jsonify({"symbol": row.get("symbol", symbol), "details": details})
     except Exception:
         app.logger.exception("Could not read coin details")
-        return jsonify({"error": "Coin details read nahi ho sake."}), 500
+        return jsonify({"error": "Could not load coin details."}), 500
 
 @app.get("/health")
 def health():
