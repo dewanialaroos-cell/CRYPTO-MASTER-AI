@@ -19,6 +19,7 @@
       <div class="status-strip"><div class="status-indicator"><span id="status-dot" class="status-dot"></span><div><b id="status-title">Ready to scan</b><small id="status-detail">Start a scan to find current candidates.</small></div></div><div class="last-run"><small>LAST COMPLETED</small><b id="last-run">—</b></div></div>
       <div class="section-heading"><div><div class="eyebrow">LIVE SCAN OUTPUT</div><h2>Top coin candidates</h2></div><span id="result-count" class="count">0 results</span></div>
       <div id="results" class="results-grid"><div class="empty-state"><div class="empty-icon">⌁</div><h3>No scan results yet</h3><p>Click “Run Crypto Master AI” to scan supported markets.</p></div></div>
+      <section id="coin-detail" class="detail-panel hidden" aria-live="polite"><div class="detail-heading"><div><div class="eyebrow">FULL MARKET INTELLIGENCE</div><h2 id="detail-title">Coin details</h2><p id="detail-subtitle" class="muted">All fields from the latest scanner CSV.</p></div><button id="detail-close" class="ghost" type="button">Close ✕</button></div><div id="detail-groups" class="detail-groups"></div></section>
       <div class="disclaimer">Market signals are estimates, not guarantees. Crypto trading can cause substantial losses. Verify every signal independently before making any decision.</div>
     </section>
     <footer>CRYPTO MASTER AI <span>•</span> RESEARCH & MARKET ANALYSIS ONLY</footer>
@@ -63,8 +64,30 @@
     function renderResults(results) {
       $("result-count").textContent=results.length+" candidates";
       if(!results.length){$("results").innerHTML='<div class="empty-state"><div class="empty-icon">⌁</div><h3>No actionable signals in this scan</h3><p>The scanner completed but did not return LONG/SHORT candidates. Try again later.</p></div>';return;}
-      $("results").innerHTML=results.map((r,i)=>'<article class="coin-card"><div class="coin-top"><span class="rank">#'+(i+1)+'</span><span class="signal '+(r.signal==="LONG"?"long":"short")+'">'+r.signal+'</span></div><div class="coin-name">'+esc(r.symbol)+'</div><div class="price">'+fmt(r.price)+'</div><div class="metric-row"><span>Signal strength</span><b>'+fmt(r.strength)+'</b></div><div class="meter"><span style="width:'+Math.max(0,Math.min(100,Number(r.strength)||0))+'%"></span></div><div class="metric-row"><span>Confidence</span><b>'+fmt(r.confidence)+'%</b></div><div class="levels"><div><small>STOP LOSS</small><b>'+fmt(r.stop_loss)+'</b></div><div><small>TAKE PROFIT</small><b>'+fmt(r.take_profit)+'</b></div></div><div class="coin-foot">'+esc(r.exchange||"Exchange unavailable")+'</div></article>').join("");
+      $("results").innerHTML=results.map((r,i)=>'<button type="button" class="coin-card coin-card-button" data-symbol="'+esc(r.symbol)+'" aria-label="Open full details for '+esc(r.symbol)+'"><div class="coin-top"><span class="rank">#'+(i+1)+'</span><span class="signal '+(r.signal==="LONG"?"long":"short")+'">'+esc(r.signal)+'</span></div><div class="coin-name">'+esc(r.symbol)+'</div><div class="price">'+fmt(r.price)+'</div><div class="metric-row"><span>Signal strength</span><b>'+fmt(r.strength)+'</b></div><div class="meter"><span style="width:'+Math.max(0,Math.min(100,Number(r.strength)||0))+'%"></span></div><div class="metric-row"><span>Confidence</span><b>'+fmt(r.confidence)+'%</b></div><div class="levels"><div><small>STOP LOSS</small><b>'+fmt(r.stop_loss)+'</b></div><div><small>TAKE PROFIT</small><b>'+fmt(r.take_profit)+'</b></div></div><div class="coin-foot">'+esc(r.exchange||"Exchange unavailable")+' · Tap for all data ↗</div></button>').join("");
+      document.querySelectorAll(".coin-card-button").forEach(card=>card.addEventListener("click",()=>loadCoinDetails(card.dataset.symbol)));
     }
+    const fieldGroups = [
+      ["Trade signal & risk",["signal","long_score","short_score","signal_strength","confidence","stop_loss","take_profit","reason","timestamp","analysis_exchange","price","market_volume","exchange_count","exchanges"]],
+      ["Technical indicators & price action",["tf_score","technical_score","15m_trend","1h_trend","4h_trend","1d_trend","atr","price_action","price_action_score","breakout","breakout_score","volume_ratio","volume_score","support","resistance","sr_score"]],
+      ["Fundamentals & CoinMarketCap",["name","cmc_rank","market_cap","circulating_supply","total_supply","max_supply","fdv","mc_fdv_ratio","supply_ratio","market_pairs","asset_age_days","fundamental_score","fundamental_rating","fundamental_status","fundamental_reason"]],
+      ["News intelligence",["news_score","news_sentiment","news_impact","news_count","news_headlines"]],
+      ["Order book",["orderbook_imbalance","orderbook_signal","orderbook_exchanges","orderbook_names"]],
+      ["Futures & funding",["funding","funding_signal","open_interest","futures_exchanges","futures_names"]],
+      ["Market regime",["btc_score","btc_regime","global_market_cap","btc_dominance","global_market_volume","fear_greed","fear_greed_class"]],
+      ["V6 AI model",["v6_status","v6_probability","v6_signal","v6_model_version","v6_paper_only","v6_timeframe","v6_domain_probabilities"]],
+      ["Learning system",["learning_adjustment","learning_total","learning_hit_rate"]]
+    ];
+    async function loadCoinDetails(symbol){
+      const panel=$("coin-detail"); panel.classList.remove("hidden"); $("detail-title").textContent=symbol+" — full analysis"; $("detail-subtitle").textContent="Loading all available scanner data…"; $("detail-groups").innerHTML=""; panel.scrollIntoView({behavior:"smooth",block:"start"});
+      try {
+        const data=await api("/api/coin/"+encodeURIComponent(symbol)); const d=data.details||{};
+        $("detail-subtitle").textContent="Latest CSV snapshot · "+(d.timestamp||"timestamp unavailable")+" · Missing source data is shown as unavailable.";
+        $("detail-groups").innerHTML=fieldGroups.map(([title,keys])=>'<section class="detail-group"><h3>'+esc(title)+'</h3><div class="detail-fields">'+keys.map(k=>'<div class="detail-field"><span>'+esc(k.replaceAll("_"," "))+'</span><b>'+esc(displayValue(d[k]))+'</b></div>').join("")+'</div></section>').join("")+'<details class="detail-group raw-data"><summary>All raw CSV fields ('+Object.keys(d).length+')</summary><div class="detail-fields">'+Object.keys(d).map(k=>'<div class="detail-field"><span>'+esc(k.replaceAll("_"," "))+'</span><b>'+esc(displayValue(d[k]))+'</b></div>').join("")+'</div></details>';
+      } catch(err) {$("detail-subtitle").textContent=err.message; $("detail-groups").innerHTML="";}
+    }
+    function displayValue(v){if(v===null||v===undefined||v==="")return "Unavailable";if(typeof v==="boolean")return v?"Yes":"No";if(typeof v==="number")return fmt(v);return String(v);}
+    $("detail-close").onclick=()=> $("coin-detail").classList.add("hidden");
     function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
     function fmt(v){if(v===null||v===undefined||v==="")return "—";const n=Number(v);return Number.isFinite(n)?n.toLocaleString(undefined,{maximumFractionDigits:n<1?8:4}):"—";}
     function setStatus(status, detail, bad=false){$("status-title").textContent=status;$("status-detail").textContent=detail;$("status-dot").className="status-dot"+(status==="AI scan running…"?" running":bad?" failed":"");$("run-scan").disabled=status==="AI scan running…";}
