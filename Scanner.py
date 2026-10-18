@@ -3722,6 +3722,9 @@ def send_telegram(results):
 
 def main():
 
+    scan_started = time.monotonic()
+    phase_started = scan_started
+
     log(
         "======================================"
     )
@@ -3739,6 +3742,8 @@ def main():
     # --------------------------------------------------------
 
     spot, futures = build_exchanges()
+    log(f"TIMING | exchange setup: {time.monotonic() - phase_started:.1f}s")
+    phase_started = time.monotonic()
 
     if not spot:
 
@@ -3769,6 +3774,8 @@ def main():
     candidates = discover_candidates(
         spot
     )
+    log(f"TIMING | market discovery: {time.monotonic() - phase_started:.1f}s")
+    phase_started = time.monotonic()
 
     if not candidates:
 
@@ -3788,12 +3795,16 @@ def main():
     global_data = (
         global_market_data()
     )
+    log(f"TIMING | global market data: {time.monotonic() - phase_started:.1f}s")
+    phase_started = time.monotonic()
 
     # --------------------------------------------------------
     # NEWS
     # --------------------------------------------------------
 
     news_data = load_news()
+    log(f"TIMING | news fetch: {time.monotonic() - phase_started:.1f}s")
+    phase_started = time.monotonic()
 
     log(
         f"NEWS ITEMS: "
@@ -3812,6 +3823,8 @@ def main():
     fundamentals_data = fundamentals(
         symbols
     )
+    log(f"TIMING | fundamentals: {time.monotonic() - phase_started:.1f}s")
+    phase_started = time.monotonic()
 
     # --------------------------------------------------------
     # BTC
@@ -3820,6 +3833,8 @@ def main():
     btc = btc_regime(
         spot
     )
+    log(f"TIMING | BTC regime: {time.monotonic() - phase_started:.1f}s")
+    phase_started = time.monotonic()
 
     log(
         f"BTC REGIME: "
@@ -3865,6 +3880,7 @@ def main():
 
             continue
 
+        coin_started = time.monotonic()
         try:
 
             ticker = exchange.fetch_ticker(
@@ -4113,6 +4129,7 @@ def main():
         "======================================"
     )
 
+    log(f"TIMING | total scan: {time.monotonic() - scan_started:.1f}s")
     log(
         f"SCAN COMPLETE | "
         f"ROWS={len(dataframe)} | "
