@@ -51,15 +51,15 @@
     $("auth-form").addEventListener("submit",async e=>{
       e.preventDefault(); const btn=$("auth-submit"); btn.disabled=true; message("Please wait…");
       try {
-        if(mode==="signup" && $("password").value!==$("confirm-password").value) throw new Error("Dono passwords match nahi karte.");
+        if(mode==="signup" && $("password").value!==$("confirm-password").value) throw new Error("The passwords do not match.");
         const wasSignup = mode==="signup";
         const data=await api(wasSignup?"/api/signup":"/api/login",{method:"POST",body:JSON.stringify({email:$("email").value,password:$("password").value})});
-        if(wasSignup){setMode("login");message(data.message||"Account create ho gaya. Ab login karein.");}
+        if(wasSignup){setMode("login");message(data.message||"Account created. You can now log in.");}
         else {csrf=data.csrf; message(""); showDashboard(data.email);}
       }
       catch(err){message(err.message,true);} finally{btn.disabled=false;}
     });
-    $("forgot-password").onclick=async()=>{const email=$("email").value.trim()||prompt("Apna account email enter karein:");if(!email)return;$("email").value=email;try{const d=await api("/api/forgot-password",{method:"POST",body:JSON.stringify({email})});message(d.message||"Agar account mojood hai to reset email bhej di jayegi.");}catch(err){message(err.message,true);}};
+    $("forgot-password").onclick=async()=>{const email=$("email").value.trim()||prompt("Enter your account email address:");if(!email)return;$("email").value=email;try{const d=await api("/api/forgot-password",{method:"POST",body:JSON.stringify({email})});message(d.message||"If an account exists, a password reset email will be sent.");}catch(err){message(err.message,true);}};
     $("logout").onclick=async()=>{try{await api("/api/logout",{method:"POST",body:"{}"});}catch{} showAuth();};
     function renderResults(results) {
       $("result-count").textContent=results.length+" candidates";
