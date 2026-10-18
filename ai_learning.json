@@ -2,16 +2,70 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "AGT/USDT",
-      "signal": "LONG",
-      "entry": 0.0822,
-      "created": 1792277921.024832
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
       "entry": 585.67,
       "created": 1792317368.483558
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.0853,
+      "created": 1792331549.611872
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "entry": 1.711,
+      "created": 1792331549.6118734
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "SHORT",
+      "entry": 0.06104,
+      "created": 1792331549.611874
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.07842,
+      "created": 1792331549.6118748
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2397.21,
+      "created": 1792331549.6118753
+    },
+    {
+      "symbol": "PIEVERSE/USDT",
+      "signal": "SHORT",
+      "entry": 1.0714,
+      "created": 1792331549.6118758
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.2838,
+      "created": 1792331549.611876
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 7.132,
+      "created": 1792331549.611878
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 0.9696,
+      "created": 1792331549.611879
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.18496,
+      "created": 1792331549.6118796
     }
   ],
   "total": 1973,
