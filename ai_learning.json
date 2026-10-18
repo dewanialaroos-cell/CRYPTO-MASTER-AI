@@ -72,6 +72,30 @@
       "signal": "SHORT",
       "entry": 0.18897,
       "created": 1792277921.0248363
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.1082,
+      "created": 1792284716.8522801
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "entry": 151.22,
+      "created": 1792284716.8522825
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "SHORT",
+      "entry": 58.76,
+      "created": 1792284716.8522835
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "entry": 0.4913,
+      "created": 1792284716.8522859
     }
   ],
   "total": 1949,
