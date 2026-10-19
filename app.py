@@ -243,6 +243,18 @@ def parse_top_coins(path, limit=10):
                 "exchange": r.get("analysis_exchange", "—"),
                 "timestamp": r.get("timestamp", ""),
                 "reason": r.get("reason", ""),
+                "v6_status": r.get("v6_status", "UNAVAILABLE"),
+                "v6_probability": safe_float(r.get("v6_probability")),
+                "v6_signal": r.get("v6_signal", "HOLD"),
+                "v6_model_version": r.get("v6_model_version", "V6"),
+                "v6_paper_only": str(r.get("v6_paper_only", "true")).strip().lower() in ("true", "1", "yes"),
+                "v6_timeframe": r.get("v6_timeframe", "1h"),
+                "v6_domain_probabilities": r.get("v6_domain_probabilities", ""),
+                "v6_specialist_count": int(safe_float(r.get("v6_specialist_count")) or 0),
+                "ensemble_signal": r.get("ensemble_signal", r.get("signal", "NO TRADE")),
+                "ensemble_v6_adjustment": safe_float(r.get("ensemble_v6_adjustment")),
+                "ensemble_v6_used": str(r.get("ensemble_v6_used", "false")).strip().lower() in ("true", "1", "yes"),
+                "ensemble_specialist_count": int(safe_float(r.get("ensemble_specialist_count")) or 0),
             })
         return output
     except Exception:
