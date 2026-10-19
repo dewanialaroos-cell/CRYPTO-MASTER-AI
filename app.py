@@ -8,8 +8,10 @@ import smtplib
 import sqlite3
 import subprocess
 import sys
+import tempfile
 import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone, timedelta
 from email.message import EmailMessage
 from functools import wraps
@@ -35,8 +37,10 @@ app.config.update(
     SESSION_COOKIE_SECURE=os.environ.get("COOKIE_SECURE", "1") != "0",
     MAX_CONTENT_LENGTH=16 * 1024,
 )
-SCAN_LOCK = threading.Lock()
 STATE_LOCK = threading.Lock()
+LEARNING_MERGE_LOCK = threading.Lock()
+SCAN_CONCURRENCY = max(1, min(int(os.environ.get("SCAN_CONCURRENCY", "4")), 32))
+SCAN_EXECUTOR = ThreadPoolExecutor(max_workers=SCAN_CONCURRENCY, thread_name_prefix="crypto-scan")
 scan_state = {"status": "idle", "started_at": None, "finished_at": None, "error": None, "results": [], "run_id": None}
 MAX_HISTORY = 20
 
@@ -291,8 +295,8 @@ def safe_float(value):
         return None
 
 
-def sync_shared_learning_to_file():
-    """Load the one shared learning memory from durable DB before each scan."""
+def get_shared_learning_payload():
+    """Read the canonical learning memory from durable storage."""
     with db() as con:
         row = con.execute("SELECT payload FROM shared_ai_learning WHERE id=1").fetchone()
         if row:
@@ -301,7 +305,7 @@ def sync_shared_learning_to_file():
             if LEARNING_PATH.exists():
                 try:
                     payload = LEARNING_PATH.read_text(encoding="utf-8")
-                    json.loads(payload)  # validate before seeding durable storage
+                    json.loads(payload)
                 except Exception:
                     payload = json.dumps({"version": 1, "pending": [], "total": 0, "hits": 0})
             else:
@@ -312,25 +316,48 @@ def sync_shared_learning_to_file():
             )
             row = con.execute("SELECT payload FROM shared_ai_learning WHERE id=1").fetchone()
             payload = row["payload"]
-    # Scanner.py continues using its compatible JSON interface; the DB is canonical.
     json.loads(payload)
-    LEARNING_PATH.write_text(payload, encoding="utf-8")
+    return payload
 
 
-def persist_shared_learning_and_observations(run_id, user_id):
-    """Persist updated shared learning plus every row produced by this scan."""
-    if LEARNING_PATH.exists():
-        payload = LEARNING_PATH.read_text(encoding="utf-8")
-        json.loads(payload)
+def _prediction_key(item):
+    return (str(item.get("symbol", "")), str(item.get("signal", "")), str(item.get("created", "")))
+
+
+def persist_shared_learning_and_observations(run_id, user_id, learning_path, results_path, base_payload):
+    """Save each scan and merge its learning delta without overwriting concurrent scans."""
+    local = json.loads(learning_path.read_text(encoding="utf-8"))
+    base = json.loads(base_payload)
+    with LEARNING_MERGE_LOCK:
         with db() as con:
+            query = "SELECT payload FROM shared_ai_learning WHERE id=1"
+            if DATABASE_URL:
+                query += " FOR UPDATE"
+            row = con.execute(query).fetchone()
+            current = json.loads(row["payload"]) if row else {"version": 1, "pending": [], "total": 0, "hits": 0}
+            base_keys = {_prediction_key(x) for x in base.get("pending", [])}
+            local_keys = {_prediction_key(x) for x in local.get("pending", [])}
+            resolved_keys = base_keys - local_keys
+            pending = [x for x in current.get("pending", []) if _prediction_key(x) not in resolved_keys]
+            pending_keys = {_prediction_key(x) for x in pending}
+            for item in local.get("pending", []):
+                key = _prediction_key(item)
+                if key not in base_keys and key not in pending_keys:
+                    pending.append(item)
+                    pending_keys.add(key)
+            current["version"] = max(int(current.get("version", 1)), int(local.get("version", 1)))
+            current["total"] = int(current.get("total", 0)) + max(0, int(local.get("total", 0)) - int(base.get("total", 0)))
+            current["hits"] = int(current.get("hits", 0)) + max(0, int(local.get("hits", 0)) - int(base.get("hits", 0)))
+            current["pending"] = pending[-5000:]
+            payload = json.dumps(current, ensure_ascii=False)
             con.execute(
                 "INSERT INTO shared_ai_learning(id,payload,updated_at) VALUES(1,?,?) "
                 "ON CONFLICT(id) DO UPDATE SET payload=excluded.payload, updated_at=excluded.updated_at",
                 (payload, utc_now()),
             )
-    if not RESULTS_PATH.exists():
+    if not results_path.exists():
         return 0
-    with RESULTS_PATH.open("r", newline="", encoding="utf-8-sig") as handle:
+    with results_path.open("r", newline="", encoding="utf-8-sig") as handle:
         rows = list(csv.DictReader(handle))
     scanned_at = utc_now()
     inserted = 0
@@ -348,39 +375,77 @@ def persist_shared_learning_and_observations(run_id, user_id):
 
 
 def scan_worker(run_id, user_id):
-    started = utc_now()
-    with STATE_LOCK:
-        scan_state.update(status="running", started_at=started, finished_at=None, error=None, results=[], run_id=run_id)
+    with db() as con:
+        con.execute("UPDATE scan_runs SET status=? WHERE id=?", ("running", run_id))
     try:
-        # Load the same durable learning memory used by every customer's scan.
-        # The global scan lock protects the shared JSON/CSV files within this app process.
-        sync_shared_learning_to_file()
-        completed = subprocess.run(
-            [sys.executable, str(SCANNER_PATH)],
-            cwd=str(ROOT), capture_output=True, text=True, timeout=900, check=False,
-            env=os.environ.copy()
-        )
-        if completed.returncode != 0:
-            detail = (completed.stderr or completed.stdout or "Scanner exited with an error")[-2500:]
-            raise RuntimeError(detail)
-        observations_saved = persist_shared_learning_and_observations(run_id, user_id)
-        results = parse_top_coins(RESULTS_PATH)
-        finished = utc_now()
-        with db() as con:
-            con.execute("UPDATE scan_runs SET status=?,finished_at=?,top_coins_json=? WHERE id=? AND user_id=?",
-                        ("completed", finished, json.dumps(results), run_id, user_id))
-        with STATE_LOCK:
-            scan_state.update(status="completed", finished_at=finished, results=results, error=None)
+        base_payload = get_shared_learning_payload()
+        # Per-run cwd prevents CSV and ai_learning.json collisions between users.
+        with tempfile.TemporaryDirectory(prefix=f"crypto-scan-{run_id}-") as job_dir_name:
+            job_dir = Path(job_dir_name)
+            job_learning = job_dir / "ai_learning.json"
+            job_results = job_dir / "crypto_scan_results.csv"
+            job_learning.write_text(base_payload, encoding="utf-8")
+            completed = subprocess.run(
+                [sys.executable, str(SCANNER_PATH)],
+                cwd=str(job_dir), capture_output=True, text=True, timeout=900, check=False,
+                env=os.environ.copy()
+            )
+            if completed.returncode != 0:
+                detail = (completed.stderr or completed.stdout or "Scanner exited with an error")[-2500:]
+                raise RuntimeError(detail)
+            persist_shared_learning_and_observations(run_id, user_id, job_learning, job_results, base_payload)
+            results = parse_top_coins(job_results)
+            finished = utc_now()
+            with db() as con:
+                con.execute("UPDATE scan_runs SET status=?,finished_at=?,top_coins_json=? WHERE id=? AND user_id=?",
+                            ("completed", finished, json.dumps(results), run_id, user_id))
     except Exception as e:
         finished = utc_now()
         message = str(e)[-2500:]
         with db() as con:
             con.execute("UPDATE scan_runs SET status=?,finished_at=?,error=? WHERE id=? AND user_id=?",
                         ("failed", finished, message, run_id, user_id))
-        with STATE_LOCK:
-            scan_state.update(status="failed", finished_at=finished, error=message, results=[])
-    finally:
-        SCAN_LOCK.release()
+        app.logger.exception("Scan run %s failed", run_id)
+
+
+QUEUE_START_LOCK = threading.Lock()
+QUEUE_WORKER_STARTED = False
+
+
+def scan_queue_worker():
+    """Claim durable scan jobs and execute several isolated scans concurrently."""
+    in_flight = set()
+    while True:
+        try:
+            in_flight = {future for future in in_flight if not future.done()}
+            slots = SCAN_CONCURRENCY - len(in_flight)
+            for _ in range(max(0, slots)):
+                with db() as con:
+                    row = con.execute(
+                        "SELECT id,user_id FROM scan_runs WHERE status='queued' ORDER BY id ASC LIMIT 1"
+                    ).fetchone()
+                    if not row:
+                        break
+                    claimed = con.execute(
+                        "UPDATE scan_runs SET status='claimed' WHERE id=? AND status='queued'",
+                        (row["id"],),
+                    )
+                    if claimed.rowcount != 1:
+                        continue
+                    job = (row["id"], row["user_id"])
+                in_flight.add(SCAN_EXECUTOR.submit(scan_worker, job[0], job[1]))
+        except Exception:
+            app.logger.exception("Scan queue worker error")
+        time.sleep(0.5)
+
+
+def ensure_scan_queue_worker():
+    global QUEUE_WORKER_STARTED
+    with QUEUE_START_LOCK:
+        if not QUEUE_WORKER_STARTED:
+            thread = threading.Thread(target=scan_queue_worker, name="crypto-scan-queue", daemon=True)
+            thread.start()
+            QUEUE_WORKER_STARTED = True
 
 
 @app.get("/")
