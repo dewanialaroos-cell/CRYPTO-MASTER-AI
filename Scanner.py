@@ -2801,6 +2801,15 @@ def recalculate_result(
     ):
         fear_greed_direction = 0.5
 
+    # Ensemble: existing scanner specialists + trained V6 Head AI.
+    # V6 validation is modest, so its influence is deliberately capped at +/- 6
+    # score points and only applied when the model has a strong directional view.
+    v6_probability = number(result.get("v6_probability"))
+    v6_status = text(result.get("v6_status")).upper()
+    v6_adjustment = 0.0
+    if v6_status == "OK" and math.isfinite(v6_probability):
+        v6_adjustment = clip((v6_probability - 0.5) * 60, -6, 6)
+
     raw_score = (
         (
             (technical_score - 50)
@@ -2836,6 +2845,10 @@ def recalculate_result(
         +
 
         fear_greed_direction * 2
+
+        +
+
+        v6_adjustment
     )
 
     raw_score = clip(
@@ -2976,6 +2989,10 @@ def recalculate_result(
     )
 
     result["signal"] = signal
+    result["ensemble_signal"] = signal
+    result["ensemble_v6_adjustment"] = round(v6_adjustment, 3)
+    result["ensemble_v6_used"] = bool(v6_status == "OK" and math.isfinite(v6_probability))
+    result["ensemble_specialist_count"] = int(result.get("v6_specialist_count") or 0)
 
     result["confidence"] = round(
         confidence,
