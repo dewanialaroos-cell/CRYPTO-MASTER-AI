@@ -97,7 +97,7 @@
     function renderResults(results) {
       $("result-count").textContent=results.length+" candidates";
       if(!results.length){$("results").innerHTML='<div class="empty-state"><div class="empty-icon">⌁</div><h3>No actionable signals in this scan</h3><p>The scanner completed but did not return LONG/SHORT candidates. Try again later.</p></div>';return;}
-      $("results").innerHTML=results.map((r,i)=>'<button type="button" class="coin-card coin-card-button" data-symbol="'+esc(r.symbol)+'" aria-label="Open full details for '+esc(r.symbol)+'"><div class="coin-top"><span class="rank">#'+(i+1)+'</span><span class="signal '+(r.signal==="LONG"?"long":"short")+'">'+esc(r.signal)+'</span></div><div class="coin-name">'+esc(r.symbol)+'</div><div class="price">'+fmt(r.price)+'</div><div class="metric-row"><span>Signal strength</span><b>'+fmt(r.strength)+'</b></div><div class="meter"><span style="width:'+Math.max(0,Math.min(100,Number(r.strength)||0))+'%"></span></div><div class="metric-row"><span>Confidence</span><b>'+fmt(r.confidence)+'%</b></div><div class="levels"><div><small>STOP LOSS</small><b>'+fmt(r.stop_loss)+'</b></div><div><small>TAKE PROFIT</small><b>'+fmt(r.take_profit)+'</b></div></div><div class="coin-foot">'+esc(r.exchange||"Exchange unavailable")+' · Tap for all data ↗</div></button>').join("");
+      $("results").innerHTML=results.map((r,i)=>'<button type="button" class="coin-card coin-card-button" data-symbol="'+esc(r.symbol)+'" aria-label="Open full details for '+esc(r.symbol)+'"><div class="coin-top"><span class="rank">#'+(i+1)+'</span><span class="signal '+(r.signal==="LONG"?"long":"short")+'">'+esc(r.signal)+'</span></div><div class="coin-name">'+esc(r.symbol)+'</div><div class="price">'+fmt(r.price)+'</div><div class="metric-row"><span>Signal strength</span><b>'+fmt(r.strength)+'</b></div><div class="meter"><span style="width:'+Math.max(0,Math.min(100,Number(r.strength)||0))+'%"></span></div><div class="metric-row"><span>Confidence</span><b>'+fmt(r.confidence)+'%</b></div><div class="metric-row"><span>V6 Head AI</span><b>'+esc(r.v6_status==="OK"?(r.v6_signal+" · "+fmt((Number(r.v6_probability)||0)*100)+"%"):"Unavailable")+'</b></div><div class="metric-row"><span>Ensemble</span><b>'+esc(r.ensemble_signal||r.signal)+'</b></div><div class="levels"><div><small>STOP LOSS</small><b>'+fmt(r.stop_loss)+'</b></div><div><small>TAKE PROFIT</small><b>'+fmt(r.take_profit)+'</b></div></div><div class="coin-foot">'+esc(r.exchange||"Exchange unavailable")+' · Tap for all data ↗</div></button>').join("");
       document.querySelectorAll(".coin-card-button").forEach(card=>card.addEventListener("click",()=>loadCoinDetails(card.dataset.symbol)));
     }
     const fieldGroups = [
@@ -108,7 +108,8 @@
       ["Order book",["orderbook_imbalance","orderbook_signal","orderbook_exchanges","orderbook_names"]],
       ["Futures & funding",["funding","funding_signal","open_interest","futures_exchanges","futures_names"]],
       ["Market regime",["btc_score","btc_regime","global_market_cap","btc_dominance","global_market_volume","fear_greed","fear_greed_class"]],
-      ["V6 AI model",["v6_status","v6_probability","v6_signal","v6_model_version","v6_paper_only","v6_timeframe","v6_domain_probabilities"]],
+      ["V6 AI model",["v6_status","v6_probability","v6_signal","v6_model_version","v6_paper_only","v6_timeframe","v6_specialist_count","v6_domain_probabilities"]],
+      ["Head AI ensemble",["ensemble_signal","ensemble_v6_adjustment","ensemble_v6_used","ensemble_specialist_count"]],
       ["Learning system",["learning_adjustment","learning_total","learning_hit_rate"]]
     ];
     async function loadCoinDetails(symbol){
