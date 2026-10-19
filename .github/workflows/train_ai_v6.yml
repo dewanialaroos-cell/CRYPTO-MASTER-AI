@@ -49,5 +49,18 @@ jobs:
             echo "No V6 model/report changes to commit."
           else
             git commit -m "Train Crypto Master AI V6 domain specialist ensemble"
-            git push
+            # Other website/model commits may land while training runs.
+            # Rebase the generated model commit on the latest main before pushing.
+            for attempt in 1 2 3; do
+              git fetch origin main
+              if git rebase origin/main; then
+                if git push origin HEAD:main; then
+                  exit 0
+                fi
+              fi
+              git rebase --abort || true
+              sleep $((attempt * 3))
+            done
+            echo "Could not publish the trained model after 3 attempts." >&2
+            exit 1
           fi
