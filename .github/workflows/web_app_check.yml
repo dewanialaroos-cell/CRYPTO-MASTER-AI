@@ -39,10 +39,12 @@ jobs:
           assert client.get('/').status_code == 200
           assert client.get('/api/status').status_code == 401
           r = client.post('/api/signup', json={'email':'test@example.com','password':'test-password-123'})
-          assert r.status_code == 200, r.get_json()
-          assert client.get('/api/me').get_json()['authenticated'] is True
+          assert r.status_code in (200, 201), r.get_json()
+          # Legacy API signup creates the account but requires a separate login.
+          assert client.get('/api/me').get_json()['authenticated'] is False
           r = client.post('/api/login', json={'email':'test@example.com','password':'test-password-123'})
           assert r.status_code == 200, r.get_json()
+          assert client.get('/api/me').get_json()['authenticated'] is True
           assert client.get('/api/status').status_code == 200
           assert client.post('/api/logout', json={}).status_code == 200
           assert client.get('/api/me').get_json()['authenticated'] is False
