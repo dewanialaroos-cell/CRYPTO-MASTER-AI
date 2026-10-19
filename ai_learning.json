@@ -2,18 +2,24 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "BNB/USDT",
-      "signal": "SHORT",
-      "entry": 713.3,
-      "created": 1792343469.2257295
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "entry": 5.111,
+      "created": 1792395077.2216902
+    },
+    {
+      "symbol": "KCS/USDT",
+      "signal": "LONG",
+      "entry": 7.595,
+      "created": 1792395077.2216916
     },
     {
       "symbol": "XMR/USDT",
       "signal": "LONG",
-      "entry": 602.92,
-      "created": 1792374704.4539335
+      "entry": 598.08,
+      "created": 1792395077.2216926
     }
   ],
-  "total": 2005,
+  "total": 2006,
   "hits": 902
 }
