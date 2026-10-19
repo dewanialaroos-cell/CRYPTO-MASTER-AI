@@ -26,10 +26,22 @@ MAX_COINS = 30
 OHLCV_LIMIT = 220
 HTTP_TIMEOUT = 15
 
+# Stablecoins and fiat-pegged tokens are excluded from trade candidates.
+# This filter is applied during market discovery, before technical analysis/signals.
 STABLES = {
-    "USDT", "USDC", "FDUSD", "DAI", "USDE", "USDS",
-    "USDD", "TUSD", "USDP", "PYUSD", "USDG", "RLUSD",
-    "EURC", "EURT", "USTC"
+    # USD-pegged
+    "USDT", "USDC", "USDE", "USDS", "USDD", "USDP", "TUSD",
+    "FDUSD", "BUSD", "DAI", "PYUSD", "GUSD", "USDG", "USD1",
+    "RLUSD", "USDF", "USDX", "USDB", "USDL", "USDK", "USDP",
+    "USDR", "USDX", "USX", "USDS", "USYC", "USDY", "USD0",
+    "USDM", "USN", "USC", "USDR", "USDTB", "USTB", "USDT0",
+    "LUSD", "FRAX", "SUSD", "GHO", "MIM", "CRVUSD", "USDD",
+    "USTC", "UST", "USDX",
+    # EUR / other fiat-pegged stablecoins
+    "EURC", "EUROC", "EURT", "EURI", "EURS", "AEUR", "EURCV",
+    "EURQ", "EUROE", "EURR", "TRYB", "BRZ", "XSGD", "JPYC",
+    "IDRT", "ZUSD", "CADC", "AUDD", "NZDS", "GBPT", "GYEN",
+    "KRWQ", "CEUR", "CUSD", "EUSD"
 }
 
 # Binance is included here
