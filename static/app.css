@@ -15,3 +15,52 @@
 .raw-data{grid-column:1/-1}
 .raw-data summary{cursor:pointer;color:var(--gold2);font-size:12px;font-weight:700}
 @media(max-width:650px){.detail-groups{grid-template-columns:1fr}.detail-heading{align-items:flex-start}.detail-panel{padding:14px}.detail-field{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+
+/* Premium motion layer: subtle, lightweight and mobile-friendly */
+.ambient{
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 18% 8%,#8c6a2426,transparent 38%),
+    radial-gradient(ellipse at 90% 40%,#193c5220,transparent 35%);
+}
+.ambient::before,.ambient::after{
+  content:"";position:absolute;width:38vw;height:38vw;min-width:240px;min-height:240px;
+  border-radius:50%;filter:blur(70px);opacity:.15;will-change:transform;
+}
+.ambient::before{left:-10vw;top:12vh;background:#c69a43;animation:ambient-drift 18s ease-in-out infinite alternate}
+.ambient::after{right:-12vw;top:42vh;background:#2b7192;animation:ambient-drift 23s ease-in-out infinite alternate-reverse}
+@keyframes ambient-drift{0%{transform:translate3d(0,0,0) scale(.9)}100%{transform:translate3d(5vw,-3vh,0) scale(1.15)}}
+.brandmark{position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.brandmark::after{content:"";position:absolute;inset:-60% auto -60% -70%;width:45%;transform:rotate(24deg);background:linear-gradient(90deg,transparent,#fff7,transparent);animation:brand-sheen 6s ease-in-out infinite}
+@keyframes brand-sheen{0%,65%{left:-70%}90%,100%{left:140%}}
+.brand:hover .brandmark{transform:translateY(-2px);border-color:var(--gold2);box-shadow:0 0 24px #d8b56d20}
+.hero{animation:rise-in .75s cubic-bezier(.2,.75,.25,1) both}
+.auth-card{animation:rise-in .8s .12s cubic-bezier(.2,.75,.25,1) both;transition:border-color .25s,box-shadow .25s}
+.auth-card:focus-within{border-color:#8f733f;box-shadow:0 24px 80px #0008,0 0 0 1px #d8b56d12}
+@keyframes rise-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{animation:eyebrow-glow 5s ease-in-out infinite}
+@keyframes eyebrow-glow{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 13px #d8b56d35}}
+.primary{position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,filter .2s}
+.primary::after{content:"";position:absolute;top:-80%;bottom:-80%;left:-55%;width:35%;transform:rotate(24deg);background:linear-gradient(90deg,transparent,#ffffff75,transparent);transition:left .65s ease}
+.primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 30px #c99a3635;filter:brightness(1.04)}
+.primary:hover:not(:disabled)::after{left:130%}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+#dashboard:not(.hidden){animation:dashboard-in .45s ease-out both}
+@keyframes dashboard-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.status-strip{transition:border-color .25s,box-shadow .25s}
+.status-strip:has(.status-dot.running){border-color:#8b713c;box-shadow:0 0 28px #d8b56d0b}
+.coin-card-button{animation:card-in .45s both;transform-origin:50% 100%}
+.coin-card-button:nth-child(2){animation-delay:.05s}.coin-card-button:nth-child(3){animation-delay:.1s}
+.coin-card-button:nth-child(4){animation-delay:.15s}.coin-card-button:nth-child(5){animation-delay:.2s}
+.coin-card-button:nth-child(6){animation-delay:.25s}
+@keyframes card-in{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.meter span{transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.detail-panel:not(.hidden){animation:rise-in .35s ease-out both}
+input{transition:border-color .2s,box-shadow .2s}
+input:focus{box-shadow:0 0 0 3px #d8b56d12}
+.tab{transition:color .2s,background .2s,transform .2s}
+.tab:hover{transform:translateY(-1px)}
+.coin-card-button:active,.primary:active:not(:disabled){transform:scale(.99)}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
