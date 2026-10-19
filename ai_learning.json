@@ -8,36 +8,12 @@
       "created": 1792343469.2257295
     },
     {
-      "symbol": "TRUMP/USDT",
-      "signal": "SHORT",
-      "entry": 1.674,
-      "created": 1792360000.3182673
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
-      "entry": 585.2,
-      "created": 1792360000.3182688
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "SHORT",
-      "entry": 0.4639,
-      "created": 1792360000.3182693
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2365.24,
-      "created": 1792360000.3182702
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "SHORT",
-      "entry": 0.003961,
-      "created": 1792360000.3182707
+      "entry": 602.92,
+      "created": 1792374704.4539335
     }
   ],
-  "total": 2000,
-  "hits": 901
+  "total": 2005,
+  "hits": 902
 }
