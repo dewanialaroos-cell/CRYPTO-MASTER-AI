@@ -79,6 +79,7 @@ def v6_paper_signal(exchange, symbol, timeframe="1h"):
             "v6_signal": signal,
             "v6_timeframe": timeframe,
             "v6_domain_probabilities": {k: round(v, 6) for k, v in meta.items()},
+            "v6_specialist_count": len(meta),
             "v6_paper_only": True,
         })
         # Append the observation only; no exchange order is ever placed here.
