@@ -1,6 +1,25 @@
 {
   "version": 1,
-  "pending": [],
+  "pending": [
+    {
+      "symbol": "XCRCL/USDT",
+      "signal": "SHORT",
+      "entry": 81.68,
+      "created": 1792454320.9410772
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 81951.3,
+      "created": 1792454320.9410784
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 606.6,
+      "created": 1792454320.9410791
+    }
+  ],
   "total": 2013,
   "hits": 903
 }
