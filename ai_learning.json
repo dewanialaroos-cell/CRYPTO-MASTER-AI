@@ -2,24 +2,30 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.111,
-      "created": 1792395077.2216902
-    },
-    {
-      "symbol": "KCS/USDT",
-      "signal": "LONG",
-      "entry": 7.595,
-      "created": 1792395077.2216916
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "LONG",
-      "entry": 598.08,
-      "created": 1792395077.2216926
+      "entry": 605.04,
+      "created": 1792421877.7973073
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.19739,
+      "created": 1792421877.7973084
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "entry": 148.25,
+      "created": 1792421877.797309
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.3029,
+      "created": 1792421877.7973096
     }
   ],
-  "total": 2006,
-  "hits": 902
+  "total": 2009,
+  "hits": 903
 }
