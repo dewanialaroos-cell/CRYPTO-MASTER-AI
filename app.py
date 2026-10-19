@@ -26,6 +26,7 @@ DB_PATH = Path(os.environ.get("CRYPTO_APP_DB", ROOT / "app_users.sqlite3"))
 DATABASE_URL = os.environ.get("CRYPTO_APP_DATABASE_URL") or os.environ.get("DATABASE_URL")
 SCANNER_PATH = ROOT / "Scanner.py"
 RESULTS_PATH = ROOT / "crypto_scan_results.csv"
+LEARNING_PATH = ROOT / "ai_learning.json"
 app = Flask(__name__)
 app.secret_key = os.environ.get("APP_SECRET_KEY") or secrets.token_hex(32)
 app.config.update(
@@ -541,6 +542,55 @@ def status():
                     "error": last["error"]})
 
 
+QUEUE_START_LOCK = threading.Lock()
+QUEUE_WORKER_STARTED = False
+
+
+def scan_queue_worker():
+    """Process durable scan requests sequentially so user jobs never overwrite each other."""
+    while True:
+        try:
+            if not SCAN_LOCK.acquire(blocking=False):
+                time.sleep(1)
+                continue
+            job = None
+            try:
+                with db() as con:
+                    row = con.execute(
+                        "SELECT id,user_id FROM scan_runs WHERE status='queued' ORDER BY id ASC LIMIT 1"
+                    ).fetchone()
+                    if row:
+                        claimed = con.execute(
+                            "UPDATE scan_runs SET status='claimed' WHERE id=? AND status='queued'",
+                            (row["id"],),
+                        )
+                        if claimed.rowcount == 1:
+                            job = (row["id"], row["user_id"])
+                if job:
+                    # scan_worker owns releasing SCAN_LOCK when it finishes.
+                    scan_worker(job[0], job[1])
+                    continue
+            except Exception:
+                app.logger.exception("Queue worker could not claim/process a scan")
+            SCAN_LOCK.release()
+        except Exception:
+            app.logger.exception("Scan queue worker error")
+            try:
+                SCAN_LOCK.release()
+            except RuntimeError:
+                pass
+        time.sleep(1)
+
+
+def ensure_scan_queue_worker():
+    global QUEUE_WORKER_STARTED
+    with QUEUE_START_LOCK:
+        if not QUEUE_WORKER_STARTED:
+            thread = threading.Thread(target=scan_queue_worker, name="crypto-scan-queue", daemon=True)
+            thread.start()
+            QUEUE_WORKER_STARTED = True
+
+
 @app.post("/api/run")
 @login_required
 def run_scan():
@@ -548,21 +598,19 @@ def run_scan():
     payload = request.get_json(silent=True) or {}
     if not secrets.compare_digest(str(payload.get("csrf", "")), str(session.get("csrf", ""))):
         return jsonify({"error": "Your security token expired. Please refresh the page."}), 403
-    if not SCAN_LOCK.acquire(blocking=False):
-        return jsonify({"error": "An AI scan is already running. Please wait for it to finish."}), 409
     if not SCANNER_PATH.exists():
-        SCAN_LOCK.release()
         return jsonify({"error": "Scanner.py was not found in the repository."}), 500
     started = utc_now()
     try:
         with db() as con:
             cur = con.execute("INSERT INTO scan_runs(user_id,status,started_at,top_coins_json) VALUES(?,?,?,?) RETURNING id",
-                              (user["id"], "running", started, "[]"))
+                              (user["id"], "queued", started, "[]"))
             run_id = cur.fetchone()["id"]
-        threading.Thread(target=scan_worker, args=(run_id, user["id"]), daemon=True).start()
-        return jsonify({"ok": True, "run_id": run_id, "status": "running"})
+        # Every customer's request is saved and queued; one scanner processes jobs
+        # sequentially because the scanner's CSV and JSON memory are shared files.
+        ensure_scan_queue_worker()
+        return jsonify({"ok": True, "run_id": run_id, "status": "queued"})
     except Exception as e:
-        SCAN_LOCK.release()
         return jsonify({"error": str(e)}), 500
 
 
@@ -599,6 +647,7 @@ def health():
 
 
 init_db()
+ensure_scan_queue_worker()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", "8000")), debug=False)
