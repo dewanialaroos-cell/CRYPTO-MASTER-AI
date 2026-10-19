@@ -18,6 +18,9 @@ from pathlib import Path
 from flask import Flask, jsonify, render_template, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 
+import firebase_admin
+from firebase_admin import auth as firebase_auth, credentials
+
 ROOT = Path(__file__).resolve().parent
 DB_PATH = Path(os.environ.get("CRYPTO_APP_DB", ROOT / "app_users.sqlite3"))
 DATABASE_URL = os.environ.get("CRYPTO_APP_DATABASE_URL") or os.environ.get("DATABASE_URL")
@@ -69,8 +72,9 @@ def init_db():
             con.execute("""CREATE TABLE IF NOT EXISTS users (
                 id BIGSERIAL PRIMARY KEY, email TEXT NOT NULL UNIQUE,
                 password_hash TEXT NOT NULL, email_verified INTEGER NOT NULL DEFAULT 0,
-                created_at TEXT NOT NULL
+                firebase_uid TEXT UNIQUE, created_at TEXT NOT NULL
             )""")
+            con.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS firebase_uid TEXT UNIQUE")
             con.execute("""CREATE TABLE IF NOT EXISTS auth_tokens (
                 id BIGSERIAL PRIMARY KEY, user_id BIGINT NOT NULL REFERENCES users(id),
                 token_hash TEXT NOT NULL UNIQUE, purpose TEXT NOT NULL, expires_at TEXT NOT NULL,
@@ -88,11 +92,13 @@ def init_db():
         con.execute("""CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL UNIQUE,
             password_hash TEXT NOT NULL, email_verified INTEGER NOT NULL DEFAULT 0,
-            created_at TEXT NOT NULL
+            firebase_uid TEXT UNIQUE, created_at TEXT NOT NULL
         )""")
         user_columns = {row["name"] for row in con.execute("PRAGMA table_info(users)").fetchall()}
         if "email_verified" not in user_columns:
             con.execute("ALTER TABLE users ADD COLUMN email_verified INTEGER NOT NULL DEFAULT 0")
+        if "firebase_uid" not in user_columns:
+            con.execute("ALTER TABLE users ADD COLUMN firebase_uid TEXT")
         con.execute("""CREATE TABLE IF NOT EXISTS auth_tokens (
             id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL,
             token_hash TEXT NOT NULL UNIQUE, purpose TEXT NOT NULL, expires_at TEXT NOT NULL,
@@ -163,7 +169,43 @@ def issue_token(user_id, purpose):
     return raw
 
 
+def _firebase_admin_app():
+    """Initialize Firebase Admin from a Render environment variable, never from client config."""
+    try:
+        return firebase_admin.get_app()
+    except ValueError:
+        raw = os.environ.get("FIREBASE_SERVICE_ACCOUNT_JSON", "").strip()
+        if not raw:
+            raise RuntimeError("Firebase server verification is not configured. Add FIREBASE_SERVICE_ACCOUNT_JSON in Render.")
+        return firebase_admin.initialize_app(credentials.Certificate(json.loads(raw)))
+
+
 def current_user():
+    header = request.headers.get("Authorization", "")
+    if header.startswith("Bearer "):
+        try:
+            claims = firebase_auth.verify_id_token(header[7:].strip(), app=_firebase_admin_app(), check_revoked=True)
+            uid = claims.get("uid")
+            email = (claims.get("email") or "").strip().lower()
+            if not uid or not email:
+                return None
+            with db() as con:
+                user = con.execute("SELECT id,email FROM users WHERE firebase_uid=?", (uid,)).fetchone()
+                if not user:
+                    user = con.execute("SELECT id,email FROM users WHERE email=?", (email,)).fetchone()
+                    if user:
+                        con.execute("UPDATE users SET firebase_uid=?,email_verified=1 WHERE id=?", (uid, user["id"]))
+                    else:
+                        placeholder = generate_password_hash(secrets.token_urlsafe(48))
+                        cur = con.execute(
+                            "INSERT INTO users(email,password_hash,email_verified,firebase_uid,created_at) VALUES(?,?,?,?,?) RETURNING id",
+                            (email, placeholder, 1, uid, utc_now())
+                        )
+                        user = con.execute("SELECT id,email FROM users WHERE id=?", (cur.fetchone()["id"],)).fetchone()
+                return user
+        except Exception:
+            app.logger.exception("Firebase ID token verification failed")
+            return None
     uid = session.get("user_id")
     if not uid:
         return None
