@@ -633,15 +633,20 @@ def run_scan():
 @app.get("/api/coin/<path:symbol>")
 @login_required
 def coin_details(symbol):
-    """Return all available fields for a selected coin from the latest scanner CSV."""
-    if not RESULTS_PATH.exists():
-        return jsonify({"error": "No scan results are available yet. Please run the scanner first."}), 404
+    """Return a coin's latest saved details belonging only to the signed-in user."""
+    user = current_user()
     try:
-        with RESULTS_PATH.open("r", newline="", encoding="utf-8-sig") as f:
-            rows = csv.DictReader(f)
-            row = next((r for r in rows if (r.get("symbol") or "").strip().upper() == symbol.strip().upper()), None)
-        if row is None:
-            return jsonify({"error": "No recent scan data was found for this coin. Please run the scanner again."}), 404
+        with db() as con:
+            saved = con.execute(
+                """SELECT so.result_json FROM scan_observations so
+                   JOIN scan_runs sr ON sr.id=so.run_id
+                   WHERE so.user_id=? AND sr.status='completed' AND UPPER(so.symbol)=?
+                   ORDER BY so.id DESC LIMIT 1""",
+                (user["id"], symbol.strip().upper()),
+            ).fetchone()
+        if not saved:
+            return jsonify({"error": "No recent scan data was found for this coin in your account. Please run the scanner again."}), 404
+        row = json.loads(saved["result_json"])
         details = {}
         for key, value in row.items():
             if value is None or value == "":
@@ -654,8 +659,9 @@ def coin_details(symbol):
                 details[key] = value
         return jsonify({"symbol": row.get("symbol", symbol), "details": details})
     except Exception:
-        app.logger.exception("Could not read coin details")
+        app.logger.exception("Could not load saved coin details")
         return jsonify({"error": "Could not load coin details."}), 500
+
 
 @app.get("/health")
 def health():
