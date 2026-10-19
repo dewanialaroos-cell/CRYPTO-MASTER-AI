@@ -607,55 +607,6 @@ def status():
                     "error": last["error"]})
 
 
-QUEUE_START_LOCK = threading.Lock()
-QUEUE_WORKER_STARTED = False
-
-
-def scan_queue_worker():
-    """Process durable scan requests sequentially so user jobs never overwrite each other."""
-    while True:
-        try:
-            if not SCAN_LOCK.acquire(blocking=False):
-                time.sleep(1)
-                continue
-            job = None
-            try:
-                with db() as con:
-                    row = con.execute(
-                        "SELECT id,user_id FROM scan_runs WHERE status='queued' ORDER BY id ASC LIMIT 1"
-                    ).fetchone()
-                    if row:
-                        claimed = con.execute(
-                            "UPDATE scan_runs SET status='claimed' WHERE id=? AND status='queued'",
-                            (row["id"],),
-                        )
-                        if claimed.rowcount == 1:
-                            job = (row["id"], row["user_id"])
-                if job:
-                    # scan_worker owns releasing SCAN_LOCK when it finishes.
-                    scan_worker(job[0], job[1])
-                    continue
-            except Exception:
-                app.logger.exception("Queue worker could not claim/process a scan")
-            SCAN_LOCK.release()
-        except Exception:
-            app.logger.exception("Scan queue worker error")
-            try:
-                SCAN_LOCK.release()
-            except RuntimeError:
-                pass
-        time.sleep(1)
-
-
-def ensure_scan_queue_worker():
-    global QUEUE_WORKER_STARTED
-    with QUEUE_START_LOCK:
-        if not QUEUE_WORKER_STARTED:
-            thread = threading.Thread(target=scan_queue_worker, name="crypto-scan-queue", daemon=True)
-            thread.start()
-            QUEUE_WORKER_STARTED = True
-
-
 @app.post("/api/run")
 @login_required
 def run_scan():
