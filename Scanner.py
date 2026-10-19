@@ -2808,7 +2808,8 @@ def recalculate_result(
     v6_status = text(result.get("v6_status")).upper()
     v6_adjustment = 0.0
     if v6_status == "OK" and math.isfinite(v6_probability):
-        v6_adjustment = clip((v6_probability - 0.5) * 60, -6, 6)
+        if v6_probability >= 0.60 or v6_probability <= 0.40:
+            v6_adjustment = clip((v6_probability - 0.5) * 60, -6, 6)
 
     raw_score = (
         (
