@@ -126,8 +126,8 @@
     function fmt(v){if(v===null||v===undefined||v==="")return "—";const n=Number(v);return Number.isFinite(n)?n.toLocaleString(undefined,{maximumFractionDigits:n<1?8:4}):"—";}
     function setStatus(status, detail, bad=false){$("status-title").textContent=status;$("status-detail").textContent=detail;$("status-dot").className="status-dot"+(status==="AI scan running…"?" running":bad?" failed":"");$("run-scan").disabled=status==="AI scan running…";}
     async function refreshStatus(){
-      try {const s=await api("/api/status"); if(s.status==="running"){setStatus("AI scan running…","Fetching exchange data and analysing market candidates.");if(!polling)polling=setInterval(refreshStatus,4000);}
-        else {if(polling){clearInterval(polling);polling=null;} if(s.status==="completed"){setStatus("Scan complete","Ranked candidates from the latest scanner output.");$("last-run").textContent=s.finished_at?new Date(s.finished_at).toLocaleString():"Just now";renderResults(s.results||[]);}
+      try {const s=await api("/api/status"); if(["queued","claimed","running"].includes(s.status)){setStatus("AI scan running…",s.status==="queued"||s.status==="claimed"?"Your scan is queued and will start as capacity becomes available.":"Fetching exchange data and analysing market candidates.");if(!polling)polling=setInterval(refreshStatus,4000);}
+        else {if(polling){clearInterval(polling);polling=null;} if(s.status==="completed"){setStatus("Scan complete","Ranked candidates from your latest scan.");$("last-run").textContent=s.finished_at?new Date(s.finished_at).toLocaleString():"Just now";renderResults(s.results||[]);}
         else if(s.status==="failed"){setStatus("Scan failed",s.error||"Scanner encountered an error.",true);renderResults([]);}
         else setStatus("Ready to scan","Start a scan to find current candidates.");}
       }catch(e){setStatus("Connection issue",e.message,true);}
