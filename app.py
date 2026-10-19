@@ -85,6 +85,15 @@ def init_db():
                 status TEXT NOT NULL, started_at TEXT NOT NULL, finished_at TEXT,
                 top_coins_json TEXT NOT NULL DEFAULT '[]', error TEXT
             )""")
+            con.execute("""CREATE TABLE IF NOT EXISTS shared_ai_learning (
+                id INTEGER PRIMARY KEY, payload TEXT NOT NULL, updated_at TEXT NOT NULL
+            )""")
+            con.execute("""CREATE TABLE IF NOT EXISTS scan_observations (
+                id BIGSERIAL PRIMARY KEY, user_id BIGINT NOT NULL REFERENCES users(id),
+                run_id BIGINT NOT NULL REFERENCES scan_runs(id), symbol TEXT NOT NULL,
+                scanned_at TEXT NOT NULL, result_json TEXT NOT NULL
+            )""")
+            con.execute("CREATE INDEX IF NOT EXISTS idx_scan_observations_scanned_at ON scan_observations(scanned_at)")
         return
 
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -109,6 +118,16 @@ def init_db():
             started_at TEXT NOT NULL, finished_at TEXT, top_coins_json TEXT NOT NULL DEFAULT '[]',
             error TEXT, FOREIGN KEY(user_id) REFERENCES users(id)
         )""")
+        con.execute("""CREATE TABLE IF NOT EXISTS shared_ai_learning (
+            id INTEGER PRIMARY KEY, payload TEXT NOT NULL, updated_at TEXT NOT NULL
+        )""")
+        con.execute("""CREATE TABLE IF NOT EXISTS scan_observations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL,
+            run_id INTEGER NOT NULL, symbol TEXT NOT NULL, scanned_at TEXT NOT NULL,
+            result_json TEXT NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id),
+            FOREIGN KEY(run_id) REFERENCES scan_runs(id)
+        )""")
+        con.execute("CREATE INDEX IF NOT EXISTS idx_scan_observations_scanned_at ON scan_observations(scanned_at)")
 
 
 def utc_now():
@@ -255,6 +274,8 @@ def parse_top_coins(path, limit=10):
                 "ensemble_v6_adjustment": safe_float(r.get("ensemble_v6_adjustment")),
                 "ensemble_v6_used": str(r.get("ensemble_v6_used", "false")).strip().lower() in ("true", "1", "yes"),
                 "ensemble_specialist_count": int(safe_float(r.get("ensemble_specialist_count")) or 0),
+                "learning_total": int(safe_float(r.get("learning_total")) or 0),
+                "learning_hit_rate": safe_float(r.get("learning_hit_rate")),
             })
         return output
     except Exception:
@@ -269,13 +290,70 @@ def safe_float(value):
         return None
 
 
+def sync_shared_learning_to_file():
+    """Load the one shared learning memory from durable DB before each scan."""
+    with db() as con:
+        row = con.execute("SELECT payload FROM shared_ai_learning WHERE id=1").fetchone()
+        if row:
+            payload = row["payload"]
+        else:
+            if LEARNING_PATH.exists():
+                try:
+                    payload = LEARNING_PATH.read_text(encoding="utf-8")
+                    json.loads(payload)  # validate before seeding durable storage
+                except Exception:
+                    payload = json.dumps({"version": 1, "pending": [], "total": 0, "hits": 0})
+            else:
+                payload = json.dumps({"version": 1, "pending": [], "total": 0, "hits": 0})
+            con.execute(
+                "INSERT INTO shared_ai_learning(id,payload,updated_at) VALUES(1,?,?) ON CONFLICT(id) DO NOTHING",
+                (payload, utc_now()),
+            )
+            row = con.execute("SELECT payload FROM shared_ai_learning WHERE id=1").fetchone()
+            payload = row["payload"]
+    # Scanner.py continues using its compatible JSON interface; the DB is canonical.
+    json.loads(payload)
+    LEARNING_PATH.write_text(payload, encoding="utf-8")
+
+
+def persist_shared_learning_and_observations(run_id, user_id):
+    """Persist updated shared learning plus every row produced by this scan."""
+    if LEARNING_PATH.exists():
+        payload = LEARNING_PATH.read_text(encoding="utf-8")
+        json.loads(payload)
+        with db() as con:
+            con.execute(
+                "INSERT INTO shared_ai_learning(id,payload,updated_at) VALUES(1,?,?) "
+                "ON CONFLICT(id) DO UPDATE SET payload=excluded.payload, updated_at=excluded.updated_at",
+                (payload, utc_now()),
+            )
+    if not RESULTS_PATH.exists():
+        return 0
+    with RESULTS_PATH.open("r", newline="", encoding="utf-8-sig") as handle:
+        rows = list(csv.DictReader(handle))
+    scanned_at = utc_now()
+    inserted = 0
+    with db() as con:
+        for row in rows:
+            symbol = str(row.get("symbol") or "").strip()
+            if not symbol:
+                continue
+            con.execute(
+                "INSERT INTO scan_observations(user_id,run_id,symbol,scanned_at,result_json) VALUES(?,?,?,?,?)",
+                (user_id, run_id, symbol, scanned_at, json.dumps(row, ensure_ascii=False)),
+            )
+            inserted += 1
+    return inserted
+
+
 def scan_worker(run_id, user_id):
     started = utc_now()
     with STATE_LOCK:
         scan_state.update(status="running", started_at=started, finished_at=None, error=None, results=[], run_id=run_id)
     try:
-        # A single scanner process is allowed at a time because the scanner shares
-        # its learning file and CSV output. No exchange orders are placed by this app.
+        # Load the same durable learning memory used by every customer's scan.
+        # The global scan lock protects the shared JSON/CSV files within this app process.
+        sync_shared_learning_to_file()
         completed = subprocess.run(
             [sys.executable, str(SCANNER_PATH)],
             cwd=str(ROOT), capture_output=True, text=True, timeout=900, check=False,
@@ -284,6 +362,7 @@ def scan_worker(run_id, user_id):
         if completed.returncode != 0:
             detail = (completed.stderr or completed.stdout or "Scanner exited with an error")[-2500:]
             raise RuntimeError(detail)
+        observations_saved = persist_shared_learning_and_observations(run_id, user_id)
         results = parse_top_coins(RESULTS_PATH)
         finished = utc_now()
         with db() as con:
