@@ -24,6 +24,20 @@
     </section>
     <footer>CRYPTO MASTER AI <span>•</span> RESEARCH & MARKET ANALYSIS ONLY</footer>
   </main>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script>
+  window.CMA_FIREBASE_CONFIG = {
+    apiKey: "AIzaSyDKE0EpmNG_wmmctm_gBcxoBjRIm1UbET8",
+    authDomain: "crypto-master-ai-ab0d8.firebaseapp.com",
+    projectId: "crypto-master-ai-ab0d8",
+    storageBucket: "crypto-master-ai-ab0d8.firebasestorage.app",
+    messagingSenderId: "490281344355",
+    appId: "1:490281344355:web:fb01aa7d5b36ed6d1c8756",
+    measurementId: "G-E8YT4ZV9TR"
+  };
+  firebase.initializeApp(window.CMA_FIREBASE_CONFIG);
+  </script>
   <script>
   (() => {
     let mode = "login", csrf = "", polling = null;
@@ -38,7 +52,10 @@
       $("password").autocomplete=mode==="login"?"current-password":"new-password"; $("password").minLength=mode==="signup"?10:1; $("confirm-label").classList.toggle("hidden",mode!=="signup"); $("confirm-password").required=mode==="signup"; message("");
     }
     async function api(url, options={}) {
-      const res=await fetch(url,{credentials:"same-origin",headers:{"Content-Type":"application/json",...(options.headers||{})},...options});
+      const headers={"Content-Type":"application/json",...(options.headers||{})};
+      const activeUser=firebase.auth().currentUser;
+      if(activeUser) headers.Authorization="Bearer "+await activeUser.getIdToken();
+      const res=await fetch(url,{...options,credentials:"same-origin",headers});
       const data=await res.json().catch(()=>({error:"Unexpected server response"}));
       if(!res.ok) throw new Error(data.error||"Request failed"); return data;
     }
@@ -51,16 +68,32 @@
     $("auth-form").addEventListener("submit",async e=>{
       e.preventDefault(); const btn=$("auth-submit"); btn.disabled=true; message("Please wait…");
       try {
-        if(mode==="signup" && $("password").value!==$("confirm-password").value) throw new Error("The passwords do not match.");
-        const wasSignup = mode==="signup";
-        const data=await api(wasSignup?"/api/signup":"/api/login",{method:"POST",body:JSON.stringify({email:$("email").value,password:$("password").value})});
-        if(wasSignup){setMode("login");message(data.message||"Account created. You can now log in.");}
-        else {csrf=data.csrf; message(""); showDashboard(data.email);}
-      }
-      catch(err){message(err.message,true);} finally{btn.disabled=false;}
+        const email=$("email").value.trim().toLowerCase(), password=$("password").value;
+        if(mode==="signup" && password!==$("confirm-password").value) throw new Error("The passwords do not match.");
+        if(mode==="signup") {
+          await firebase.auth().createUserWithEmailAndPassword(email,password);
+          try { await firebase.auth().currentUser.sendEmailVerification(); } catch (_) {}
+        } else {
+          await firebase.auth().signInWithEmailAndPassword(email,password);
+        }
+        const data=await api("/api/me");
+        csrf=data.csrf||"";
+        message("");
+        showDashboard(data.email||email);
+      } catch(err) {
+        const friendly={
+          "auth/email-already-in-use":"An account already exists with this email. Please log in.",
+          "auth/invalid-email":"Please enter a valid email address.",
+          "auth/weak-password":"Choose a stronger password (at least 6 characters).",
+          "auth/invalid-credential":"Incorrect email or password.",
+          "auth/user-not-found":"No account found. Please create an account first.",
+          "auth/too-many-requests":"Too many attempts. Please wait and try again."
+        };
+        message(friendly[err.code]||err.message||"Authentication failed.",true);
+      } finally {btn.disabled=false;}
     });
-    $("forgot-password").onclick=async()=>{const email=$("email").value.trim()||prompt("Enter your account email address:");if(!email)return;$("email").value=email;try{const d=await api("/api/forgot-password",{method:"POST",body:JSON.stringify({email})});message(d.message||"If an account exists, a password reset email will be sent.");}catch(err){message(err.message,true);}};
-    $("logout").onclick=async()=>{try{await api("/api/logout",{method:"POST",body:"{}"});}catch{} showAuth();};
+    $("forgot-password").onclick=async()=>{const email=$("email").value.trim()||prompt("Enter your account email address:");if(!email)return;$("email").value=email;try{await firebase.auth().sendPasswordResetEmail(email);message("If an account exists for this email, Firebase has sent a password reset link.");}catch(err){const friendly={"auth/invalid-email":"Please enter a valid email address.","auth/user-not-found":"No account was found for this email.","auth/too-many-requests":"Too many attempts. Please wait and try again."};message(friendly[err.code]||err.message,true);}};
+    $("logout").onclick=async()=>{try{await firebase.auth().signOut();}catch{} csrf=""; showAuth();};
     function renderResults(results) {
       $("result-count").textContent=results.length+" candidates";
       if(!results.length){$("results").innerHTML='<div class="empty-state"><div class="empty-icon">⌁</div><h3>No actionable signals in this scan</h3><p>The scanner completed but did not return LONG/SHORT candidates. Try again later.</p></div>';return;}
@@ -99,7 +132,11 @@
       }catch(e){setStatus("Connection issue",e.message,true);}
     }
     $("run-scan").onclick=async()=>{try{if(!csrf){const m=await api("/api/me");csrf=m.csrf||"";}const s=await api("/api/run",{method:"POST",body:JSON.stringify({csrf})});setStatus("AI scan running…","Fetching exchange data and analysing market candidates.");if(!polling)polling=setInterval(refreshStatus,4000);}catch(e){setStatus("Could not start scan",e.message,true);}};
-    (async()=>{try{const m=await api("/api/me");if(m.authenticated){csrf=m.csrf;showDashboard(m.email);}else showAuth();}catch{showAuth();}})();
+    firebase.auth().onAuthStateChanged(async user=>{
+      if(!user){csrf="";showAuth();return;}
+      try{const m=await api("/api/me");if(m.authenticated){csrf=m.csrf||"";showDashboard(m.email||user.email);}else{await firebase.auth().signOut();showAuth();message("Server-side Firebase verification is not configured yet. Please contact the app administrator.",true);}}
+      catch(err){showAuth();message(err.message||"Server authentication is not configured yet.",true);}
+    });
   })();
   </script>
 </body></html>
