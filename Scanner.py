@@ -4011,6 +4011,11 @@ def main():
                 from v6_paper_adapter import v6_paper_signal
                 v6_result = v6_paper_signal(exchange, symbol, timeframe="1h")
                 result.update(v6_result)
+                # Recalculate the final ensemble AFTER V6 probabilities are attached.
+                # Previously create_result ran first, so V6 was displayed but could not
+                # influence the website scanner's final score.
+                _, current_learning_adjustment = learning_stats(learning)
+                recalculate_result(result, current_learning_adjustment)
                 log(
                     f"V6 PAPER {symbol}: "
                     f"{v6_result.get('v6_signal', 'HOLD')} "
