@@ -3,8 +3,24 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080a0d">
-  <title>Crypto Master AI — Dashboard</title>
+  <meta name="description" content="Learn how Crypto Master AI analyses cryptocurrency markets, interprets LONG and SHORT signals, and explains trading risk. Independent research tools, guides, and scanner dashboard.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://crypto-master-ai.onrender.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crypto Master AI — Crypto Market Research">
+  <meta property="og:description" content="Understand crypto scanner signals, market-analysis limitations, and risk-management basics.">
+  <meta property="og:url" content="https://crypto-master-ai.onrender.com/">
+  <title>Crypto Master AI | Crypto Market Research & AI Scanner</title>
   <link rel="stylesheet" href="/static/app.css">
+  <style>
+    .public-learning{max-width:1000px;margin:34px auto 48px;padding:30px;background:linear-gradient(145deg,#12171e,#0b0e12);border:1px solid #292f38;border-radius:18px}
+    .public-learning h2{font-size:clamp(24px,4vw,34px);margin:0 0 14px;color:var(--gold2)}
+    .public-learning h3{font-size:18px;margin:24px 0 8px;color:#f1d79b}
+    .public-learning p,.public-learning li{color:#b8c1cb;line-height:1.85;font-size:14px}
+    .public-learning a{color:var(--gold2)}.learning-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .learning-card{border:1px solid var(--line);border-radius:12px;padding:18px}
+    @media(max-width:650px){.public-learning{padding:20px 16px}.learning-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <div class="ambient"></div>
@@ -21,6 +37,32 @@
       <div id="results" class="results-grid"><div class="empty-state"><div class="empty-icon">⌁</div><h3>No scan results yet</h3><p>Click “Run Crypto Master AI” to scan supported markets.</p></div></div>
       <section id="coin-detail" class="detail-panel hidden" aria-live="polite"><div class="detail-heading"><div><div class="eyebrow">FULL MARKET INTELLIGENCE</div><h2 id="detail-title">Coin details</h2><p id="detail-subtitle" class="muted">All fields from the latest scanner CSV.</p></div><button id="detail-close" class="ghost" type="button">Close ✕</button></div><div id="detail-groups" class="detail-groups"></div></section>
       <div class="disclaimer">Market signals are estimates, not guarantees. Crypto trading can cause substantial losses. Verify every signal independently before making any decision.</div>
+    </section>
+    <section class="public-learning" aria-labelledby="learn-heading">
+      <div class="eyebrow">FREE EDUCATIONAL RESOURCE</div>
+      <h2 id="learn-heading">A practical guide to crypto market signals</h2>
+      <p>Crypto Master AI is a cryptocurrency market-research tool. It presents scanner outputs to help visitors review market conditions; it cannot predict the future or remove the risk of loss. Use the explanations below to understand the information shown before making independent decisions.</p>
+      <div class="learning-grid">
+        <article class="learning-card"><h3>What is a LONG signal?</h3><p>A LONG label means the scanner's configured rules currently lean toward a bullish setup. It is not a command to buy, and it does not mean the price must rise. Check the live market, liquidity, spread, news and your own risk limits.</p></article>
+        <article class="learning-card"><h3>What is a SHORT signal?</h3><p>A SHORT label means the configured rules currently lean toward a bearish setup. Short positions can involve leverage, borrowing, funding charges and liquidation risk. Some products may not be available or suitable in every jurisdiction.</p></article>
+        <article class="learning-card"><h3>When does NO TRADE matter?</h3><p>NO TRADE means the scanner has not identified a setup that meets its current rules. Waiting is a valid research outcome. Forcing a trade when signals conflict or market data is incomplete can increase unnecessary risk.</p></article>
+        <article class="learning-card"><h3>How should confidence be read?</h3><p>A confidence or score value describes the model's internal scoring, not a verified chance of profit. Unless independently calibrated and validated, a score of 80 must not be read as an 80% chance that a trade will win.</p></article>
+      </div>
+      <h3>Understanding Stop-Loss and Take-Profit</h3>
+      <p>A Stop-Loss (SL) is a planned level for limiting a position's loss; a Take-Profit (TP) is a planned level for taking gains. Scanner levels are reference estimates, not guaranteed execution prices. Fast markets, exchange outages, gaps, spread, trading fees, funding and slippage can cause actual results to differ. A stop order may fill at a worse price than expected.</p>
+      <h3>Basic risk-management checklist</h3>
+      <ul>
+        <li>Decide the maximum loss you can tolerate before considering a position.</li>
+        <li>Understand position size, fees, leverage, liquidation price and order types.</li>
+        <li>Avoid risking rent, emergency savings, borrowed money or money needed for essential expenses.</li>
+        <li>Check the data timestamp, exchange and liquidity; stale or missing data can invalidate a signal.</li>
+        <li>Keep a journal and test a method across different market conditions, including fees and slippage.</li>
+      </ul>
+      <h3>Why backtests can be misleading</h3>
+      <p>Historical results depend on data quality and assumptions. Missing candles, survivorship bias, overfitting, unrealistic fills, fees and slippage can make a backtest look better than real trading. Paper trading can help test an operational workflow, but it still cannot reproduce every real-market condition. Past performance does not predict future results.</p>
+      <h3>Our limitations and transparency</h3>
+      <p>Market data may be delayed, unavailable or incomplete because of provider outages, rate limits or exchange restrictions. Model outputs can be wrong, react late or perform poorly in new market conditions. Crypto Master AI does not guarantee accuracy, returns, uninterrupted access or profitable signals. The dashboard is for research and education, not personalised financial, investment, tax or legal advice.</p>
+      <p>Read the full <a href="/scanner-guide">Scanner Guide</a>, <a href="/risk-management">Risk Management Guide</a> and <a href="/model-transparency">Model Transparency</a> page. Review our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Use</a> before using the service.</p>
     </section>
     <nav class="info-nav" aria-label="Website information" style="justify-content:center;border-top:0;margin-top:12px"><a href="/about">About</a><a href="/scanner-guide">Scanner Guide</a><a href="/risk-management">Risk Management</a><a href="/model-transparency">Model Transparency</a><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a></nav>
     <footer>CRYPTO MASTER AI <span>•</span> RESEARCH & MARKET ANALYSIS ONLY</footer>
