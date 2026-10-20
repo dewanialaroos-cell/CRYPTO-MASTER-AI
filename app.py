@@ -333,7 +333,7 @@ def _prediction_key(item):
 
 
 def persist_shared_learning_and_observations(run_id, user_id, learning_path, results_path, base_payload):
-    """Save each scan and merge its learning delta without overwriting concurrent scans."""
+    """Merge shared learning, but persist coin data only for the user's current run."""
     local = json.loads(learning_path.read_text(encoding="utf-8"))
     base = json.loads(base_payload)
     with LEARNING_MERGE_LOCK:
@@ -353,8 +353,6 @@ def persist_shared_learning_and_observations(run_id, user_id, learning_path, res
                 if key not in base_keys and key not in pending_keys:
                     pending.append(item)
                     pending_keys.add(key)
-            # Merge resolved outcomes by unique prediction ID. Parallel scans can
-            # evaluate the same old prediction; only the first merge may count it.
             base_resolved = {str(x.get("id")) for x in base.get("resolved", []) if x.get("id")}
             current_resolved = list(current.get("resolved", []))
             current_resolved_ids = {str(x.get("id")) for x in current_resolved if x.get("id")}
@@ -376,6 +374,7 @@ def persist_shared_learning_and_observations(run_id, user_id, learning_path, res
                 "ON CONFLICT(id) DO UPDATE SET payload=excluded.payload, updated_at=excluded.updated_at",
                 (payload, utc_now()),
             )
+
     if not results_path.exists():
         return 0
     with results_path.open("r", newline="", encoding="utf-8-sig") as handle:
@@ -383,6 +382,11 @@ def persist_shared_learning_and_observations(run_id, user_id, learning_path, res
     scanned_at = utc_now()
     inserted = 0
     with db() as con:
+        # A newer scan may have replaced this run while the scanner was working.
+        # Ignore stale workers so they cannot re-create deleted coin results.
+        current = con.execute("SELECT id FROM scan_runs WHERE id=? AND user_id=?", (run_id, user_id)).fetchone()
+        if not current:
+            return 0
         for row in rows:
             symbol = str(row.get("symbol") or "").strip()
             if not symbol:
@@ -394,10 +398,14 @@ def persist_shared_learning_and_observations(run_id, user_id, learning_path, res
             inserted += 1
     return inserted
 
-
 def scan_worker(run_id, user_id):
     with db() as con:
-        con.execute("UPDATE scan_runs SET status=? WHERE id=?", ("running", run_id))
+        claimed = con.execute(
+            "UPDATE scan_runs SET status=? WHERE id=? AND user_id=? AND status IN ('queued','claimed')",
+            ("running", run_id, user_id),
+        )
+        if claimed.rowcount != 1:
+            return  # This run was replaced by a newer scan or already claimed.
     try:
         base_payload = get_shared_learning_payload()
         # Per-run cwd prevents CSV and ai_learning.json collisions between users.
