@@ -481,6 +481,68 @@ def ensure_scan_queue_worker():
 def index():
     return render_template("index.html")
 
+@app.get("/about")
+def about_page():
+    return render_template("info.html", page_title="About Crypto Master AI", page_label="ABOUT US", page_intro="An independent market-analysis workspace built to help users inspect crypto-market signals.", sections=[
+        {"title":"What Crypto Master AI does","body":"Crypto Master AI scans supported cryptocurrency markets and presents ranked candidates with technical indicators, market context, LONG/SHORT/NO TRADE labels, and risk levels when available. It is an analysis tool, not a broker or exchange."},
+        {"title":"How to use it","body":"Create an account, open the dashboard, and select Run Crypto Master AI. When a scan finishes, review the coin cards and open a coin to inspect available details. Check the scan timestamp and confirm current prices independently before making decisions."},
+        {"title":"What the results mean","body":"A LONG label indicates that the scanner's rules currently favour a bullish setup; SHORT indicates a bearish setup; NO TRADE means the system does not show a sufficiently clear setup. Confidence and signal-strength values are model estimates, not the probability that a trade will make money."},
+        {"title":"Independence and limitations","body":"Crypto Master AI is not affiliated with, endorsed by, or an official product of any cryptocurrency exchange. Data availability, exchange restrictions, API limits, market liquidity, slippage, and model errors can affect results. We do not promise profits or guaranteed accuracy."}
+    ])
+
+@app.get("/scanner-guide")
+def scanner_guide_page():
+    return render_template("info.html", page_title="AI Scanner Guide", page_label="USER GUIDE", page_intro="Understand the scanner output before using it to research a market.", sections=[
+        {"title":"1. Start a scan","body":"Sign in and press Run Crypto Master AI. The service collects available market data and runs its configured analysis. Scan duration and coin coverage can change with exchange availability, rate limits, and network conditions."},
+        {"title":"2. LONG, SHORT, and NO TRADE","body":"LONG means the combined rules currently lean bullish; SHORT means they lean bearish; NO TRADE means the current evidence does not meet the system's trade criteria. These are research labels, not instructions or guarantees."},
+        {"title":"3. Signal strength and confidence","body":"These numbers summarize the scanner's internal scoring. They are not calibrated promises of success, and scores from different coins or market conditions may not be directly comparable. A high score can still lose money."},
+        {"title":"4. Stop-Loss and Take-Profit","body":"When shown, Stop-Loss (SL) and Take-Profit (TP) are model-generated reference levels. They may be missing or unsuitable for low-liquidity markets, fast-moving prices, or different exchange prices. Fees, spread, slippage, funding, and execution can change actual outcomes."},
+        {"title":"5. Check before acting","body":"Confirm the symbol and exchange, inspect live liquidity and price, understand the position size and maximum loss, and verify the setup independently. Do not treat a scan as personalized financial advice. This website does not place trades for you."}
+    ])
+
+@app.get("/risk-management")
+def risk_management_page():
+    return render_template("info.html", page_title="Crypto Risk Management", page_label="RISK EDUCATION", page_intro="Crypto assets are volatile. Risk controls can limit exposure, but they cannot eliminate losses.", sections=[
+        {"title":"Never risk money you cannot afford to lose","body":"Crypto trading can cause rapid and substantial losses. Do not use borrowed money, emergency savings, rent, or funds needed for essential expenses."},
+        {"title":"Understand position size","body":"Decide the maximum amount you are willing to lose before considering a trade. Position size should reflect the distance to the invalidation or stop level, account size, fees, and the possibility of slippage."},
+        {"title":"Stop-Loss is not a guarantee","body":"A stop order may execute at a worse price during gaps, volatility, thin liquidity, or exchange outages. Some instruments and order types have additional risks."},
+        {"title":"Use Take-Profit carefully","body":"A target is a planning reference, not a promise that the market will reach it. Consider whether the expected reward justifies the possible loss after fees and funding."},
+        {"title":"Avoid excessive leverage","body":"Leverage magnifies gains and losses and can trigger liquidation before a market recovers. Understand maintenance margin, liquidation price, funding costs, and exchange rules before using derivatives."},
+        {"title":"Keep a trading journal","body":"Record the reason for each decision, entry and exit assumptions, costs, and outcome. Evaluate a strategy over many trades and different market conditions rather than relying on a few winning examples."}
+    ])
+
+@app.get("/model-transparency")
+def model_transparency_page():
+    return render_template("info.html", page_title="AI Model Transparency", page_label="METHODOLOGY & LIMITATIONS", page_intro="The scanner combines available market data and model scores; its outputs can be wrong or incomplete.", sections=[
+        {"title":"Data sources and coverage","body":"The scanner uses supported exchange market endpoints and any configured market-data providers. Coverage varies by asset, timeframe, endpoint availability, API limits, and provider configuration. Missing data can make an analysis incomplete."},
+        {"title":"Specialist scores and ensemble","body":"Where enabled, the V6 model and specialist domains contribute model estimates to the wider scanner. A model being connected does not establish that it has a reliable trading edge. Outputs may change as code, features, or data change."},
+        {"title":"Backtests are not live performance","body":"Historical tests can be affected by data gaps, survivorship bias, overfitting, fees, slippage, liquidity, and assumptions about execution. Historical performance does not predict future results. Paper-trading results also differ from real execution."},
+        {"title":"No guaranteed accuracy or profit","body":"Models may misread regimes, react late, overfit historical patterns, or perform poorly on unseen market conditions. Confidence scores should not be interpreted as verified probabilities unless a separate calibration study demonstrates that."},
+        {"title":"Research-only service","body":"Crypto Master AI provides informational market analysis, not personalized financial, investment, tax, or legal advice. It does not guarantee signals, returns, or uninterrupted service and does not execute trades through this dashboard."}
+    ])
+
+@app.get("/privacy")
+def privacy_page():
+    return render_template("info.html", page_title="Privacy Policy", page_label="PRIVACY", page_intro="This notice describes the information the Crypto Master AI website may process. Review it and update it to match the service's actual configuration before public launch.", sections=[
+        {"title":"Information you provide","body":"When you create or use an account, the service may process your email address, account identifiers, authentication status, and requests you make to the scanner."},
+        {"title":"Usage and scan data","body":"The service may process scan status, timestamps, requested market data, and results associated with your account to operate the dashboard, troubleshoot errors, and improve reliability. Do not submit passwords, API secrets, wallet seed phrases, or other confidential information into support messages."},
+        {"title":"Authentication and service providers","body":"The website currently uses Firebase Authentication for account sign-in. Hosting and market-data providers may process technical information necessary to provide their services. Their own privacy terms also apply."},
+        {"title":"Cookies, security, and retention","body":"The website may use essential session cookies and technical logs. No website can guarantee absolute security. Data retention depends on the service configuration, storage availability, legal requirements, and operational needs."},
+        {"title":"Your choices and contact","body":"Use the account sign-out control to end your current session. For privacy questions or requests about account data, contact the website operator through the contact channel published on this site. Before launch, the operator should add a monitored contact email and a clear process for data requests."},
+        {"title":"Important publication note","body":"This is a starter privacy notice, not legal advice. The site operator must verify that it accurately describes actual data collection, retention, analytics, cookies, advertising partners, and applicable laws. Update this page before enabling advertising or inviting the public."}
+    ])
+
+@app.get("/terms")
+def terms_page():
+    return render_template("info.html", page_title="Terms of Use", page_label="TERMS", page_intro="By using Crypto Master AI, you agree to use the service responsibly and understand its limitations.", sections=[
+        {"title":"Research only; no financial advice","body":"The website provides automated market analysis for information and education. It is not financial, investment, legal, or tax advice, and it does not recommend a transaction suitable for your personal circumstances."},
+        {"title":"No guarantee","body":"Market data can be delayed, incomplete, inaccurate, or unavailable. Signals, model outputs, stop-loss levels, take-profit levels, and confidence scores can be wrong. No profit, accuracy, uptime, or availability is guaranteed."},
+        {"title":"Your responsibility","body":"You are responsible for verifying information, complying with laws and exchange rules, protecting account credentials, and deciding whether any action is appropriate. Never share passwords, private keys, or seed phrases."},
+        {"title":"Acceptable use","body":"Do not attempt to disrupt the service, bypass access controls, abuse APIs, submit malicious content, or use the website for unlawful activity. Access may be limited to protect the service and its users."},
+        {"title":"Availability and changes","body":"Features may change or be unavailable because of maintenance, provider restrictions, exchange API changes, or infrastructure limits. We may update these terms and the website as the service evolves."},
+        {"title":"Contact and review","body":"The operator should publish a monitored contact email before public launch. This starter page is not legal advice and should be reviewed for the operator's jurisdiction and actual business practices."}
+    ])
+
 
 @app.get("/api/me")
 def me():
