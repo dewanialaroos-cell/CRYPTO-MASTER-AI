@@ -246,19 +246,27 @@ def login_required(fn):
     return wrapped
 
 
-def parse_top_coins(path, limit=10):
+def parse_top_coins(path, limit=None):
+    """Return every coin row from this user's latest scan, strongest actionable signals first."""
     if not path.exists():
         return []
     try:
         with path.open("r", newline="", encoding="utf-8-sig") as f:
             rows = list(csv.DictReader(f))
-        actionable = [r for r in rows if r.get("signal") in ("LONG", "SHORT")]
-        actionable.sort(key=lambda r: float(r.get("signal_strength") or 0), reverse=True)
+        rows.sort(
+            key=lambda r: (
+                0 if str(r.get("signal", "")).upper() in ("LONG", "SHORT") else 1,
+                -(safe_float(r.get("signal_strength")) or 0),
+            )
+        )
         output = []
-        for r in actionable[:limit]:
+        for r in rows:
+            symbol = str(r.get("symbol") or "").strip()
+            if not symbol:
+                continue
             output.append({
-                "symbol": r.get("symbol", "—"),
-                "signal": r.get("signal", "NO TRADE"),
+                "symbol": symbol,
+                "signal": str(r.get("signal") or "NO TRADE").upper(),
                 "price": safe_float(r.get("price")),
                 "strength": safe_float(r.get("signal_strength")),
                 "confidence": safe_float(r.get("confidence")),
@@ -282,10 +290,10 @@ def parse_top_coins(path, limit=10):
                 "learning_total": int(safe_float(r.get("learning_total")) or 0),
                 "learning_hit_rate": safe_float(r.get("learning_hit_rate")),
             })
-        return output
+        return output[:limit] if limit else output
     except Exception:
+        app.logger.exception("Could not parse scan results from %s", path)
         return []
-
 
 def safe_float(value):
     try:
@@ -632,11 +640,16 @@ def run_scan():
     started = utc_now()
     try:
         with db() as con:
+            # Keep exactly one scan history per account. Starting a fresh scan
+            # removes that user's previous coin rows and run records, never another
+            # user's data. Results for the new run are saved as it completes.
+            con.execute("DELETE FROM scan_observations WHERE user_id=?", (user["id"],))
+            con.execute("DELETE FROM scan_runs WHERE user_id=?", (user["id"],))
             cur = con.execute("INSERT INTO scan_runs(user_id,status,started_at,top_coins_json) VALUES(?,?,?,?) RETURNING id",
                               (user["id"], "queued", started, "[]"))
             run_id = cur.fetchone()["id"]
-        # Every customer's request is saved and queued; one scanner processes jobs
-        # sequentially because the scanner's CSV and JSON memory are shared files.
+        # Every customer's request is queued; each run uses its own temporary
+        # directory so scanner CSV and learning files do not collide.
         ensure_scan_queue_worker()
         return jsonify({"ok": True, "run_id": run_id, "status": "queued"})
     except Exception as e:
