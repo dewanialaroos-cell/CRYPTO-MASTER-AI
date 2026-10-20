@@ -2,16 +2,34 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "CT/USDT",
-      "signal": "SHORT",
-      "entry": 0.30813,
-      "created": 1792489265.3897114
-    },
-    {
       "symbol": "WLD/USDT",
       "signal": "LONG",
       "entry": 0.5832,
       "created": 1792521749.1867175
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1274.1,
+      "created": 1792533429.3926091
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 622.27,
+      "created": 1792533429.392611
+    },
+    {
+      "symbol": "XSPCX/USDT",
+      "signal": "LONG",
+      "entry": 155.16,
+      "created": 1792533429.3926117
+    },
+    {
+      "symbol": "XCRCL/USDT",
+      "signal": "LONG",
+      "entry": 86.33,
+      "created": 1792533429.3926125
     }
   ],
   "total": 2036,
