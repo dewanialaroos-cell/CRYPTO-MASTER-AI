@@ -13,28 +13,101 @@
   <title>{{ page_title }} — Crypto Master AI</title>
   <link rel="stylesheet" href="/static/app.css">
   <style>
-    .info-wrap{max-width:900px;margin:42px auto 70px}.info-hero{padding:30px 0 24px;border-bottom:1px solid var(--line);margin-bottom:24px}.info-hero h1{font-size:clamp(32px,5vw,48px);line-height:1.08;margin:14px 0;color:var(--text)}.info-hero p{color:#b5bec8;line-height:1.8;max-width:760px}.info-section{padding:22px 24px;margin:14px 0;background:linear-gradient(145deg,#141920,#0d1015);border:1px solid #262e38;border-radius:14px}.info-section h2{font-size:19px;color:var(--gold2);margin:0 0 10px}.info-section p{color:#c0c7d0;line-height:1.8;margin:0}.info-nav{display:flex;gap:10px;flex-wrap:wrap;padding:20px 0;border-top:1px solid var(--line);margin-top:28px}.info-nav a{color:var(--gold2);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:12px}.info-nav a:hover{border-color:var(--gold)}.info-back{color:var(--gold2);text-decoration:none;font-size:13px}.info-note{font-size:12px;color:var(--muted);line-height:1.7;margin-top:22px}
-    @media(max-width:600px){.info-wrap{margin:24px auto 50px}.info-section{padding:18px}.wrap{padding:0 16px}}
+    :root{--info-gold:#e2bd70;--info-muted:#9ca7b5;--info-line:rgba(226,189,112,.17);--info-panel:rgba(17,22,29,.86)}
+    *{box-sizing:border-box}
+    .info-shell{max-width:1160px;margin:28px auto 72px}
+    .info-topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0 24px;border-bottom:1px solid #252c35}
+    .info-brand{display:flex;align-items:center;gap:12px;color:#f4f5f7;text-decoration:none;font-size:13px;font-weight:800;letter-spacing:.11em}
+    .info-brandmark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;color:#0b0c0e;font-size:14px;background:linear-gradient(145deg,#f5dda0,#b98a34);box-shadow:0 8px 26px #d8b56d20}
+    .info-brand small{display:block;color:#84909d;font-size:9px;font-weight:600;letter-spacing:.18em;margin-top:4px}
+    .info-back{display:inline-flex;align-items:center;gap:8px;color:#d9c18c;text-decoration:none;font-size:12px;border:1px solid #34302a;border-radius:99px;padding:10px 15px;transition:.2s}
+    .info-back:hover{border-color:var(--info-gold);background:#d8b56d0b}
+    .info-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:30px;align-items:start;margin-top:34px}
+    .info-main{min-width:0}
+    .info-hero{position:relative;overflow:hidden;padding:clamp(26px,5vw,48px);border:1px solid var(--info-line);border-radius:24px;background:radial-gradient(ellipse at 100% 0%,#d8b56d18,transparent 45%),linear-gradient(145deg,#171c23,#0b0e12 78%);box-shadow:0 24px 80px #0004}
+    .info-hero:after{content:"";position:absolute;right:-58px;top:-85px;width:230px;height:230px;border:1px solid #d8b56d20;border-radius:50%;box-shadow:0 0 0 24px #d8b56d05,0 0 0 48px #d8b56d04;pointer-events:none}
+    .info-eyebrow{display:inline-flex;align-items:center;gap:9px;color:#d8b56d;font-size:10px;letter-spacing:.2em;font-weight:800;text-transform:uppercase}
+    .info-eyebrow:before{content:"";width:18px;height:1px;background:var(--info-gold)}
+    .info-hero h1{position:relative;z-index:1;font-size:clamp(32px,5vw,54px);line-height:1.06;letter-spacing:-.04em;margin:18px 0 16px;color:#f5f6f8;font-weight:750}
+    .info-hero p{position:relative;z-index:1;max-width:690px;color:#b5bec9;line-height:1.85;font-size:15px;margin:0}
+    .info-content{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+    .info-section{position:relative;padding:23px 22px 24px;border:1px solid #29313b;border-radius:16px;background:linear-gradient(145deg,rgba(22,28,36,.96),rgba(12,15,20,.96));min-height:130px;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .info-section:hover{transform:translateY(-2px);border-color:#a7864b70;box-shadow:0 15px 35px #0002}
+    .info-section:before{content:"";display:block;width:26px;height:2px;background:linear-gradient(90deg,#e6c87f,transparent);margin-bottom:16px}
+    .info-section h2{font-size:16px;line-height:1.4;color:#f1d79b;margin:0 0 10px;font-weight:700}
+    .info-section p{font-size:13px;color:#b6c0cb;line-height:1.9;margin:0;overflow-wrap:anywhere}
+    .info-sidebar{position:sticky;top:18px;display:flex;flex-direction:column;gap:14px}
+    .info-side-card{border:1px solid #2a3039;border-radius:17px;background:rgba(15,19,25,.92);padding:19px}
+    .info-side-title{font-size:10px;letter-spacing:.17em;color:#d8b56d;font-weight:800;text-transform:uppercase;margin:0 0 13px}
+    .info-links{display:flex;flex-direction:column;gap:5px}
+    .info-links a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 11px;border-radius:9px;color:#b8c1cb;text-decoration:none;font-size:12px;border:1px solid transparent;transition:.2s}
+    .info-links a:after{content:"↗";color:#8d7850;font-size:12px}
+    .info-links a:hover,.info-links a.current{color:#f0d797;background:#d8b56d0d;border-color:#d8b56d24}
+    .info-help{font-size:12px;line-height:1.8;color:#9ea9b5;margin:0}
+    .info-note{font-size:11px;color:#76818e;line-height:1.8;margin:22px 2px}
+    .info-footer{border-top:1px solid #262d36;padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#77828f;font-size:10px;letter-spacing:.12em}
+    .info-footer b{color:#cbb071;font-weight:700}
+    .info-footer-links{display:flex;gap:14px;flex-wrap:wrap}
+    .info-footer-links a{color:#aeb7c2;text-decoration:none;font-size:11px;letter-spacing:0}
+    .info-footer-links a:hover{color:#e4c57e}
+    @media(max-width:850px){.info-layout{grid-template-columns:1fr}.info-sidebar{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.info-shell{margin-top:14px}}
+    @media(max-width:560px){.info-topbar{align-items:flex-start}.info-back{font-size:0;padding:11px 13px}.info-back span{font-size:12px}.info-layout{margin-top:20px;gap:18px}.info-content{grid-template-columns:1fr}.info-section{min-height:0;padding:21px}.info-sidebar{grid-template-columns:1fr}.info-hero{border-radius:18px}.info-footer{align-items:flex-start;flex-direction:column}.info-shell{margin-bottom:45px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
   <div class="ambient"></div>
-  <main class="wrap">
-    <header class="topbar">
-      <a class="brand" href="/"><span class="brandmark">CM</span><span>CRYPTO <b>MASTER AI</b><small>INTELLIGENCE TERMINAL</small></span></a>
-      <a class="info-back" href="/">← Back to dashboard</a>
+  <main class="wrap info-shell">
+    <header class="info-topbar">
+      <a class="info-brand" href="/"><span class="info-brandmark">CM</span><span>CRYPTO MASTER AI<small>INTELLIGENCE TERMINAL</small></span></a>
+      <a class="info-back" href="/"><span>← Back to dashboard</span></a>
     </header>
-    <article class="info-wrap">
-      <div class="info-hero"><div class="eyebrow">{{ page_label }}</div><h1>{{ page_title }}</h1><p>{{ page_intro }}</p></div>
-      {% for section in sections %}
-      <section class="info-section"><h2>{{ section.title }}</h2><p>{{ section.body }}</p></section>
-      {% endfor %}
-      <p class="info-note">Last reviewed: October 20, 2026. These pages are informational and must be kept accurate as the service changes.</p>
-      <nav class="info-nav" aria-label="Website information">
-        <a href="/about">About</a><a href="/scanner-guide">Scanner Guide</a><a href="/risk-management">Risk Management</a><a href="/model-transparency">Model Transparency</a><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a>
-      </nav>
-    </article>
-    <footer>CRYPTO MASTER AI <span>•</span> RESEARCH & MARKET ANALYSIS ONLY</footer>
+    <div class="info-layout">
+      <article class="info-main">
+        <header class="info-hero">
+          <div class="info-eyebrow">{{ page_label }}</div>
+          <h1>{{ page_title }}</h1>
+          <p>{{ page_intro }}</p>
+        </header>
+        <div class="info-content">
+          {% for section in sections %}
+          <section class="info-section">
+            <h2>{{ section.title }}</h2>
+            <p>{{ section.body }}</p>
+          </section>
+          {% endfor %}
+        </div>
+        <p class="info-note">Content is informational and may be updated as the service evolves. Please verify important details independently.</p>
+      </article>
+      <aside class="info-sidebar">
+        <section class="info-side-card">
+          <h2 class="info-side-title">Explore Crypto Master AI</h2>
+          <nav class="info-links" aria-label="Website information pages">
+            <a href="/about" class="{% if request.path == '/about' %}current{% endif %}">About us</a>
+            <a href="/scanner-guide" class="{% if request.path == '/scanner-guide' %}current{% endif %}">AI Scanner guide</a>
+            <a href="/risk-management" class="{% if request.path == '/risk-management' %}current{% endif %}">Risk management</a>
+            <a href="/model-transparency" class="{% if request.path == '/model-transparency' %}current{% endif %}">Model transparency</a>
+            <a href="/faq" class="{% if request.path == '/faq' %}current{% endif %}">Frequently asked questions</a>
+          </nav>
+        </section>
+        <section class="info-side-card">
+          <h2 class="info-side-title">Policies & support</h2>
+          <nav class="info-links" aria-label="Policies and support">
+            <a href="/privacy" class="{% if request.path == '/privacy' %}current{% endif %}">Privacy policy</a>
+            <a href="/terms" class="{% if request.path == '/terms' %}current{% endif %}">Terms of use</a>
+            <a href="/contact" class="{% if request.path == '/contact' %}current{% endif %}">Contact & support</a>
+          </nav>
+        </section>
+        <section class="info-side-card">
+          <h2 class="info-side-title">Important notice</h2>
+          <p class="info-help">Crypto markets are volatile. Scanner signals are estimates, not guarantees or personalised financial advice. Always assess risk independently.</p>
+        </section>
+      </aside>
+    </div>
+    <footer class="info-footer">
+      <span><b>CRYPTO MASTER AI</b> &nbsp;•&nbsp; RESEARCH & MARKET ANALYSIS ONLY</span>
+      <nav class="info-footer-links" aria-label="Legal links"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a></nav>
+    </footer>
   </main>
 </body>
 </html>
