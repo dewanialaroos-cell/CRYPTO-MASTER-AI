@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a0d">
+  <meta name="description" content="{{ page_intro }}">
+  <title>{{ page_title }} — Crypto Master AI</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <style>
+    .info-wrap{max-width:900px;margin:42px auto 70px}.info-hero{padding:30px 0 24px;border-bottom:1px solid var(--line);margin-bottom:24px}.info-hero h1{font-size:clamp(32px,5vw,48px);line-height:1.08;margin:14px 0;color:var(--text)}.info-hero p{color:#b5bec8;line-height:1.8;max-width:760px}.info-section{padding:22px 24px;margin:14px 0;background:linear-gradient(145deg,#141920,#0d1015);border:1px solid #262e38;border-radius:14px}.info-section h2{font-size:19px;color:var(--gold2);margin:0 0 10px}.info-section p{color:#c0c7d0;line-height:1.8;margin:0}.info-nav{display:flex;gap:10px;flex-wrap:wrap;padding:20px 0;border-top:1px solid var(--line);margin-top:28px}.info-nav a{color:var(--gold2);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:12px}.info-nav a:hover{border-color:var(--gold)}.info-back{color:var(--gold2);text-decoration:none;font-size:13px}.info-note{font-size:12px;color:var(--muted);line-height:1.7;margin-top:22px}
+    @media(max-width:600px){.info-wrap{margin:24px auto 50px}.info-section{padding:18px}.wrap{padding:0 16px}}
+  </style>
+</head>
+<body>
+  <div class="ambient"></div>
+  <main class="wrap">
+    <header class="topbar">
+      <a class="brand" href="/"><span class="brandmark">CM</span><span>CRYPTO <b>MASTER AI</b><small>INTELLIGENCE TERMINAL</small></span></a>
+      <a class="info-back" href="/">← Back to dashboard</a>
+    </header>
+    <article class="info-wrap">
+      <div class="info-hero"><div class="eyebrow">{{ page_label }}</div><h1>{{ page_title }}</h1><p>{{ page_intro }}</p></div>
+      {% for section in sections %}
+      <section class="info-section"><h2>{{ section.title }}</h2><p>{{ section.body }}</p></section>
+      {% endfor %}
+      <p class="info-note">Last reviewed: October 20, 2026. These pages are informational and must be kept accurate as the service changes.</p>
+      <nav class="info-nav" aria-label="Website information">
+        <a href="/about">About</a><a href="/scanner-guide">Scanner Guide</a><a href="/risk-management">Risk Management</a><a href="/model-transparency">Model Transparency</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a>
+      </nav>
+    </article>
+    <footer>CRYPTO MASTER AI <span>•</span> RESEARCH & MARKET ANALYSIS ONLY</footer>
+  </main>
+</body>
+</html>
