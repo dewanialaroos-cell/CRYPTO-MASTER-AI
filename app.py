@@ -345,9 +345,22 @@ def persist_shared_learning_and_observations(run_id, user_id, learning_path, res
                 if key not in base_keys and key not in pending_keys:
                     pending.append(item)
                     pending_keys.add(key)
+            # Merge resolved outcomes by unique prediction ID. Parallel scans can
+            # evaluate the same old prediction; only the first merge may count it.
+            base_resolved = {str(x.get("id")) for x in base.get("resolved", []) if x.get("id")}
+            current_resolved = list(current.get("resolved", []))
+            current_resolved_ids = {str(x.get("id")) for x in current_resolved if x.get("id")}
+            for outcome in local.get("resolved", []):
+                outcome_id = str(outcome.get("id") or "")
+                if not outcome_id or outcome_id in base_resolved or outcome_id in current_resolved_ids:
+                    continue
+                current_resolved.append(outcome)
+                current_resolved_ids.add(outcome_id)
+                current["total"] = int(current.get("total", 0)) + 1
+                if bool(outcome.get("hit")):
+                    current["hits"] = int(current.get("hits", 0)) + 1
+            current["resolved"] = current_resolved[-10000:]
             current["version"] = max(int(current.get("version", 1)), int(local.get("version", 1)))
-            current["total"] = int(current.get("total", 0)) + max(0, int(local.get("total", 0)) - int(base.get("total", 0)))
-            current["hits"] = int(current.get("hits", 0)) + max(0, int(local.get("hits", 0)) - int(base.get("hits", 0)))
             current["pending"] = pending[-5000:]
             payload = json.dumps(current, ensure_ascii=False)
             con.execute(
