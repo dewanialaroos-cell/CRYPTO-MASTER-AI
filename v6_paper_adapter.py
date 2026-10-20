@@ -9,8 +9,9 @@ from functools import lru_cache
 import numpy as np
 import pandas as pd
 
-MODEL_PATH = Path("models/crypto_master_ai_v6.joblib")
-PAPER_LOG = Path("paper_trading_v6.jsonl")
+ROOT = Path(__file__).resolve().parent
+MODEL_PATH = ROOT / "models" / "crypto_master_ai_v6.joblib"
+PAPER_LOG = Path(os.getenv("V6_PAPER_LOG_PATH", str(ROOT / "paper_trading_v6.jsonl"))).expanduser()
 THRESHOLD_LONG = float(os.getenv("V6_LONG_THRESHOLD", "0.60"))
 THRESHOLD_SHORT = float(os.getenv("V6_SHORT_THRESHOLD", "0.40"))
 FEE_PER_SIDE = float(os.getenv("PAPER_FEE_PER_SIDE", "0.0004"))
@@ -94,6 +95,7 @@ def v6_paper_signal(exchange, symbol, timeframe="1h"):
             "slippage_per_side": SLIPPAGE_PER_SIDE,
             "paper_only": True,
         }
+        PAPER_LOG.parent.mkdir(parents=True, exist_ok=True)
         with PAPER_LOG.open("a", encoding="utf-8") as handle:
             handle.write(json.dumps(record, allow_nan=False) + "\n")
         return result
