@@ -2613,12 +2613,22 @@ def update_learning(
                         return_pct < -0.001
                     )
 
-                data["total"] += 1
-
-                if hit:
-
-                    data["hits"] += 1
-
+                # Store the outcome identity so concurrent scans cannot count
+                # the same prediction twice when their learning snapshots merge.
+                resolved = data.setdefault("resolved", [])
+                outcome_id = f"{symbol}|{signal}|{created}"
+                if not any(str(item.get("id")) == outcome_id for item in resolved):
+                    resolved.append({
+                        "id": outcome_id,
+                        "symbol": symbol,
+                        "signal": signal,
+                        "created": created,
+                        "hit": bool(hit),
+                        "resolved_at": current_time
+                    })
+                    data["total"] = int(data.get("total", 0)) + 1
+                    if hit:
+                        data["hits"] = int(data.get("hits", 0)) + 1
                 continue
 
         # Remove very old unresolved predictions
