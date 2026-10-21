@@ -2,26 +2,26 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ASTER/USDT",
+      "symbol": "DOOD/USDT",
       "signal": "LONG",
-      "entry": 0.7219,
-      "created": 1792559652.1113734
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5866,
-      "created": 1792559652.1113744
+      "entry": 0.003209,
+      "created": 1792577857.6209483
     },
     {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
-      "entry": 4.498e-06,
-      "created": 1792559652.1113749
+      "entry": 4.561e-06,
+      "created": 1792577857.620949
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "entry": 0.7224,
+      "created": 1792577857.6209493
     }
   ],
-  "total": 2046,
-  "hits": 911,
+  "total": 2049,
+  "hits": 912,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -262,6 +262,30 @@
       "created": 1792542564.0769863,
       "hit": false,
       "resolved_at": 1792559652.1108966
+    },
+    {
+      "id": "ASTER/USDT|LONG|1792559652.1113734",
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "created": 1792559652.1113734,
+      "hit": false,
+      "resolved_at": 1792577857.6205852
+    },
+    {
+      "id": "WLD/USDT|LONG|1792559652.1113744",
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "created": 1792559652.1113744,
+      "hit": false,
+      "resolved_at": 1792577857.6205852
+    },
+    {
+      "id": "PEPE/USDT|LONG|1792559652.1113749",
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "created": 1792559652.1113749,
+      "hit": true,
+      "resolved_at": 1792577857.6205852
     }
   ]
 }
