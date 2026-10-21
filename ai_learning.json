@@ -2,26 +2,68 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOOD/USDT",
+      "symbol": "NEAR/USDT",
       "signal": "LONG",
-      "entry": 0.003209,
-      "created": 1792577857.6209483
+      "entry": 5.334,
+      "created": 1792596727.7500317
     },
     {
-      "symbol": "PEPE/USDT",
+      "symbol": "ARB/USDT",
       "signal": "LONG",
-      "entry": 4.561e-06,
-      "created": 1792577857.620949
+      "entry": 0.1983,
+      "created": 1792596727.750033
+    },
+    {
+      "symbol": "DOOD/USDT",
+      "signal": "LONG",
+      "entry": 0.004483,
+      "created": 1792596727.7500336
+    },
+    {
+      "symbol": "XCRCL/USDT",
+      "signal": "LONG",
+      "entry": 90.64,
+      "created": 1792596727.750034
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "entry": 0.06293,
+      "created": 1792596727.7500346
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1332.87,
+      "created": 1792596727.7500355
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.21748,
+      "created": 1792596727.7500358
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.004994,
+      "created": 1792596727.7500377
     },
     {
       "symbol": "ASTER/USDT",
       "signal": "LONG",
-      "entry": 0.7224,
-      "created": 1792577857.6209493
+      "entry": 0.721,
+      "created": 1792596727.7500386
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "entry": 9.895,
+      "created": 1792596727.7500393
     }
   ],
-  "total": 2049,
-  "hits": 912,
+  "total": 2052,
+  "hits": 914,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -286,6 +328,30 @@
       "created": 1792559652.1113749,
       "hit": true,
       "resolved_at": 1792577857.6205852
+    },
+    {
+      "id": "DOOD/USDT|LONG|1792577857.6209483",
+      "symbol": "DOOD/USDT",
+      "signal": "LONG",
+      "created": 1792577857.6209483,
+      "hit": true,
+      "resolved_at": 1792596727.7493923
+    },
+    {
+      "id": "PEPE/USDT|LONG|1792577857.620949",
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "created": 1792577857.620949,
+      "hit": true,
+      "resolved_at": 1792596727.7493923
+    },
+    {
+      "id": "ASTER/USDT|LONG|1792577857.6209493",
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "created": 1792577857.6209493,
+      "hit": false,
+      "resolved_at": 1792596727.7493923
     }
   ]
 }
