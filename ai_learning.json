@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ASTER/USDT",
-      "signal": "LONG",
-      "entry": 0.721,
-      "created": 1792596727.7500386
-    },
-    {
       "symbol": "NEAR/USDT",
       "signal": "LONG",
       "entry": 5.332,
@@ -68,7 +62,7 @@
       "created": 1792611286.701545
     }
   ],
-  "total": 2061,
+  "total": 2062,
   "hits": 919,
   "resolved": [
     {
@@ -430,6 +424,14 @@
       "created": 1792596727.7500393,
       "hit": true,
       "resolved_at": 1792611286.7009857
+    },
+    {
+      "id": "ASTER/USDT|LONG|1792596727.7500386",
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "created": 1792596727.7500386,
+      "hit": false,
+      "resolved_at": 1792622965.7073536
     }
   ]
 }
