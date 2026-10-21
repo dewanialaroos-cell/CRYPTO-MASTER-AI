@@ -2,68 +2,74 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NEAR/USDT",
-      "signal": "LONG",
-      "entry": 5.334,
-      "created": 1792596727.7500317
-    },
-    {
-      "symbol": "ARB/USDT",
-      "signal": "LONG",
-      "entry": 0.1983,
-      "created": 1792596727.750033
-    },
-    {
-      "symbol": "DOOD/USDT",
-      "signal": "LONG",
-      "entry": 0.004483,
-      "created": 1792596727.7500336
-    },
-    {
-      "symbol": "XCRCL/USDT",
-      "signal": "LONG",
-      "entry": 90.64,
-      "created": 1792596727.750034
-    },
-    {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.06293,
-      "created": 1792596727.7500346
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1332.87,
-      "created": 1792596727.7500355
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.21748,
-      "created": 1792596727.7500358
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "LONG",
-      "entry": 0.004994,
-      "created": 1792596727.7500377
-    },
-    {
       "symbol": "ASTER/USDT",
       "signal": "LONG",
       "entry": 0.721,
       "created": 1792596727.7500386
     },
     {
-      "symbol": "AVAX/USDT",
+      "symbol": "NEAR/USDT",
       "signal": "LONG",
-      "entry": 9.895,
-      "created": 1792596727.7500393
+      "entry": 5.332,
+      "created": 1792611286.701539
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 611.64,
+      "created": 1792611286.70154
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.663e-06,
+      "created": 1792611286.7015407
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "entry": 0.19718,
+      "created": 1792611286.701541
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 81.79,
+      "created": 1792611286.7015414
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "LONG",
+      "entry": 158.32,
+      "created": 1792611286.7015417
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1355.15,
+      "created": 1792611286.7015421
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "LONG",
+      "entry": 84546.0,
+      "created": 1792611286.7015436
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "LONG",
+      "entry": 3.9189,
+      "created": 1792611286.7015445
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.5722,
+      "created": 1792611286.701545
     }
   ],
-  "total": 2052,
-  "hits": 914,
+  "total": 2061,
+  "hits": 919,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -352,6 +358,78 @@
       "created": 1792577857.6209493,
       "hit": false,
       "resolved_at": 1792596727.7493923
+    },
+    {
+      "id": "NEAR/USDT|LONG|1792596727.7500317",
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "created": 1792596727.7500317,
+      "hit": false,
+      "resolved_at": 1792611286.7009857
+    },
+    {
+      "id": "ARB/USDT|LONG|1792596727.750033",
+      "symbol": "ARB/USDT",
+      "signal": "LONG",
+      "created": 1792596727.750033,
+      "hit": false,
+      "resolved_at": 1792611286.7009857
+    },
+    {
+      "id": "DOOD/USDT|LONG|1792596727.7500336",
+      "symbol": "DOOD/USDT",
+      "signal": "LONG",
+      "created": 1792596727.7500336,
+      "hit": false,
+      "resolved_at": 1792611286.7009857
+    },
+    {
+      "id": "XCRCL/USDT|LONG|1792596727.750034",
+      "symbol": "XCRCL/USDT",
+      "signal": "LONG",
+      "created": 1792596727.750034,
+      "hit": false,
+      "resolved_at": 1792611286.7009857
+    },
+    {
+      "id": "SEI/USDT|LONG|1792596727.7500346",
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "created": 1792596727.7500346,
+      "hit": true,
+      "resolved_at": 1792611286.7009857
+    },
+    {
+      "id": "ZEC/USDT|LONG|1792596727.7500355",
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "created": 1792596727.7500355,
+      "hit": true,
+      "resolved_at": 1792611286.7009857
+    },
+    {
+      "id": "ENA/USDT|LONG|1792596727.7500358",
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "created": 1792596727.7500358,
+      "hit": true,
+      "resolved_at": 1792611286.7009857
+    },
+    {
+      "id": "PUMP/USDT|LONG|1792596727.7500377",
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "created": 1792596727.7500377,
+      "hit": true,
+      "resolved_at": 1792611286.7009857
+    },
+    {
+      "id": "AVAX/USDT|LONG|1792596727.7500393",
+      "symbol": "AVAX/USDT",
+      "signal": "LONG",
+      "created": 1792596727.7500393,
+      "hit": true,
+      "resolved_at": 1792611286.7009857
     }
   ]
 }
