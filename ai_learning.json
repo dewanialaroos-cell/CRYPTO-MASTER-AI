@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "WLD/USDT",
-      "signal": "LONG",
-      "entry": 0.5832,
-      "created": 1792521749.1867175
-    },
-    {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
       "entry": 1274.1,
@@ -30,10 +24,40 @@
       "signal": "LONG",
       "entry": 86.33,
       "created": 1792533429.3926125
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "LONG",
+      "entry": 0.7181,
+      "created": 1792542564.0769844
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "LONG",
+      "entry": 61.76,
+      "created": 1792542564.0769851
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "LONG",
+      "entry": 0.004913,
+      "created": 1792542564.0769856
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "entry": 0.586,
+      "created": 1792542564.076986
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.556e-06,
+      "created": 1792542564.0769863
     }
   ],
-  "total": 2036,
-  "hits": 907,
+  "total": 2037,
+  "hits": 908,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -194,6 +218,14 @@
       "created": 1792506734.470757,
       "hit": false,
       "resolved_at": 1792521749.1860662
+    },
+    {
+      "id": "WLD/USDT|LONG|1792521749.1867175",
+      "symbol": "WLD/USDT",
+      "signal": "LONG",
+      "created": 1792521749.1867175,
+      "hit": true,
+      "resolved_at": 1792542564.076635
     }
   ]
 }
