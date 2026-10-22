@@ -4,24 +4,12 @@
     {
       "symbol": "TRUMP/USDT",
       "signal": "SHORT",
-      "entry": 1.774,
-      "created": 1792650561.8161466
-    },
-    {
-      "symbol": "XMR/USDT",
-      "signal": "LONG",
-      "entry": 650.45,
-      "created": 1792650561.816148
-    },
-    {
-      "symbol": "UNI/USDT",
-      "signal": "SHORT",
-      "entry": 7.103,
-      "created": 1792650561.8161485
+      "entry": 1.762,
+      "created": 1792671540.5580294
     }
   ],
-  "total": 2082,
-  "hits": 921,
+  "total": 2085,
+  "hits": 922,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -550,6 +538,30 @@
       "created": 1792632198.2200763,
       "hit": false,
       "resolved_at": 1792650561.8153927
+    },
+    {
+      "id": "TRUMP/USDT|SHORT|1792650561.8161466",
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "created": 1792650561.8161466,
+      "hit": true,
+      "resolved_at": 1792671540.5575087
+    },
+    {
+      "id": "XMR/USDT|LONG|1792650561.816148",
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "created": 1792650561.816148,
+      "hit": false,
+      "resolved_at": 1792671540.5575087
+    },
+    {
+      "id": "UNI/USDT|SHORT|1792650561.8161485",
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "created": 1792650561.8161485,
+      "hit": false,
+      "resolved_at": 1792671540.5575087
     }
   ]
 }
