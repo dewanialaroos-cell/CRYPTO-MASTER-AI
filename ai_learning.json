@@ -2,34 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3142,
-      "created": 1792690332.3278632
-    },
-    {
       "symbol": "TRUMP/USDT",
       "signal": "SHORT",
       "entry": 1.738,
       "created": 1792690332.3278642
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.07854,
-      "created": 1792690332.3278646
-    },
-    {
-      "symbol": "IRYS/USDT",
-      "signal": "LONG",
-      "entry": 0.02187,
-      "created": 1792690332.327865
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "SHORT",
-      "entry": 1.1208,
-      "created": 1792690332.3278656
     },
     {
       "symbol": "BTC/USDT",
@@ -72,10 +48,34 @@
       "signal": "SHORT",
       "entry": 0.17881,
       "created": 1792702052.8304594
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.3065,
+      "created": 1792712528.4774373
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.07859,
+      "created": 1792712528.4774384
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.112,
+      "created": 1792712528.4774394
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "entry": 146.54,
+      "created": 1792712528.4774396
     }
   ],
-  "total": 2086,
-  "hits": 923,
+  "total": 2090,
+  "hits": 925,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -636,6 +636,38 @@
       "created": 1792671540.5580294,
       "hit": true,
       "resolved_at": 1792690332.3274882
+    },
+    {
+      "id": "XRP/USDT|SHORT|1792690332.3278632",
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "created": 1792690332.3278632,
+      "hit": true,
+      "resolved_at": 1792712528.4767742
+    },
+    {
+      "id": "DOGE/USDT|SHORT|1792690332.3278646",
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "created": 1792690332.3278646,
+      "hit": false,
+      "resolved_at": 1792712528.4767742
+    },
+    {
+      "id": "IRYS/USDT|LONG|1792690332.327865",
+      "symbol": "IRYS/USDT",
+      "signal": "LONG",
+      "created": 1792690332.327865,
+      "hit": false,
+      "resolved_at": 1792712528.4767742
+    },
+    {
+      "id": "DOT/USDT|SHORT|1792690332.3278656",
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "created": 1792690332.3278656,
+      "hit": true,
+      "resolved_at": 1792712528.4767742
     }
   ]
 }
