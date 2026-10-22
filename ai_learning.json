@@ -2,14 +2,38 @@
   "version": 1,
   "pending": [
     {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.3142,
+      "created": 1792690332.3278632
+    },
+    {
       "symbol": "TRUMP/USDT",
       "signal": "SHORT",
-      "entry": 1.762,
-      "created": 1792671540.5580294
+      "entry": 1.738,
+      "created": 1792690332.3278642
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.07854,
+      "created": 1792690332.3278646
+    },
+    {
+      "symbol": "IRYS/USDT",
+      "signal": "LONG",
+      "entry": 0.02187,
+      "created": 1792690332.327865
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.1208,
+      "created": 1792690332.3278656
     }
   ],
-  "total": 2085,
-  "hits": 922,
+  "total": 2086,
+  "hits": 923,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -562,6 +586,14 @@
       "created": 1792650561.8161485,
       "hit": false,
       "resolved_at": 1792671540.5575087
+    },
+    {
+      "id": "TRUMP/USDT|SHORT|1792671540.5580294",
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "created": 1792671540.5580294,
+      "hit": true,
+      "resolved_at": 1792690332.3274882
     }
   ]
 }
