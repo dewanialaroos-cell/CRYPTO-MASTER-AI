@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ARB/USDT",
-      "signal": "SHORT",
-      "entry": 0.18205,
-      "created": 1792740249.16547
-    },
-    {
       "symbol": "XSPCX/USDT",
       "signal": "SHORT",
       "entry": 147.7,
@@ -66,6 +60,24 @@
       "signal": "LONG",
       "entry": 0.13797,
       "created": 1792777735.7407
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 77.664,
+      "created": 1792789925.9262218
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2403.25,
+      "created": 1792789925.926223
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 0.9801,
+      "created": 1792789925.9262238
     }
   ],
   "total": 2123,
