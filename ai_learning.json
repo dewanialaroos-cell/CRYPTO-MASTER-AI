@@ -8,68 +8,68 @@
       "created": 1792740249.16547
     },
     {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3167,
-      "created": 1792759719.9274087
-    },
-    {
       "symbol": "XSPCX/USDT",
       "signal": "SHORT",
       "entry": 147.7,
       "created": 1792759719.9274101
     },
     {
-      "symbol": "HYPE/USDT",
-      "signal": "SHORT",
-      "entry": 77.785,
-      "created": 1792759719.9274108
-    },
-    {
-      "symbol": "AVAX/USDT",
-      "signal": "SHORT",
-      "entry": 9.149,
-      "created": 1792759719.9274116
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2402.56,
-      "created": 1792759719.927412
-    },
-    {
-      "symbol": "IRYS/USDT",
-      "signal": "LONG",
-      "entry": 0.04164,
-      "created": 1792759719.927413
-    },
-    {
-      "symbol": "LTC/USDT",
-      "signal": "SHORT",
-      "entry": 58.78,
-      "created": 1792759719.9274135
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "SHORT",
-      "entry": 147.75,
-      "created": 1792759719.9274158
-    },
-    {
-      "symbol": "CT/USDT",
-      "signal": "SHORT",
-      "entry": 0.20832,
-      "created": 1792759719.927417
-    },
-    {
       "symbol": "FIL/USDT",
       "signal": "SHORT",
       "entry": 0.9881,
       "created": 1792759719.9274175
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.3106,
+      "created": 1792777735.7406957
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.07987,
+      "created": 1792777735.740697
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 3998.2,
+      "created": 1792777735.7406974
+    },
+    {
+      "symbol": "CT/USDT",
+      "signal": "SHORT",
+      "entry": 0.20463,
+      "created": 1792777735.7406976
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 104.48,
+      "created": 1792777735.7406979
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 81596.9,
+      "created": 1792777735.740698
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 3.2876,
+      "created": 1792777735.7406983
+    },
+    {
+      "symbol": "IRYS/USDT",
+      "signal": "LONG",
+      "entry": 0.13797,
+      "created": 1792777735.7407
     }
   ],
-  "total": 2115,
-  "hits": 929,
+  "total": 2123,
+  "hits": 932,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -862,6 +862,70 @@
       "created": 1792740249.1654751,
       "hit": false,
       "resolved_at": 1792759719.9266105
+    },
+    {
+      "id": "XRP/USDT|SHORT|1792759719.9274087",
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "created": 1792759719.9274087,
+      "hit": true,
+      "resolved_at": 1792777735.7402782
+    },
+    {
+      "id": "HYPE/USDT|SHORT|1792759719.9274108",
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "created": 1792759719.9274108,
+      "hit": false,
+      "resolved_at": 1792777735.7402782
+    },
+    {
+      "id": "AVAX/USDT|SHORT|1792759719.9274116",
+      "symbol": "AVAX/USDT",
+      "signal": "SHORT",
+      "created": 1792759719.9274116,
+      "hit": false,
+      "resolved_at": 1792777735.7402782
+    },
+    {
+      "id": "ETH/USDT|SHORT|1792759719.927412",
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "created": 1792759719.927412,
+      "hit": false,
+      "resolved_at": 1792777735.7402782
+    },
+    {
+      "id": "IRYS/USDT|LONG|1792759719.927413",
+      "symbol": "IRYS/USDT",
+      "signal": "LONG",
+      "created": 1792759719.927413,
+      "hit": true,
+      "resolved_at": 1792777735.7402782
+    },
+    {
+      "id": "LTC/USDT|SHORT|1792759719.9274135",
+      "symbol": "LTC/USDT",
+      "signal": "SHORT",
+      "created": 1792759719.9274135,
+      "hit": false,
+      "resolved_at": 1792777735.7402782
+    },
+    {
+      "id": "AAVE/USDT|SHORT|1792759719.9274158",
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "created": 1792759719.9274158,
+      "hit": false,
+      "resolved_at": 1792777735.7402782
+    },
+    {
+      "id": "CT/USDT|SHORT|1792759719.927417",
+      "symbol": "CT/USDT",
+      "signal": "SHORT",
+      "created": 1792759719.927417,
+      "hit": true,
+      "resolved_at": 1792777735.7402782
     }
   ]
 }
