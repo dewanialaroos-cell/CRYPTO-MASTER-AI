@@ -66,6 +66,30 @@
       "signal": "SHORT",
       "entry": 3995.0,
       "created": 1792847578.490255
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.0264,
+      "created": 1792859934.0382252
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 1140.18,
+      "created": 1792859934.0382268
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 79677.5,
+      "created": 1792859934.0382285
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "SHORT",
+      "entry": 4.386,
+      "created": 1792859934.0382292
     }
   ],
   "total": 2159,
