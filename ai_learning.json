@@ -2,40 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 3.0893,
-      "created": 1792831635.6887887
-    },
-    {
       "symbol": "XAUT/USDT",
       "signal": "SHORT",
       "entry": 3995.0,
       "created": 1792847578.490255
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "SHORT",
-      "entry": 1.0264,
-      "created": 1792859934.0382252
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 1140.18,
-      "created": 1792859934.0382268
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 79677.5,
-      "created": 1792859934.0382285
-    },
-    {
-      "symbol": "NEAR/USDT",
-      "signal": "SHORT",
-      "entry": 4.386,
-      "created": 1792859934.0382292
     },
     {
       "symbol": "TRUMP/USDT",
@@ -90,9 +60,27 @@
       "signal": "SHORT",
       "entry": 0.4655,
       "created": 1792868679.9608965
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 1.0378,
+      "created": 1792877942.0329857
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "SHORT",
+      "entry": 4.911e-06,
+      "created": 1792877942.0329864
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "SHORT",
+      "entry": 4.433,
+      "created": 1792877942.032989
     }
   ],
-  "total": 2168,
+  "total": 2172,
   "hits": 960,
   "resolved": [
     {
@@ -1310,6 +1298,38 @@
       "created": 1792847578.4902546,
       "hit": true,
       "resolved_at": 1792868679.9600937
+    },
+    {
+      "id": "DOT/USDT|SHORT|1792859934.0382252",
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "created": 1792859934.0382252,
+      "hit": false,
+      "resolved_at": 1792877942.032489
+    },
+    {
+      "id": "ZEC/USDT|SHORT|1792859934.0382268",
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "created": 1792859934.0382268,
+      "hit": false,
+      "resolved_at": 1792877942.032489
+    },
+    {
+      "id": "BTC/USDT|SHORT|1792859934.0382285",
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "created": 1792859934.0382285,
+      "hit": false,
+      "resolved_at": 1792877942.032489
+    },
+    {
+      "id": "NEAR/USDT|SHORT|1792859934.0382292",
+      "symbol": "NEAR/USDT",
+      "signal": "SHORT",
+      "created": 1792859934.0382292,
+      "hit": false,
+      "resolved_at": 1792877942.032489
     }
   ]
 }
