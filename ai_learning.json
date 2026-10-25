@@ -14,30 +14,6 @@
       "created": 1792932234.3974867
     },
     {
-      "symbol": "WLD/USDT",
-      "signal": "SHORT",
-      "entry": 0.4565,
-      "created": 1792947178.1857646
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.07713,
-      "created": 1792947178.185766
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2347.14,
-      "created": 1792947178.1857667
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 101.53,
-      "created": 1792947178.1857672
-    },
-    {
       "symbol": "BTC/USDT",
       "signal": "SHORT",
       "entry": 80550.5,
@@ -54,10 +30,34 @@
       "signal": "SHORT",
       "entry": 1.3,
       "created": 1792956643.5243697
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2336.56,
+      "created": 1792965713.7040045
+    },
+    {
+      "symbol": "CT/USDT",
+      "signal": "SHORT",
+      "entry": 0.16768,
+      "created": 1792965713.7040057
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.0769,
+      "created": 1792965713.704006
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 0.9197,
+      "created": 1792965713.7040064
     }
   ],
-  "total": 2202,
-  "hits": 968,
+  "total": 2206,
+  "hits": 972,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -1546,6 +1546,38 @@
       "created": 1792932234.3974874,
       "hit": false,
       "resolved_at": 1792947178.1849022
+    },
+    {
+      "id": "WLD/USDT|SHORT|1792947178.1857646",
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "created": 1792947178.1857646,
+      "hit": true,
+      "resolved_at": 1792965713.7035613
+    },
+    {
+      "id": "DOGE/USDT|SHORT|1792947178.185766",
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "created": 1792947178.185766,
+      "hit": true,
+      "resolved_at": 1792965713.7035613
+    },
+    {
+      "id": "ETH/USDT|SHORT|1792947178.1857667",
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "created": 1792947178.1857667,
+      "hit": true,
+      "resolved_at": 1792965713.7035613
+    },
+    {
+      "id": "SOL/USDT|SHORT|1792947178.1857672",
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "created": 1792947178.1857672,
+      "hit": true,
+      "resolved_at": 1792965713.7035613
     }
   ]
 }
