@@ -14,24 +14,6 @@
       "created": 1792932234.3974867
     },
     {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 80550.5,
-      "created": 1792956643.5243666
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "SHORT",
-      "entry": 1.035,
-      "created": 1792956643.524369
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.3,
-      "created": 1792956643.5243697
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
       "entry": 2336.56,
@@ -54,10 +36,46 @@
       "signal": "SHORT",
       "entry": 0.9197,
       "created": 1792965713.7040064
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.2963,
+      "created": 1792974342.8184059
+    },
+    {
+      "symbol": "GRAM/USDT",
+      "signal": "SHORT",
+      "entry": 1.25,
+      "created": 1792974342.8184068
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "entry": 0.4504,
+      "created": 1792974342.8184078
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 80122.8,
+      "created": 1792974342.8184083
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 101.41,
+      "created": 1792974342.81841
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "entry": 136.05,
+      "created": 1792974342.8184106
     }
   ],
-  "total": 2206,
-  "hits": 972,
+  "total": 2209,
+  "hits": 975,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -1578,6 +1596,30 @@
       "created": 1792947178.1857672,
       "hit": true,
       "resolved_at": 1792965713.7035613
+    },
+    {
+      "id": "BTC/USDT|SHORT|1792956643.5243666",
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "created": 1792956643.5243666,
+      "hit": true,
+      "resolved_at": 1792974342.8178878
+    },
+    {
+      "id": "DOT/USDT|SHORT|1792956643.524369",
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "created": 1792956643.524369,
+      "hit": true,
+      "resolved_at": 1792974342.8178878
+    },
+    {
+      "id": "XRP/USDT|SHORT|1792956643.5243697",
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "created": 1792956643.5243697,
+      "hit": true,
+      "resolved_at": 1792974342.8178878
     }
   ]
 }
