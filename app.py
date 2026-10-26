@@ -473,6 +473,18 @@ def dispatch_github_scan(run_id, user_id):
 def scan_queue_worker():
     """Claim one durable job at a time; use GitHub Actions when configured."""
     in_flight = set()
+    # A Render restart kills local subprocesses. Re-queue interrupted local jobs
+    # once at process startup instead of leaving their database status stuck forever.
+    if not github_actions_enabled():
+        try:
+            with db() as con:
+                con.execute(
+                    "UPDATE scan_runs SET status='queued',started_at=?,finished_at=NULL,error=NULL "
+                    "WHERE status IN ('claimed','running')",
+                    (utc_now(),),
+                )
+        except Exception:
+            app.logger.exception("Could not recover interrupted local scans")
     while True:
         try:
             if github_actions_enabled():
@@ -919,7 +931,8 @@ def status():
         return jsonify({"status": "idle", "results": []})
     return jsonify({"run_id": last["id"], "status": last["status"], "started_at": last["started_at"],
                     "finished_at": last["finished_at"], "results": json.loads(last["top_coins_json"] or "[]"),
-                    "error": last["error"]})
+                    "error": last["error"],
+                    "runner_mode": "github_actions" if github_actions_enabled() else "render_local"})
 
 
 @app.post("/api/run")
