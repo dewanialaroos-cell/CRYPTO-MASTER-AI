@@ -169,13 +169,41 @@
     function fmt(v){if(v===null||v===undefined||v==="")return "—";const n=Number(v);return Number.isFinite(n)?n.toLocaleString(undefined,{maximumFractionDigits:n<1?8:4}):"—";}
     function setStatus(status, detail, bad=false){$("status-title").textContent=status;$("status-detail").textContent=detail;$("status-dot").className="status-dot"+(status==="AI scan running…"?" running":bad?" failed":"");$("run-scan").disabled=status==="AI scan running…";}
     async function refreshStatus(){
-      try {const s=await api("/api/status"); if(["queued","claimed","running"].includes(s.status)){setStatus("AI scan running…",s.status==="queued"||s.status==="claimed"?"Your scan is queued and will start as capacity becomes available.":"Fetching exchange data and analysing market candidates.");if(!polling)polling=setInterval(refreshStatus,4000);}
-        else {if(polling){clearInterval(polling);polling=null;} if(s.status==="completed"){setStatus("Scan complete","Ranked candidates from your latest scan.");$("last-run").textContent=s.finished_at?new Date(s.finished_at).toLocaleString():"Just now";renderResults(s.results||[]);}
-        else if(s.status==="failed"){setStatus("Scan failed",s.error||"Scanner encountered an error.",true);renderResults([]);}
-        else setStatus("Ready to scan","Start a scan to find current candidates.");}
+      try {
+        const s=await api("/api/status");
+        const active=["queued","claimed","dispatched","running"].includes(s.status);
+        if(active){
+          let detail;
+          if(s.status==="queued"||s.status==="claimed") detail="Your scan is safely queued and will start automatically.";
+          else if(s.status==="dispatched") detail="GitHub Actions has been requested; waiting for the workflow runner.";
+          else if(s.runner_mode==="render_local") detail="Scan is running on the web server. Connect GitHub Actions to keep scans running independently of page/server restarts.";
+          else detail="GitHub Actions is scanning. You can refresh or leave this page; results will be saved automatically.";
+          setStatus("AI scan running…",detail);
+          if(!polling)polling=setInterval(refreshStatus,4000);
+        } else {
+          if(polling){clearInterval(polling);polling=null;}
+          if(s.status==="completed"){
+            setStatus("Scan complete","Ranked candidates from your latest scan.");
+            $("last-run").textContent=s.finished_at?new Date(s.finished_at).toLocaleString():"Just now";
+            renderResults(s.results||[]);
+          } else if(s.status==="failed"){
+            setStatus("Scan failed",s.error||"Scanner encountered an error.",true);
+            renderResults([]);
+          } else {
+            setStatus("Ready to scan","Start a scan to find current candidates.");
+          }
+        }
       }catch(e){setStatus("Connection issue",e.message,true);}
     }
-    $("run-scan").onclick=async()=>{try{if(!csrf){const m=await api("/api/me");csrf=m.csrf||"";}const s=await api("/api/run",{method:"POST",body:JSON.stringify({csrf})});setStatus("AI scan running…","Fetching exchange data and analysing market candidates.");if(!polling)polling=setInterval(refreshStatus,4000);}catch(e){setStatus("Could not start scan",e.message,true);}};
+    $("run-scan").onclick=async()=>{
+      try{
+        if(!csrf){const m=await api("/api/me");csrf=m.csrf||"";}
+        const s=await api("/api/run",{method:"POST",body:JSON.stringify({csrf})});
+        setStatus("AI scan running…","Your scan request has been saved. Checking progress…");
+        await refreshStatus();
+        if(!polling)polling=setInterval(refreshStatus,4000);
+      }catch(e){setStatus("Could not start scan",e.message,true);}
+    };
     firebase.auth().onAuthStateChanged(async user=>{
       if(!user){csrf="";showAuth();return;}
       try{const m=await api("/api/me");if(m.authenticated){csrf=m.csrf||"";showDashboard(m.email||user.email);}else{await firebase.auth().signOut();showAuth();message("Server-side Firebase verification is not configured yet. Please contact the app administrator.",true);}}
