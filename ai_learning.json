@@ -4,30 +4,30 @@
     {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
-      "entry": 2330.87,
-      "created": 1793035569.5747974
+      "entry": 2314.56,
+      "created": 1793051335.0613737
     },
     {
       "symbol": "LIT/USDT",
       "signal": "SHORT",
-      "entry": 3.115,
-      "created": 1793035569.5747983
+      "entry": 3.0106,
+      "created": 1793051335.061375
     },
     {
       "symbol": "DOT/USDT",
       "signal": "SHORT",
-      "entry": 1.0156,
-      "created": 1793035569.574799
+      "entry": 1.0091,
+      "created": 1793051335.0613759
     },
     {
-      "symbol": "ENA/USDT",
-      "signal": "LONG",
-      "entry": 0.21151,
-      "created": 1793035569.5747995
+      "symbol": "NEAR/USDT",
+      "signal": "SHORT",
+      "entry": 4.478,
+      "created": 1793051335.0613763
     }
   ],
-  "total": 2237,
-  "hits": 987,
+  "total": 2241,
+  "hits": 990,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -1796,6 +1796,38 @@
       "created": 1793013044.0522342,
       "hit": false,
       "resolved_at": 1793035569.574011
+    },
+    {
+      "id": "ETH/USDT|SHORT|1793035569.5747974",
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "created": 1793035569.5747974,
+      "hit": true,
+      "resolved_at": 1793051335.060492
+    },
+    {
+      "id": "LIT/USDT|SHORT|1793035569.5747983",
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "created": 1793035569.5747983,
+      "hit": true,
+      "resolved_at": 1793051335.060492
+    },
+    {
+      "id": "DOT/USDT|SHORT|1793035569.574799",
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "created": 1793035569.574799,
+      "hit": true,
+      "resolved_at": 1793051335.060492
+    },
+    {
+      "id": "ENA/USDT|LONG|1793035569.5747995",
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "created": 1793035569.5747995,
+      "hit": false,
+      "resolved_at": 1793051335.060492
     }
   ]
 }
