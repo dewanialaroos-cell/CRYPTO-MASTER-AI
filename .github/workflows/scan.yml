@@ -1,8 +1,16 @@
-name: Crypto Master AI Scanner V9.1
+name: Crypto Master AI Scanner V9.2
 
 on:
   workflow_dispatch:
-
+    inputs:
+      run_id:
+        description: "Website scan job ID (leave blank for a manual repository scan)"
+        required: false
+        type: string
+      user_id:
+        description: "Website user ID (provided by the authenticated backend)"
+        required: false
+        type: string
   schedule:
     - cron: "*/15 * * * *"
 
@@ -15,13 +23,9 @@ concurrency:
 
 jobs:
   scan:
-
     runs-on: ubuntu-latest
-
     timeout-minutes: 14
-
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -38,30 +42,106 @@ jobs:
           pip install -r requirements.txt
 
       - name: Check Scanner syntax
-        run: |
-          python -m py_compile Scanner.py
+        run: python -m py_compile Scanner.py
 
-      - name: Run Crypto Master AI V9.1
+      - name: Load per-scan learning snapshot from website
+        if: ${{ inputs.run_id != '' }}
+        env:
+          RUN_ID: ${{ inputs.run_id }}
+          USER_ID: ${{ inputs.user_id }}
+          CALLBACK_URL: https://crypto-master-ai.onrender.com
+          CALLBACK_SECRET: ${{ secrets.CRYPTO_SCAN_CALLBACK_SECRET }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.parse, urllib.request
+          from pathlib import Path
+          query = urllib.parse.urlencode({"run_id": os.environ["RUN_ID"], "user_id": os.environ["USER_ID"]})
+          req = urllib.request.Request(
+              os.environ["CALLBACK_URL"] + "/api/github-scan-input?" + query,
+              headers={"X-Crypto-Scan-Secret": os.environ["CALLBACK_SECRET"]},
+          )
+          with urllib.request.urlopen(req, timeout=30) as response:
+              data = json.loads(response.read().decode("utf-8"))
+          payload = data["learning_payload"]
+          json.loads(payload)
+          Path("ai_learning.json").write_text(payload, encoding="utf-8")
+          Path(".scan_base_learning.json").write_text(payload, encoding="utf-8")
+          print("Loaded canonical learning snapshot for scan", os.environ["RUN_ID"])
+          PY
+
+      - name: Run Crypto Master AI V9.2
+        id: scan
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python Scanner.py
+
+      - name: Return scan status and results to website
+        if: ${{ always() && inputs.run_id != '' }}
+        env:
+          RUN_ID: ${{ inputs.run_id }}
+          USER_ID: ${{ inputs.user_id }}
+          CALLBACK_URL: https://crypto-master-ai.onrender.com
+          CALLBACK_SECRET: ${{ secrets.CRYPTO_SCAN_CALLBACK_SECRET }}
+          SCAN_OUTCOME: ${{ steps.scan.outcome }}
         run: |
-          python Scanner.py
+          python - <<'PY'
+          import json, os, time, urllib.request
+          from pathlib import Path
+          run_id = os.environ.get("RUN_ID", "")
+          user_id = os.environ.get("USER_ID", "")
+          outcome = os.environ.get("SCAN_OUTCOME", "failure")
+          payload = {"run_id": run_id, "user_id": user_id}
+          if outcome == "success":
+              csv_path = Path("crypto_scan_results.csv")
+              learning_path = Path("ai_learning.json")
+              base_path = Path(".scan_base_learning.json")
+              if not csv_path.exists() or not learning_path.exists() or not base_path.exists():
+                  payload.update(status="failed", error="Scanner did not produce required result/learning files.")
+              else:
+                  payload.update(
+                      status="completed",
+                      results_csv=csv_path.read_text(encoding="utf-8-sig"),
+                      learning_payload=learning_path.read_text(encoding="utf-8"),
+                      base_learning_payload=base_path.read_text(encoding="utf-8"),
+                  )
+          else:
+              payload.update(status="failed", error="GitHub Actions scanner failed; inspect this workflow run's logs.")
+          body = json.dumps(payload).encode("utf-8")
+          req = urllib.request.Request(
+              os.environ["CALLBACK_URL"] + "/api/github-scan-callback",
+              data=body,
+              headers={"Content-Type": "application/json", "X-Crypto-Scan-Secret": os.environ["CALLBACK_SECRET"]},
+              method="POST",
+          )
+          last_error = None
+          for attempt in range(3):
+              try:
+                  with urllib.request.urlopen(req, timeout=45) as response:
+                      print("Website callback:", response.status, response.read().decode("utf-8")[:500])
+                  break
+              except Exception as exc:
+                  last_error = exc
+                  print("Callback attempt", attempt + 1, "failed:", repr(exc))
+                  time.sleep(2 * (attempt + 1))
+          else:
+              raise last_error
+          PY
 
       - name: Show scan files
+        if: ${{ success() && inputs.run_id == '' }}
         run: |
           echo "===== Scan Results ====="
           ls -lh crypto_scan_results.csv || true
           echo "===== Learning File ====="
           ls -lh ai_learning.json || true
 
-      - name: Save scan results and learning
+      - name: Save scheduled/manual repository scan results
+        if: ${{ success() && inputs.run_id == '' }}
         run: |
           git config user.name "Crypto Master AI"
           git config user.email "actions@github.com"
-
           git add crypto_scan_results.csv ai_learning.json
-
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
