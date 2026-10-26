@@ -7,6 +7,7 @@ import hashlib
 import smtplib
 import sqlite3
 import subprocess
+import requests
 import sys
 import tempfile
 import threading
@@ -35,7 +36,7 @@ app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
     SESSION_COOKIE_SAMESITE="Lax",
     SESSION_COOKIE_SECURE=os.environ.get("COOKIE_SECURE", "1") != "0",
-    MAX_CONTENT_LENGTH=16 * 1024,
+    MAX_CONTENT_LENGTH=8 * 1024 * 1024,
 )
 STATE_LOCK = threading.Lock()
 LEARNING_MERGE_LOCK = threading.Lock()
@@ -441,11 +442,91 @@ QUEUE_START_LOCK = threading.Lock()
 QUEUE_WORKER_STARTED = False
 
 
+def github_actions_enabled():
+    """Use GitHub Actions only when both required Render secrets are configured."""
+    return bool(
+        os.environ.get("GITHUB_ACTIONS_TOKEN", "").strip()
+        and os.environ.get("CRYPTO_SCAN_CALLBACK_SECRET", "").strip()
+    )
+
+
+def dispatch_github_scan(run_id, user_id):
+    token = os.environ["GITHUB_ACTIONS_TOKEN"].strip()
+    repository = os.environ.get("GITHUB_REPOSITORY", "dewanialaroos-cell/CRYPTO-MASTER-AI").strip()
+    ref = os.environ.get("GITHUB_ACTIONS_REF", "main").strip()
+    url = f"https://api.github.com/repos/{repository}/actions/workflows/scan.yml/dispatches"
+    response = requests.post(
+        url,
+        headers={
+            "Accept": "application/vnd.github+json",
+            "Authorization": f"Bearer {token}",
+            "X-GitHub-Api-Version": "2022-11-28",
+        },
+        json={"ref": ref, "inputs": {"run_id": str(run_id), "user_id": str(user_id)}},
+        timeout=20,
+    )
+    if response.status_code != 204:
+        detail = (response.text or "GitHub workflow dispatch failed")[:1000]
+        raise RuntimeError(f"GitHub Actions dispatch failed (HTTP {response.status_code}): {detail}")
+
+
 def scan_queue_worker():
-    """Claim durable scan jobs and execute several isolated scans concurrently."""
+    """Claim one durable job at a time; use GitHub Actions when configured."""
     in_flight = set()
     while True:
         try:
+            if github_actions_enabled():
+                # A dispatched/running GitHub workflow owns the single scan slot.
+                with db() as con:
+                    active = con.execute(
+                        "SELECT id,started_at,status FROM scan_runs "
+                        "WHERE status IN ('dispatched','running') ORDER BY id ASC LIMIT 1"
+                    ).fetchone()
+                    if active:
+                        try:
+                            started = datetime.fromisoformat(str(active["started_at"]).replace("Z", "+00:00"))
+                            if started.tzinfo is None:
+                                started = started.replace(tzinfo=timezone.utc)
+                            stale = datetime.now(timezone.utc) - started > timedelta(minutes=20)
+                        except Exception:
+                            stale = False
+                        if stale:
+                            con.execute(
+                                "UPDATE scan_runs SET status='failed',finished_at=?,error=? "
+                                "WHERE id=? AND status IN ('dispatched','running')",
+                                (utc_now(), "GitHub Actions did not report scan completion within 20 minutes. Check the workflow logs.", active["id"]),
+                            )
+                        else:
+                            time.sleep(0.5)
+                            continue
+
+                    queued = con.execute(
+                        "SELECT id,user_id FROM scan_runs WHERE status='queued' ORDER BY id ASC LIMIT 1"
+                    ).fetchone()
+                    if not queued:
+                        time.sleep(0.5)
+                        continue
+                    claimed = con.execute(
+                        "UPDATE scan_runs SET status='dispatched',started_at=?,finished_at=NULL,error=NULL "
+                        "WHERE id=? AND status='queued'",
+                        (utc_now(), queued["id"]),
+                    )
+                    if claimed.rowcount != 1:
+                        continue
+                    job = (queued["id"], queued["user_id"])
+                try:
+                    dispatch_github_scan(job[0], job[1])
+                    app.logger.info("Dispatched GitHub Actions scan run_id=%s user_id=%s", job[0], job[1])
+                except Exception as exc:
+                    with db() as con:
+                        con.execute(
+                            "UPDATE scan_runs SET status='failed',finished_at=?,error=? WHERE id=? AND status='dispatched'",
+                            (utc_now(), str(exc)[-2500:], job[0]),
+                        )
+                    app.logger.exception("Could not dispatch GitHub Actions scan run_id=%s", job[0])
+                continue
+
+            # Safe local fallback remains available until Render secrets are configured.
             in_flight = {future for future in in_flight if not future.done()}
             slots = SCAN_CONCURRENCY - len(in_flight)
             for _ in range(max(0, slots)):
@@ -466,7 +547,6 @@ def scan_queue_worker():
         except Exception:
             app.logger.exception("Scan queue worker error")
         time.sleep(0.5)
-
 
 def ensure_scan_queue_worker():
     global QUEUE_WORKER_STARTED
@@ -727,6 +807,107 @@ def logout():
     return jsonify({"ok": True})
 
 
+def verify_scan_callback_secret():
+    expected = os.environ.get("CRYPTO_SCAN_CALLBACK_SECRET", "").strip()
+    supplied = request.headers.get("X-Crypto-Scan-Secret", "").strip()
+    return bool(expected and supplied and secrets.compare_digest(expected, supplied))
+
+
+@app.get("/api/github-scan-input")
+def github_scan_input():
+    """Private workflow endpoint: provide the canonical learning snapshot for one queued job."""
+    if not verify_scan_callback_secret():
+        return jsonify({"error": "Unauthorized"}), 401
+    try:
+        run_id = int(request.args.get("run_id", ""))
+        user_id = int(request.args.get("user_id", ""))
+    except (TypeError, ValueError):
+        return jsonify({"error": "Invalid scan identifiers"}), 400
+    with db() as con:
+        run = con.execute(
+            "SELECT id,status FROM scan_runs WHERE id=? AND user_id=?",
+            (run_id, user_id),
+        ).fetchone()
+        if not run or run["status"] not in ("dispatched", "running"):
+            return jsonify({"error": "Scan job is not active"}), 409
+        con.execute(
+            "UPDATE scan_runs SET status='running' WHERE id=? AND user_id=? AND status IN ('dispatched','running')",
+            (run_id, user_id),
+        )
+    try:
+        return jsonify({"run_id": run_id, "user_id": user_id, "learning_payload": get_shared_learning_payload()})
+    except Exception:
+        app.logger.exception("Could not prepare learning payload for GitHub scan %s", run_id)
+        return jsonify({"error": "Could not prepare scanner input"}), 500
+
+
+@app.post("/api/github-scan-callback")
+def github_scan_callback():
+    """Receive an authenticated completion payload from the GitHub Actions scanner."""
+    if not verify_scan_callback_secret():
+        return jsonify({"error": "Unauthorized"}), 401
+    payload = request.get_json(silent=True) or {}
+    try:
+        run_id = int(payload.get("run_id"))
+        user_id = int(payload.get("user_id"))
+    except (TypeError, ValueError):
+        return jsonify({"error": "Invalid scan identifiers"}), 400
+    status_value = str(payload.get("status", "")).lower()
+    with db() as con:
+        run = con.execute(
+            "SELECT id,status FROM scan_runs WHERE id=? AND user_id=?",
+            (run_id, user_id),
+        ).fetchone()
+        if not run:
+            return jsonify({"error": "Scan job not found"}), 404
+        if run["status"] in ("completed", "failed"):
+            return jsonify({"ok": True, "status": run["status"], "duplicate": True})
+        if status_value != "completed":
+            error_message = str(payload.get("error") or "GitHub Actions scanner failed")[-2500:]
+            with db() as con2:
+                con2.execute(
+                    "UPDATE scan_runs SET status='failed',finished_at=?,error=? "
+                    "WHERE id=? AND user_id=? AND status IN ('dispatched','running')",
+                    (utc_now(), error_message, run_id, user_id),
+                )
+            return jsonify({"ok": True, "status": "failed"})
+
+    results_csv = payload.get("results_csv")
+    learning_payload = payload.get("learning_payload")
+    base_learning_payload = payload.get("base_learning_payload")
+    if not isinstance(results_csv, str) or not isinstance(learning_payload, str) or not isinstance(base_learning_payload, str):
+        return jsonify({"error": "Scan callback is missing result or learning data"}), 400
+    try:
+        json.loads(learning_payload)
+        json.loads(base_learning_payload)
+        with tempfile.TemporaryDirectory(prefix=f"crypto-gh-scan-{run_id}-") as temp_name:
+            temp_dir = Path(temp_name)
+            learning_path = temp_dir / "ai_learning.json"
+            results_path = temp_dir / "crypto_scan_results.csv"
+            learning_path.write_text(learning_payload, encoding="utf-8")
+            results_path.write_text(results_csv, encoding="utf-8")
+            persist_shared_learning_and_observations(
+                run_id, user_id, learning_path, results_path, base_learning_payload
+            )
+            results = parse_top_coins(results_path)
+        with db() as con:
+            con.execute(
+                "UPDATE scan_runs SET status='completed',finished_at=?,top_coins_json=?,error=NULL "
+                "WHERE id=? AND user_id=? AND status IN ('dispatched','running')",
+                (utc_now(), json.dumps(results), run_id, user_id),
+            )
+        app.logger.info("GitHub Actions scan completed run_id=%s results=%s", run_id, len(results))
+        return jsonify({"ok": True, "status": "completed", "result_count": len(results)})
+    except Exception as exc:
+        app.logger.exception("Could not persist GitHub Actions scan run_id=%s", run_id)
+        with db() as con:
+            con.execute(
+                "UPDATE scan_runs SET status='failed',finished_at=?,error=? WHERE id=? AND user_id=?",
+                (utc_now(), str(exc)[-2500:], run_id, user_id),
+            )
+        return jsonify({"error": "Could not save scan results"}), 500
+
+
 @app.get("/api/status")
 @login_required
 def status():
@@ -753,9 +934,14 @@ def run_scan():
     started = utc_now()
     try:
         with db() as con:
-            # Keep exactly one scan history per account. Starting a fresh scan
-            # removes that user's previous coin rows and run records, never another
-            # user's data. Results for the new run are saved as it completes.
+            active = con.execute(
+                "SELECT id,status FROM scan_runs WHERE user_id=? AND status IN ('queued','claimed','dispatched','running') "
+                "ORDER BY id DESC LIMIT 1",
+                (user["id"],),
+            ).fetchone()
+            if active:
+                return jsonify({"ok": True, "run_id": active["id"], "status": active["status"], "already_running": True})
+            # Keep one current scan per account. Never delete an active run.
             con.execute("DELETE FROM scan_observations WHERE user_id=?", (user["id"],))
             con.execute("DELETE FROM scan_runs WHERE user_id=?", (user["id"],))
             cur = con.execute("INSERT INTO scan_runs(user_id,status,started_at,top_coins_json) VALUES(?,?,?,?) RETURNING id",
