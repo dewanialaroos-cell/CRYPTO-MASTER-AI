@@ -4,18 +4,18 @@
     {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
-      "entry": 1275.33,
-      "created": 1793105038.3901355
+      "entry": 1301.92,
+      "created": 1793125352.6300998
     },
     {
-      "symbol": "ENA/USDT",
+      "symbol": "BNB/USDT",
       "signal": "LONG",
-      "entry": 0.20826,
-      "created": 1793105038.3901365
+      "entry": 749.97,
+      "created": 1793125352.630101
     }
   ],
-  "total": 2259,
-  "hits": 998,
+  "total": 2261,
+  "hits": 1000,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -1960,6 +1960,22 @@
       "created": 1793083346.21242,
       "hit": false,
       "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "ZEC/USDT|LONG|1793105038.3901355",
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "created": 1793105038.3901355,
+      "hit": true,
+      "resolved_at": 1793125352.6292338
+    },
+    {
+      "id": "ENA/USDT|LONG|1793105038.3901365",
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "created": 1793105038.3901365,
+      "hit": true,
+      "resolved_at": 1793125352.6292338
     }
   ]
 }
