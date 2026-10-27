@@ -2,20 +2,14 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1301.92,
-      "created": 1793125352.6300998
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 749.97,
-      "created": 1793125352.630101
+      "symbol": "ARB/USDT",
+      "signal": "SHORT",
+      "entry": 0.1666,
+      "created": 1793140324.6096892
     }
   ],
-  "total": 2261,
-  "hits": 1000,
+  "total": 2263,
+  "hits": 1001,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -1976,6 +1970,22 @@
       "created": 1793105038.3901365,
       "hit": true,
       "resolved_at": 1793125352.6292338
+    },
+    {
+      "id": "ZEC/USDT|LONG|1793125352.6300998",
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "created": 1793125352.6300998,
+      "hit": true,
+      "resolved_at": 1793140324.6089656
+    },
+    {
+      "id": "BNB/USDT|LONG|1793125352.630101",
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "created": 1793125352.630101,
+      "hit": false,
+      "resolved_at": 1793140324.6089656
     }
   ]
 }
