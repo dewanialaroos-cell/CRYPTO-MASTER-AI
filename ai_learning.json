@@ -24,6 +24,36 @@
       "signal": "SHORT",
       "entry": 4.478,
       "created": 1793051335.0613763
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 100.89,
+      "created": 1793063961.8424678
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 11.374,
+      "created": 1793063961.8424692
+    },
+    {
+      "symbol": "XCRCL/USDT",
+      "signal": "SHORT",
+      "entry": 80.52,
+      "created": 1793063961.84247
+    },
+    {
+      "symbol": "TAO/USDT",
+      "signal": "SHORT",
+      "entry": 250.71,
+      "created": 1793063961.8424704
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "SHORT",
+      "entry": 0.05188,
+      "created": 1793063961.8424711
     }
   ],
   "total": 2241,
