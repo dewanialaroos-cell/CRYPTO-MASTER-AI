@@ -2,73 +2,19 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 3.0106,
-      "created": 1793051335.061375
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1275.33,
+      "created": 1793105038.3901355
     },
     {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2309.91,
-      "created": 1793083346.2124124
-    },
-    {
-      "symbol": "BTC/USDT",
-      "signal": "SHORT",
-      "entry": 79760.4,
-      "created": 1793083346.212414
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 99.95,
-      "created": 1793083346.2124145
-    },
-    {
-      "symbol": "AAVE/USDT",
-      "signal": "SHORT",
-      "entry": 131.57,
-      "created": 1793083346.212415
-    },
-    {
-      "symbol": "SHIB/USDT",
-      "signal": "SHORT",
-      "entry": 4.835e-06,
-      "created": 1793083346.2124157
-    },
-    {
-      "symbol": "WIF/USDT",
-      "signal": "SHORT",
-      "entry": 0.1792,
-      "created": 1793083346.2124162
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "SHORT",
-      "entry": 0.9076,
-      "created": 1793083346.2124166
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "SHORT",
-      "entry": 0.4363,
-      "created": 1793083346.2124186
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "SHORT",
-      "entry": 1.685,
-      "created": 1793083346.2124193
-    },
-    {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "SHORT",
-      "entry": 1.0228,
-      "created": 1793083346.21242
+      "symbol": "ENA/USDT",
+      "signal": "LONG",
+      "entry": 0.20826,
+      "created": 1793105038.3901365
     }
   ],
-  "total": 2249,
+  "total": 2259,
   "hits": 998,
   "resolved": [
     {
@@ -1934,6 +1880,86 @@
       "created": 1793063961.8424711,
       "hit": true,
       "resolved_at": 1793083346.2116525
+    },
+    {
+      "id": "ETH/USDT|SHORT|1793083346.2124124",
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.2124124,
+      "hit": false,
+      "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "BTC/USDT|SHORT|1793083346.212414",
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.212414,
+      "hit": false,
+      "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "SOL/USDT|SHORT|1793083346.2124145",
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.2124145,
+      "hit": false,
+      "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "AAVE/USDT|SHORT|1793083346.212415",
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.212415,
+      "hit": false,
+      "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "SHIB/USDT|SHORT|1793083346.2124157",
+      "symbol": "SHIB/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.2124157,
+      "hit": false,
+      "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "WIF/USDT|SHORT|1793083346.2124162",
+      "symbol": "WIF/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.2124162,
+      "hit": false,
+      "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "SUI/USDT|SHORT|1793083346.2124166",
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.2124166,
+      "hit": false,
+      "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "WLD/USDT|SHORT|1793083346.2124186",
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.2124186,
+      "hit": false,
+      "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "TRUMP/USDT|SHORT|1793083346.2124193",
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.2124193,
+      "hit": false,
+      "resolved_at": 1793105038.389314
+    },
+    {
+      "id": "PIEVERSE/USDT|SHORT|1793083346.21242",
+      "symbol": "PIEVERSE/USDT",
+      "signal": "SHORT",
+      "created": 1793083346.21242,
+      "hit": false,
+      "resolved_at": 1793105038.389314
     }
   ]
 }
