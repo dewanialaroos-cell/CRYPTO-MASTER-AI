@@ -6,6 +6,18 @@
       "signal": "SHORT",
       "entry": 0.1666,
       "created": 1793140324.6096892
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 4.8431e-06,
+      "created": 1793151609.2940457
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1309.5,
+      "created": 1793151609.2940466
     }
   ],
   "total": 2263,
