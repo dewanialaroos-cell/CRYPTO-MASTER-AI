@@ -26,44 +26,32 @@
       "created": 1793197637.328223
     },
     {
-      "symbol": "PEPE/USDT",
-      "signal": "LONG",
-      "entry": 4.952e-06,
-      "created": 1793216944.887546
-    },
-    {
-      "symbol": "HYPE/USDT",
-      "signal": "LONG",
-      "entry": 81.483,
-      "created": 1793216944.8875475
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1294.04,
-      "created": 1793216944.8875482
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 753.0,
-      "created": 1793216944.8875487
-    },
-    {
       "symbol": "PONS/USDT",
       "signal": "LONG",
       "entry": 0.289,
       "created": 1793216944.8875492
     },
     {
-      "symbol": "NEAR/USDT",
+      "symbol": "ZEC/USDT",
       "signal": "LONG",
-      "entry": 4.729,
-      "created": 1793216944.8875496
+      "entry": 1310.34,
+      "created": 1793231889.9838133
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "entry": 5.0359e-06,
+      "created": 1793231889.9838145
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "entry": 759.7,
+      "created": 1793231889.9838152
     }
   ],
-  "total": 2276,
-  "hits": 1003,
+  "total": 2281,
+  "hits": 1007,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -2144,6 +2132,46 @@
       "created": 1793197637.3282235,
       "hit": false,
       "resolved_at": 1793216944.8866074
+    },
+    {
+      "id": "PEPE/USDT|LONG|1793216944.887546",
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "created": 1793216944.887546,
+      "hit": true,
+      "resolved_at": 1793231889.9832382
+    },
+    {
+      "id": "HYPE/USDT|LONG|1793216944.8875475",
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "created": 1793216944.8875475,
+      "hit": false,
+      "resolved_at": 1793231889.9832382
+    },
+    {
+      "id": "ZEC/USDT|LONG|1793216944.8875482",
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "created": 1793216944.8875482,
+      "hit": true,
+      "resolved_at": 1793231889.9832382
+    },
+    {
+      "id": "BNB/USDT|LONG|1793216944.8875487",
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "created": 1793216944.8875487,
+      "hit": true,
+      "resolved_at": 1793231889.9832382
+    },
+    {
+      "id": "NEAR/USDT|LONG|1793216944.8875496",
+      "symbol": "NEAR/USDT",
+      "signal": "LONG",
+      "created": 1793216944.8875496,
+      "hit": true,
+      "resolved_at": 1793231889.9832382
     }
   ]
 }
