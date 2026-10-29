@@ -2,56 +2,26 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XCRCL/USDT",
-      "signal": "SHORT",
-      "entry": 79.61,
-      "created": 1793197637.3282166
-    },
-    {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 2.9388,
-      "created": 1793197637.3282177
-    },
-    {
-      "symbol": "FIL/USDT",
-      "signal": "SHORT",
-      "entry": 0.8787,
-      "created": 1793197637.3282185
-    },
-    {
-      "symbol": "CT/USDT",
-      "signal": "SHORT",
-      "entry": 0.15862,
-      "created": 1793197637.328223
-    },
-    {
       "symbol": "PONS/USDT",
       "signal": "LONG",
       "entry": 0.289,
       "created": 1793216944.8875492
     },
     {
-      "symbol": "ZEC/USDT",
+      "symbol": "BNB/USDT",
       "signal": "LONG",
-      "entry": 1310.34,
-      "created": 1793231889.9838133
+      "entry": 758.72,
+      "created": 1793251029.0203109
     },
     {
       "symbol": "PEPE/USDT",
       "signal": "LONG",
-      "entry": 5.0359e-06,
-      "created": 1793231889.9838145
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "LONG",
-      "entry": 759.7,
-      "created": 1793231889.9838152
+      "entry": 5.1457e-06,
+      "created": 1793251029.0203123
     }
   ],
-  "total": 2281,
-  "hits": 1007,
+  "total": 2285,
+  "hits": 1008,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -2172,6 +2142,38 @@
       "created": 1793216944.8875496,
       "hit": true,
       "resolved_at": 1793231889.9832382
+    },
+    {
+      "id": "XCRCL/USDT|SHORT|1793197637.3282166",
+      "symbol": "XCRCL/USDT",
+      "signal": "SHORT",
+      "created": 1793197637.3282166,
+      "hit": false,
+      "resolved_at": 1793251029.0196075
+    },
+    {
+      "id": "ZEC/USDT|LONG|1793231889.9838133",
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "created": 1793231889.9838133,
+      "hit": false,
+      "resolved_at": 1793251029.0196075
+    },
+    {
+      "id": "PEPE/USDT|LONG|1793231889.9838145",
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "created": 1793231889.9838145,
+      "hit": true,
+      "resolved_at": 1793251029.0196075
+    },
+    {
+      "id": "BNB/USDT|LONG|1793231889.9838152",
+      "symbol": "BNB/USDT",
+      "signal": "LONG",
+      "created": 1793231889.9838152,
+      "hit": false,
+      "resolved_at": 1793251029.0196075
     }
   ]
 }
