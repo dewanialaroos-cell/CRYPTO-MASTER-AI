@@ -66,6 +66,30 @@
       "signal": "SHORT",
       "entry": 0.8835,
       "created": 1793311415.5259662
+    },
+    {
+      "symbol": "ARB/USDT",
+      "signal": "SHORT",
+      "entry": 0.15345,
+      "created": 1793325581.8279738
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "SHORT",
+      "entry": 0.6768,
+      "created": 1793325581.8279748
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "entry": 0.3734,
+      "created": 1793325581.8279767
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 2.7465,
+      "created": 1793325581.8279772
     }
   ],
   "total": 2302,
