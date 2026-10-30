@@ -48,6 +48,24 @@
       "signal": "SHORT",
       "entry": 73.02,
       "created": 1793390547.0339217
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 90.064,
+      "created": 1793404247.7602675
+    },
+    {
+      "symbol": "BCH/USDT",
+      "signal": "LONG",
+      "entry": 294.45,
+      "created": 1793404247.7602684
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "SHORT",
+      "entry": 4.303,
+      "created": 1793404247.7602694
     }
   ],
   "total": 2333,
