@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "SHIB/USDT",
-      "signal": "SHORT",
-      "entry": 4.745e-06,
-      "created": 1793422095.6534436
-    },
-    {
       "symbol": "XCRCL/USDT",
       "signal": "SHORT",
       "entry": 73.2,
@@ -48,6 +42,42 @@
       "signal": "SHORT",
       "entry": 1.2525,
       "created": 1793462423.1319754
+    },
+    {
+      "symbol": "SEI/USDT",
+      "signal": "SHORT",
+      "entry": 0.04777,
+      "created": 1793476517.2736392
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 95.79,
+      "created": 1793476517.273641
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.1891,
+      "created": 1793476517.273642
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.07581,
+      "created": 1793476517.2736433
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 3876.1,
+      "created": 1793476517.2736437
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 0.8984,
+      "created": 1793476517.2736459
     }
   ],
   "total": 2361,
