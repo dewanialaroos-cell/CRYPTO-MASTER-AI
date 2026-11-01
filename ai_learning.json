@@ -8,42 +8,6 @@
       "created": 1793462423.1319726
     },
     {
-      "symbol": "SEI/USDT",
-      "signal": "SHORT",
-      "entry": 0.04777,
-      "created": 1793476517.2736392
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 95.79,
-      "created": 1793476517.273641
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "SHORT",
-      "entry": 0.1891,
-      "created": 1793476517.273642
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.07581,
-      "created": 1793476517.2736433
-    },
-    {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 3876.1,
-      "created": 1793476517.2736437
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "SHORT",
-      "entry": 0.8984,
-      "created": 1793476517.2736459
-    },
-    {
       "symbol": "TRX/USDT",
       "signal": "SHORT",
       "entry": 0.30154,
@@ -60,10 +24,34 @@
       "signal": "SHORT",
       "entry": 1.2513,
       "created": 1793488391.0082908
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 95.56,
+      "created": 1793499507.3367362
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.18811,
+      "created": 1793499507.3367383
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2268.11,
+      "created": 1793499507.336739
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.07571,
+      "created": 1793499507.3367395
     }
   ],
-  "total": 2366,
-  "hits": 1036,
+  "total": 2372,
+  "hits": 1039,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -2864,6 +2852,54 @@
       "created": 1793462423.1319754,
       "hit": false,
       "resolved_at": 1793488391.0075912
+    },
+    {
+      "id": "SEI/USDT|SHORT|1793476517.2736392",
+      "symbol": "SEI/USDT",
+      "signal": "SHORT",
+      "created": 1793476517.2736392,
+      "hit": false,
+      "resolved_at": 1793499507.3358877
+    },
+    {
+      "id": "SOL/USDT|SHORT|1793476517.273641",
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "created": 1793476517.273641,
+      "hit": true,
+      "resolved_at": 1793499507.3358877
+    },
+    {
+      "id": "ENA/USDT|SHORT|1793476517.273642",
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "created": 1793476517.273642,
+      "hit": true,
+      "resolved_at": 1793499507.3358877
+    },
+    {
+      "id": "DOGE/USDT|SHORT|1793476517.2736433",
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "created": 1793476517.2736433,
+      "hit": true,
+      "resolved_at": 1793499507.3358877
+    },
+    {
+      "id": "XAUT/USDT|SHORT|1793476517.2736437",
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "created": 1793476517.2736437,
+      "hit": false,
+      "resolved_at": 1793499507.3358877
+    },
+    {
+      "id": "SUI/USDT|SHORT|1793476517.2736459",
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "created": 1793476517.2736459,
+      "hit": false,
+      "resolved_at": 1793499507.3358877
     }
   ]
 }
