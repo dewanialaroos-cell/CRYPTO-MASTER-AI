@@ -60,6 +60,18 @@
       "signal": "SHORT",
       "entry": 11.413,
       "created": 1793565943.2366855
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "LONG",
+      "entry": 88.042,
+      "created": 1793577486.1105251
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "entry": 600.25,
+      "created": 1793577486.1105266
     }
   ],
   "total": 2399,
