@@ -2,26 +2,68 @@
   "version": 1,
   "pending": [
     {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2249.74,
+      "created": 1793659206.2979174
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.0741,
+      "created": 1793659206.2979188
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 0.8711,
+      "created": 1793659206.2979193
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "entry": 1.603,
+      "created": 1793659206.2979198
+    },
+    {
       "symbol": "BNB/USDT",
       "signal": "SHORT",
-      "entry": 705.98,
-      "created": 1793627357.9419615
+      "entry": 697.83,
+      "created": 1793659206.2979202
     },
     {
-      "symbol": "ZEC/USDT",
-      "signal": "LONG",
-      "entry": 1269.48,
-      "created": 1793627357.9419622
-    },
-    {
-      "symbol": "WLD/USDT",
+      "symbol": "BTC/USDT",
       "signal": "SHORT",
-      "entry": 0.3853,
-      "created": 1793627357.9419625
+      "entry": 76811.8,
+      "created": 1793659206.2979207
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 91.8,
+      "created": 1793659206.2979212
+    },
+    {
+      "symbol": "XCRCL/USDT",
+      "signal": "SHORT",
+      "entry": 72.07,
+      "created": 1793659206.2979233
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "SHORT",
+      "entry": 8.369,
+      "created": 1793659206.297924
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "entry": 126.68,
+      "created": 1793659206.2979248
     }
   ],
-  "total": 2418,
-  "hits": 1063,
+  "total": 2421,
+  "hits": 1065,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -3238,6 +3280,30 @@
       "created": 1793597523.0780365,
       "hit": false,
       "resolved_at": 1793627357.941401
+    },
+    {
+      "id": "BNB/USDT|SHORT|1793627357.9419615",
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "created": 1793627357.9419615,
+      "hit": true,
+      "resolved_at": 1793659206.2971385
+    },
+    {
+      "id": "ZEC/USDT|LONG|1793627357.9419622",
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "created": 1793627357.9419622,
+      "hit": false,
+      "resolved_at": 1793659206.2971385
+    },
+    {
+      "id": "WLD/USDT|SHORT|1793627357.9419625",
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "created": 1793627357.9419625,
+      "hit": true,
+      "resolved_at": 1793659206.2971385
     }
   ]
 }
