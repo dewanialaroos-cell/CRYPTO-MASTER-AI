@@ -2,31 +2,31 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XQQQ/USDT",
-      "signal": "SHORT",
-      "entry": 684.55,
-      "created": 1793705128.0812843
-    },
-    {
-      "symbol": "TRUMP/USDT",
-      "signal": "SHORT",
-      "entry": 1.579,
-      "created": 1793731150.6930804
-    },
-    {
       "symbol": "XGOOGL/USDT",
       "signal": "SHORT",
       "entry": 280.62,
       "created": 1793731150.6930814
     },
     {
-      "symbol": "BNB/USDT",
+      "symbol": "TRUMP/USDT",
       "signal": "SHORT",
-      "entry": 697.79,
-      "created": 1793731150.6930819
+      "entry": 1.595,
+      "created": 1793749478.9178689
+    },
+    {
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "entry": 1.1659,
+      "created": 1793749478.9178698
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "LONG",
+      "entry": 7.274,
+      "created": 1793749478.9178705
     }
   ],
-  "total": 2447,
+  "total": 2449,
   "hits": 1076,
   "resolved": [
     {
@@ -3476,6 +3476,22 @@
       "created": 1793705128.0812888,
       "hit": false,
       "resolved_at": 1793731150.6923838
+    },
+    {
+      "id": "TRUMP/USDT|SHORT|1793731150.6930804",
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "created": 1793731150.6930804,
+      "hit": false,
+      "resolved_at": 1793749478.9173086
+    },
+    {
+      "id": "BNB/USDT|SHORT|1793731150.6930819",
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "created": 1793731150.6930819,
+      "hit": false,
+      "resolved_at": 1793749478.9173086
     }
   ]
 }
