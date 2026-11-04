@@ -24,6 +24,60 @@
       "signal": "LONG",
       "entry": 7.274,
       "created": 1793749478.9178705
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.07306,
+      "created": 1793762548.5337567
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "entry": 0.3663,
+      "created": 1793762548.5337574
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.16864,
+      "created": 1793762548.5337582
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 76041.8,
+      "created": 1793762548.5337584
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 90.7,
+      "created": 1793762548.5337589
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2239.33,
+      "created": 1793762548.5337596
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 0.8668,
+      "created": 1793762548.533761
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "SHORT",
+      "entry": 8.354,
+      "created": 1793762548.5337617
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "entry": 124.56,
+      "created": 1793762548.5337625
     }
   ],
   "total": 2449,
