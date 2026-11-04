@@ -2,32 +2,26 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TRUMP/USDT",
-      "signal": "SHORT",
-      "entry": 1.486,
-      "created": 1793791629.8094244
-    },
-    {
-      "symbol": "LIT/USDT",
-      "signal": "LONG",
-      "entry": 3.4921,
-      "created": 1793791629.8094258
-    },
-    {
       "symbol": "TRX/USDT",
       "signal": "SHORT",
       "entry": 0.32035,
       "created": 1793791629.8094265
     },
     {
-      "symbol": "PEPE/USDT",
+      "symbol": "PIEVERSE/USDT",
       "signal": "LONG",
-      "entry": 5.0991e-06,
-      "created": 1793791629.809427
+      "entry": 1.1825,
+      "created": 1793818067.3361392
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "LONG",
+      "entry": 3.4565,
+      "created": 1793818067.33614
     }
   ],
-  "total": 2461,
-  "hits": 1078,
+  "total": 2464,
+  "hits": 1079,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -3588,6 +3582,30 @@
       "created": 1793762548.5337625,
       "hit": false,
       "resolved_at": 1793791629.8082967
+    },
+    {
+      "id": "TRUMP/USDT|SHORT|1793791629.8094244",
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "created": 1793791629.8094244,
+      "hit": true,
+      "resolved_at": 1793818067.3356283
+    },
+    {
+      "id": "LIT/USDT|LONG|1793791629.8094258",
+      "symbol": "LIT/USDT",
+      "signal": "LONG",
+      "created": 1793791629.8094258,
+      "hit": false,
+      "resolved_at": 1793818067.3356283
+    },
+    {
+      "id": "PEPE/USDT|LONG|1793791629.809427",
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "created": 1793791629.809427,
+      "hit": false,
+      "resolved_at": 1793818067.3356283
     }
   ]
 }
