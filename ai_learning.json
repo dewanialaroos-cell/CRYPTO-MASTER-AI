@@ -2,38 +2,38 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TRUMP/USDT",
-      "signal": "SHORT",
-      "entry": 1.254,
-      "created": 1793837722.6102188
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "entry": 1.2544,
+      "created": 1793861961.1291606
     },
     {
       "symbol": "ZEC/USDT",
       "signal": "LONG",
-      "entry": 1301.38,
-      "created": 1793837722.61022
+      "entry": 1326.04,
+      "created": 1793861961.1291628
     },
     {
-      "symbol": "XMR/USDT",
+      "symbol": "UNI/USDT",
       "signal": "LONG",
-      "entry": 641.05,
-      "created": 1793837722.610221
+      "entry": 7.661,
+      "created": 1793861961.129164
     },
     {
-      "symbol": "PEPE/USDT",
+      "symbol": "LIT/USDT",
       "signal": "LONG",
-      "entry": 4.996e-06,
-      "created": 1793837722.6102214
+      "entry": 3.4894,
+      "created": 1793861961.129166
     },
     {
-      "symbol": "PIEVERSE/USDT",
+      "symbol": "XAUT/USDT",
       "signal": "LONG",
-      "entry": 1.1937,
-      "created": 1793837722.6102216
+      "entry": 4109.7,
+      "created": 1793861961.1291678
     }
   ],
-  "total": 2466,
-  "hits": 1080,
+  "total": 2471,
+  "hits": 1082,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -3634,6 +3634,46 @@
       "created": 1793818067.33614,
       "hit": false,
       "resolved_at": 1793837722.609507
+    },
+    {
+      "id": "TRUMP/USDT|SHORT|1793837722.6102188",
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "created": 1793837722.6102188,
+      "hit": false,
+      "resolved_at": 1793861961.128164
+    },
+    {
+      "id": "ZEC/USDT|LONG|1793837722.61022",
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "created": 1793837722.61022,
+      "hit": true,
+      "resolved_at": 1793861961.128164
+    },
+    {
+      "id": "XMR/USDT|LONG|1793837722.610221",
+      "symbol": "XMR/USDT",
+      "signal": "LONG",
+      "created": 1793837722.610221,
+      "hit": false,
+      "resolved_at": 1793861961.128164
+    },
+    {
+      "id": "PEPE/USDT|LONG|1793837722.6102214",
+      "symbol": "PEPE/USDT",
+      "signal": "LONG",
+      "created": 1793837722.6102214,
+      "hit": false,
+      "resolved_at": 1793861961.128164
+    },
+    {
+      "id": "PIEVERSE/USDT|LONG|1793837722.6102216",
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "created": 1793837722.6102216,
+      "hit": true,
+      "resolved_at": 1793861961.128164
     }
   ]
 }
