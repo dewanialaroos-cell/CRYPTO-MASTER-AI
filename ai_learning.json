@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XSNDK/USDT",
-      "signal": "SHORT",
-      "entry": 837.4,
-      "created": 1794040334.361869
-    },
-    {
       "symbol": "DOGE/USDT",
       "signal": "SHORT",
       "entry": 0.07183,
@@ -66,6 +60,18 @@
       "signal": "SHORT",
       "entry": 8.219,
       "created": 1794079743.1008255
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 10.801,
+      "created": 1794092294.7457585
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 695.55,
+      "created": 1794092294.74576
     }
   ],
   "total": 2559,
