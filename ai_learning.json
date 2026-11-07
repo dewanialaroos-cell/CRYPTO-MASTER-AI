@@ -60,6 +60,36 @@
       "signal": "SHORT",
       "entry": 2239.78,
       "created": 1794002394.0610266
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "SHORT",
+      "entry": 0.6827,
+      "created": 1794016137.0635588
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.07261,
+      "created": 1794016137.06356
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "LONG",
+      "entry": 1351.49,
+      "created": 1794016137.0635605
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "SHORT",
+      "entry": 52.43,
+      "created": 1794016137.063562
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 10.846,
+      "created": 1794016137.0635629
     }
   ],
   "total": 2525,
