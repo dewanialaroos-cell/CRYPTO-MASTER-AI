@@ -60,6 +60,36 @@
       "signal": "SHORT",
       "entry": 89.43,
       "created": 1794169510.0728867
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 6.774,
+      "created": 1794182236.1555183
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "SHORT",
+      "entry": 0.003529,
+      "created": 1794182236.15552
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 683.4,
+      "created": 1794182236.1555202
+    },
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 74695.1,
+      "created": 1794182236.155521
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 74.376,
+      "created": 1794182236.1555233
     }
   ],
   "total": 2597,
