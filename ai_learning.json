@@ -2,46 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.07116,
-      "created": 1794169510.0728788
-    },
-    {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2228.38,
-      "created": 1794169510.0728803
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "SHORT",
-      "entry": 0.846,
-      "created": 1794169510.0728812
-    },
-    {
       "symbol": "DOT/USDT",
       "signal": "SHORT",
       "entry": 0.8883,
       "created": 1794169510.0728817
-    },
-    {
-      "symbol": "WLD/USDT",
-      "signal": "SHORT",
-      "entry": 0.3211,
-      "created": 1794169510.0728822
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.1519,
-      "created": 1794169510.0728827
-    },
-    {
-      "symbol": "ENA/USDT",
-      "signal": "SHORT",
-      "entry": 0.1535,
-      "created": 1794169510.0728831
     },
     {
       "symbol": "GRAM/USDT",
@@ -50,50 +14,68 @@
       "created": 1794169510.0728853
     },
     {
-      "symbol": "LINK/USDT",
+      "symbol": "BTC/USDT",
       "signal": "SHORT",
-      "entry": 10.655,
-      "created": 1794169510.072886
+      "entry": 74557.7,
+      "created": 1794202279.9253325
     },
     {
-      "symbol": "SOL/USDT",
+      "symbol": "DOGE/USDT",
       "signal": "SHORT",
-      "entry": 89.43,
-      "created": 1794169510.0728867
+      "entry": 0.0694,
+      "created": 1794202279.9253333
     },
     {
       "symbol": "UNI/USDT",
       "signal": "SHORT",
-      "entry": 6.774,
-      "created": 1794182236.1555183
-    },
-    {
-      "symbol": "PUMP/USDT",
-      "signal": "SHORT",
-      "entry": 0.003529,
-      "created": 1794182236.15552
+      "entry": 6.836,
+      "created": 1794202279.9253335
     },
     {
       "symbol": "BNB/USDT",
       "signal": "SHORT",
-      "entry": 683.4,
-      "created": 1794182236.1555202
+      "entry": 686.33,
+      "created": 1794202279.9253337
     },
     {
-      "symbol": "BTC/USDT",
+      "symbol": "SUI/USDT",
       "signal": "SHORT",
-      "entry": 74695.1,
-      "created": 1794182236.155521
+      "entry": 0.8271,
+      "created": 1794202279.925334
     },
     {
-      "symbol": "HYPE/USDT",
+      "symbol": "XRP/USDT",
       "signal": "SHORT",
-      "entry": 74.376,
-      "created": 1794182236.1555233
+      "entry": 1.1025,
+      "created": 1794202279.9253342
+    },
+    {
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "entry": 0.319,
+      "created": 1794202279.9253345
+    },
+    {
+      "symbol": "PUMP/USDT",
+      "signal": "SHORT",
+      "entry": 0.00355,
+      "created": 1794202279.9253361
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 87.11,
+      "created": 1794202279.9253364
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 10.495,
+      "created": 1794202279.9253368
     }
   ],
-  "total": 2597,
-  "hits": 1141,
+  "total": 2610,
+  "hits": 1151,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -4742,6 +4724,110 @@
       "created": 1794153655.9606209,
       "hit": true,
       "resolved_at": 1794169510.0716193
+    },
+    {
+      "id": "DOGE/USDT|SHORT|1794169510.0728788",
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "created": 1794169510.0728788,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "ETH/USDT|SHORT|1794169510.0728803",
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "created": 1794169510.0728803,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "SUI/USDT|SHORT|1794169510.0728812",
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "created": 1794169510.0728812,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "WLD/USDT|SHORT|1794169510.0728822",
+      "symbol": "WLD/USDT",
+      "signal": "SHORT",
+      "created": 1794169510.0728822,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "XRP/USDT|SHORT|1794169510.0728827",
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "created": 1794169510.0728827,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "ENA/USDT|SHORT|1794169510.0728831",
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "created": 1794169510.0728831,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "LINK/USDT|SHORT|1794169510.072886",
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "created": 1794169510.072886,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "SOL/USDT|SHORT|1794169510.0728867",
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "created": 1794169510.0728867,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "UNI/USDT|SHORT|1794182236.1555183",
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "created": 1794182236.1555183,
+      "hit": false,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "PUMP/USDT|SHORT|1794182236.15552",
+      "symbol": "PUMP/USDT",
+      "signal": "SHORT",
+      "created": 1794182236.15552,
+      "hit": false,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "BNB/USDT|SHORT|1794182236.1555202",
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "created": 1794182236.1555202,
+      "hit": false,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "BTC/USDT|SHORT|1794182236.155521",
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "created": 1794182236.155521,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
+    },
+    {
+      "id": "HYPE/USDT|SHORT|1794182236.1555233",
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "created": 1794182236.1555233,
+      "hit": true,
+      "resolved_at": 1794202279.9245665
     }
   ]
 }
