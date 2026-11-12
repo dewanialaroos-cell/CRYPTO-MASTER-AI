@@ -2,68 +2,74 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ETH/USDT",
-      "signal": "SHORT",
-      "entry": 2053.02,
-      "created": 1794453470.0347328
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 1.0476,
-      "created": 1794453470.034734
-    },
-    {
       "symbol": "SHIB/USDT",
       "signal": "SHORT",
       "entry": 4.356e-06,
       "created": 1794453470.0347345
     },
     {
-      "symbol": "XNVDA/USDT",
+      "symbol": "BTC/USDT",
       "signal": "SHORT",
-      "entry": 162.17,
-      "created": 1794453470.0347352
+      "entry": 72941.2,
+      "created": 1794483822.9864464
     },
     {
       "symbol": "BNB/USDT",
       "signal": "SHORT",
-      "entry": 678.98,
-      "created": 1794453470.0347354
+      "entry": 664.98,
+      "created": 1794483822.9864485
     },
     {
-      "symbol": "UNI/USDT",
+      "symbol": "NEAR/USDT",
       "signal": "SHORT",
-      "entry": 6.221,
-      "created": 1794453470.0347362
+      "entry": 3.445,
+      "created": 1794483822.9864495
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 2027.25,
+      "created": 1794483822.9864502
+    },
+    {
+      "symbol": "XCRCL/USDT",
+      "signal": "SHORT",
+      "entry": 64.82,
+      "created": 1794483822.9864511
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 1.0389,
+      "created": 1794483822.9864516
     },
     {
       "symbol": "SUI/USDT",
       "signal": "SHORT",
-      "entry": 0.8193,
-      "created": 1794453470.0347369
+      "entry": 0.8059,
+      "created": 1794483822.9864528
     },
     {
-      "symbol": "ENA/USDT",
+      "symbol": "TAO/USDT",
       "signal": "SHORT",
-      "entry": 0.14417,
-      "created": 1794453470.034739
+      "entry": 211.38,
+      "created": 1794483822.9864554
     },
     {
-      "symbol": "SKYAI/USDT",
-      "signal": "LONG",
-      "entry": 0.03696,
-      "created": 1794453470.03474
-    },
-    {
-      "symbol": "ARB/USDT",
+      "symbol": "XNVDA/USDT",
       "signal": "SHORT",
-      "entry": 0.1509,
-      "created": 1794453470.0347404
+      "entry": 161.77,
+      "created": 1794483822.9864566
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "signal": "SHORT",
+      "entry": 113.94,
+      "created": 1794483822.9864573
     }
   ],
-  "total": 2693,
-  "hits": 1190,
+  "total": 2702,
+  "hits": 1198,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -5480,6 +5486,78 @@
       "created": 1794435557.3335197,
       "hit": true,
       "resolved_at": 1794453470.0336823
+    },
+    {
+      "id": "ETH/USDT|SHORT|1794453470.0347328",
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "created": 1794453470.0347328,
+      "hit": true,
+      "resolved_at": 1794483822.9852479
+    },
+    {
+      "id": "XRP/USDT|SHORT|1794453470.034734",
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "created": 1794453470.034734,
+      "hit": true,
+      "resolved_at": 1794483822.9852479
+    },
+    {
+      "id": "XNVDA/USDT|SHORT|1794453470.0347352",
+      "symbol": "XNVDA/USDT",
+      "signal": "SHORT",
+      "created": 1794453470.0347352,
+      "hit": true,
+      "resolved_at": 1794483822.9852479
+    },
+    {
+      "id": "BNB/USDT|SHORT|1794453470.0347354",
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "created": 1794453470.0347354,
+      "hit": true,
+      "resolved_at": 1794483822.9852479
+    },
+    {
+      "id": "UNI/USDT|SHORT|1794453470.0347362",
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "created": 1794453470.0347362,
+      "hit": true,
+      "resolved_at": 1794483822.9852479
+    },
+    {
+      "id": "SUI/USDT|SHORT|1794453470.0347369",
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "created": 1794453470.0347369,
+      "hit": true,
+      "resolved_at": 1794483822.9852479
+    },
+    {
+      "id": "ENA/USDT|SHORT|1794453470.034739",
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "created": 1794453470.034739,
+      "hit": true,
+      "resolved_at": 1794483822.9852479
+    },
+    {
+      "id": "SKYAI/USDT|LONG|1794453470.03474",
+      "symbol": "SKYAI/USDT",
+      "signal": "LONG",
+      "created": 1794453470.03474,
+      "hit": false,
+      "resolved_at": 1794483822.9852479
+    },
+    {
+      "id": "ARB/USDT|SHORT|1794453470.0347404",
+      "symbol": "ARB/USDT",
+      "signal": "SHORT",
+      "created": 1794453470.0347404,
+      "hit": true,
+      "resolved_at": 1794483822.9852479
     }
   ]
 }
