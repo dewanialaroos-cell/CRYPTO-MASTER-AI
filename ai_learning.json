@@ -2,56 +2,68 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XMR/USDT",
+      "symbol": "XCRCL/USDT",
       "signal": "SHORT",
-      "entry": 526.51,
-      "created": 1794553774.684339
+      "entry": 61.03,
+      "created": 1794583578.4070044
     },
     {
-      "symbol": "XAUT/USDT",
+      "symbol": "XNVDA/USDT",
       "signal": "SHORT",
-      "entry": 3889.9,
-      "created": 1794553774.6843402
+      "entry": 160.61,
+      "created": 1794583578.4070058
     },
     {
       "symbol": "DOGE/USDT",
       "signal": "SHORT",
-      "entry": 0.06485,
-      "created": 1794553774.684341
-    },
-    {
-      "symbol": "BNB/USDT",
-      "signal": "SHORT",
-      "entry": 636.26,
-      "created": 1794553774.6843414
-    },
-    {
-      "symbol": "XCRCL/USDT",
-      "signal": "SHORT",
-      "entry": 63.11,
-      "created": 1794553774.6843417
-    },
-    {
-      "symbol": "SOL/USDT",
-      "signal": "SHORT",
-      "entry": 80.41,
-      "created": 1794553774.6843426
+      "entry": 0.06483,
+      "created": 1794583578.4070063
     },
     {
       "symbol": "XRP/USDT",
       "signal": "SHORT",
-      "entry": 1.0278,
-      "created": 1794553774.6843429
+      "entry": 1.022,
+      "created": 1794583578.4070067
     },
     {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
-      "entry": 1944.37,
-      "created": 1794553774.684345
+      "entry": 1929.28,
+      "created": 1794583578.4070072
+    },
+    {
+      "symbol": "UNI/USDT",
+      "signal": "SHORT",
+      "entry": 5.804,
+      "created": 1794583578.4070077
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 79.72,
+      "created": 1794583578.407008
+    },
+    {
+      "symbol": "ENA/USDT",
+      "signal": "SHORT",
+      "entry": 0.13588,
+      "created": 1794583578.4070098
+    },
+    {
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 531.18,
+      "created": 1794583578.4070106
+    },
+    {
+      "symbol": "SHIB/USDT",
+      "signal": "SHORT",
+      "entry": 4.27e-06,
+      "created": 1794583578.4070113
     }
   ],
-  "total": 2733,
-  "hits": 1219,
+  "total": 2741,
+  "hits": 1225,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -5788,6 +5800,70 @@
       "created": 1794529767.0908186,
       "hit": true,
       "resolved_at": 1794553774.6829076
+    },
+    {
+      "id": "XMR/USDT|SHORT|1794553774.684339",
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "created": 1794553774.684339,
+      "hit": false,
+      "resolved_at": 1794583578.40581
+    },
+    {
+      "id": "XAUT/USDT|SHORT|1794553774.6843402",
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "created": 1794553774.6843402,
+      "hit": true,
+      "resolved_at": 1794583578.40581
+    },
+    {
+      "id": "DOGE/USDT|SHORT|1794553774.684341",
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "created": 1794553774.684341,
+      "hit": false,
+      "resolved_at": 1794583578.40581
+    },
+    {
+      "id": "BNB/USDT|SHORT|1794553774.6843414",
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "created": 1794553774.6843414,
+      "hit": true,
+      "resolved_at": 1794583578.40581
+    },
+    {
+      "id": "XCRCL/USDT|SHORT|1794553774.6843417",
+      "symbol": "XCRCL/USDT",
+      "signal": "SHORT",
+      "created": 1794553774.6843417,
+      "hit": true,
+      "resolved_at": 1794583578.40581
+    },
+    {
+      "id": "SOL/USDT|SHORT|1794553774.6843426",
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "created": 1794553774.6843426,
+      "hit": true,
+      "resolved_at": 1794583578.40581
+    },
+    {
+      "id": "XRP/USDT|SHORT|1794553774.6843429",
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "created": 1794553774.6843429,
+      "hit": true,
+      "resolved_at": 1794583578.40581
+    },
+    {
+      "id": "ETH/USDT|SHORT|1794553774.684345",
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "created": 1794553774.684345,
+      "hit": true,
+      "resolved_at": 1794583578.40581
     }
   ]
 }
