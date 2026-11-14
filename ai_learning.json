@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XAUT/USDT",
-      "signal": "SHORT",
-      "entry": 3865.9,
-      "created": 1794646029.58009
-    },
-    {
       "symbol": "ETH/USDT",
       "signal": "SHORT",
       "entry": 1833.62,
@@ -66,10 +60,34 @@
       "signal": "SHORT",
       "entry": 3.921e-06,
       "created": 1794686892.2015407
+    },
+    {
+      "symbol": "ADA/USDT",
+      "signal": "SHORT",
+      "entry": 0.1477,
+      "created": 1794700655.170987
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "SHORT",
+      "entry": 0.5017,
+      "created": 1794700655.1709883
+    },
+    {
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "entry": 3801.7,
+      "created": 1794700655.1709888
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "entry": 0.942,
+      "created": 1794700655.1709893
     }
   ],
-  "total": 2789,
-  "hits": 1265,
+  "total": 2790,
+  "hits": 1266,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -6254,6 +6272,14 @@
       "created": 1794670870.0160499,
       "hit": true,
       "resolved_at": 1794686892.200173
+    },
+    {
+      "id": "XAUT/USDT|SHORT|1794646029.58009",
+      "symbol": "XAUT/USDT",
+      "signal": "SHORT",
+      "created": 1794646029.58009,
+      "hit": true,
+      "resolved_at": 1794700655.1703806
     }
   ]
 }
