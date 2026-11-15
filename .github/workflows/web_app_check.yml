@@ -1,5 +1,13 @@
 name: Crypto Master AI Web App Check
 on:
+  pull_request:
+    paths:
+      - 'app.py'
+      - 'templates/**'
+      - 'static/**'
+      - 'requirements.txt'
+      - 'Procfile'
+      - '.github/workflows/web_app_check.yml'
   push:
     paths:
       - 'app.py'
