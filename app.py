@@ -615,6 +615,17 @@ def sitemap_xml():
 def index():
     return render_template("index.html")
 
+@app.get("/offline")
+def offline_page():
+    return render_template("offline.html")
+
+@app.get("/service-worker.js")
+def service_worker():
+    response = app.send_static_file("service-worker.js")
+    response.headers["Service-Worker-Allowed"] = "/"
+    response.headers["Cache-Control"] = "no-cache"
+    return response
+
 @app.get("/about")
 def about_page():
     return render_template("info.html", page_title="About Crypto Master AI", page_label="ABOUT US", page_intro="An independent market-analysis workspace built to help users inspect crypto-market signals.", sections=[
