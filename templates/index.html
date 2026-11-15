@@ -12,6 +12,9 @@
   <meta property="og:url" content="https://crypto-master-ai.onrender.com/">
   <title>Crypto Master AI | Crypto Market Research & AI Scanner</title>
   <link rel="stylesheet" href="/static/app.css">
+  <link rel="manifest" href="/static/manifest.webmanifest">
+  <link rel="icon" href="/static/icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/icons/icon-192.svg">
   <style>
     .public-learning{max-width:1000px;margin:34px auto 48px;padding:30px;background:linear-gradient(145deg,#12171e,#0b0e12);border:1px solid #292f38;border-radius:18px}
     .public-learning h2{font-size:clamp(24px,4vw,34px);margin:0 0 14px;color:var(--gold2)}
@@ -25,7 +28,7 @@
 <body>
   <div class="ambient"></div>
   <main class="wrap">
-    <header class="topbar"><a class="brand" href="/"><span class="brandmark">CM</span><span>CRYPTO <b>MASTER AI</b><small>INTELLIGENCE TERMINAL</small></span></a><div id="header-user" class="header-user hidden"><span class="live-dot"></span><span id="user-email"></span><button id="logout" class="ghost small">Log out</button></div></header>
+    <header class="topbar"><a class="brand" href="/"><span class="brandmark">CM</span><span>CRYPTO <b>MASTER AI</b><small>INTELLIGENCE TERMINAL</small></span></a><div class="header-actions"><button id="install-app" class="ghost small install-app hidden" type="button">＋ Install App</button><div id="header-user" class="header-user hidden"><span class="live-dot"></span><span id="user-email"></span><button id="logout" class="ghost small">Log out</button></div></div></header>
     <section id="auth-view" class="auth-grid">
       <div class="hero"><div class="eyebrow"><span class="live-dot"></span> MULTI-MARKET SCANNER</div><h1>Market clarity.<br><em>AI precision.</em></h1><p>Run the existing Crypto Master AI scanner and review ranked LONG/SHORT candidates, confidence, stop-loss and take-profit levels.</p><div class="hero-stats"><div><b>24/7</b><span>Market access*</span></div><div><b>Multi</b><span>Exchange scan</span></div><div><b>V9.2</b><span>Scanner engine</span></div></div><small class="muted">*Availability depends on exchange/API connectivity.</small></div>
       <div class="auth-card"><div class="tabs"><button id="tab-login" class="tab active">Login</button><button id="tab-signup" class="tab">Create account</button></div><h2 id="auth-title">Welcome back</h2><p id="auth-subtitle" class="muted">Sign in to open your dashboard.</p><form id="auth-form"><label>Email address<input id="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></label><label>Password<input id="password" type="password" autocomplete="current-password" required minlength="10" maxlength="128" placeholder="At least 10 characters"></label><label id="confirm-label" class="hidden">Confirm password<input id="confirm-password" type="password" autocomplete="new-password" minlength="10" maxlength="128" placeholder="Enter password again"></label><button id="auth-submit" class="primary full" type="submit">Login <span>→</span></button></form><button id="forgot-password" class="ghost small" type="button">Forgot password?</button><p id="auth-message" class="message" role="status"></p><div class="secure-note">🔒 Passwords are stored as salted hashes, never as plain text.</div></div>
@@ -67,6 +70,26 @@
     <nav class="info-nav" aria-label="Website information" style="justify-content:center;border-top:0;margin-top:12px"><a href="/about">About</a><a href="/scanner-guide">Scanner Guide</a><a href="/risk-management">Risk Management</a><a href="/model-transparency">Model Transparency</a><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a></nav>
     <footer>CRYPTO MASTER AI <span>•</span> RESEARCH & MARKET ANALYSIS ONLY</footer>
   </main>
+  <script>
+  (() => {
+    let installPrompt = null;
+    const installButton = document.getElementById("install-app");
+    window.addEventListener("beforeinstallprompt", event => {
+      event.preventDefault(); installPrompt = event;
+      if (installButton) installButton.classList.remove("hidden");
+    });
+    if (installButton) installButton.addEventListener("click", async () => {
+      if (!installPrompt) return;
+      installPrompt.prompt();
+      await installPrompt.userChoice;
+      installPrompt = null; installButton.classList.add("hidden");
+    });
+    window.addEventListener("appinstalled", () => { if (installButton) installButton.classList.add("hidden"); });
+    if ("serviceWorker" in navigator && location.protocol === "https:") {
+      window.addEventListener("load", () => navigator.serviceWorker.register("/service-worker.js").catch(err => console.warn("PWA setup unavailable", err)));
+    }
+  })();
+  </script>
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
   <script>

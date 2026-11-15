@@ -64,3 +64,9 @@ input:focus{box-shadow:0 0 0 3px #d8b56d12}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
+
+/* Installable app controls */
+.header-actions{display:flex;align-items:center;gap:12px}
+.install-app{border-color:#8b713c;color:var(--gold2);white-space:nowrap}
+.install-app:hover{background:#d8b56d12;border-color:var(--gold)}
+@media(max-width:520px){.header-actions{gap:7px}.install-app{font-size:10px;padding:7px 8px}}
