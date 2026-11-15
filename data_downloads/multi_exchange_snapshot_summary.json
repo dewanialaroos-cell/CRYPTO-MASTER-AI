@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-11-15T08:00:04.577959+00:00",
+  "created_at": "2026-11-15T15:43:52.912869+00:00",
   "exchanges": {
     "binance": {
       "status": "unavailable",
@@ -43,9 +43,8 @@
       "failures": 0
     },
     "htx": {
-      "status": "queried",
-      "markets_ok": 6,
-      "failures": 0
+      "status": "unavailable",
+      "reason": "NetworkError: htx GET https://api.hbdm.vn/linear-swap-api/v1/swap_contract_info?business_type=all"
     },
     "bitstamp": {
       "status": "queried",
@@ -59,7 +58,7 @@
     }
   },
   "order_book_rows": 108,
-  "fundamentals_rows": 7992,
+  "fundamentals_rows": 8040,
   "note": "Public snapshots are current observations, not historical order-book or liquidation records.",
   "order_book_labeled_rows": 0
 }
