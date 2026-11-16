@@ -2,12 +2,6 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "TRX/USDT",
-      "signal": "SHORT",
-      "entry": 0.30694,
-      "created": 1794750177.1110427
-    },
-    {
       "symbol": "TRUMP/USDT",
       "signal": "SHORT",
       "entry": 0.944,
@@ -72,6 +66,24 @@
       "signal": "SHORT",
       "entry": 194.15,
       "created": 1794785498.1811569
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 66.845,
+      "created": 1794798138.272699
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 0.732,
+      "created": 1794798138.2727008
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "SHORT",
+      "entry": 45.17,
+      "created": 1794798138.2727015
     }
   ],
   "total": 2828,
