@@ -2,43 +2,43 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XNVDA/USDT",
-      "signal": "SHORT",
-      "entry": 128.69,
-      "created": 1795265096.4132512
-    },
-    {
       "symbol": "LIT/USDT",
       "signal": "SHORT",
       "entry": 2.3295,
       "created": 1795265096.4132526
     },
     {
-      "symbol": "BTC/USDT",
+      "symbol": "DOT/USDT",
       "signal": "SHORT",
-      "entry": 58968.6,
-      "created": 1795265096.4132533
-    },
-    {
-      "symbol": "TRX/USDT",
-      "signal": "SHORT",
-      "entry": 0.30322,
-      "created": 1795265096.4132538
+      "entry": 0.6537,
+      "created": 1795290683.4797487
     },
     {
       "symbol": "ASTER/USDT",
       "signal": "SHORT",
-      "entry": 0.4807,
-      "created": 1795265096.4132547
+      "entry": 0.4891,
+      "created": 1795290683.4797494
     },
     {
-      "symbol": "DOT/USDT",
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "entry": 3.3707,
+      "created": 1795290683.47975
+    },
+    {
+      "symbol": "SUI/USDT",
       "signal": "SHORT",
-      "entry": 0.649,
-      "created": 1795265096.4132555
+      "entry": 0.6475,
+      "created": 1795290683.4797502
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 3.3947e-06,
+      "created": 1795290683.4797504
     }
   ],
-  "total": 2975,
+  "total": 2980,
   "hits": 1369,
   "resolved": [
     {
@@ -7712,6 +7712,46 @@
       "created": 1795234430.1229732,
       "hit": false,
       "resolved_at": 1795265096.4116802
+    },
+    {
+      "id": "XNVDA/USDT|SHORT|1795265096.4132512",
+      "symbol": "XNVDA/USDT",
+      "signal": "SHORT",
+      "created": 1795265096.4132512,
+      "hit": false,
+      "resolved_at": 1795290683.479067
+    },
+    {
+      "id": "BTC/USDT|SHORT|1795265096.4132533",
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "created": 1795265096.4132533,
+      "hit": false,
+      "resolved_at": 1795290683.479067
+    },
+    {
+      "id": "TRX/USDT|SHORT|1795265096.4132538",
+      "symbol": "TRX/USDT",
+      "signal": "SHORT",
+      "created": 1795265096.4132538,
+      "hit": false,
+      "resolved_at": 1795290683.479067
+    },
+    {
+      "id": "ASTER/USDT|SHORT|1795265096.4132547",
+      "symbol": "ASTER/USDT",
+      "signal": "SHORT",
+      "created": 1795265096.4132547,
+      "hit": false,
+      "resolved_at": 1795290683.479067
+    },
+    {
+      "id": "DOT/USDT|SHORT|1795265096.4132555",
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "created": 1795265096.4132555,
+      "hit": false,
+      "resolved_at": 1795290683.479067
     }
   ]
 }
