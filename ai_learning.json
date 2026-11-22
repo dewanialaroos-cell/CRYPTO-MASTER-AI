@@ -2,44 +2,68 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 2.3295,
-      "created": 1795265096.4132526
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "SHORT",
-      "entry": 0.6537,
-      "created": 1795290683.4797487
-    },
-    {
       "symbol": "ASTER/USDT",
       "signal": "SHORT",
-      "entry": 0.4891,
-      "created": 1795290683.4797494
+      "entry": 0.4854,
+      "created": 1795306325.8288856
     },
     {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "LONG",
-      "entry": 3.3707,
-      "created": 1795290683.47975
-    },
-    {
-      "symbol": "SUI/USDT",
+      "symbol": "LIT/USDT",
       "signal": "SHORT",
-      "entry": 0.6475,
-      "created": 1795290683.4797502
+      "entry": 2.333,
+      "created": 1795306325.8288867
+    },
+    {
+      "symbol": "LTC/USDT",
+      "signal": "SHORT",
+      "entry": 39.74,
+      "created": 1795306325.8288872
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "SHORT",
+      "entry": 8.6,
+      "created": 1795306325.8288877
+    },
+    {
+      "symbol": "HYPE/USDT",
+      "signal": "SHORT",
+      "entry": 61.252,
+      "created": 1795306325.8288887
     },
     {
       "symbol": "PEPE/USDT",
       "signal": "SHORT",
-      "entry": 3.3947e-06,
-      "created": 1795290683.4797504
+      "entry": 3.4052e-06,
+      "created": 1795306325.8288891
+    },
+    {
+      "symbol": "NEAR/USDT",
+      "signal": "SHORT",
+      "entry": 2.884,
+      "created": 1795306325.8288896
+    },
+    {
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "entry": 3.4081,
+      "created": 1795306325.8288918
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 777.73,
+      "created": 1795306325.8288927
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 0.6542,
+      "created": 1795306325.8288937
     }
   ],
-  "total": 2980,
-  "hits": 1369,
+  "total": 2986,
+  "hits": 1371,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -7752,6 +7776,54 @@
       "created": 1795265096.4132555,
       "hit": false,
       "resolved_at": 1795290683.479067
+    },
+    {
+      "id": "LIT/USDT|SHORT|1795265096.4132526",
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "created": 1795265096.4132526,
+      "hit": false,
+      "resolved_at": 1795306325.8278928
+    },
+    {
+      "id": "DOT/USDT|SHORT|1795290683.4797487",
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "created": 1795290683.4797487,
+      "hit": false,
+      "resolved_at": 1795306325.8278928
+    },
+    {
+      "id": "ASTER/USDT|SHORT|1795290683.4797494",
+      "symbol": "ASTER/USDT",
+      "signal": "SHORT",
+      "created": 1795290683.4797494,
+      "hit": true,
+      "resolved_at": 1795306325.8278928
+    },
+    {
+      "id": "PIEVERSE/USDT|LONG|1795290683.47975",
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "created": 1795290683.47975,
+      "hit": true,
+      "resolved_at": 1795306325.8278928
+    },
+    {
+      "id": "SUI/USDT|SHORT|1795290683.4797502",
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "created": 1795290683.4797502,
+      "hit": false,
+      "resolved_at": 1795306325.8278928
+    },
+    {
+      "id": "PEPE/USDT|SHORT|1795290683.4797504",
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "created": 1795290683.4797504,
+      "hit": false,
+      "resolved_at": 1795306325.8278928
     }
   ]
 }
