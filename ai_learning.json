@@ -2,19 +2,13 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PEPE/USDT",
-      "signal": "SHORT",
-      "entry": 3.3942e-06,
-      "created": 1795360185.7471755
-    },
-    {
-      "symbol": "PIEVERSE/USDT",
+      "symbol": "NIGHT/USDT",
       "signal": "LONG",
-      "entry": 3.669,
-      "created": 1795360185.747177
+      "entry": 0.048878,
+      "created": 1795381578.9486327
     }
   ],
-  "total": 3006,
+  "total": 3008,
   "hits": 1380,
   "resolved": [
     {
@@ -7936,6 +7930,22 @@
       "created": 1795330403.2814727,
       "hit": false,
       "resolved_at": 1795360185.7457073
+    },
+    {
+      "id": "PEPE/USDT|SHORT|1795360185.7471755",
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "created": 1795360185.7471755,
+      "hit": false,
+      "resolved_at": 1795381578.9478
+    },
+    {
+      "id": "PIEVERSE/USDT|LONG|1795360185.747177",
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "created": 1795360185.747177,
+      "hit": false,
+      "resolved_at": 1795381578.9478
     }
   ]
 }
