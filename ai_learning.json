@@ -2,22 +2,10 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "PIEVERSE/USDT",
-      "signal": "LONG",
-      "entry": 3.755,
-      "created": 1795398415.6602085
-    },
-    {
-      "symbol": "ELSA/USDT",
-      "signal": "LONG",
-      "entry": 0.10564,
-      "created": 1795427631.223224
-    },
-    {
-      "symbol": "NIGHT/USDT",
-      "signal": "LONG",
-      "entry": 0.048958,
-      "created": 1795427631.2232246
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 773.47,
+      "created": 1795471096.1112225
     }
   ],
   "total": 3018,
