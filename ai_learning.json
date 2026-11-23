@@ -6,6 +6,66 @@
       "signal": "LONG",
       "entry": 0.048878,
       "created": 1795381578.9486327
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 0.9188,
+      "created": 1795398415.660203
+    },
+    {
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "entry": 3.3525e-06,
+      "created": 1795398415.6602042
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "entry": 0.05486,
+      "created": 1795398415.6602051
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 0.6491,
+      "created": 1795398415.6602056
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 0.6537,
+      "created": 1795398415.6602058
+    },
+    {
+      "symbol": "XNVDA/USDT",
+      "signal": "SHORT",
+      "entry": 132.97,
+      "created": 1795398415.6602063
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 786.06,
+      "created": 1795398415.6602068
+    },
+    {
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "entry": 3.755,
+      "created": 1795398415.6602085
+    },
+    {
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "entry": 2.3373,
+      "created": 1795398415.6602092
+    },
+    {
+      "symbol": "XLM/USDT",
+      "signal": "SHORT",
+      "entry": 0.12663,
+      "created": 1795398415.6602097
     }
   ],
   "total": 3008,
