@@ -2,74 +2,26 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "NIGHT/USDT",
-      "signal": "LONG",
-      "entry": 0.048878,
-      "created": 1795381578.9486327
-    },
-    {
-      "symbol": "XRP/USDT",
-      "signal": "SHORT",
-      "entry": 0.9188,
-      "created": 1795398415.660203
-    },
-    {
-      "symbol": "PEPE/USDT",
-      "signal": "SHORT",
-      "entry": 3.3525e-06,
-      "created": 1795398415.6602042
-    },
-    {
-      "symbol": "DOGE/USDT",
-      "signal": "SHORT",
-      "entry": 0.05486,
-      "created": 1795398415.6602051
-    },
-    {
-      "symbol": "SUI/USDT",
-      "signal": "SHORT",
-      "entry": 0.6491,
-      "created": 1795398415.6602056
-    },
-    {
-      "symbol": "DOT/USDT",
-      "signal": "SHORT",
-      "entry": 0.6537,
-      "created": 1795398415.6602058
-    },
-    {
-      "symbol": "XNVDA/USDT",
-      "signal": "SHORT",
-      "entry": 132.97,
-      "created": 1795398415.6602063
-    },
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 786.06,
-      "created": 1795398415.6602068
-    },
-    {
       "symbol": "PIEVERSE/USDT",
       "signal": "LONG",
       "entry": 3.755,
       "created": 1795398415.6602085
     },
     {
-      "symbol": "LIT/USDT",
-      "signal": "SHORT",
-      "entry": 2.3373,
-      "created": 1795398415.6602092
+      "symbol": "ELSA/USDT",
+      "signal": "LONG",
+      "entry": 0.10564,
+      "created": 1795427631.223224
     },
     {
-      "symbol": "XLM/USDT",
-      "signal": "SHORT",
-      "entry": 0.12663,
-      "created": 1795398415.6602097
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "entry": 0.048958,
+      "created": 1795427631.2232246
     }
   ],
-  "total": 3008,
-  "hits": 1380,
+  "total": 3018,
+  "hits": 1381,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -8006,6 +7958,86 @@
       "created": 1795360185.747177,
       "hit": false,
       "resolved_at": 1795381578.9478
+    },
+    {
+      "id": "NIGHT/USDT|LONG|1795381578.9486327",
+      "symbol": "NIGHT/USDT",
+      "signal": "LONG",
+      "created": 1795381578.9486327,
+      "hit": true,
+      "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "XRP/USDT|SHORT|1795398415.660203",
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "created": 1795398415.660203,
+      "hit": false,
+      "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "PEPE/USDT|SHORT|1795398415.6602042",
+      "symbol": "PEPE/USDT",
+      "signal": "SHORT",
+      "created": 1795398415.6602042,
+      "hit": false,
+      "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "DOGE/USDT|SHORT|1795398415.6602051",
+      "symbol": "DOGE/USDT",
+      "signal": "SHORT",
+      "created": 1795398415.6602051,
+      "hit": false,
+      "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "SUI/USDT|SHORT|1795398415.6602056",
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "created": 1795398415.6602056,
+      "hit": false,
+      "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "DOT/USDT|SHORT|1795398415.6602058",
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "created": 1795398415.6602058,
+      "hit": false,
+      "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "XNVDA/USDT|SHORT|1795398415.6602063",
+      "symbol": "XNVDA/USDT",
+      "signal": "SHORT",
+      "created": 1795398415.6602063,
+      "hit": false,
+      "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "ZEC/USDT|SHORT|1795398415.6602068",
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "created": 1795398415.6602068,
+      "hit": false,
+      "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "LIT/USDT|SHORT|1795398415.6602092",
+      "symbol": "LIT/USDT",
+      "signal": "SHORT",
+      "created": 1795398415.6602092,
+      "hit": false,
+      "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "XLM/USDT|SHORT|1795398415.6602097",
+      "symbol": "XLM/USDT",
+      "signal": "SHORT",
+      "created": 1795398415.6602097,
+      "hit": false,
+      "resolved_at": 1795427631.222323
     }
   ]
 }
