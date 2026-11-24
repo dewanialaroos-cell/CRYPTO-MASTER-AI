@@ -1,6 +1,67 @@
 {
   "version": 1,
-  "pending": [],
+  "pending": [
+    {
+      "symbol": "BTC/USDT",
+      "signal": "SHORT",
+      "entry": 59882.0,
+      "created": 1795540543.1589422
+    },
+    {
+      "symbol": "ETH/USDT",
+      "signal": "SHORT",
+      "entry": 1678.93,
+      "created": 1795540543.1589437
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 0.9172,
+      "created": 1795540543.1589446
+    },
+    {
+      "symbol": "MON/USDT",
+      "signal": "SHORT",
+      "entry": 0.01005,
+      "created": 1795540543.158945
+    },
+    {
+      "symbol": "SOL/USDT",
+      "signal": "SHORT",
+      "entry": 69.54,
+      "created": 1795540543.1589453
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 549.09,
+      "created": 1795540543.158946
+    },
+    {
+      "symbol": "EVAA/USDT",
+      "signal": "SHORT",
+      "entry": 2.287,
+      "created": 1795540543.158947
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 0.6484,
+      "created": 1795540543.158949
+    },
+    {
+      "symbol": "TRUMP/USDT",
+      "signal": "SHORT",
+      "entry": 0.8242,
+      "created": 1795540543.1589496
+    },
+    {
+      "symbol": "ASTER/USDT",
+      "signal": "SHORT",
+      "entry": 0.4896,
+      "created": 1795540543.1589503
+    }
+  ],
   "total": 3019,
   "hits": 1382,
   "resolved": [
