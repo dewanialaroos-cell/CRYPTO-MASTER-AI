@@ -1,15 +1,8 @@
 {
   "version": 1,
-  "pending": [
-    {
-      "symbol": "ZEC/USDT",
-      "signal": "SHORT",
-      "entry": 773.47,
-      "created": 1795471096.1112225
-    }
-  ],
-  "total": 3018,
-  "hits": 1381,
+  "pending": [],
+  "total": 3019,
+  "hits": 1382,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -8026,6 +8019,14 @@
       "created": 1795398415.6602097,
       "hit": false,
       "resolved_at": 1795427631.222323
+    },
+    {
+      "id": "ZEC/USDT|SHORT|1795471096.1112225",
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "created": 1795471096.1112225,
+      "hit": true,
+      "resolved_at": 1795499573.4145737
     }
   ]
 }
