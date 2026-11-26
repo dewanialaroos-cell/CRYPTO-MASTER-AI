@@ -4,18 +4,30 @@
     {
       "symbol": "PIEVERSE/USDT",
       "signal": "LONG",
-      "entry": 3.842,
-      "created": 1795661634.123955
+      "entry": 4.0471,
+      "created": 1795694654.4539528
     },
     {
-      "symbol": "MMT/USDT",
+      "symbol": "ELSA/USDT",
       "signal": "LONG",
-      "entry": 0.3172,
-      "created": 1795661634.123956
+      "entry": 0.09772,
+      "created": 1795694654.4539542
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 732.22,
+      "created": 1795694654.4539552
+    },
+    {
+      "symbol": "VVV/USDT",
+      "signal": "LONG",
+      "entry": 27.65,
+      "created": 1795694654.4539561
     }
   ],
-  "total": 3049,
-  "hits": 1399,
+  "total": 3051,
+  "hits": 1400,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -8280,6 +8292,22 @@
       "created": 1795637145.921247,
       "hit": true,
       "resolved_at": 1795661634.1233118
+    },
+    {
+      "id": "PIEVERSE/USDT|LONG|1795661634.123955",
+      "symbol": "PIEVERSE/USDT",
+      "signal": "LONG",
+      "created": 1795661634.123955,
+      "hit": true,
+      "resolved_at": 1795694654.4532554
+    },
+    {
+      "id": "MMT/USDT|LONG|1795661634.123956",
+      "symbol": "MMT/USDT",
+      "signal": "LONG",
+      "created": 1795661634.123956,
+      "hit": false,
+      "resolved_at": 1795694654.4532554
     }
   ]
 }
