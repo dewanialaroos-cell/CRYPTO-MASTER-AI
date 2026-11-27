@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-11-27T00:07:04.850512+00:00",
+  "created_at": "2026-11-27T08:49:32.870030+00:00",
   "exchanges": {
     "binance": {
       "status": "unavailable",
@@ -59,7 +59,7 @@
     }
   },
   "order_book_rows": 108,
-  "fundamentals_rows": 9984,
+  "fundamentals_rows": 10038,
   "note": "Public snapshots are current observations, not historical order-book or liquidation records.",
   "order_book_labeled_rows": 0
 }
