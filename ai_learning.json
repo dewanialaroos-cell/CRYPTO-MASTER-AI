@@ -2,20 +2,68 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "XMR/USDT",
+      "symbol": "ETH/USDT",
       "signal": "SHORT",
-      "entry": 439.74,
-      "created": 1795786675.644854
+      "entry": 1659.02,
+      "created": 1795818189.0140636
     },
     {
-      "symbol": "SEI/USDT",
-      "signal": "LONG",
-      "entry": 0.03951,
-      "created": 1795786675.6448555
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "entry": 409.01,
+      "created": 1795818189.0140646
+    },
+    {
+      "symbol": "TRX/USDT",
+      "signal": "SHORT",
+      "entry": 0.30106,
+      "created": 1795818189.0140653
+    },
+    {
+      "symbol": "XRP/USDT",
+      "signal": "SHORT",
+      "entry": 0.9432,
+      "created": 1795818189.0140657
+    },
+    {
+      "symbol": "XNVDA/USDT",
+      "signal": "SHORT",
+      "entry": 148.38,
+      "created": 1795818189.0140662
+    },
+    {
+      "symbol": "DOT/USDT",
+      "signal": "SHORT",
+      "entry": 0.663,
+      "created": 1795818189.0140665
+    },
+    {
+      "symbol": "BNB/USDT",
+      "signal": "SHORT",
+      "entry": 552.46,
+      "created": 1795818189.014067
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "signal": "SHORT",
+      "entry": 6.582,
+      "created": 1795818189.0140684
+    },
+    {
+      "symbol": "SUI/USDT",
+      "signal": "SHORT",
+      "entry": 0.6692,
+      "created": 1795818189.0140693
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "signal": "SHORT",
+      "entry": 723.48,
+      "created": 1795818189.0140698
     }
   ],
-  "total": 3059,
-  "hits": 1404,
+  "total": 3061,
+  "hits": 1405,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -8360,6 +8408,22 @@
       "created": 1795751485.5495975,
       "hit": true,
       "resolved_at": 1795786675.6438665
+    },
+    {
+      "id": "XMR/USDT|SHORT|1795786675.644854",
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "created": 1795786675.644854,
+      "hit": true,
+      "resolved_at": 1795818189.0134041
+    },
+    {
+      "id": "SEI/USDT|LONG|1795786675.6448555",
+      "symbol": "SEI/USDT",
+      "signal": "LONG",
+      "created": 1795786675.6448555,
+      "hit": false,
+      "resolved_at": 1795818189.0134041
     }
   ]
 }
