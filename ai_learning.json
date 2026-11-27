@@ -4,18 +4,18 @@
     {
       "symbol": "XMR/USDT",
       "signal": "SHORT",
-      "entry": 464.69,
-      "created": 1795751485.5495963
+      "entry": 439.74,
+      "created": 1795786675.644854
     },
     {
-      "symbol": "LINK/USDT",
+      "symbol": "SEI/USDT",
       "signal": "LONG",
-      "entry": 9.497,
-      "created": 1795751485.5495975
+      "entry": 0.03951,
+      "created": 1795786675.6448555
     }
   ],
-  "total": 3057,
-  "hits": 1402,
+  "total": 3059,
+  "hits": 1404,
   "resolved": [
     {
       "id": "KCS/USDT|SHORT|1792471049.6840045",
@@ -8344,6 +8344,22 @@
       "created": 1795729007.7341356,
       "hit": false,
       "resolved_at": 1795751485.5490563
+    },
+    {
+      "id": "XMR/USDT|SHORT|1795751485.5495963",
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "created": 1795751485.5495963,
+      "hit": true,
+      "resolved_at": 1795786675.6438665
+    },
+    {
+      "id": "LINK/USDT|LONG|1795751485.5495975",
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "created": 1795751485.5495975,
+      "hit": true,
+      "resolved_at": 1795786675.6438665
     }
   ]
 }
