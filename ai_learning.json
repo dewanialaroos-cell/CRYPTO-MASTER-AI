@@ -2,19 +2,19 @@
   "version": 1,
   "pending": [
     {
-      "symbol": "ELSA/USDT",
-      "signal": "LONG",
-      "entry": 0.10052,
-      "created": 1795729007.7341342
-    },
-    {
       "symbol": "XMR/USDT",
       "signal": "SHORT",
-      "entry": 448.32,
-      "created": 1795729007.7341356
+      "entry": 464.69,
+      "created": 1795751485.5495963
+    },
+    {
+      "symbol": "LINK/USDT",
+      "signal": "LONG",
+      "entry": 9.497,
+      "created": 1795751485.5495975
     }
   ],
-  "total": 3055,
+  "total": 3057,
   "hits": 1402,
   "resolved": [
     {
@@ -8328,6 +8328,22 @@
       "created": 1795694654.4539561,
       "hit": false,
       "resolved_at": 1795729007.7332432
+    },
+    {
+      "id": "ELSA/USDT|LONG|1795729007.7341342",
+      "symbol": "ELSA/USDT",
+      "signal": "LONG",
+      "created": 1795729007.7341342,
+      "hit": false,
+      "resolved_at": 1795751485.5490563
+    },
+    {
+      "id": "XMR/USDT|SHORT|1795729007.7341356",
+      "symbol": "XMR/USDT",
+      "signal": "SHORT",
+      "created": 1795729007.7341356,
+      "hit": false,
+      "resolved_at": 1795751485.5490563
     }
   ]
 }
